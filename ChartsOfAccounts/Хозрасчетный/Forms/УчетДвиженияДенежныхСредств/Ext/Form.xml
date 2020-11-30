@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<CommandBarLocation>None</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаУчетДвиженияДенежныхСредств" id="42">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Учет движения денежных средств ведется:</v8:content>
+				</v8:item>
+			</Title>
+			<TitleTextColor>style:FormTextColor</TitleTextColor>
+			<TitleFont ref="style:NormalTextFont" kind="StyleItem"/>
+			<ToolTipRepresentation>None</ToolTipRepresentation>
+			<Group>Vertical</Group>
+			<Representation>NormalSeparation</Representation>
+			<ExtendedTooltip name="ГруппаУчетДвиженияДенежныхСредствРасширеннаяПодсказка" id="43"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаПоРасчетнымСчетам" id="47">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>По расчетным счетам</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаПоРасчетнымСчетамExtendedTooltip" id="48"/>
+					<ChildItems>
+						<PictureDecoration name="ДекорацияПоРасчетнымСчетамКартинка" id="49">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>По расчетным счетам (картинка)</v8:content>
+								</v8:item>
+							</Title>
+							<Picture>
+								<xr:Ref>CommonPicture.ФлажокУзкий</xr:Ref>
+								<xr:LoadTransparent>false</xr:LoadTransparent>
+							</Picture>
+							<FileDragMode>AsFile</FileDragMode>
+							<ContextMenu name="ДекорацияПоРасчетнымСчетамКартинкаКонтекстноеМеню" id="50"/>
+							<ExtendedTooltip name="ДекорацияПоРасчетнымСчетамКартинкаExtendedTooltip" id="51"/>
+						</PictureDecoration>
+						<LabelDecoration name="ДекорацияПоРасчетнымСчетам" id="52">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>По расчетным счетам</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияПоРасчетнымСчетамКонтекстноеМеню" id="53"/>
+							<ExtendedTooltip name="ДекорацияПоРасчетнымСчетамExtendedTooltip" id="54"/>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаВестиУчетПоСтатьямДДС" id="55">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вести учет по статьям ДДС (группа)</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаВестиУчетПоСтатьямДДСExtendedTooltip" id="56"/>
+					<ChildItems>
+						<CheckBoxField name="ИспользоватьСтатьиДвиженияДенежныхСредств" id="57">
+							<DataPath>ИспользоватьСтатьиДвиженияДенежныхСредств</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>По статьям движения денежных средств</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ИспользоватьСтатьиДвиженияДенежныхСредствКонтекстноеМеню" id="58"/>
+							<ExtendedTooltip name="ИспользоватьСтатьиДвиженияДенежныхСредствExtendedTooltip" id="59"/>
+						</CheckBoxField>
+						<Button name="ВключитьВыключитьУчетПоСтатьямДДС" id="102">
+							<Type>Hyperlink</Type>
+							<CommandName>Form.Command.ВключитьВыключитьУчетПоСтатьямДДС</CommandName>
+							<ExtendedTooltip name="ВключитьВыключитьУчетПоСтатьямДДСРасширеннаяПодсказка" id="103"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<LabelDecoration name="Примечание" id="99">
+			<TextColor>style:ПоясняющийТекст</TextColor>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройка управляет субконто на следующих счетах:
+50 "Касса"; 
+50.01 "Касса организации"; 
+50.02 "Операционная касса"; 
+50.21 "Касса организации (в валюте)"; 
+51 "Расчетные счета"; 
+52 "Валютные счета"; 
+55 "Специальные счета в банках"; 
+55.01 "Аккредитивы"; 
+55.02 "Чековые книжки"; 
+55.03 "Депозитные счета"; 
+55.04 "Прочие специальные счета"; 
+55.21 "Аккредитивы (в валюте)"; 
+55.23 "Депозитные счета (в валюте)"; 
+55.24 "Прочие специальные счета (в валюте)"; 
+57.01 "Переводы в пути"; 
+57.21 "Переводы в пути (в валюте)".</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ПримечаниеКонтекстноеМеню" id="100"/>
+			<ExtendedTooltip name="ПримечаниеРасширеннаяПодсказка" id="101"/>
+		</LabelDecoration>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ИспользоватьСтатьиДвиженияДенежныхСредствИсходноеЗначение" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Использовать статьи движения денежных средств (исходное значение)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ИспользоватьСтатьиДвиженияДенежныхСредств" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Использовать статьи движения денежных средств</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ПараметрыУчета" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры учета</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ВключитьВыключитьУчетПоСтатьямДДС" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Включить</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ВключитьВыключитьУчетПоСтатьямДДС</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

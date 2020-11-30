@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Начальные остатки</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаЗаписатьИЗакрыть" id="512">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ЗаписатьИЗакрыть</CommandName>
+				<ExtendedTooltip name="ФормаЗаписатьИЗакрытьРасширеннаяПодсказка" id="513"/>
+			</Button>
+			<Button name="ФормаЗаписать" id="508">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.Записать</CommandName>
+				<ExtendedTooltip name="ФормаЗаписатьРасширеннаяПодсказка" id="509"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="BeforeClose">ПередЗакрытием</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Table name="Покупатели" id="811">
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Объект.Покупатели</DataPath>
+			<ToolTipRepresentation>ShowTop</ToolTipRepresentation>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ПокупателиКонтекстноеМеню" id="812"/>
+			<AutoCommandBar name="ПокупателиКоманднаяПанель" id="813"/>
+			<ExtendedTooltip name="ПокупателиРасширеннаяПодсказка" id="814">
+				<AutoMaxWidth>false</AutoMaxWidth>
+				<Title formatted="false">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Задолженность покупателей за товары и услуги, а также сведения о полученных авансах</v8:content>
+					</v8:item>
+				</Title>
+			</ExtendedTooltip>
+			<SearchStringAddition name="ПокупателиСтрокаПоиска" id="815">
+				<AdditionSource>
+					<Item>Покупатели</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ПокупателиСтрокаПоискаКонтекстноеМеню" id="818"/>
+				<ExtendedTooltip name="ПокупателиСтрокаПоискаРасширеннаяПодсказка" id="819"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ПокупателиСостояниеПросмотра" id="820">
+				<AdditionSource>
+					<Item>Покупатели</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ПокупателиСостояниеПросмотраКонтекстноеМеню" id="823"/>
+				<ExtendedTooltip name="ПокупателиСостояниеПросмотраРасширеннаяПодсказка" id="824"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ПокупателиУправлениеПоиском" id="825">
+				<AdditionSource>
+					<Item>Покупатели</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ПокупателиУправлениеПоискомКонтекстноеМеню" id="828"/>
+				<ExtendedTooltip name="ПокупателиУправлениеПоискомРасширеннаяПодсказка" id="829"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="OnStartEdit">ПокупателиПриНачалеРедактирования</Event>
+			</Events>
+			<ChildItems>
+				<InputField name="ПокупателиКонтрагент" id="830">
+					<DataPath>Объект.Покупатели.Контрагент</DataPath>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="ПокупателиКонтрагентКонтекстноеМеню" id="831"/>
+					<ExtendedTooltip name="ПокупателиКонтрагентРасширеннаяПодсказка" id="832"/>
+					<Events>
+						<Event name="OnChange">ПокупателиКонтрагентПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ПокупателиДоговорКонтрагента" id="833">
+					<DataPath>Объект.Покупатели.ДоговорКонтрагента</DataPath>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="ПокупателиДоговорКонтрагентаКонтекстноеМеню" id="834"/>
+					<ExtendedTooltip name="ПокупателиДоговорКонтрагентаРасширеннаяПодсказка" id="835"/>
+					<Events>
+						<Event name="OnChange">ПокупателиДоговорКонтрагентаПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ПокупателиЗадолженностьОстаток" id="836">
+					<DataPath>Объект.Покупатели.ЗадолженностьОстаток</DataPath>
+					<Width>14</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="ПокупателиЗадолженностьОстатокКонтекстноеМеню" id="837"/>
+					<ExtendedTooltip name="ПокупателиЗадолженностьОстатокРасширеннаяПодсказка" id="838"/>
+					<Events>
+						<Event name="OnChange">ПокупателиЗадолженностьОстатокПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ПокупателиАвансОстаток" id="839">
+					<DataPath>Объект.Покупатели.АвансОстаток</DataPath>
+					<Width>14</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="ПокупателиАвансОстатокКонтекстноеМеню" id="840"/>
+					<ExtendedTooltip name="ПокупателиАвансОстатокРасширеннаяПодсказка" id="841"/>
+					<Events>
+						<Event name="OnChange">ПокупателиАвансОстатокПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ПокупателиВидДеятельности" id="851">
+					<DataPath>Объект.Покупатели.ВидДеятельности</DataPath>
+					<Visible>false</Visible>
+					<EditMode>Directly</EditMode>
+					<Width>15</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<DropListButton>true</DropListButton>
+					<ChoiceButton>false</ChoiceButton>
+					<AutoChoiceIncomplete>true</AutoChoiceIncomplete>
+					<QuickChoice>true</QuickChoice>
+					<IncompleteChoiceMode>OnActivate</IncompleteChoiceMode>
+					<TextEdit>false</TextEdit>
+					<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+					<ContextMenu name="ПокупателиВидДеятельностиКонтекстноеМеню" id="852"/>
+					<ExtendedTooltip name="ПокупателиВидДеятельностиРасширеннаяПодсказка" id="853"/>
+					<Events>
+						<Event name="Clearing">ПокупателиВидДеятельностиОчистка</Event>
+					</Events>
+				</InputField>
+				<InputField name="ПокупателиВалюта" id="842">
+					<DataPath>Объект.Покупатели.Валюта</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>7</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="ПокупателиВалютаКонтекстноеМеню" id="843"/>
+					<ExtendedTooltip name="ПокупателиВалютаРасширеннаяПодсказка" id="844"/>
+				</InputField>
+				<InputField name="ПокупателиОтступ" id="845">
+					<DataPath>Объект.Покупатели.Отступ</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<TitleLocation>None</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<HorizontalStretch>true</HorizontalStretch>
+					<ContextMenu name="ПокупателиОтступКонтекстноеМеню" id="846"/>
+					<ExtendedTooltip name="ПокупателиОтступРасширеннаяПодсказка" id="847"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ВводНачальныхОстатков</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.Деньги</Field>
+				<Field>Объект.Запасы</Field>
+				<Field>Объект.Зарплата</Field>
+				<Field>Объект.Капитал</Field>
+				<Field>Объект.Капитал_Вспомогательная</Field>
+				<Field>Объект.Комиссионеры</Field>
+				<Field>Объект.КредитыИЗаймы</Field>
+				<Field>Объект.МакетПомощника</Field>
+				<Field>Объект.НалогиИВзносы</Field>
+				<Field>Объект.НематериальныеАктивы</Field>
+				<Field>Объект.ОсновныеСредства</Field>
+				<Field>Объект.Подотчет</Field>
+				<Field>Объект.ПодразделениеОрганизации</Field>
+				<Field>Объект.Поставщики</Field>
+				<Field>Объект.РазделыВводаОстатков</Field>
+			</UseAlways>
+			<Columns>
+				<AdditionalColumns table="Объект.Покупатели">
+					<Column name="Отступ" id="1">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Отступ</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>1</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+				</AdditionalColumns>
+			</Columns>
+		</Attribute>
+		<Attribute name="СтруктураТаблиц" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Структура таблиц</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОсновнойВидДеятельности" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основной вид деятельности</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>10</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ВестиУчетПоДоговорам" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вести учет по договорам</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Записать" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Записать</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ЗаписатьИЗакрыть" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать и закрыть</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать и закрыть</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаписатьИЗакрыть</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="Организация">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

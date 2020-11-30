@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<CommandBarLocation>None</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаСрокиОплаты" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сроки оплаты задолженностей</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ThroughAlign>Use</ThroughAlign>
+			<ExtendedTooltip name="ГруппаСрокиОплатыРасширеннаяПодсказка" id="2">
+				<Title formatted="false">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Задолженность, не оплаченная в этот срок, считается просроченной, если в договоре или в отдельных документах не установлен другой срок оплаты.
+
+Задолженность, просроченная больше, чем на 45 дней, считается сомнительной. По ней формируются резервы – если это предусмотрено учетной политикой.</v8:content>
+					</v8:item>
+				</Title>
+			</ExtendedTooltip>
+			<ChildItems>
+				<InputField name="СрокОплатыПокупателей" id="5">
+					<DataPath>НаборКонстант.СрокОплатыПокупателей</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Срок оплаты долга покупателями</v8:content>
+						</v8:item>
+					</Title>
+					<SpinButton>true</SpinButton>
+					<EditTextUpdate>OnValueChange</EditTextUpdate>
+					<ContextMenu name="СрокОплатыПокупателейКонтекстноеМеню" id="6"/>
+					<ExtendedTooltip name="СрокОплатыПокупателейExtendedTooltip" id="7"/>
+					<Events>
+						<Event name="OnChange">СрокОплатыПокупателейПриИзменении</Event>
+						<Event name="EditTextChange">СрокОплатыПокупателейИзменениеТекстаРедактирования</Event>
+					</Events>
+				</InputField>
+				<LabelDecoration name="НадписьДнейСрокОплатыПокупателей" id="8">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>дн.</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="НадписьДнейСрокОплатыПокупателейКонтекстноеМеню" id="9"/>
+					<ExtendedTooltip name="НадписьДнейСрокОплатыПокупателейРасширеннаяПодсказка" id="10"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаСрокОплатыДляВыставленныхСчетовЗначение" id="19">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа срок оплаты для выставленных счетов значение</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Срок оплаты определяется в зависимости от даты счета и выводится в его печатной форме</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ToolTipRepresentation>None</ToolTipRepresentation>
+			<Group>Horizontal</Group>
+			<Representation>NormalSeparation</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ThroughAlign>Use</ThroughAlign>
+			<ExtendedTooltip name="ГруппаСрокОплатыДляВыставленныхСчетовЗначениеРасширеннаяПодсказка" id="20"/>
+			<ChildItems>
+				<InputField name="СрокОплатыСчетовПокупателю" id="24">
+					<DataPath>НаборКонстант.СрокОплатыСчетовПокупателю</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Срок оплаты выставленных счетов</v8:content>
+						</v8:item>
+					</Title>
+					<SpinButton>true</SpinButton>
+					<EditTextUpdate>OnValueChange</EditTextUpdate>
+					<ContextMenu name="СрокОплатыСчетовПокупателюКонтекстноеМеню" id="25"/>
+					<ExtendedTooltip name="СрокОплатыСчетовПокупателюРасширеннаяПодсказка" id="26"/>
+					<Events>
+						<Event name="OnChange">СрокОплатыВыставленныхСчетовПриИзменении</Event>
+						<Event name="EditTextChange">СрокОплатыСчетовПокупателюИзменениеТекстаРедактирования</Event>
+					</Events>
+				</InputField>
+				<LabelDecoration name="НадписьРабочихДнейСрокОплатыПокупателей" id="27">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>раб. дн.</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="НадписьРабочихДнейСрокОплатыПокупателейКонтекстноеМеню" id="28"/>
+					<ExtendedTooltip name="НадписьРабочихДнейСрокОплатыПокупателейРасширеннаяПодсказка" id="29"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="НаборКонстант" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Набор констант</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:ConstantsSet</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<UseAlways>
+				<Field>НаборКонстант.УчетЗарплатыИКадровВоВнешнейПрограмме</Field>
+			</UseAlways>
+		</Attribute>
+		<Attribute name="ПараметрыОткрытия" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры открытия</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+	</Attributes>
+</Form>

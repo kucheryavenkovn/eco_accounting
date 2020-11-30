@@ -1,0 +1,2662 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Монитор налогов и отчетности</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="URLProcessing">ОбработкаНавигационнойСсылки</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Монитор" id="485">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Монитор</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Монитор</v8:content>
+				</v8:item>
+			</ToolTip>
+			<HorizontalStretch>false</HorizontalStretch>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="МониторРасширеннаяПодсказка" id="486"/>
+			<ChildItems>
+				<UsualGroup name="Шапка" id="475">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Шапка</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Шапка</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Width>102</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<Group>Horizontal</Group>
+					<VerticalAlign>Center</VerticalAlign>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ШапкаРасширеннаяПодсказка" id="476"/>
+					<ChildItems>
+						<InputField name="Организация" id="69">
+							<DataPath>Организация</DataPath>
+							<Width>30</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>30</MaxWidth>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
+							<InputHint>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Укажите организацию</v8:content>
+								</v8:item>
+							</InputHint>
+							<ContextMenu name="ОрганизацияКонтекстноеМеню" id="70"/>
+							<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="71"/>
+							<Events>
+								<Event name="OnChange">ОрганизацияПриИзменении</Event>
+								<Event name="Clearing">ОрганизацияОчистка</Event>
+							</Events>
+						</InputField>
+						<LabelField name="ОрганизацияПредставление" id="495">
+							<DataPath>ОрганизацияПредставление</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<Hiperlink>true</Hiperlink>
+							<ContextMenu name="ОрганизацияПредставлениеКонтекстноеМеню" id="496"/>
+							<ExtendedTooltip name="ОрганизацияПредставлениеРасширеннаяПодсказка" id="497"/>
+						</LabelField>
+						<CommandBar name="ДействияМонитора" id="483">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Действия монитора</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Действия монитора</v8:content>
+								</v8:item>
+							</ToolTip>
+							<HorizontalStretch>false</HorizontalStretch>
+							<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+							<ExtendedTooltip name="ДействияМонитораРасширеннаяПодсказка" id="484"/>
+							<ChildItems>
+								<Button name="НастройкаНалоговИОтчетов" id="509">
+									<Type>CommandBarHyperlink</Type>
+									<CommandName>Form.Command.НастройкаНалоговИОтчетов</CommandName>
+									<ExtendedTooltip name="НастройкаНалоговИОтчетовРасширеннаяПодсказка" id="510"/>
+								</Button>
+								<Button name="ОбновитьМонитор" id="477">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.ОбновитьМонитор</CommandName>
+									<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+									<ExtendedTooltip name="ОбновитьМониторРасширеннаяПодсказка" id="478"/>
+								</Button>
+								<Button name="Справка" id="487">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.StandardCommand.Help</CommandName>
+									<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+									<ExtendedTooltip name="СправкаРасширеннаяПодсказка" id="488"/>
+								</Button>
+							</ChildItems>
+						</CommandBar>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="Актуализация" id="444">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Актуализация</v8:content>
+						</v8:item>
+					</Title>
+					<Width>102</Width>
+					<Height>1</Height>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="АктуализацияРасширеннаяПодсказка" id="445"/>
+					<ChildItems>
+						<UsualGroup name="ИдетПроверкаАктуальности" id="446">
+							<Visible>false</Visible>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Идет проверка актуальности</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<BackColor>style:FieldBackColor</BackColor>
+							<ExtendedTooltip name="ИдетПроверкаАктуальностиРасширеннаяПодсказка" id="447"/>
+							<ChildItems>
+								<PictureDecoration name="РисПриПроверкеАктуальности" id="448">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Рис при проверке актуальности</v8:content>
+										</v8:item>
+									</Title>
+									<Picture>
+										<xr:Ref>CommonPicture.НезавершившаясяПроверка</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
+									<FileDragMode>AsFile</FileDragMode>
+									<ContextMenu name="РисПриПроверкеАктуальностиКонтекстноеМеню" id="449"/>
+									<ExtendedTooltip name="РисПриПроверкеАктуальностиРасширеннаяПодсказка" id="450"/>
+								</PictureDecoration>
+								<LabelDecoration name="ТекстПриПроверкеАктуальности" id="451">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Идет проверка актуальности</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ТекстПриПроверкеАктуальностиКонтекстноеМеню" id="452"/>
+									<ExtendedTooltip name="ТекстПриПроверкеАктуальностиРасширеннаяПодсказка" id="453"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ИдетАктуализация" id="454">
+							<Visible>false</Visible>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Идет актуализация</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<BackColor>style:FieldBackColor</BackColor>
+							<ExtendedTooltip name="ИдетАктуализацияРасширеннаяПодсказка" id="455"/>
+							<ChildItems>
+								<PictureDecoration name="РисПриАктуализации" id="456">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Рис при актуализации</v8:content>
+										</v8:item>
+									</Title>
+									<Picture>
+										<xr:Ref>CommonPicture.НезавершившаясяПроверка</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
+									<FileDragMode>AsFile</FileDragMode>
+									<ContextMenu name="РисПриАктуализацииКонтекстноеМеню" id="457"/>
+									<ExtendedTooltip name="РисПриАктуализацииРасширеннаяПодсказка" id="458"/>
+								</PictureDecoration>
+								<LabelField name="ПрогрессорАктуализации" id="459">
+									<DataPath>ПрогрессорАктуализации</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Идет актуализация данных</v8:content>
+										</v8:item>
+									</Title>
+									<Width>4</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="ПрогрессорАктуализацииКонтекстноеМеню" id="460"/>
+									<ExtendedTooltip name="ПрогрессорАктуализацииРасширеннаяПодсказка" id="461"/>
+								</LabelField>
+								<LabelField name="ТекстПриАктуализации" id="462">
+									<DataPath>ТекстПриАктуализации</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<Width>34</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="ТекстПриАктуализацииКонтекстноеМеню" id="463"/>
+									<ExtendedTooltip name="ТекстПриАктуализацииРасширеннаяПодсказка" id="464"/>
+								</LabelField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ТребуетсяАктуализация" id="465">
+							<Visible>false</Visible>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Требуется актуализация</v8:content>
+								</v8:item>
+							</Title>
+							<Width>102</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<BackColor>style:ЦветФонаНекорректногоКонтрагента</BackColor>
+							<ExtendedTooltip name="ТребуетсяАктуализацияРасширеннаяПодсказка" id="466"/>
+							<ChildItems>
+								<LabelDecoration name="ДекорацияАктуальность" id="467">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>false</HorizontalStretch>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Данные учета неактуальны</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTipRepresentation>Button</ToolTipRepresentation>
+									<ContextMenu name="ДекорацияАктуальностьКонтекстноеМеню" id="468"/>
+									<ExtendedTooltip name="ДекорацияАктуальностьРасширеннаяПодсказка" id="469">
+										<Title formatted="true">
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Корректный отчет можно сформировать только на основе актуальных данных.
+&lt;link e1cib/command/ОбщаяКоманда.ОписаниеАктуализацииДанных/&gt;Подробнее &lt;/&gt;
+</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
+									<Events>
+										<Event name="URLProcessing">ДекорацияАктуальностьОбработкаНавигационнойСсылки</Event>
+									</Events>
+								</LabelDecoration>
+								<Button name="Актуализировать" id="470">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.Актуализировать</CommandName>
+									<ExtendedTooltip name="АктуализироватьРасширеннаяПодсказка" id="471"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="Ожидание" id="439">
+					<Visible>false</Visible>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ожидание</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ожидание</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ОжиданиеРасширеннаяПодсказка" id="440"/>
+					<ChildItems>
+						<PictureDecoration name="Ждать" id="441">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ждать</v8:content>
+								</v8:item>
+							</Title>
+							<Picture>
+								<xr:Ref>CommonPicture.ДлительнаяОперация48</xr:Ref>
+								<xr:LoadTransparent>false</xr:LoadTransparent>
+							</Picture>
+							<FileDragMode>AsFile</FileDragMode>
+							<ContextMenu name="ЖдатьКонтекстноеМеню" id="442"/>
+							<ExtendedTooltip name="ЖдатьExtendedTooltip" id="443"/>
+						</PictureDecoration>
+						<LabelDecoration name="ЖдатьТекст" id="489">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Пожалуйста, подождите… </v8:content>
+								</v8:item>
+							</Title>
+							<GroupVerticalAlign>Center</GroupVerticalAlign>
+							<ContextMenu name="ЖдатьТекстКонтекстноеМеню" id="490"/>
+							<ExtendedTooltip name="ЖдатьТекстРасширеннаяПодсказка" id="491"/>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="Баннер" id="521">
+					<Visible>false</Visible>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Баннер</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Баннер</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Width>102</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<VerticalStretch>false</VerticalStretch>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="БаннерРасширеннаяПодсказка" id="522"/>
+					<ChildItems>
+						<UsualGroup name="БаннерСФоном" id="523">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Баннер с фоном</v8:content>
+								</v8:item>
+							</Title>
+							<HorizontalStretch>true</HorizontalStretch>
+							<VerticalStretch>false</VerticalStretch>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="БаннерСФономРасширеннаяПодсказка" id="524"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаБаннерОжидание" id="525">
+									<Visible>false</Visible>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа баннер ожидание</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа баннер ожидание</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Width>24</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<HorizontalAlign>Right</HorizontalAlign>
+									<VerticalAlign>Center</VerticalAlign>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаБаннерОжиданиеРасширеннаяПодсказка" id="526"/>
+									<ChildItems>
+										<PictureDecoration name="КартинкаОжидание" id="527">
+											<Height>3</Height>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Картинка ожидание</v8:content>
+												</v8:item>
+											</Title>
+											<GroupVerticalAlign>Center</GroupVerticalAlign>
+											<Picture>
+												<xr:Ref>CommonPicture.ДлительнаяОперация48</xr:Ref>
+												<xr:LoadTransparent>true</xr:LoadTransparent>
+											</Picture>
+											<FileDragMode>AsFile</FileDragMode>
+											<ContextMenu name="КартинкаОжиданиеКонтекстноеМеню" id="528"/>
+											<ExtendedTooltip name="КартинкаОжиданиеРасширеннаяПодсказка" id="529"/>
+										</PictureDecoration>
+										<LabelDecoration name="НадписьОжидание" id="530">
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Пожалуйста, подождите...</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="НадписьОжиданиеКонтекстноеМеню" id="531"/>
+											<ExtendedTooltip name="НадписьОжиданиеРасширеннаяПодсказка" id="532"/>
+										</LabelDecoration>
+									</ChildItems>
+								</UsualGroup>
+								<LabelField name="ТекстБаннера" id="533">
+									<DataPath>ТекстБаннера</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<VerticalAlign>Center</VerticalAlign>
+									<GroupVerticalAlign>Center</GroupVerticalAlign>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<Height>3</Height>
+									<HorizontalStretch>true</HorizontalStretch>
+									<ContextMenu name="ТекстБаннераКонтекстноеМеню" id="534"/>
+									<ExtendedTooltip name="ТекстБаннераРасширеннаяПодсказка" id="535"/>
+								</LabelField>
+								<PictureDecoration name="КартинкаБаннера" id="536">
+									<Width>26</Width>
+									<Height>3</Height>
+									<GroupVerticalAlign>Center</GroupVerticalAlign>
+									<FileDragMode>AsFile</FileDragMode>
+									<ContextMenu name="КартинкаБаннераКонтекстноеМеню" id="537"/>
+									<ExtendedTooltip name="КартинкаБаннераРасширеннаяПодсказка" id="538"/>
+								</PictureDecoration>
+								<UsualGroup name="ГруппаКнопкиБаннера" id="539">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа кнопки баннера</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа кнопки баннера</v8:content>
+										</v8:item>
+									</ToolTip>
+									<VerticalStretch>true</VerticalStretch>
+									<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+									<Group>Vertical</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаКнопкиБаннераРасширеннаяПодсказка" id="540"/>
+									<ChildItems>
+										<PictureDecoration name="КартинкаЗакрытьБаннер" id="541">
+											<Height>1</Height>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Х</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Скрыть баннер</v8:content>
+												</v8:item>
+											</ToolTip>
+											<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+											<GroupVerticalAlign>Top</GroupVerticalAlign>
+											<Hyperlink>true</Hyperlink>
+											<Picture>
+												<xr:Ref>StdPicture.InputFieldClear</xr:Ref>
+												<xr:LoadTransparent>true</xr:LoadTransparent>
+											</Picture>
+											<FileDragMode>AsFile</FileDragMode>
+											<ContextMenu name="КартинкаЗакрытьБаннерКонтекстноеМеню" id="542"/>
+											<ExtendedTooltip name="КартинкаЗакрытьБаннерРасширеннаяПодсказка" id="543"/>
+											<Events>
+												<Event name="Click">ЗакрытьБаннерНажатие</Event>
+											</Events>
+										</PictureDecoration>
+										<UsualGroup name="ГруппаКнопкиПереключениеБаннера" id="544">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа кнопки переключение баннера</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа кнопки переключение баннера</v8:content>
+												</v8:item>
+											</ToolTip>
+											<GroupVerticalAlign>Bottom</GroupVerticalAlign>
+											<Group>AlwaysHorizontal</Group>
+											<HorizontalSpacing>None</HorizontalSpacing>
+											<VerticalSpacing>None</VerticalSpacing>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаКнопкиПереключениеБаннераРасширеннаяПодсказка" id="545"/>
+											<ChildItems>
+												<PictureDecoration name="КартинкаПредыдущийБаннер" id="546">
+													<Height>1</Height>
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Картинка предыдущий баннер</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Предыдущий баннер</v8:content>
+														</v8:item>
+													</ToolTip>
+													<GroupVerticalAlign>Bottom</GroupVerticalAlign>
+													<Hyperlink>true</Hyperlink>
+													<Picture>
+														<xr:Ref>CommonPicture.ПредыдущийБаннер</xr:Ref>
+														<xr:LoadTransparent>false</xr:LoadTransparent>
+													</Picture>
+													<FileDragMode>AsFile</FileDragMode>
+													<ContextMenu name="КартинкаПредыдущийБаннерКонтекстноеМеню" id="547"/>
+													<ExtendedTooltip name="КартинкаПредыдущийБаннерРасширеннаяПодсказка" id="548"/>
+													<Events>
+														<Event name="Click">ПредыдущийБаннерНажатие</Event>
+													</Events>
+												</PictureDecoration>
+												<PictureDecoration name="КартинкаСледующийБаннер" id="549">
+													<Height>1</Height>
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Картинка следующий баннер</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Следующий баннер</v8:content>
+														</v8:item>
+													</ToolTip>
+													<GroupVerticalAlign>Bottom</GroupVerticalAlign>
+													<Hyperlink>true</Hyperlink>
+													<Picture>
+														<xr:Ref>CommonPicture.СледующийБаннер</xr:Ref>
+														<xr:LoadTransparent>false</xr:LoadTransparent>
+													</Picture>
+													<FileDragMode>AsFile</FileDragMode>
+													<ContextMenu name="КартинкаСледующийБаннерКонтекстноеМеню" id="550"/>
+													<ExtendedTooltip name="КартинкаСледующийБаннерРасширеннаяПодсказка" id="551"/>
+													<Events>
+														<Event name="Click">СледующийБаннерНажатие</Event>
+													</Events>
+												</PictureDecoration>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ДанныеМонитора" id="34">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Данные монитора</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Данные монитора</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ДанныеМонитораРасширеннаяПодсказка" id="35"/>
+					<ChildItems>
+						<UsualGroup name="РекомендацияПоОбновлению" id="501">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Рекомендация по обновлению монитора</v8:content>
+								</v8:item>
+							</Title>
+							<Width>102</Width>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<BackColor>style:ЦветФонаНекорректногоКонтрагента</BackColor>
+							<ExtendedTooltip name="РекомендацияПоОбновлениюРасширеннаяПодсказка" id="502"/>
+							<ChildItems>
+								<LabelDecoration name="РекомендацияПоОбновлениюМонитора" id="503">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>false</HorizontalStretch>
+									<Font ref="style:LargeTextFont" kind="StyleItem"/>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>После подготовки отчетности или уплаты налогов обновите данные монитора – кнопка "Обновить"</v8:content>
+										</v8:item>
+									</Title>
+									<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+									<ContextMenu name="РекомендацияПоОбновлениюМонитораКонтекстноеМеню" id="504"/>
+									<ExtendedTooltip name="РекомендацияПоОбновлениюМонитораРасширеннаяПодсказка" id="505"/>
+								</LabelDecoration>
+								<LabelDecoration name="ГиперссылкаСкрыть" id="506">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Скрыть</v8:content>
+										</v8:item>
+									</Title>
+									<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+									<Hyperlink>true</Hyperlink>
+									<ContextMenu name="ГиперссылкаСкрытьКонтекстноеМеню" id="507"/>
+									<ExtendedTooltip name="ГиперссылкаСкрытьРасширеннаяПодсказка" id="508"/>
+									<Events>
+										<Event name="Click">СкрытьРекомендациюПоОбновлениюНажатие</Event>
+									</Events>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="Ряд0" id="78">
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ряд1</v8:content>
+								</v8:item>
+							</ToolTip>
+							<HorizontalStretch>false</HorizontalStretch>
+							<VerticalStretch>false</VerticalStretch>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Ряд0РасширеннаяПодсказка" id="79"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаОтступ" id="514">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Отступ</v8:content>
+										</v8:item>
+									</Title>
+									<Width>18</Width>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаОтступРасширеннаяПодсказка" id="515"/>
+									<ChildItems>
+										<UsualGroup name="КонтейнерОтступ" id="516">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Контейнер отступ</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Контейнер10</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Width>18</Width>
+											<VerticalStretch>true</VerticalStretch>
+											<Group>Vertical</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="КонтейнерОтступРасширеннаяПодсказка" id="517"/>
+											<ChildItems>
+												<LabelDecoration name="СтрокаОтступ" id="518">
+													<MaxHeight>5</MaxHeight>
+													<Font ref="style:NormalTextFont" faceName="Arial" height="13" kind="StyleItem"/>
+													<GroupVerticalAlign>Center</GroupVerticalAlign>
+													<BackColor>style:ЦветФонаБлоковИнформационнойПанели</BackColor>
+													<ContextMenu name="СтрокаОтступКонтекстноеМеню" id="519"/>
+													<ExtendedTooltip name="СтрокаОтступРасширеннаяПодсказка" id="520"/>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаКонтейнер00" id="235">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа контейнер00</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа контейнер00</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<BackColor>style:ЦветФонаБлоковИнформационнойПанели</BackColor>
+									<ExtendedTooltip name="ГруппаКонтейнер00РасширеннаяПодсказка" id="236"/>
+									<ChildItems>
+										<UsualGroup name="Контейнер00" id="24">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Контейнер00</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Шапка1</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Width>40</Width>
+											<Group>Vertical</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="Контейнер00РасширеннаяПодсказка" id="25"/>
+											<ChildItems>
+												<LabelDecoration name="ШапкаОтчетность" id="31">
+													<Height>2</Height>
+													<Font ref="style:NormalTextFont" faceName="Arial" height="13" kind="StyleItem"/>
+													<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<VerticalAlign>Center</VerticalAlign>
+													<ContextMenu name="ШапкаОтчетностьКонтекстноеМеню" id="32"/>
+													<ExtendedTooltip name="ШапкаОтчетностьРасширеннаяПодсказка" id="33"/>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="Группа2" id="237">
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<BackColor>style:ЦветФонаБлоковИнформационнойПанели</BackColor>
+									<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="238"/>
+									<ChildItems>
+										<UsualGroup name="Контейнер01" id="29">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Контейнер01</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Шапка1</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Width>40</Width>
+											<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+											<Group>Vertical</Group>
+											<HorizontalAlign>Left</HorizontalAlign>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="Контейнер01РасширеннаяПодсказка" id="30"/>
+											<ChildItems>
+												<LabelDecoration name="ШапкаНалоги" id="26">
+													<Height>2</Height>
+													<Font ref="style:NormalTextFont" faceName="Arial" height="13" kind="StyleItem"/>
+													<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<VerticalAlign>Center</VerticalAlign>
+													<ContextMenu name="ШапкаНалогиКонтекстноеМеню" id="27"/>
+													<ExtendedTooltip name="ШапкаНалогиРасширеннаяПодсказка" id="28"/>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="Ряд1" id="36">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ряд1</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ряд1</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Height>7</Height>
+							<HorizontalStretch>false</HorizontalStretch>
+							<VerticalStretch>false</VerticalStretch>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Ряд1РасширеннаяПодсказка" id="37"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаКонтейнер10" id="383">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа контейнер10</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа контейнер10</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Representation>None</Representation>
+									<United>false</United>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаКонтейнер10РасширеннаяПодсказка" id="384"/>
+									<ChildItems>
+										<UsualGroup name="Контейнер10" id="385">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Контейнер10</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Контейнер10</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Width>18</Width>
+											<VerticalStretch>true</VerticalStretch>
+											<Group>Vertical</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<BackColor>style:ЦветФонаБлоковИнформационнойПанели</BackColor>
+											<ExtendedTooltip name="Контейнер10РасширеннаяПодсказка" id="386"/>
+											<ChildItems>
+												<LabelDecoration name="Строка100" id="387">
+													<MaxHeight>5</MaxHeight>
+													<Font ref="style:NormalTextFont" faceName="Arial" height="13" kind="StyleItem"/>
+													<GroupVerticalAlign>Center</GroupVerticalAlign>
+													<BackColor>style:ЦветФонаБлоковИнформационнойПанели</BackColor>
+													<ContextMenu name="Строка100КонтекстноеМеню" id="388"/>
+													<ExtendedTooltip name="Строка100РасширеннаяПодсказка" id="389"/>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаКонтейнер11" id="161">
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа контейнер11</v8:content>
+										</v8:item>
+									</ToolTip>
+									<VerticalStretch>true</VerticalStretch>
+									<VerticalAlign>Center</VerticalAlign>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<BackColor>style:ЦветФонаБлоковИнформационнойПанели</BackColor>
+									<ExtendedTooltip name="ГруппаКонтейнер11РасширеннаяПодсказка" id="162"/>
+									<ChildItems>
+										<UsualGroup name="Контейнер11" id="5">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Контейнер11</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Контейнер11</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Width>40</Width>
+											<GroupVerticalAlign>Center</GroupVerticalAlign>
+											<Group>Vertical</Group>
+											<HorizontalAlign>Center</HorizontalAlign>
+											<VerticalAlign>Center</VerticalAlign>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="Контейнер11РасширеннаяПодсказка" id="6"/>
+											<ChildItems>
+												<LabelDecoration name="Строка110" id="7">
+													<MaxHeight>5</MaxHeight>
+													<Font ref="style:NormalTextFont" faceName="Arial" height="14" kind="StyleItem"/>
+													<Title formatted="true"/>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<ContextMenu name="Строка110КонтекстноеМеню" id="8"/>
+													<ExtendedTooltip name="Строка110РасширеннаяПодсказка" id="9"/>
+												</LabelDecoration>
+												<LabelDecoration name="Строка111" id="75">
+													<MaxHeight>5</MaxHeight>
+													<Font ref="style:NormalTextFont" height="11" kind="StyleItem"/>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<ContextMenu name="Строка111КонтекстноеМеню" id="76"/>
+													<ExtendedTooltip name="Строка111РасширеннаяПодсказка" id="77"/>
+												</LabelDecoration>
+												<LabelDecoration name="Строка112" id="10">
+													<Height>1</Height>
+													<MaxHeight>5</MaxHeight>
+													<Font ref="style:NormalTextFont" height="11" kind="StyleItem"/>
+													<Hyperlink>true</Hyperlink>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<ContextMenu name="Строка112КонтекстноеМеню" id="11"/>
+													<ExtendedTooltip name="Строка112РасширеннаяПодсказка" id="12"/>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаКонтейнер12" id="163">
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа контейнер12</v8:content>
+										</v8:item>
+									</ToolTip>
+									<VerticalStretch>true</VerticalStretch>
+									<VerticalAlign>Center</VerticalAlign>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<BackColor>style:ЦветФонаБлоковИнформационнойПанели</BackColor>
+									<ExtendedTooltip name="ГруппаКонтейнер12РасширеннаяПодсказка" id="164"/>
+									<ChildItems>
+										<UsualGroup name="Контейнер12" id="148">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Контейнер12</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Контейнер11</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Width>40</Width>
+											<Group>Vertical</Group>
+											<HorizontalAlign>Center</HorizontalAlign>
+											<VerticalAlign>Center</VerticalAlign>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="Контейнер12РасширеннаяПодсказка" id="149"/>
+											<ChildItems>
+												<LabelDecoration name="Строка120" id="498">
+													<MaxHeight>5</MaxHeight>
+													<Font ref="style:NormalTextFont" faceName="Arial" height="14" kind="StyleItem"/>
+													<Title formatted="true"/>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<ContextMenu name="Строка120КонтекстноеМеню" id="499"/>
+													<ExtendedTooltip name="Строка120РасширеннаяПодсказка" id="500"/>
+												</LabelDecoration>
+												<LabelDecoration name="Строка121" id="153">
+													<Font ref="style:NormalTextFont" height="11" kind="StyleItem"/>
+													<Title formatted="true"/>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<ContextMenu name="Строка121КонтекстноеМеню" id="154"/>
+													<ExtendedTooltip name="Строка121РасширеннаяПодсказка" id="155"/>
+												</LabelDecoration>
+												<LabelDecoration name="Строка122" id="239">
+													<MaxHeight>5</MaxHeight>
+													<Font ref="style:NormalTextFont" height="11" kind="StyleItem"/>
+													<Hyperlink>true</Hyperlink>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<ContextMenu name="Строка122КонтекстноеМеню" id="240"/>
+													<ExtendedTooltip name="Строка122РасширеннаяПодсказка" id="241"/>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="Ряд2" id="165">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ряд1</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ряд1</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Height>7</Height>
+							<HorizontalStretch>false</HorizontalStretch>
+							<VerticalStretch>false</VerticalStretch>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Ряд2РасширеннаяПодсказка" id="166"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаКонтейнер20" id="390">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа контейнер20</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа контейнер10</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Representation>None</Representation>
+									<United>false</United>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаКонтейнер20РасширеннаяПодсказка" id="391"/>
+									<ChildItems>
+										<UsualGroup name="Контейнер20" id="392">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Контейнер20</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Контейнер10</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Width>18</Width>
+											<VerticalStretch>true</VerticalStretch>
+											<Group>Vertical</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<BackColor>style:ЦветФонаБлоковИнформационнойПанели</BackColor>
+											<ExtendedTooltip name="Контейнер20РасширеннаяПодсказка" id="393"/>
+											<ChildItems>
+												<LabelDecoration name="Строка200" id="394">
+													<MaxHeight>5</MaxHeight>
+													<Font ref="style:NormalTextFont" faceName="Arial" height="13" kind="StyleItem"/>
+													<GroupVerticalAlign>Center</GroupVerticalAlign>
+													<BackColor>style:ЦветФонаБлоковИнформационнойПанели</BackColor>
+													<ContextMenu name="Строка200КонтекстноеМеню" id="395"/>
+													<ExtendedTooltip name="Строка200РасширеннаяПодсказка" id="396"/>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаКонтейнер21" id="174">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа контейнер21</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа контейнер11</v8:content>
+										</v8:item>
+									</ToolTip>
+									<VerticalStretch>true</VerticalStretch>
+									<VerticalAlign>Center</VerticalAlign>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<BackColor>style:ЦветФонаБлоковИнформационнойПанели</BackColor>
+									<ExtendedTooltip name="ГруппаКонтейнер21РасширеннаяПодсказка" id="175"/>
+									<ChildItems>
+										<UsualGroup name="Контейнер21" id="176">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Контейнер11</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Контейнер11</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Width>40</Width>
+											<Group>Vertical</Group>
+											<HorizontalAlign>Center</HorizontalAlign>
+											<VerticalAlign>Center</VerticalAlign>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="Контейнер21РасширеннаяПодсказка" id="177"/>
+											<ChildItems>
+												<LabelDecoration name="Строка210" id="178">
+													<MaxHeight>5</MaxHeight>
+													<Font ref="style:NormalTextFont" faceName="Arial" height="14" kind="StyleItem"/>
+													<Title formatted="true"/>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<ContextMenu name="Строка210КонтекстноеМеню" id="179"/>
+													<ExtendedTooltip name="Строка210РасширеннаяПодсказка" id="180"/>
+												</LabelDecoration>
+												<LabelDecoration name="Строка211" id="181">
+													<MaxHeight>5</MaxHeight>
+													<Font ref="style:NormalTextFont" height="11" kind="StyleItem"/>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<ContextMenu name="Строка211КонтекстноеМеню" id="182"/>
+													<ExtendedTooltip name="Строка211РасширеннаяПодсказка" id="183"/>
+												</LabelDecoration>
+												<LabelDecoration name="Строка212" id="184">
+													<Height>1</Height>
+													<MaxHeight>5</MaxHeight>
+													<Font ref="style:NormalTextFont" height="11" kind="StyleItem"/>
+													<Hyperlink>true</Hyperlink>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<ContextMenu name="Строка212КонтекстноеМеню" id="185"/>
+													<ExtendedTooltip name="Строка212РасширеннаяПодсказка" id="186"/>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаКонтейнер22" id="187">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа контейнер22</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа контейнер12</v8:content>
+										</v8:item>
+									</ToolTip>
+									<VerticalStretch>true</VerticalStretch>
+									<VerticalAlign>Center</VerticalAlign>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<BackColor>style:ЦветФонаБлоковИнформационнойПанели</BackColor>
+									<ExtendedTooltip name="ГруппаКонтейнер22РасширеннаяПодсказка" id="188"/>
+									<ChildItems>
+										<UsualGroup name="Контейнер22" id="189">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Контейнер12</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Контейнер11</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Width>40</Width>
+											<Group>Vertical</Group>
+											<HorizontalAlign>Center</HorizontalAlign>
+											<VerticalAlign>Center</VerticalAlign>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="Контейнер22РасширеннаяПодсказка" id="190"/>
+											<ChildItems>
+												<LabelDecoration name="Строка220" id="191">
+													<MaxHeight>5</MaxHeight>
+													<Font ref="style:NormalTextFont" faceName="Arial" height="14" kind="StyleItem"/>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<ContextMenu name="Строка220КонтекстноеМеню" id="192"/>
+													<ExtendedTooltip name="Строка220РасширеннаяПодсказка" id="193"/>
+												</LabelDecoration>
+												<LabelDecoration name="Строка221" id="194">
+													<MaxHeight>5</MaxHeight>
+													<Font ref="style:NormalTextFont" height="11" kind="StyleItem"/>
+													<Title formatted="true"/>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<ContextMenu name="Строка221КонтекстноеМеню" id="195"/>
+													<ExtendedTooltip name="Строка221РасширеннаяПодсказка" id="196"/>
+												</LabelDecoration>
+												<LabelDecoration name="Строка222" id="277">
+													<Height>1</Height>
+													<MaxHeight>5</MaxHeight>
+													<Font ref="style:NormalTextFont" height="11" kind="StyleItem"/>
+													<Hyperlink>true</Hyperlink>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<ContextMenu name="Строка222КонтекстноеМеню" id="278"/>
+													<ExtendedTooltip name="Строка222РасширеннаяПодсказка" id="279"/>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="Ряд3" id="200">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ряд1</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ряд1</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Height>7</Height>
+							<HorizontalStretch>false</HorizontalStretch>
+							<VerticalStretch>false</VerticalStretch>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Ряд3РасширеннаяПодсказка" id="201"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаКонтейнер30" id="397">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа контейнер30</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа контейнер10</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Representation>None</Representation>
+									<United>false</United>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаКонтейнер30РасширеннаяПодсказка" id="398"/>
+									<ChildItems>
+										<UsualGroup name="Контейнер30" id="399">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Контейнер30</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Контейнер10</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Width>18</Width>
+											<VerticalStretch>true</VerticalStretch>
+											<Group>Vertical</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<BackColor>style:ЦветФонаБлоковИнформационнойПанели</BackColor>
+											<ExtendedTooltip name="Контейнер30РасширеннаяПодсказка" id="400"/>
+											<ChildItems>
+												<LabelDecoration name="Строка300" id="401">
+													<MaxHeight>5</MaxHeight>
+													<Font ref="style:NormalTextFont" faceName="Arial" height="13" kind="StyleItem"/>
+													<GroupVerticalAlign>Center</GroupVerticalAlign>
+													<BackColor>style:ЦветФонаБлоковИнформационнойПанели</BackColor>
+													<ContextMenu name="Строка300КонтекстноеМеню" id="402"/>
+													<ExtendedTooltip name="Строка300РасширеннаяПодсказка" id="403"/>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаКонтейнер31" id="209">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа контейнер21</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа контейнер11</v8:content>
+										</v8:item>
+									</ToolTip>
+									<VerticalStretch>true</VerticalStretch>
+									<VerticalAlign>Center</VerticalAlign>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<BackColor>style:ЦветФонаБлоковИнформационнойПанели</BackColor>
+									<ExtendedTooltip name="ГруппаКонтейнер31РасширеннаяПодсказка" id="210"/>
+									<ChildItems>
+										<UsualGroup name="Контейнер31" id="211">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Контейнер31</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Контейнер11</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Width>40</Width>
+											<Group>Vertical</Group>
+											<HorizontalAlign>Center</HorizontalAlign>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="Контейнер31РасширеннаяПодсказка" id="212"/>
+											<ChildItems>
+												<LabelDecoration name="Строка310" id="213">
+													<MaxHeight>5</MaxHeight>
+													<Font ref="style:NormalTextFont" faceName="Arial" height="14" kind="StyleItem"/>
+													<Title formatted="true"/>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<ContextMenu name="Строка310КонтекстноеМеню" id="214"/>
+													<ExtendedTooltip name="Строка310РасширеннаяПодсказка" id="215"/>
+												</LabelDecoration>
+												<LabelDecoration name="Строка311" id="216">
+													<MaxHeight>5</MaxHeight>
+													<Font ref="style:NormalTextFont" height="11" kind="StyleItem"/>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<ContextMenu name="Строка311КонтекстноеМеню" id="217"/>
+													<ExtendedTooltip name="Строка311РасширеннаяПодсказка" id="218"/>
+												</LabelDecoration>
+												<LabelDecoration name="Строка312" id="219">
+													<Height>1</Height>
+													<MaxHeight>5</MaxHeight>
+													<Font ref="style:NormalTextFont" height="11" kind="StyleItem"/>
+													<Hyperlink>true</Hyperlink>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<ContextMenu name="Строка312КонтекстноеМеню" id="220"/>
+													<ExtendedTooltip name="Строка312РасширеннаяПодсказка" id="221"/>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаКонтейнер32" id="222">
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа контейнер12</v8:content>
+										</v8:item>
+									</ToolTip>
+									<VerticalStretch>true</VerticalStretch>
+									<VerticalAlign>Center</VerticalAlign>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<BackColor>style:ЦветФонаБлоковИнформационнойПанели</BackColor>
+									<ExtendedTooltip name="ГруппаКонтейнер32РасширеннаяПодсказка" id="223"/>
+									<ChildItems>
+										<UsualGroup name="Контейнер32" id="224">
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Контейнер11</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Width>40</Width>
+											<Group>Vertical</Group>
+											<HorizontalAlign>Center</HorizontalAlign>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="Контейнер32РасширеннаяПодсказка" id="225"/>
+											<ChildItems>
+												<LabelDecoration name="Строка320" id="226">
+													<MaxHeight>5</MaxHeight>
+													<Font ref="style:NormalTextFont" faceName="Arial" height="14" kind="StyleItem"/>
+													<Title formatted="true"/>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<ContextMenu name="Строка320КонтекстноеМеню" id="227"/>
+													<ExtendedTooltip name="Строка320РасширеннаяПодсказка" id="228"/>
+												</LabelDecoration>
+												<LabelDecoration name="Строка321" id="229">
+													<MaxHeight>5</MaxHeight>
+													<Font ref="style:NormalTextFont" height="11" kind="StyleItem"/>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<ContextMenu name="Строка321КонтекстноеМеню" id="230"/>
+													<ExtendedTooltip name="Строка321РасширеннаяПодсказка" id="231"/>
+												</LabelDecoration>
+												<LabelDecoration name="Строка322" id="232">
+													<Height>1</Height>
+													<MaxHeight>5</MaxHeight>
+													<Font ref="style:NormalTextFont" height="11" kind="StyleItem"/>
+													<Hyperlink>true</Hyperlink>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<ContextMenu name="Строка322КонтекстноеМеню" id="233"/>
+													<ExtendedTooltip name="Строка322РасширеннаяПодсказка" id="234"/>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="Ряд4" id="242">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ряд1</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ряд1</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Height>7</Height>
+							<HorizontalStretch>false</HorizontalStretch>
+							<VerticalStretch>false</VerticalStretch>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Ряд4РасширеннаяПодсказка" id="243"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаКонтейнер40" id="244">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа контейнер40</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа контейнер10</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Representation>None</Representation>
+									<United>false</United>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаКонтейнер40РасширеннаяПодсказка" id="245"/>
+									<ChildItems>
+										<UsualGroup name="Контейнер40" id="246">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Контейнер40</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Контейнер10</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Width>18</Width>
+											<VerticalStretch>true</VerticalStretch>
+											<Group>Vertical</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<BackColor>style:ЦветФонаБлоковИнформационнойПанели</BackColor>
+											<ExtendedTooltip name="Контейнер40РасширеннаяПодсказка" id="247"/>
+											<ChildItems>
+												<LabelDecoration name="Строка400" id="248">
+													<MaxHeight>5</MaxHeight>
+													<Font ref="style:NormalTextFont" faceName="Arial" height="13" kind="StyleItem"/>
+													<GroupVerticalAlign>Center</GroupVerticalAlign>
+													<BackColor>style:ЦветФонаБлоковИнформационнойПанели</BackColor>
+													<ContextMenu name="Строка400КонтекстноеМеню" id="249"/>
+													<ExtendedTooltip name="Строка400РасширеннаяПодсказка" id="250"/>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаКонтейнер41" id="251">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа контейнер21</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа контейнер11</v8:content>
+										</v8:item>
+									</ToolTip>
+									<VerticalStretch>true</VerticalStretch>
+									<VerticalAlign>Center</VerticalAlign>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<BackColor>style:ЦветФонаБлоковИнформационнойПанели</BackColor>
+									<ExtendedTooltip name="ГруппаКонтейнер41РасширеннаяПодсказка" id="252"/>
+									<ChildItems>
+										<UsualGroup name="Контейнер41" id="253">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Контейнер31</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Контейнер11</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Width>40</Width>
+											<Group>Vertical</Group>
+											<HorizontalAlign>Center</HorizontalAlign>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="Контейнер41РасширеннаяПодсказка" id="254"/>
+											<ChildItems>
+												<LabelDecoration name="Строка410" id="255">
+													<MaxHeight>5</MaxHeight>
+													<Font ref="style:NormalTextFont" faceName="Arial" height="14" kind="StyleItem"/>
+													<Title formatted="true"/>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<ContextMenu name="Строка410КонтекстноеМеню" id="256"/>
+													<ExtendedTooltip name="Строка410РасширеннаяПодсказка" id="257"/>
+												</LabelDecoration>
+												<LabelDecoration name="Строка411" id="258">
+													<MaxHeight>5</MaxHeight>
+													<Font ref="style:NormalTextFont" height="11" kind="StyleItem"/>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<ContextMenu name="Строка411КонтекстноеМеню" id="259"/>
+													<ExtendedTooltip name="Строка411РасширеннаяПодсказка" id="260"/>
+												</LabelDecoration>
+												<LabelDecoration name="Строка412" id="261">
+													<Height>1</Height>
+													<MaxHeight>5</MaxHeight>
+													<Font ref="style:NormalTextFont" height="11" kind="StyleItem"/>
+													<Hyperlink>true</Hyperlink>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<ContextMenu name="Строка412КонтекстноеМеню" id="262"/>
+													<ExtendedTooltip name="Строка412РасширеннаяПодсказка" id="263"/>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаКонтейнер42" id="264">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа контейнер42</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа контейнер12</v8:content>
+										</v8:item>
+									</ToolTip>
+									<VerticalStretch>true</VerticalStretch>
+									<VerticalAlign>Center</VerticalAlign>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<BackColor>style:ЦветФонаБлоковИнформационнойПанели</BackColor>
+									<ExtendedTooltip name="ГруппаКонтейнер42РасширеннаяПодсказка" id="265"/>
+									<ChildItems>
+										<UsualGroup name="Контейнер42" id="266">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Контейнер42</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Контейнер11</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Width>40</Width>
+											<Group>Vertical</Group>
+											<HorizontalAlign>Center</HorizontalAlign>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="Контейнер42РасширеннаяПодсказка" id="267"/>
+											<ChildItems>
+												<LabelDecoration name="Строка420" id="268">
+													<MaxHeight>5</MaxHeight>
+													<Font ref="style:NormalTextFont" faceName="Arial" height="14" kind="StyleItem"/>
+													<Title formatted="true"/>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<ContextMenu name="Строка420КонтекстноеМеню" id="269"/>
+													<ExtendedTooltip name="Строка420РасширеннаяПодсказка" id="270"/>
+												</LabelDecoration>
+												<LabelDecoration name="Строка421" id="271">
+													<MaxHeight>5</MaxHeight>
+													<Font ref="style:NormalTextFont" height="11" kind="StyleItem"/>
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>
+</v8:content>
+														</v8:item>
+													</Title>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<VerticalAlign>Center</VerticalAlign>
+													<ContextMenu name="Строка421КонтекстноеМеню" id="272"/>
+													<ExtendedTooltip name="Строка421РасширеннаяПодсказка" id="273"/>
+												</LabelDecoration>
+												<LabelDecoration name="Строка422" id="274">
+													<Height>1</Height>
+													<MaxHeight>5</MaxHeight>
+													<Font ref="style:NormalTextFont" height="11" kind="StyleItem"/>
+													<Hyperlink>true</Hyperlink>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<ContextMenu name="Строка422КонтекстноеМеню" id="275"/>
+													<ExtendedTooltip name="Строка422РасширеннаяПодсказка" id="276"/>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="Ряд5" id="404">
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ряд1</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Height>7</Height>
+							<HorizontalStretch>false</HorizontalStretch>
+							<VerticalStretch>false</VerticalStretch>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Ряд5РасширеннаяПодсказка" id="405"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаКонтейнер50" id="406">
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа контейнер10</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Representation>None</Representation>
+									<United>false</United>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаКонтейнер50РасширеннаяПодсказка" id="407"/>
+									<ChildItems>
+										<UsualGroup name="Контейнер50" id="408">
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Контейнер10</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Width>18</Width>
+											<VerticalStretch>true</VerticalStretch>
+											<Group>Vertical</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<BackColor>style:ЦветФонаБлоковИнформационнойПанели</BackColor>
+											<ExtendedTooltip name="Контейнер50РасширеннаяПодсказка" id="409"/>
+											<ChildItems>
+												<LabelDecoration name="Строка500" id="410">
+													<MaxHeight>5</MaxHeight>
+													<Font ref="style:NormalTextFont" faceName="Arial" height="13" kind="StyleItem"/>
+													<GroupVerticalAlign>Center</GroupVerticalAlign>
+													<BackColor>style:ЦветФонаБлоковИнформационнойПанели</BackColor>
+													<ContextMenu name="Строка500КонтекстноеМеню" id="411"/>
+													<ExtendedTooltip name="Строка500РасширеннаяПодсказка" id="412"/>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаКонтейнер51" id="413">
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа контейнер11</v8:content>
+										</v8:item>
+									</ToolTip>
+									<VerticalStretch>true</VerticalStretch>
+									<VerticalAlign>Center</VerticalAlign>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<BackColor>style:ЦветФонаБлоковИнформационнойПанели</BackColor>
+									<ExtendedTooltip name="ГруппаКонтейнер51РасширеннаяПодсказка" id="414"/>
+									<ChildItems>
+										<UsualGroup name="Контейнер51" id="415">
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Контейнер11</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Width>40</Width>
+											<Group>Vertical</Group>
+											<HorizontalAlign>Center</HorizontalAlign>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="Контейнер51РасширеннаяПодсказка" id="416"/>
+											<ChildItems>
+												<LabelDecoration name="Строка510" id="417">
+													<MaxHeight>5</MaxHeight>
+													<Font ref="style:NormalTextFont" faceName="Arial" height="14" kind="StyleItem"/>
+													<Title formatted="true"/>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<ContextMenu name="Строка510КонтекстноеМеню" id="418"/>
+													<ExtendedTooltip name="Строка510РасширеннаяПодсказка" id="419"/>
+												</LabelDecoration>
+												<LabelDecoration name="Строка511" id="420">
+													<MaxHeight>5</MaxHeight>
+													<Font ref="style:NormalTextFont" height="11" kind="StyleItem"/>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<ContextMenu name="Строка511КонтекстноеМеню" id="421"/>
+													<ExtendedTooltip name="Строка511РасширеннаяПодсказка" id="422"/>
+												</LabelDecoration>
+												<LabelDecoration name="Строка512" id="423">
+													<Height>1</Height>
+													<MaxHeight>5</MaxHeight>
+													<Font ref="style:NormalTextFont" height="11" kind="StyleItem"/>
+													<Hyperlink>true</Hyperlink>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<ContextMenu name="Строка512КонтекстноеМеню" id="424"/>
+													<ExtendedTooltip name="Строка512РасширеннаяПодсказка" id="425"/>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаКонтейнер52" id="426">
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа контейнер12</v8:content>
+										</v8:item>
+									</ToolTip>
+									<VerticalStretch>true</VerticalStretch>
+									<VerticalAlign>Center</VerticalAlign>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<BackColor>style:ЦветФонаБлоковИнформационнойПанели</BackColor>
+									<ExtendedTooltip name="ГруппаКонтейнер52РасширеннаяПодсказка" id="427"/>
+									<ChildItems>
+										<UsualGroup name="Контейнер52" id="428">
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Контейнер11</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Width>40</Width>
+											<Group>Vertical</Group>
+											<HorizontalAlign>Center</HorizontalAlign>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="Контейнер52РасширеннаяПодсказка" id="429"/>
+											<ChildItems>
+												<LabelDecoration name="Строка520" id="430">
+													<MaxHeight>5</MaxHeight>
+													<Font ref="style:NormalTextFont" faceName="Arial" height="14" kind="StyleItem"/>
+													<Title formatted="true"/>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<ContextMenu name="Строка520КонтекстноеМеню" id="431"/>
+													<ExtendedTooltip name="Строка520РасширеннаяПодсказка" id="432"/>
+												</LabelDecoration>
+												<LabelDecoration name="Строка521" id="433">
+													<MaxHeight>5</MaxHeight>
+													<Font ref="style:NormalTextFont" height="11" kind="StyleItem"/>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<ContextMenu name="Строка521КонтекстноеМеню" id="434"/>
+													<ExtendedTooltip name="Строка521РасширеннаяПодсказка" id="435"/>
+												</LabelDecoration>
+												<LabelDecoration name="Строка522" id="436">
+													<Height>1</Height>
+													<MaxHeight>5</MaxHeight>
+													<Font ref="style:NormalTextFont" height="11" kind="StyleItem"/>
+													<Hyperlink>true</Hyperlink>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<ContextMenu name="Строка522КонтекстноеМеню" id="437"/>
+													<ExtendedTooltip name="Строка522РасширеннаяПодсказка" id="438"/>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="Ряд6" id="315">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ряд1</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ряд1</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Height>7</Height>
+							<HorizontalStretch>false</HorizontalStretch>
+							<VerticalStretch>false</VerticalStretch>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="Ряд6РасширеннаяПодсказка" id="316"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаКонтейнер60" id="317">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа контейнер60</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа контейнер10</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Representation>None</Representation>
+									<United>false</United>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаКонтейнер60РасширеннаяПодсказка" id="318"/>
+									<ChildItems>
+										<UsualGroup name="Контейнер60" id="319">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Контейнер60</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Контейнер10</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Width>18</Width>
+											<VerticalStretch>true</VerticalStretch>
+											<Group>Vertical</Group>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<BackColor>style:ЦветФонаБлоковИнформационнойПанели</BackColor>
+											<ExtendedTooltip name="Контейнер60РасширеннаяПодсказка" id="320"/>
+											<ChildItems>
+												<LabelDecoration name="Строка600" id="321">
+													<MaxHeight>5</MaxHeight>
+													<Font ref="style:NormalTextFont" faceName="Arial" height="13" kind="StyleItem"/>
+													<GroupVerticalAlign>Center</GroupVerticalAlign>
+													<BackColor>style:ЦветФонаБлоковИнформационнойПанели</BackColor>
+													<ContextMenu name="Строка600КонтекстноеМеню" id="322"/>
+													<ExtendedTooltip name="Строка600РасширеннаяПодсказка" id="323"/>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаКонтейнер61" id="324">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа контейнер61</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа контейнер11</v8:content>
+										</v8:item>
+									</ToolTip>
+									<VerticalStretch>true</VerticalStretch>
+									<VerticalAlign>Center</VerticalAlign>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<BackColor>style:ЦветФонаБлоковИнформационнойПанели</BackColor>
+									<ExtendedTooltip name="ГруппаКонтейнер61РасширеннаяПодсказка" id="325"/>
+									<ChildItems>
+										<UsualGroup name="Контейнер61" id="326">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Контейнер61</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Контейнер11</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Width>40</Width>
+											<Group>Vertical</Group>
+											<HorizontalAlign>Center</HorizontalAlign>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="Контейнер61РасширеннаяПодсказка" id="327"/>
+											<ChildItems>
+												<LabelDecoration name="Строка610" id="328">
+													<MaxHeight>5</MaxHeight>
+													<Font ref="style:NormalTextFont" faceName="Arial" height="14" kind="StyleItem"/>
+													<Title formatted="true"/>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<ContextMenu name="Строка610КонтекстноеМеню" id="329"/>
+													<ExtendedTooltip name="Строка610РасширеннаяПодсказка" id="330"/>
+												</LabelDecoration>
+												<LabelDecoration name="Строка611" id="331">
+													<MaxHeight>5</MaxHeight>
+													<Font ref="style:NormalTextFont" height="11" kind="StyleItem"/>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<ContextMenu name="Строка611КонтекстноеМеню" id="332"/>
+													<ExtendedTooltip name="Строка611РасширеннаяПодсказка" id="333"/>
+												</LabelDecoration>
+												<LabelDecoration name="Строка612" id="334">
+													<Height>1</Height>
+													<MaxHeight>5</MaxHeight>
+													<Font ref="style:NormalTextFont" height="11" kind="StyleItem"/>
+													<Hyperlink>true</Hyperlink>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<ContextMenu name="Строка612КонтекстноеМеню" id="335"/>
+													<ExtendedTooltip name="Строка612РасширеннаяПодсказка" id="336"/>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаКонтейнер62" id="337">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа контейнер62</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа контейнер12</v8:content>
+										</v8:item>
+									</ToolTip>
+									<VerticalStretch>true</VerticalStretch>
+									<VerticalAlign>Center</VerticalAlign>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<BackColor>style:ЦветФонаБлоковИнформационнойПанели</BackColor>
+									<ExtendedTooltip name="ГруппаКонтейнер62РасширеннаяПодсказка" id="338"/>
+									<ChildItems>
+										<UsualGroup name="Контейнер62" id="339">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Контейнер62</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Контейнер11</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Width>40</Width>
+											<Group>Vertical</Group>
+											<HorizontalAlign>Center</HorizontalAlign>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="Контейнер62РасширеннаяПодсказка" id="340"/>
+											<ChildItems>
+												<LabelDecoration name="Строка620" id="341">
+													<MaxHeight>5</MaxHeight>
+													<Font ref="style:NormalTextFont" faceName="Arial" height="14" kind="StyleItem"/>
+													<Title formatted="true"/>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<ContextMenu name="Строка620КонтекстноеМеню" id="342"/>
+													<ExtendedTooltip name="Строка620РасширеннаяПодсказка" id="343"/>
+												</LabelDecoration>
+												<LabelDecoration name="Строка621" id="344">
+													<MaxHeight>5</MaxHeight>
+													<Font ref="style:NormalTextFont" height="11" kind="StyleItem"/>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<ContextMenu name="Строка621КонтекстноеМеню" id="345"/>
+													<ExtendedTooltip name="Строка621РасширеннаяПодсказка" id="346"/>
+												</LabelDecoration>
+												<LabelDecoration name="Строка622" id="347">
+													<Height>1</Height>
+													<MaxHeight>5</MaxHeight>
+													<Font ref="style:NormalTextFont" height="11" kind="StyleItem"/>
+													<Hyperlink>true</Hyperlink>
+													<HorizontalAlign>Center</HorizontalAlign>
+													<ContextMenu name="Строка622КонтекстноеМеню" id="348"/>
+													<ExtendedTooltip name="Строка622РасширеннаяПодсказка" id="349"/>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ТекущийДень" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текущий день</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЦветСерыйБлок" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Цвет серый блок</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЦветЗеленыйБлок" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Цвет зеленый блок</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЦветЖелтыйБлок" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Цвет желтый блок</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЦветКрасныйБлок" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Цвет красный блок</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ШрифтСсылок" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шрифт ссылок</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Font</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ШрифтЗаголовков" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шрифт заголовков</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Font</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ФорматДата" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Формат дата</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>30</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ШрифтТекста" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шрифт текста</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Font</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресСсылокНадписей" id="19">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес ссылок надписей</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТекущееЧислоРядов" id="20">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текущее число рядов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>2</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ИдентификаторЗадания" id="22">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Идентификатор задания</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:UUID</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресРезультата" id="23">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес результата</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Объект" id="24">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Объект</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.МониторНалоговИОтчетности</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ИдентификаторЗаданияАктуализации" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Идентификатор задания актуализации</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:UUID</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="АктуализацияВозможна" id="25">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Актуализация возможна</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресХранилищаАктуализации" id="27">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес хранилища актуализации</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПрогрессорАктуализации" id="28">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Прогрессор актуализации</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТекстПриАктуализации" id="29">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текст при актуализации</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТребуетсяАктуализация" id="31">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Требуется актуализация</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="МаксДата" id="32">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Макс дата</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="МинДата" id="33">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Мин дата</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ДатаНачалаДеятельности" id="34">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата начала деятельности</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗаданиеЗапущеноВДругойФорме" id="35">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Задание запущено в другой форме</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЕстьПравоНаАктуализацию" id="36">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Есть право на актуализацию</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтсутствуютВидыДеятельностиЕНВД" id="38">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отсутствуют виды деятельности ЕНВД</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтсутствуютПатенты" id="39">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отсутствуют патенты</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресНавигационныхСсылок" id="40">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес навигационных ссылок</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ДатаАктуальности" id="41">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата актуальности</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЕстьПравоВыполненияЗадачи" id="42">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Есть право выполнения задачи</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОрганизацияПредставление" id="43">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Организация</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+			</Type>
+			<FunctionalOptions>
+				<Item>FunctionalOption.НеИспользоватьНесколькоОрганизацийБухгалтерскийУчет</Item>
+			</FunctionalOptions>
+		</Attribute>
+		<Attribute name="Организация" id="44">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Организация</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+			</Type>
+			<FunctionalOptions>
+				<Item>FunctionalOption.ИспользоватьНесколькоОрганизацийБухгалтерскийУчет</Item>
+			</FunctionalOptions>
+		</Attribute>
+		<Attribute name="ВсеЗадачиВыполнены" id="45">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Все задачи выполнены</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="РазрешенУчетРегулярнойДеятельности" id="46">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Разрешен учет регулярной деятельности</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="УпрощеннаяНулеваяОтчетность" id="47">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Упрощенная нулевая отчетность</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЭтоИПНулевка" id="48">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Это ИПНулевка</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="РадостныйСмайлик" id="49">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Радостный смайлик</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:Type>v8ui:Picture</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЦветПустойБлок" id="50">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Цвет пустой блок</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТекстБаннера" id="51">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текст баннера</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:FormattedString</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Баннер" id="52">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Баннер</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="ИспользуетсяКомандаНалоги" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Используется команда налоги</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Актуализировать" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Актуализировать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Актуализировать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Актуализировать</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОбновитьМонитор" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить монитор</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Shortcut>F5</Shortcut>
+			<Picture>
+				<xr:Ref>StdPicture.Refresh</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОбновитьМонитор</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="НастройкаНалоговИОтчетов" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройка налогов и отчетов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройка налогов и отчетов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>НастройкаНалоговИОтчетов</Action>
+			<FunctionalOptions>
+				<Item>FunctionalOption.ИнтерфейсТаксиПростой</Item>
+			</FunctionalOptions>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="Организация">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+			</Type>
+		</Parameter>
+	</Parameters>
+	<CommandInterface>
+		<NavigationPanel>
+			<Item>
+				<Command>DataProcessor.ПанелиПростойИнтерфейс.Command.Отчетность</Command>
+				<Type>Added</Type>
+				<CommandGroup>FormNavigationPanelImportant</CommandGroup>
+				<DefaultVisible>false</DefaultVisible>
+			</Item>
+			<Item>
+				<Command>DataProcessor.ПанелиПростойИнтерфейс.Command.СписокЗадач</Command>
+				<Type>Added</Type>
+				<CommandGroup>FormNavigationPanelImportant</CommandGroup>
+				<Index>1</Index>
+				<DefaultVisible>false</DefaultVisible>
+			</Item>
+			<Item>
+				<Command>CommonCommand.СравнениеРежимовНалогообложения</Command>
+				<Type>Added</Type>
+				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
+				<Index>8</Index>
+				<DefaultVisible>false</DefaultVisible>
+			</Item>
+			<Item>
+				<Command>DataProcessor.СверкаНалоговСФНС.Command.СверкаНалоговСФНС_ПростойИнтерфейс</Command>
+				<Type>Added</Type>
+				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
+				<Index>6</Index>
+				<DefaultVisible>false</DefaultVisible>
+			</Item>
+			<Item>
+				<Command>Report.КнигаПокупок.Command.КнигаПокупокПростойИнтерфейс</Command>
+				<Type>Added</Type>
+				<CommandGroup>FormNavigationPanelImportant</CommandGroup>
+				<Index>6</Index>
+				<DefaultVisible>false</DefaultVisible>
+			</Item>
+			<Item>
+				<Command>Report.КнигаПродаж.Command.КнигаПродажПростойИнтерфейс</Command>
+				<Type>Added</Type>
+				<CommandGroup>FormNavigationPanelImportant</CommandGroup>
+				<Index>7</Index>
+				<DefaultVisible>false</DefaultVisible>
+			</Item>
+			<Item>
+				<Command>Report.КнигаУчетаДоходовИРасходов.Command.КнигаУчетаДоходовИРасходовПростойИнтерфейс</Command>
+				<Type>Added</Type>
+				<CommandGroup>FormNavigationPanelImportant</CommandGroup>
+				<Index>8</Index>
+				<DefaultVisible>false</DefaultVisible>
+			</Item>
+			<Item>
+				<Command>Report.КнигаУчетаДоходовПатент.Command.КнигаУчетаДоходовПатентПростойИнтерфейс</Command>
+				<Type>Added</Type>
+				<CommandGroup>FormNavigationPanelImportant</CommandGroup>
+				<Index>9</Index>
+				<DefaultVisible>false</DefaultVisible>
+			</Item>
+			<Item>
+				<Command>DataProcessor.ПомощникРасчетаНДС.Command.ОтчетностьПоНДСПростойИнтерфейс</Command>
+				<Type>Added</Type>
+				<CommandGroup>FormNavigationPanelImportant</CommandGroup>
+				<Index>5</Index>
+				<DefaultVisible>false</DefaultVisible>
+			</Item>
+			<Item>
+				<Command>Report.КнигаУчетаДоходовИРасходовПредпринимателя.Command.КнигаДоходовИРасходовПредпринимателяПростойИнтерфейс</Command>
+				<Type>Added</Type>
+				<CommandGroup>FormNavigationPanelImportant</CommandGroup>
+				<Index>4</Index>
+				<DefaultVisible>false</DefaultVisible>
+			</Item>
+			<Item>
+				<Command>DataProcessor.ПомощникЗаполнения3НДФЛ.Command.ПомощникЗаполнения3НДФЛПростойИнтерфейс</Command>
+				<Type>Added</Type>
+				<CommandGroup>FormNavigationPanelImportant</CommandGroup>
+				<Index>3</Index>
+				<DefaultVisible>false</DefaultVisible>
+			</Item>
+			<Item>
+				<Command>DataProcessor.РасчетСтраховыхВзносовИП.Command.ФиксированныеСтраховыеВзносыПростойИнтерфейс</Command>
+				<Type>Added</Type>
+				<CommandGroup>FormNavigationPanelImportant</CommandGroup>
+				<Index>2</Index>
+				<DefaultVisible>false</DefaultVisible>
+			</Item>
+			<Item>
+				<Command>CommonCommand.ОценкаРискаНалоговойПроверки</Command>
+				<Type>Added</Type>
+				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
+				<Index>7</Index>
+				<DefaultVisible>false</DefaultVisible>
+			</Item>
+		</NavigationPanel>
+	</CommandInterface>
+</Form>

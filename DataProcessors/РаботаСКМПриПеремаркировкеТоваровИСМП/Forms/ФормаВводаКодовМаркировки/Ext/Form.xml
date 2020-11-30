@@ -1,0 +1,554 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoTitle>false</AutoTitle>
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="Закрыть" id="74">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Close</CommandName>
+				<ExtendedTooltip name="ЗакрытьРасширеннаяПодсказка" id="75"/>
+			</Button>
+			<Button name="Назад" id="91">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.Назад</CommandName>
+				<ExtendedTooltip name="НазадРасширеннаяПодсказка" id="92"/>
+			</Button>
+			<Button name="РаспечататьНовыйКодМаркировки" id="132">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.РаспечататьНовыйКодМаркировки</CommandName>
+				<ExtendedTooltip name="РаспечататьНовыйКодМаркировкиРасширеннаяПодсказка" id="133"/>
+			</Button>
+			<Button name="Готово" id="34">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<SkipOnInput>false</SkipOnInput>
+				<CommandName>Form.Command.Далее</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Готово</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ГотовоРасширеннаяПодсказка" id="35"/>
+			</Button>
+			<Button name="ФормаСправка" id="203">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Help</CommandName>
+				<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+				<ExtendedTooltip name="ФормаСправкаРасширеннаяПодсказка" id="204"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="ExternalEvent">ВнешнееСобытие</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="OnClose">ПриЗакрытии</Event>
+		<Event name="FillCheckProcessingAtServer">ОбработкаПроверкиЗаполненияНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаИнформация" id="95">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа информация</v8:content>
+				</v8:item>
+			</Title>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаИнформацияРасширеннаяПодсказка" id="96"/>
+		</UsualGroup>
+		<Pages name="СтраницыДанных" id="40">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы данных</v8:content>
+				</v8:item>
+			</Title>
+			<ExtendedTooltip name="СтраницыДанныхРасширеннаяПодсказка" id="41"/>
+			<ChildItems>
+				<Page name="СтраницаКодМаркировки" id="44">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выбрать код маркировки</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаКодМаркировкиРасширеннаяПодсказка" id="45"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаПредставление" id="146">
+							<Group>AlwaysHorizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаПредставлениеРасширеннаяПодсказка" id="147"/>
+							<ChildItems>
+								<Button name="ПоискПоШтрихкоду" id="54">
+									<Type>UsualButton</Type>
+									<Representation>Picture</Representation>
+									<Width>3</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>3</MaxWidth>
+									<CommandName>Form.Command.ПоискПоШтрихкоду</CommandName>
+									<ExtendedTooltip name="ПоискПоШтрихкодуРасширеннаяПодсказка" id="55"/>
+								</Button>
+								<LabelField name="Представление" id="197">
+									<DataPath>Представление</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Номенклатура</v8:content>
+										</v8:item>
+									</Title>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ContextMenu name="ПредставлениеКонтекстноеМеню" id="198"/>
+									<ExtendedTooltip name="ПредставлениеРасширеннаяПодсказка" id="199"/>
+									<Events>
+										<Event name="URLProcessing">ПредставлениеОбработкаНавигационнойСсылки</Event>
+									</Events>
+								</LabelField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаКодМаркировки" id="99">
+							<Group>AlwaysHorizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаКодМаркировкиРасширеннаяПодсказка" id="100"/>
+							<ChildItems>
+								<InputField name="КодМаркировки" id="48">
+									<DataPath>Объект.КодМаркировки</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<AutoMarkIncomplete>true</AutoMarkIncomplete>
+									<ContextMenu name="КодМаркировкиКонтекстноеМеню" id="49"/>
+									<ExtendedTooltip name="КодМаркировкиРасширеннаяПодсказка" id="50"/>
+									<Events>
+										<Event name="OnChange">КодМаркировкиПриИзменении</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<RadioButtonField name="ПричинаПеремаркировки" id="182">
+							<DataPath>Объект.ПричинаПеремаркировки</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Причина</v8:content>
+								</v8:item>
+							</Title>
+							<RadioButtonType>Auto</RadioButtonType>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Испорчено или утрачено СИ с КМ</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xr:DesignTimeRef">Enum.ПричиныПеремаркировкиТоваровИСМП.EnumValue.ИспорченоУтраченоСИКМ</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Выявлены ошибки описания товара</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xr:DesignTimeRef">Enum.ПричиныПеремаркировкиТоваровИСМП.EnumValue.ОшибкиОписанияТовара</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="ПричинаПеремаркировкиКонтекстноеМеню" id="183"/>
+							<ExtendedTooltip name="ПричинаПеремаркировкиРасширеннаяПодсказка" id="184"/>
+							<Events>
+								<Event name="OnChange">ПричинаПеремаркировкиПриИзменении</Event>
+							</Events>
+						</RadioButtonField>
+						<PictureDecoration name="ДекорацияКартинка" id="104">
+							<HorizontalStretch>true</HorizontalStretch>
+							<SkipOnInput>false</SkipOnInput>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>На этом месте должна быть картинка сканирования кода маркировки</v8:content>
+								</v8:item>
+							</Title>
+							<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+							<GroupVerticalAlign>Center</GroupVerticalAlign>
+							<FileDragMode>AsFile</FileDragMode>
+							<ContextMenu name="ДекорацияКартинкаКонтекстноеМеню" id="105"/>
+							<ExtendedTooltip name="ДекорацияКартинкаРасширеннаяПодсказка" id="106"/>
+						</PictureDecoration>
+						<LabelDecoration name="ДекорацияПодсказка" id="101">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>55</MaxWidth>
+							<Title formatted="true">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Если код маркировки не читается или отсутствует - &lt;b&gt;выберите&lt;/&gt;&lt;b&gt; номенклатуру и &lt;/&gt;&lt;b&gt;элемент&lt;/&gt;&lt;b&gt; &lt;/&gt;&lt;b&gt;из&lt;/&gt;&lt;b&gt; &lt;/&gt;&lt;b&gt;списка&lt;/&gt;</v8:content>
+								</v8:item>
+							</Title>
+							<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+							<ContextMenu name="ДекорацияПодсказкаКонтекстноеМеню" id="102"/>
+							<ExtendedTooltip name="ДекорацияПодсказкаРасширеннаяПодсказка" id="103"/>
+						</LabelDecoration>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаНовыйКодМаркировки" id="46">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выбрать новый код маркировки</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаНовыйКодМаркировкиРасширеннаяПодсказка" id="47"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаНовоеПредставление" id="173">
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаНовоеПредставлениеРасширеннаяПодсказка" id="174"/>
+							<ChildItems>
+								<Button name="НовыйПоискПоШтрихкоду" id="175">
+									<Type>UsualButton</Type>
+									<Representation>Picture</Representation>
+									<Width>3</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>3</MaxWidth>
+									<CommandName>Form.Command.ПоискПоШтрихкоду</CommandName>
+									<ExtendedTooltip name="НовыйПоискПоШтрихкодуРасширеннаяПодсказка" id="176"/>
+								</Button>
+								<LabelField name="НовоеПредставление" id="194">
+									<DataPath>НовоеПредставление</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Номенклатура</v8:content>
+										</v8:item>
+									</Title>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<ContextMenu name="НовоеПредставлениеКонтекстноеМеню" id="195"/>
+									<ExtendedTooltip name="НовоеПредставлениеРасширеннаяПодсказка" id="196"/>
+									<Events>
+										<Event name="URLProcessing">НовоеПредставлениеОбработкаНавигационнойСсылки</Event>
+									</Events>
+								</LabelField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаНовыйКодМаркировки" id="84">
+							<Group>AlwaysHorizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаНовыйКодМаркировкиРасширеннаяПодсказка" id="85"/>
+							<ChildItems>
+								<InputField name="НовыйКодМаркировки" id="51">
+									<DataPath>Объект.НовыйКодМаркировки</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<AutoMarkIncomplete>true</AutoMarkIncomplete>
+									<ContextMenu name="НовыйКодМаркировкиКонтекстноеМеню" id="52"/>
+									<ExtendedTooltip name="НовыйКодМаркировкиРасширеннаяПодсказка" id="53"/>
+									<Events>
+										<Event name="OnChange">НовыйКодМаркировкиПриИзменении</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<RadioButtonField name="НоваяПричинаПеремаркировки" id="200">
+							<DataPath>Объект.ПричинаПеремаркировки</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Причина</v8:content>
+								</v8:item>
+							</Title>
+							<RadioButtonType>Auto</RadioButtonType>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Испорчено или утрачено СИ с КМ</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xr:DesignTimeRef">Enum.ПричиныПеремаркировкиТоваровИСМП.EnumValue.ИспорченоУтраченоСИКМ</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Выявлены ошибки описания товара</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xr:DesignTimeRef">Enum.ПричиныПеремаркировкиТоваровИСМП.EnumValue.ОшибкиОписанияТовара</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="НоваяПричинаПеремаркировкиКонтекстноеМеню" id="201"/>
+							<ExtendedTooltip name="НоваяПричинаПеремаркировкиРасширеннаяПодсказка" id="202"/>
+							<Events>
+								<Event name="OnChange">ПричинаПеремаркировкиПриИзменении</Event>
+							</Events>
+						</RadioButtonField>
+						<PictureDecoration name="ДекорацияНоваяКартинка" id="78">
+							<HorizontalStretch>true</HorizontalStretch>
+							<SkipOnInput>false</SkipOnInput>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>На этом месте должна быть картинка сканирования кода маркировки</v8:content>
+								</v8:item>
+							</Title>
+							<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+							<GroupVerticalAlign>Center</GroupVerticalAlign>
+							<FileDragMode>AsFile</FileDragMode>
+							<ContextMenu name="ДекорацияНоваяКартинкаКонтекстноеМеню" id="79"/>
+							<ExtendedTooltip name="ДекорацияНоваяКартинкаРасширеннаяПодсказка" id="80"/>
+						</PictureDecoration>
+						<LabelDecoration name="ДекорацияНоваяПодсказка" id="81">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>55</MaxWidth>
+							<Title formatted="true">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Если код маркировки не читается или отсутствует - &lt;b&gt;выберите&lt;/&gt;&lt;b&gt; &lt;/&gt;&lt;b&gt;элемент&lt;/&gt;&lt;b&gt; &lt;/&gt;&lt;b&gt;из&lt;/&gt;&lt;b&gt; &lt;/&gt;&lt;b&gt;списка&lt;/&gt;&lt;b&gt; &lt;/&gt;или воспользуйтесь функцией &lt;b&gt;Распечатать новый&lt;/&gt;</v8:content>
+								</v8:item>
+							</Title>
+							<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+							<ContextMenu name="ДекорацияНоваяПодсказкаКонтекстноеМеню" id="82"/>
+							<ExtendedTooltip name="ДекорацияНоваяПодсказкаРасширеннаяПодсказка" id="83"/>
+						</LabelDecoration>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.РаботаСКМПриПеремаркировкеТоваровИСМП</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="АдресТаблицыТоварыИсточника" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес таблицы товары источника</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="НовоеПредставление" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Новое представление</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:FormattedString</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Представление" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Представление</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:FormattedString</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПоддерживаемыеТипыПодключаемогоОборудования" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поддерживаемые типы подключаемого оборудования</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ИспользоватьПодключаемоеОборудование" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Использовать подключаемое оборудование</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресРезультатаПриЗакрытии" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес результата при закрытии</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КэшМаркируемойПродукции" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кэш маркируемой продукции</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КодМаркировкиДляУточнения" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Код маркировки для уточнения</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Далее" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Далее</v8:content>
+				</v8:item>
+			</Title>
+			<Action>Далее</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Назад" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Назад</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отмена</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Назад</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПоискПоШтрихкоду" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поиск по штрихкоду</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>CommonPicture.НовыйПоШтрихкоду</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>ПоискПоШтрихкоду</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="РаспечататьНовыйКодМаркировки" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Распечатать новый</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.Print</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>РаспечататьНовыйКодМаркировки</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="ХарактеристикиИспользуются">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="Номенклатура">
+			<Type/>
+		</Parameter>
+		<Parameter name="Характеристика">
+			<Type/>
+		</Parameter>
+		<Parameter name="КодМаркировки">
+			<Type/>
+		</Parameter>
+		<Parameter name="НовыйКодМаркировки">
+			<Type/>
+		</Parameter>
+		<Parameter name="НоваяНоменклатура">
+			<Type/>
+		</Parameter>
+		<Parameter name="НоваяХарактеристика">
+			<Type/>
+		</Parameter>
+		<Parameter name="ПричинаПеремаркировки">
+			<Type/>
+		</Parameter>
+		<Parameter name="ВидПродукции">
+			<Type/>
+		</Parameter>
+		<Parameter name="ДанныеВыбораПоМаркируемойПродукции">
+			<Type/>
+		</Parameter>
+		<Parameter name="СпособВводаВОборот">
+			<Type/>
+		</Parameter>
+		<Parameter name="РедактированиеФормыНеДоступно">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="БлокировкаРедактированияСтарогоКода">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

@@ -1,0 +1,436 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаКомандаОК" id="1">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.КомандаОК</CommandName>
+				<ExtendedTooltip name="ФормаКомандаОКРасширеннаяПодсказка" id="2"/>
+			</Button>
+			<Button name="ФормаОтмена" id="3">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Cancel</CommandName>
+				<ExtendedTooltip name="ФормаОтменаРасширеннаяПодсказка" id="4"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаРасходыНаОбучение" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>По расходам на обучение</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="ГруппаРасходыНаОбучениеРасширеннаяПодсказка" id="6"/>
+			<ChildItems>
+				<InputField name="ОбучениеСвое" id="7">
+					<DataPath>ОбучениеСвое</DataPath>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<ChoiceButton>false</ChoiceButton>
+					<ContextMenu name="ОбучениеСвоеКонтекстноеМеню" id="8"/>
+					<ExtendedTooltip name="ОбучениеСвоеРасширеннаяПодсказка" id="9">
+						<Title formatted="true">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сумма расходов на оплату собственного обучения и очного обучения брата (сестры) в возрасте до 24 лет.
+
+&lt;link https://its.1c.ru/bmk/ndfl_deduction/education&gt;Подробнее&lt;/&gt;</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
+				</InputField>
+				<InputField name="ОбучениеДетей" id="10">
+					<DataPath>ОбучениеДетей</DataPath>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<ChoiceButton>false</ChoiceButton>
+					<ContextMenu name="ОбучениеДетейКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="ОбучениеДетейРасширеннаяПодсказка" id="12">
+						<Title formatted="true">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сумма расходов на обучение детей по очной форме (не более 50'000 рублей за каждого ребенка на обоих родителей). Исключаются расходы, оплаченные за счет средств материнского капитала.
+&lt;link https://its.1c.ru/bmk/ndfl_deduction/education&gt;
+&lt;/&gt;&lt;link https://its.1c.ru/bmk/ndfl_deduction/education&gt;Подробнее&lt;/&gt;</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаРасходыНаЛечение" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>По расходам на лечение и медикаменты</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="ГруппаРасходыНаЛечениеРасширеннаяПодсказка" id="14"/>
+			<ChildItems>
+				<InputField name="МедицинскоеСтрахование" id="18">
+					<DataPath>МедицинскоеСтрахование</DataPath>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<ChoiceButton>false</ChoiceButton>
+					<ContextMenu name="МедицинскоеСтрахованиеКонтекстноеМеню" id="19"/>
+					<ExtendedTooltip name="МедицинскоеСтрахованиеРасширеннаяПодсказка" id="20">
+						<Title formatted="true">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сумма страховых взносов, уплаченная за себя или близких родственников по договорам добровольного медицинского страхования.
+
+&lt;link https://its.1c.ru/bmk/ndfl_deduction/med&gt;Подробнее&lt;/&gt;</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
+				</InputField>
+				<InputField name="ЛечениеМедикаменты" id="21">
+					<DataPath>ЛечениеМедикаменты</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Медицинские услуги и лекарства</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<ChoiceButton>false</ChoiceButton>
+					<ContextMenu name="ЛечениеМедикаментыКонтекстноеМеню" id="22"/>
+					<ExtendedTooltip name="ЛечениеМедикаментыРасширеннаяПодсказка" id="23">
+						<Title formatted="true">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сумма расходов на оплату медицинских услуг и приобретение лекарств, назначенных лечащим врачом.
+
+&lt;link https://its.1c.ru/bmk/ndfl_deduction/med&gt;Подробнее&lt;/&gt;</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
+				</InputField>
+				<InputField name="ОбычноеЛечение" id="35">
+					<DataPath>ОбычноеЛечение</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Медицинские услуги</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<ChoiceButton>false</ChoiceButton>
+					<ContextMenu name="ОбычноеЛечениеКонтекстноеМеню" id="36"/>
+					<ExtendedTooltip name="ОбычноеЛечениеРасширеннаяПодсказка" id="37">
+						<Title formatted="true">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сумма расходов на оплату медицинских услуг, за исключением дорогостоящих видов лечения.
+
+&lt;link https://its.1c.ru/bmk/ndfl_deduction/med&gt;Подробнее&lt;/&gt;</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
+				</InputField>
+				<InputField name="ДорогостоящееЛечение" id="15">
+					<DataPath>ДорогостоящееЛечение</DataPath>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<ChoiceButton>false</ChoiceButton>
+					<ContextMenu name="ДорогостоящееЛечениеКонтекстноеМеню" id="16"/>
+					<ExtendedTooltip name="ДорогостоящееЛечениеРасширеннаяПодсказка" id="17">
+						<Title formatted="true">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сумма расходов на оплату дорогостоящих видов лечения из определенного &lt;link https://its.1c.ru/bmk/ndfl_deduction/govres201&gt;Перечня
+
+&lt;/&gt;&lt;link https://its.1c.ru/bmk/ndfl_deduction/med&gt;Подробнее&lt;/&gt;</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
+				</InputField>
+				<InputField name="Медикаменты" id="38">
+					<DataPath>Медикаменты</DataPath>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<ChoiceButton>false</ChoiceButton>
+					<ContextMenu name="МедикаментыКонтекстноеМеню" id="39"/>
+					<ExtendedTooltip name="МедикаментыРасширеннаяПодсказка" id="40">
+						<Title formatted="true">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сумма расходов на приобретение медикаментов, назначенных лечащим врачом.
+
+&lt;link https://its.1c.ru/bmk/ndfl_deduction/med&gt;Подробнее&lt;/&gt;</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаПрочиеРасходы" id="24">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>По прочим расходам</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="ГруппаПрочиеРасходыРасширеннаяПодсказка" id="25"/>
+			<ChildItems>
+				<InputField name="Пожертвования" id="26">
+					<DataPath>Пожертвования</DataPath>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<ChoiceButton>false</ChoiceButton>
+					<ContextMenu name="ПожертвованияКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="ПожертвованияРасширеннаяПодсказка" id="28">
+						<Title formatted="true">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сумма расходов на пожертвования некоммерческим, благотворительным или религиозным организациям в денежной и натуральной форме.
+&lt;link https://its.1c.ru/bmk/ndfl_deduction/charity&gt;
+&lt;/&gt;&lt;link https://its.1c.ru/bmk/ndfl_deduction/charity&gt;Подробнее&lt;/&gt;</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
+				</InputField>
+				<InputField name="СтраховыеВзносыНаПенсию" id="29">
+					<DataPath>СтраховыеВзносыНаПенсию</DataPath>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<ChoiceButton>false</ChoiceButton>
+					<ContextMenu name="СтраховыеВзносыНаПенсиюКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="СтраховыеВзносыНаПенсиюРасширеннаяПодсказка" id="31">
+						<Title formatted="true">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сумма дополнительных страховых взносов на накопительную пенсию, уплаченных за счет собственных средств.
+
+&lt;link https://its.1c.ru/bmk/ndfl_deduction/socsec&gt;Подробнее&lt;/&gt;</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
+				</InputField>
+				<InputField name="ОценкаКвалификации" id="32">
+					<DataPath>ОценкаКвалификации</DataPath>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<ChoiceButton>false</ChoiceButton>
+					<ContextMenu name="ОценкаКвалификацииКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="ОценкаКвалификацииРасширеннаяПодсказка" id="34">
+						<Title formatted="true">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сумма, уплаченная из собственных средств за прохождение независимой оценки квалификации в &lt;link https://nok-nark.ru/cok/&gt;аккредитованных &lt;/&gt;&lt;link https://nok-nark.ru/cok/&gt;центрах&lt;/&gt;</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Пожертвования" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пожертвования</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОбучениеДетей" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Детей на очной форме</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ДорогостоящееЛечение" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дорогостоящее лечение</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЛечениеМедикаменты" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Лечение и медикаменты</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОбучениеСвое" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Свое, брата, сестры</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="МедицинскоеСтрахование" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Медицинское страхование</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СтраховыеВзносыНаПенсию" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Взносы на накопительную пенсию</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОценкаКвалификации" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Оценка квалификации</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Медикаменты" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Медикаменты</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОбычноеЛечение" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обычное лечение</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресКлючейПоказателей" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес ключей показателей</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="КомандаОК" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+			</Title>
+			<Action>КомандаОК</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="АдресКлючейПоказателей">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

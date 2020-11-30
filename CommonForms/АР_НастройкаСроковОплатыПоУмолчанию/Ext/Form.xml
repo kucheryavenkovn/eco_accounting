@@ -1,0 +1,1393 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаЗаписатьИЗакрыть" id="71">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ЗаписатьИЗакрыть</CommandName>
+				<ExtendedTooltip name="ФормаЗаписатьИЗакрытьРасширеннаяПодсказка" id="72"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаПени" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Срок оплаты и начисление пени</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа пени</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПениExtendedTooltip" id="2"/>
+			<ChildItems>
+				<InputField name="ДетализацияСроковОплаты" id="73">
+					<DataPath>ДетализацияСроковОплаты</DataPath>
+					<ContextMenu name="ДетализацияСроковОплатыКонтекстноеМеню" id="74"/>
+					<ExtendedTooltip name="ДетализацияСроковОплатыРасширеннаяПодсказка" id="75"/>
+					<Events>
+						<Event name="OnChange">ДетализацияСроковОплатыПриИзменении</Event>
+					</Events>
+				</InputField>
+				<UsualGroup name="ГруппаОбщиеУсловия" id="76">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа общие условия</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа общие условия</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаОбщиеУсловияРасширеннаяПодсказка" id="77"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаСрокОплатыУслуг" id="78">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Сроки оплаты услуг</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа срок оплаты услуг</v8:content>
+								</v8:item>
+							</ToolTip>
+							<HorizontalStretch>true</HorizontalStretch>
+							<Group>Vertical</Group>
+							<United>false</United>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаСрокОплатыУслугРасширеннаяПодсказка" id="79"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаПоДатеСчетАктаПериода" id="80">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа по дате счет акта периода</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа по дате счет акта периода</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Vertical</Group>
+									<Representation>None</Representation>
+									<United>false</United>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаПоДатеСчетАктаПериодаРасширеннаяПодсказка" id="81"/>
+									<ChildItems>
+										<UsualGroup name="ГруппаПостояннаяПеременнаяЧасти" id="82">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа постоянная переменная части</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа постоянная переменная части</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>Horizontal</Group>
+											<Representation>None</Representation>
+											<United>false</United>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаПостояннаяПеременнаяЧастиРасширеннаяПодсказка" id="83"/>
+											<ChildItems>
+												<UsualGroup name="ГруппаСрокОплатыПостояннаяЧасть" id="84">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Постоянная часть</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Постоянная часть</v8:content>
+														</v8:item>
+													</ToolTip>
+													<Group>Vertical</Group>
+													<United>false</United>
+													<ExtendedTooltip name="ГруппаСрокОплатыПостояннаяЧастьРасширеннаяПодсказка" id="85"/>
+													<ChildItems>
+														<InputField name="СпособОпределенияСрокаОплатыПостояннаяЧасть" id="86">
+															<DataPath>СрокиОплаты[0].СпособОпределенияСрокаОплаты</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Способ определения срока</v8:content>
+																</v8:item>
+															</Title>
+															<ToolTip>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Способ определения срока оплаты</v8:content>
+																</v8:item>
+															</ToolTip>
+															<AutoMaxWidth>false</AutoMaxWidth>
+															<MaxWidth>16</MaxWidth>
+															<ContextMenu name="СпособОпределенияСрокаОплатыПостояннаяЧастьКонтекстноеМеню" id="87"/>
+															<ExtendedTooltip name="СпособОпределенияСрокаОплатыПостояннаяЧастьРасширеннаяПодсказка" id="88"/>
+															<Events>
+																<Event name="OnChange">СпособОпределенияСрокаОплатыПриИзменении</Event>
+															</Events>
+														</InputField>
+														<InputField name="СрокОплатыПостояннаяЧасть" id="89">
+															<DataPath>СрокиОплаты[0].СрокОплаты</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Срок оплаты (день периода)</v8:content>
+																</v8:item>
+															</Title>
+															<SpinButton>true</SpinButton>
+															<ContextMenu name="СрокОплатыПостояннаяЧастьКонтекстноеМеню" id="90"/>
+															<ExtendedTooltip name="СрокОплатыПостояннаяЧастьРасширеннаяПодсказка" id="91"/>
+														</InputField>
+														<RadioButtonField name="ПериодСрокаОплатыПостояннаяЧасть" id="92">
+															<DataPath>СрокиОплаты[0].ПериодСрокаОплаты</DataPath>
+															<TitleLocation>None</TitleLocation>
+															<RadioButtonType>Auto</RadioButtonType>
+															<ColumnsCount>1</ColumnsCount>
+															<ChoiceList>
+																<xr:Item>
+																	<xr:Presentation/>
+																	<xr:CheckState>0</xr:CheckState>
+																	<xr:Value xsi:type="FormChoiceListDesTimeValue">
+																		<Presentation>
+																			<v8:item>
+																				<v8:lang>ru</v8:lang>
+																				<v8:content>Предыдущего периода</v8:content>
+																			</v8:item>
+																		</Presentation>
+																		<Value xsi:type="xs:decimal">-1</Value>
+																	</xr:Value>
+																</xr:Item>
+																<xr:Item>
+																	<xr:Presentation/>
+																	<xr:CheckState>0</xr:CheckState>
+																	<xr:Value xsi:type="FormChoiceListDesTimeValue">
+																		<Presentation>
+																			<v8:item>
+																				<v8:lang>ru</v8:lang>
+																				<v8:content>Текущего периода</v8:content>
+																			</v8:item>
+																		</Presentation>
+																		<Value xsi:type="xs:decimal">0</Value>
+																	</xr:Value>
+																</xr:Item>
+																<xr:Item>
+																	<xr:Presentation/>
+																	<xr:CheckState>0</xr:CheckState>
+																	<xr:Value xsi:type="FormChoiceListDesTimeValue">
+																		<Presentation>
+																			<v8:item>
+																				<v8:lang>ru</v8:lang>
+																				<v8:content>Следующего периода</v8:content>
+																			</v8:item>
+																		</Presentation>
+																		<Value xsi:type="xs:decimal">1</Value>
+																	</xr:Value>
+																</xr:Item>
+															</ChoiceList>
+															<ContextMenu name="ПериодСрокаОплатыПостояннаяЧастьКонтекстноеМеню" id="93"/>
+															<ExtendedTooltip name="ПериодСрокаОплатыПостояннаяЧастьРасширеннаяПодсказка" id="94"/>
+														</RadioButtonField>
+														<UsualGroup name="ГруппаКоличествоДнейОтДатыСчетаАктаПостояннаяЧасть" id="95">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Группа количество дней от даты счета акта постоянная часть</v8:content>
+																</v8:item>
+															</Title>
+															<ToolTip>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Группа количество дней от даты счета акта постоянная часть</v8:content>
+																</v8:item>
+															</ToolTip>
+															<Group>Vertical</Group>
+															<Representation>None</Representation>
+															<United>false</United>
+															<ShowTitle>false</ShowTitle>
+															<ExtendedTooltip name="ГруппаКоличествоДнейОтДатыСчетаАктаПостояннаяЧастьРасширеннаяПодсказка" id="96"/>
+															<ChildItems>
+																<InputField name="КоличествоДнейОтДатыСчетаАктаПостояннаяЧасть" id="97">
+																	<DataPath>СрокиОплаты[0].КоличествоДнейОтДатыСчетаАкта</DataPath>
+																	<Title>
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Количество дней от даты счета/акта</v8:content>
+																		</v8:item>
+																	</Title>
+																	<SpinButton>true</SpinButton>
+																	<ContextMenu name="КоличествоДнейОтДатыСчетаАктаПостояннаяЧастьКонтекстноеМеню" id="98"/>
+																	<ExtendedTooltip name="КоличествоДнейОтДатыСчетаАктаПостояннаяЧастьРасширеннаяПодсказка" id="99"/>
+																	<Events>
+																		<Event name="OnChange">КоличествоДнейОтДатыСчетаАктаПриИзменении</Event>
+																	</Events>
+																</InputField>
+																<CheckBoxField name="УчитыватьТолькоРабочиеДниОтДатыСчетаАктаПостояннаяЧасть" id="100">
+																	<DataPath>СрокиОплаты[0].УчитыватьТолькоРабочиеДниОтДатыСчетаАкта</DataPath>
+																	<Title>
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Учитывать только рабочие дни</v8:content>
+																		</v8:item>
+																	</Title>
+																	<TitleLocation>Right</TitleLocation>
+																	<CheckBoxType>Auto</CheckBoxType>
+																	<ContextMenu name="УчитыватьТолькоРабочиеДниОтДатыСчетаАктаПостояннаяЧастьКонтекстноеМеню" id="101"/>
+																	<ExtendedTooltip name="УчитыватьТолькоРабочиеДниОтДатыСчетаАктаПостояннаяЧастьРасширеннаяПодсказка" id="102"/>
+																</CheckBoxField>
+															</ChildItems>
+														</UsualGroup>
+													</ChildItems>
+												</UsualGroup>
+												<UsualGroup name="ГруппаСрокОплатыПеременнаяЧасть" id="103">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Переменная часть</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Настройки сроков оплаты постоянной и переменной части могут различаться только при условии ведения взаиморасчетов по услугам (установлен соответствующий признак в карточке договора контрагента).</v8:content>
+														</v8:item>
+													</ToolTip>
+													<ToolTipRepresentation>Button</ToolTipRepresentation>
+													<Group>Vertical</Group>
+													<United>false</United>
+													<ExtendedTooltip name="ГруппаСрокОплатыПеременнаяЧастьРасширеннаяПодсказка" id="104"/>
+													<ChildItems>
+														<InputField name="СпособОпределенияСрокаОплатыПеременнаяЧасть" id="105">
+															<DataPath>СрокиОплаты[1].СпособОпределенияСрокаОплаты</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Способ определения срока</v8:content>
+																</v8:item>
+															</Title>
+															<ToolTip>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Способ определения срока оплаты</v8:content>
+																</v8:item>
+															</ToolTip>
+															<AutoMaxWidth>false</AutoMaxWidth>
+															<MaxWidth>16</MaxWidth>
+															<ContextMenu name="СпособОпределенияСрокаОплатыПеременнаяЧастьКонтекстноеМеню" id="106"/>
+															<ExtendedTooltip name="СпособОпределенияСрокаОплатыПеременнаяЧастьРасширеннаяПодсказка" id="107"/>
+															<Events>
+																<Event name="OnChange">СпособОпределенияСрокаОплатыПриИзменении</Event>
+															</Events>
+														</InputField>
+														<InputField name="СрокОплатыПеременнаяЧасть" id="108">
+															<DataPath>СрокиОплаты[1].СрокОплаты</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Срок оплаты (день периода)</v8:content>
+																</v8:item>
+															</Title>
+															<SpinButton>true</SpinButton>
+															<ContextMenu name="СрокОплатыПеременнаяЧастьКонтекстноеМеню" id="109"/>
+															<ExtendedTooltip name="СрокОплатыПеременнаяЧастьРасширеннаяПодсказка" id="110"/>
+														</InputField>
+														<RadioButtonField name="ПериодСрокаОплатыПеременнаяЧасть" id="111">
+															<DataPath>СрокиОплаты[1].ПериодСрокаОплаты</DataPath>
+															<TitleLocation>None</TitleLocation>
+															<RadioButtonType>Auto</RadioButtonType>
+															<ColumnsCount>1</ColumnsCount>
+															<ChoiceList>
+																<xr:Item>
+																	<xr:Presentation/>
+																	<xr:CheckState>0</xr:CheckState>
+																	<xr:Value xsi:type="FormChoiceListDesTimeValue">
+																		<Presentation>
+																			<v8:item>
+																				<v8:lang>ru</v8:lang>
+																				<v8:content>Предыдущего периода</v8:content>
+																			</v8:item>
+																		</Presentation>
+																		<Value xsi:type="xs:decimal">-1</Value>
+																	</xr:Value>
+																</xr:Item>
+																<xr:Item>
+																	<xr:Presentation/>
+																	<xr:CheckState>0</xr:CheckState>
+																	<xr:Value xsi:type="FormChoiceListDesTimeValue">
+																		<Presentation>
+																			<v8:item>
+																				<v8:lang>ru</v8:lang>
+																				<v8:content>Текущего периода</v8:content>
+																			</v8:item>
+																		</Presentation>
+																		<Value xsi:type="xs:decimal">0</Value>
+																	</xr:Value>
+																</xr:Item>
+																<xr:Item>
+																	<xr:Presentation/>
+																	<xr:CheckState>0</xr:CheckState>
+																	<xr:Value xsi:type="FormChoiceListDesTimeValue">
+																		<Presentation>
+																			<v8:item>
+																				<v8:lang>ru</v8:lang>
+																				<v8:content>Следующего периода</v8:content>
+																			</v8:item>
+																		</Presentation>
+																		<Value xsi:type="xs:decimal">1</Value>
+																	</xr:Value>
+																</xr:Item>
+															</ChoiceList>
+															<ContextMenu name="ПериодСрокаОплатыПеременнаяЧастьКонтекстноеМеню" id="112"/>
+															<ExtendedTooltip name="ПериодСрокаОплатыПеременнаяЧастьРасширеннаяПодсказка" id="113"/>
+														</RadioButtonField>
+														<UsualGroup name="ГруппаКоличествоДнейОтДатыСчетаАктаПеременнаяЧасть" id="114">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Группа количество дней от даты счета акта постоянная часть</v8:content>
+																</v8:item>
+															</Title>
+															<ToolTip>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Группа количество дней от даты счета акта постоянная часть</v8:content>
+																</v8:item>
+															</ToolTip>
+															<Group>Vertical</Group>
+															<Representation>None</Representation>
+															<United>false</United>
+															<ShowTitle>false</ShowTitle>
+															<ExtendedTooltip name="ГруппаКоличествоДнейОтДатыСчетаАктаПеременнаяЧастьРасширеннаяПодсказка" id="115"/>
+															<ChildItems>
+																<InputField name="КоличествоДнейОтДатыСчетаАктаПеременнаяЧасть" id="116">
+																	<DataPath>СрокиОплаты[1].КоличествоДнейОтДатыСчетаАкта</DataPath>
+																	<Title>
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Количество дней от даты счета/акта</v8:content>
+																		</v8:item>
+																	</Title>
+																	<SpinButton>true</SpinButton>
+																	<ContextMenu name="КоличествоДнейОтДатыСчетаАктаПеременнаяЧастьКонтекстноеМеню" id="117"/>
+																	<ExtendedTooltip name="КоличествоДнейОтДатыСчетаАктаПеременнаяЧастьРасширеннаяПодсказка" id="118"/>
+																	<Events>
+																		<Event name="OnChange">КоличествоДнейОтДатыСчетаАктаПриИзменении</Event>
+																	</Events>
+																</InputField>
+																<CheckBoxField name="УчитыватьТолькоРабочиеДниОтДатыСчетаАктаПеременнаяЧасть" id="119">
+																	<DataPath>СрокиОплаты[1].УчитыватьТолькоРабочиеДниОтДатыСчетаАкта</DataPath>
+																	<Title>
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Учитывать только рабочие дни</v8:content>
+																		</v8:item>
+																	</Title>
+																	<TitleLocation>Right</TitleLocation>
+																	<CheckBoxType>Auto</CheckBoxType>
+																	<ContextMenu name="УчитыватьТолькоРабочиеДниОтДатыСчетаАктаПеременнаяЧастьКонтекстноеМеню" id="120"/>
+																	<ExtendedTooltip name="УчитыватьТолькоРабочиеДниОтДатыСчетаАктаПеременнаяЧастьРасширеннаяПодсказка" id="121"/>
+																</CheckBoxField>
+															</ChildItems>
+														</UsualGroup>
+													</ChildItems>
+												</UsualGroup>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаНачислениеПени" id="122">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Начисление пеней</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа начисление пени</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<United>false</United>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаНачислениеПениРасширеннаяПодсказка" id="123"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаНачислениеПениКолонки" id="124">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа начисление пени колонки</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа начисление пени колонки</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>AlwaysHorizontal</Group>
+									<Representation>None</Representation>
+									<United>false</United>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаНачислениеПениКолонкиРасширеннаяПодсказка" id="125"/>
+									<ChildItems>
+										<UsualGroup name="ГруппаНачислениеПениПостояннаяЧасть" id="126">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Начисление пеней</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа начисление пени постоянная часть</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>Vertical</Group>
+											<United>false</United>
+											<ExtendedTooltip name="ГруппаНачислениеПениПостояннаяЧастьРасширеннаяПодсказка" id="127"/>
+											<ChildItems>
+												<UsualGroup name="ГруппаСпособНачисленияПениПостояннаяЧасть" id="128">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа способ начисления пени постоянная часть</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа способ начисления пени постоянная часть</v8:content>
+														</v8:item>
+													</ToolTip>
+													<Group>Vertical</Group>
+													<Representation>None</Representation>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="ГруппаСпособНачисленияПениПостояннаяЧастьРасширеннаяПодсказка" id="129"/>
+													<ChildItems>
+														<InputField name="СпособНачисленияПениПостояннаяЧасть" id="130">
+															<DataPath>СрокиОплаты[0].СпособНачисленияПени</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Способ начисления пеней</v8:content>
+																</v8:item>
+															</Title>
+															<EditMode>EnterOnInput</EditMode>
+															<AutoMaxWidth>false</AutoMaxWidth>
+															<MaxWidth>28</MaxWidth>
+															<ContextMenu name="СпособНачисленияПениПостояннаяЧастьКонтекстноеМеню" id="131"/>
+															<ExtendedTooltip name="СпособНачисленияПениПостояннаяЧастьРасширеннаяПодсказка" id="132"/>
+														</InputField>
+														<InputField name="СтавкаПениПостояннаяЧасть" id="133">
+															<DataPath>СрокиОплаты[0].СтавкаПени</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Ставка</v8:content>
+																</v8:item>
+															</Title>
+															<EditMode>EnterOnInput</EditMode>
+															<Width>10</Width>
+															<ContextMenu name="СтавкаПениПостояннаяЧастьКонтекстноеМеню" id="134"/>
+															<ExtendedTooltip name="СтавкаПениПостояннаяЧастьРасширеннаяПодсказка" id="135"/>
+														</InputField>
+													</ChildItems>
+												</UsualGroup>
+												<UsualGroup name="ГруппаДатаНачалаНачисленияПостояннаяЧасть" id="136">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа дата начала начисления постоянная часть</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа дата начала начисления постоянная часть</v8:content>
+														</v8:item>
+													</ToolTip>
+													<Group>Vertical</Group>
+													<Representation>None</Representation>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="ГруппаДатаНачалаНачисленияПостояннаяЧастьРасширеннаяПодсказка" id="137"/>
+													<ChildItems>
+														<RadioButtonField name="ДатаНачалаНачисленияПениПостояннаяЧасть" id="138">
+															<DataPath>СрокиОплаты[0].ДатаНачалаНачисленияПени</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Дата начала начисления</v8:content>
+																</v8:item>
+															</Title>
+															<TitleLocation>Left</TitleLocation>
+															<RadioButtonType>Auto</RadioButtonType>
+															<ColumnsCount>1</ColumnsCount>
+															<ChoiceList>
+																<xr:Item>
+																	<xr:Presentation/>
+																	<xr:CheckState>0</xr:CheckState>
+																	<xr:Value xsi:type="FormChoiceListDesTimeValue">
+																		<Presentation>
+																			<v8:item>
+																				<v8:lang>ru</v8:lang>
+																				<v8:content>В соответствии со сроком оплаты</v8:content>
+																			</v8:item>
+																		</Presentation>
+																		<Value xsi:type="xs:decimal">0</Value>
+																	</xr:Value>
+																</xr:Item>
+																<xr:Item>
+																	<xr:Presentation/>
+																	<xr:CheckState>0</xr:CheckState>
+																	<xr:Value xsi:type="FormChoiceListDesTimeValue">
+																		<Presentation>
+																			<v8:item>
+																				<v8:lang>ru</v8:lang>
+																				<v8:content>По истечении заданного числа дней после срока оплаты</v8:content>
+																			</v8:item>
+																		</Presentation>
+																		<Value xsi:type="xs:decimal">1</Value>
+																	</xr:Value>
+																</xr:Item>
+															</ChoiceList>
+															<ContextMenu name="ДатаНачалаНачисленияПениПостояннаяЧастьКонтекстноеМеню" id="139"/>
+															<ExtendedTooltip name="ДатаНачалаНачисленияПениПостояннаяЧастьРасширеннаяПодсказка" id="140"/>
+															<Events>
+																<Event name="OnChange">ДатаНачалаНачисленияПениПриИзменении</Event>
+															</Events>
+														</RadioButtonField>
+														<UsualGroup name="ГруппаКоличествоДнейПросрочкиПостояннаяЧасть" id="141">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Группа количество дней просрочки постоянная часть</v8:content>
+																</v8:item>
+															</Title>
+															<ToolTip>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Группа количество дней просрочки постоянная часть</v8:content>
+																</v8:item>
+															</ToolTip>
+															<Group>Horizontal</Group>
+															<Representation>None</Representation>
+															<ShowTitle>false</ShowTitle>
+															<ExtendedTooltip name="ГруппаКоличествоДнейПросрочкиПостояннаяЧастьРасширеннаяПодсказка" id="142"/>
+															<ChildItems>
+																<LabelDecoration name="ДекорацияКоличествоДнейПросрочкиПостояннаяЧасть" id="143">
+																	<AutoMaxWidth>false</AutoMaxWidth>
+																	<MaxWidth>19</MaxWidth>
+																	<HorizontalStretch>true</HorizontalStretch>
+																	<ContextMenu name="ДекорацияКоличествоДнейПросрочкиПостояннаяЧастьКонтекстноеМеню" id="144"/>
+																	<ExtendedTooltip name="ДекорацияКоличествоДнейПросрочкиПостояннаяЧастьРасширеннаяПодсказка" id="145"/>
+																</LabelDecoration>
+																<InputField name="КоличествоДнейОтсрочкиПостояннаяЧасть" id="146">
+																	<DataPath>СрокиОплаты[0].КоличествоДнейОтсрочки</DataPath>
+																	<Title>
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Число дней</v8:content>
+																		</v8:item>
+																	</Title>
+																	<Width>6</Width>
+																	<SpinButton>true</SpinButton>
+																	<ContextMenu name="КоличествоДнейОтсрочкиПостояннаяЧастьКонтекстноеМеню" id="147"/>
+																	<ExtendedTooltip name="КоличествоДнейОтсрочкиПостояннаяЧастьРасширеннаяПодсказка" id="148"/>
+																	<Events>
+																		<Event name="OnChange">КоличествоДнейПросрочкиПриИзменении</Event>
+																	</Events>
+																</InputField>
+																<CheckBoxField name="УчитыватьТолькоРабочиеДниОтсрочкиПостояннаяЧасть" id="149">
+																	<DataPath>СрокиОплаты[0].УчитыватьТолькоРабочиеДниОтсрочки</DataPath>
+																	<Title>
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Только рабочие дни</v8:content>
+																		</v8:item>
+																	</Title>
+																	<TitleLocation>Right</TitleLocation>
+																	<ToolTip>
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Учитывать только рабочие дни</v8:content>
+																		</v8:item>
+																	</ToolTip>
+																	<CheckBoxType>Auto</CheckBoxType>
+																	<ContextMenu name="УчитыватьТолькоРабочиеДниОтсрочкиПостояннаяЧастьКонтекстноеМеню" id="150"/>
+																	<ExtendedTooltip name="УчитыватьТолькоРабочиеДниОтсрочкиПостояннаяЧастьРасширеннаяПодсказка" id="151"/>
+																</CheckBoxField>
+															</ChildItems>
+														</UsualGroup>
+													</ChildItems>
+												</UsualGroup>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="ГруппаНачислениеПениПеременнаяЧасть" id="152">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Начисление пеней</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа начисление пени постоянная часть</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>Vertical</Group>
+											<United>false</United>
+											<ExtendedTooltip name="ГруппаНачислениеПениПеременнаяЧастьРасширеннаяПодсказка" id="153"/>
+											<ChildItems>
+												<UsualGroup name="ГруппаСпособНачисленияПениПеременнаяЧасть" id="154">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа способ начисления пени переменная часть</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа способ начисления пени постоянная часть</v8:content>
+														</v8:item>
+													</ToolTip>
+													<Group>Vertical</Group>
+													<Representation>None</Representation>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="ГруппаСпособНачисленияПениПеременнаяЧастьРасширеннаяПодсказка" id="155"/>
+													<ChildItems>
+														<InputField name="СпособНачисленияПениПеременнаяЧасть" id="156">
+															<DataPath>СрокиОплаты[1].СпособНачисленияПени</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Способ начисления пеней</v8:content>
+																</v8:item>
+															</Title>
+															<EditMode>EnterOnInput</EditMode>
+															<AutoMaxWidth>false</AutoMaxWidth>
+															<MaxWidth>28</MaxWidth>
+															<ContextMenu name="СпособНачисленияПениПеременнаяЧастьКонтекстноеМеню" id="157"/>
+															<ExtendedTooltip name="СпособНачисленияПениПеременнаяЧастьРасширеннаяПодсказка" id="158"/>
+														</InputField>
+														<InputField name="СтавкаПениПеременнаяЧасть" id="159">
+															<DataPath>СрокиОплаты[1].СтавкаПени</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Ставка</v8:content>
+																</v8:item>
+															</Title>
+															<EditMode>EnterOnInput</EditMode>
+															<Width>10</Width>
+															<ContextMenu name="СтавкаПениПеременнаяЧастьКонтекстноеМеню" id="160"/>
+															<ExtendedTooltip name="СтавкаПениПеременнаяЧастьРасширеннаяПодсказка" id="161"/>
+														</InputField>
+													</ChildItems>
+												</UsualGroup>
+												<UsualGroup name="ГруппаДатаНачалаНачисленияПеременнаяЧасть" id="162">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа дата начала начисления переменная часть</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа дата начала начисления постоянная часть</v8:content>
+														</v8:item>
+													</ToolTip>
+													<Group>Vertical</Group>
+													<Representation>None</Representation>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="ГруппаДатаНачалаНачисленияПеременнаяЧастьРасширеннаяПодсказка" id="163"/>
+													<ChildItems>
+														<RadioButtonField name="ДатаНачалаНачисленияПениПеременнаяЧасть" id="164">
+															<DataPath>СрокиОплаты[1].ДатаНачалаНачисленияПени</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Дата начала начисления</v8:content>
+																</v8:item>
+															</Title>
+															<TitleLocation>Left</TitleLocation>
+															<RadioButtonType>Auto</RadioButtonType>
+															<ColumnsCount>1</ColumnsCount>
+															<ChoiceList>
+																<xr:Item>
+																	<xr:Presentation/>
+																	<xr:CheckState>0</xr:CheckState>
+																	<xr:Value xsi:type="FormChoiceListDesTimeValue">
+																		<Presentation>
+																			<v8:item>
+																				<v8:lang>ru</v8:lang>
+																				<v8:content>В соответствии со сроком оплаты</v8:content>
+																			</v8:item>
+																		</Presentation>
+																		<Value xsi:type="xs:decimal">0</Value>
+																	</xr:Value>
+																</xr:Item>
+																<xr:Item>
+																	<xr:Presentation/>
+																	<xr:CheckState>0</xr:CheckState>
+																	<xr:Value xsi:type="FormChoiceListDesTimeValue">
+																		<Presentation>
+																			<v8:item>
+																				<v8:lang>ru</v8:lang>
+																				<v8:content>По истечении заданного числа дней после срока оплаты</v8:content>
+																			</v8:item>
+																		</Presentation>
+																		<Value xsi:type="xs:decimal">1</Value>
+																	</xr:Value>
+																</xr:Item>
+															</ChoiceList>
+															<ContextMenu name="ДатаНачалаНачисленияПениПеременнаяЧастьКонтекстноеМеню" id="165"/>
+															<ExtendedTooltip name="ДатаНачалаНачисленияПениПеременнаяЧастьРасширеннаяПодсказка" id="166"/>
+															<Events>
+																<Event name="OnChange">ДатаНачалаНачисленияПениПриИзменении</Event>
+															</Events>
+														</RadioButtonField>
+														<UsualGroup name="ГруппаКоличествоДнейПросрочкиПеременнаяЧасть" id="167">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Группа количество дней просрочки</v8:content>
+																</v8:item>
+															</Title>
+															<ToolTip>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Группа количество дней просрочки постоянная часть</v8:content>
+																</v8:item>
+															</ToolTip>
+															<Group>Horizontal</Group>
+															<Representation>None</Representation>
+															<ShowTitle>false</ShowTitle>
+															<ExtendedTooltip name="ГруппаКоличествоДнейПросрочкиПеременнаяЧастьРасширеннаяПодсказка" id="168"/>
+															<ChildItems>
+																<LabelDecoration name="ДекорацияКоличествоДнейПросрочкиПеременнаяЧасть" id="169">
+																	<AutoMaxWidth>false</AutoMaxWidth>
+																	<MaxWidth>19</MaxWidth>
+																	<HorizontalStretch>true</HorizontalStretch>
+																	<ContextMenu name="ДекорацияКоличествоДнейПросрочкиПеременнаяЧастьКонтекстноеМеню" id="170"/>
+																	<ExtendedTooltip name="ДекорацияКоличествоДнейПросрочкиПеременнаяЧастьРасширеннаяПодсказка" id="171"/>
+																</LabelDecoration>
+																<InputField name="КоличествоДнейОтсрочкиПеременнаяЧасть" id="172">
+																	<DataPath>СрокиОплаты[1].КоличествоДнейОтсрочки</DataPath>
+																	<Title>
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Число дней</v8:content>
+																		</v8:item>
+																	</Title>
+																	<Width>6</Width>
+																	<SpinButton>true</SpinButton>
+																	<ContextMenu name="КоличествоДнейОтсрочкиПеременнаяЧастьКонтекстноеМеню" id="173"/>
+																	<ExtendedTooltip name="КоличествоДнейОтсрочкиПеременнаяЧастьРасширеннаяПодсказка" id="174"/>
+																	<Events>
+																		<Event name="OnChange">КоличествоДнейПросрочкиПриИзменении</Event>
+																	</Events>
+																</InputField>
+																<CheckBoxField name="УчитыватьТолькоРабочиеДниОтсрочкиПеременнаяЧасть" id="175">
+																	<DataPath>СрокиОплаты[1].УчитыватьТолькоРабочиеДниОтсрочки</DataPath>
+																	<Title>
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Только рабочие дни</v8:content>
+																		</v8:item>
+																	</Title>
+																	<TitleLocation>Right</TitleLocation>
+																	<ToolTip>
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Учитывать только рабочие дни</v8:content>
+																		</v8:item>
+																	</ToolTip>
+																	<CheckBoxType>Auto</CheckBoxType>
+																	<ContextMenu name="УчитыватьТолькоРабочиеДниОтсрочкиПеременнаяЧастьКонтекстноеМеню" id="176"/>
+																	<ExtendedTooltip name="УчитыватьТолькоРабочиеДниОтсрочкиПеременнаяЧастьРасширеннаяПодсказка" id="177"/>
+																</CheckBoxField>
+															</ChildItems>
+														</UsualGroup>
+													</ChildItems>
+												</UsualGroup>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаДетализацияДоУслуг" id="178">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа детализация до услуг</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа детализация до услуг</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаДетализацияДоУслугРасширеннаяПодсказка" id="179"/>
+					<ChildItems>
+						<Table name="СрокиОплаты" id="180">
+							<Representation>List</Representation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>СрокиОплаты</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="СрокиОплатыКонтекстноеМеню" id="181"/>
+							<AutoCommandBar name="СрокиОплатыКоманднаяПанель" id="182"/>
+							<ExtendedTooltip name="СрокиОплатыРасширеннаяПодсказка" id="183"/>
+							<SearchStringAddition name="СрокиОплатыСтрокаПоиска" id="184">
+								<AdditionSource>
+									<Item>СрокиОплаты</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СрокиОплатыСтрокаПоискаКонтекстноеМеню" id="185"/>
+								<ExtendedTooltip name="СрокиОплатыСтрокаПоискаРасширеннаяПодсказка" id="186"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="СрокиОплатыСостояниеПросмотра" id="187">
+								<AdditionSource>
+									<Item>СрокиОплаты</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СрокиОплатыСостояниеПросмотраКонтекстноеМеню" id="188"/>
+								<ExtendedTooltip name="СрокиОплатыСостояниеПросмотраРасширеннаяПодсказка" id="189"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="СрокиОплатыУправлениеПоиском" id="190">
+								<AdditionSource>
+									<Item>СрокиОплаты</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="СрокиОплатыУправлениеПоискомКонтекстноеМеню" id="191"/>
+								<ExtendedTooltip name="СрокиОплатыУправлениеПоискомРасширеннаяПодсказка" id="192"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<ColumnGroup name="СрокиОплатыГруппа1" id="285">
+									<ExtendedTooltip name="СрокиОплатыГруппа1РасширеннаяПодсказка" id="286"/>
+									<ChildItems>
+										<InputField name="СрокиОплатыНазначениеСрока" id="240">
+											<DataPath>СрокиОплаты.НазначениеСрока</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ListChoiceMode>true</ListChoiceMode>
+											<ChoiceList>
+												<xr:Item>
+													<xr:Presentation/>
+													<xr:CheckState>0</xr:CheckState>
+													<xr:Value xsi:type="FormChoiceListDesTimeValue">
+														<Presentation/>
+														<Value xsi:type="xr:DesignTimeRef">Enum.АР_ВариантыНазначенияСрокаОплаты.EnumValue.ПостояннаяЧасть</Value>
+													</xr:Value>
+												</xr:Item>
+												<xr:Item>
+													<xr:Presentation/>
+													<xr:CheckState>0</xr:CheckState>
+													<xr:Value xsi:type="FormChoiceListDesTimeValue">
+														<Presentation/>
+														<Value xsi:type="xr:DesignTimeRef">Enum.АР_ВариантыНазначенияСрокаОплаты.EnumValue.ПеременнаяЧасть</Value>
+													</xr:Value>
+												</xr:Item>
+												<xr:Item>
+													<xr:Presentation/>
+													<xr:CheckState>0</xr:CheckState>
+													<xr:Value xsi:type="FormChoiceListDesTimeValue">
+														<Presentation/>
+														<Value xsi:type="xr:DesignTimeRef">Enum.АР_ВариантыНазначенияСрокаОплаты.EnumValue.ДляУслуги</Value>
+													</xr:Value>
+												</xr:Item>
+											</ChoiceList>
+											<ContextMenu name="СрокиОплатыНазначениеСрокаКонтекстноеМеню" id="241"/>
+											<ExtendedTooltip name="СрокиОплатыНазначениеСрокаРасширеннаяПодсказка" id="242"/>
+											<Events>
+												<Event name="OnChange">СрокиОплатыНазначениеСрокаПриИзменении</Event>
+											</Events>
+										</InputField>
+										<InputField name="СрокиОплатыУслуга" id="243">
+											<DataPath>СрокиОплаты.Услуга</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="СрокиОплатыУслугаКонтекстноеМеню" id="244"/>
+											<ExtendedTooltip name="СрокиОплатыУслугаРасширеннаяПодсказка" id="245"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<InputField name="СрокиОплатыСпособОпределенияСрокаОплаты" id="246">
+									<DataPath>СрокиОплаты.СпособОпределенияСрокаОплаты</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СрокиОплатыСпособОпределенияСрокаОплатыКонтекстноеМеню" id="247"/>
+									<ExtendedTooltip name="СрокиОплатыСпособОпределенияСрокаОплатыРасширеннаяПодсказка" id="248"/>
+									<Events>
+										<Event name="OnChange">СрокиОплатыСпособОпределенияСрокаОплатыПриИзменении</Event>
+									</Events>
+								</InputField>
+								<ColumnGroup name="СрокиОплатыГруппа2" id="287">
+									<ExtendedTooltip name="СрокиОплатыГруппа2РасширеннаяПодсказка" id="288"/>
+									<ChildItems>
+										<InputField name="СрокиОплатыСрокОплаты" id="249">
+											<DataPath>СрокиОплаты.СрокОплаты</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Срок оплаты (день периода)</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<SpinButton>true</SpinButton>
+											<ContextMenu name="СрокиОплатыСрокОплатыКонтекстноеМеню" id="250"/>
+											<ExtendedTooltip name="СрокиОплатыСрокОплатыРасширеннаяПодсказка" id="251"/>
+										</InputField>
+										<InputField name="СрокиОплатыПериодСрокаОплатыПредставление" id="282">
+											<DataPath>СрокиОплаты.ПериодСрокаОплатыПредставление</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ListChoiceMode>true</ListChoiceMode>
+											<ChoiceList>
+												<xr:Item>
+													<xr:Presentation/>
+													<xr:CheckState>0</xr:CheckState>
+													<xr:Value xsi:type="FormChoiceListDesTimeValue">
+														<Presentation/>
+														<Value xsi:type="xs:string">Предыдущий</Value>
+													</xr:Value>
+												</xr:Item>
+												<xr:Item>
+													<xr:Presentation/>
+													<xr:CheckState>0</xr:CheckState>
+													<xr:Value xsi:type="FormChoiceListDesTimeValue">
+														<Presentation/>
+														<Value xsi:type="xs:string">Текущий</Value>
+													</xr:Value>
+												</xr:Item>
+												<xr:Item>
+													<xr:Presentation/>
+													<xr:CheckState>0</xr:CheckState>
+													<xr:Value xsi:type="FormChoiceListDesTimeValue">
+														<Presentation/>
+														<Value xsi:type="xs:string">Следующий</Value>
+													</xr:Value>
+												</xr:Item>
+											</ChoiceList>
+											<ContextMenu name="СрокиОплатыПериодСрокаОплатыПредставлениеКонтекстноеМеню" id="283"/>
+											<ExtendedTooltip name="СрокиОплатыПериодСрокаОплатыПредставлениеРасширеннаяПодсказка" id="284"/>
+											<Events>
+												<Event name="OnChange">СрокиОплатыПериодСрокаОплатыПредставлениеПриИзменении</Event>
+											</Events>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<InputField name="СрокиОплатыПериодСрокаОплаты" id="252">
+									<DataPath>СрокиОплаты.ПериодСрокаОплаты</DataPath>
+									<Visible>false</Visible>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СрокиОплатыПериодСрокаОплатыКонтекстноеМеню" id="253"/>
+									<ExtendedTooltip name="СрокиОплатыПериодСрокаОплатыРасширеннаяПодсказка" id="254"/>
+								</InputField>
+								<ColumnGroup name="СрокиОплатыГруппа3" id="289">
+									<ExtendedTooltip name="СрокиОплатыГруппа3РасширеннаяПодсказка" id="290"/>
+									<ChildItems>
+										<InputField name="СрокиОплатыКоличествоДнейОтДатыСчетаАкта" id="255">
+											<DataPath>СрокиОплаты.КоличествоДнейОтДатыСчетаАкта</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<SpinButton>true</SpinButton>
+											<ContextMenu name="СрокиОплатыКоличествоДнейОтДатыСчетаАктаКонтекстноеМеню" id="256"/>
+											<ExtendedTooltip name="СрокиОплатыКоличествоДнейОтДатыСчетаАктаРасширеннаяПодсказка" id="257"/>
+										</InputField>
+										<CheckBoxField name="СрокиОплатыУчитыватьТолькоРабочиеДниОтДатыСчетаАкта" id="258">
+											<DataPath>СрокиОплаты.УчитыватьТолькоРабочиеДниОтДатыСчетаАкта</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Учитывать только рабочие дни</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Учитывать только рабочие дни от даты счета/акта</v8:content>
+												</v8:item>
+											</ToolTip>
+											<EditMode>EnterOnInput</EditMode>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="СрокиОплатыУчитыватьТолькоРабочиеДниОтДатыСчетаАктаКонтекстноеМеню" id="259"/>
+											<ExtendedTooltip name="СрокиОплатыУчитыватьТолькоРабочиеДниОтДатыСчетаАктаРасширеннаяПодсказка" id="260"/>
+										</CheckBoxField>
+									</ChildItems>
+								</ColumnGroup>
+								<InputField name="СрокиОплатыСпособНачисленияПени" id="261">
+									<DataPath>СрокиОплаты.СпособНачисленияПени</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СрокиОплатыСпособНачисленияПениКонтекстноеМеню" id="262"/>
+									<ExtendedTooltip name="СрокиОплатыСпособНачисленияПениРасширеннаяПодсказка" id="263"/>
+								</InputField>
+								<InputField name="СрокиОплатыСтавкаПени" id="264">
+									<DataPath>СрокиОплаты.СтавкаПени</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СрокиОплатыСтавкаПениКонтекстноеМеню" id="265"/>
+									<ExtendedTooltip name="СрокиОплатыСтавкаПениРасширеннаяПодсказка" id="266"/>
+								</InputField>
+								<ColumnGroup name="СрокиОплатыГруппа4" id="291">
+									<ExtendedTooltip name="СрокиОплатыГруппа4РасширеннаяПодсказка" id="292"/>
+									<ChildItems>
+										<InputField name="СрокиОплатыКоличествоДнейОтсрочки" id="270">
+											<DataPath>СрокиОплаты.КоличествоДнейОтсрочки</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<SpinButton>true</SpinButton>
+											<ContextMenu name="СрокиОплатыКоличествоДнейОтсрочкиКонтекстноеМеню" id="271"/>
+											<ExtendedTooltip name="СрокиОплатыКоличествоДнейОтсрочкиРасширеннаяПодсказка" id="272"/>
+										</InputField>
+										<CheckBoxField name="СрокиОплатыУчитыватьТолькоРабочиеДниОтсрочки" id="273">
+											<DataPath>СрокиОплаты.УчитыватьТолькоРабочиеДниОтсрочки</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Учитывать только рабочие дни</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Учитывать только рабочие дни отсрочки</v8:content>
+												</v8:item>
+											</ToolTip>
+											<EditMode>EnterOnInput</EditMode>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="СрокиОплатыУчитыватьТолькоРабочиеДниОтсрочкиКонтекстноеМеню" id="274"/>
+											<ExtendedTooltip name="СрокиОплатыУчитыватьТолькоРабочиеДниОтсрочкиРасширеннаяПодсказка" id="275"/>
+										</CheckBoxField>
+									</ChildItems>
+								</ColumnGroup>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаОбщиеПараметры" id="232">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Общие параметры</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Общие параметры</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ГруппаОбщиеПараметрыРасширеннаяПодсказка" id="233"/>
+					<ChildItems>
+						<InputField name="СпособПогашенияПени" id="234">
+							<DataPath>СрокиОплаты[0].СпособПогашенияПени</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>28</MaxWidth>
+							<ContextMenu name="СпособПогашенияПениКонтекстноеМеню" id="235"/>
+							<ExtendedTooltip name="СпособПогашенияПениExtendedTooltip" id="236"/>
+						</InputField>
+						<CheckBoxField name="УчитыватьТолькоРабочиеДниПриРасчетеПени" id="237">
+							<DataPath>СрокиОплаты[0].УчитыватьТолькоРабочиеДниПриРасчетеПени</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="УчитыватьТолькоРабочиеДниПриРасчетеПениКонтекстноеМеню" id="238"/>
+							<ExtendedTooltip name="УчитыватьТолькоРабочиеДниПриРасчетеПениРасширеннаяПодсказка" id="239"/>
+						</CheckBoxField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="СрокиОплаты" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сроки оплаты</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="НазначениеСрока" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Назначение срока</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:EnumRef.АР_ВариантыНазначенияСрокаОплаты</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Услуга" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Услуга</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
+					</Type>
+				</Column>
+				<Column name="СпособОпределенияСрокаОплаты" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Способ определения срока оплаты</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:EnumRef.АР_СпособыРасчетаПросрочки</v8:Type>
+					</Type>
+				</Column>
+				<Column name="СрокОплаты" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Срок оплаты</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПериодСрокаОплаты" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Период срока оплаты</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>1</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="КоличествоДнейОтДатыСчетаАкта" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Количество дней от даты счета/акта</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="УчитыватьТолькоРабочиеДниОтДатыСчетаАкта" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Учитывать только рабочие дни от даты счета/акта</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="СпособНачисленияПени" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Способ начисления пеней</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:EnumRef.АР_СпособыНачисленияПени</v8:Type>
+					</Type>
+				</Column>
+				<Column name="СтавкаПени" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ставка пени</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="СпособПогашенияПени" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Способ погашения пеней</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:EnumRef.АР_СпособыПогашенияПени</v8:Type>
+					</Type>
+				</Column>
+				<Column name="КоличествоДнейОтсрочки" id="11">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Количество дней отсрочки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="УчитыватьТолькоРабочиеДниОтсрочки" id="12">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Учитывать только рабочие дни отсрочки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="УчитыватьТолькоРабочиеДниПриРасчетеПени" id="13">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Учитывать только рабочие дни при расчете пени</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ДатаНачалаНачисленияПени" id="14">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата начала начисления пени</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>1</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПериодСрокаОплатыПредставление" id="15">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Период срока оплаты</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ДетализацияСроковОплаты" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Детализация сроков оплаты</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.АР_ДетализацииСроковОплаты</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ВестиВзаиморасчетыПоУслугам" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вести взаиморасчеты по услугам</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ЗаписатьИЗакрыть" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать и закрыть</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать и закрыть</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаписатьИЗакрыть</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

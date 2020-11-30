@@ -1,0 +1,411 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<CommandBarLocation>None</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаБыстрыеОтборы" id="92">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Быстрые отборы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа быстрые отборы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаБыстрыеОтборыРасширеннаяПодсказка" id="93"/>
+		</UsualGroup>
+		<LabelField name="ПоказыватьСчетаУчетаВДокументах" id="89">
+			<DataPath>ПоказыватьСчетаУчетаВДокументах</DataPath>
+			<Format>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>БЛ='Не показывать'; БИ=Показывать</v8:content>
+				</v8:item>
+			</Format>
+			<Hiperlink>true</Hiperlink>
+			<ContextMenu name="ПоказыватьСчетаУчетаВДокументахКонтекстноеМеню" id="90"/>
+			<ExtendedTooltip name="ПоказыватьСчетаУчетаВДокументахРасширеннаяПодсказка" id="91"/>
+			<Events>
+				<Event name="Click">ПоказыватьСчетаУчетаВДокументахНажатие</Event>
+			</Events>
+		</LabelField>
+		<CommandBar name="ГруппаКоманднаяПанель" id="82">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа командная панель</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа командная панель</v8:content>
+				</v8:item>
+			</ToolTip>
+			<CommandSource>Form</CommandSource>
+			<ExtendedTooltip name="ГруппаКоманднаяПанельРасширеннаяПодсказка" id="83"/>
+		</CommandBar>
+		<Table name="Список" id="1">
+			<Representation>List</Representation>
+			<CommandBarLocation>None</CommandBarLocation>
+			<SkipOnInput>false</SkipOnInput>
+			<DefaultItem>true</DefaultItem>
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<InitialTreeView>ExpandTopLevel</InitialTreeView>
+			<EnableStartDrag>true</EnableStartDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Список</DataPath>
+			<RowPictureDataPath>Список.DefaultPicture</RowPictureDataPath>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<UserSettingsGroup>ГруппаБыстрыеОтборы</UserSettingsGroup>
+			<ContextMenu name="СписокКонтекстноеМеню" id="2"/>
+			<AutoCommandBar name="СписокКоманднаяПанель" id="3">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="СписокExtendedTooltip" id="30"/>
+			<SearchStringAddition name="СписокСтрокаПоиска" id="57">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСтрокаПоискаКонтекстноеМеню" id="58"/>
+				<ExtendedTooltip name="СписокСтрокаПоискаРасширеннаяПодсказка" id="59"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СписокСостояниеПросмотра" id="60">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСостояниеПросмотраКонтекстноеМеню" id="61"/>
+				<ExtendedTooltip name="СписокСостояниеПросмотраРасширеннаяПодсказка" id="62"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СписокУправлениеПоиском" id="63">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокУправлениеПоискомКонтекстноеМеню" id="64"/>
+				<ExtendedTooltip name="СписокУправлениеПоискомРасширеннаяПодсказка" id="65"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="BeforeLoadUserSettingsAtServer">СписокПередЗагрузкойПользовательскихНастроекНаСервере</Event>
+			</Events>
+			<ChildItems>
+				<ColumnGroup name="ГруппаУсловия" id="52">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Условия</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Условия</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<ExtendedTooltip name="ГруппаУсловияРасширеннаяПодсказка" id="53"/>
+					<ChildItems>
+						<LabelField name="Организация" id="4">
+							<DataPath>Список.Организация</DataPath>
+							<DefaultItem>true</DefaultItem>
+							<ContextMenu name="ОрганизацияКонтекстноеМеню" id="5"/>
+							<ExtendedTooltip name="ОрганизацияExtendedTooltip" id="31"/>
+						</LabelField>
+						<LabelField name="Номенклатура" id="6">
+							<DataPath>Список.Номенклатура</DataPath>
+							<DefaultItem>true</DefaultItem>
+							<ContextMenu name="НоменклатураКонтекстноеМеню" id="7"/>
+							<ExtendedTooltip name="НоменклатураExtendedTooltip" id="32"/>
+						</LabelField>
+						<LabelField name="ВидНоменклатуры" id="66">
+							<DataPath>Список.ВидНоменклатуры</DataPath>
+							<ContextMenu name="ВидНоменклатурыКонтекстноеМеню" id="67"/>
+							<ExtendedTooltip name="ВидНоменклатурыРасширеннаяПодсказка" id="68"/>
+						</LabelField>
+						<LabelField name="АР_ТипОбъектаАренды" id="94">
+							<DataPath>Список.АР_ТипОбъектаАренды</DataPath>
+							<ContextMenu name="АР_ТипОбъектаАрендыКонтекстноеМеню" id="95"/>
+							<ExtendedTooltip name="АР_ТипОбъектаАрендыРасширеннаяПодсказка" id="96"/>
+						</LabelField>
+						<LabelField name="Склад" id="8">
+							<DataPath>Список.Склад</DataPath>
+							<DefaultItem>true</DefaultItem>
+							<ContextMenu name="СкладКонтекстноеМеню" id="9"/>
+							<ExtendedTooltip name="СкладExtendedTooltip" id="33"/>
+						</LabelField>
+						<LabelField name="ТипСклада" id="10">
+							<DataPath>Список.ТипСклада</DataPath>
+							<DefaultItem>true</DefaultItem>
+							<ContextMenu name="ТипСкладаКонтекстноеМеню" id="11"/>
+							<ExtendedTooltip name="ТипСкладаExtendedTooltip" id="34"/>
+						</LabelField>
+					</ChildItems>
+				</ColumnGroup>
+				<ColumnGroup name="ГруппаСчетаУчета" id="50">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Счета учета номенклатуры</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Счета учета номенклатуры</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<ShowInHeader>true</ShowInHeader>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ExtendedTooltip name="ГруппаСчетаУчетаРасширеннаяПодсказка" id="51"/>
+					<ChildItems>
+						<LabelField name="СчетУчета" id="12">
+							<DataPath>Список.СчетУчета</DataPath>
+							<DefaultItem>true</DefaultItem>
+							<Width>12</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ContextMenu name="СчетУчетаКонтекстноеМеню" id="13"/>
+							<ExtendedTooltip name="СчетУчетаExtendedTooltip" id="35"/>
+						</LabelField>
+						<LabelField name="СчетУчетаПередачи" id="22">
+							<DataPath>Список.СчетУчетаПередачи</DataPath>
+							<DefaultItem>true</DefaultItem>
+							<Width>12</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ContextMenu name="СчетУчетаПередачиКонтекстноеМеню" id="23"/>
+							<ExtendedTooltip name="СчетУчетаПередачиExtendedTooltip" id="36"/>
+						</LabelField>
+					</ChildItems>
+				</ColumnGroup>
+				<ColumnGroup name="ГруппаСчетаДоходовРасходов" id="46">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Счета доходов и расходов от реализации</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Счета доходов и расходов</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<ShowInHeader>true</ShowInHeader>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ExtendedTooltip name="ГруппаСчетаДоходовРасходовРасширеннаяПодсказка" id="47"/>
+					<ChildItems>
+						<LabelField name="СчетДоходовОтРеализации" id="26">
+							<DataPath>Список.СчетДоходовОтРеализации</DataPath>
+							<DefaultItem>true</DefaultItem>
+							<Width>14</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ContextMenu name="СчетДоходовОтРеализацииКонтекстноеМеню" id="27"/>
+							<ExtendedTooltip name="СчетДоходовОтРеализацииExtendedTooltip" id="42"/>
+						</LabelField>
+						<LabelField name="СчетРасходовОтРеализации" id="28">
+							<DataPath>Список.СчетРасходовОтРеализации</DataPath>
+							<DefaultItem>true</DefaultItem>
+							<Width>14</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ContextMenu name="СчетРасходовОтРеализацииКонтекстноеМеню" id="29"/>
+							<ExtendedTooltip name="СчетРасходовОтРеализацииExtendedTooltip" id="43"/>
+						</LabelField>
+					</ChildItems>
+				</ColumnGroup>
+				<ColumnGroup name="ГруппаСчетаУчетаНДС" id="48">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Счета учета НДС</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Счета учета НДС</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<ShowInHeader>true</ShowInHeader>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ExtendedTooltip name="ГруппаСчетаУчетаНДСРасширеннаяПодсказка" id="49"/>
+					<ChildItems>
+						<LabelField name="СчетУчетаНДСПоПриобретеннымЦенностям" id="14">
+							<DataPath>Список.СчетУчетаНДСПоПриобретеннымЦенностям</DataPath>
+							<DefaultItem>true</DefaultItem>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>НДС по приобретенным ценностям</v8:content>
+								</v8:item>
+							</Title>
+							<Width>24</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ContextMenu name="СчетУчетаНДСПоПриобретеннымЦенностямКонтекстноеМеню" id="15"/>
+							<ExtendedTooltip name="СчетУчетаНДСПоПриобретеннымЦенностямExtendedTooltip" id="37"/>
+						</LabelField>
+						<LabelField name="СчетУчетаНДСПоРеализации" id="16">
+							<DataPath>Список.СчетУчетаНДСПоРеализации</DataPath>
+							<DefaultItem>true</DefaultItem>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>НДС по реализации</v8:content>
+								</v8:item>
+							</Title>
+							<Width>14</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ContextMenu name="СчетУчетаНДСПоРеализацииКонтекстноеМеню" id="17"/>
+							<ExtendedTooltip name="СчетУчетаНДСПоРеализацииExtendedTooltip" id="38"/>
+						</LabelField>
+						<LabelField name="СчетУчетаНДСУплаченногоНаТаможне" id="18">
+							<DataPath>Список.СчетУчетаНДСУплаченногоНаТаможне</DataPath>
+							<DefaultItem>true</DefaultItem>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>НДС, уплаченный на таможне</v8:content>
+								</v8:item>
+							</Title>
+							<Width>21</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ContextMenu name="СчетУчетаНДСУплаченногоНаТаможнеКонтекстноеМеню" id="19"/>
+							<ExtendedTooltip name="СчетУчетаНДСУплаченногоНаТаможнеExtendedTooltip" id="39"/>
+						</LabelField>
+					</ChildItems>
+				</ColumnGroup>
+				<LabelField name="СпособУчетаНДС" id="54">
+					<DataPath>Список.СпособУчетаНДС</DataPath>
+					<ContextMenu name="СпособУчетаНДСКонтекстноеМеню" id="55"/>
+					<ExtendedTooltip name="СпособУчетаНДСРасширеннаяПодсказка" id="56"/>
+				</LabelField>
+				<ColumnGroup name="ГруппаСчетаУчетаМатериаловПпринятыхВПереработку" id="44">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Счета учета материалов, принятых в переработку</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Счета учета материалов, принятых в переработку</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<ShowInHeader>true</ShowInHeader>
+					<HeaderHorizontalAlign>Center</HeaderHorizontalAlign>
+					<ExtendedTooltip name="ГруппаСчетаУчетаМатериаловПпринятыхВПереработкуРасширеннаяПодсказка" id="45"/>
+					<ChildItems>
+						<LabelField name="СчетУчетаЗабалансовый" id="20">
+							<DataPath>Список.СчетУчетаЗабалансовый</DataPath>
+							<DefaultItem>true</DefaultItem>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Материалы заказчика на складе</v8:content>
+								</v8:item>
+							</Title>
+							<Width>22</Width>
+							<Height>1</Height>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ContextMenu name="СчетУчетаЗабалансовыйКонтекстноеМеню" id="21"/>
+							<ExtendedTooltip name="СчетУчетаЗабалансовыйExtendedTooltip" id="40"/>
+						</LabelField>
+						<LabelField name="СчетУчетаПередачиЗабалансовый" id="24">
+							<DataPath>Список.СчетУчетаПередачиЗабалансовый</DataPath>
+							<DefaultItem>true</DefaultItem>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Материалы заказчика в производстве</v8:content>
+								</v8:item>
+							</Title>
+							<Width>25</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ContextMenu name="СчетУчетаПередачиЗабалансовыйКонтекстноеМеню" id="25"/>
+							<ExtendedTooltip name="СчетУчетаПередачиЗабалансовыйExtendedTooltip" id="41"/>
+						</LabelField>
+					</ChildItems>
+				</ColumnGroup>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Список" id="1">
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>false</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<MainTable>InformationRegister.СчетаУчетаНоменклатуры</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="РаздельныйУчетНДСНаСчете19" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Раздельный учет НДСНа счете19</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПоказыватьСчетаУчетаВДокументах" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Счета учета в документах</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+</Form>

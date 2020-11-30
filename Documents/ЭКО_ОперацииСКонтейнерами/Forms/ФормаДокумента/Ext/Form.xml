@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Группа1" id="61">
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="62"/>
+			<ChildItems>
+				<InputField name="Номер" id="1">
+					<DataPath>Объект.Number</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НомерКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="3"/>
+				</InputField>
+				<InputField name="Дата" id="4">
+					<DataPath>Объект.Date</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="6"/>
+				</InputField>
+				<InputField name="ВидОперации" id="7">
+					<DataPath>Объект.ВидОперации</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ВидОперацииКонтекстноеМеню" id="8"/>
+					<ExtendedTooltip name="ВидОперацииРасширеннаяПодсказка" id="9"/>
+					<Events>
+						<Event name="OnChange">ВидОперацииПриИзменении</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="Группа2" id="63">
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="64"/>
+			<ChildItems>
+				<InputField name="Организация" id="58">
+					<DataPath>Объект.Организация</DataPath>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="59"/>
+					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="60"/>
+				</InputField>
+				<InputField name="Контрагент" id="10">
+					<DataPath>Объект.Контрагент</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КонтрагентКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="КонтрагентРасширеннаяПодсказка" id="12"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="Группа3" id="65">
+			<ExtendedTooltip name="Группа3РасширеннаяПодсказка" id="66"/>
+			<ChildItems>
+				<InputField name="КонтрагентДляПеремещения" id="49">
+					<Visible>false</Visible>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Получатель</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="КонтрагентДляПеремещенияКонтекстноеМеню" id="50"/>
+					<ExtendedTooltip name="КонтрагентДляПеремещенияРасширеннаяПодсказка" id="51"/>
+				</InputField>
+				<InputField name="Площадка" id="13">
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ПлощадкаКонтекстноеМеню" id="14"/>
+					<ExtendedTooltip name="ПлощадкаРасширеннаяПодсказка" id="15"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="ДокОснование" id="67">
+			<DataPath>Объект.ДокОснование</DataPath>
+			<ReadOnly>true</ReadOnly>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документ основание</v8:content>
+				</v8:item>
+			</Title>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="ДокОснованиеКонтекстноеМеню" id="68"/>
+			<ExtendedTooltip name="ДокОснованиеРасширеннаяПодсказка" id="69"/>
+		</InputField>
+		<Table name="Контейнеры" id="16">
+			<Representation>List</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Объект.Контейнеры</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="КонтейнерыКонтекстноеМеню" id="17"/>
+			<AutoCommandBar name="КонтейнерыКоманднаяПанель" id="18">
+				<ChildItems>
+					<Button name="КонтейнерыСгенерироватьКонтейнеры" id="47">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.СгенерироватьКонтейнеры</CommandName>
+						<ExtendedTooltip name="КонтейнерыСгенерироватьКонтейнерыРасширеннаяПодсказка" id="48"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="КонтейнерыРасширеннаяПодсказка" id="19"/>
+			<SearchStringAddition name="КонтейнерыСтрокаПоиска" id="20">
+				<AdditionSource>
+					<Item>Контейнеры</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="КонтейнерыСтрокаПоискаКонтекстноеМеню" id="21"/>
+				<ExtendedTooltip name="КонтейнерыСтрокаПоискаРасширеннаяПодсказка" id="22"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="КонтейнерыСостояниеПросмотра" id="23">
+				<AdditionSource>
+					<Item>Контейнеры</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="КонтейнерыСостояниеПросмотраКонтекстноеМеню" id="24"/>
+				<ExtendedTooltip name="КонтейнерыСостояниеПросмотраРасширеннаяПодсказка" id="25"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="КонтейнерыУправлениеПоиском" id="26">
+				<AdditionSource>
+					<Item>Контейнеры</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="КонтейнерыУправлениеПоискомКонтекстноеМеню" id="27"/>
+				<ExtendedTooltip name="КонтейнерыУправлениеПоискомРасширеннаяПодсказка" id="28"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="КонтейнерыНомерСтроки" id="29">
+					<DataPath>Объект.Контейнеры.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КонтейнерыНомерСтрокиКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="КонтейнерыНомерСтрокиРасширеннаяПодсказка" id="31"/>
+				</LabelField>
+				<InputField name="КонтейнерыНоменклатура" id="32">
+					<DataPath>Объект.Контейнеры.Номенклатура</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КонтейнерыНоменклатураКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="КонтейнерыНоменклатураРасширеннаяПодсказка" id="34"/>
+				</InputField>
+				<InputField name="КонтейнерыКонтейнер" id="35">
+					<DataPath>Объект.Контейнеры.Контейнер</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КонтейнерыКонтейнерКонтекстноеМеню" id="36"/>
+					<ExtendedTooltip name="КонтейнерыКонтейнерРасширеннаяПодсказка" id="37"/>
+					<Events>
+						<Event name="OnChange">КонтейнерыНоменклатураПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="КонтейнерыИнвентарныйНомер" id="38">
+					<DataPath>Объект.Контейнеры.ИнвентарныйНомер</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КонтейнерыИнвентарныйНомерКонтекстноеМеню" id="39"/>
+					<ExtendedTooltip name="КонтейнерыИнвентарныйНомерРасширеннаяПодсказка" id="40"/>
+				</InputField>
+				<InputField name="КонтейнерыДатаВыдачи" id="73">
+					<DataPath>Объект.Контейнеры.ДатаВыдачи</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КонтейнерыДатаВыдачиКонтекстноеМеню" id="74"/>
+					<ExtendedTooltip name="КонтейнерыДатаВыдачиРасширеннаяПодсказка" id="75"/>
+				</InputField>
+				<InputField name="КонтейнерыПервоначальнаяСтоимость" id="41">
+					<DataPath>Объект.Контейнеры.ПервоначальнаяСтоимость</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КонтейнерыПервоначальнаяСтоимостьКонтекстноеМеню" id="42"/>
+					<ExtendedTooltip name="КонтейнерыПервоначальнаяСтоимостьРасширеннаяПодсказка" id="43"/>
+				</InputField>
+				<InputField name="КонтейнерыКоличество" id="44">
+					<DataPath>Объект.Контейнеры.Количество</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КонтейнерыКоличествоКонтекстноеМеню" id="45"/>
+					<ExtendedTooltip name="КонтейнерыКоличествоРасширеннаяПодсказка" id="46"/>
+				</InputField>
+				<InputField name="КонтейнерыПлощадка" id="52">
+					<DataPath>Объект.Контейнеры.Площадка</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КонтейнерыПлощадкаКонтекстноеМеню" id="53"/>
+					<ExtendedTooltip name="КонтейнерыПлощадкаРасширеннаяПодсказка" id="54"/>
+				</InputField>
+				<InputField name="КонтейнерыПлощадкаДляПеремещения" id="55">
+					<DataPath>Объект.Контейнеры.ПлощадкаДляПеремещения</DataPath>
+					<Visible>false</Visible>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КонтейнерыПлощадкаДляПеремещенияКонтекстноеМеню" id="56"/>
+					<ExtendedTooltip name="КонтейнерыПлощадкаДляПеремещенияРасширеннаяПодсказка" id="57"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<InputField name="Комментарий" id="76">
+			<DataPath>Объект.Комментарий</DataPath>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<ContextMenu name="КомментарийКонтекстноеМеню" id="77"/>
+			<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="78"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.ЭКО_ОперацииСКонтейнерами</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="СгенерироватьКонтейнеры" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сгенерировать контейнеры</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сгенерировать контейнеры</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СгенерироватьКонтейнеры</Action>
+		</Command>
+	</Commands>
+</Form>

@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<CommandSet>
+		<ExcludedCommand>Copy</ExcludedCommand>
+		<ExcludedCommand>Delete</ExcludedCommand>
+		<ExcludedCommand>SetDeletionMark</ExcludedCommand>
+	</CommandSet>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаШапка" id="44">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа шапка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа шапка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаШапкаРасширеннаяПодсказка" id="45"/>
+			<ChildItems>
+				<InputField name="Наименование" id="4">
+					<DataPath>Объект.Description</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6"/>
+				</InputField>
+				<InputField name="Код" id="1">
+					<DataPath>Объект.Code</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="Собственники" id="10">
+			<Representation>List</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Объект.Собственники</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="СобственникиКонтекстноеМеню" id="11"/>
+			<AutoCommandBar name="СобственникиКоманднаяПанель" id="12"/>
+			<ExtendedTooltip name="СобственникиРасширеннаяПодсказка" id="13"/>
+			<SearchStringAddition name="СобственникиСтрокаПоиска" id="14">
+				<AdditionSource>
+					<Item>Собственники</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СобственникиСтрокаПоискаКонтекстноеМеню" id="15"/>
+				<ExtendedTooltip name="СобственникиСтрокаПоискаРасширеннаяПодсказка" id="16"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СобственникиСостояниеПросмотра" id="17">
+				<AdditionSource>
+					<Item>Собственники</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СобственникиСостояниеПросмотраКонтекстноеМеню" id="18"/>
+				<ExtendedTooltip name="СобственникиСостояниеПросмотраРасширеннаяПодсказка" id="19"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СобственникиУправлениеПоиском" id="20">
+				<AdditionSource>
+					<Item>Собственники</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СобственникиУправлениеПоискомКонтекстноеМеню" id="21"/>
+				<ExtendedTooltip name="СобственникиУправлениеПоискомРасширеннаяПодсказка" id="22"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="СобственникиНомерСтроки" id="23">
+					<DataPath>Объект.Собственники.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СобственникиНомерСтрокиКонтекстноеМеню" id="24"/>
+					<ExtendedTooltip name="СобственникиНомерСтрокиРасширеннаяПодсказка" id="25"/>
+				</LabelField>
+				<InputField name="СобственникиСобственник" id="26">
+					<DataPath>Объект.Собственники.Собственник</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СобственникиСобственникКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="СобственникиСобственникРасширеннаяПодсказка" id="28"/>
+				</InputField>
+				<InputField name="СобственникиДоля" id="29">
+					<DataPath>Объект.Собственники.Доля</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СобственникиДоляКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="СобственникиДоляРасширеннаяПодсказка" id="31"/>
+				</InputField>
+				<InputField name="СобственникиНомерЗаписиВЕГРП" id="32">
+					<DataPath>Объект.Собственники.НомерЗаписиВЕГРП</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СобственникиНомерЗаписиВЕГРПКонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="СобственникиНомерЗаписиВЕГРПРасширеннаяПодсказка" id="34"/>
+				</InputField>
+				<InputField name="СобственникиДатаЗаписиВЕГРП" id="35">
+					<DataPath>Объект.Собственники.ДатаЗаписиВЕГРП</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СобственникиДатаЗаписиВЕГРПКонтекстноеМеню" id="36"/>
+					<ExtendedTooltip name="СобственникиДатаЗаписиВЕГРПРасширеннаяПодсказка" id="37"/>
+				</InputField>
+				<CheckBoxField name="СобственникиАгентскаяСхема" id="38">
+					<DataPath>Объект.Собственники.АгентскаяСхема</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="СобственникиАгентскаяСхемаКонтекстноеМеню" id="39"/>
+					<ExtendedTooltip name="СобственникиАгентскаяСхемаРасширеннаяПодсказка" id="40"/>
+				</CheckBoxField>
+				<InputField name="СобственникиДоговорПринципала" id="41">
+					<DataPath>Объект.Собственники.АгентскийДоговор</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СобственникиДоговорПринципалаКонтекстноеМеню" id="42"/>
+					<ExtendedTooltip name="СобственникиДоговорПринципалаРасширеннаяПодсказка" id="43"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.АР_СобственникиОбъектовНедвижимости</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>

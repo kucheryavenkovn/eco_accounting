@@ -1,0 +1,406 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Пробитые чеки</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаСписокЧеков" id="108">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа список чеков</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа список чеков</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаСписокЧековРасширеннаяПодсказка" id="109"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаЛево" id="112">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа лево</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа лево</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаЛевоРасширеннаяПодсказка" id="113"/>
+					<ChildItems>
+						<UsualGroup name="СписокКомпоновщикНастроекПользовательскиеНастройки" id="1">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа пользовательских настроек</v8:content>
+								</v8:item>
+							</Title>
+							<VerticalStretch>false</VerticalStretch>
+							<Group>Vertical</Group>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="СписокКомпоновщикНастроекПользовательскиеНастройкиРасширеннаяПодсказка" id="2"/>
+						</UsualGroup>
+						<Table name="Список" id="3">
+							<Representation>List</Representation>
+							<DefaultItem>true</DefaultItem>
+							<UseAlternationRowColor>true</UseAlternationRowColor>
+							<InitialTreeView>ExpandTopLevel</InitialTreeView>
+							<EnableStartDrag>true</EnableStartDrag>
+							<DataPath>Список</DataPath>
+							<RowPictureDataPath>Список.DefaultPicture</RowPictureDataPath>
+							<AutoRefresh>false</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<UserSettingsGroup>СписокКомпоновщикНастроекПользовательскиеНастройки</UserSettingsGroup>
+							<ContextMenu name="СписокКонтекстноеМеню" id="4"/>
+							<AutoCommandBar name="СписокКоманднаяПанель" id="5">
+								<Autofill>false</Autofill>
+								<ChildItems>
+									<Button name="ФормаЧекКоррекции" id="91">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ЧекКоррекции</CommandName>
+										<ExtendedTooltip name="ФормаЧекКоррекцииРасширеннаяПодсказка" id="92"/>
+									</Button>
+									<Button name="ФормаВывестиСписок" id="95">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.StandardCommand.OutputList</CommandName>
+										<ExtendedTooltip name="ФормаВывестиСписокРасширеннаяПодсказка" id="96"/>
+									</Button>
+									<Button name="ФормаНайти" id="103">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.StandardCommand.Find</CommandName>
+										<ExtendedTooltip name="ФормаНайтиРасширеннаяПодсказка" id="104"/>
+									</Button>
+									<Button name="ФормаНастройкаСписка" id="97">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.StandardCommand.ListSettings</CommandName>
+										<ExtendedTooltip name="ФормаНастройкаСпискаРасширеннаяПодсказка" id="98"/>
+									</Button>
+									<Button name="ФормаСохранитьНастройкиДинамическогоСписка" id="99">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.StandardCommand.SaveDynamicListSettings</CommandName>
+										<ExtendedTooltip name="ФормаСохранитьНастройкиДинамическогоСпискаРасширеннаяПодсказка" id="100"/>
+									</Button>
+									<Button name="ФормаЗагрузитьНастройкиДинамическогоСписка" id="101">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.StandardCommand.LoadDynamicListSettings</CommandName>
+										<ExtendedTooltip name="ФормаЗагрузитьНастройкиДинамическогоСпискаРасширеннаяПодсказка" id="102"/>
+									</Button>
+									<Button name="ФормаИзменитьФорму" id="93">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
+										<ExtendedTooltip name="ФормаИзменитьФормуРасширеннаяПодсказка" id="94"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="СписокРасширеннаяПодсказка" id="6"/>
+							<SearchStringAddition name="СписокСтрокаПоиска" id="7">
+								<AdditionSource>
+									<Item>Список</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокСтрокаПоискаКонтекстноеМеню" id="8"/>
+								<ExtendedTooltip name="СписокСтрокаПоискаРасширеннаяПодсказка" id="9"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="СписокСостояниеПросмотра" id="10">
+								<AdditionSource>
+									<Item>Список</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокСостояниеПросмотраКонтекстноеМеню" id="11"/>
+								<ExtendedTooltip name="СписокСостояниеПросмотраРасширеннаяПодсказка" id="12"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="СписокУправлениеПоиском" id="13">
+								<AdditionSource>
+									<Item>Список</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокУправлениеПоискомКонтекстноеМеню" id="14"/>
+								<ExtendedTooltip name="СписокУправлениеПоискомРасширеннаяПодсказка" id="15"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="OnLoadUserSettingsAtServer">СписокПриЗагрузкеПользовательскихНастроекНаСервере</Event>
+								<Event name="OnActivateRow">СписокПриАктивизацииСтроки</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="ДокументОснование" id="16">
+									<DataPath>Список.ДокументОснование</DataPath>
+									<DefaultItem>true</DefaultItem>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Основание</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДокументОснованиеКонтекстноеМеню" id="17"/>
+									<ExtendedTooltip name="ДокументОснованиеРасширеннаяПодсказка" id="18"/>
+								</LabelField>
+								<LabelField name="Дата" id="22">
+									<DataPath>Список.Дата</DataPath>
+									<DefaultItem>true</DefaultItem>
+									<Format>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>ДЛФ=D</v8:content>
+										</v8:item>
+									</Format>
+									<ContextMenu name="ДатаКонтекстноеМеню" id="23"/>
+									<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="24"/>
+								</LabelField>
+								<LabelField name="НомерЧекаККМ" id="37">
+									<DataPath>Список.НомерЧекаККМ</DataPath>
+									<DefaultItem>true</DefaultItem>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Номер</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="НомерЧекаККМКонтекстноеМеню" id="38"/>
+									<ExtendedTooltip name="НомерЧекаККМРасширеннаяПодсказка" id="39"/>
+								</LabelField>
+								<LabelField name="Приход" id="79">
+									<DataPath>Список.Приход</DataPath>
+									<MarkNegatives>true</MarkNegatives>
+									<Format>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>ЧЦ=19; ЧДЦ=2</v8:content>
+										</v8:item>
+									</Format>
+									<ContextMenu name="ПриходКонтекстноеМеню" id="80"/>
+									<ExtendedTooltip name="ПриходРасширеннаяПодсказка" id="81"/>
+								</LabelField>
+								<LabelField name="Расход" id="82">
+									<DataPath>Список.Расход</DataPath>
+									<MarkNegatives>true</MarkNegatives>
+									<Format>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>ЧЦ=19; ЧДЦ=2</v8:content>
+										</v8:item>
+									</Format>
+									<ContextMenu name="РасходКонтекстноеМеню" id="83"/>
+									<ExtendedTooltip name="РасходРасширеннаяПодсказка" id="84"/>
+								</LabelField>
+								<LabelField name="ТипРасчета" id="34">
+									<DataPath>Список.ТипРасчета</DataPath>
+									<DefaultItem>true</DefaultItem>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Вид операции</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ТипРасчетаКонтекстноеМеню" id="35"/>
+									<ExtendedTooltip name="ТипРасчетаРасширеннаяПодсказка" id="36"/>
+								</LabelField>
+								<LabelField name="ТипДокумента" id="31">
+									<DataPath>Список.ТипДокумента</DataPath>
+									<DefaultItem>true</DefaultItem>
+									<ContextMenu name="ТипДокументаКонтекстноеМеню" id="32"/>
+									<ExtendedTooltip name="ТипДокументаРасширеннаяПодсказка" id="33"/>
+								</LabelField>
+								<LabelField name="Организация" id="25">
+									<DataPath>Список.Организация</DataPath>
+									<DefaultItem>true</DefaultItem>
+									<ContextMenu name="ОрганизацияКонтекстноеМеню" id="26"/>
+									<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="27"/>
+								</LabelField>
+								<LabelField name="РегистрационныйНомерККТ" id="88">
+									<DataPath>Список.РегистрационныйНомерККТ</DataPath>
+									<ContextMenu name="РегистрационныйНомерККТКонтекстноеМеню" id="89"/>
+									<ExtendedTooltip name="РегистрационныйНомерККТРасширеннаяПодсказка" id="90"/>
+								</LabelField>
+								<LabelField name="ФискальныйПризнак" id="85">
+									<DataPath>Список.ФискальныйПризнак</DataPath>
+									<ContextMenu name="ФискальныйПризнакКонтекстноеМеню" id="86"/>
+									<ExtendedTooltip name="ФискальныйПризнакРасширеннаяПодсказка" id="87"/>
+								</LabelField>
+								<LabelField name="КорректируемыйДокумент" id="76">
+									<DataPath>Список.КорректируемыйДокумент</DataPath>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+									</UserVisible>
+									<DefaultItem>true</DefaultItem>
+									<ContextMenu name="КорректируемыйДокументКонтекстноеМеню" id="77"/>
+									<ExtendedTooltip name="КорректируемыйДокументРасширеннаяПодсказка" id="78"/>
+								</LabelField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаПраво" id="114">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа право</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа право</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаПравоРасширеннаяПодсказка" id="115"/>
+					<ChildItems>
+						<TextDocumentField name="ПредварительныйПросмотрЧека" id="105">
+							<DataPath>ПредварительныйПросмотрЧека</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<ContextMenu name="ПредварительныйПросмотрЧекаКонтекстноеМеню" id="106"/>
+							<ExtendedTooltip name="ПредварительныйПросмотрЧекаРасширеннаяПодсказка" id="107"/>
+						</TextDocumentField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Список" id="1">
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<UseAlways>
+				<Field>Список.ДокументОснование</Field>
+				<Field>Список.ИдентификаторЗаписи</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	РегистрСведенийФискальныеОперации.ДокументОснование КАК ДокументОснование,
+	РегистрСведенийФискальныеОперации.ИдентификаторЗаписи КАК ИдентификаторЗаписи,
+	РегистрСведенийФискальныеОперации.Дата КАК Дата,
+	РегистрСведенийФискальныеОперации.Организация КАК Организация,
+	РегистрСведенийФискальныеОперации.ТорговыйОбъект КАК ТорговыйОбъект,
+	РегистрСведенийФискальныеОперации.ТипДокумента КАК ТипДокумента,
+	РегистрСведенийФискальныеОперации.ТипРасчета КАК ТипРасчета,
+	РегистрСведенийФискальныеОперации.НомерЧекаККМ КАК НомерЧекаККМ,
+	РегистрСведенийФискальныеОперации.НомерСменыККМ КАК НомерСменыККМ,
+	РегистрСведенийФискальныеОперации.ФискальныйПризнак КАК ФискальныйПризнак,
+	РегистрСведенийФискальныеОперации.Сумма КАК Сумма,
+	РегистрСведенийФискальныеОперации.ОплатаНаличные КАК ОплатаНаличные,
+	РегистрСведенийФискальныеОперации.ОплатаЭлектронно КАК ОплатаЭлектронно,
+	РегистрСведенийФискальныеОперации.ОплатаПостоплата КАК ОплатаПостоплата,
+	РегистрСведенийФискальныеОперации.ОплатаПредоплата КАК ОплатаПредоплата,
+	РегистрСведенийФискальныеОперации.ОплатаВстречноеПредоставление КАК ОплатаВстречноеПредоставление,
+	РегистрСведенийФискальныеОперации.АдресСайтаПроверки КАК АдресСайтаПроверки,
+	РегистрСведенийФискальныеОперации.ЗаводскойНомерФН КАК ЗаводскойНомерФН,
+	РегистрСведенийФискальныеОперации.РегистрационныйНомерККТ КАК РегистрационныйНомерККТ,
+	РегистрСведенийФискальныеОперации.ДополнительныйРеквизит КАК ДополнительныйРеквизит,
+	РегистрСведенийФискальныеОперации.КорректируемыйДокумент КАК КорректируемыйДокумент,
+	РегистрСведенийФискальныеОперации.ДанныеXML КАК ДанныеXML,
+	РегистрСведенийФискальныеОперации.СубъектПерсональныхДанных КАК СубъектПерсональныхДанных,
+	РегистрСведенийФискальныеОперации.ЕдиныйЧек КАК ЕдиныйЧек,
+	ВЫБОР
+		КОГДА РегистрСведенийФискальныеОперации.ТипРасчета = ЗНАЧЕНИЕ(Перечисление.ТипыРасчетаДенежнымиСредствами.ПриходДенежныхСредств)
+			ТОГДА 1
+		КОГДА РегистрСведенийФискальныеОперации.ТипРасчета = ЗНАЧЕНИЕ(Перечисление.ТипыРасчетаДенежнымиСредствами.ВозвратДенежныхСредств)
+			ТОГДА -1
+		ИНАЧЕ 0
+	КОНЕЦ * РегистрСведенийФискальныеОперации.Сумма КАК Приход,
+	ВЫБОР
+		КОГДА РегистрСведенийФискальныеОперации.ТипРасчета = ЗНАЧЕНИЕ(Перечисление.ТипыРасчетаДенежнымиСредствами.РасходДенежныхСредств)
+			ТОГДА 1
+		КОГДА РегистрСведенийФискальныеОперации.ТипРасчета = ЗНАЧЕНИЕ(Перечисление.ТипыРасчетаДенежнымиСредствами.ВозвратРасходаДенежныхСредств)
+			ТОГДА -1
+		ИНАЧЕ 0
+	КОНЕЦ * РегистрСведенийФискальныеОперации.Сумма КАК Расход
+ИЗ
+	РегистрСведений.ФискальныеОперации КАК РегистрСведенийФискальныеОперации</QueryText>
+				<MainTable>InformationRegister.ФискальныеОперации</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:left xsi:type="dcscor:Field">Организация</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:userSettingID>767fa83d-0be2-4843-ab78-4d9187f8e876</dcsset:userSettingID>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ПредварительныйПросмотрЧека" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Предварительный просмотр чека</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/txtedt">d5p1:TextDocument</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ЧекКоррекции" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Корректировать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Чек коррекции</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Change</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ЧекКоррекции</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+	</Commands>
+</Form>

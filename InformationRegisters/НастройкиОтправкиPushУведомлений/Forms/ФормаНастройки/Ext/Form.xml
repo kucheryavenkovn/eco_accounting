@@ -1,0 +1,431 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаЗаписатьИЗакрыть" id="56">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ЗаписатьИЗакрыть</CommandName>
+				<ExtendedTooltip name="ФормаЗаписатьИЗакрытьРасширеннаяПодсказка" id="57"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="BeforeClose">ПередЗакрытием</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<LabelDecoration name="ДекорацияЗаголовок" id="58">
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вариант отправки push-уведомлений:</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ДекорацияЗаголовокКонтекстноеМеню" id="59"/>
+			<ExtendedTooltip name="ДекорацияЗаголовокРасширеннаяПодсказка" id="60"/>
+		</LabelDecoration>
+		<RadioButtonField name="ВариантОтправкиЧерезВспомогательныйСервис" id="19">
+			<DataPath>ВариантОтправкиPushУведомлений</DataPath>
+			<TitleLocation>None</TitleLocation>
+			<ToolTipRepresentation>Button</ToolTipRepresentation>
+			<RadioButtonType>Auto</RadioButtonType>
+			<ChoiceList>
+				<xr:Item>
+					<xr:Presentation/>
+					<xr:CheckState>0</xr:CheckState>
+					<xr:Value xsi:type="FormChoiceListDesTimeValue">
+						<Presentation>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Отправлять, используя сервис "1С:Центр уведомлений"</v8:content>
+							</v8:item>
+						</Presentation>
+						<Value xsi:type="xr:DesignTimeRef">Enum.ВариантыОтправкиPushУведомлений.EnumValue.ОтправлятьЧерезВспомогательныйСервис</Value>
+					</xr:Value>
+				</xr:Item>
+			</ChoiceList>
+			<ContextMenu name="ВариантОтправкиЧерезВспомогательныйСервисКонтекстноеМеню" id="20"/>
+			<ExtendedTooltip name="ВариантОтправкиЧерезВспомогательныйСервисРасширеннаяПодсказка" id="21">
+				<Title formatted="true">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Фирмой «1С» разработан специальный вспомогательный сервис&lt;color #000000&gt; &lt;/&gt;(&lt;link https://pushnotifications.1c.com&gt;http&lt;/&gt;&lt;link https://pushnotifications.1c.com&gt;://pushnotifications.1c.com&lt;/&gt;) для отправки уведомлений. 
+Сервис облегчает реализацию отправки уведомлений из тиражных прикладных решений.</v8:content>
+					</v8:item>
+				</Title>
+			</ExtendedTooltip>
+			<Events>
+				<Event name="OnChange">ВариантОтправкиPushУведомленийПриИзменении</Event>
+			</Events>
+		</RadioButtonField>
+		<UsualGroup name="ГруппаОтправкаЧерезВспомогательныйСервис" id="25">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отправка через вспомогательный сервис</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаОтправкаЧерезВспомогательныйСервисРасширеннаяПодсказка" id="26"/>
+			<ChildItems>
+				<LabelDecoration name="ДекорацияОтступ1" id="27">
+					<Width>3</Width>
+					<ContextMenu name="ДекорацияОтступ1КонтекстноеМеню" id="28"/>
+					<ExtendedTooltip name="ДекорацияОтступ1РасширеннаяПодсказка" id="29"/>
+				</LabelDecoration>
+				<InputField name="ЛогинСервисаПередачиPushУведомлений" id="13">
+					<DataPath>ЛогинСервисаПередачиPushУведомлений</DataPath>
+					<Width>45</Width>
+					<ContextMenu name="ЛогинСервисаПередачиPushУведомленийКонтекстноеМеню" id="14"/>
+					<ExtendedTooltip name="ЛогинСервисаПередачиPushУведомленийРасширеннаяПодсказка" id="15"/>
+				</InputField>
+				<Button name="ПолучитьЛогин" id="30">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.ПолучитьКлючСервиса1С</CommandName>
+					<ExtendedTooltip name="ПолучитьЛогинРасширеннаяПодсказка" id="31"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<RadioButtonField name="ВариантОтправкиНепосредственно" id="22">
+			<DataPath>ВариантОтправкиPushУведомлений</DataPath>
+			<TitleLocation>None</TitleLocation>
+			<ToolTipRepresentation>Button</ToolTipRepresentation>
+			<RadioButtonType>Auto</RadioButtonType>
+			<ChoiceList>
+				<xr:Item>
+					<xr:Presentation/>
+					<xr:CheckState>0</xr:CheckState>
+					<xr:Value xsi:type="FormChoiceListDesTimeValue">
+						<Presentation>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Отправлять, используя сервисы Apple Push Notification Service (APNs) и Google Cloud Messaging (GCM)</v8:content>
+							</v8:item>
+						</Presentation>
+						<Value xsi:type="xr:DesignTimeRef">Enum.ВариантыОтправкиPushУведомлений.EnumValue.ОтправлятьНепосредственно</Value>
+					</xr:Value>
+				</xr:Item>
+			</ChoiceList>
+			<ContextMenu name="ВариантОтправкиНепосредственноКонтекстноеМеню" id="23"/>
+			<ExtendedTooltip name="ВариантОтправкиНепосредственноРасширеннаяПодсказка" id="24">
+				<Title formatted="true">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Сервисы доставки уведомлений обеспечивают передачу уведомления от отправителя получателю (мобильному приложению). 
+В качестве таких сервисов выступают:
+- Google Cloud Messaging (GCM),&lt;color #000000&gt; &lt;/&gt;&lt;link http://developer.android.com/intl/ru/google/gcm/index.html&gt;http://developer.android.com/intl/ru/google/gcm/index.html&lt;/&gt;, на английском языке
+- Apple Push Notification Service (APNs), &lt;link https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html&gt;https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html&lt;/&gt;, на английском языке
+
+</v8:content>
+					</v8:item>
+				</Title>
+			</ExtendedTooltip>
+			<Events>
+				<Event name="OnChange">ВариантОтправкиPushУведомленийПриИзменении</Event>
+			</Events>
+		</RadioButtonField>
+		<UsualGroup name="ГруппаОтправкаНепосредственно" id="32">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отправка непосредственно</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаОтправкаНепосредственноРасширеннаяПодсказка" id="33"/>
+			<ChildItems>
+				<LabelDecoration name="ДекорацияОтступ2" id="41">
+					<Width>3</Width>
+					<ContextMenu name="ДекорацияОтступ2КонтекстноеМеню" id="42"/>
+					<ExtendedTooltip name="ДекорацияОтступ2РасширеннаяПодсказка" id="43"/>
+				</LabelDecoration>
+				<UsualGroup name="ГруппаВариантыОтправкиНепосредственно" id="44">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Варианты отправки непосредственно</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаВариантыОтправкиНепосредственноРасширеннаяПодсказка" id="45"/>
+					<ChildItems>
+						<CheckBoxField name="ИспользоватьGCM" id="7">
+							<DataPath>ИспользоватьGCM</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Использовать GCM (для Android устройств)</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ИспользоватьGCMКонтекстноеМеню" id="8"/>
+							<ExtendedTooltip name="ИспользоватьGCMРасширеннаяПодсказка" id="9"/>
+							<Events>
+								<Event name="OnChange">ИспользоватьGCMПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<UsualGroup name="ГруппаОтправкаЧерезGCM" id="34">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Отправка через GCM</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаОтправкаЧерезGCMРасширеннаяПодсказка" id="35"/>
+							<ChildItems>
+								<InputField name="КлючCервераОтправителяGCM" id="10">
+									<DataPath>КлючCервераОтправителяGCM</DataPath>
+									<Width>45</Width>
+									<ContextMenu name="КлючCервераОтправителяGCMКонтекстноеМеню" id="11"/>
+									<ExtendedTooltip name="КлючCервераОтправителяGCMРасширеннаяПодсказка" id="12"/>
+								</InputField>
+								<InputField name="НомерПриложенияGoogleCloud" id="61">
+									<DataPath>НомерПриложенияGoogleCloud</DataPath>
+									<Width>45</Width>
+									<ContextMenu name="НомерПриложенияGoogleCloudКонтекстноеМеню" id="62"/>
+									<ExtendedTooltip name="НомерПриложенияGoogleCloudРасширеннаяПодсказка" id="63"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<CheckBoxField name="ИспользоватьAPNS" id="4">
+							<DataPath>ИспользоватьAPNS</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Использовать APNs (для iOS устройств)</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ИспользоватьAPNSКонтекстноеМеню" id="5"/>
+							<ExtendedTooltip name="ИспользоватьAPNSРасширеннаяПодсказка" id="6"/>
+							<Events>
+								<Event name="OnChange">ИспользоватьAPNSПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<UsualGroup name="ГруппаОтправкаЧерезAPNS" id="46">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Отправка через APNS</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ThroughAlign>DontUse</ThroughAlign>
+							<ExtendedTooltip name="ГруппаОтправкаЧерезAPNSРасширеннаяПодсказка" id="47"/>
+							<ChildItems>
+								<LabelField name="СертификатЗагружен" id="53">
+									<DataPath>СертификатЗагружен</DataPath>
+									<ContextMenu name="СертификатЗагруженКонтекстноеМеню" id="54"/>
+									<ExtendedTooltip name="СертификатЗагруженРасширеннаяПодсказка" id="55"/>
+								</LabelField>
+								<Button name="ЗагрузитьСертификат" id="48">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.ЗагрузитьСертификат</CommandName>
+									<ExtendedTooltip name="ЗагрузитьСертификатРасширеннаяПодсказка" id="49"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<RadioButtonField name="ВариантОтправкиНеОтправлять" id="1">
+			<DataPath>ВариантОтправкиPushУведомлений</DataPath>
+			<TitleLocation>None</TitleLocation>
+			<RadioButtonType>Auto</RadioButtonType>
+			<ChoiceList>
+				<xr:Item>
+					<xr:Presentation/>
+					<xr:CheckState>0</xr:CheckState>
+					<xr:Value xsi:type="FormChoiceListDesTimeValue">
+						<Presentation>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Не отправлять уведомления</v8:content>
+							</v8:item>
+						</Presentation>
+						<Value xsi:type="xr:DesignTimeRef">Enum.ВариантыОтправкиPushУведомлений.EnumValue.НеОтправлять</Value>
+					</xr:Value>
+				</xr:Item>
+			</ChoiceList>
+			<ContextMenu name="ВариантОтправкиНеОтправлятьКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="ВариантОтправкиНеОтправлятьРасширеннаяПодсказка" id="3"/>
+			<Events>
+				<Event name="OnChange">ВариантОтправкиPushУведомленийПриИзменении</Event>
+			</Events>
+		</RadioButtonField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="АдресСертификата" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес сертификата</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СертификатЗагружен" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сертификат загружен</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ВариантОтправкиPushУведомлений" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вариант отправки push-уведомлений</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.ВариантыОтправкиPushУведомлений</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ИспользоватьAPNS" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Использовать APNs (для iOS устройств)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ИспользоватьGCM" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Использовать GCM (для Android устройств)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="КлючCервераОтправителяGCM" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ключ программного интерфейса (API Key)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ЛогинСервисаПередачиPushУведомлений" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ключ программного интерфейса (API Key)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>54</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="НомерПриложенияGoogleCloud" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер проекта (Project Number)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>12</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ЗагрузитьСертификат" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить сертификат</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить сертификат</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗагрузитьСертификат</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПолучитьКлючСервиса1С" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Получить ключ</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ПолучитьКлючСервиса1С</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ЗаписатьИЗакрыть" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать и закрыть</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать и закрыть</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаписатьИЗакрыть</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

@@ -1,0 +1,563 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Popup name="ПодменюПечать" id="90">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Печать</v8:content>
+					</v8:item>
+				</Title>
+				<Picture>
+					<xr:Ref>StdPicture.Print</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<Representation>PictureAndText</Representation>
+				<ExtendedTooltip name="ПодменюПечатьРасширеннаяПодсказка" id="91"/>
+			</Popup>
+			<Popup name="ПодменюЗаполнить" id="92">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Заполнить</v8:content>
+					</v8:item>
+				</Title>
+				<Picture>
+					<xr:Ref>CommonPicture.ЗаполнитьФорму</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<Representation>PictureAndText</Representation>
+				<ExtendedTooltip name="ПодменюДополнительныхОбработокЗаполненияРасширеннаяПодсказка" id="93"/>
+			</Popup>
+			<Popup name="ПодменюОтчеты" id="116">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Отчеты</v8:content>
+					</v8:item>
+				</Title>
+				<ToolTip>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Подменю отчеты</v8:content>
+					</v8:item>
+				</ToolTip>
+				<Picture>
+					<xr:Ref>CommonPicture.Отчеты</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<Representation>PictureAndText</Representation>
+				<ExtendedTooltip name="ПодменюОтчетыРасширеннаяПодсказка" id="117"/>
+			</Popup>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="AfterWriteAtServer">ПослеЗаписиНаСервере</Event>
+		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаШапка" id="76">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шапка</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Horizontal</Group>
+			<Representation>NormalSeparation</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаШапкаРасширеннаяПодсказка" id="77"/>
+			<ChildItems>
+				<InputField name="Дата" id="1">
+					<DataPath>Объект.Date</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="3"/>
+				</InputField>
+				<InputField name="Организация" id="4">
+					<DataPath>Объект.Организация</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="6"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="Учредители" id="7">
+			<Representation>List</Representation>
+			<Footer>true</Footer>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Объект.Учредители</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="УчредителиКонтекстноеМеню" id="8"/>
+			<AutoCommandBar name="УчредителиКоманднаяПанель" id="9">
+				<Autofill>false</Autofill>
+				<ChildItems>
+					<Popup name="УчредителиГруппаДобавить" id="60">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Добавить</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="УчредителиГруппаДобавитьРасширеннаяПодсказка" id="61"/>
+						<ChildItems>
+							<Button name="УчредителиДобавитьУчредителяФизическоеЛицо" id="62">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ДобавитьУчредителяФизическоеЛицо</CommandName>
+								<ExtendedTooltip name="УчредителиДобавитьУчредителяФизическоеЛицоРасширеннаяПодсказка" id="63"/>
+							</Button>
+							<Button name="УчредителиДобавитьУчредителяЮридическоеЛицо" id="64">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ДобавитьУчредителяЮридическоеЛицо</CommandName>
+								<ExtendedTooltip name="УчредителиДобавитьУчредителяЮридическоеЛицоРасширеннаяПодсказка" id="65"/>
+							</Button>
+						</ChildItems>
+					</Popup>
+					<Button name="УчредителиДобавить" id="105">
+						<Type>CommandBarButton</Type>
+						<Visible>false</Visible>
+						<CommandName>Form.Item.Учредители.StandardCommand.Add</CommandName>
+						<ExtendedTooltip name="УчредителиДобавитьРасширеннаяПодсказка" id="106"/>
+					</Button>
+					<Button name="УчредителиУдалить" id="66">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Item.Учредители.StandardCommand.Delete</CommandName>
+						<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+						<ExtendedTooltip name="УчредителиУдалитьРасширеннаяПодсказка" id="67"/>
+					</Button>
+					<ButtonGroup name="УчредителиГруппаПереместить" id="68">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Переместить</v8:content>
+							</v8:item>
+						</Title>
+						<Representation>Compact</Representation>
+						<ExtendedTooltip name="УчредителиГруппаПереместитьРасширеннаяПодсказка" id="69"/>
+						<ChildItems>
+							<Button name="УчредителиПереместитьВверх" id="70">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.Учредители.StandardCommand.MoveUp</CommandName>
+								<ExtendedTooltip name="УчредителиПереместитьВверхРасширеннаяПодсказка" id="71"/>
+							</Button>
+							<Button name="УчредителиПереместитьВниз" id="72">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.Учредители.StandardCommand.MoveDown</CommandName>
+								<ExtendedTooltip name="УчредителиПереместитьВнизРасширеннаяПодсказка" id="73"/>
+							</Button>
+						</ChildItems>
+					</ButtonGroup>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="УчредителиРасширеннаяПодсказка" id="10"/>
+			<SearchStringAddition name="УчредителиСтрокаПоиска" id="11">
+				<AdditionSource>
+					<Item>Учредители</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="УчредителиСтрокаПоискаКонтекстноеМеню" id="12"/>
+				<ExtendedTooltip name="УчредителиСтрокаПоискаРасширеннаяПодсказка" id="13"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="УчредителиСостояниеПросмотра" id="14">
+				<AdditionSource>
+					<Item>Учредители</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="УчредителиСостояниеПросмотраКонтекстноеМеню" id="15"/>
+				<ExtendedTooltip name="УчредителиСостояниеПросмотраРасширеннаяПодсказка" id="16"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="УчредителиУправлениеПоиском" id="17">
+				<AdditionSource>
+					<Item>Учредители</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="УчредителиУправлениеПоискомКонтекстноеМеню" id="18"/>
+				<ExtendedTooltip name="УчредителиУправлениеПоискомРасширеннаяПодсказка" id="19"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="BeforeAddRow">УчредителиПередНачаломДобавления</Event>
+				<Event name="OnStartEdit">УчредителиПриНачалеРедактирования</Event>
+			</Events>
+			<ChildItems>
+				<LabelField name="УчредителиНомерСтроки" id="20">
+					<DataPath>Объект.Учредители.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="УчредителиНомерСтрокиКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="УчредителиНомерСтрокиРасширеннаяПодсказка" id="22"/>
+				</LabelField>
+				<InputField name="УчредителиУчредитель" id="23">
+					<DataPath>Объект.Учредители.Учредитель</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<FooterText>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Уставный капитал:</v8:content>
+						</v8:item>
+					</FooterText>
+					<FooterHorizontalAlign>Right</FooterHorizontalAlign>
+					<Width>40</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="УчредителиУчредительКонтекстноеМеню" id="24"/>
+					<ExtendedTooltip name="УчредителиУчредительРасширеннаяПодсказка" id="25"/>
+				</InputField>
+				<ColumnGroup name="УчредителиГруппаСведенияОбУчредителе" id="38">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сведения об учредителе</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="УчредителиГруппаСведенияОбУчредителеРасширеннаяПодсказка" id="39"/>
+					<ChildItems>
+						<ColumnGroup name="УчредителиГруппаПредставитель" id="40">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Представитель</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Horizontal</Group>
+							<ExtendedTooltip name="УчредителиГруппаПредставительРасширеннаяПодсказка" id="41"/>
+							<ChildItems>
+								<InputField name="УчредителиНадписьПредставитель" id="46">
+									<DataPath>Объект.Учредители.НадписьПредставитель</DataPath>
+									<Enabled>false</Enabled>
+									<EditMode>EnterOnInput</EditMode>
+									<ShowInHeader>false</ShowInHeader>
+									<ShowInFooter>false</ShowInFooter>
+									<Width>14</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<TextColor>style:ЗаголовкиСтрокЦветТекста</TextColor>
+									<Font ref="style:ЗаголовкиСтрокШрифт" kind="StyleItem"/>
+									<ContextMenu name="УчредителиНадписьПредставительКонтекстноеМеню" id="47"/>
+									<ExtendedTooltip name="УчредителиНадписьПредставительРасширеннаяПодсказка" id="48"/>
+								</InputField>
+								<InputField name="УчредителиПредставительУчредителя" id="29">
+									<DataPath>Объект.Учредители.ПредставительУчредителя</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ShowInHeader>false</ShowInHeader>
+									<ShowInFooter>false</ShowInFooter>
+									<Width>40</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<InputHint>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Представитель учредителя</v8:content>
+										</v8:item>
+									</InputHint>
+									<ContextMenu name="УчредителиПредставительУчредителяКонтекстноеМеню" id="30"/>
+									<ExtendedTooltip name="УчредителиПредставительУчредителяРасширеннаяПодсказка" id="31"/>
+								</InputField>
+							</ChildItems>
+						</ColumnGroup>
+						<ColumnGroup name="УчредителиГруппаДолжность" id="42">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Должность</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Horizontal</Group>
+							<ExtendedTooltip name="УчредителиГруппаДолжностьРасширеннаяПодсказка" id="43"/>
+							<ChildItems>
+								<InputField name="УчредителиНадписьДолжность" id="49">
+									<DataPath>Объект.Учредители.НадписьДолжность</DataPath>
+									<Enabled>false</Enabled>
+									<EditMode>EnterOnInput</EditMode>
+									<ShowInHeader>false</ShowInHeader>
+									<ShowInFooter>false</ShowInFooter>
+									<Width>14</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<TextColor>style:ЗаголовкиСтрокЦветТекста</TextColor>
+									<Font ref="style:ЗаголовкиСтрокШрифт" kind="StyleItem"/>
+									<ContextMenu name="УчредителиНадписьДолжностьКонтекстноеМеню" id="50"/>
+									<ExtendedTooltip name="УчредителиНадписьДолжностьРасширеннаяПодсказка" id="51"/>
+								</InputField>
+								<InputField name="УчредителиДолжностьПредставителя" id="32">
+									<DataPath>Объект.Учредители.ДолжностьПредставителя</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ShowInHeader>false</ShowInHeader>
+									<ShowInFooter>false</ShowInFooter>
+									<Width>40</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<InputHint>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Должность представителя</v8:content>
+										</v8:item>
+									</InputHint>
+									<ContextMenu name="УчредителиДолжностьПредставителяКонтекстноеМеню" id="33"/>
+									<ExtendedTooltip name="УчредителиДолжностьПредставителяРасширеннаяПодсказка" id="34"/>
+									<Events>
+										<Event name="OnChange">УчредителиДолжностьПредставителяПриИзменении</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</ColumnGroup>
+						<ColumnGroup name="УчредителиГруппаНаОсновании" id="44">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>На основании</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Horizontal</Group>
+							<ExtendedTooltip name="УчредителиГруппаНаОснованииРасширеннаяПодсказка" id="45"/>
+							<ChildItems>
+								<InputField name="УчредителиНадписьНаОсновании" id="52">
+									<DataPath>Объект.Учредители.НадписьНаОсновании</DataPath>
+									<Enabled>false</Enabled>
+									<EditMode>EnterOnInput</EditMode>
+									<ShowInHeader>false</ShowInHeader>
+									<ShowInFooter>false</ShowInFooter>
+									<Width>14</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<TextColor>style:ЗаголовкиСтрокЦветТекста</TextColor>
+									<Font ref="style:ЗаголовкиСтрокШрифт" kind="StyleItem"/>
+									<ContextMenu name="УчредителиНадписьНаОснованииКонтекстноеМеню" id="53"/>
+									<ExtendedTooltip name="УчредителиНадписьНаОснованииРасширеннаяПодсказка" id="54"/>
+								</InputField>
+								<InputField name="УчредителиПредставительНаОсновании" id="35">
+									<DataPath>Объект.Учредители.ПредставительНаОсновании</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ShowInHeader>false</ShowInHeader>
+									<ShowInFooter>false</ShowInFooter>
+									<Width>40</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<InputHint>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>На основании чего действует представитель</v8:content>
+										</v8:item>
+									</InputHint>
+									<ContextMenu name="УчредителиПредставительНаОснованииКонтекстноеМеню" id="36"/>
+									<ExtendedTooltip name="УчредителиПредставительНаОснованииРасширеннаяПодсказка" id="37"/>
+								</InputField>
+							</ChildItems>
+						</ColumnGroup>
+					</ChildItems>
+				</ColumnGroup>
+				<InputField name="УчредителиСуммаВзносаДоИзменения" id="110">
+					<DataPath>Объект.Учредители.СуммаВзносаДоИзменения</DataPath>
+					<Visible>false</Visible>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Доля до изменения, руб</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<FooterDataPath>Объект.Учредители.TotalСуммаВзносаДоИзменения</FooterDataPath>
+					<AutoMarkIncomplete>false</AutoMarkIncomplete>
+					<ContextMenu name="УчредителиСуммаВзносаДоИзмененияКонтекстноеМеню" id="111"/>
+					<ExtendedTooltip name="УчредителиСуммаВзносаДоИзмененияРасширеннаяПодсказка" id="112"/>
+				</InputField>
+				<InputField name="УчредителиСуммаВзносаПослеИзменения" id="113">
+					<DataPath>Объект.Учредители.СуммаВзноса</DataPath>
+					<Visible>false</Visible>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Доля после изменения, руб</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<FooterDataPath>Объект.Учредители.TotalСуммаВзноса</FooterDataPath>
+					<AutoMarkIncomplete>false</AutoMarkIncomplete>
+					<ContextMenu name="УчредителиСуммаВзносаПослеИзмененияКонтекстноеМеню" id="114"/>
+					<ExtendedTooltip name="УчредителиСуммаВзносаПослеИзмененияРасширеннаяПодсказка" id="115"/>
+				</InputField>
+				<InputField name="УчредителиСуммаВзноса" id="26">
+					<DataPath>Объект.Учредители.СуммаВзноса</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Взнос, руб.</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<FooterDataPath>Объект.Учредители.TotalСуммаВзноса</FooterDataPath>
+					<Width>12</Width>
+					<ContextMenu name="УчредителиСуммаВзносаКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="УчредителиСуммаВзносаРасширеннаяПодсказка" id="28"/>
+				</InputField>
+				<InputField name="УчредителиОтступ" id="107">
+					<DataPath>Объект.Учредители.Отступ</DataPath>
+					<Enabled>false</Enabled>
+					<TitleLocation>None</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>1</Width>
+					<HorizontalStretch>true</HorizontalStretch>
+					<ContextMenu name="УчредителиОтступКонтекстноеМеню" id="108"/>
+					<ExtendedTooltip name="УчредителиОтступРасширеннаяПодсказка" id="109"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<UsualGroup name="ГруппаПодвал" id="82">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подвал</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Representation>NormalSeparation</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПодвалРасширеннаяПодсказка" id="83"/>
+			<ChildItems>
+				<InputField name="Комментарий" id="84">
+					<DataPath>Объект.Комментарий</DataPath>
+					<ContextMenu name="КомментарийКонтекстноеМеню" id="85"/>
+					<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="86"/>
+				</InputField>
+				<InputField name="Ответственный" id="87">
+					<DataPath>Объект.Ответственный</DataPath>
+					<ContextMenu name="ОтветственныйКонтекстноеМеню" id="88"/>
+					<ExtendedTooltip name="ОтветственныйРасширеннаяПодсказка" id="89"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.ФормированиеУставногоКапитала</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+			<Columns>
+				<AdditionalColumns table="Объект.Учредители">
+					<Column name="НадписьПредставитель" id="2">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Надпись представитель</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>0</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+					<Column name="НадписьДолжность" id="3">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Надпись должность</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>0</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+					<Column name="НадписьНаОсновании" id="4">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Надпись на основании</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>0</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+					<Column name="Отступ" id="5">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Отступ</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>0</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+				</AdditionalColumns>
+			</Columns>
+		</Attribute>
+		<Attribute name="ОписаниеДокумента" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Описание документа</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПараметрыПодключаемыхКоманд" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры подключаемых команд</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ДобавитьУчредителяФизическоеЛицо" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Физическое лицо</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить учредителя - физическое лицо</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ДобавитьУчредителяФизическоеЛицо</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ДобавитьУчредителяЮридическоеЛицо" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Юридическое лицо</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить учредителя -  юридическое лицо</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ДобавитьУчредителяЮридическоеЛицо</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

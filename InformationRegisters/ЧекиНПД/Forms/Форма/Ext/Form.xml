@@ -1,0 +1,648 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Чек</v8:content>
+		</v8:item>
+	</Title>
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="URLProcessing">ОбработкаНавигационнойСсылки</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаКоманднаяПанель" id="68">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Командная панель</v8:content>
+				</v8:item>
+			</Title>
+			<HorizontalStretch>true</HorizontalStretch>
+			<GroupVerticalAlign>Center</GroupVerticalAlign>
+			<Group>Horizontal</Group>
+			<VerticalAlign>Center</VerticalAlign>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<BackColor>style:ЦветБаннераБежевыйЧекиНПД</BackColor>
+			<ExtendedTooltip name="ГруппаКоманднаяПанельРасширеннаяПодсказка" id="69"/>
+			<ChildItems>
+				<Button name="ФормаПовторить" id="100">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.Повторить</CommandName>
+					<ExtendedTooltip name="ФормаПовторитьРасширеннаяПодсказка" id="101"/>
+				</Button>
+				<Button name="ФормаПечать" id="62">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.Печать</CommandName>
+					<ExtendedTooltip name="ФормаПечатьРасширеннаяПодсказка" id="63"/>
+				</Button>
+				<UsualGroup name="ГруппаОтправить" id="98">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отправка</v8:content>
+						</v8:item>
+					</Title>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаОтправитьРасширеннаяПодсказка" id="99"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаОтправитьEmail" id="77">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа EMAIL</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ThroughAlign>DontUse</ThroughAlign>
+							<ExtendedTooltip name="ГруппаОтправитьEmailРасширеннаяПодсказка" id="78"/>
+							<ChildItems>
+								<CheckBoxField name="ОтправлятьEmail" id="79">
+									<DataPath>ОтправлятьEmail</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>CheckBox</CheckBoxType>
+									<ContextMenu name="ОтправлятьEmailКонтекстноеМеню" id="80"/>
+									<ExtendedTooltip name="ОтправлятьEmailРасширеннаяПодсказка" id="81"/>
+									<Events>
+										<Event name="OnChange">ОтправлятьEmailПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+								<InputField name="АдресЭлектроннойПочты" id="82">
+									<DataPath>АдресЭлектроннойПочты</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Введите адрес покупателя или отсканируйте штрихкод</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Width>15</Width>
+									<InputHint>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Адрес эл.почты</v8:content>
+										</v8:item>
+									</InputHint>
+									<ContextMenu name="АдресЭлектроннойПочтыКонтекстноеМеню" id="83"/>
+									<ExtendedTooltip name="АдресЭлектроннойПочтыРасширеннаяПодсказка" id="84"/>
+									<Events>
+										<Event name="OnChange">АдресЭлектроннойПочтыПриИзменении</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаОтправитьSMS" id="85">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа SMS</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаОтправитьSMSРасширеннаяПодсказка" id="86"/>
+							<ChildItems>
+								<CheckBoxField name="ОтправлятьSMS" id="87">
+									<DataPath>ОтправлятьSMS</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ОтправлятьSMSКонтекстноеМеню" id="88"/>
+									<ExtendedTooltip name="ОтправлятьSMSРасширеннаяПодсказка" id="89"/>
+									<Events>
+										<Event name="OnChange">ОтправлятьSMSПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+								<InputField name="НомерТелефона" id="90">
+									<DataPath>НомерТелефона</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<Width>15</Width>
+									<MaxWidth>11</MaxWidth>
+									<InputHint>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>+7ХХХХХХХХХХ</v8:content>
+										</v8:item>
+									</InputHint>
+									<ContextMenu name="НомерТелефонаКонтекстноеМеню" id="91"/>
+									<ExtendedTooltip name="НомерТелефонаРасширеннаяПодсказка" id="92"/>
+									<Events>
+										<Event name="OnChange">НомерТелефонаПриИзменении</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<Button name="Отправить" id="93">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.Отправить</CommandName>
+							<ExtendedTooltip name="ОтправитьРасширеннаяПодсказка" id="94"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+				<Button name="ФормаАннулировать" id="64">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.Аннулировать</CommandName>
+					<ExtendedTooltip name="ФормаАннулироватьРасширеннаяПодсказка" id="65"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаОшибка" id="48">
+			<Visible>false</Visible>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ошибка</v8:content>
+				</v8:item>
+			</Title>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<BackColor>style:ЦветФонаОшибкиЧекиНПД</BackColor>
+			<ExtendedTooltip name="ГруппаОшибкаРасширеннаяПодсказка" id="49"/>
+			<ChildItems>
+				<LabelDecoration name="ДекорацияТекстОшибки" id="50">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MaxWidth>80</MaxWidth>
+					<HorizontalStretch>true</HorizontalStretch>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Текст ошибки</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДекорацияТекстОшибкиКонтекстноеМеню" id="51"/>
+					<ExtendedTooltip name="ДекорацияТекстОшибкиРасширеннаяПодсказка" id="52"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаЭтапы" id="66">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Этапы</v8:content>
+				</v8:item>
+			</Title>
+			<Width>80</Width>
+			<Height>22</Height>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаЭтапыРасширеннаяПодсказка" id="67"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаДлительнаяОперация" id="38">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Длительная операция</v8:content>
+						</v8:item>
+					</Title>
+					<Group>AlwaysHorizontal</Group>
+					<VerticalAlign>Center</VerticalAlign>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаДлительнаяОперацияРасширеннаяПодсказка" id="39"/>
+					<ChildItems>
+						<PictureDecoration name="ФормированиеЧекаДлительнаяОперация" id="40">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Длительная операция</v8:content>
+								</v8:item>
+							</Title>
+							<Picture>
+								<xr:Ref>CommonPicture.ДлительнаяОперация48</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</Picture>
+							<FileDragMode>AsFile</FileDragMode>
+							<ContextMenu name="ФормированиеЧекаДлительнаяОперацияКонтекстноеМеню" id="41"/>
+							<ExtendedTooltip name="ФормированиеЧекаДлительнаяОперацияРасширеннаяПодсказка" id="42"/>
+						</PictureDecoration>
+						<LabelDecoration name="ДокументыДлительнаяОперацияОписание" id="43">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Пожалуйста, подождите...</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДокументыДлительнаяОперацияОписаниеКонтекстноеМеню" id="44"/>
+							<ExtendedTooltip name="ДокументыДлительнаяОперацияОписаниеРасширеннаяПодсказка" id="45"/>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаЧек" id="46">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Чек</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаЧекРасширеннаяПодсказка" id="47"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаЧекОжидаетОтправкиВФНС" id="115">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Чек ожидает отправки в ФНС</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<HorizontalSpacing>Half</HorizontalSpacing>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<BackColor>style:ЦветБаннераБежевыйЧекиНПД</BackColor>
+							<ExtendedTooltip name="ГруппаЧекОжидаетОтправкиВФНСРасширеннаяПодсказка" id="116"/>
+							<ChildItems>
+								<PictureDecoration name="КартинкаЧекОжидаетОтправки" id="123">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Картинка "Чек ожидает отправки"</v8:content>
+										</v8:item>
+									</Title>
+									<GroupVerticalAlign>Center</GroupVerticalAlign>
+									<Picture>
+										<xr:Ref>CommonPicture.ЧекиНПДОжиданиеОтправки</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
+									<ContextMenu name="КартинкаЧекОжидаетОтправкиКонтекстноеМеню" id="124"/>
+									<ExtendedTooltip name="КартинкаЧекОжидаетОтправкиРасширеннаяПодсказка" id="125"/>
+								</PictureDecoration>
+								<LabelDecoration name="НадписьЧекОжидаетОтправки" id="120">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<HorizontalStretch>true</HorizontalStretch>
+									<Title formatted="true">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сервис &lt;link ЛичныйКабинетСервисаМойНалог&gt;Мой налог&lt;/&gt; временно недоступен. Чек будет отправлен в ФНС после возобновления работы сервиса.</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="НадписьЧекОжидаетОтправкиКонтекстноеМеню" id="121"/>
+									<ExtendedTooltip name="НадписьЧекОжидаетОтправкиРасширеннаяПодсказка" id="122"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<PictureField name="АдресЧека" id="53">
+							<DataPath>АдресЧека</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Height>18</Height>
+							<PictureSize>AutoSize</PictureSize>
+							<Hyperlink>true</Hyperlink>
+							<NonselectedPictureText>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Загрузка чека...</v8:content>
+								</v8:item>
+							</NonselectedPictureText>
+							<TextColor>style:ТекстЗапрещеннойЯчейкиЦвет</TextColor>
+							<FileDragMode>AsFile</FileDragMode>
+							<ContextMenu name="АдресЧекаКонтекстноеМеню" id="54">
+								<Autofill>false</Autofill>
+							</ContextMenu>
+							<ExtendedTooltip name="АдресЧекаРасширеннаяПодсказка" id="55"/>
+							<Events>
+								<Event name="Click">АдресЧекаНажатие</Event>
+							</Events>
+						</PictureField>
+						<SpreadSheetDocumentField name="ТаблицаЧека" id="112">
+							<DataPath>ТаблицаЧека</DataPath>
+							<Visible>false</Visible>
+							<TitleLocation>None</TitleLocation>
+							<ContextMenu name="ТаблицаЧекаКонтекстноеМеню" id="113"/>
+							<ExtendedTooltip name="ТаблицаЧекаРасширеннаяПодсказка" id="114"/>
+						</SpreadSheetDocumentField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаОшибкаФормированияЧека" id="102">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ошибка формирования чека</v8:content>
+						</v8:item>
+					</Title>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаОшибкаФормированияЧекаРасширеннаяПодсказка" id="103"/>
+				</UsualGroup>
+				<UsualGroup name="ГруппаЧекПечатьНеДоступна" id="104">
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаЧекПечатьНеДоступнаРасширеннаяПодсказка" id="105"/>
+					<ChildItems>
+						<PictureDecoration name="ДекорацияКот" id="109">
+							<Width>7</Width>
+							<Height>2</Height>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Декорация кот</v8:content>
+								</v8:item>
+							</Title>
+							<PictureSize>AutoSize</PictureSize>
+							<Picture>
+								<xr:Ref>CommonPicture.КотОгорчение</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</Picture>
+							<FileDragMode>AsFile</FileDragMode>
+							<ContextMenu name="ДекорацияКотКонтекстноеМеню" id="110"/>
+							<ExtendedTooltip name="ДекорацияКотРасширеннаяПодсказка" id="111"/>
+						</PictureDecoration>
+						<LabelDecoration name="ДекорацияИнформация" id="106">
+							<Width>60</Width>
+							<Title formatted="true">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Просмотр чека недоступен. Распечатать чек можно из сервиса &lt;link https://himself-ktr.nalog.ru/&gt;Мой налог&lt;/&gt;</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияИнформацияКонтекстноеМеню" id="107"/>
+							<ExtendedTooltip name="ДекорацияИнформацияРасширеннаяПодсказка" id="108"/>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ТекущийЭтап" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текущий этап</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТекстОшибки" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текст ошибки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:FormattedString</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресЧека" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес чека</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтправлятьEmail" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Email</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтправлятьSMS" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>SMS</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресЭлектроннойПочты" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес электронной почты</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>150</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="НомерТелефона" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер телефона</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>50</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СведенияОЧеке" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сведения о чеке</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="ПараметрыОжиданияРезультата" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры ожидания результата</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="ОснованиеЧека" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основание чека</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:TypeSet>cfg:DocumentRef</v8:TypeSet>
+			</Type>
+		</Attribute>
+		<Attribute name="СостояниеДляИзменения" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Состояние для изменения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОперацияДляПовтора" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Операция для повтора</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ВремяОжиданияРезультата" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Время ожидания результата</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>5</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТаблицаЧека" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблица чека</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet">mxl:SpreadsheetDocument</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Организация" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Организация</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Печать" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Печать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Печать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Печать</Action>
+		</Command>
+		<Command name="Аннулировать" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Аннулировать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Аннулировать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Аннулировать</Action>
+		</Command>
+		<Command name="Отправить" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отправить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отправить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Отправить</Action>
+		</Command>
+		<Command name="Повторить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Повторить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Повторить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Повторить</Action>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="ОснованиеЧека">
+			<Type>
+				<v8:TypeSet>cfg:DocumentRef</v8:TypeSet>
+			</Type>
+		</Parameter>
+		<Parameter name="Организация">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ПолучательЧека">
+			<Type/>
+		</Parameter>
+	</Parameters>
+</Form>

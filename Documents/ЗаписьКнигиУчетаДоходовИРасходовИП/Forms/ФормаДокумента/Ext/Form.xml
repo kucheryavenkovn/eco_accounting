@@ -1,0 +1,2222 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаПоказатьКонтекстныеНовости" id="516">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ПоказатьКонтекстныеНовости</CommandName>
+				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+				<ExtendedTooltip name="ФормаПоказатьКонтекстныеНовостиРасширеннаяПодсказка" id="517"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="AfterWriteAtServer">ПослеЗаписиНаСервере</Event>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаШапка" id="227">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шапка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа шапка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ChildItemsWidth>LeftWide</ChildItemsWidth>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаШапкаExtendedTooltip" id="269"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаШапкаЛевая" id="228">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Шапка левая</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа шапка левая</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ChildItemsWidth>Equal</ChildItemsWidth>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаШапкаЛеваяExtendedTooltip" id="270"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаНомерДата" id="226">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Номер, дата</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа номер дата</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаНомерДатаExtendedTooltip" id="271"/>
+							<ChildItems>
+								<InputField name="Номер" id="1">
+									<DataPath>Объект.Number</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="НомерКонтекстноеМеню" id="2"/>
+									<ExtendedTooltip name="НомерExtendedTooltip" id="272"/>
+								</InputField>
+								<InputField name="Дата" id="3">
+									<DataPath>Объект.Date</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>от</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="ДатаКонтекстноеМеню" id="4"/>
+									<ExtendedTooltip name="ДатаExtendedTooltip" id="273"/>
+									<Events>
+										<Event name="OnChange">ДатаПриИзменении</Event>
+									</Events>
+								</InputField>
+								<PictureField name="СостояниеДокумента" id="432">
+									<DataPath>СостояниеДокумента</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<GroupVerticalAlign>Center</GroupVerticalAlign>
+									<Width>2</Width>
+									<Height>1</Height>
+									<HorizontalStretch>false</HorizontalStretch>
+									<VerticalStretch>false</VerticalStretch>
+									<ValuesPicture>
+										<xr:Ref>CommonPicture.СостоянияДокумента</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</ValuesPicture>
+									<Border width="1">
+										<v8ui:style xsi:type="v8ui:ControlBorderType">WithoutBorder</v8ui:style>
+									</Border>
+									<FileDragMode>AsFile</FileDragMode>
+									<ContextMenu name="СостояниеДокументаКонтекстноеМеню" id="433">
+										<Autofill>false</Autofill>
+									</ContextMenu>
+									<ExtendedTooltip name="СостояниеДокументаРасширеннаяПодсказка" id="434"/>
+								</PictureField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаШапкаПравая" id="229">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Шапка правая</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа шапка правая</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаШапкаПраваяExtendedTooltip" id="275"/>
+					<ChildItems>
+						<InputField name="Организация" id="5">
+							<DataPath>Объект.Организация</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ОрганизацияКонтекстноеМеню" id="6"/>
+							<ExtendedTooltip name="ОрганизацияExtendedTooltip" id="274"/>
+							<Events>
+								<Event name="OnChange">ОрганизацияПриИзменении</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<Pages name="ГруппаСтраницы" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа страницы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ExtendedTooltip name="ГруппаСтраницыExtendedTooltip" id="277"/>
+			<ChildItems>
+				<Page name="ГруппаТаблица1" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Таб. 1-1, 1-2, 1-3, 1-4</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Учет приобретенного и израсходованного сырья, выработанных и израсходованных полуфабрикатов по видам товаров (работ, услуг), иных материальных расходов и их распределение по видам деятельности</v8:content>
+						</v8:item>
+					</ToolTip>
+					<TitleDataPath>Объект.Таблица1.RowsCount</TitleDataPath>
+					<ExtendedTooltip name="ГруппаТаблица1ExtendedTooltip" id="278"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаТаблица1Заголовок" id="260">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Учет сырья, полуфабрикатов, вспомогательных материалов и иных материальных расходов</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<ExtendedTooltip name="ГруппаТаблица1ЗаголовокExtendedTooltip" id="279"/>
+							<ChildItems>
+								<Table name="Таблица1" id="11">
+									<Representation>List</Representation>
+									<AutoInsertNewRow>true</AutoInsertNewRow>
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>Объект.Таблица1</DataPath>
+									<SearchStringLocation>None</SearchStringLocation>
+									<ViewStatusLocation>None</ViewStatusLocation>
+									<SearchControlLocation>None</SearchControlLocation>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="Таблица1КонтекстноеМеню" id="12"/>
+									<AutoCommandBar name="Таблица1КоманднаяПанель" id="13"/>
+									<ExtendedTooltip name="Таблица1ExtendedTooltip" id="280"/>
+									<SearchStringAddition name="Таблица1СтрокаПоиска" id="435">
+										<AdditionSource>
+											<Item>Таблица1</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="Таблица1СтрокаПоискаКонтекстноеМеню" id="436"/>
+										<ExtendedTooltip name="Таблица1СтрокаПоискаРасширеннаяПодсказка" id="437"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="Таблица1СостояниеПросмотра" id="438">
+										<AdditionSource>
+											<Item>Таблица1</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="Таблица1СостояниеПросмотраКонтекстноеМеню" id="439"/>
+										<ExtendedTooltip name="Таблица1СостояниеПросмотраРасширеннаяПодсказка" id="440"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="Таблица1УправлениеПоиском" id="441">
+										<AdditionSource>
+											<Item>Таблица1</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="Таблица1УправлениеПоискомКонтекстноеМеню" id="442"/>
+										<ExtendedTooltip name="Таблица1УправлениеПоискомРасширеннаяПодсказка" id="443"/>
+									</SearchControlAddition>
+									<Events>
+										<Event name="OnStartEdit">Таблица1ПриНачалеРедактирования</Event>
+									</Events>
+									<ChildItems>
+										<LabelField name="Таблица1НомерСтроки" id="14">
+											<DataPath>Объект.Таблица1.LineNumber</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>4</Width>
+											<ContextMenu name="Таблица1НомерСтрокиКонтекстноеМеню" id="15"/>
+											<ExtendedTooltip name="Таблица1НомерСтрокиExtendedTooltip" id="281"/>
+										</LabelField>
+										<InputField name="Таблица1ВидДвижения" id="16">
+											<DataPath>Объект.Таблица1.ВидДвижения</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>11</Width>
+											<Format>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>БЛ=Приход; БИ=Расход</v8:content>
+												</v8:item>
+											</Format>
+											<EditFormat>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>БЛ=Приход; БИ=Расход</v8:content>
+												</v8:item>
+											</EditFormat>
+											<ContextMenu name="Таблица1ВидДвиженияКонтекстноеМеню" id="17"/>
+											<ExtendedTooltip name="Таблица1ВидДвиженияExtendedTooltip" id="283"/>
+										</InputField>
+										<ColumnGroup name="ГруппаТаблица1Номенклатура" id="424">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Номенклатура</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ГруппаТаблица1НоменклатураРасширеннаяПодсказка" id="425"/>
+											<ChildItems>
+												<InputField name="Таблица1ВидМПЗ" id="18">
+													<DataPath>Объект.Таблица1.ВидМПЗ</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="Таблица1ВидМПЗКонтекстноеМеню" id="19"/>
+													<ExtendedTooltip name="Таблица1ВидМПЗExtendedTooltip" id="284"/>
+												</InputField>
+												<InputField name="Таблица1Номенклатура" id="20">
+													<DataPath>Объект.Таблица1.Номенклатура</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>20</Width>
+													<ContextMenu name="Таблица1НоменклатураКонтекстноеМеню" id="21"/>
+													<ExtendedTooltip name="Таблица1НоменклатураExtendedTooltip" id="285"/>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+										<ColumnGroup name="ГруппаНоменклатурнаяГруппаХарактерДеятельности" id="233">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Номенклатурная группа, характер деятельности</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ГруппаНоменклатурнаяГруппаХарактерДеятельностиExtendedTooltip" id="286"/>
+											<ChildItems>
+												<InputField name="Таблица1НоменклатурнаяГруппа" id="22">
+													<DataPath>Объект.Таблица1.НоменклатурнаяГруппа</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="Таблица1НоменклатурнаяГруппаКонтекстноеМеню" id="23"/>
+													<ExtendedTooltip name="Таблица1НоменклатурнаяГруппаExtendedTooltip" id="287"/>
+												</InputField>
+												<InputField name="Таблица1ХарактерДеятельности" id="24">
+													<DataPath>Объект.Таблица1.ХарактерДеятельности</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="Таблица1ХарактерДеятельностиКонтекстноеМеню" id="25"/>
+													<ExtendedTooltip name="Таблица1ХарактерДеятельностиExtendedTooltip" id="288"/>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+										<ColumnGroup name="ГруппаПартияДокументОплаты" id="234">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Партия, документ оплаты</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ГруппаПартияДокументОплатыExtendedTooltip" id="289"/>
+											<ChildItems>
+												<InputField name="Таблица1Партия" id="28">
+													<DataPath>Объект.Таблица1.Партия</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ChoiceParameterLinks>
+														<xr:Link>
+															<xr:Name>Отбор.Организация</xr:Name>
+															<xr:DataPath xsi:type="xs:string">Объект.Организация</xr:DataPath>
+															<xr:ValueChange>Clear</xr:ValueChange>
+														</xr:Link>
+													</ChoiceParameterLinks>
+													<ContextMenu name="Таблица1ПартияКонтекстноеМеню" id="29"/>
+													<ExtendedTooltip name="Таблица1ПартияExtendedTooltip" id="290"/>
+													<Events>
+														<Event name="ChoiceProcessing">Таблица1ПартияОбработкаВыбора</Event>
+													</Events>
+												</InputField>
+												<InputField name="Таблица1ДокументОплаты" id="26">
+													<DataPath>Объект.Таблица1.ДокументОплаты</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ChoiceParameterLinks>
+														<xr:Link>
+															<xr:Name>Отбор.Организация</xr:Name>
+															<xr:DataPath xsi:type="xs:string">Объект.Организация</xr:DataPath>
+															<xr:ValueChange>Clear</xr:ValueChange>
+														</xr:Link>
+													</ChoiceParameterLinks>
+													<ContextMenu name="Таблица1ДокументОплатыКонтекстноеМеню" id="27"/>
+													<ExtendedTooltip name="Таблица1ДокументОплатыExtendedTooltip" id="291"/>
+													<Events>
+														<Event name="ChoiceProcessing">Таблица1ДокументОплатыОбработкаВыбора</Event>
+													</Events>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+										<InputField name="Таблица1Количество" id="30">
+											<DataPath>Объект.Таблица1.Количество</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>10</Width>
+											<ContextMenu name="Таблица1КоличествоКонтекстноеМеню" id="31"/>
+											<ExtendedTooltip name="Таблица1КоличествоExtendedTooltip" id="292"/>
+										</InputField>
+										<ColumnGroup name="ГруппаСуммаНДС" id="235">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Сумма НДС</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ГруппаСуммаНДСExtendedTooltip" id="293"/>
+											<ChildItems>
+												<InputField name="Таблица1Сумма" id="32">
+													<DataPath>Объект.Таблица1.Сумма</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>11</Width>
+													<ContextMenu name="Таблица1СуммаКонтекстноеМеню" id="33"/>
+													<ExtendedTooltip name="Таблица1СуммаExtendedTooltip" id="294"/>
+												</InputField>
+												<InputField name="Таблица1НДС" id="34">
+													<DataPath>Объект.Таблица1.НДС</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>11</Width>
+													<ContextMenu name="Таблица1НДСКонтекстноеМеню" id="35"/>
+													<ExtendedTooltip name="Таблица1НДСExtendedTooltip" id="295"/>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаТаблица15" id="160">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Таб. 1-5</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Количественно-суммовой учет израсходованных материальных ресурсов на выпущенную готовую продукцию по видам товаров (работ, услуг)</v8:content>
+						</v8:item>
+					</ToolTip>
+					<TitleDataPath>Объект.Таблица15.RowsCount</TitleDataPath>
+					<ExtendedTooltip name="ГруппаТаблица15ExtendedTooltip" id="296"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаТаблица15Заголовок" id="265">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Учет материалов, переданных в производство</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<ExtendedTooltip name="ГруппаТаблица15ЗаголовокExtendedTooltip" id="297"/>
+							<ChildItems>
+								<Table name="Таблица15" id="161">
+									<Representation>List</Representation>
+									<AutoInsertNewRow>true</AutoInsertNewRow>
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>Объект.Таблица15</DataPath>
+									<SearchStringLocation>None</SearchStringLocation>
+									<ViewStatusLocation>None</ViewStatusLocation>
+									<SearchControlLocation>None</SearchControlLocation>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="Таблица15КонтекстноеМеню" id="162"/>
+									<AutoCommandBar name="Таблица15КоманднаяПанель" id="163"/>
+									<ExtendedTooltip name="Таблица15ExtendedTooltip" id="298"/>
+									<SearchStringAddition name="Таблица15СтрокаПоиска" id="444">
+										<AdditionSource>
+											<Item>Таблица15</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="Таблица15СтрокаПоискаКонтекстноеМеню" id="445"/>
+										<ExtendedTooltip name="Таблица15СтрокаПоискаРасширеннаяПодсказка" id="446"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="Таблица15СостояниеПросмотра" id="447">
+										<AdditionSource>
+											<Item>Таблица15</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="Таблица15СостояниеПросмотраКонтекстноеМеню" id="448"/>
+										<ExtendedTooltip name="Таблица15СостояниеПросмотраРасширеннаяПодсказка" id="449"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="Таблица15УправлениеПоиском" id="450">
+										<AdditionSource>
+											<Item>Таблица15</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="Таблица15УправлениеПоискомКонтекстноеМеню" id="451"/>
+										<ExtendedTooltip name="Таблица15УправлениеПоискомРасширеннаяПодсказка" id="452"/>
+									</SearchControlAddition>
+									<Events>
+										<Event name="OnStartEdit">Таблица15ПриНачалеРедактирования</Event>
+									</Events>
+									<ChildItems>
+										<LabelField name="Таблица15НомерСтроки" id="164">
+											<DataPath>Объект.Таблица15.LineNumber</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>4</Width>
+											<ContextMenu name="Таблица15НомерСтрокиКонтекстноеМеню" id="165"/>
+											<ExtendedTooltip name="Таблица15НомерСтрокиExtendedTooltip" id="299"/>
+										</LabelField>
+										<ColumnGroup name="ГруппаНоменклатурнаяГруппаХарактерДеятельности15" id="236">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Номенклатурная группа, характер деятельности</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ГруппаНоменклатурнаяГруппаХарактерДеятельности15ExtendedTooltip" id="300"/>
+											<ChildItems>
+												<InputField name="Таблица15НоменклатурнаяГруппа" id="166">
+													<DataPath>Объект.Таблица15.НоменклатурнаяГруппа</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="Таблица15НоменклатурнаяГруппаКонтекстноеМеню" id="167"/>
+													<ExtendedTooltip name="Таблица15НоменклатурнаяГруппаExtendedTooltip" id="301"/>
+												</InputField>
+												<InputField name="Таблица15ХарактерДеятельности" id="168">
+													<DataPath>Объект.Таблица15.ХарактерДеятельности</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="Таблица15ХарактерДеятельностиКонтекстноеМеню" id="169"/>
+													<ExtendedTooltip name="Таблица15ХарактерДеятельностиExtendedTooltip" id="302"/>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+										<ColumnGroup name="ГруппаВидСписанногоМПЗНоменклатураСписанная" id="237">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Вид списанного МПЗ, Номенклатура списанная</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ГруппаВидСписанногоМПЗНоменклатураСписаннаяExtendedTooltip" id="303"/>
+											<ChildItems>
+												<InputField name="Таблица15НоменклатураСписанная" id="174">
+													<DataPath>Объект.Таблица15.НоменклатураСписанная</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="Таблица15НоменклатураСписаннаяКонтекстноеМеню" id="175"/>
+													<ExtendedTooltip name="Таблица15НоменклатураСписаннаяExtendedTooltip" id="304"/>
+												</InputField>
+												<InputField name="Таблица15ВидСписанногоМПЗ" id="172">
+													<DataPath>Объект.Таблица15.ВидСписанногоМПЗ</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="Таблица15ВидСписанногоМПЗКонтекстноеМеню" id="173"/>
+													<ExtendedTooltip name="Таблица15ВидСписанногоМПЗExtendedTooltip" id="305"/>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+										<ColumnGroup name="ГруппаПартияСписаннойНоменклатурыДокументОплаты" id="238">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Партия списанной номенклатуры, документ оплаты</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ГруппаПартияСписаннойНоменклатурыДокументОплатыExtendedTooltip" id="306"/>
+											<ChildItems>
+												<InputField name="Таблица15ПартияСписаннойНоменклатуры" id="176">
+													<DataPath>Объект.Таблица15.ПартияСписаннойНоменклатуры</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ChoiceParameterLinks>
+														<xr:Link>
+															<xr:Name>Отбор.Организация</xr:Name>
+															<xr:DataPath xsi:type="xs:string">Объект.Организация</xr:DataPath>
+															<xr:ValueChange>Clear</xr:ValueChange>
+														</xr:Link>
+													</ChoiceParameterLinks>
+													<ContextMenu name="Таблица15ПартияСписаннойНоменклатурыКонтекстноеМеню" id="177"/>
+													<ExtendedTooltip name="Таблица15ПартияСписаннойНоменклатурыExtendedTooltip" id="307"/>
+													<Events>
+														<Event name="ChoiceProcessing">Таблица15ПартияСписаннойНоменклатурыОбработкаВыбора</Event>
+													</Events>
+												</InputField>
+												<InputField name="Таблица15ДокументОплаты" id="170">
+													<DataPath>Объект.Таблица15.ДокументОплаты</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ChoiceParameterLinks>
+														<xr:Link>
+															<xr:Name>Отбор.Организация</xr:Name>
+															<xr:DataPath xsi:type="xs:string">Объект.Организация</xr:DataPath>
+															<xr:ValueChange>Clear</xr:ValueChange>
+														</xr:Link>
+													</ChoiceParameterLinks>
+													<ContextMenu name="Таблица15ДокументОплатыКонтекстноеМеню" id="171"/>
+													<ExtendedTooltip name="Таблица15ДокументОплатыExtendedTooltip" id="308"/>
+													<Events>
+														<Event name="ChoiceProcessing">Таблица15ДокументОплатыОбработкаВыбора</Event>
+													</Events>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+										<InputField name="Таблица15Количество" id="182">
+											<DataPath>Объект.Таблица15.Количество</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>10</Width>
+											<ContextMenu name="Таблица15КоличествоКонтекстноеМеню" id="183"/>
+											<ExtendedTooltip name="Таблица15КоличествоExtendedTooltip" id="312"/>
+										</InputField>
+										<ColumnGroup name="ГруппаСуммаНДС15" id="240">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Сумма НДС</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ГруппаСуммаНДС15ExtendedTooltip" id="313"/>
+											<ChildItems>
+												<InputField name="Таблица15Сумма" id="184">
+													<DataPath>Объект.Таблица15.Сумма</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>11</Width>
+													<ContextMenu name="Таблица15СуммаКонтекстноеМеню" id="185"/>
+													<ExtendedTooltip name="Таблица15СуммаExtendedTooltip" id="314"/>
+												</InputField>
+												<InputField name="Таблица15НДС" id="186">
+													<DataPath>Объект.Таблица15.НДС</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>11</Width>
+													<ContextMenu name="Таблица15НДСКонтекстноеМеню" id="187"/>
+													<ExtendedTooltip name="Таблица15НДСExtendedTooltip" id="315"/>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+										<ColumnGroup name="ГруппаНоменклатураПоступившаяПартияПоступившейНоменклатуры" id="239">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Номенклатура поступившая, партия поступившей номенклатуры</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ГруппаНоменклатураПоступившаяПартияПоступившейНоменклатурыРасширеннаяПодсказка" id="309"/>
+											<ChildItems>
+												<InputField name="Таблица15НоменклатураПоступившая" id="178">
+													<DataPath>Объект.Таблица15.НоменклатураПоступившая</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="Таблица15НоменклатураПоступившаяКонтекстноеМеню" id="179"/>
+													<ExtendedTooltip name="Таблица15НоменклатураПоступившаяExtendedTooltip" id="310"/>
+												</InputField>
+												<InputField name="Таблица15ПартияПоступившейНоменклатуры" id="180">
+													<DataPath>Объект.Таблица15.ПартияПоступившейНоменклатуры</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ChoiceParameterLinks>
+														<xr:Link>
+															<xr:Name>Отбор.Организация</xr:Name>
+															<xr:DataPath xsi:type="xs:string">Объект.Организация</xr:DataPath>
+															<xr:ValueChange>Clear</xr:ValueChange>
+														</xr:Link>
+													</ChoiceParameterLinks>
+													<ContextMenu name="Таблица15ПартияПоступившейНоменклатурыКонтекстноеМеню" id="181"/>
+													<ExtendedTooltip name="Таблица15ПартияПоступившейНоменклатурыExtendedTooltip" id="311"/>
+													<Events>
+														<Event name="ChoiceProcessing">Таблица15ПартияПоступившейНоменклатурыОбработкаВыбора</Event>
+													</Events>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаТаблица12" id="128">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Таб. 1-6, 1-7, 6-1</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Учет доходов и расходов по видам товаров (работ, услуг)</v8:content>
+						</v8:item>
+					</ToolTip>
+					<TitleDataPath>Объект.Таблица12.RowsCount</TitleDataPath>
+					<ExtendedTooltip name="ГруппаТаблица12ExtendedTooltip" id="316"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаТаблица12Заголовок" id="261">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Учет доходов и расходов от реализации</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<ExtendedTooltip name="ГруппаТаблица12ЗаголовокExtendedTooltip" id="317"/>
+							<ChildItems>
+								<Table name="Таблица12" id="129">
+									<Representation>List</Representation>
+									<AutoInsertNewRow>true</AutoInsertNewRow>
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>Объект.Таблица12</DataPath>
+									<SearchStringLocation>None</SearchStringLocation>
+									<ViewStatusLocation>None</ViewStatusLocation>
+									<SearchControlLocation>None</SearchControlLocation>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="Таблица12КонтекстноеМеню" id="130"/>
+									<AutoCommandBar name="Таблица12КоманднаяПанель" id="131"/>
+									<ExtendedTooltip name="Таблица12ExtendedTooltip" id="318"/>
+									<SearchStringAddition name="Таблица12СтрокаПоиска" id="453">
+										<AdditionSource>
+											<Item>Таблица12</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="Таблица12СтрокаПоискаКонтекстноеМеню" id="454"/>
+										<ExtendedTooltip name="Таблица12СтрокаПоискаРасширеннаяПодсказка" id="455"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="Таблица12СостояниеПросмотра" id="456">
+										<AdditionSource>
+											<Item>Таблица12</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="Таблица12СостояниеПросмотраКонтекстноеМеню" id="457"/>
+										<ExtendedTooltip name="Таблица12СостояниеПросмотраРасширеннаяПодсказка" id="458"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="Таблица12УправлениеПоиском" id="459">
+										<AdditionSource>
+											<Item>Таблица12</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="Таблица12УправлениеПоискомКонтекстноеМеню" id="460"/>
+										<ExtendedTooltip name="Таблица12УправлениеПоискомРасширеннаяПодсказка" id="461"/>
+									</SearchControlAddition>
+									<Events>
+										<Event name="OnStartEdit">Таблица12ПриНачалеРедактирования</Event>
+									</Events>
+									<ChildItems>
+										<LabelField name="Таблица12НомерСтроки" id="132">
+											<DataPath>Объект.Таблица12.LineNumber</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>4</Width>
+											<ContextMenu name="Таблица12НомерСтрокиКонтекстноеМеню" id="133"/>
+											<ExtendedTooltip name="Таблица12НомерСтрокиExtendedTooltip" id="319"/>
+										</LabelField>
+										<ColumnGroup name="ГруппаТаблица12Номенклатура" id="426">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Номенклатура</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ГруппаТаблица12НоменклатураРасширеннаяПодсказка" id="427"/>
+											<ChildItems>
+												<InputField name="Таблица12ВидМПЗ" id="134">
+													<DataPath>Объект.Таблица12.ВидМПЗ</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="Таблица12ВидМПЗКонтекстноеМеню" id="135"/>
+													<ExtendedTooltip name="Таблица12ВидМПЗExtendedTooltip" id="320"/>
+												</InputField>
+												<InputField name="Таблица12Номенклатура" id="136">
+													<DataPath>Объект.Таблица12.Номенклатура</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>20</Width>
+													<ContextMenu name="Таблица12НоменклатураКонтекстноеМеню" id="137"/>
+													<ExtendedTooltip name="Таблица12НоменклатураExtendedTooltip" id="321"/>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+										<ColumnGroup name="ГруппаНоменклатурнаяГруппаХарактерДеятельности12" id="241">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Номенклатурная группа, характер деятельности</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ГруппаНоменклатурнаяГруппаХарактерДеятельности12ExtendedTooltip" id="322"/>
+											<ChildItems>
+												<InputField name="Таблица12НоменклатурнаяГруппа" id="138">
+													<DataPath>Объект.Таблица12.НоменклатурнаяГруппа</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="Таблица12НоменклатурнаяГруппаКонтекстноеМеню" id="139"/>
+													<ExtendedTooltip name="Таблица12НоменклатурнаяГруппаExtendedTooltip" id="323"/>
+												</InputField>
+												<InputField name="Таблица12ХарактерДеятельности" id="140">
+													<DataPath>Объект.Таблица12.ХарактерДеятельности</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="Таблица12ХарактерДеятельностиКонтекстноеМеню" id="141"/>
+													<ExtendedTooltip name="Таблица12ХарактерДеятельностиExtendedTooltip" id="324"/>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+										<ColumnGroup name="ГруппаПартияДокументОплаты12" id="242">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Партия, документ оплаты</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ГруппаПартияДокументОплаты12ExtendedTooltip" id="325"/>
+											<ChildItems>
+												<InputField name="Таблица12Партия" id="144">
+													<DataPath>Объект.Таблица12.Партия</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ChoiceParameterLinks>
+														<xr:Link>
+															<xr:Name>Отбор.Организация</xr:Name>
+															<xr:DataPath xsi:type="xs:string">Объект.Организация</xr:DataPath>
+															<xr:ValueChange>Clear</xr:ValueChange>
+														</xr:Link>
+													</ChoiceParameterLinks>
+													<ContextMenu name="Таблица12ПартияКонтекстноеМеню" id="145"/>
+													<ExtendedTooltip name="Таблица12ПартияExtendedTooltip" id="326"/>
+													<Events>
+														<Event name="ChoiceProcessing">Таблица12ПартияОбработкаВыбора</Event>
+													</Events>
+												</InputField>
+												<InputField name="Таблица12ДокументОплаты" id="142">
+													<DataPath>Объект.Таблица12.ДокументОплаты</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ChoiceParameterLinks>
+														<xr:Link>
+															<xr:Name>Отбор.Организация</xr:Name>
+															<xr:DataPath xsi:type="xs:string">Объект.Организация</xr:DataPath>
+															<xr:ValueChange>Clear</xr:ValueChange>
+														</xr:Link>
+													</ChoiceParameterLinks>
+													<ContextMenu name="Таблица12ДокументОплатыКонтекстноеМеню" id="143"/>
+													<ExtendedTooltip name="Таблица12ДокументОплатыExtendedTooltip" id="327"/>
+													<Events>
+														<Event name="ChoiceProcessing">Таблица12ДокументОплатыОбработкаВыбора</Event>
+													</Events>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+										<InputField name="Таблица12ДокументОтгрузки" id="146">
+											<DataPath>Объект.Таблица12.ДокументОтгрузки</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ChoiceParameterLinks>
+												<xr:Link>
+													<xr:Name>Отбор.Организация</xr:Name>
+													<xr:DataPath xsi:type="xs:string">Объект.Организация</xr:DataPath>
+													<xr:ValueChange>Clear</xr:ValueChange>
+												</xr:Link>
+											</ChoiceParameterLinks>
+											<ContextMenu name="Таблица12ДокументОтгрузкиКонтекстноеМеню" id="147"/>
+											<ExtendedTooltip name="Таблица12ДокументОтгрузкиExtendedTooltip" id="328"/>
+											<Events>
+												<Event name="ChoiceProcessing">Таблица12ДокументОтгрузкиОбработкаВыбора</Event>
+											</Events>
+										</InputField>
+										<ColumnGroup name="ГруппаКоличествоКоличествоОплаченоПоставщику" id="243">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Количество, количество оплачено поставщику</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ГруппаКоличествоКоличествоОплаченоПоставщикуExtendedTooltip" id="329"/>
+											<ChildItems>
+												<InputField name="Таблица12Количество" id="148">
+													<DataPath>Объект.Таблица12.Количество</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Кол-во реализованное</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Количество реализованное</v8:content>
+														</v8:item>
+													</ToolTip>
+													<EditMode>EnterOnInput</EditMode>
+													<FooterText>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Количество реализованное</v8:content>
+														</v8:item>
+													</FooterText>
+													<Width>16</Width>
+													<ContextMenu name="Таблица12КоличествоКонтекстноеМеню" id="149"/>
+													<ExtendedTooltip name="Таблица12КоличествоExtendedTooltip" id="330"/>
+												</InputField>
+												<InputField name="Таблица12КоличествоОплаченоПоставщику" id="158">
+													<DataPath>Объект.Таблица12.КоличествоОплаченоПоставщику</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Кол-во оплаченное</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Количество, оплаченное поставщику</v8:content>
+														</v8:item>
+													</ToolTip>
+													<EditMode>EnterOnInput</EditMode>
+													<FooterText>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Количество, оплаченное поставщику</v8:content>
+														</v8:item>
+													</FooterText>
+													<Width>10</Width>
+													<ContextMenu name="Таблица12КоличествоОплаченоПоставщикуКонтекстноеМеню" id="159"/>
+													<ExtendedTooltip name="Таблица12КоличествоОплаченоПоставщикуExtendedTooltip" id="331"/>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+										<ColumnGroup name="ГруппаВыручкаНДСНачисленный" id="244">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Выручка, НДС начисленный</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ГруппаВыручкаНДСНачисленныйExtendedTooltip" id="332"/>
+											<ChildItems>
+												<InputField name="Таблица12Выручка" id="154">
+													<DataPath>Объект.Таблица12.Выручка</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>14</Width>
+													<ContextMenu name="Таблица12ВыручкаКонтекстноеМеню" id="155"/>
+													<ExtendedTooltip name="Таблица12ВыручкаExtendedTooltip" id="333"/>
+												</InputField>
+												<InputField name="Таблица12НДСНачисленный" id="156">
+													<DataPath>Объект.Таблица12.НДСНачисленный</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>12</Width>
+													<ContextMenu name="Таблица12НДСНачисленныйКонтекстноеМеню" id="157"/>
+													<ExtendedTooltip name="Таблица12НДСНачисленныйExtendedTooltip" id="334"/>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+										<ColumnGroup name="ГруппаСуммаНДС12" id="245">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Сумма НДС</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ГруппаСуммаНДС12ExtendedTooltip" id="335"/>
+											<ChildItems>
+												<InputField name="Таблица12Сумма" id="150">
+													<DataPath>Объект.Таблица12.Сумма</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>15</Width>
+													<ContextMenu name="Таблица12СуммаКонтекстноеМеню" id="151"/>
+													<ExtendedTooltip name="Таблица12СуммаExtendedTooltip" id="336"/>
+												</InputField>
+												<InputField name="Таблица12НДС" id="152">
+													<DataPath>Объект.Таблица12.НДС</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="Таблица12НДСКонтекстноеМеню" id="153"/>
+													<ExtendedTooltip name="Таблица12НДСExtendedTooltip" id="337"/>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаТаблица2" id="36">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Таб. 2-1, 2-2</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Расчет амортизации основных средств, непосредственно используемых для осуществления предпринимательской деятельности</v8:content>
+						</v8:item>
+					</ToolTip>
+					<TitleDataPath>Объект.Таблица2.RowsCount</TitleDataPath>
+					<ExtendedTooltip name="ГруппаТаблица2ExtendedTooltip" id="338"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаТаблица2Заголовок" id="262">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Амортизация ОС</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<ExtendedTooltip name="ГруппаТаблица2ЗаголовокExtendedTooltip" id="339"/>
+							<ChildItems>
+								<Table name="Таблица2" id="37">
+									<Representation>List</Representation>
+									<AutoInsertNewRow>true</AutoInsertNewRow>
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>Объект.Таблица2</DataPath>
+									<SearchStringLocation>None</SearchStringLocation>
+									<ViewStatusLocation>None</ViewStatusLocation>
+									<SearchControlLocation>None</SearchControlLocation>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="Таблица2КонтекстноеМеню" id="38"/>
+									<AutoCommandBar name="Таблица2КоманднаяПанель" id="39"/>
+									<ExtendedTooltip name="Таблица2ExtendedTooltip" id="340"/>
+									<SearchStringAddition name="Таблица2СтрокаПоиска" id="462">
+										<AdditionSource>
+											<Item>Таблица2</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="Таблица2СтрокаПоискаКонтекстноеМеню" id="463"/>
+										<ExtendedTooltip name="Таблица2СтрокаПоискаРасширеннаяПодсказка" id="464"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="Таблица2СостояниеПросмотра" id="465">
+										<AdditionSource>
+											<Item>Таблица2</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="Таблица2СостояниеПросмотраКонтекстноеМеню" id="466"/>
+										<ExtendedTooltip name="Таблица2СостояниеПросмотраРасширеннаяПодсказка" id="467"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="Таблица2УправлениеПоиском" id="468">
+										<AdditionSource>
+											<Item>Таблица2</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="Таблица2УправлениеПоискомКонтекстноеМеню" id="469"/>
+										<ExtendedTooltip name="Таблица2УправлениеПоискомРасширеннаяПодсказка" id="470"/>
+									</SearchControlAddition>
+									<Events>
+										<Event name="OnStartEdit">Таблица2ПриНачалеРедактирования</Event>
+									</Events>
+									<ChildItems>
+										<LabelField name="Таблица2НомерСтроки" id="40">
+											<DataPath>Объект.Таблица2.LineNumber</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>4</Width>
+											<ContextMenu name="Таблица2НомерСтрокиКонтекстноеМеню" id="41"/>
+											<ExtendedTooltip name="Таблица2НомерСтрокиExtendedTooltip" id="341"/>
+										</LabelField>
+										<InputField name="Таблица2ВидДвижения" id="42">
+											<DataPath>Объект.Таблица2.ВидДвижения</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>11</Width>
+											<Format>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>БЛ=Приход; БИ=Расход</v8:content>
+												</v8:item>
+											</Format>
+											<EditFormat>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>БЛ=Приход; БИ=Расход</v8:content>
+												</v8:item>
+											</EditFormat>
+											<ContextMenu name="Таблица2ВидДвиженияКонтекстноеМеню" id="43"/>
+											<ExtendedTooltip name="Таблица2ВидДвиженияExtendedTooltip" id="342"/>
+										</InputField>
+										<InputField name="Таблица2Номенклатура" id="44">
+											<DataPath>Объект.Таблица2.Номенклатура</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="Таблица2НоменклатураКонтекстноеМеню" id="45"/>
+											<ExtendedTooltip name="Таблица2НоменклатураExtendedTooltip" id="343"/>
+										</InputField>
+										<ColumnGroup name="ГруппаНоменклатурнаяГруппаХарактерДеятельности2" id="246">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Номенклатурная группа, характер деятельности</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ГруппаНоменклатурнаяГруппаХарактерДеятельности2ExtendedTooltip" id="344"/>
+											<ChildItems>
+												<InputField name="Таблица2НоменклатурнаяГруппа" id="46">
+													<DataPath>Объект.Таблица2.НоменклатурнаяГруппа</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="Таблица2НоменклатурнаяГруппаКонтекстноеМеню" id="47"/>
+													<ExtendedTooltip name="Таблица2НоменклатурнаяГруппаExtendedTooltip" id="345"/>
+												</InputField>
+												<InputField name="Таблица2ХарактерДеятельности" id="48">
+													<DataPath>Объект.Таблица2.ХарактерДеятельности</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="Таблица2ХарактерДеятельностиКонтекстноеМеню" id="49"/>
+													<ExtendedTooltip name="Таблица2ХарактерДеятельностиExtendedTooltip" id="346"/>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+										<ColumnGroup name="ГруппаПартияДокументОплаты2" id="247">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Партия, документ оплаты</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ГруппаПартияДокументОплаты2ExtendedTooltip" id="347"/>
+											<ChildItems>
+												<InputField name="Таблица2Партия" id="52">
+													<DataPath>Объект.Таблица2.Партия</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ChoiceParameterLinks>
+														<xr:Link>
+															<xr:Name>Отбор.Организация</xr:Name>
+															<xr:DataPath xsi:type="xs:string">Объект.Организация</xr:DataPath>
+															<xr:ValueChange>Clear</xr:ValueChange>
+														</xr:Link>
+													</ChoiceParameterLinks>
+													<ContextMenu name="Таблица2ПартияКонтекстноеМеню" id="53"/>
+													<ExtendedTooltip name="Таблица2ПартияExtendedTooltip" id="348"/>
+													<Events>
+														<Event name="ChoiceProcessing">Таблица2ПартияОбработкаВыбора</Event>
+													</Events>
+												</InputField>
+												<InputField name="Таблица2ДокументОплаты" id="50">
+													<DataPath>Объект.Таблица2.ДокументОплаты</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ChoiceParameterLinks>
+														<xr:Link>
+															<xr:Name>Отбор.Организация</xr:Name>
+															<xr:DataPath xsi:type="xs:string">Объект.Организация</xr:DataPath>
+															<xr:ValueChange>Clear</xr:ValueChange>
+														</xr:Link>
+													</ChoiceParameterLinks>
+													<ContextMenu name="Таблица2ДокументОплатыКонтекстноеМеню" id="51"/>
+													<ExtendedTooltip name="Таблица2ДокументОплатыExtendedTooltip" id="349"/>
+													<Events>
+														<Event name="ChoiceProcessing">Таблица2ДокументОплатыОбработкаВыбора</Event>
+													</Events>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+										<ColumnGroup name="ГруппаТаблица2Сумма" id="430">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Сумма, НДС</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ГруппаТаблица2СуммаРасширеннаяПодсказка" id="431"/>
+											<ChildItems>
+												<InputField name="Таблица2Сумма" id="54">
+													<DataPath>Объект.Таблица2.Сумма</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>11</Width>
+													<ContextMenu name="Таблица2СуммаКонтекстноеМеню" id="55"/>
+													<ExtendedTooltip name="Таблица2СуммаExtendedTooltip" id="350"/>
+												</InputField>
+												<InputField name="Таблица2НДС" id="56">
+													<DataPath>Объект.Таблица2.НДС</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>11</Width>
+													<ContextMenu name="Таблица2НДСКонтекстноеМеню" id="57"/>
+													<ExtendedTooltip name="Таблица2НДСExtendedTooltip" id="351"/>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+										<InputField name="Таблица2СуммаАмортизации" id="58">
+											<DataPath>Объект.Таблица2.СуммаАмортизации</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>11</Width>
+											<ContextMenu name="Таблица2СуммаАмортизацииКонтекстноеМеню" id="59"/>
+											<ExtendedTooltip name="Таблица2СуммаАмортизацииExtendedTooltip" id="352"/>
+										</InputField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаТаблица4" id="60">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Таб. 4-1, 4-2</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Расчет амортизации нематериальных активов, непосредственно используемых для осуществления предпринимательской деятельности</v8:content>
+						</v8:item>
+					</ToolTip>
+					<TitleDataPath>Объект.Таблица4.RowsCount</TitleDataPath>
+					<ExtendedTooltip name="ГруппаТаблица4ExtendedTooltip" id="353"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаТаблица4Заголовок" id="263">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Амортизация НМА</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<ExtendedTooltip name="ГруппаТаблица4ЗаголовокExtendedTooltip" id="354"/>
+							<ChildItems>
+								<Table name="Таблица4" id="61">
+									<Representation>List</Representation>
+									<AutoInsertNewRow>true</AutoInsertNewRow>
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>Объект.Таблица4</DataPath>
+									<SearchStringLocation>None</SearchStringLocation>
+									<ViewStatusLocation>None</ViewStatusLocation>
+									<SearchControlLocation>None</SearchControlLocation>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="Таблица4КонтекстноеМеню" id="62"/>
+									<AutoCommandBar name="Таблица4КоманднаяПанель" id="63"/>
+									<ExtendedTooltip name="Таблица4ExtendedTooltip" id="355"/>
+									<SearchStringAddition name="Таблица4СтрокаПоиска" id="471">
+										<AdditionSource>
+											<Item>Таблица4</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="Таблица4СтрокаПоискаКонтекстноеМеню" id="472"/>
+										<ExtendedTooltip name="Таблица4СтрокаПоискаРасширеннаяПодсказка" id="473"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="Таблица4СостояниеПросмотра" id="474">
+										<AdditionSource>
+											<Item>Таблица4</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="Таблица4СостояниеПросмотраКонтекстноеМеню" id="475"/>
+										<ExtendedTooltip name="Таблица4СостояниеПросмотраРасширеннаяПодсказка" id="476"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="Таблица4УправлениеПоиском" id="477">
+										<AdditionSource>
+											<Item>Таблица4</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="Таблица4УправлениеПоискомКонтекстноеМеню" id="478"/>
+										<ExtendedTooltip name="Таблица4УправлениеПоискомРасширеннаяПодсказка" id="479"/>
+									</SearchControlAddition>
+									<Events>
+										<Event name="OnStartEdit">Таблица4ПриНачалеРедактирования</Event>
+									</Events>
+									<ChildItems>
+										<LabelField name="Таблица4НомерСтроки" id="64">
+											<DataPath>Объект.Таблица4.LineNumber</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>4</Width>
+											<ContextMenu name="Таблица4НомерСтрокиКонтекстноеМеню" id="65"/>
+											<ExtendedTooltip name="Таблица4НомерСтрокиExtendedTooltip" id="356"/>
+										</LabelField>
+										<InputField name="Таблица4ВидДвижения" id="66">
+											<DataPath>Объект.Таблица4.ВидДвижения</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>11</Width>
+											<Format>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>БЛ=Приход; БИ=Расход</v8:content>
+												</v8:item>
+											</Format>
+											<EditFormat>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>БЛ=Приход; БИ=Расход</v8:content>
+												</v8:item>
+											</EditFormat>
+											<ContextMenu name="Таблица4ВидДвиженияКонтекстноеМеню" id="67"/>
+											<ExtendedTooltip name="Таблица4ВидДвиженияExtendedTooltip" id="357"/>
+										</InputField>
+										<InputField name="Таблица4Номенклатура" id="68">
+											<DataPath>Объект.Таблица4.Номенклатура</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="Таблица4НоменклатураКонтекстноеМеню" id="69"/>
+											<ExtendedTooltip name="Таблица4НоменклатураExtendedTooltip" id="358"/>
+										</InputField>
+										<ColumnGroup name="ГруппаНоменклатурнаяГруппаХарактерДеятельности4" id="248">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Нноменклатурная группа, характер деятельности</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ГруппаНоменклатурнаяГруппаХарактерДеятельности4ExtendedTooltip" id="359"/>
+											<ChildItems>
+												<InputField name="Таблица4НоменклатурнаяГруппа" id="70">
+													<DataPath>Объект.Таблица4.НоменклатурнаяГруппа</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="Таблица4НоменклатурнаяГруппаКонтекстноеМеню" id="71"/>
+													<ExtendedTooltip name="Таблица4НоменклатурнаяГруппаExtendedTooltip" id="360"/>
+												</InputField>
+												<InputField name="Таблица4ХарактерДеятельности" id="72">
+													<DataPath>Объект.Таблица4.ХарактерДеятельности</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="Таблица4ХарактерДеятельностиКонтекстноеМеню" id="73"/>
+													<ExtendedTooltip name="Таблица4ХарактерДеятельностиExtendedTooltip" id="361"/>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+										<ColumnGroup name="ГруппаПартияДокументОплаты4" id="249">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Партия, документ оплаты</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ГруппаПартияДокументОплаты4ExtendedTooltip" id="362"/>
+											<ChildItems>
+												<InputField name="Таблица4Партия" id="76">
+													<DataPath>Объект.Таблица4.Партия</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ChoiceParameterLinks>
+														<xr:Link>
+															<xr:Name>Отбор.Организация</xr:Name>
+															<xr:DataPath xsi:type="xs:string">Объект.Организация</xr:DataPath>
+															<xr:ValueChange>Clear</xr:ValueChange>
+														</xr:Link>
+													</ChoiceParameterLinks>
+													<ContextMenu name="Таблица4ПартияКонтекстноеМеню" id="77"/>
+													<ExtendedTooltip name="Таблица4ПартияExtendedTooltip" id="363"/>
+													<Events>
+														<Event name="ChoiceProcessing">Таблица4ПартияОбработкаВыбора</Event>
+													</Events>
+												</InputField>
+												<InputField name="Таблица4ДокументОплаты" id="74">
+													<DataPath>Объект.Таблица4.ДокументОплаты</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ChoiceParameterLinks>
+														<xr:Link>
+															<xr:Name>Отбор.Организация</xr:Name>
+															<xr:DataPath xsi:type="xs:string">Объект.Организация</xr:DataPath>
+															<xr:ValueChange>Clear</xr:ValueChange>
+														</xr:Link>
+													</ChoiceParameterLinks>
+													<ContextMenu name="Таблица4ДокументОплатыКонтекстноеМеню" id="75"/>
+													<ExtendedTooltip name="Таблица4ДокументОплатыExtendedTooltip" id="364"/>
+													<Events>
+														<Event name="ChoiceProcessing">Таблица4ДокументОплатыОбработкаВыбора</Event>
+													</Events>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+										<ColumnGroup name="ГруппаТаблица4Сумма" id="428">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Сумма, НДС</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ГруппаТаблица4СуммаРасширеннаяПодсказка" id="429"/>
+											<ChildItems>
+												<InputField name="Таблица4Сумма" id="78">
+													<DataPath>Объект.Таблица4.Сумма</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>11</Width>
+													<ContextMenu name="Таблица4СуммаКонтекстноеМеню" id="79"/>
+													<ExtendedTooltip name="Таблица4СуммаExtendedTooltip" id="365"/>
+												</InputField>
+												<InputField name="Таблица4НДС" id="80">
+													<DataPath>Объект.Таблица4.НДС</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>11</Width>
+													<ContextMenu name="Таблица4НДСКонтекстноеМеню" id="81"/>
+													<ExtendedTooltip name="Таблица4НДСExtendedTooltip" id="366"/>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+										<InputField name="Таблица4СуммаАмортизации" id="82">
+											<DataPath>Объект.Таблица4.СуммаАмортизации</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>11</Width>
+											<ContextMenu name="Таблица4СуммаАмортизацииКонтекстноеМеню" id="83"/>
+											<ExtendedTooltip name="Таблица4СуммаАмортизацииExtendedTooltip" id="367"/>
+										</InputField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаТаблица5" id="84">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Таб. 5</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Расчет начисленных (выплаченных) в виде оплаты труда доходов и удержанных с них налогов</v8:content>
+						</v8:item>
+					</ToolTip>
+					<TitleDataPath>Объект.Таблица5.RowsCount</TitleDataPath>
+					<ExtendedTooltip name="ГруппаТаблица5ExtendedTooltip" id="368"/>
+					<ChildItems>
+						<UsualGroup name="Группа5Заголовок" id="264">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Расходы на оплату труда</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<ExtendedTooltip name="Группа5ЗаголовокExtendedTooltip" id="369"/>
+							<ChildItems>
+								<Table name="Таблица5" id="85">
+									<Representation>List</Representation>
+									<AutoInsertNewRow>true</AutoInsertNewRow>
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>Объект.Таблица5</DataPath>
+									<SearchStringLocation>None</SearchStringLocation>
+									<ViewStatusLocation>None</ViewStatusLocation>
+									<SearchControlLocation>None</SearchControlLocation>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="Таблица5КонтекстноеМеню" id="86"/>
+									<AutoCommandBar name="Таблица5КоманднаяПанель" id="87"/>
+									<ExtendedTooltip name="Таблица5ExtendedTooltip" id="370"/>
+									<SearchStringAddition name="Таблица5СтрокаПоиска" id="480">
+										<AdditionSource>
+											<Item>Таблица5</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="Таблица5СтрокаПоискаКонтекстноеМеню" id="481"/>
+										<ExtendedTooltip name="Таблица5СтрокаПоискаРасширеннаяПодсказка" id="482"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="Таблица5СостояниеПросмотра" id="483">
+										<AdditionSource>
+											<Item>Таблица5</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="Таблица5СостояниеПросмотраКонтекстноеМеню" id="484"/>
+										<ExtendedTooltip name="Таблица5СостояниеПросмотраРасширеннаяПодсказка" id="485"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="Таблица5УправлениеПоиском" id="486">
+										<AdditionSource>
+											<Item>Таблица5</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="Таблица5УправлениеПоискомКонтекстноеМеню" id="487"/>
+										<ExtendedTooltip name="Таблица5УправлениеПоискомРасширеннаяПодсказка" id="488"/>
+									</SearchControlAddition>
+									<Events>
+										<Event name="OnStartEdit">Таблица5ПриНачалеРедактирования</Event>
+									</Events>
+									<ChildItems>
+										<LabelField name="Таблица5НомерСтроки" id="88">
+											<DataPath>Объект.Таблица5.LineNumber</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>4</Width>
+											<ContextMenu name="Таблица5НомерСтрокиКонтекстноеМеню" id="89"/>
+											<ExtendedTooltip name="Таблица5НомерСтрокиExtendedTooltip" id="371"/>
+										</LabelField>
+										<InputField name="Таблица5Период" id="90">
+											<DataPath>Объект.Таблица5.Период</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="Таблица5ПериодКонтекстноеМеню" id="91"/>
+											<ExtendedTooltip name="Таблица5ПериодExtendedTooltip" id="372"/>
+										</InputField>
+										<InputField name="Таблица5ФизЛицо" id="92">
+											<DataPath>Объект.Таблица5.ФизЛицо</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="Таблица5ФизЛицоКонтекстноеМеню" id="93"/>
+											<ExtendedTooltip name="Таблица5ФизЛицоExtendedTooltip" id="373"/>
+										</InputField>
+										<ColumnGroup name="ГруппаНоменклатурнаяГруппаХарактерДеятельности5" id="250">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Номенклатурная группа, характер деятельности</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ГруппаНоменклатурнаяГруппаХарактерДеятельности5ExtendedTooltip" id="374"/>
+											<ChildItems>
+												<InputField name="Таблица5НоменклатурнаяГруппа" id="94">
+													<DataPath>Объект.Таблица5.НоменклатурнаяГруппа</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="Таблица5НоменклатурнаяГруппаКонтекстноеМеню" id="95"/>
+													<ExtendedTooltip name="Таблица5НоменклатурнаяГруппаExtendedTooltip" id="375"/>
+												</InputField>
+												<InputField name="Таблица5ХарактерДеятельности" id="96">
+													<DataPath>Объект.Таблица5.ХарактерДеятельности</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="Таблица5ХарактерДеятельностиКонтекстноеМеню" id="97"/>
+													<ExtendedTooltip name="Таблица5ХарактерДеятельностиExtendedTooltip" id="376"/>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+										<InputField name="Таблица5СтатьяЗатрат" id="98">
+											<DataPath>Объект.Таблица5.СтатьяЗатрат</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="Таблица5СтатьяЗатратКонтекстноеМеню" id="99"/>
+											<ExtendedTooltip name="Таблица5СтатьяЗатратExtendedTooltip" id="377"/>
+										</InputField>
+										<InputField name="Таблица5ВидНачисленияУдержания" id="100">
+											<DataPath>Объект.Таблица5.ВидНачисленияУдержания</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="Таблица5ВидНачисленияУдержанияКонтекстноеМеню" id="101"/>
+											<ExtendedTooltip name="Таблица5ВидНачисленияУдержанияExtendedTooltip" id="378"/>
+										</InputField>
+										<ColumnGroup name="ГруппаРасчетныйДокументДокументОплаты" id="251">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Расчетный документ, документ оплаты</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ГруппаРасчетныйДокументДокументОплатыExtendedTooltip" id="379"/>
+											<ChildItems>
+												<InputField name="Таблица5РасчетныйДокумент" id="102">
+													<DataPath>Объект.Таблица5.РасчетныйДокумент</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ChoiceParameterLinks>
+														<xr:Link>
+															<xr:Name>Отбор.Организация</xr:Name>
+															<xr:DataPath xsi:type="xs:string">Объект.Организация</xr:DataPath>
+															<xr:ValueChange>Clear</xr:ValueChange>
+														</xr:Link>
+													</ChoiceParameterLinks>
+													<ContextMenu name="Таблица5РасчетныйДокументКонтекстноеМеню" id="103"/>
+													<ExtendedTooltip name="Таблица5РасчетныйДокументExtendedTooltip" id="380"/>
+													<Events>
+														<Event name="ChoiceProcessing">Таблица5РасчетныйДокументОбработкаВыбора</Event>
+													</Events>
+												</InputField>
+												<InputField name="Таблица5ДокументОплаты" id="104">
+													<DataPath>Объект.Таблица5.ДокументОплаты</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ChoiceParameterLinks>
+														<xr:Link>
+															<xr:Name>Отбор.Организация</xr:Name>
+															<xr:DataPath xsi:type="xs:string">Объект.Организация</xr:DataPath>
+															<xr:ValueChange>Clear</xr:ValueChange>
+														</xr:Link>
+													</ChoiceParameterLinks>
+													<ContextMenu name="Таблица5ДокументОплатыКонтекстноеМеню" id="105"/>
+													<ExtendedTooltip name="Таблица5ДокументОплатыExtendedTooltip" id="381"/>
+													<Events>
+														<Event name="ChoiceProcessing">Таблица5ДокументОплатыОбработкаВыбора</Event>
+													</Events>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+										<InputField name="Таблица5Сумма" id="106">
+											<DataPath>Объект.Таблица5.Сумма</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>11</Width>
+											<ContextMenu name="Таблица5СуммаКонтекстноеМеню" id="107"/>
+											<ExtendedTooltip name="Таблица5СуммаExtendedTooltip" id="382"/>
+										</InputField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаТаблица61" id="210">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Таб. 6-1</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Определение налоговой базы по налогу на доходы физических лиц</v8:content>
+						</v8:item>
+					</ToolTip>
+					<TitleDataPath>Объект.Таблица61.RowsCount</TitleDataPath>
+					<ExtendedTooltip name="ГруппаТаблица61ExtendedTooltip" id="383"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаТаблица61Заголовок" id="266">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Налоговая база</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<ExtendedTooltip name="ГруппаТаблица61ЗаголовокExtendedTooltip" id="384"/>
+							<ChildItems>
+								<Table name="Таблица61" id="211">
+									<Representation>List</Representation>
+									<AutoInsertNewRow>true</AutoInsertNewRow>
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>Объект.Таблица61</DataPath>
+									<SearchStringLocation>None</SearchStringLocation>
+									<ViewStatusLocation>None</ViewStatusLocation>
+									<SearchControlLocation>None</SearchControlLocation>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="Таблица61КонтекстноеМеню" id="212"/>
+									<AutoCommandBar name="Таблица61КоманднаяПанель" id="213">
+										<ChildItems>
+											<Button name="Таблица61ЗаполнитьПоАвансам" id="259">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ЗаполнитьПоАвансам</CommandName>
+												<ExtendedTooltip name="Таблица61ЗаполнитьПоАвансамExtendedTooltip" id="385"/>
+											</Button>
+										</ChildItems>
+									</AutoCommandBar>
+									<ExtendedTooltip name="Таблица61ExtendedTooltip" id="386"/>
+									<SearchStringAddition name="Таблица61СтрокаПоиска" id="489">
+										<AdditionSource>
+											<Item>Таблица61</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="Таблица61СтрокаПоискаКонтекстноеМеню" id="490"/>
+										<ExtendedTooltip name="Таблица61СтрокаПоискаРасширеннаяПодсказка" id="491"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="Таблица61СостояниеПросмотра" id="492">
+										<AdditionSource>
+											<Item>Таблица61</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="Таблица61СостояниеПросмотраКонтекстноеМеню" id="493"/>
+										<ExtendedTooltip name="Таблица61СостояниеПросмотраРасширеннаяПодсказка" id="494"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="Таблица61УправлениеПоиском" id="495">
+										<AdditionSource>
+											<Item>Таблица61</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="Таблица61УправлениеПоискомКонтекстноеМеню" id="496"/>
+										<ExtendedTooltip name="Таблица61УправлениеПоискомРасширеннаяПодсказка" id="497"/>
+									</SearchControlAddition>
+									<Events>
+										<Event name="OnStartEdit">Таблица61ПриНачалеРедактирования</Event>
+									</Events>
+									<ChildItems>
+										<LabelField name="Таблица61НомерСтроки" id="214">
+											<DataPath>Объект.Таблица61.LineNumber</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>4</Width>
+											<ContextMenu name="Таблица61НомерСтрокиКонтекстноеМеню" id="215"/>
+											<ExtendedTooltip name="Таблица61НомерСтрокиExtendedTooltip" id="387"/>
+										</LabelField>
+										<InputField name="Таблица61СтатьяДоходов" id="216">
+											<DataPath>Объект.Таблица61.СтатьяДоходов</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="Таблица61СтатьяДоходовКонтекстноеМеню" id="217"/>
+											<ExtendedTooltip name="Таблица61СтатьяДоходовExtendedTooltip" id="388"/>
+										</InputField>
+										<ColumnGroup name="ГруппаНоменклатурнаяГруппаХарактерДеятельности61" id="253">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Номенклатурная группа, характер деятельности</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ГруппаНоменклатурнаяГруппаХарактерДеятельности61ExtendedTooltip" id="389"/>
+											<ChildItems>
+												<InputField name="Таблица61НоменклатурнаяГруппа" id="218">
+													<DataPath>Объект.Таблица61.НоменклатурнаяГруппа</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="Таблица61НоменклатурнаяГруппаКонтекстноеМеню" id="219"/>
+													<ExtendedTooltip name="Таблица61НоменклатурнаяГруппаExtendedTooltip" id="390"/>
+												</InputField>
+												<InputField name="Таблица61ХарактерДеятельности" id="220">
+													<DataPath>Объект.Таблица61.ХарактерДеятельности</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="Таблица61ХарактерДеятельностиКонтекстноеМеню" id="221"/>
+													<ExtendedTooltip name="Таблица61ХарактерДеятельностиExtendedTooltip" id="391"/>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+										<InputField name="Таблица61Сумма" id="224">
+											<DataPath>Объект.Таблица61.Сумма</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>11</Width>
+											<ContextMenu name="Таблица61СуммаКонтекстноеМеню" id="225"/>
+											<ExtendedTooltip name="Таблица61СуммаExtendedTooltip" id="392"/>
+										</InputField>
+										<InputField name="Таблица61РеквизитыДокументаОплаты" id="222">
+											<DataPath>Объект.Таблица61.РеквизитыДокументаОплаты</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>25</Width>
+											<ContextMenu name="Таблица61РеквизитыДокументаОплатыКонтекстноеМеню" id="223"/>
+											<ExtendedTooltip name="Таблица61РеквизитыДокументаОплатыExtendedTooltip" id="393"/>
+										</InputField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаТаблица6" id="108">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Таб. 6-2</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Регистр прочих расходов, связанных с осуществлением предпринимательской деятельности</v8:content>
+						</v8:item>
+					</ToolTip>
+					<TitleDataPath>Объект.Таблица6.RowsCount</TitleDataPath>
+					<ExtendedTooltip name="ГруппаТаблица6ExtendedTooltip" id="394"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаТаблица6Заголовок" id="267">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Прочие расходы</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<ExtendedTooltip name="ГруппаТаблица6ЗаголовокExtendedTooltip" id="395"/>
+							<ChildItems>
+								<Table name="Таблица6" id="109">
+									<Representation>List</Representation>
+									<AutoInsertNewRow>true</AutoInsertNewRow>
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>Объект.Таблица6</DataPath>
+									<SearchStringLocation>None</SearchStringLocation>
+									<ViewStatusLocation>None</ViewStatusLocation>
+									<SearchControlLocation>None</SearchControlLocation>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="Таблица6КонтекстноеМеню" id="110"/>
+									<AutoCommandBar name="Таблица6КоманднаяПанель" id="111"/>
+									<ExtendedTooltip name="Таблица6ExtendedTooltip" id="396"/>
+									<SearchStringAddition name="Таблица6СтрокаПоиска" id="498">
+										<AdditionSource>
+											<Item>Таблица6</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="Таблица6СтрокаПоискаКонтекстноеМеню" id="499"/>
+										<ExtendedTooltip name="Таблица6СтрокаПоискаРасширеннаяПодсказка" id="500"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="Таблица6СостояниеПросмотра" id="501">
+										<AdditionSource>
+											<Item>Таблица6</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="Таблица6СостояниеПросмотраКонтекстноеМеню" id="502"/>
+										<ExtendedTooltip name="Таблица6СостояниеПросмотраРасширеннаяПодсказка" id="503"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="Таблица6УправлениеПоиском" id="504">
+										<AdditionSource>
+											<Item>Таблица6</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="Таблица6УправлениеПоискомКонтекстноеМеню" id="505"/>
+										<ExtendedTooltip name="Таблица6УправлениеПоискомРасширеннаяПодсказка" id="506"/>
+									</SearchControlAddition>
+									<Events>
+										<Event name="OnStartEdit">Таблица6ПриНачалеРедактирования</Event>
+									</Events>
+									<ChildItems>
+										<LabelField name="Таблица6НомерСтроки" id="112">
+											<DataPath>Объект.Таблица6.LineNumber</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>4</Width>
+											<ContextMenu name="Таблица6НомерСтрокиКонтекстноеМеню" id="113"/>
+											<ExtendedTooltip name="Таблица6НомерСтрокиExtendedTooltip" id="397"/>
+										</LabelField>
+										<InputField name="Таблица6СтатьяЗатрат" id="114">
+											<DataPath>Объект.Таблица6.СтатьяЗатрат</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="Таблица6СтатьяЗатратКонтекстноеМеню" id="115"/>
+											<ExtendedTooltip name="Таблица6СтатьяЗатратExtendedTooltip" id="398"/>
+										</InputField>
+										<ColumnGroup name="ГруппаНоменклатурнаяГруппаХарактерДеятельности6" id="252">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Номенклатурная группа, характер деятельности</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ГруппаНоменклатурнаяГруппаХарактерДеятельности6ExtendedTooltip" id="399"/>
+											<ChildItems>
+												<InputField name="Таблица6НоменклатурнаяГруппа" id="116">
+													<DataPath>Объект.Таблица6.НоменклатурнаяГруппа</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="Таблица6НоменклатурнаяГруппаКонтекстноеМеню" id="117"/>
+													<ExtendedTooltip name="Таблица6НоменклатурнаяГруппаExtendedTooltip" id="400"/>
+												</InputField>
+												<InputField name="Таблица6ХарактерДеятельности" id="118">
+													<DataPath>Объект.Таблица6.ХарактерДеятельности</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="Таблица6ХарактерДеятельностиКонтекстноеМеню" id="119"/>
+													<ExtendedTooltip name="Таблица6ХарактерДеятельностиExtendedTooltip" id="401"/>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+										<ColumnGroup name="ГруппаРасчетныйДокументДокументОплаты6" id="254">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Расчетный документ, документ оплаты</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ГруппаРасчетныйДокументДокументОплаты6ExtendedTooltip" id="402"/>
+											<ChildItems>
+												<InputField name="Таблица6РасчетныйДокумент" id="120">
+													<DataPath>Объект.Таблица6.РасчетныйДокумент</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ChoiceParameterLinks>
+														<xr:Link>
+															<xr:Name>Отбор.Организация</xr:Name>
+															<xr:DataPath xsi:type="xs:string">Объект.Организация</xr:DataPath>
+															<xr:ValueChange>Clear</xr:ValueChange>
+														</xr:Link>
+													</ChoiceParameterLinks>
+													<ContextMenu name="Таблица6РасчетныйДокументКонтекстноеМеню" id="121"/>
+													<ExtendedTooltip name="Таблица6РасчетныйДокументExtendedTooltip" id="403"/>
+													<Events>
+														<Event name="ChoiceProcessing">Таблица6РасчетныйДокументОбработкаВыбора</Event>
+													</Events>
+												</InputField>
+												<InputField name="Таблица6ДокументОплаты" id="122">
+													<DataPath>Объект.Таблица6.ДокументОплаты</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ChoiceParameterLinks>
+														<xr:Link>
+															<xr:Name>Отбор.Организация</xr:Name>
+															<xr:DataPath xsi:type="xs:string">Объект.Организация</xr:DataPath>
+															<xr:ValueChange>Clear</xr:ValueChange>
+														</xr:Link>
+													</ChoiceParameterLinks>
+													<ContextMenu name="Таблица6ДокументОплатыКонтекстноеМеню" id="123"/>
+													<ExtendedTooltip name="Таблица6ДокументОплатыExtendedTooltip" id="404"/>
+													<Events>
+														<Event name="ChoiceProcessing">Таблица6ДокументОплатыОбработкаВыбора</Event>
+													</Events>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+										<ColumnGroup name="ГруппаСуммаНДС6" id="255">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Сумма, НДС</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа сумма НДС6</v8:content>
+												</v8:item>
+											</ToolTip>
+											<ExtendedTooltip name="ГруппаСуммаНДС6ExtendedTooltip" id="405"/>
+											<ChildItems>
+												<InputField name="Таблица6Сумма" id="124">
+													<DataPath>Объект.Таблица6.Сумма</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>11</Width>
+													<ContextMenu name="Таблица6СуммаКонтекстноеМеню" id="125"/>
+													<ExtendedTooltip name="Таблица6СуммаExtendedTooltip" id="406"/>
+												</InputField>
+												<InputField name="Таблица6НДС" id="126">
+													<DataPath>Объект.Таблица6.НДС</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>11</Width>
+													<ContextMenu name="Таблица6НДСКонтекстноеМеню" id="127"/>
+													<ExtendedTooltip name="Таблица6НДСExtendedTooltip" id="407"/>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаТаблица63" id="188">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Таб. 6-3</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Регистр расходов, произведенных в отчетном налоговом периоде, но связанных с получением доходов в следующих налоговых периодах</v8:content>
+						</v8:item>
+					</ToolTip>
+					<TitleDataPath>Объект.Таблица63.RowsCount</TitleDataPath>
+					<ExtendedTooltip name="ГруппаТаблица63ExtendedTooltip" id="408"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаТаблица63Заголовок" id="268">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Расходы будущих периодов</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<ExtendedTooltip name="ГруппаТаблица63ЗаголовокExtendedTooltip" id="409"/>
+							<ChildItems>
+								<Table name="Таблица63" id="189">
+									<Representation>List</Representation>
+									<AutoInsertNewRow>true</AutoInsertNewRow>
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>Объект.Таблица63</DataPath>
+									<SearchStringLocation>None</SearchStringLocation>
+									<ViewStatusLocation>None</ViewStatusLocation>
+									<SearchControlLocation>None</SearchControlLocation>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="Таблица63КонтекстноеМеню" id="190"/>
+									<AutoCommandBar name="Таблица63КоманднаяПанель" id="191"/>
+									<ExtendedTooltip name="Таблица63ExtendedTooltip" id="410"/>
+									<SearchStringAddition name="Таблица63СтрокаПоиска" id="507">
+										<AdditionSource>
+											<Item>Таблица63</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="Таблица63СтрокаПоискаКонтекстноеМеню" id="508"/>
+										<ExtendedTooltip name="Таблица63СтрокаПоискаРасширеннаяПодсказка" id="509"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="Таблица63СостояниеПросмотра" id="510">
+										<AdditionSource>
+											<Item>Таблица63</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="Таблица63СостояниеПросмотраКонтекстноеМеню" id="511"/>
+										<ExtendedTooltip name="Таблица63СостояниеПросмотраРасширеннаяПодсказка" id="512"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="Таблица63УправлениеПоиском" id="513">
+										<AdditionSource>
+											<Item>Таблица63</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="Таблица63УправлениеПоискомКонтекстноеМеню" id="514"/>
+										<ExtendedTooltip name="Таблица63УправлениеПоискомРасширеннаяПодсказка" id="515"/>
+									</SearchControlAddition>
+									<Events>
+										<Event name="OnStartEdit">Таблица63ПриНачалеРедактирования</Event>
+									</Events>
+									<ChildItems>
+										<LabelField name="Таблица63НомерСтроки" id="192">
+											<DataPath>Объект.Таблица63.LineNumber</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>4</Width>
+											<ContextMenu name="Таблица63НомерСтрокиКонтекстноеМеню" id="193"/>
+											<ExtendedTooltip name="Таблица63НомерСтрокиExtendedTooltip" id="411"/>
+										</LabelField>
+										<InputField name="Таблица63ВидДвижения" id="194">
+											<DataPath>Объект.Таблица63.ВидДвижения</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>11</Width>
+											<Format>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>БЛ=Приход; БИ=Расход</v8:content>
+												</v8:item>
+											</Format>
+											<EditFormat>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>БЛ=Приход; БИ=Расход</v8:content>
+												</v8:item>
+											</EditFormat>
+											<ContextMenu name="Таблица63ВидДвиженияКонтекстноеМеню" id="195"/>
+											<ExtendedTooltip name="Таблица63ВидДвиженияExtendedTooltip" id="412"/>
+										</InputField>
+										<InputField name="Таблица63ВидРасхода" id="196">
+											<DataPath>Объект.Таблица63.ВидРасхода</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="Таблица63ВидРасходаКонтекстноеМеню" id="197"/>
+											<ExtendedTooltip name="Таблица63ВидРасходаExtendedTooltip" id="413"/>
+										</InputField>
+										<ColumnGroup name="ГруппаНоменклатурнаяГруппаХарактерДеятельности63" id="256">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Номенклатурная группа, характер деятельности</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа номенклатурная группа характер деятельности63</v8:content>
+												</v8:item>
+											</ToolTip>
+											<ExtendedTooltip name="ГруппаНоменклатурнаяГруппаХарактерДеятельности63ExtendedTooltip" id="414"/>
+											<ChildItems>
+												<InputField name="Таблица63НоменклатурнаяГруппа" id="198">
+													<DataPath>Объект.Таблица63.НоменклатурнаяГруппа</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="Таблица63НоменклатурнаяГруппаКонтекстноеМеню" id="199"/>
+													<ExtendedTooltip name="Таблица63НоменклатурнаяГруппаExtendedTooltip" id="415"/>
+												</InputField>
+												<InputField name="Таблица63ХарактерДеятельности" id="200">
+													<DataPath>Объект.Таблица63.ХарактерДеятельности</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="Таблица63ХарактерДеятельностиКонтекстноеМеню" id="201"/>
+													<ExtendedTooltip name="Таблица63ХарактерДеятельностиExtendedTooltip" id="416"/>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+										<ColumnGroup name="ГруппаРасчетныйДокументДокументОплаты63" id="257">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Расчетный документ, документ оплаты</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа расчетный документ документ оплаты63</v8:content>
+												</v8:item>
+											</ToolTip>
+											<ExtendedTooltip name="ГруппаРасчетныйДокументДокументОплаты63ExtendedTooltip" id="417"/>
+											<ChildItems>
+												<InputField name="Таблица63РасчетныйДокумент" id="202">
+													<DataPath>Объект.Таблица63.РасчетныйДокумент</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ChoiceParameterLinks>
+														<xr:Link>
+															<xr:Name>Отбор.Организация</xr:Name>
+															<xr:DataPath xsi:type="xs:string">Объект.Организация</xr:DataPath>
+															<xr:ValueChange>Clear</xr:ValueChange>
+														</xr:Link>
+													</ChoiceParameterLinks>
+													<ContextMenu name="Таблица63РасчетныйДокументКонтекстноеМеню" id="203"/>
+													<ExtendedTooltip name="Таблица63РасчетныйДокументExtendedTooltip" id="418"/>
+													<Events>
+														<Event name="ChoiceProcessing">Таблица63РасчетныйДокументОбработкаВыбора</Event>
+													</Events>
+												</InputField>
+												<InputField name="Таблица63ДокументОплаты" id="204">
+													<DataPath>Объект.Таблица63.ДокументОплаты</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ChoiceParameterLinks>
+														<xr:Link>
+															<xr:Name>Отбор.Организация</xr:Name>
+															<xr:DataPath xsi:type="xs:string">Объект.Организация</xr:DataPath>
+															<xr:ValueChange>Clear</xr:ValueChange>
+														</xr:Link>
+													</ChoiceParameterLinks>
+													<ContextMenu name="Таблица63ДокументОплатыКонтекстноеМеню" id="205"/>
+													<ExtendedTooltip name="Таблица63ДокументОплатыExtendedTooltip" id="419"/>
+													<Events>
+														<Event name="ChoiceProcessing">Таблица63ДокументОплатыОбработкаВыбора</Event>
+													</Events>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+										<ColumnGroup name="ГруппаСуммаНДС63" id="258">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Сумма, НДС</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ГруппаСуммаНДС63ExtendedTooltip" id="420"/>
+											<ChildItems>
+												<InputField name="Таблица63Сумма" id="206">
+													<DataPath>Объект.Таблица63.Сумма</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>11</Width>
+													<ContextMenu name="Таблица63СуммаКонтекстноеМеню" id="207"/>
+													<ExtendedTooltip name="Таблица63СуммаExtendedTooltip" id="421"/>
+												</InputField>
+												<InputField name="Таблица63НДС" id="208">
+													<DataPath>Объект.Таблица63.НДС</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>11</Width>
+													<ContextMenu name="Таблица63НДСКонтекстноеМеню" id="209"/>
+													<ExtendedTooltip name="Таблица63НДСExtendedTooltip" id="422"/>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+		<InputField name="Комментарий" id="7">
+			<DataPath>Объект.Комментарий</DataPath>
+			<TitleLocation>Left</TitleLocation>
+			<EditMode>EnterOnInput</EditMode>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<Height>1</Height>
+			<ContextMenu name="КомментарийКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="КомментарийExtendedTooltip" id="423"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.ЗаписьКнигиУчетаДоходовИРасходовИП</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+		<Attribute name="ТекущаяДатаДокумента" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Предыдущая дата документа</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СписокТиповДокументов" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список типов документов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="АвансыВключаютсяВДоходыВПериодеПолученияИП" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Авансы включаются в доходы в периоде получения (ИП)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ВестиУчетПоВидамДеятельностиИП" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вести учет по видам деятельности (ИП)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СостояниеДокумента" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Состояние документа</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ИспользоватьОднуНоменклатурнуюГруппу" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Использовать одну номенклатурную группу</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОсновнаяНоменклатурнаяГруппа" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основная номенклатурная группа</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.НоменклатурныеГруппы</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Новости" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Новости</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="ПараметрыПодключаемыхКоманд" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры подключаемых команд</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ЗаполнитьПоАвансам" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить по авансам</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить по авансам</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаполнитьПоАвансам</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПоказатьКонтекстныеНовости" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Новости</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список контекстных новостей</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Use>
+				<xr:Common>false</xr:Common>
+				<xr:Value name="Role.АдминистраторСистемы">true</xr:Value>
+				<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+				<xr:Value name="Role.ЧтениеНовостей">true</xr:Value>
+			</Use>
+			<Action>ПоказатьКонтекстныеНовости</Action>
+			<FunctionalOptions>
+				<Item>FunctionalOption.РазрешенаРаботаСНовостями</Item>
+			</FunctionalOptions>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+	<CommandInterface>
+		<NavigationPanel>
+			<Item>
+				<Command>4:6e7d6af9-70f2-4101-aaf7-5531739d8d4d</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+		</NavigationPanel>
+	</CommandInterface>
+</Form>

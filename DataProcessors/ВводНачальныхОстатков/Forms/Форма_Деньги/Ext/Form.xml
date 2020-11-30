@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Деньги</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаЗаписатьИЗакрыть" id="512">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ЗаписатьИЗакрыть</CommandName>
+				<ExtendedTooltip name="ФормаЗаписатьИЗакрытьРасширеннаяПодсказка" id="513"/>
+			</Button>
+			<Button name="ФормаЗаписать" id="508">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.Записать</CommandName>
+				<ExtendedTooltip name="ФормаЗаписатьРасширеннаяПодсказка" id="509"/>
+			</Button>
+			<ButtonGroup name="ФормаГруппаКнопок" id="854">
+				<EnableContentChange>true</EnableContentChange>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Группа кнопок</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаГруппаКнопокРасширеннаяПодсказка" id="855"/>
+				<ChildItems>
+					<Button name="ДеньгиДобавитьБанковскийСчет" id="744">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ДобавитьБанковскийСчет</CommandName>
+						<ExtendedTooltip name="ДеньгиДобавитьБанковскийСчетРасширеннаяПодсказка" id="745"/>
+					</Button>
+				</ChildItems>
+			</ButtonGroup>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="BeforeClose">ПередЗакрытием</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Table name="Деньги" id="802">
+			<ChangeRowSet>false</ChangeRowSet>
+			<ChangeRowOrder>false</ChangeRowOrder>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Объект.Деньги</DataPath>
+			<CommandSet>
+				<ExcludedCommand>Add</ExcludedCommand>
+				<ExcludedCommand>CancelSearch</ExcludedCommand>
+				<ExcludedCommand>Change</ExcludedCommand>
+				<ExcludedCommand>Copy</ExcludedCommand>
+				<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+				<ExcludedCommand>Delete</ExcludedCommand>
+				<ExcludedCommand>EndEdit</ExcludedCommand>
+				<ExcludedCommand>Find</ExcludedCommand>
+				<ExcludedCommand>MoveDown</ExcludedCommand>
+				<ExcludedCommand>MoveUp</ExcludedCommand>
+				<ExcludedCommand>OutputList</ExcludedCommand>
+				<ExcludedCommand>SelectAll</ExcludedCommand>
+				<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
+				<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+				<ExcludedCommand>SortListAsc</ExcludedCommand>
+				<ExcludedCommand>SortListDesc</ExcludedCommand>
+			</CommandSet>
+			<ToolTipRepresentation>ShowTop</ToolTipRepresentation>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ДеньгиКонтекстноеМеню" id="803"/>
+			<AutoCommandBar name="ДеньгиКоманднаяПанель" id="804">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ДеньгиРасширеннаяПодсказка" id="805">
+				<AutoMaxWidth>false</AutoMaxWidth>
+				<Title formatted="false">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Наличные деньги, а также деньги на банковских счетах</v8:content>
+					</v8:item>
+				</Title>
+				<VerticalAlign>Top</VerticalAlign>
+			</ExtendedTooltip>
+			<SearchStringAddition name="ДеньгиСтрокаПоиска" id="806">
+				<AdditionSource>
+					<Item>Деньги</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ДеньгиСтрокаПоискаКонтекстноеМеню" id="809"/>
+				<ExtendedTooltip name="ДеньгиСтрокаПоискаРасширеннаяПодсказка" id="810"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ДеньгиСостояниеПросмотра" id="811">
+				<AdditionSource>
+					<Item>Деньги</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ДеньгиСостояниеПросмотраКонтекстноеМеню" id="814"/>
+				<ExtendedTooltip name="ДеньгиСостояниеПросмотраРасширеннаяПодсказка" id="815"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ДеньгиУправлениеПоиском" id="816">
+				<AdditionSource>
+					<Item>Деньги</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ДеньгиУправлениеПоискомКонтекстноеМеню" id="819"/>
+				<ExtendedTooltip name="ДеньгиУправлениеПоискомРасширеннаяПодсказка" id="820"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<PictureField name="ДеньгиСчетВРежимеИнтеграции" id="886">
+					<DataPath>Объект.Деньги.СчетВРежимеИнтеграции</DataPath>
+					<Enabled>false</Enabled>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Статус счета</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>None</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<HeaderPicture>
+						<xr:Ref>CommonPicture.ДокументЗагруженИзБанка</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</HeaderPicture>
+					<ValuesPicture>
+						<xr:Ref>CommonPicture.ДокументЗагруженИзБанка</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</ValuesPicture>
+					<ContextMenu name="ДеньгиСчетВРежимеИнтеграцииКонтекстноеМеню" id="887"/>
+					<ExtendedTooltip name="ДеньгиСчетВРежимеИнтеграцииРасширеннаяПодсказка" id="888"/>
+				</PictureField>
+				<InputField name="ДеньгиНаименованиеПоказателя" id="877">
+					<DataPath>Объект.Деньги.НаименованиеПоказателя</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>45</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="ДеньгиНаименованиеПоказателяКонтекстноеМеню" id="878"/>
+					<ExtendedTooltip name="ДеньгиНаименованиеПоказателяРасширеннаяПодсказка" id="879"/>
+				</InputField>
+				<InputField name="ДеньгиСуммаОстаток" id="880">
+					<DataPath>Объект.Деньги.СуммаОстаток</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>12</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="ДеньгиСуммаОстатокКонтекстноеМеню" id="881"/>
+					<ExtendedTooltip name="ДеньгиСуммаОстатокРасширеннаяПодсказка" id="882"/>
+					<Events>
+						<Event name="OnChange">ДеньгиСуммаОстатокПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ДеньгиВалюта" id="865">
+					<DataPath>Объект.Деньги.Валюта</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>7</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="ДеньгиВалютаКонтекстноеМеню" id="866"/>
+					<ExtendedTooltip name="ДеньгиВалютаРасширеннаяПодсказка" id="867"/>
+				</InputField>
+				<InputField name="ДеньгиОтступ" id="883">
+					<DataPath>Объект.Деньги.Отступ</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<TitleLocation>None</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<HorizontalStretch>true</HorizontalStretch>
+					<ContextMenu name="ДеньгиОтступКонтекстноеМеню" id="884"/>
+					<ExtendedTooltip name="ДеньгиОтступРасширеннаяПодсказка" id="885"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ВводНачальныхОстатков</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.Запасы</Field>
+				<Field>Объект.Зарплата</Field>
+				<Field>Объект.Капитал</Field>
+				<Field>Объект.Капитал_Вспомогательная</Field>
+				<Field>Объект.Комиссионеры</Field>
+				<Field>Объект.КредитыИЗаймы</Field>
+				<Field>Объект.МакетПомощника</Field>
+				<Field>Объект.НалогиИВзносы</Field>
+				<Field>Объект.НематериальныеАктивы</Field>
+				<Field>Объект.ОсновныеСредства</Field>
+				<Field>Объект.Подотчет</Field>
+				<Field>Объект.ПодразделениеОрганизации</Field>
+				<Field>Объект.Покупатели</Field>
+				<Field>Объект.Поставщики</Field>
+				<Field>Объект.РазделыВводаОстатков</Field>
+			</UseAlways>
+			<Columns>
+				<AdditionalColumns table="Объект.Деньги">
+					<Column name="Отступ" id="1">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Отступ</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>1</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+					<Column name="СчетВРежимеИнтеграции" id="2">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Счет в режиме интеграции</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+						<FunctionalOptions>
+							<Item>FunctionalOption.ИнтерфейсИнтеграцииСБанком</Item>
+						</FunctionalOptions>
+					</Column>
+				</AdditionalColumns>
+			</Columns>
+		</Attribute>
+		<Attribute name="СтруктураТаблиц" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Структура таблиц</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СчетаВРежимеИнтеграции" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Счета в режиме интеграции</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Записать" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Записать</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ЗаписатьИЗакрыть" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать и закрыть</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать и закрыть</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаписатьИЗакрыть</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ДобавитьБанковскийСчет" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить банковский счет</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить банковский счет</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ДобавитьБанковскийСчет</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="Организация">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

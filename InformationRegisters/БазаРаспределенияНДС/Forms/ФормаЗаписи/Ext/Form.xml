@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="ПредставлениеПериода" id="19">
+			<DataPath>ПредставлениеПериода</DataPath>
+			<ChoiceButton>true</ChoiceButton>
+			<AutoMarkIncomplete>true</AutoMarkIncomplete>
+			<ContextMenu name="ПредставлениеПериодаКонтекстноеМеню" id="20"/>
+			<ExtendedTooltip name="ПредставлениеПериодаРасширеннаяПодсказка" id="21"/>
+			<Events>
+				<Event name="OnChange">ПредставлениеПериодаПриИзменении</Event>
+				<Event name="StartChoice">ПредставлениеПериодаНачалоВыбора</Event>
+				<Event name="Clearing">ПредставлениеПериодаРегистрацииОчистка</Event>
+			</Events>
+		</InputField>
+		<InputField name="Организация" id="4">
+			<DataPath>Запись.Организация</DataPath>
+			<ContextMenu name="ОрганизацияКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="6"/>
+		</InputField>
+		<UsualGroup name="ГруппаВыручкаОтРеализации" id="22">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выручка от реализации (сумма без НДС) по деятельности:</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа выручка от реализации</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="ГруппаВыручкаОтРеализацииРасширеннаяПодсказка" id="23"/>
+			<ChildItems>
+				<InputField name="ВыручкаНДС" id="7">
+					<DataPath>Запись.ВыручкаНДС</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>- облагаемой НДС</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ВыручкаНДСКонтекстноеМеню" id="8"/>
+					<ExtendedTooltip name="ВыручкаНДСРасширеннаяПодсказка" id="9"/>
+				</InputField>
+				<InputField name="ВыручкаБезНДС" id="13">
+					<DataPath>Запись.ВыручкаБезНДС</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>- не облагаемой НДС (не ЕНВД)</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ВыручкаБезНДСКонтекстноеМеню" id="14"/>
+					<ExtendedTooltip name="ВыручкаБезНДСРасширеннаяПодсказка" id="15"/>
+				</InputField>
+				<InputField name="ВыручкаЕНВД" id="10">
+					<DataPath>Запись.ВыручкаЕНВД</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>- не облагаемой НДС (ЕНВД)</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ВыручкаЕНВДКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="ВыручкаЕНВДРасширеннаяПодсказка" id="12"/>
+				</InputField>
+				<InputField name="ВыручкаНДС0" id="16">
+					<DataPath>Запись.ВыручкаНДС0</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>- облагаемой НДС по ставке 0%</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ВыручкаНДС0КонтекстноеМеню" id="17"/>
+					<ExtendedTooltip name="ВыручкаНДС0РасширеннаяПодсказка" id="18"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Запись" id="1">
+			<Type>
+				<v8:Type>cfg:InformationRegisterRecordManager.БазаРаспределенияНДС</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ПредставлениеПериода" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>17</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+</Form>

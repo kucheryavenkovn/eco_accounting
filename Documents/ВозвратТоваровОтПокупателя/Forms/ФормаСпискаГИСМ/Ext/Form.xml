@@ -1,0 +1,655 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<CommandBarLocation>None</CommandBarLocation>
+	<CommandSet>
+		<ExcludedCommand>Copy</ExcludedCommand>
+		<ExcludedCommand>Create</ExcludedCommand>
+		<ExcludedCommand>Delete</ExcludedCommand>
+		<ExcludedCommand>Post</ExcludedCommand>
+		<ExcludedCommand>SetDeletionMark</ExcludedCommand>
+		<ExcludedCommand>UndoPosting</ExcludedCommand>
+	</CommandSet>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаОтбор" id="124">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа отбор</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа отбор</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаОтборExtendedTooltip" id="125"/>
+			<ChildItems>
+				<InputField name="СтатусГИСМОтбор" id="126">
+					<DataPath>СтатусГИСМ</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Обмен с ГИСМ</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>None</TitleLocation>
+					<Width>26</Width>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MaxWidth>35</MaxWidth>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ClearButton>true</ClearButton>
+					<InputHint>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Обмен с ГИСМ</v8:content>
+						</v8:item>
+					</InputHint>
+					<ContextMenu name="СтатусГИСМОтборКонтекстноеМеню" id="127"/>
+					<ExtendedTooltip name="СтатусГИСМОтборРасширеннаяПодсказка" id="128"/>
+					<Events>
+						<Event name="OnChange">СтатусГИСМОтборПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ДальнейшееДействиеГИСМОтбор" id="129">
+					<DataPath>ДальнейшееДействиеГИСМ</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<Width>26</Width>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MaxWidth>30</MaxWidth>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ClearButton>true</ClearButton>
+					<ListChoiceMode>true</ListChoiceMode>
+					<ChooseType>false</ChooseType>
+					<InputHint>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дальнейшее действие ГИСМ</v8:content>
+						</v8:item>
+					</InputHint>
+					<ContextMenu name="ДальнейшееДействиеГИСМОтборКонтекстноеМеню" id="130"/>
+					<ExtendedTooltip name="ДальнейшееДействиеГИСМОтборРасширеннаяПодсказка" id="131"/>
+					<Events>
+						<Event name="OnChange">ДальнейшееДействиеГИСМОтборПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ОрганизацияОтбор" id="132">
+					<DataPath>Организация</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MaxWidth>30</MaxWidth>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ClearButton>true</ClearButton>
+					<InputHint>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Организация</v8:content>
+						</v8:item>
+					</InputHint>
+					<ContextMenu name="ОрганизацияОтборКонтекстноеМеню" id="133"/>
+					<ExtendedTooltip name="ОрганизацияОтборРасширеннаяПодсказка" id="134"/>
+					<Events>
+						<Event name="OnChange">ОрганизацияОтборПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ОтветственныйОтбор" id="168">
+					<DataPath>Ответственный</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ClearButton>true</ClearButton>
+					<InputHint>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ответственный</v8:content>
+						</v8:item>
+					</InputHint>
+					<ContextMenu name="ОтветственныйОтборКонтекстноеМеню" id="169"/>
+					<ExtendedTooltip name="ОтветственныйОтборРасширеннаяПодсказка" id="170"/>
+					<Events>
+						<Event name="OnChange">ОтветственныйОтборПриИзменении</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<CommandBar name="ГруппаКоманднаяПанель" id="35">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Командная панель</v8:content>
+				</v8:item>
+			</Title>
+			<ExtendedTooltip name="ГруппаКоманднаяПанельExtendedTooltip" id="45"/>
+			<ChildItems>
+				<Button name="ПередатьДанные" id="142">
+					<Type>CommandBarButton</Type>
+					<CommandName>Form.Command.ПередатьДанные</CommandName>
+					<ExtendedTooltip name="ПередатьДанныеРасширеннаяПодсказка" id="143"/>
+				</Button>
+				<Button name="ВыполнитьОбмен" id="138">
+					<Type>CommandBarButton</Type>
+					<Representation>PictureAndText</Representation>
+					<CommandName>Form.Command.ВыполнитьОбмен</CommandName>
+					<ExtendedTooltip name="ВыполнитьОбменРасширеннаяПодсказка" id="139"/>
+				</Button>
+				<Button name="ОткрытьПротоколОбменаГИСМ" id="140">
+					<Type>CommandBarButton</Type>
+					<Representation>PictureAndText</Representation>
+					<CommandName>Form.Command.ОткрытьПротоколОбменаГИСМ</CommandName>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Протокол обмена</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ОткрытьПротоколОбменаГИСМРасширеннаяПодсказка" id="141"/>
+				</Button>
+				<SearchStringAddition name="ДополнениеСтрокаПоиска" id="112">
+					<AdditionSource>
+						<Item>Список</Item>
+						<Type>SearchStringRepresentation</Type>
+					</AdditionSource>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дополнение строка поиска</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДополнениеСтрокаПоискаКонтекстноеМеню" id="113"/>
+					<ExtendedTooltip name="ДополнениеСтрокаПоискаРасширеннаяПодсказка" id="114"/>
+				</SearchStringAddition>
+				<SearchControlAddition name="ДополнениеУправлениеПоиском" id="115">
+					<AdditionSource>
+						<Item>Список</Item>
+						<Type>SearchControl</Type>
+					</AdditionSource>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дополнение управление поиском</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДополнениеУправлениеПоискомКонтекстноеМеню" id="116"/>
+					<ExtendedTooltip name="ДополнениеУправлениеПоискомРасширеннаяПодсказка" id="117"/>
+				</SearchControlAddition>
+				<Button name="Изменить" id="144">
+					<Type>CommandBarButton</Type>
+					<CommandName>Form.StandardCommand.Change</CommandName>
+					<ExtendedTooltip name="ИзменитьРасширеннаяПодсказка" id="145"/>
+				</Button>
+				<Button name="Обновить" id="146">
+					<Type>CommandBarButton</Type>
+					<CommandName>Form.StandardCommand.Refresh</CommandName>
+					<ExtendedTooltip name="ОбновитьРасширеннаяПодсказка" id="147"/>
+				</Button>
+				<Button name="УстановитьИнтервал" id="148">
+					<Type>CommandBarButton</Type>
+					<CommandName>Form.StandardCommand.SetDateInterval</CommandName>
+					<ExtendedTooltip name="УстановитьИнтервалРасширеннаяПодсказка" id="149"/>
+				</Button>
+				<Button name="ПоискПоТекущемуЗначению" id="150">
+					<Type>CommandBarButton</Type>
+					<CommandName>Form.StandardCommand.FindByCurrentValue</CommandName>
+					<ExtendedTooltip name="ПоискПоТекущемуЗначениюРасширеннаяПодсказка" id="151"/>
+				</Button>
+				<Button name="Найти" id="152">
+					<Type>CommandBarButton</Type>
+					<CommandName>Form.StandardCommand.Find</CommandName>
+					<ExtendedTooltip name="НайтиРасширеннаяПодсказка" id="153"/>
+				</Button>
+				<Button name="ОтменитьПоиск" id="154">
+					<Type>CommandBarButton</Type>
+					<CommandName>Form.StandardCommand.CancelSearch</CommandName>
+					<ExtendedTooltip name="ОтменитьПоискРасширеннаяПодсказка" id="155"/>
+				</Button>
+				<Button name="НастройкаСписка" id="156">
+					<Type>CommandBarButton</Type>
+					<CommandName>Form.StandardCommand.ListSettings</CommandName>
+					<ExtendedTooltip name="НастройкаСпискаРасширеннаяПодсказка" id="157"/>
+				</Button>
+				<Button name="ЗагрузитьНастройкиДинамическогоСписка" id="158">
+					<Type>CommandBarButton</Type>
+					<CommandName>Form.StandardCommand.LoadDynamicListSettings</CommandName>
+					<ExtendedTooltip name="ЗагрузитьНастройкиДинамическогоСпискаРасширеннаяПодсказка" id="159"/>
+				</Button>
+				<Button name="СохранитьНастройкиДинамическогоСписка" id="160">
+					<Type>CommandBarButton</Type>
+					<CommandName>Form.StandardCommand.SaveDynamicListSettings</CommandName>
+					<ExtendedTooltip name="СохранитьНастройкиДинамическогоСпискаРасширеннаяПодсказка" id="161"/>
+				</Button>
+				<Button name="ВывестиСписок" id="162">
+					<Type>CommandBarButton</Type>
+					<CommandName>Form.StandardCommand.OutputList</CommandName>
+					<ExtendedTooltip name="ВывестиСписокРасширеннаяПодсказка" id="163"/>
+				</Button>
+				<Button name="Справка" id="164">
+					<Type>CommandBarButton</Type>
+					<CommandName>Form.StandardCommand.Help</CommandName>
+					<ExtendedTooltip name="СправкаРасширеннаяПодсказка" id="165"/>
+				</Button>
+				<Button name="ИзменитьФорму" id="166">
+					<Type>CommandBarButton</Type>
+					<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
+					<ExtendedTooltip name="ИзменитьФормуРасширеннаяПодсказка" id="167"/>
+				</Button>
+			</ChildItems>
+		</CommandBar>
+		<Table name="Список" id="1">
+			<Representation>List</Representation>
+			<CommandBarLocation>None</CommandBarLocation>
+			<DefaultItem>true</DefaultItem>
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<InitialTreeView>ExpandTopLevel</InitialTreeView>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Список</DataPath>
+			<RowPictureDataPath>Список.СостояниеДокумента</RowPictureDataPath>
+			<RowsPicture>
+				<xr:Ref>CommonPicture.СостоянияДокумента</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</RowsPicture>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<UserSettingsGroup>34:02023637-7868-4a5f-8576-835a76e0c9ba</UserSettingsGroup>
+			<ContextMenu name="СписокКонтекстноеМеню" id="2"/>
+			<AutoCommandBar name="СписокКоманднаяПанель" id="3">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="СписокExtendedTooltip" id="48"/>
+			<SearchStringAddition name="СписокСтрокаПоиска" id="94">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСтрокаПоискаКонтекстноеМеню" id="95"/>
+				<ExtendedTooltip name="СписокСтрокаПоискаРасширеннаяПодсказка" id="96"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СписокСостояниеПросмотра" id="97">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСостояниеПросмотраКонтекстноеМеню" id="98"/>
+				<ExtendedTooltip name="СписокСостояниеПросмотраРасширеннаяПодсказка" id="99"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СписокУправлениеПоиском" id="100">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокУправлениеПоискомКонтекстноеМеню" id="101"/>
+				<ExtendedTooltip name="СписокУправлениеПоискомРасширеннаяПодсказка" id="102"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="Selection">СписокВозвратыТоваровОтКлиентовВыбор</Event>
+				<Event name="BeforeLoadUserSettingsAtServer">СписокПередЗагрузкойПользовательскихНастроекНаСервере</Event>
+			</Events>
+			<ChildItems>
+				<LabelField name="Дата" id="4">
+					<DataPath>Список.Date</DataPath>
+					<DefaultItem>true</DefaultItem>
+					<Width>7</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<Format>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДЛФ=D</v8:content>
+						</v8:item>
+					</Format>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ДатаExtendedTooltip" id="50"/>
+				</LabelField>
+				<LabelField name="Номер" id="6">
+					<DataPath>Список.Number</DataPath>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="НомерКонтекстноеМеню" id="7"/>
+					<ExtendedTooltip name="НомерExtendedTooltip" id="51"/>
+				</LabelField>
+				<LabelField name="Контрагент" id="14">
+					<DataPath>Список.Контрагент</DataPath>
+					<ContextMenu name="КонтрагентКонтекстноеМеню" id="15"/>
+					<ExtendedTooltip name="КонтрагентExtendedTooltip" id="55"/>
+				</LabelField>
+				<LabelField name="СуммаДокумента" id="22">
+					<DataPath>Список.СуммаДокумента</DataPath>
+					<Width>10</Width>
+					<ContextMenu name="СуммаДокументаКонтекстноеМеню" id="23"/>
+					<ExtendedTooltip name="СуммаДокументаExtendedTooltip" id="53"/>
+				</LabelField>
+				<LabelField name="ВалютаДокумента" id="8">
+					<DataPath>Список.ВалютаДокумента</DataPath>
+					<Width>7</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="ВалютаДокументаКонтекстноеМеню" id="9"/>
+					<ExtendedTooltip name="ВалютаДокументаExtendedTooltip" id="54"/>
+				</LabelField>
+				<LabelField name="СтатусГИСМ" id="118">
+					<DataPath>Список.СтатусГИСМ</DataPath>
+					<ContextMenu name="СтатусГИСМКонтекстноеМеню" id="119"/>
+					<ExtendedTooltip name="СтатусГИСМРасширеннаяПодсказка" id="120"/>
+				</LabelField>
+				<LabelField name="ДальнейшееДействиеГИСМ" id="121">
+					<DataPath>Список.ДальнейшееДействиеГИСМ</DataPath>
+					<ContextMenu name="ДальнейшееДействиеГИСМКонтекстноеМеню" id="122"/>
+					<ExtendedTooltip name="ДальнейшееДействиеГИСМРасширеннаяПодсказка" id="123"/>
+				</LabelField>
+				<LabelField name="ВидОперации" id="10">
+					<DataPath>Список.ВидОперации</DataPath>
+					<Width>15</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="ВидОперацииКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="ВидОперацииExtendedTooltip" id="52"/>
+				</LabelField>
+				<LabelField name="Склад" id="20">
+					<DataPath>Список.Склад</DataPath>
+					<ContextMenu name="СкладКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="СкладExtendedTooltip" id="56"/>
+				</LabelField>
+				<LabelField name="Организация" id="16">
+					<DataPath>Список.Организация</DataPath>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="17"/>
+					<ExtendedTooltip name="ОрганизацияExtendedTooltip" id="57"/>
+				</LabelField>
+				<LabelField name="ПодразделениеОрганизации" id="24">
+					<DataPath>Список.ПодразделениеОрганизации</DataPath>
+					<ContextMenu name="ПодразделениеОрганизацииКонтекстноеМеню" id="25"/>
+					<ExtendedTooltip name="ПодразделениеОрганизацииExtendedTooltip" id="58"/>
+				</LabelField>
+				<LabelField name="Ответственный" id="18">
+					<DataPath>Список.Ответственный</DataPath>
+					<ContextMenu name="ОтветственныйКонтекстноеМеню" id="19"/>
+					<ExtendedTooltip name="ОтветственныйExtendedTooltip" id="59"/>
+				</LabelField>
+				<LabelField name="Комментарий" id="12">
+					<DataPath>Список.Комментарий</DataPath>
+					<ContextMenu name="КомментарийКонтекстноеМеню" id="13"/>
+					<ExtendedTooltip name="КомментарийExtendedTooltip" id="60"/>
+				</LabelField>
+				<LabelField name="Ссылка" id="28">
+					<DataPath>Список.Ref</DataPath>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<ContextMenu name="СсылкаКонтекстноеМеню" id="29"/>
+					<ExtendedTooltip name="СсылкаExtendedTooltip" id="61"/>
+				</LabelField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Список" id="1">
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<UseAlways>
+				<Field>Список.Ref</Field>
+				<Field>Список.ВидОперации</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	ВЫБОР
+		КОГДА ДокументВозвратТоваровОтПокупателя.РучнаяКорректировка = ИСТИНА
+			ТОГДА ВЫБОР
+					КОГДА ДокументВозвратТоваровОтПокупателя.ПометкаУдаления = ИСТИНА
+						ТОГДА 10
+					КОГДА ДокументВозвратТоваровОтПокупателя.Проведен = ЛОЖЬ
+						ТОГДА 9
+					ИНАЧЕ 8
+				КОНЕЦ
+		ИНАЧЕ ВЫБОР
+				КОГДА ДокументВозвратТоваровОтПокупателя.ПометкаУдаления = ИСТИНА
+					ТОГДА 2
+				КОГДА ДокументВозвратТоваровОтПокупателя.Проведен = ИСТИНА
+					ТОГДА 1
+				ИНАЧЕ 0
+			КОНЕЦ
+	КОНЕЦ КАК СостояниеДокумента,
+	ДокументВозвратТоваровОтПокупателя.Ссылка,
+	ДокументВозвратТоваровОтПокупателя.ПометкаУдаления,
+	ДокументВозвратТоваровОтПокупателя.Номер,
+	ДокументВозвратТоваровОтПокупателя.Дата,
+	ДокументВозвратТоваровОтПокупателя.Проведен,
+	ДокументВозвратТоваровОтПокупателя.ВидОперации,
+	ДокументВозвратТоваровОтПокупателя.Организация,
+	ДокументВозвратТоваровОтПокупателя.Склад,
+	ДокументВозвратТоваровОтПокупателя.ПодразделениеОрганизации,
+	ДокументВозвратТоваровОтПокупателя.ДеятельностьНаПатенте,
+	ДокументВозвратТоваровОтПокупателя.Патент,
+	ДокументВозвратТоваровОтПокупателя.Контрагент,
+	ДокументВозвратТоваровОтПокупателя.ДоговорКонтрагента,
+	ДокументВозвратТоваровОтПокупателя.Сделка,
+	ДокументВозвратТоваровОтПокупателя.Ответственный,
+	ДокументВозвратТоваровОтПокупателя.Комментарий,
+	ДокументВозвратТоваровОтПокупателя.ВалютаДокумента,
+	ДокументВозвратТоваровОтПокупателя.КурсВзаиморасчетов,
+	ДокументВозвратТоваровОтПокупателя.КратностьВзаиморасчетов,
+	ДокументВозвратТоваровОтПокупателя.ОтразитьВКнигеПокупок,
+	ДокументВозвратТоваровОтПокупателя.ПокупателемВыставляетсяСчетФактураНаВозврат,
+	ДокументВозвратТоваровОтПокупателя.СуммаВключаетНДС,
+	ДокументВозвратТоваровОтПокупателя.СуммаДокумента,
+	ДокументВозвратТоваровОтПокупателя.СчетУчетаНДС,
+	ДокументВозвратТоваровОтПокупателя.СчетУчетаРасчетовПоАвансам,
+	ДокументВозвратТоваровОтПокупателя.СчетУчетаРасчетовПоТаре,
+	ДокументВозвратТоваровОтПокупателя.СчетУчетаРасчетовСКонтрагентом,
+	ДокументВозвратТоваровОтПокупателя.ТипЦен,
+	ДокументВозвратТоваровОтПокупателя.РучнаяКорректировка,
+	ДокументВозвратТоваровОтПокупателя.НомерРасходногоКассовогоОрдера,
+	ДокументВозвратТоваровОтПокупателя.ДатаРасходногоКассовогоОрдера,
+	ДокументВозвратТоваровОтПокупателя.МоментВремени,
+	ДокументВозвратТоваровОтПокупателя.ЕстьМаркируемаяПродукцияГИСМ,
+	ЕСТЬNULL(СтатусыИнформированияГИСМ.Статус, ЗНАЧЕНИЕ(Перечисление.СтатусыИнформированияГИСМ.ПустаяСсылка)) КАК СтатусГИСМ,
+	ВЫБОР 
+		КОГДА ДокументВозвратТоваровОтПокупателя.ЕстьМаркируемаяПродукцияГИСМ ТОГДА
+			ЕСТЬNULL(СтатусыИнформированияГИСМ.ДальнейшееДействие, ЗНАЧЕНИЕ(Перечисление.ДальнейшиеДействияПоВзаимодействиюГИСМ.ПустаяСсылка))
+		ИНАЧЕ
+			ЗНАЧЕНИЕ(Перечисление.ДальнейшиеДействияПоВзаимодействиюГИСМ.НеТребуется)
+	КОНЕЦ КАК ДальнейшееДействиеГИСМ
+	ИЗ
+	Документ.ВозвратТоваровОтПокупателя КАК ДокументВозвратТоваровОтПокупателя
+		{ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.СтатусыИнформированияГИСМ КАК СтатусыИнформированияГИСМ
+			ПО СтатусыИнформированияГИСМ.Документ = ДокументВозвратТоваровОтПокупателя.Ссылка}
+	</QueryText>
+				<MainTable>Document.ВозвратТоваровОтПокупателя</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:use>false</dcsset:use>
+							<dcsset:left xsi:type="dcscor:Field">Контрагент</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:userSettingID>93633e1a-34bd-405b-a37b-6c95d3203626</dcsset:userSettingID>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ДальнейшееДействиеГИСМ" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дальнейшее действие ГИСМ</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Save>
+				<Field>ДальнейшееДействиеГИСМ</Field>
+			</Save>
+			<FunctionalOptions>
+				<Item>FunctionalOption.ВестиУчетМаркировкиПродукцииВГИСМ</Item>
+			</FunctionalOptions>
+		</Attribute>
+		<Attribute name="СтатусГИСМ" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Статус информирования ГИСМ</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.СтатусыИнформированияГИСМ</v8:Type>
+			</Type>
+			<Save>
+				<Field>СтатусГИСМ</Field>
+			</Save>
+			<FunctionalOptions>
+				<Item>FunctionalOption.ВестиУчетМаркировкиПродукцииВГИСМ</Item>
+			</FunctionalOptions>
+		</Attribute>
+		<Attribute name="СтруктураБыстрогоОтбора" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Структура быстрого отбора</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="Организация" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Организация</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:TypeSet>cfg:DefinedType.Организация</v8:TypeSet>
+			</Type>
+			<SavedData>true</SavedData>
+			<Save>
+				<Field>Организация</Field>
+			</Save>
+			<FunctionalOptions>
+				<Item>FunctionalOption.ИспользоватьНесколькоОрганизацийБухгалтерскийУчет</Item>
+			</FunctionalOptions>
+		</Attribute>
+		<Attribute name="Ответственный" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ответственный</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
+			</Type>
+			<Save>
+				<Field>Ответственный</Field>
+			</Save>
+			<FunctionalOptions>
+				<Item>FunctionalOption.ИспользоватьНесколькоОтветственных</Item>
+			</FunctionalOptions>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ВыполнитьОбмен" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить обмен</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить обмен</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ВыполнитьОбменГосИС</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ВыполнитьОбмен</Action>
+			<FunctionalOptions>
+				<Item>FunctionalOption.ВестиУчетМаркировкиПродукцииВГИСМ</Item>
+			</FunctionalOptions>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОткрытьПротоколОбменаГИСМ" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть протокол обмена ГИСМ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть протокол обмена ГИСМ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ПротоколОбмена</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОткрытьПротоколОбменаГИСМ</Action>
+			<FunctionalOptions>
+				<Item>FunctionalOption.ВестиУчетМаркировкиПродукцииВГИСМ</Item>
+			</FunctionalOptions>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПередатьДанные" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Передать в ГИСМ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Передать данные</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ИсходящийЗапросГосИС</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ПередатьДанные</Action>
+			<FunctionalOptions>
+				<Item>FunctionalOption.ВестиУчетМаркировкиПродукцииВГИСМ</Item>
+			</FunctionalOptions>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

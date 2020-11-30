@@ -1,0 +1,513 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="OnClose">ПриЗакрытии</Event>
+	</Events>
+	<ChildItems>
+		<LabelDecoration name="ДекорацияОбщая" id="125">
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Внимание!
+Обнаружены счета-фактуры на предварительные оплаты, поступившие до 01.10.2018 года, зарегистрированные при использовании помощника по расчету НДС за 4 квартал 2018 года или при выполнении регламентной операции "Расчет НДС" за декабрь 2018 года.
+Счета-фактуры отобраны по следующим признакам:
+1. Дата документа 01.10.2018 года
+2. Снят флаг "Выставлен (передан контрагенту)",
+3. В движениях документа по регистру "НДС Продажи" значение реквизита Запись дополнительного листа установлено "Да"</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ДекорацияОбщаяКонтекстноеМеню" id="126"/>
+			<ExtendedTooltip name="ДекорацияОбщаяРасширеннаяПодсказка" id="127"/>
+		</LabelDecoration>
+		<LabelDecoration name="ДекорацияИсправление" id="142">
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Рекомендуется проанализировать список счетов-фактур и ошибочные документы пометить на удаление.
+Если по таким счетам-фактурам был заявлен вычет в декларации за 4 квартал 2018 года, то после удаления счетов-фактур на аванс, необходимо произвести заново заполнение табличной части "Полученные авансы" документа "Формирование записей книги покупок" и представить корректирующую декларацию по НДС за 4 кв 2018 года.</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ДекорацияИсправлениеКонтекстноеМеню" id="143"/>
+			<ExtendedTooltip name="ДекорацияИсправлениеРасширеннаяПодсказка" id="144"/>
+		</LabelDecoration>
+		<LabelDecoration name="ДекорацияНетПрав" id="148">
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Для исправления данных обратитесь к пользователю с правами "Администратор" или "Главный бухгалтер" или "Бухгалтер".</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ДекорацияНетПравКонтекстноеМеню" id="149"/>
+			<ExtendedTooltip name="ДекорацияНетПравРасширеннаяПодсказка" id="150"/>
+		</LabelDecoration>
+		<LabelDecoration name="ДекорацияРасположение" id="145">
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть обработку можно в разделе "Администрирование".</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ДекорацияРасположениеКонтекстноеМеню" id="146"/>
+			<ExtendedTooltip name="ДекорацияРасположениеРасширеннаяПодсказка" id="147"/>
+		</LabelDecoration>
+		<Table name="ТаблицаДокументов" id="1">
+			<Representation>List</Representation>
+			<ChangeRowSet>false</ChangeRowSet>
+			<ChangeRowOrder>false</ChangeRowOrder>
+			<HeightInTableRows>4</HeightInTableRows>
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>ТаблицаДокументов</DataPath>
+			<CommandSet>
+				<ExcludedCommand>Add</ExcludedCommand>
+				<ExcludedCommand>CancelSearch</ExcludedCommand>
+				<ExcludedCommand>Change</ExcludedCommand>
+				<ExcludedCommand>Copy</ExcludedCommand>
+				<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+				<ExcludedCommand>Delete</ExcludedCommand>
+				<ExcludedCommand>EndEdit</ExcludedCommand>
+				<ExcludedCommand>Find</ExcludedCommand>
+				<ExcludedCommand>MoveDown</ExcludedCommand>
+				<ExcludedCommand>MoveUp</ExcludedCommand>
+				<ExcludedCommand>OutputList</ExcludedCommand>
+				<ExcludedCommand>SelectAll</ExcludedCommand>
+				<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
+				<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+				<ExcludedCommand>SortListAsc</ExcludedCommand>
+				<ExcludedCommand>SortListDesc</ExcludedCommand>
+			</CommandSet>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ТаблицаДокументовКонтекстноеМеню" id="2"/>
+			<AutoCommandBar name="ТаблицаДокументовКоманднаяПанель" id="3">
+				<ChildItems>
+					<Button name="Обновить" id="123">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.Обновить</CommandName>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Обновить список документов</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ОбновитьРасширеннаяПодсказка" id="124"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ТаблицаДокументовРасширеннаяПодсказка" id="4"/>
+			<SearchStringAddition name="ТаблицаДокументовСтрокаПоиска" id="5">
+				<AdditionSource>
+					<Item>ТаблицаДокументов</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТаблицаДокументовСтрокаПоискаКонтекстноеМеню" id="6"/>
+				<ExtendedTooltip name="ТаблицаДокументовСтрокаПоискаРасширеннаяПодсказка" id="7"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ТаблицаДокументовСостояниеПросмотра" id="8">
+				<AdditionSource>
+					<Item>ТаблицаДокументов</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТаблицаДокументовСостояниеПросмотраКонтекстноеМеню" id="9"/>
+				<ExtendedTooltip name="ТаблицаДокументовСостояниеПросмотраРасширеннаяПодсказка" id="10"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ТаблицаДокументовУправлениеПоиском" id="11">
+				<AdditionSource>
+					<Item>ТаблицаДокументов</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ТаблицаДокументовУправлениеПоискомКонтекстноеМеню" id="12"/>
+				<ExtendedTooltip name="ТаблицаДокументовУправлениеПоискомРасширеннаяПодсказка" id="13"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="Selection">ТаблицаДокументовВыбор</Event>
+			</Events>
+			<ChildItems>
+				<InputField name="Организация" id="151">
+					<DataPath>ТаблицаДокументов.Организация</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>30</Width>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="152"/>
+					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="153"/>
+				</InputField>
+				<InputField name="Документ" id="14">
+					<DataPath>ТаблицаДокументов.Документ</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<ContextMenu name="ДокументКонтекстноеМеню" id="15"/>
+					<ExtendedTooltip name="ДокументРасширеннаяПодсказка" id="16"/>
+				</InputField>
+				<InputField name="Контрагент" id="171">
+					<DataPath>ТаблицаДокументов.Контрагент</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КонтрагентКонтекстноеМеню" id="172"/>
+					<ExtendedTooltip name="КонтрагентРасширеннаяПодсказка" id="173"/>
+				</InputField>
+				<InputField name="ДатаАванса" id="174">
+					<DataPath>ТаблицаДокументов.ДатаАванса</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДатаАвансаКонтекстноеМеню" id="175"/>
+					<ExtendedTooltip name="ДатаАвансаРасширеннаяПодсказка" id="176"/>
+				</InputField>
+				<CheckBoxField name="ЗаявленВычет" id="168">
+					<DataPath>ТаблицаДокументов.ЗаявленВычет</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ЗаявленВычетКонтекстноеМеню" id="169"/>
+					<ExtendedTooltip name="ЗаявленВычетРасширеннаяПодсказка" id="170"/>
+				</CheckBoxField>
+				<InputField name="Отступ" id="154">
+					<DataPath>ТаблицаДокументов.Отступ</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<TitleLocation>None</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>1</Width>
+					<HorizontalStretch>true</HorizontalStretch>
+					<ContextMenu name="ОтступКонтекстноеМеню" id="155"/>
+					<ExtendedTooltip name="ОтступРасширеннаяПодсказка" id="156"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<UsualGroup name="ГруппаПодвал" id="157">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа подвал</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа подвал</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПодвалРасширеннаяПодсказка" id="158"/>
+			<ChildItems>
+				<CheckBoxField name="НеПроверятьПриНачалеРаботы" id="159">
+					<DataPath>НеПроверятьПриНачалеРаботы</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="НеПроверятьПриНачалеРаботыКонтекстноеМеню" id="160"/>
+					<ExtendedTooltip name="НеПроверятьПриНачалеРаботыРасширеннаяПодсказка" id="161"/>
+				</CheckBoxField>
+				<CommandBar name="ГруппаКоманды" id="162">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа команды</v8:content>
+						</v8:item>
+					</Title>
+					<HorizontalLocation>Right</HorizontalLocation>
+					<ExtendedTooltip name="ГруппаКомандыРасширеннаяПодсказка" id="163"/>
+					<ChildItems>
+						<Button name="ПометитьНаУдаление" id="164">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Command.ПометитьНаУдаление</CommandName>
+							<ExtendedTooltip name="ПометитьНаУдалениеРасширеннаяПодсказка" id="165"/>
+						</Button>
+						<Button name="Закрыть" id="166">
+							<Type>CommandBarButton</Type>
+							<DefaultButton>true</DefaultButton>
+							<CommandName>Form.StandardCommand.Close</CommandName>
+							<ExtendedTooltip name="ЗакрытьРасширеннаяПодсказка" id="167"/>
+						</Button>
+					</ChildItems>
+				</CommandBar>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ПроверкаРегистрацииСчетовФактурНаАванс</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ТаблицаДокументов" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблица документов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Документ" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Документ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:DocumentRef.СчетФактураВыданный</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Организация" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Организация</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+					</Type>
+					<FunctionalOptions>
+						<Item>FunctionalOption.ИспользоватьНесколькоОрганизацийБухгалтерскийУчет</Item>
+					</FunctionalOptions>
+				</Column>
+				<Column name="Отступ" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отступ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЗаявленВычет" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Заявлен вычет</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Контрагент" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Контрагент</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Контрагенты</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ДатаАванса" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата аванса</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>Date</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="НеПроверятьПриНачалеРаботы" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Не проверять при начале работы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТекущийДокумент" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текущий документ</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:TypeSet>cfg:DocumentRef</v8:TypeSet>
+			</Type>
+		</Attribute>
+		<Attribute name="ФормаНеДоступна" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Форма не доступна</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>СуммаДт</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>СчетДт</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>СубконтоДт1</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>СубконтоДт2</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>КоличествоДт</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПодписьДт</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">НаборЗаписейХозрасчетный.СчетДт</dcsset:left>
+						<dcsset:comparisonType>NotInList</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.СобственныеАкции_ОбыкновенныеАкции</dcsset:right>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.СобственныеАкции_ПривилегированныеАкции</dcsset:right>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.УставныйКапитал_ОбыкновенныеАкции</dcsset:right>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.УставныйКапитал_ПривилегированныеАкции</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Видимость</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>СуммаКт</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>СчетКт</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>СубконтоКт1</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>СубконтоКт2</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>КоличествоКт</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПодписьКт</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">НаборЗаписейХозрасчетный.СчетКт</dcsset:left>
+						<dcsset:comparisonType>NotInList</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.СобственныеАкции_ОбыкновенныеАкции</dcsset:right>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.СобственныеАкции_ПривилегированныеАкции</dcsset:right>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.УставныйКапитал_ОбыкновенныеАкции</dcsset:right>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.УставныйКапитал_ПривилегированныеАкции</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Видимость</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>НаборЗаписейХозрасчетный</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemGroup">
+						<dcsset:groupType>AndGroup</dcsset:groupType>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">НаборЗаписейХозрасчетный.СчетКт</dcsset:left>
+							<dcsset:comparisonType>NotInList</dcsset:comparisonType>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.СобственныеАкции_ОбыкновенныеАкции</dcsset:right>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.СобственныеАкции_ПривилегированныеАкции</dcsset:right>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.УставныйКапитал_ОбыкновенныеАкции</dcsset:right>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.УставныйКапитал_ПривилегированныеАкции</dcsset:right>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">НаборЗаписейХозрасчетный.СчетДт</dcsset:left>
+							<dcsset:comparisonType>NotInList</dcsset:comparisonType>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.СобственныеАкции_ОбыкновенныеАкции</dcsset:right>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.СобственныеАкции_ПривилегированныеАкции</dcsset:right>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.УставныйКапитал_ОбыкновенныеАкции</dcsset:right>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.УставныйКапитал_ПривилегированныеАкции</dcsset:right>
+						</dcsset:item>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Видимость</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="ПометитьНаУдаление" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пометить на удаление</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пометить на удаление</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПометитьНаУдаление</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Обновить" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Обновить</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

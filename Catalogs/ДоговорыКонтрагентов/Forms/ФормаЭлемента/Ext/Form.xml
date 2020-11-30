@@ -1,0 +1,2390 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаПоказатьКонтекстныеНовости" id="324">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ПоказатьКонтекстныеНовости</CommandName>
+				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+				<ExtendedTooltip name="ФормаПоказатьКонтекстныеНовостиРасширеннаяПодсказка" id="325"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="AfterWrite">ПослеЗаписи</Event>
+		<Event name="AfterWriteAtServer">ПослеЗаписиНаСервере</Event>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
+		<Event name="OnWriteAtServer">ПриЗаписиНаСервере</Event>
+		<Event name="FillCheckProcessingAtServer">ОбработкаПроверкиЗаполненияНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаШапка" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шапка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шапка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ChildItemsWidth>Equal</ChildItemsWidth>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаШапкаExtendedTooltip" id="79"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаШапкаЛевая" id="278">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Шапка левая</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<United>false</United>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаШапкаЛеваяРасширеннаяПодсказка" id="279"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаВидДоговора" id="129">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа вид договора</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<BackColor>style:ФонУправляющегоПоля</BackColor>
+							<ExtendedTooltip name="ГруппаВидДоговораРасширеннаяПодсказка" id="130"/>
+							<ChildItems>
+								<InputField name="ВидДоговора" id="13">
+									<DataPath>Объект.ВидДоговора</DataPath>
+									<ContextMenu name="ВидДоговораКонтекстноеМеню" id="14"/>
+									<ExtendedTooltip name="ВидДоговораExtendedTooltip" id="90"/>
+									<Events>
+										<Event name="OnChange">ВидДоговораПриИзменении</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаНомерДата" id="15">
+							<EnableContentChange>true</EnableContentChange>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Номер и дата договора</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Номер и дата договора</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаНомерДатаExtendedTooltip" id="83"/>
+							<ChildItems>
+								<InputField name="Номер" id="16">
+									<DataPath>Объект.Номер</DataPath>
+									<DefaultItem>true</DefaultItem>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Номер договора</v8:content>
+										</v8:item>
+									</Title>
+									<Width>25</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="НомерКонтекстноеМеню" id="17"/>
+									<ExtendedTooltip name="НомерExtendedTooltip" id="84"/>
+									<Events>
+										<Event name="OnChange">НомерПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="Дата" id="18">
+									<DataPath>Объект.Дата</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>от</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДатаКонтекстноеМеню" id="19"/>
+									<ExtendedTooltip name="ДатаExtendedTooltip" id="85"/>
+									<Events>
+										<Event name="OnChange">ДатаПриИзменении</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="Наименование" id="11">
+							<DataPath>Объект.Description</DataPath>
+							<ContextMenu name="НаименованиеКонтекстноеМеню" id="12"/>
+							<ExtendedTooltip name="НаименованиеExtendedTooltip" id="88"/>
+						</InputField>
+						<InputField name="Родитель" id="6">
+							<DataPath>Объект.Parent</DataPath>
+							<UserVisible>
+								<xr:Common>false</xr:Common>
+							</UserVisible>
+							<CreateButton>false</CreateButton>
+							<ContextMenu name="РодительКонтекстноеМеню" id="7"/>
+							<ExtendedTooltip name="РодительExtendedTooltip" id="82"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаШапкаПравая" id="280">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Шапка правая</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа шапка правая</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<United>false</United>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаШапкаПраваяРасширеннаяПодсказка" id="281"/>
+					<ChildItems>
+						<InputField name="Код" id="9">
+							<DataPath>Объект.Code</DataPath>
+							<UserVisible>
+								<xr:Common>false</xr:Common>
+							</UserVisible>
+							<ContextMenu name="КодКонтекстноеМеню" id="10"/>
+							<ExtendedTooltip name="КодExtendedTooltip" id="89"/>
+						</InputField>
+						<InputField name="Организация" id="2">
+							<DataPath>Объект.Организация</DataPath>
+							<ContextMenu name="ОрганизацияКонтекстноеМеню" id="3"/>
+							<ExtendedTooltip name="ОрганизацияExtendedTooltip" id="80"/>
+							<Events>
+								<Event name="OnChange">ОрганизацияПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="Владелец" id="4">
+							<DataPath>Объект.Owner</DataPath>
+							<ContextMenu name="ВладелецКонтекстноеМеню" id="5"/>
+							<ExtendedTooltip name="ВладелецExtendedTooltip" id="81"/>
+							<Events>
+								<Event name="OnChange">ВладелецПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="БанковскийСчетДляОплаты" id="490">
+							<DataPath>Объект.БанковскийСчетДляОплаты</DataPath>
+							<ChoiceParameterLinks>
+								<xr:Link>
+									<xr:Name>Владелец</xr:Name>
+									<xr:DataPath xsi:type="xs:string">Объект.Owner</xr:DataPath>
+									<xr:ValueChange>Clear</xr:ValueChange>
+								</xr:Link>
+							</ChoiceParameterLinks>
+							<ContextMenu name="БанковскийСчетДляОплатыКонтекстноеМеню" id="491"/>
+							<ExtendedTooltip name="БанковскийСчетДляОплатыРасширеннаяПодсказка" id="492"/>
+						</InputField>
+						<CheckBoxField name="ВыводНомераВДоговоре" id="487">
+							<DataPath>Объект.ВыводитьНомерИДатуДоговораВСчетФактуре</DataPath>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ВыводНомераВДоговореКонтекстноеМеню" id="488"/>
+							<ExtendedTooltip name="ВыводНомераВДоговореРасширеннаяПодсказка" id="489"/>
+						</CheckBoxField>
+						<InputField name="БанковскийСчетОрганизации" id="525">
+							<DataPath>Объект.БанковскийСчетОрганизации</DataPath>
+							<ContextMenu name="БанковскийСчетОрганизацииКонтекстноеМеню" id="526"/>
+							<ExtendedTooltip name="БанковскийСчетОрганизацииРасширеннаяПодсказка" id="527"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Комментарий" id="72">
+			<DataPath>Объект.Комментарий</DataPath>
+			<TitleLocation>Left</TitleLocation>
+			<MultiLine>false</MultiLine>
+			<ContextMenu name="КомментарийКонтекстноеМеню" id="73"/>
+			<ExtendedTooltip name="КомментарийExtendedTooltip" id="126"/>
+		</InputField>
+		<UsualGroup name="ГруппаРасчеты" id="137">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расчеты</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<Collapsed>true</Collapsed>
+			<ControlRepresentation>Picture</ControlRepresentation>
+			<Representation>None</Representation>
+			<ShowLeftMargin>false</ShowLeftMargin>
+			<ChildItemsWidth>Equal</ChildItemsWidth>
+			<ExtendedTooltip name="ГруппаРасчетыРасширеннаяПодсказка" id="138"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаВалютаВзаиморасчетов" id="315">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Валюта взаиморасчетов</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа валюта взаиморасчетов</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаВалютаВзаиморасчетовРасширеннаяПодсказка" id="316"/>
+					<ChildItems>
+						<InputField name="ВалютаВзаиморасчетов" id="141">
+							<DataPath>Объект.ВалютаВзаиморасчетов</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Цена в</v8:content>
+								</v8:item>
+							</Title>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ContextMenu name="ВалютаВзаиморасчетовКонтекстноеМеню" id="142"/>
+							<ExtendedTooltip name="ВалютаВзаиморасчетовExtendedTooltip" id="143"/>
+							<Events>
+								<Event name="OnChange">ВалютаВзаиморасчетовПриИзменении</Event>
+							</Events>
+						</InputField>
+						<RadioButtonField name="ОплатаВРублях" id="317">
+							<DataPath>ОплатаВРублях</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Оплата в</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Left</TitleLocation>
+							<RadioButtonType>RadioButtons</RadioButtonType>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>руб.</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:decimal">1</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>USD</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:decimal">0</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="ОплатаВРубляхКонтекстноеМеню" id="318"/>
+							<ExtendedTooltip name="ОплатаВРубляхРасширеннаяПодсказка" id="319"/>
+							<Events>
+								<Event name="OnChange">ОплатаВПриИзменении</Event>
+							</Events>
+						</RadioButtonField>
+					</ChildItems>
+				</UsualGroup>
+				<InputField name="ТипЦен" id="156">
+					<DataPath>Объект.ТипЦен</DataPath>
+					<ContextMenu name="ТипЦенКонтекстноеМеню" id="157"/>
+					<ExtendedTooltip name="ТипЦенExtendedTooltip" id="158"/>
+				</InputField>
+				<UsualGroup name="ГруппаСрокОплаты" id="159">
+					<EnableContentChange>true</EnableContentChange>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Срок оплаты по договору</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Срок оплаты по договору</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаСрокОплатыExtendedTooltip" id="160"/>
+					<ChildItems>
+						<CheckBoxField name="УстановленСрокОплаты" id="161">
+							<DataPath>Объект.УстановленСрокОплаты</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="УстановленСрокОплатыКонтекстноеМеню" id="162"/>
+							<ExtendedTooltip name="УстановленСрокОплатыExtendedTooltip" id="163"/>
+							<Events>
+								<Event name="OnChange">УстановленСрокОплатыПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<InputField name="СрокОплаты" id="168">
+							<DataPath>Объект.СрокОплаты</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>дней</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Right</TitleLocation>
+							<ContextMenu name="СрокОплатыКонтекстноеМеню" id="169"/>
+							<ExtendedTooltip name="СрокОплатыExtendedTooltip" id="170"/>
+							<Events>
+								<Event name="OnChange">СрокОплатыПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="ВидСрокаОплаты" id="528">
+							<DataPath>ВидСрокаОплаты</DataPath>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>13</MaxWidth>
+							<ListChoiceMode>true</ListChoiceMode>
+							<ContextMenu name="ВидСрокаОплатыКонтекстноеМеню" id="529"/>
+							<ExtendedTooltip name="ВидСрокаОплатыРасширеннаяПодсказка" id="530"/>
+							<Events>
+								<Event name="OnChange">ВидСрокаОплатыПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="ДатаОплаты" id="531">
+							<DataPath>Объект.ДатаОплаты</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<ContextMenu name="ДатаОплатыКонтекстноеМеню" id="532"/>
+							<ExtendedTooltip name="ДатаОплатыРасширеннаяПодсказка" id="533"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаНДС" id="200">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>НДС</v8:content>
+				</v8:item>
+			</Title>
+			<Width>1000</Width>
+			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<Collapsed>true</Collapsed>
+			<ControlRepresentation>Picture</ControlRepresentation>
+			<Representation>None</Representation>
+			<ShowLeftMargin>false</ShowLeftMargin>
+			<ExtendedTooltip name="ГруппаНДСРасширеннаяПодсказка" id="201"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаНалоговыйАгентПокупатель" id="399">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Налоговый агент покупатель</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа налоговый агент покупатель</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаНалоговыйАгентПокупательРасширеннаяПодсказка" id="400"/>
+					<ChildItems>
+						<CheckBoxField name="УчетАгентскогоНДСПокупателем" id="396">
+							<DataPath>Объект.УчетАгентскогоНДСПокупателем</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Покупатель выступает в качестве налогового агента по уплате НДС</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="УчетАгентскогоНДСПокупателемКонтекстноеМеню" id="397"/>
+							<ExtendedTooltip name="УчетАгентскогоНДСПокупателемРасширеннаяПодсказка" id="398"/>
+							<Events>
+								<Event name="OnChange">УчетАгентскогоНДСПокупателемПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаНДССАвансов" id="282">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>НДС с авансов</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа НДССАвансов</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаНДССАвансовРасширеннаяПодсказка" id="283"/>
+					<ChildItems>
+						<InputField name="ПорядокРегистрацииСчетовФактурНаАвансПоДоговору" id="284">
+							<DataPath>Объект.ПорядокРегистрацииСчетовФактурНаАвансПоДоговору</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Порядок регистрации счетов-фактур</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Left</TitleLocation>
+							<ListChoiceMode>true</ListChoiceMode>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Регистрировать счета-фактуры на аванс в порядке, соответствующем учетной политике</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xr:DesignTimeRef">Enum.ПорядокРегистрацииСчетовФактурНаАванс.EmptyRef</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation/>
+										<Value xsi:type="xr:DesignTimeRef">Enum.ПорядокРегистрацииСчетовФактурНаАванс.EnumValue.НаВсеАвансы</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation/>
+										<Value xsi:type="xr:DesignTimeRef">Enum.ПорядокРегистрацииСчетовФактурНаАванс.EnumValue.КромеЗачтенныхВТечениеПятиДней</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation/>
+										<Value xsi:type="xr:DesignTimeRef">Enum.ПорядокРегистрацииСчетовФактурНаАванс.EnumValue.КромеЗачтенныхВТечениеМесяца</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation/>
+										<Value xsi:type="xr:DesignTimeRef">Enum.ПорядокРегистрацииСчетовФактурНаАванс.EnumValue.КромеЗачтенныхВТечениеНалоговогоПериода</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation/>
+										<Value xsi:type="xr:DesignTimeRef">Enum.ПорядокРегистрацииСчетовФактурНаАванс.EnumValue.НеРегистрироватьСчетаФактурыНаАвансы</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="ПорядокРегистрацииСчетовФактурНаАвансПоДоговоруКонтекстноеМеню" id="285"/>
+							<ExtendedTooltip name="ПорядокРегистрацииСчетовФактурНаАвансПоДоговоруExtendedTooltip" id="286"/>
+							<Events>
+								<Event name="OnChange">ПорядокРегистрацииСчетовФактурНаАвансПоДоговоруПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="НаименованиеДляСчетаФактурыНаАванс" id="287">
+							<DataPath>Объект.НаименованиеДляСчетаФактурыНаАванс</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Обобщенное наименование товаров
+для счета-фактуры на аванс</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Left</TitleLocation>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Обобщенное наименование товаров для счета-фактуры на аванс</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ContextMenu name="НаименованиеДляСчетаФактурыНаАвансКонтекстноеМеню" id="288"/>
+							<ExtendedTooltip name="НаименованиеДляСчетаФактурыНаАвансExtendedTooltip" id="289"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаПеревыставлениеСФ" id="401">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа перевыставление СФ</v8:content>
+						</v8:item>
+					</Title>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаПеревыставлениеСФРасширеннаяПодсказка" id="402"/>
+					<ChildItems>
+						<CheckBoxField name="СчетаФактурыОтИмениОрганизации" id="403">
+							<DataPath>Объект.СчетаФактурыОтИмениОрганизации</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="СчетаФактурыОтИмениОрганизацииКонтекстноеМеню" id="404"/>
+							<ExtendedTooltip name="СчетаФактурыОтИмениОрганизацииРасширеннаяПодсказка" id="405"/>
+							<Events>
+								<Event name="OnChange">СчетаФактурыОтИмениОрганизацииПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="КодДекларацияРаздел7" id="380">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Код декларация раздел7</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Код декларация раздел7</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="КодДекларацияРаздел7РасширеннаяПодсказка" id="381"/>
+					<ChildItems>
+						<InputField name="КодРаздел7ДекларацииНДС" id="382">
+							<DataPath>Объект.КодРаздел7ДекларацииНДС</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Код операции</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<Width>21</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ContextMenu name="КодРаздел7ДекларацииНДСКонтекстноеМеню" id="383"/>
+							<ExtendedTooltip name="КодРаздел7ДекларацииНДСРасширеннаяПодсказка" id="384">
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Код операции для заполнения декларации по НДС</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаЭлектронныеУслуги" id="431">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа электронные услуги</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа электронные услуги</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаЭлектронныеУслугиРасширеннаяПодсказка" id="432"/>
+					<ChildItems>
+						<CheckBoxField name="ЭлектронныеУслугиИностранца" id="433">
+							<DataPath>ЭлектронныеУслугиИностранца</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Организация приобретает электронные услуги у иностранного контрагента</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ЭлектронныеУслугиИностранцаКонтекстноеМеню" id="434"/>
+							<ExtendedTooltip name="ЭлектронныеУслугиИностранцаРасширеннаяПодсказка" id="435"/>
+							<Events>
+								<Event name="OnChange">ЭлектронныеУслугиПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<UsualGroup name="ГруппаПорядокУплатыНДСПоЭлектроннымУслугам" id="436">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа порядок уплаты НДСПо электронным услугам</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа порядок уплаты НДСПо электронным услугам</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаПорядокУплатыНДСПоЭлектроннымУслугамРасширеннаяПодсказка" id="437"/>
+							<ChildItems>
+								<LabelDecoration name="ДекорацияПорядокУплатыНДСПоЭлектроннымУслугам" id="438">
+									<Width>1</Width>
+									<Height>3</Height>
+									<ContextMenu name="ДекорацияПорядокУплатыНДСПоЭлектроннымУслугамКонтекстноеМеню" id="439"/>
+									<ExtendedTooltip name="ДекорацияПорядокУплатыНДСПоЭлектроннымУслугамРасширеннаяПодсказка" id="440"/>
+								</LabelDecoration>
+								<RadioButtonField name="ПорядокУплатыНДСПоЭлектроннымУслугам" id="441">
+									<DataPath>ПорядокУплатыНДСПоЭлектроннымУслугам</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<RadioButtonType>Auto</RadioButtonType>
+									<ColumnsCount>1</ColumnsCount>
+									<ChoiceList>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>НДС платит иностранный контрагент</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:decimal">1</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>НДС платит организация как налоговый агент (до 31.12.2018)</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:decimal">2</Value>
+											</xr:Value>
+										</xr:Item>
+									</ChoiceList>
+									<ContextMenu name="ПорядокУплатыНДСПоЭлектроннымУслугамКонтекстноеМеню" id="442"/>
+									<ExtendedTooltip name="ПорядокУплатыНДСПоЭлектроннымУслугамРасширеннаяПодсказка" id="443"/>
+									<Events>
+										<Event name="OnChange">ПорядокУплатыНДСПоЭлектроннымУслугамПриИзменении</Event>
+									</Events>
+								</RadioButtonField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаНалоговыйАгентОрганизация" id="290">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Налоговый агент</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа налоговый агент организация</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаНалоговыйАгентОрганизацияРасширеннаяПодсказка" id="291"/>
+					<ChildItems>
+						<CheckBoxField name="УчетАгентскогоНДС" id="292">
+							<DataPath>Объект.УчетАгентскогоНДС</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Организация выступает в качестве налогового агента по уплате НДС</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="УчетАгентскогоНДСКонтекстноеМеню" id="293"/>
+							<ExtendedTooltip name="УчетАгентскогоНДСExtendedTooltip" id="294"/>
+							<Events>
+								<Event name="OnChange">УчетАгентскогоНДСПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<UsualGroup name="ГруппаНастрокиНалоговыйАгентСОтступом" id="444">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа настроки налоговый агент с отступом</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа настроки налоговый агент с отступом</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>AlwaysHorizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаНастрокиНалоговыйАгентСОтступомРасширеннаяПодсказка" id="445"/>
+							<ChildItems>
+								<LabelDecoration name="ДекорацияНастройкиНалоговыйАгент" id="446">
+									<Width>1</Width>
+									<ContextMenu name="ДекорацияНастройкиНалоговыйАгентКонтекстноеМеню" id="447"/>
+									<ExtendedTooltip name="ДекорацияНастройкиНалоговыйАгентРасширеннаяПодсказка" id="448"/>
+								</LabelDecoration>
+								<UsualGroup name="ГруппаНастройкиНалоговыйАгент" id="449">
+									<Group>Vertical</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаНастройкиНалоговыйАгентРасширеннаяПодсказка" id="450"/>
+									<ChildItems>
+										<InputField name="ВидАгентскогоДоговора" id="451">
+											<DataPath>Объект.ВидАгентскогоДоговора</DataPath>
+											<ContextMenu name="ВидАгентскогоДоговораКонтекстноеМеню" id="452"/>
+											<ExtendedTooltip name="ВидАгентскогоДоговораРасширеннаяПодсказка" id="453"/>
+											<Events>
+												<Event name="OnChange">ВидАгентскогоДоговораПриИзменении</Event>
+											</Events>
+										</InputField>
+										<InputField name="НаименованиеДляСчетаФактурыНалоговогоАгента" id="454">
+											<DataPath>Объект.НаименованиеДляСчетаФактурыНаАванс</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Обобщенное наименование товаров
+для счета-фактуры налогового агента</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>Left</TitleLocation>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Обобщенное наименование товаров для счета-фактуры налогового агента</v8:content>
+												</v8:item>
+											</ToolTip>
+											<HorizontalStretch>true</HorizontalStretch>
+											<ContextMenu name="НаименованиеДляСчетаФактурыНалоговогоАгентаКонтекстноеМеню" id="455"/>
+											<ExtendedTooltip name="НаименованиеДляСчетаФактурыНалоговогоАгентаРасширеннаяПодсказка" id="456"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаЗаполнениеСтавкиНДС" id="406">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа заполнение ставки НДС</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа заполнение ставки НДС</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаЗаполнениеСтавкиНДСРасширеннаяПодсказка" id="407"/>
+					<ChildItems>
+						<InputField name="СпособЗаполненияСтавкиНДС" id="408">
+							<DataPath>Объект.СпособЗаполненияСтавкиНДС</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Заполнение ставки НДС в документах</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTipRepresentation>Balloon</ToolTipRepresentation>
+							<Width>40</Width>
+							<MaxWidth>21</MaxWidth>
+							<TextEdit>false</TextEdit>
+							<ContextMenu name="СпособЗаполненияСтавкиНДСКонтекстноеМеню" id="409"/>
+							<ExtendedTooltip name="СпособЗаполненияСтавкиНДСРасширеннаяПодсказка" id="410">
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Ставка НДС в документах может заполняться из карточки номенклатуры или заполняться Без НДС. По умолчанию, выбор заполнения определяется автоматически, по предыдущим документам.</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+							<Events>
+								<Event name="OnChange">СпособЗаполненияСтавкиНДСПриИзменении</Event>
+							</Events>
+						</InputField>
+						<CheckBoxField name="НДСПоСтавкам4и2" id="411">
+							<DataPath>Объект.НДСПоСтавкам4и2</DataPath>
+							<UserVisible>
+								<xr:Common>false</xr:Common>
+							</UserVisible>
+							<TitleLocation>Right</TitleLocation>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="НДСПоСтавкам4и2КонтекстноеМеню" id="412"/>
+							<ExtendedTooltip name="НДСПоСтавкам4и2РасширеннаяПодсказка" id="413">
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>В соответствии с письмом ФНС России от 07.05.2014 № ГД-4-3/8785@ до 01.01.2015 суммы НДС 
+принимаются к вычету на основании налоговых накладных, в том числе по ставкам 4% и 2%.
+</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+						</CheckBoxField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаГосударственныйКонтракт" id="385">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Государственный контракт</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Государственный контракт</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<Collapsed>true</Collapsed>
+			<ControlRepresentation>Picture</ControlRepresentation>
+			<Representation>None</Representation>
+			<ShowLeftMargin>false</ShowLeftMargin>
+			<ExtendedTooltip name="ГруппаГосударственныйКонтрактРасширеннаяПодсказка" id="386"/>
+			<ChildItems>
+				<CheckBoxField name="ЭтоГосударственныйКонтракт" id="387">
+					<DataPath>ЭтоГосударственныйКонтракт</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ЭтоГосударственныйКонтрактКонтекстноеМеню" id="388"/>
+					<ExtendedTooltip name="ЭтоГосударственныйКонтрактРасширеннаяПодсказка" id="389"/>
+					<Events>
+						<Event name="OnChange">ЭтоГосударственныйКонтрактПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<InputField name="ГосударственныйКонтракт" id="390">
+					<DataPath>Объект.ГосударственныйКонтракт</DataPath>
+					<ContextMenu name="ГосударственныйКонтрактКонтекстноеМеню" id="391"/>
+					<ExtendedTooltip name="ГосударственныйКонтрактРасширеннаяПодсказка" id="392"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаКомиссионноеВознаграждение" id="179">
+			<EnableContentChange>true</EnableContentChange>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Комиссионное вознаграждение</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Horizontal</Group>
+			<Behavior>Collapsible</Behavior>
+			<Collapsed>true</Collapsed>
+			<ControlRepresentation>Picture</ControlRepresentation>
+			<Representation>None</Representation>
+			<ShowLeftMargin>false</ShowLeftMargin>
+			<ExtendedTooltip name="ГруппаКомиссионноеВознаграждениеExtendedTooltip" id="180"/>
+			<ChildItems>
+				<InputField name="СпособРасчетаКомиссионногоВознаграждения" id="181">
+					<DataPath>Объект.СпособРасчетаКомиссионногоВознаграждения</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Способ расчета</v8:content>
+						</v8:item>
+					</Title>
+					<ListChoiceMode>true</ListChoiceMode>
+					<ContextMenu name="СпособРасчетаКомиссионногоВознагражденияКонтекстноеМеню" id="182"/>
+					<ExtendedTooltip name="СпособРасчетаКомиссионногоВознагражденияExtendedTooltip" id="183"/>
+				</InputField>
+				<UsualGroup name="ГруппаПроцентКомиссионногоВознаграждения" id="184">
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаПроцентКомиссионногоВознагражденияРасширеннаяПодсказка" id="185"/>
+					<ChildItems>
+						<InputField name="ПроцентКомиссионногоВознаграждения" id="186">
+							<DataPath>Объект.ПроцентКомиссионногоВознаграждения</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Размер</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ПроцентКомиссионногоВознагражденияКонтекстноеМеню" id="187"/>
+							<ExtendedTooltip name="ПроцентКомиссионногоВознагражденияExtendedTooltip" id="188"/>
+						</InputField>
+						<LabelDecoration name="ДекорацияЗнакПроцента" id="189">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>%</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияЗнакПроцентаКонтекстноеМеню" id="190"/>
+							<ExtendedTooltip name="ДекорацияЗнакПроцентаРасширеннаяПодсказка" id="191"/>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаПлатежныйАгент" id="351">
+			<EnableContentChange>true</EnableContentChange>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Платежный агент</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа платежный агент</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<Collapsed>true</Collapsed>
+			<ControlRepresentation>Picture</ControlRepresentation>
+			<Representation>None</Representation>
+			<ShowLeftMargin>false</ShowLeftMargin>
+			<ExtendedTooltip name="ГруппаПлатежныйАгентРасширеннаяПодсказка" id="352"/>
+			<ChildItems>
+				<CheckBoxField name="ПлатежныйАгент" id="353">
+					<DataPath>Объект.ПлатежныйАгент</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Организация выступает в качестве платежного агента</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ПлатежныйАгентКонтекстноеМеню" id="354"/>
+					<ExtendedTooltip name="ПлатежныйАгентРасширеннаяПодсказка" id="355"/>
+					<Events>
+						<Event name="OnChange">ПлатежныйАгентПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<InputField name="ПризнакАгента" id="393">
+					<DataPath>Объект.ПризнакАгента</DataPath>
+					<ListChoiceMode>true</ListChoiceMode>
+					<ChoiceList>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xr:DesignTimeRef">Enum.ПризнакиАгента.EnumValue.БанковскийПлатежныйАгент</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xr:DesignTimeRef">Enum.ПризнакиАгента.EnumValue.БанковскийПлатежныйСубагент</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xr:DesignTimeRef">Enum.ПризнакиАгента.EnumValue.ПлатежныйАгент</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xr:DesignTimeRef">Enum.ПризнакиАгента.EnumValue.ПлатежныйСубагент</Value>
+							</xr:Value>
+						</xr:Item>
+					</ChoiceList>
+					<ContextMenu name="ПризнакАгентаКонтекстноеМеню" id="394"/>
+					<ExtendedTooltip name="ПризнакАгентаРасширеннаяПодсказка" id="395"/>
+					<Events>
+						<Event name="OnChange">ПризнакАгентаПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ТелефонПоставщика" id="356">
+					<DataPath>Объект.ТелефонПоставщика</DataPath>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Телефон поставщика. Для платежного агента и платежного субагента.</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<ContextMenu name="ТелефонПоставщикаКонтекстноеМеню" id="357"/>
+					<ExtendedTooltip name="ТелефонПоставщикаРасширеннаяПодсказка" id="358"/>
+				</InputField>
+				<InputField name="ОперацияПлатежногоАгента" id="377">
+					<DataPath>Объект.ОперацияПлатежногоАгента</DataPath>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Операция платежного агента. Для банковских платежных агентов (субагентов).</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<ContextMenu name="ОперацияПлатежногоАгентаКонтекстноеМеню" id="378"/>
+					<ExtendedTooltip name="ОперацияПлатежногоАгентаРасширеннаяПодсказка" id="379"/>
+				</InputField>
+				<InputField name="ТелефонПлатежногоАгента" id="359">
+					<DataPath>Объект.ТелефонПлатежногоАгента</DataPath>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номер телефона платежного агента, платежного субагента, банковского платежного агента, банковского платежного субагента</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<ContextMenu name="ТелефонПлатежногоАгентаКонтекстноеМеню" id="360"/>
+					<ExtendedTooltip name="ТелефонПлатежногоАгентаРасширеннаяПодсказка" id="361"/>
+				</InputField>
+				<InputField name="НаименованиеОператораПеревода" id="365">
+					<DataPath>Объект.НаименованиеОператораПеревода</DataPath>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наименование оператора перевода. Для банковских платежных агентов (субагентов).</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<ContextMenu name="НаименованиеОператораПереводаКонтекстноеМеню" id="366"/>
+					<ExtendedTooltip name="НаименованиеОператораПереводаРасширеннаяПодсказка" id="367"/>
+				</InputField>
+				<InputField name="ИННОператораПеревода" id="368">
+					<DataPath>Объект.ИННОператораПеревода</DataPath>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ИНН оператора перевода. Для банковских платежных агентов (субагентов).</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<ContextMenu name="ИННОператораПереводаКонтекстноеМеню" id="369"/>
+					<ExtendedTooltip name="ИННОператораПереводаРасширеннаяПодсказка" id="370"/>
+				</InputField>
+				<InputField name="АдресОператораПеревода" id="371">
+					<DataPath>Объект.АдресОператораПеревода</DataPath>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Адрес оператора перевода. Для банковских платежных агентов (субагентов).</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<ContextMenu name="АдресОператораПереводаКонтекстноеМеню" id="372"/>
+					<ExtendedTooltip name="АдресОператораПереводаРасширеннаяПодсказка" id="373"/>
+				</InputField>
+				<InputField name="ТелефонОператораПеревода" id="374">
+					<DataPath>Объект.ТелефонОператораПеревода</DataPath>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Телефон оператора перевода. Для оператора по переводу денежных средств</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<ContextMenu name="ТелефонОператораПереводаКонтекстноеМеню" id="375"/>
+					<ExtendedTooltip name="ТелефонОператораПереводаРасширеннаяПодсказка" id="376"/>
+				</InputField>
+				<InputField name="ТелефонОператораПоПриемуПлатежей" id="362">
+					<DataPath>Объект.ТелефонОператораПоПриемуПлатежей</DataPath>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Телефон оператора по приему платежей. При осуществлении деятельности платежного агента и платежного субагента</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<ContextMenu name="ТелефонОператораПоПриемуПлатежейКонтекстноеМеню" id="363"/>
+					<ExtendedTooltip name="ТелефонОператораПоПриемуПлатежейРасширеннаяПодсказка" id="364"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаПодписи" id="223">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подписи</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Horizontal</Group>
+			<Behavior>Collapsible</Behavior>
+			<Collapsed>true</Collapsed>
+			<ControlRepresentation>Picture</ControlRepresentation>
+			<Representation>None</Representation>
+			<ShowLeftMargin>false</ShowLeftMargin>
+			<ExtendedTooltip name="ГруппаПодписиРасширеннаяПодсказка" id="224"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаПодписиЛевая" id="225">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Представитель контрагента</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Уполномоченный от имени контрагента</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<United>false</United>
+					<ExtendedTooltip name="ГруппаПодписиЛеваяРасширеннаяПодсказка" id="226"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаРуководительКонтрагента" id="334">
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаРуководительКонтрагентаРасширеннаяПодсказка" id="335"/>
+							<ChildItems>
+								<InputField name="ПолРуководителя" id="340">
+									<DataPath>Объект.ПолРуководителяКонтрагента</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<Width>7</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ListChoiceMode>true</ListChoiceMode>
+									<TextEdit>false</TextEdit>
+									<ChoiceList>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Г-н</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xr:DesignTimeRef">Enum.ПолФизическогоЛица.EnumValue.Мужской</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Г-жа</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xr:DesignTimeRef">Enum.ПолФизическогоЛица.EnumValue.Женский</Value>
+											</xr:Value>
+										</xr:Item>
+									</ChoiceList>
+									<DropListWidth>7</DropListWidth>
+									<ContextMenu name="ПолРуководителяКонтекстноеМеню" id="341"/>
+									<ExtendedTooltip name="ПолРуководителяРасширеннаяПодсказка" id="342"/>
+								</InputField>
+								<InputField name="РуководительКонтрагента" id="227">
+									<DataPath>Объект.РуководительКонтрагента</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Руководитель</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>None</TitleLocation>
+									<ChoiceButton>true</ChoiceButton>
+									<ContextMenu name="РуководительКонтрагентаКонтекстноеМеню" id="228"/>
+									<ExtendedTooltip name="РуководительКонтрагентаРасширеннаяПодсказка" id="229"/>
+									<Events>
+										<Event name="OnChange">РуководительКонтрагентаПриИзменении</Event>
+										<Event name="StartChoice">РуководительКонтрагентаНачалоВыбора</Event>
+									</Events>
+								</InputField>
+								<Button name="ПоказатьСклоненияРуководительКонтрагента" id="332">
+									<Type>Hyperlink</Type>
+									<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+									<CommandName>Form.Command.ПоказатьСклоненияРуководительКонтрагента</CommandName>
+									<ExtendedTooltip name="ПоказатьСклоненияРуководительКонтрагентаРасширеннаяПодсказка" id="333"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаДолжностьРуководителяКонтрагента" id="336">
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаДолжностьРуководителяКонтрагентаРасширеннаяПодсказка" id="337"/>
+							<ChildItems>
+								<InputField name="ДолжностьРуководителяКонтрагента" id="230">
+									<DataPath>Объект.ДолжностьРуководителяКонтрагента</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Должность</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДолжностьРуководителяКонтрагентаКонтекстноеМеню" id="231"/>
+									<ExtendedTooltip name="ДолжностьРуководителяКонтрагентаРасширеннаяПодсказка" id="232"/>
+									<Events>
+										<Event name="OnChange">ДолжностьРуководителяКонтрагентаПриИзменении</Event>
+									</Events>
+								</InputField>
+								<Button name="ПоказатьСклоненияДолжностьРуководителяКонтрагента" id="338">
+									<Type>Hyperlink</Type>
+									<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+									<CommandName>Form.Command.ПоказатьСклоненияДолжностьРуководителяКонтрагента</CommandName>
+									<ExtendedTooltip name="ПоказатьСклоненияДолжностьРуководителяКонтрагентаРасширеннаяПодсказка" id="339"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="ЗаРуководителяКонтрагентаПоПриказу" id="233">
+							<DataPath>Объект.ЗаРуководителяКонтрагентаПоПриказу</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>На основании</v8:content>
+								</v8:item>
+							</Title>
+							<InputHint>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Доверенности, приказа</v8:content>
+								</v8:item>
+							</InputHint>
+							<ContextMenu name="ЗаРуководителяКонтрагентаПоПриказуКонтекстноеМеню" id="234"/>
+							<ExtendedTooltip name="ЗаРуководителяКонтрагентаПоПриказуРасширеннаяПодсказка" id="235"/>
+						</InputField>
+						<CheckBoxField name="Подписан" id="270">
+							<DataPath>Объект.ДоговорПодписан</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ПодписанКонтекстноеМеню" id="271"/>
+							<ExtendedTooltip name="ПодписанРасширеннаяПодсказка" id="272"/>
+						</CheckBoxField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаПодписиПравая" id="236">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Представитель организации</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Уполномоченный от имени организации</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<United>false</United>
+					<ExtendedTooltip name="ГруппаПодписиПраваяРасширеннаяПодсказка" id="237"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаРуководитель" id="343">
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаРуководительРасширеннаяПодсказка" id="344"/>
+							<ChildItems>
+								<InputField name="Руководитель" id="238">
+									<DataPath>Объект.Руководитель</DataPath>
+									<ContextMenu name="РуководительКонтекстноеМеню" id="239"/>
+									<ExtendedTooltip name="РуководительРасширеннаяПодсказка" id="240"/>
+								</InputField>
+								<Button name="ПоказатьСклоненияРуководитель" id="345">
+									<Type>Hyperlink</Type>
+									<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+									<CommandName>Form.Command.ПоказатьСклоненияРуководитель</CommandName>
+									<ExtendedTooltip name="ПоказатьСклоненияРуководительРасширеннаяПодсказка" id="346"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаДолжностьРуководителя" id="347">
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаДолжностьРуководителяРасширеннаяПодсказка" id="348"/>
+							<ChildItems>
+								<InputField name="ДолжностьРуководителя" id="241">
+									<DataPath>Объект.ДолжностьРуководителя</DataPath>
+									<EditTextUpdate>OnValueChange</EditTextUpdate>
+									<ContextMenu name="ДолжностьРуководителяКонтекстноеМеню" id="242"/>
+									<ExtendedTooltip name="ДолжностьРуководителяРасширеннаяПодсказка" id="243"/>
+									<Events>
+										<Event name="AutoComplete">ДолжностьРуководителяАвтоПодбор</Event>
+										<Event name="TextEditEnd">ДолжностьРуководителяОкончаниеВводаТекста</Event>
+										<Event name="ChoiceProcessing">ДолжностьРуководителяОбработкаВыбора</Event>
+									</Events>
+								</InputField>
+								<Button name="ПоказатьСклоненияДолжностьРуководителя" id="349">
+									<Type>Hyperlink</Type>
+									<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+									<CommandName>Form.Command.ПоказатьСклоненияДолжностьРуководителя</CommandName>
+									<ExtendedTooltip name="ПоказатьСклоненияДолжностьРуководителяРасширеннаяПодсказка" id="350"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="ЗаРуководителяПоПриказу" id="244">
+							<DataPath>Объект.ЗаРуководителяПоПриказу</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>На основании</v8:content>
+								</v8:item>
+							</Title>
+							<InputHint>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Доверенности, приказа</v8:content>
+								</v8:item>
+							</InputHint>
+							<ContextMenu name="ЗаРуководителяПоПриказуКонтекстноеМеню" id="245"/>
+							<ExtendedTooltip name="ЗаРуководителяПоПриказуРасширеннаяПодсказка" id="246"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаОбеспеченияОбязательствИПлатежей" id="414">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обеспечения обязательств</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Государственный контракт</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<Collapsed>true</Collapsed>
+			<ControlRepresentation>Picture</ControlRepresentation>
+			<Representation>None</Representation>
+			<ShowLeftMargin>false</ShowLeftMargin>
+			<ExtendedTooltip name="ГруппаОбеспеченияОбязательствИПлатежейРасширеннаяПодсказка" id="415"/>
+			<ChildItems>
+				<CheckBoxField name="ПредусмотреноОбеспечениеОбязательств" id="416">
+					<DataPath>ПредусмотреноОбеспечениеОбязательств</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ПредусмотреноОбеспечениеОбязательствКонтекстноеМеню" id="417"/>
+					<ExtendedTooltip name="ПредусмотреноОбеспечениеОбязательствРасширеннаяПодсказка" id="418"/>
+					<Events>
+						<Event name="OnChange">ПредусмотреноОбеспечениеОбязательствПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<InputField name="ВидОбеспеченияОбязательствИПлатежей" id="419">
+					<DataPath>Объект.ВидОбеспеченияОбязательствИПлатежей</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вид обеспечения</v8:content>
+						</v8:item>
+					</Title>
+					<AutoMarkIncomplete>true</AutoMarkIncomplete>
+					<TextEdit>false</TextEdit>
+					<ContextMenu name="ВидОбеспеченияОбязательствИПлатежейКонтекстноеМеню" id="420"/>
+					<ExtendedTooltip name="ВидОбеспеченияОбязательствИПлатежейРасширеннаяПодсказка" id="421"/>
+				</InputField>
+				<InputField name="ОбеспечениеПредоставил" id="422">
+					<DataPath>ОбеспечениеПредоставил</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Кто предоставил</v8:content>
+						</v8:item>
+					</Title>
+					<DropListButton>true</DropListButton>
+					<ChoiceButton>false</ChoiceButton>
+					<CreateButton>false</CreateButton>
+					<AutoMarkIncomplete>true</AutoMarkIncomplete>
+					<ChooseType>false</ChooseType>
+					<TextEdit>false</TextEdit>
+					<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+					<ContextMenu name="ОбеспечениеПредоставилКонтекстноеМеню" id="423"/>
+					<ExtendedTooltip name="ОбеспечениеПредоставилРасширеннаяПодсказка" id="424"/>
+					<Events>
+						<Event name="ChoiceProcessing">ОбеспечениеСторонаОбработкаВыбора</Event>
+					</Events>
+				</InputField>
+				<InputField name="ОбеспечениеПолучил" id="425">
+					<DataPath>ОбеспечениеПолучил</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>В чью пользу</v8:content>
+						</v8:item>
+					</Title>
+					<DropListButton>true</DropListButton>
+					<ChoiceButton>false</ChoiceButton>
+					<CreateButton>false</CreateButton>
+					<AutoMarkIncomplete>true</AutoMarkIncomplete>
+					<ChooseType>false</ChooseType>
+					<TextEdit>false</TextEdit>
+					<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+					<ContextMenu name="ОбеспечениеПолучилКонтекстноеМеню" id="426"/>
+					<ExtendedTooltip name="ОбеспечениеПолучилРасширеннаяПодсказка" id="427"/>
+					<Events>
+						<Event name="ChoiceProcessing">ОбеспечениеСторонаОбработкаВыбора</Event>
+					</Events>
+				</InputField>
+				<InputField name="ОбеспечениеВыданоЗа" id="428">
+					<DataPath>ОбеспечениеВыданоЗа</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>За кого</v8:content>
+						</v8:item>
+					</Title>
+					<DropListButton>true</DropListButton>
+					<ChoiceButton>false</ChoiceButton>
+					<CreateButton>false</CreateButton>
+					<AutoMarkIncomplete>true</AutoMarkIncomplete>
+					<ChooseType>false</ChooseType>
+					<TextEdit>false</TextEdit>
+					<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+					<ContextMenu name="ОбеспечениеВыданоЗаКонтекстноеМеню" id="429"/>
+					<ExtendedTooltip name="ОбеспечениеВыданоЗаРасширеннаяПодсказка" id="430"/>
+					<Events>
+						<Event name="ChoiceProcessing">ОбеспечениеСторонаОбработкаВыбора</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаДополнительнаяИнформация" id="309">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дополнительная информация</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<Collapsed>true</Collapsed>
+			<ControlRepresentation>Picture</ControlRepresentation>
+			<Representation>None</Representation>
+			<ShowLeftMargin>false</ShowLeftMargin>
+			<ExtendedTooltip name="ГруппаДополнительнаяИнформацияРасширеннаяПодсказка" id="310"/>
+			<ChildItems>
+				<InputField name="СрокДействия" id="20">
+					<DataPath>Объект.СрокДействия</DataPath>
+					<ContextMenu name="СрокДействияКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="СрокДействияExtendedTooltip" id="86"/>
+				</InputField>
+				<InputField name="ВидВзаиморасчетов" id="150">
+					<DataPath>Объект.ВидВзаиморасчетов</DataPath>
+					<ContextMenu name="ВидВзаиморасчетовКонтекстноеМеню" id="151"/>
+					<ExtendedTooltip name="ВидВзаиморасчетовExtendedTooltip" id="152"/>
+				</InputField>
+				<InputField name="ФайлДоговора" id="260">
+					<DataPath>Объект.ФайлДоговора</DataPath>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<CreateButton>false</CreateButton>
+					<ContextMenu name="ФайлДоговораКонтекстноеМеню" id="261"/>
+					<ExtendedTooltip name="ФайлДоговораРасширеннаяПодсказка" id="262"/>
+					<Events>
+						<Event name="Opening">ФайлДоговораОткрытие</Event>
+						<Event name="Creating">ФайлДоговораСоздание</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаСтраницаАренда" id="457">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры учета аренды</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа страница аренда</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<Collapsed>true</Collapsed>
+			<ControlRepresentation>Picture</ControlRepresentation>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="ГруппаСтраницаАрендаExtendedTooltip" id="458"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаАрендаСубаренда" id="459">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа аренда субаренда</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа аренда субаренда</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаАрендаСубарендаExtendedTooltip" id="460"/>
+					<ChildItems>
+						<CheckBoxField name="АР_АрендныйДоговор" id="461">
+							<DataPath>Объект.АР_АрендныйДоговор</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Договор аренды</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="АР_АрендныйДоговорКонтекстноеМеню" id="462"/>
+							<ExtendedTooltip name="АР_АрендныйДоговорExtendedTooltip" id="463"/>
+							<Events>
+								<Event name="OnChange">АР_АрендныйДоговорПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<CheckBoxField name="АР_Субаренда" id="464">
+							<DataPath>Объект.АР_Субаренда</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="АР_СубарендаКонтекстноеМеню" id="465"/>
+							<ExtendedTooltip name="АР_СубарендаExtendedTooltip" id="466"/>
+						</CheckBoxField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаВзаиморасчетыПоПериодам" id="467">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа взаиморасчеты по периодам</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа взаиморасчеты по периодам</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаВзаиморасчетыПоПериодамExtendedTooltip" id="468"/>
+					<ChildItems>
+						<CheckBoxField name="АР_ВестиВзаиморасчетыПоПериодам" id="469">
+							<DataPath>Объект.АР_ВестиВзаиморасчетыПоПериодам</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="АР_ВестиВзаиморасчетыПоПериодамКонтекстноеМеню" id="470"/>
+							<ExtendedTooltip name="АР_ВестиВзаиморасчетыПоПериодамExtendedTooltip" id="471"/>
+							<Events>
+								<Event name="OnChange">АР_ВестиВзаиморасчетыПоПериодамПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<InputField name="АР_Периодичность" id="472">
+							<DataPath>Объект.АР_Периодичность</DataPath>
+							<ContextMenu name="АР_ПериодичностьКонтекстноеМеню" id="473"/>
+							<ExtendedTooltip name="АР_ПериодичностьExtendedTooltip" id="474"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<CheckBoxField name="АР_ВестиВзаиморасчетыПоУслугам" id="475">
+					<DataPath>Объект.АР_ВестиВзаиморасчетыПоУслугам</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="АР_ВестиВзаиморасчетыПоУслугамКонтекстноеМеню" id="476"/>
+					<ExtendedTooltip name="АР_ВестиВзаиморасчетыПоУслугамExtendedTooltip" id="477"/>
+					<Events>
+						<Event name="OnChange">АР_ВестиВзаиморасчетыПоУслугамПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<CheckBoxField name="АР_ВестиВзаиморасчетыПоОбъектам" id="478">
+					<DataPath>Объект.АР_ВестиВзаиморасчетыПоОбъектам</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="АР_ВестиВзаиморасчетыПоОбъектамКонтекстноеМеню" id="479"/>
+					<ExtendedTooltip name="АР_ВестиВзаиморасчетыПоОбъектамExtendedTooltip" id="480"/>
+				</CheckBoxField>
+				<CheckBoxField name="АР_ВестиВзаиморасчетыПоСчетамПост" id="481">
+					<DataPath>Объект.АР_ВестиВзаиморасчетыПоСчетамПост</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="АР_ВестиВзаиморасчетыПоСчетамПостКонтекстноеМеню" id="482"/>
+					<ExtendedTooltip name="АР_ВестиВзаиморасчетыПоСчетамПостExtendedTooltip" id="483"/>
+					<Events>
+						<Event name="OnChange">АР_ВестиВзаиморасчетыПоСчетамПостПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<CheckBoxField name="АР_ВестиВзаиморасчетыПоСчетамПерем" id="484">
+					<DataPath>Объект.АР_ВестиВзаиморасчетыПоСчетамПерем</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="АР_ВестиВзаиморасчетыПоСчетамПеремКонтекстноеМеню" id="485"/>
+					<ExtendedTooltip name="АР_ВестиВзаиморасчетыПоСчетамПеремExtendedTooltip" id="486"/>
+					<Events>
+						<Event name="OnChange">АР_ВестиВзаиморасчетыПоСчетамПеремПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаДополнительныеРеквизиты" id="76">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дополнительные реквизиты</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<Collapsed>true</Collapsed>
+			<ControlRepresentation>Picture</ControlRepresentation>
+			<Representation>None</Representation>
+			<ShowLeftMargin>false</ShowLeftMargin>
+			<ExtendedTooltip name="ГруппаДополнительныеРеквизитыExtendedTooltip" id="125"/>
+		</UsualGroup>
+		<UsualGroup name="ПараметрыНачисления" id="493">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры начисления</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры начисления</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Behavior>Collapsible</Behavior>
+			<ExtendedTooltip name="ПараметрыНачисленияРасширеннаяПодсказка" id="494"/>
+			<ChildItems>
+				<CheckBoxField name="НеНачислятьУслуги" id="495">
+					<DataPath>Объект.НеНачислятьУслуги</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="НеНачислятьУслугиКонтекстноеМеню" id="496"/>
+					<ExtendedTooltip name="НеНачислятьУслугиРасширеннаяПодсказка" id="497"/>
+				</CheckBoxField>
+				<CheckBoxField name="Факт" id="498">
+					<DataPath>Объект.Факт</DataPath>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ФактКонтекстноеМеню" id="499"/>
+					<ExtendedTooltip name="ФактРасширеннаяПодсказка" id="500"/>
+				</CheckBoxField>
+				<InputField name="Деятельность" id="501">
+					<DataPath>Объект.Деятельность</DataPath>
+					<ContextMenu name="ДеятельностьКонтекстноеМеню" id="502"/>
+					<ExtendedTooltip name="ДеятельностьРасширеннаяПодсказка" id="503"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ОграничениеОплаты" id="504">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ограничение оплаты</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ограничение оплаты</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<ExtendedTooltip name="ОграничениеОплатыРасширеннаяПодсказка" id="505"/>
+			<ChildItems>
+				<UsualGroup name="Группа1" id="506">
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="507"/>
+					<ChildItems>
+						<CheckBoxField name="НеОграничиватьОплату" id="508">
+							<DataPath>Объект.ОграничитьОплату</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Не ограничивать оплату</v8:content>
+								</v8:item>
+							</Title>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="НеОграничиватьОплатуКонтекстноеМеню" id="509"/>
+							<ExtendedTooltip name="НеОграничиватьОплатуРасширеннаяПодсказка" id="510"/>
+						</CheckBoxField>
+						<InputField name="Ответственный" id="511">
+							<DataPath>Объект.Ответственный</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<ContextMenu name="ОтветственныйКонтекстноеМеню" id="512"/>
+							<ExtendedTooltip name="ОтветственныйРасширеннаяПодсказка" id="513"/>
+						</InputField>
+						<InputField name="ДатаУстановки" id="514">
+							<DataPath>Объект.ДатаУстановки</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<ContextMenu name="ДатаУстановкиКонтекстноеМеню" id="515"/>
+							<ExtendedTooltip name="ДатаУстановкиРасширеннаяПодсказка" id="516"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="Группа2" id="517">
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="518"/>
+					<ChildItems>
+						<RadioButtonField name="ВидОграничения" id="519">
+							<DataPath>Объект.ВидОграничения</DataPath>
+							<RadioButtonType>Tumbler</RadioButtonType>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>По общей сумме</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:decimal">0</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>За месяц</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:decimal">1</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="ВидОграниченияКонтекстноеМеню" id="520"/>
+							<ExtendedTooltip name="ВидОграниченияРасширеннаяПодсказка" id="521"/>
+						</RadioButtonField>
+						<InputField name="СуммаОграничения" id="522">
+							<DataPath>Объект.Сумма</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Сумма ограничения оплаты</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="СуммаОграниченияКонтекстноеМеню" id="523"/>
+							<ExtendedTooltip name="СуммаОграниченияРасширеннаяПодсказка" id="524"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.ДоговорыКонтрагентов</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.УдалитьРеализацияНаЭкспорт</Field>
+			</UseAlways>
+		</Attribute>
+		<Attribute name="ВалютаРегламентированногоУчета" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Валюта регламентированного учета</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Валюты</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СрокОплатыПокупателей" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Срок оплаты покупателей</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>5</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СрокОплатыПоставщикам" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Срок оплаты поставщикам</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>5</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="РеквизитыДоговораСтрокой" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Реквизиты договора</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="УсловиеОплатаВВалютеПередано" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Условие оплата в валюте передано</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ДоговорСРезидентомТаможенногоСоюза" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Договор с резидентом таможенного союза</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОплатаВРублях" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Оплата в рублях</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>1</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Новости" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Новости</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="НаименованиеПоУмолчанию" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Наименование по умолчанию</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СозданИзФормыДокумента" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создан из формы документа</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СклоненияДолжностьРуководителяКонтрагента" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Склонения должность руководителя контрагента</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="СклоненияРуководительКонтрагента" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Склонения руководитель контрагента</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="ТекущийРеквизитСклонения" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текущий реквизит склонения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>50</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ИзмененоПредставлениеРуководительКонтрагента" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Изменено представление руководитель контрагента</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ИзмененоПредставлениеДолжностьРуководителяКонтрагента" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Изменено представление должность руководителя контрагента</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ДолжностиПодписантов" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Должности подписантов</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="Раздел7ДекларацииНДСНаименование" id="19">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="РаздельныйУчетНДС" id="20">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Раздельный учет НДС на счете19</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЭтоГосударственныйКонтракт" id="21">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Используется для расчетов по контракту государственного заказа</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+			<FunctionalOptions>
+				<Item>FunctionalOption.ИспользуетсяГособоронзаказ</Item>
+			</FunctionalOptions>
+		</Attribute>
+		<Attribute name="ПараметрыПодключаемыхКоманд" id="22">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры подключаемых команд</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="ЭтоПлательщикНДС" id="23">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Это плательщик НДС</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ИсполняютсяОбязанностиНалоговогоАгентаПоНДС" id="24">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Исполняются обязанности налогового агента по НДС</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОбратноеНачислениеНДС" id="25">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обратное начисление НДС</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПредусмотреноОбеспечениеОбязательств" id="26">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>По договору предусмотрено обеспечение обязательств и платежей</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+			<FunctionalOptions>
+				<Item>FunctionalOption.УчетОбеспеченийОбязательствИПлатежей</Item>
+			</FunctionalOptions>
+		</Attribute>
+		<Attribute name="ВидОбеспеченияОбязательствИПлатежей" id="27">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид обеспечения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОбеспечениеПредоставил" id="28">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Кто предоставил</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+			<FunctionalOptions>
+				<Item>FunctionalOption.УчетОбеспеченийОбязательствИПлатежей</Item>
+			</FunctionalOptions>
+		</Attribute>
+		<Attribute name="ОбеспечениеПолучил" id="29">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>В чью пользу</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+			<FunctionalOptions>
+				<Item>FunctionalOption.УчетОбеспеченийОбязательствИПлатежей</Item>
+			</FunctionalOptions>
+		</Attribute>
+		<Attribute name="ОбеспечениеВыданоЗа" id="30">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>За кого</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+			<FunctionalOptions>
+				<Item>FunctionalOption.УчетОбеспеченийОбязательствИПлатежей</Item>
+			</FunctionalOptions>
+		</Attribute>
+		<Attribute name="ЭлектронныеУслугиИностранца" id="31">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Электронные услуги иностранца</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПорядокУплатыНДСПоЭлектроннымУслугам" id="32">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Порядок уплаты НДС по электронным услугам</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>1</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЭтоДоговорИностранца" id="33">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Это договор иностранца</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ВедетсяУчетУслугИностранныхИнтернетКомпаний" id="34">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ведется учет услуг иностранных интернет-компаний</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ВидСрокаОплаты" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Срок оплаты</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>20</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ПоказатьКонтекстныеНовости" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Новости</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список контекстных новостей</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Use>
+				<xr:Common>false</xr:Common>
+				<xr:Value name="Role.АдминистраторСистемы">true</xr:Value>
+				<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+				<xr:Value name="Role.ЧтениеНовостей">true</xr:Value>
+			</Use>
+			<Action>ПоказатьКонтекстныеНовости</Action>
+			<FunctionalOptions>
+				<Item>FunctionalOption.РазрешенаРаботаСНовостями</Item>
+			</FunctionalOptions>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПоказатьСклоненияРуководительКонтрагента" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Склонения</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Склонения полного имени руководителя контрагента</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПоказатьСклоненияРуководительКонтрагента</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПоказатьСклоненияДолжностьРуководителяКонтрагента" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Склонения</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Склонения должности руководителя контрагента</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПоказатьСклоненияДолжностьРуководителяКонтрагента</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПоказатьСклоненияРуководитель" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Склонения</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Склонения полного имени руководителя</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПоказатьСклоненияРуководитель</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПоказатьСклоненияДолжностьРуководителя" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Склонения</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Склонения должности руководителя</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПоказатьСклоненияДолжностьРуководителя</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+	<CommandInterface>
+		<NavigationPanel>
+			<Item>
+				<Command>Catalog.ДоговорыКонтрагентов.Command.Документы</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormNavigationPanelImportant</CommandGroup>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>0:e7d51ada-f286-4519-bfae-ece95dd4d7b0</Command>
+				<Type>Auto</Type>
+				<CommandGroup>FormNavigationPanelImportant</CommandGroup>
+				<Index>1</Index>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+			<Item>
+				<Command>InformationRegister.СтавкиНДСПоДоговорам.StandardCommand.OpenByValue.ДоговорКонтрагента</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+		</NavigationPanel>
+	</CommandInterface>
+</Form>

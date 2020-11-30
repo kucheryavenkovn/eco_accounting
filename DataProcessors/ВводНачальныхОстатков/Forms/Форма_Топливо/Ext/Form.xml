@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Топливо</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаЗаписатьИЗакрыть" id="512">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ЗаписатьИЗакрыть</CommandName>
+				<ExtendedTooltip name="ФормаЗаписатьИЗакрытьРасширеннаяПодсказка" id="513"/>
+			</Button>
+			<Button name="ФормаЗаписать" id="508">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.Записать</CommandName>
+				<ExtendedTooltip name="ФормаЗаписатьРасширеннаяПодсказка" id="509"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="BeforeClose">ПередЗакрытием</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Table name="Топливо" id="805">
+			<Footer>true</Footer>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Объект.Топливо</DataPath>
+			<ToolTipRepresentation>ShowTop</ToolTipRepresentation>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ТопливоКонтекстноеМеню" id="806"/>
+			<AutoCommandBar name="ТопливоКоманднаяПанель" id="807"/>
+			<ExtendedTooltip name="ТопливоРасширеннаяПодсказка" id="808">
+				<AutoMaxWidth>false</AutoMaxWidth>
+				<Title formatted="false">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Топливо в баке автомобиля, учитываемое по путевым листам</v8:content>
+					</v8:item>
+				</Title>
+			</ExtendedTooltip>
+			<SearchStringAddition name="ТопливоСтрокаПоиска" id="809">
+				<AdditionSource>
+					<Item>Топливо</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТопливоСтрокаПоискаКонтекстноеМеню" id="812"/>
+				<ExtendedTooltip name="ТопливоСтрокаПоискаРасширеннаяПодсказка" id="813"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ТопливоСостояниеПросмотра" id="814">
+				<AdditionSource>
+					<Item>Топливо</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТопливоСостояниеПросмотраКонтекстноеМеню" id="817"/>
+				<ExtendedTooltip name="ТопливоСостояниеПросмотраРасширеннаяПодсказка" id="818"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ТопливоУправлениеПоиском" id="819">
+				<AdditionSource>
+					<Item>Топливо</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ТопливоУправлениеПоискомКонтекстноеМеню" id="822"/>
+				<ExtendedTooltip name="ТопливоУправлениеПоискомРасширеннаяПодсказка" id="823"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="ТопливоНомерСтроки" id="824">
+					<DataPath>Объект.Топливо.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТопливоНомерСтрокиКонтекстноеМеню" id="825"/>
+					<ExtendedTooltip name="ТопливоНомерСтрокиРасширеннаяПодсказка" id="826"/>
+				</LabelField>
+				<InputField name="ТопливоТранспортноеСредство" id="827">
+					<DataPath>Объект.Топливо.ТранспортноеСредство</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТопливоТранспортноеСредствоКонтекстноеМеню" id="828"/>
+					<ExtendedTooltip name="ТопливоТранспортноеСредствоРасширеннаяПодсказка" id="829"/>
+					<Events>
+						<Event name="OnChange">ТопливоТранспортноеСредствоПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ТопливоНоменклатура" id="830">
+					<DataPath>Объект.Топливо.Номенклатура</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТопливоНоменклатураКонтекстноеМеню" id="831"/>
+					<ExtendedTooltip name="ТопливоНоменклатураРасширеннаяПодсказка" id="832"/>
+				</InputField>
+				<InputField name="ТопливоКоличество" id="833">
+					<DataPath>Объект.Топливо.Количество</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТопливоКоличествоКонтекстноеМеню" id="834"/>
+					<ExtendedTooltip name="ТопливоКоличествоРасширеннаяПодсказка" id="835"/>
+				</InputField>
+				<InputField name="ТопливоСумма" id="836">
+					<DataPath>Объект.Топливо.Сумма</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<FooterDataPath>Объект.Топливо.TotalСумма</FooterDataPath>
+					<ContextMenu name="ТопливоСуммаКонтекстноеМеню" id="837"/>
+					<ExtendedTooltip name="ТопливоСуммаРасширеннаяПодсказка" id="838"/>
+				</InputField>
+				<InputField name="ТопливоОтступ" id="848">
+					<DataPath>Объект.Топливо.Отступ</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<TitleLocation>None</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТопливоОтступКонтекстноеМеню" id="849"/>
+					<ExtendedTooltip name="ТопливоОтступРасширеннаяПодсказка" id="850"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ВводНачальныхОстатков</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.ВалютаРегламентированногоУчета</Field>
+				<Field>Объект.Деньги</Field>
+				<Field>Объект.Запасы</Field>
+				<Field>Объект.Зарплата</Field>
+				<Field>Объект.Капитал</Field>
+				<Field>Объект.Капитал_Вспомогательная</Field>
+				<Field>Объект.Комиссионеры</Field>
+				<Field>Объект.КредитыИЗаймы</Field>
+				<Field>Объект.МакетПомощника</Field>
+				<Field>Объект.НалогиИВзносы</Field>
+				<Field>Объект.НематериальныеАктивы</Field>
+				<Field>Объект.ОсновныеСредства</Field>
+				<Field>Объект.Подотчет</Field>
+				<Field>Объект.ПодразделениеОрганизации</Field>
+				<Field>Объект.Покупатели</Field>
+				<Field>Объект.Поставщики</Field>
+				<Field>Объект.РазделыВводаОстатков</Field>
+			</UseAlways>
+			<Columns>
+				<AdditionalColumns table="Объект.Топливо">
+					<Column name="Отступ" id="1">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Отступ</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>1</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+				</AdditionalColumns>
+				<AdditionalColumns table="Объект.Запасы"/>
+			</Columns>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Записать" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Записать</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ЗаписатьИЗакрыть" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать и закрыть</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать и закрыть</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаписатьИЗакрыть</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="Организация">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ДатаВводаОстатков">
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Parameter>
+		<Parameter name="ВалютаРегламентированногоУчета">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Валюты</v8:Type>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

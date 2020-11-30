@@ -1,0 +1,808 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Соглашение с ПФР</v8:content>
+		</v8:item>
+	</Title>
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoTitle>false</AutoTitle>
+	<VerticalSpacing>Double</VerticalSpacing>
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаСохранитьНастройку" id="99">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.СохранитьНастройку</CommandName>
+				<ExtendedTooltip name="ФормаСохранитьНастройкуРасширеннаяПодсказка" id="100"/>
+			</Button>
+			<Button name="ФормаОтменитьНастройку" id="101">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ОтменитьНастройку</CommandName>
+				<ExtendedTooltip name="ФормаОтменитьНастройкуРасширеннаяПодсказка" id="102"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<LabelDecoration name="Декорация1" id="12">
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<Title formatted="true">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Для сдачи отчетности в Пенсионный фонд требуется заключение 
+Соглашения об обмене документами (далее - Соглашение с ПФР)
+в бумажном виде</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="Декорация1КонтекстноеМеню" id="13"/>
+			<ExtendedTooltip name="Декорация1РасширеннаяПодсказка" id="14"/>
+		</LabelDecoration>
+		<LabelDecoration name="Декорация2" id="15">
+			<Title formatted="true">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пока соглашение не заключено, Пенсионный фонд не будет принимать отправленные отчеты</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="Декорация2КонтекстноеМеню" id="16"/>
+			<ExtendedTooltip name="Декорация2РасширеннаяПодсказка" id="17"/>
+		</LabelDecoration>
+		<UsualGroup name="ГруппаОрганизацияПодключенаКЭДОсПФР" id="18">
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа есть соглашение СПФР</v8:content>
+				</v8:item>
+			</ToolTip>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<BackColor>#FCEB9F</BackColor>
+			<ExtendedTooltip name="ГруппаОрганизацияПодключенаКЭДОсПФРРасширеннаяПодсказка" id="19"/>
+			<ChildItems>
+				<CheckBoxField name="ОрганизацияПодключенаКЭДОсПФР" id="20">
+					<DataPath>ЕстьСоглашениеСПФР</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ОрганизацияПодключенаКЭДОсПФРКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="ОрганизацияПодключенаКЭДОсПФРРасширеннаяПодсказка" id="22"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="КакЗаключитьСоглашение" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Как заключить Соглашение</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Как заключить соглашение</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>NormalSeparation</Representation>
+			<ExtendedTooltip name="КакЗаключитьСоглашениеРасширеннаяПодсказка" id="2"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаЭтапа1" id="80">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа этапа1</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа этапа1</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<VerticalSpacing>Single</VerticalSpacing>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаЭтапа1РасширеннаяПодсказка" id="81"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаЗаголовокЭтапа1" id="23">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа заголовок этапа1</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа заголовок этапа1</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>AlwaysHorizontal</Group>
+							<VerticalAlign>Center</VerticalAlign>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаЗаголовокЭтапа1РасширеннаяПодсказка" id="24"/>
+							<ChildItems>
+								<PictureDecoration name="ДекорацияЭтапа1" id="25">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Декорация этапа1</v8:content>
+										</v8:item>
+									</Title>
+									<Picture>
+										<xr:Ref>CommonPicture.Этап1БРО</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
+									<FileDragMode>AsFile</FileDragMode>
+									<ContextMenu name="ДекорацияЭтапа1КонтекстноеМеню" id="26"/>
+									<ExtendedTooltip name="ДекорацияЭтапа1РасширеннаяПодсказка" id="27"/>
+								</PictureDecoration>
+								<LabelDecoration name="Пояснение1Этапа1" id="3">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Подготовьте и распечатайте документы:</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="Пояснение1Этапа1КонтекстноеМеню" id="4"/>
+									<ExtendedTooltip name="Пояснение1Этапа1РасширеннаяПодсказка" id="5"/>
+									<Events>
+										<Event name="URLProcessing">ПояснениеПоПодключениюКПФРОбработкаНавигационнойСсылки</Event>
+									</Events>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаГоризонтальнаяЭтапа1" id="82">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа горизонтальная этапа1</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа горизонтальная этапа1</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>AlwaysHorizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаГоризонтальнаяЭтапа1РасширеннаяПодсказка" id="83"/>
+							<ChildItems>
+								<LabelDecoration name="ОтступЭтап1" id="84">
+									<Width>3</Width>
+									<ContextMenu name="ОтступЭтап1КонтекстноеМеню" id="85"/>
+									<ExtendedTooltip name="ОтступЭтап1РасширеннаяПодсказка" id="86"/>
+								</LabelDecoration>
+								<UsualGroup name="ГруппаДанныеЭтапа1" id="87">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа данные этапа1</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа данные этапа1</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Vertical</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаДанныеЭтапа1РасширеннаяПодсказка" id="88"/>
+									<ChildItems>
+										<UsualGroup name="Группа1" id="97">
+											<Group>Vertical</Group>
+											<VerticalSpacing>None</VerticalSpacing>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="98"/>
+											<ChildItems>
+												<LabelDecoration name="Пояснение2Этапа1_1" id="6">
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<Title formatted="true">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>&lt;colorstyle -3&gt;1.&lt;/&gt;&lt;colorstyle -3&gt; &lt;/&gt;&lt;link Заявление&gt;Заявление&lt;/&gt; &lt;colorstyle -3&gt;о подключении к эл. документообороту - 1 экз.&lt;/&gt;</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="Пояснение2Этапа1_1КонтекстноеМеню" id="7"/>
+													<ExtendedTooltip name="Пояснение2Этапа1_1РасширеннаяПодсказка" id="8"/>
+													<Events>
+														<Event name="URLProcessing">ПояснениеПоПодключениюКПФРОбработкаНавигационнойСсылки</Event>
+													</Events>
+												</LabelDecoration>
+												<LabelDecoration name="Пояснение2Этапа1_2" id="94">
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<Title formatted="true">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>&lt;colorstyle -3&gt;2.&lt;/&gt;&lt;color #808080&gt; &lt;/&gt;&lt;link Сайт&gt;Соглашение&lt;/&gt; &lt;colorstyle -3&gt;об обмене эл. документами  - 2 экз.&lt;/&gt;</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTipRepresentation>Button</ToolTipRepresentation>
+													<ContextMenu name="Пояснение2Этапа1_2КонтекстноеМеню" id="95"/>
+													<ExtendedTooltip name="Пояснение2Этапа1_2РасширеннаяПодсказка" id="96">
+														<Title formatted="false">
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Обратите внимание, на сайте вашего отделения ПФР не опубликован бланк Соглашения с ПФР.  В связи с этим используется федерельный шаблон бланка. Рекомендуем заранее уточнить в вашем отделении, возможно ли использование федерального бланка Соглашения.</v8:content>
+															</v8:item>
+														</Title>
+													</ExtendedTooltip>
+													<Events>
+														<Event name="URLProcessing">ПояснениеПоПодключениюКПФРОбработкаНавигационнойСсылки</Event>
+													</Events>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
+										<LabelDecoration name="Пояснение3Этапа1" id="9">
+											<Title formatted="true">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>&lt;colorstyle -3&gt;В некоторых регионах также может потребоваться оформить дополнительные документы, подробнее см. на&lt;/&gt; &lt;link Сайт&gt;сайте&lt;/&gt; &lt;colorstyle -3&gt;ПФР.&lt;/&gt;</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="Пояснение3Этапа1КонтекстноеМеню" id="10"/>
+											<ExtendedTooltip name="Пояснение3Этапа1РасширеннаяПодсказка" id="11"/>
+											<Events>
+												<Event name="URLProcessing">ПояснениеПоПодключениюКПФРОбработкаНавигационнойСсылки</Event>
+											</Events>
+										</LabelDecoration>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаЭтапа2" id="36">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа этапа2</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа этапа2</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<VerticalSpacing>Single</VerticalSpacing>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаЭтапа2РасширеннаяПодсказка" id="37"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаЗаголовокЭтапа2" id="28">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа заголовок этапа2</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа этапа1</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>AlwaysHorizontal</Group>
+							<VerticalAlign>Center</VerticalAlign>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаЗаголовокЭтапа2РасширеннаяПодсказка" id="29"/>
+							<ChildItems>
+								<PictureDecoration name="ДекорацияЭтапа2" id="30">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Декорация этапа1</v8:content>
+										</v8:item>
+									</Title>
+									<Picture>
+										<xr:Ref>CommonPicture.Этап2БРО</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
+									<FileDragMode>AsFile</FileDragMode>
+									<ContextMenu name="ДекорацияЭтапа2КонтекстноеМеню" id="31"/>
+									<ExtendedTooltip name="ДекорацияЭтапа2РасширеннаяПодсказка" id="32"/>
+								</PictureDecoration>
+								<LabelDecoration name="ПояснениеПоПодключениюКПФРЗаголовокоКонтактов" id="38">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Подпишите каждый экземпляр и отнесите в ваше отделение ПФР.</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ПояснениеПоПодключениюКПФРЗаголовокоКонтактовКонтекстноеМеню" id="39"/>
+									<ExtendedTooltip name="ПояснениеПоПодключениюКПФРЗаголовокоКонтактовРасширеннаяПодсказка" id="40"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаГоризонтальнаяЭтапа2" id="89">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа горизонтальная этапа2</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа горизонтальная этапа2</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>AlwaysHorizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаГоризонтальнаяЭтапа2РасширеннаяПодсказка" id="90"/>
+							<ChildItems>
+								<LabelDecoration name="ОтступЭтап2" id="91">
+									<Width>3</Width>
+									<ContextMenu name="ОтступЭтап2КонтекстноеМеню" id="92"/>
+									<ExtendedTooltip name="ОтступЭтап2РасширеннаяПодсказка" id="93"/>
+								</LabelDecoration>
+								<UsualGroup name="ГруппаКонтактовПФР" id="41">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Контакты вашего отделения ПФР:</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Контакты вашего отделения ПФР</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Vertical</Group>
+									<VerticalSpacing>None</VerticalSpacing>
+									<Behavior>Collapsible</Behavior>
+									<CollapsedRepresentationTitle>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Контакты вашего отделения ПФР</v8:content>
+										</v8:item>
+									</CollapsedRepresentationTitle>
+									<Collapsed>true</Collapsed>
+									<ControlRepresentation>Picture</ControlRepresentation>
+									<Representation>None</Representation>
+									<ExtendedTooltip name="ГруппаКонтактовПФРРасширеннаяПодсказка" id="42"/>
+									<ChildItems>
+										<UsualGroup name="ГруппаНаименованияУПФР" id="43">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа наименования УПФР</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа наименования УПФР</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаНаименованияУПФРРасширеннаяПодсказка" id="44"/>
+											<ChildItems>
+												<LabelDecoration name="ЗаголовокНаименованияУПФР" id="45">
+													<Width>8</Width>
+													<Font ref="style:NormalTextFont" height="8" kind="StyleItem"/>
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>    УПФР: </v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="ЗаголовокНаименованияУПФРКонтекстноеМеню" id="46"/>
+													<ExtendedTooltip name="ЗаголовокНаименованияУПФРРасширеннаяПодсказка" id="47"/>
+												</LabelDecoration>
+												<LabelDecoration name="НаименованиеУПФР" id="48">
+													<Font ref="style:NormalTextFont" height="8" kind="StyleItem"/>
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Отделение Пенсионного фонда Российской Федерации по г. Москве и Московской области</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="НаименованиеУПФРКонтекстноеМеню" id="49"/>
+													<ExtendedTooltip name="НаименованиеУПФРРасширеннаяПодсказка" id="50"/>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="ГруппаАдресаУПФР" id="51">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа наименования УПФР</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа наименования УПФР</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаАдресаУПФРРасширеннаяПодсказка" id="52"/>
+											<ChildItems>
+												<LabelDecoration name="ЗаголовокАдресаУПФР" id="53">
+													<Width>8</Width>
+													<Font ref="style:NormalTextFont" height="8" kind="StyleItem"/>
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>    Адрес: </v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="ЗаголовокАдресаУПФРКонтекстноеМеню" id="54"/>
+													<ExtendedTooltip name="ЗаголовокАдресаУПФРРасширеннаяПодсказка" id="55"/>
+												</LabelDecoration>
+												<UsualGroup name="ГруппаАдресаИПереходаККартеУПФР" id="56">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа адреса и перехода к карте УПФР</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа адреса и перехода к карте УПФР</v8:content>
+														</v8:item>
+													</ToolTip>
+													<Group>Vertical</Group>
+													<Representation>None</Representation>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="ГруппаАдресаИПереходаККартеУПФРРасширеннаяПодсказка" id="57"/>
+													<ChildItems>
+														<LabelDecoration name="АдресУПФР" id="58">
+															<Font ref="style:NormalTextFont" height="8" kind="StyleItem"/>
+															<Title formatted="false">
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>115419, г. Москва, ул. Стасовой, д. 14, корп. 2</v8:content>
+																</v8:item>
+															</Title>
+															<ContextMenu name="АдресУПФРКонтекстноеМеню" id="59"/>
+															<ExtendedTooltip name="АдресУПФРРасширеннаяПодсказка" id="60"/>
+														</LabelDecoration>
+														<LabelDecoration name="ПоказатьНаКарте" id="61">
+															<Title formatted="true">
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>&lt;img 0:98e5ece2-30f3-4330-97d8-e551db30e285/&gt;&lt;link показать на карте&gt;&lt;fontsize 8&gt;Показать на карте&lt;/&gt;&lt;/&gt;</v8:content>
+																</v8:item>
+															</Title>
+															<ContextMenu name="ПоказатьНаКартеКонтекстноеМеню" id="62"/>
+															<ExtendedTooltip name="ПоказатьНаКартеРасширеннаяПодсказка" id="63"/>
+															<Events>
+																<Event name="URLProcessing">ПоказатьНаКартеОбработкаНавигационнойСсылки</Event>
+															</Events>
+														</LabelDecoration>
+													</ChildItems>
+												</UsualGroup>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="ГруппаТелефонУПФР" id="64">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа наименования УПФР</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа наименования УПФР</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаТелефонУПФРРасширеннаяПодсказка" id="65"/>
+											<ChildItems>
+												<LabelDecoration name="ЗаголовокТелефонУПФР" id="66">
+													<Width>8</Width>
+													<Font ref="style:NormalTextFont" height="8" kind="StyleItem"/>
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>    Телефон: </v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="ЗаголовокТелефонУПФРКонтекстноеМеню" id="67"/>
+													<ExtendedTooltip name="ЗаголовокТелефонУПФРРасширеннаяПодсказка" id="68"/>
+												</LabelDecoration>
+												<LabelDecoration name="ТелефонУПФР" id="69">
+													<Font ref="style:NormalTextFont" height="8" kind="StyleItem"/>
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>8 (495) 987-09-09</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="ТелефонУПФРКонтекстноеМеню" id="70"/>
+													<ExtendedTooltip name="ТелефонУПФРРасширеннаяПодсказка" id="71"/>
+												</LabelDecoration>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаЭтапа3" id="72">
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа этапа1</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>AlwaysHorizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаЭтапа3РасширеннаяПодсказка" id="73"/>
+					<ChildItems>
+						<PictureDecoration name="ДекорацияЭтапа3" id="74">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Декорация этапа1</v8:content>
+								</v8:item>
+							</Title>
+							<Picture>
+								<xr:Ref>CommonPicture.Этап3БРО</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</Picture>
+							<FileDragMode>AsFile</FileDragMode>
+							<ContextMenu name="ДекорацияЭтапа3КонтекстноеМеню" id="75"/>
+							<ExtendedTooltip name="ДекорацияЭтапа3РасширеннаяПодсказка" id="76"/>
+						</PictureDecoration>
+						<LabelDecoration name="ПояснениеПоПодключениюКПФР3" id="77">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>После заключения соглашения установите флажок.
+Номер и дату соглашения вводить в программу не нужно</v8:content>
+								</v8:item>
+							</Title>
+							<GroupVerticalAlign>Bottom</GroupVerticalAlign>
+							<ContextMenu name="ПояснениеПоПодключениюКПФР3КонтекстноеМеню" id="78"/>
+							<ExtendedTooltip name="ПояснениеПоПодключениюКПФР3РасширеннаяПодсказка" id="79"/>
+							<Events>
+								<Event name="URLProcessing">ПояснениеПоПодключениюКПФРОбработкаНавигационнойСсылки</Event>
+							</Events>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="КодРегиона" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Код региона</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЕстьСоглашениеСПФР" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>У меня есть Соглашение с ПФР</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="КодПФР" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Код ПФР</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресЗаданияПоПолучениюКонтактовПФР" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес задания по получению кода регистрации</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Организация" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Организация</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Заявление" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заявление</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DocumentRef.ЗаявлениеАбонентаСпецоператораСвязи</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТабДокЗаявления" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таб док заявления</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet">mxl:SpreadsheetDocument</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТабДокСоглашения" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таб док соглашения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet">mxl:SpreadsheetDocument</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СсылкаНаСоглашение" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ссылка на соглашение</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="НаименованиеУПФР" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Наименование УПФР</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресУПФР" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес УПФР</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТелефонУПФР" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Телефон УПФР</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТекстПредупреждения" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текст предупреждения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="СохранитьНастройку" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить настройку</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СохранитьНастройку</Action>
+		</Command>
+		<Command name="ОтменитьНастройку" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отмена</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отменить настройку</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОтменитьНастройку</Action>
+		</Command>
+	</Commands>
+</Form>

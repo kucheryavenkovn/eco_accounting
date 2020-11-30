@@ -1,0 +1,771 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<Width>100</Width>
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<ChildItems>
+			<Button name="ОК" id="41">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ОК</CommandName>
+				<ExtendedTooltip name="ОКРасширеннаяПодсказка" id="42"/>
+			</Button>
+			<Button name="Отмена" id="43">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.Отмена</CommandName>
+				<ExtendedTooltip name="ОтменаРасширеннаяПодсказка" id="44"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="OnClose">ПриЗакрытии</Event>
+	</Events>
+	<ChildItems>
+		<Table name="Билеты" id="186">
+			<Representation>List</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Билеты</DataPath>
+			<ToolTipRepresentation>ShowTop</ToolTipRepresentation>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="БилетыКонтекстноеМеню" id="187"/>
+			<AutoCommandBar name="БилетыКоманднаяПанель" id="188">
+				<Autofill>false</Autofill>
+				<ChildItems>
+					<Button name="БилетыДобавить" id="184">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Item.Билеты.StandardCommand.Add</CommandName>
+						<ExtendedTooltip name="БилетыДобавитьРасширеннаяПодсказка" id="185"/>
+					</Button>
+					<Button name="БилетыЗаполнитьБилеты" id="182">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ЗаполнитьБилеты</CommandName>
+						<ExtendedTooltip name="БилетыЗаполнитьБилетыРасширеннаяПодсказка" id="183"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="БилетыРасширеннаяПодсказка" id="189">
+				<AutoMaxWidth>false</AutoMaxWidth>
+				<HorizontalStretch>true</HorizontalStretch>
+				<Title formatted="false">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Укажите приобретенные организацией билеты (авиа, ж/д), которые сотрудник использовал для поездки в командировку</v8:content>
+					</v8:item>
+				</Title>
+			</ExtendedTooltip>
+			<SearchStringAddition name="БилетыСтрокаПоиска" id="190">
+				<AdditionSource>
+					<Item>Билеты</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="БилетыСтрокаПоискаКонтекстноеМеню" id="191"/>
+				<ExtendedTooltip name="БилетыСтрокаПоискаРасширеннаяПодсказка" id="192"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="БилетыСостояниеПросмотра" id="193">
+				<AdditionSource>
+					<Item>Билеты</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="БилетыСостояниеПросмотраКонтекстноеМеню" id="194"/>
+				<ExtendedTooltip name="БилетыСостояниеПросмотраРасширеннаяПодсказка" id="195"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="БилетыУправлениеПоиском" id="196">
+				<AdditionSource>
+					<Item>Билеты</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="БилетыУправлениеПоискомКонтекстноеМеню" id="197"/>
+				<ExtendedTooltip name="БилетыУправлениеПоискомРасширеннаяПодсказка" id="198"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="BeforeRowChange">БилетыПередНачаломИзменения</Event>
+				<Event name="OnStartEdit">БилетыПриНачалеРедактирования</Event>
+			</Events>
+			<ChildItems>
+				<InputField name="БилетыБилет" id="199">
+					<DataPath>Билеты.Билет</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>35</Width>
+					<ChoiceParameterLinks>
+						<xr:Link>
+							<xr:Name>Отбор.Организация</xr:Name>
+							<xr:DataPath xsi:type="xs:string">Организация</xr:DataPath>
+							<xr:ValueChange>Clear</xr:ValueChange>
+						</xr:Link>
+						<xr:Link>
+							<xr:Name>Отбор.Сотрудник</xr:Name>
+							<xr:DataPath xsi:type="xs:string">ФизЛицо</xr:DataPath>
+							<xr:ValueChange>Clear</xr:ValueChange>
+						</xr:Link>
+					</ChoiceParameterLinks>
+					<ContextMenu name="БилетыБилетКонтекстноеМеню" id="200"/>
+					<ExtendedTooltip name="БилетыБилетРасширеннаяПодсказка" id="201"/>
+					<Events>
+						<Event name="OnChange">БилетыБилетПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="БилетыСумма" id="202">
+					<DataPath>Билеты.Сумма</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>12</Width>
+					<ContextMenu name="БилетыСуммаКонтекстноеМеню" id="203"/>
+					<ExtendedTooltip name="БилетыСуммаРасширеннаяПодсказка" id="204"/>
+					<Events>
+						<Event name="OnChange">БилетыСуммаПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="БилетыСтавкаНДС" id="233">
+					<DataPath>Билеты.СтавкаНДС</DataPath>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>% НДС</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<ListChoiceMode>true</ListChoiceMode>
+					<ChoiceList>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>н/д</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xr:DesignTimeRef">Enum.СтавкиНДС.EmptyRef</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xr:DesignTimeRef">Enum.СтавкиНДС.EnumValue.НДС18</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xr:DesignTimeRef">Enum.СтавкиНДС.EnumValue.НДС18_118</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xr:DesignTimeRef">Enum.СтавкиНДС.EnumValue.НДС10</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xr:DesignTimeRef">Enum.СтавкиНДС.EnumValue.НДС10_110</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xr:DesignTimeRef">Enum.СтавкиНДС.EnumValue.НДС0</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xr:DesignTimeRef">Enum.СтавкиНДС.EnumValue.БезНДС</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xr:DesignTimeRef">Enum.СтавкиНДС.EnumValue.НДС20</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation/>
+								<Value xsi:type="xr:DesignTimeRef">Enum.СтавкиНДС.EnumValue.НДС20_120</Value>
+							</xr:Value>
+						</xr:Item>
+					</ChoiceList>
+					<ContextMenu name="БилетыСтавкаНДСКонтекстноеМеню" id="234"/>
+					<ExtendedTooltip name="БилетыСтавкаНДСРасширеннаяПодсказка" id="235"/>
+					<Events>
+						<Event name="OnChange">БилетыСтавкаНДСПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="БилетыСуммаНДС" id="205">
+					<DataPath>Билеты.СуммаНДС</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>12</Width>
+					<ContextMenu name="БилетыСуммаНДСКонтекстноеМеню" id="206"/>
+					<ExtendedTooltip name="БилетыСуммаНДСРасширеннаяПодсказка" id="207"/>
+					<Events>
+						<Event name="OnChange">БилетыСуммаНДСПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="БилетыПеревозчик" id="208">
+					<DataPath>Билеты.Билет.Перевозчик</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="БилетыПеревозчикКонтекстноеМеню" id="209"/>
+					<ExtendedTooltip name="БилетыПеревозчикРасширеннаяПодсказка" id="210"/>
+				</InputField>
+				<ColumnGroup name="ГруппаБилетыСчетЗатратПодразделениеЗатрат" id="211">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Счет затрат / Подразделение</v8:content>
+						</v8:item>
+					</Title>
+					<ShowInHeader>true</ShowInHeader>
+					<ExtendedTooltip name="ГруппаБилетыСчетЗатратПодразделениеЗатратРасширеннаяПодсказка" id="212"/>
+					<ChildItems>
+						<InputField name="БилетыСчетЗатрат" id="213">
+							<DataPath>Билеты.СчетЗатрат</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ShowInHeader>false</ShowInHeader>
+							<ShowInFooter>false</ShowInFooter>
+							<ContextMenu name="БилетыСчетЗатратКонтекстноеМеню" id="214"/>
+							<ExtendedTooltip name="БилетыСчетЗатратРасширеннаяПодсказка" id="215"/>
+							<Events>
+								<Event name="OnChange">БилетыСчетЗатратПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="БилетыПодразделениеЗатрат" id="216">
+							<DataPath>Билеты.ПодразделениеЗатрат</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ShowInHeader>false</ShowInHeader>
+							<ShowInFooter>false</ShowInFooter>
+							<ChoiceParameterLinks>
+								<xr:Link>
+									<xr:Name>Отбор.Владелец</xr:Name>
+									<xr:DataPath xsi:type="xs:string">Организация</xr:DataPath>
+									<xr:ValueChange>Clear</xr:ValueChange>
+								</xr:Link>
+							</ChoiceParameterLinks>
+							<ContextMenu name="БилетыПодразделениеЗатратКонтекстноеМеню" id="217"/>
+							<ExtendedTooltip name="БилетыПодразделениеЗатратРасширеннаяПодсказка" id="218"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+				<ColumnGroup name="ГруппаБилетыСубконтоБУ" id="219">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Субконто</v8:content>
+						</v8:item>
+					</Title>
+					<ShowInHeader>true</ShowInHeader>
+					<ExtendedTooltip name="ГруппаБилетыСубконтоБУРасширеннаяПодсказка" id="220"/>
+					<ChildItems>
+						<InputField name="БилетыСубконто1" id="221">
+							<DataPath>Билеты.Субконто1</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ShowInHeader>false</ShowInHeader>
+							<ShowInFooter>false</ShowInFooter>
+							<TypeLink>
+								<xr:DataPath>Items.Билеты.CurrentData.СчетЗатрат</xr:DataPath>
+								<xr:LinkItem>1</xr:LinkItem>
+							</TypeLink>
+							<ContextMenu name="БилетыСубконто1КонтекстноеМеню" id="222"/>
+							<ExtendedTooltip name="БилетыСубконто1РасширеннаяПодсказка" id="223"/>
+							<Events>
+								<Event name="OnChange">БилетыСубконто1ПриИзменении</Event>
+								<Event name="StartChoice">БилетыСубконто1НачалоВыбора</Event>
+							</Events>
+						</InputField>
+						<InputField name="БилетыСубконто2" id="224">
+							<DataPath>Билеты.Субконто2</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ShowInHeader>false</ShowInHeader>
+							<ShowInFooter>false</ShowInFooter>
+							<TypeLink>
+								<xr:DataPath>Items.Билеты.CurrentData.СчетЗатрат</xr:DataPath>
+								<xr:LinkItem>2</xr:LinkItem>
+							</TypeLink>
+							<ContextMenu name="БилетыСубконто2КонтекстноеМеню" id="225"/>
+							<ExtendedTooltip name="БилетыСубконто2РасширеннаяПодсказка" id="226"/>
+							<Events>
+								<Event name="OnChange">БилетыСубконто2ПриИзменении</Event>
+								<Event name="StartChoice">БилетыСубконто2НачалоВыбора</Event>
+							</Events>
+						</InputField>
+						<InputField name="БилетыСубконто3" id="227">
+							<DataPath>Билеты.Субконто3</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ShowInHeader>false</ShowInHeader>
+							<ShowInFooter>false</ShowInFooter>
+							<TypeLink>
+								<xr:DataPath>Items.Билеты.CurrentData.СчетЗатрат</xr:DataPath>
+								<xr:LinkItem>3</xr:LinkItem>
+							</TypeLink>
+							<ContextMenu name="БилетыСубконто3КонтекстноеМеню" id="228"/>
+							<ExtendedTooltip name="БилетыСубконто3РасширеннаяПодсказка" id="229"/>
+							<Events>
+								<Event name="OnChange">БилетыСубконто3ПриИзменении</Event>
+								<Event name="StartChoice">БилетыСубконто3НачалоВыбора</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+				<InputField name="БилетыСпособУчетаНДС" id="230">
+					<DataPath>Билеты.СпособУчетаНДС</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="БилетыСпособУчетаНДСКонтекстноеМеню" id="231"/>
+					<ExtendedTooltip name="БилетыСпособУчетаНДСРасширеннаяПодсказка" id="232"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<UsualGroup name="ГруппаИтогиВсегоСФоном" id="20">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Итоги</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Итоги сумма</v8:content>
+				</v8:item>
+			</ToolTip>
+			<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<BackColor>style:ИтогиФонГруппы</BackColor>
+			<ExtendedTooltip name="ГруппаИтогиВсегоСФономРасширеннаяПодсказка" id="21"/>
+			<ChildItems>
+				<InputField name="БилетыСуммаВсего" id="122">
+					<DataPath>БилетыСуммаВсего</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<ContextMenu name="БилетыСуммаВсегоКонтекстноеМеню" id="123"/>
+					<ExtendedTooltip name="БилетыСуммаВсегоРасширеннаяПодсказка" id="124"/>
+				</InputField>
+				<LabelField name="ВалютаДокумента" id="25">
+					<DataPath>ВалютаДокумента</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<Width>4</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="ВалютаДокументаКонтекстноеМеню" id="26"/>
+					<ExtendedTooltip name="ВалютаДокументаРасширеннаяПодсказка" id="27"/>
+				</LabelField>
+				<InputField name="БилетыСуммаНДСВсего" id="125">
+					<DataPath>БилетыСуммаНДСВсего</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<ContextMenu name="БилетыСуммаНДСВсегоКонтекстноеМеню" id="126"/>
+					<ExtendedTooltip name="БилетыСуммаНДСВсегоРасширеннаяПодсказка" id="127"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ВалютаДокумента" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Валюта</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Валюты</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="БилетыСуммаВсего" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Всего</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Организация" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Организация</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ФизЛицо" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сотрудник</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ФизическиеЛица</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="БилетыСуммаНДСВсего" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>В т.ч. НДС</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ДатаНачалаКомандировки" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата начала командировки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТекущийДокумент" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текущий документ</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DocumentRef.АвансовыйОтчет</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ДатаОкончанияКомандировки" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата окончания командировки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ДатаДокумента" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата документа</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Билеты" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Билеты</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Билет" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Билет</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Билеты</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Сумма" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="СуммаНДС" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>НДС (в т.ч.)</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="СчетЗатрат" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Счет затрат</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:ChartOfAccountsRef.Хозрасчетный</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ПодразделениеЗатрат" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Подразделение затрат</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ПодразделенияОрганизаций</v8:Type>
+					</Type>
+					<FunctionalOptions>
+						<Item>FunctionalOption.ВестиУчетЗатратПоПодразделениям</Item>
+					</FunctionalOptions>
+				</Column>
+				<Column name="Субконто1" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Субконто1</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:Characteristic.ВидыСубконтоХозрасчетные</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="Субконто2" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Субконто2</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:Characteristic.ВидыСубконтоХозрасчетные</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="Субконто3" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Субконто3</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:Characteristic.ВидыСубконтоХозрасчетные</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="Субконто1Доступность" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Субконто1 доступность</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Субконто2Доступность" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Субконто1 доступность</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Субконто3Доступность" id="11">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Субконто1 доступность</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ПодразделениеЗатратДоступность" id="12">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Подразделение затрат доступность</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="СчетФактура" id="13">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Счет-фактура</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:DocumentRef.СчетФактураПолученный</v8:Type>
+					</Type>
+				</Column>
+				<Column name="СпособУчетаНДС" id="14">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Способ учета НДС</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:EnumRef.СпособыУчетаНДС</v8:Type>
+					</Type>
+					<FunctionalOptions>
+						<Item>FunctionalOption.РаздельныйУчетНДСНаСчете19</Item>
+					</FunctionalOptions>
+				</Column>
+				<Column name="СтавкаНДС" id="15">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ставка НДС</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:EnumRef.СтавкиНДС</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="СчетЗатрат" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Счет затрат</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:ChartOfAccountsRef.Хозрасчетный</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СтатьяЗатрат" id="20">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Статья затрат</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.СтатьиЗатрат</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ОК" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОК</Action>
+		</Command>
+		<Command name="Отмена" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отмена</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отмена</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Отмена</Action>
+		</Command>
+		<Command name="ЗаполнитьБилеты" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить билеты</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаполнитьБилеты</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

@@ -1,0 +1,220 @@
+﻿
+Public Function isFillEnabled(obj) As Boolean
+	If obj.Fill.Type < 0 Then
+		firstPoint = obj.Nodes.Item(1).Points
+		lastPoint = obj.Nodes.Item(obj.Nodes.Count).Points
+		i = 0
+		j = 0
+		For Each coord1 In firstPoint
+			For Each coord2 In lastPoint
+				If i = j And Not coord1 = coord2 Then
+					isFillEnabled = False
+					Exit Function
+				End If
+				j = j + 1
+			Next coord2
+			i = i + 1
+		Next coord1
+	End If
+	isFillEnabled = True
+End Function
+
+Public Function isCallout(obj) As Boolean
+	isCallout = obj.Type = 1 And obj.AutoShapeType >= 105 And obj.AutoShapeType <= 108
+End Function
+
+Public Function isObject(obj) As Boolean
+	isObject = obj.Type = 5 Or (obj.Type = 1 And obj.AutoShapeType >= 0 And Not isCallout(obj))
+End Function
+
+
+Sub Залить()
+    Name = Selection.ShapeRange.Name
+    With Selection.ShapeRange
+        .Line.Weight = 0.75
+        .Line.DashStyle = msoLineSolid
+        .Line.Style = msoLineSingle
+        .Line.Transparency = 0#
+        .Line.Visible = msoTrue
+        .Line.ForeColor.SchemeColor = 64
+        .Line.BackColor.RGB = RGB(255, 255, 255)
+        .Fill.Visible = msoTrue
+        .Fill.ForeColor.SchemeColor = 8
+        .Fill.BackColor.RGB = RGB(255, 255, 255)
+        .Fill.Transparency = 0#
+        .Fill.Patterned msoPatternOutlinedDiamond
+    End With
+    Надпись
+End Sub
+Sub ОчиститьВсе()
+    Call УбратьНадписи
+    For i = 1 To ActiveSheet.Shapes.Count
+        With ActiveSheet.Shapes(i)
+            If isFillEnabled(ActiveSheet.Shapes(i)) Then
+            	.Fill.Visible = msoFalse
+            	.Fill.Transparency = 0#
+            End If
+            .Line.Transparency = 0#
+            .Line.Visible = msoFalse
+        End With
+    Next i
+End Sub
+
+Sub ВсеНумеровать()
+    Call УбратьНадписи
+    For i = 1 To ActiveSheet.Shapes.Count
+        If isObject(ActiveSheet.Shapes(i)) Then
+            Пометить (i)
+        End If
+    Next i
+End Sub
+Sub ВсеПоУмолчанию()
+    For i = 1 To ActiveSheet.Shapes.Count
+        If isObject(ActiveSheet.Shapes(i)) Then
+            ПоУмолчанию (i)
+        End If
+    Next i
+End Sub
+Sub Пометить(i As Integer)
+    Nadpis = ActiveSheet.Shapes(i).Name
+    y = ActiveSheet.Shapes(i).Top
+    x = ActiveSheet.Shapes(i).Left
+    Select Case Len(Nadpis)
+        Case 0, 1
+            s = 35
+        Case 2
+            s = 40
+        Case 3
+            s = 45
+        Case 4
+            s = 50
+        Case Else
+            s = 55
+    End Select
+    h = 14
+    ActiveSheet.Shapes.AddTextbox(msoTextOrientationHorizontal, x, y, _
+        s, h).Select
+    With Selection.Font
+        .Name = "Arial CYR"
+        .FontStyle = "полужирный курсив"
+        .Size = 12
+    End With
+    With Selection.ShapeRange
+        .Fill.Visible = msoFalse
+        .Line.Visible = msoFalse
+    End With
+    Selection.Characters.Text = Nadpis
+End Sub
+Sub УбратьНадписи()
+Dim i As Integer
+    For i = ActiveSheet.Shapes.Count To 1 Step -1
+       If ActiveSheet.Shapes(i).Type = msoTextBox Then ActiveSheet.Shapes(i).Delete
+    Next i
+End Sub
+Sub ПоУмолчанию(i As Integer)
+    With ActiveSheet.Shapes(i)
+        If isFillEnabled(ActiveSheet.Shapes(i)) Then
+	        .Fill.Visible = msoTrue
+	        .Fill.Solid
+	        .Fill.ForeColor.SchemeColor = 43
+	        .Fill.Transparency = 0.5
+        End If
+        .Line.Weight = 0.75
+        .Line.DashStyle = msoLineSolid
+        .Line.Style = msoLineSingle
+        .Line.Transparency = 0#
+        .Line.Visible = msoTrue
+        .Line.ForeColor.SchemeColor = 64
+        .Line.BackColor.RGB = RGB(255, 255, 255)
+    End With
+End Sub
+Sub Обозначить(i As String)
+    Nadpis = ActiveSheet.Shapes(i).Name
+    y = ActiveSheet.Shapes(i).Top
+    x = ActiveSheet.Shapes(i).Left
+    Select Case Len(Nadpis)
+        Case 0, 1
+            s = 35
+        Case 2
+            s = 40
+        Case 3
+            s = 45
+        Case 4
+            s = 50
+        Case Else
+            s = 55
+    End Select
+    h = 12
+    ActiveSheet.Shapes.AddTextbox(msoTextOrientationHorizontal, x, y, _
+        s, h).Select
+    Selection.Characters.Text = Nadpis
+    With Selection.Characters(Start:=1, Length:=5).Font
+        .Name = "Arial Cyr"
+        .FontStyle = "обычный"
+        .Size = 10
+        .Strikethrough = False
+        .Superscript = False
+        .Subscript = False
+        .OutlineFont = False
+        .Shadow = False
+        .Underline = xlUnderlineStyleNone
+        .ColorIndex = xlAutomatic
+    End With
+    Selection.ShapeRange.ScaleHeight 1.33, msoFalse, msoScaleFromTopLeft
+    With Selection.Font
+        .Name = "Arial CYR"
+        .FontStyle = "полужирный курсив"
+        .Size = 10
+        .Strikethrough = False
+        .Superscript = False
+        .Subscript = False
+        .OutlineFont = False
+        .Shadow = False
+        .Underline = xlUnderlineStyleNone
+        .ColorIndex = xlAutomatic
+    End With
+    With Selection.ShapeRange
+        .Fill.Visible = msoTrue
+        .Fill.Solid
+        .Fill.ForeColor.SchemeColor = 65
+        .Fill.Transparency = 0#
+        .Line.Weight = 3#
+        .Line.DashStyle = msoLineSolid
+        .Line.Style = msoLineThinThin
+        .Line.Transparency = 0#
+        .Line.Visible = msoTrue
+        .Line.ForeColor.SchemeColor = 64
+        .Line.BackColor.RGB = RGB(255, 255, 255)
+    End With
+End Sub
+Sub Надпись()
+    Nadpis = Selection.ShapeRange.Name
+    y = Selection.ShapeRange.Top
+    x = Selection.ShapeRange.Left
+    Select Case Len(Nadpis)
+        Case 0, 1
+            s = 25
+        Case 2
+            s = 30
+        Case 3
+            s = 35
+        Case 4
+            s = 40
+        Case Else
+            s = 45
+    End Select
+    h = 14
+    ActiveSheet.Shapes.AddTextbox(msoTextOrientationHorizontal, x, y, _
+        s, h).Select
+    With Selection.Font
+        .Name = "Arial CYR"
+        .FontStyle = "полужирный курсив"
+        .Size = 12
+    End With
+    With Selection.ShapeRange
+        .Fill.Visible = msoFalse
+        .Line.Visible = msoFalse
+    End With
+    Selection.Characters.Text = Nadpis
+End Sub
+

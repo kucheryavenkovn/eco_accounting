@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Начальные остатки</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаЗаписатьИЗакрыть" id="512">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ЗаписатьИЗакрыть</CommandName>
+				<ExtendedTooltip name="ФормаЗаписатьИЗакрытьРасширеннаяПодсказка" id="513"/>
+			</Button>
+			<Button name="ФормаЗаписать" id="508">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.Записать</CommandName>
+				<ExtendedTooltip name="ФормаЗаписатьРасширеннаяПодсказка" id="509"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="BeforeClose">ПередЗакрытием</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Table name="Капитал" id="829">
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Объект.Капитал</DataPath>
+			<CommandSet>
+				<ExcludedCommand>Add</ExcludedCommand>
+			</CommandSet>
+			<ToolTipRepresentation>ShowTop</ToolTipRepresentation>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="КапиталКонтекстноеМеню" id="830"/>
+			<AutoCommandBar name="КапиталКоманднаяПанель" id="831">
+				<Autofill>false</Autofill>
+				<ChildItems>
+					<Popup name="УчредителиГруппаДобавить" id="860">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Добавить</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="УчредителиГруппаДобавитьРасширеннаяПодсказка" id="861"/>
+						<ChildItems>
+							<Button name="УчредителиДобавитьУчредителяФизическоеЛицо" id="862">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ДобавитьУчредителяФизическоеЛицо</CommandName>
+								<ExtendedTooltip name="УчредителиДобавитьУчредителяФизическоеЛицоРасширеннаяПодсказка" id="863"/>
+							</Button>
+							<Button name="УчредителиДобавитьУчредителяЮридическоеЛицо" id="864">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ДобавитьУчредителяЮридическоеЛицо</CommandName>
+								<ExtendedTooltip name="УчредителиДобавитьУчредителяЮридическоеЛицоРасширеннаяПодсказка" id="865"/>
+							</Button>
+						</ChildItems>
+					</Popup>
+					<ButtonGroup name="УчредителиГруппаПереместить" id="870">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Переместить</v8:content>
+							</v8:item>
+						</Title>
+						<CommandSource>Item.Капитал</CommandSource>
+						<Representation>Compact</Representation>
+						<ExtendedTooltip name="УчредителиГруппаПереместитьРасширеннаяПодсказка" id="871"/>
+					</ButtonGroup>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="КапиталРасширеннаяПодсказка" id="832">
+				<AutoMaxWidth>false</AutoMaxWidth>
+				<Title formatted="false">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Расчеты с учредителями по взносам в уставный капитал</v8:content>
+					</v8:item>
+				</Title>
+			</ExtendedTooltip>
+			<SearchStringAddition name="КапиталСтрокаПоиска" id="833">
+				<AdditionSource>
+					<Item>Капитал</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="КапиталСтрокаПоискаКонтекстноеМеню" id="836"/>
+				<ExtendedTooltip name="КапиталСтрокаПоискаРасширеннаяПодсказка" id="837"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="КапиталСостояниеПросмотра" id="838">
+				<AdditionSource>
+					<Item>Капитал</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="КапиталСостояниеПросмотраКонтекстноеМеню" id="841"/>
+				<ExtendedTooltip name="КапиталСостояниеПросмотраРасширеннаяПодсказка" id="842"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="КапиталУправлениеПоиском" id="843">
+				<AdditionSource>
+					<Item>Капитал</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="КапиталУправлениеПоискомКонтекстноеМеню" id="846"/>
+				<ExtendedTooltip name="КапиталУправлениеПоискомРасширеннаяПодсказка" id="847"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="OnEditEnd">КапиталПриОкончанииРедактирования</Event>
+				<Event name="BeforeAddRow">КапиталПередНачаломДобавления</Event>
+				<Event name="AfterDeleteRow">КапиталПослеУдаления</Event>
+			</Events>
+			<ChildItems>
+				<InputField name="КапиталУчредитель" id="848">
+					<DataPath>Объект.Капитал.Учредитель</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="КапиталУчредительКонтекстноеМеню" id="849"/>
+					<ExtendedTooltip name="КапиталУчредительРасширеннаяПодсказка" id="850"/>
+				</InputField>
+				<InputField name="КапиталСуммаВклада" id="851">
+					<DataPath>Объект.Капитал.СуммаВклада</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>12</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="КапиталСуммаВкладаКонтекстноеМеню" id="852"/>
+					<ExtendedTooltip name="КапиталСуммаВкладаРасширеннаяПодсказка" id="853"/>
+				</InputField>
+				<InputField name="КапиталСуммаОплачено" id="854">
+					<DataPath>Объект.Капитал.СуммаОплачено</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>12</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="КапиталСуммаОплаченоКонтекстноеМеню" id="855"/>
+					<ExtendedTooltip name="КапиталСуммаОплаченоРасширеннаяПодсказка" id="856"/>
+				</InputField>
+				<InputField name="КапиталОтступ" id="857">
+					<DataPath>Объект.Капитал.Отступ</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<TitleLocation>None</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<HorizontalStretch>true</HorizontalStretch>
+					<ContextMenu name="КапиталОтступКонтекстноеМеню" id="858"/>
+					<ExtendedTooltip name="КапиталОтступРасширеннаяПодсказка" id="859"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ВводНачальныхОстатков</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.Деньги</Field>
+				<Field>Объект.Запасы</Field>
+				<Field>Объект.Зарплата</Field>
+				<Field>Объект.Комиссионеры</Field>
+				<Field>Объект.КредитыИЗаймы</Field>
+				<Field>Объект.МакетПомощника</Field>
+				<Field>Объект.НалогиИВзносы</Field>
+				<Field>Объект.НематериальныеАктивы</Field>
+				<Field>Объект.ОсновныеСредства</Field>
+				<Field>Объект.Подотчет</Field>
+				<Field>Объект.ПодразделениеОрганизации</Field>
+				<Field>Объект.Покупатели</Field>
+				<Field>Объект.Поставщики</Field>
+				<Field>Объект.РазделыВводаОстатков</Field>
+			</UseAlways>
+			<Columns>
+				<AdditionalColumns table="Объект.Капитал">
+					<Column name="Отступ" id="1">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Отступ</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>1</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+					<Column name="ТипУчредителя" id="2">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Тип учредителя</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>cfg:EnumRef.ЮридическоеФизическоеЛицо</v8:Type>
+						</Type>
+					</Column>
+				</AdditionalColumns>
+			</Columns>
+		</Attribute>
+		<Attribute name="СтруктураТаблиц" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Структура таблиц</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Записать" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Записать</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ЗаписатьИЗакрыть" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать и закрыть</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать и закрыть</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаписатьИЗакрыть</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ДобавитьУчредителяФизическоеЛицо" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Физическое лицо</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить учредителя - физическое лицо</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ДобавитьУчредителяФизическоеЛицо</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ДобавитьУчредителяЮридическоеЛицо" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Юридическое лицо</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить учредителя -  юридическое лицо</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ДобавитьУчредителяЮридическоеЛицо</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="Организация">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

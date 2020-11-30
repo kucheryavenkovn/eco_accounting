@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Документ</dataPath>
+			<field>Документ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документ</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Контрагент</dataPath>
+			<field>Контрагент</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Организация</dataPath>
+			<field>Организация</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДоговорКонтрагента</dataPath>
+			<field>ДоговорКонтрагента</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Дата</dataPath>
+			<field>Дата</field>
+			<inputParameters>
+				<dcscor:item>
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>БыстрыйВыбор</dcscor:parameter>
+					<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+				</dcscor:item>
+			</inputParameters>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидДокумента</dataPath>
+			<field>ВидДокумента</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид документа</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</valueType>
+			<availableValue>
+				<value xsi:type="xs:string">Дополнительное соглашение</value>
+				<presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Дополнительное соглашение</v8:content>
+					</v8:item>
+				</presentation>
+			</availableValue>
+			<availableValue>
+				<value xsi:type="xs:string">Заключение договора аренды</value>
+				<presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Заключение договора аренды</v8:content>
+					</v8:item>
+				</presentation>
+			</availableValue>
+			<availableValue>
+				<value xsi:type="xs:string">Расторжение договора аренды</value>
+				<presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Расторжение договора аренды</v8:content>
+					</v8:item>
+				</presentation>
+			</availableValue>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Услуга</dataPath>
+			<field>Услуга</field>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.Номенклатура</v8:Type>
+			</valueType>
+			<inputParameters>
+				<dcscor:item>
+					<dcscor:parameter>ПараметрыВыбора</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:ChoiceParameters">
+						<dcscor:item>
+							<dcscor:choiceParameter>Отбор.Услуга</dcscor:choiceParameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+					</dcscor:value>
+				</dcscor:item>
+			</inputParameters>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ РАЗЛИЧНЫЕ
+	ВложенныйЗапрос.Документ КАК Документ,
+	ВложенныйЗапрос.Организация КАК Организация,
+	ВложенныйЗапрос.Контрагент КАК Контрагент,
+	ВложенныйЗапрос.ДоговорКонтрагента КАК ДоговорКонтрагента,
+	ВложенныйЗапрос.Дата КАК Дата,
+	ВложенныйЗапрос.ВидДокумента КАК ВидДокумента,
+	ВложенныйЗапрос.Услуга КАК Услуга
+ИЗ
+	(ВЫБРАТЬ РАЗЛИЧНЫЕ
+		АР_ЗаключениеДоговораАрендыПостояннаяЧастьАренднойПлаты.Ссылка КАК Документ,
+		АР_ЗаключениеДоговораАрендыПостояннаяЧастьАренднойПлаты.Ссылка.Организация КАК Организация,
+		АР_ЗаключениеДоговораАрендыПостояннаяЧастьАренднойПлаты.Ссылка.Контрагент КАК Контрагент,
+		АР_ЗаключениеДоговораАрендыПостояннаяЧастьАренднойПлаты.Ссылка.ДоговорКонтрагента КАК ДоговорКонтрагента,
+		АР_ЗаключениеДоговораАрендыПостояннаяЧастьАренднойПлаты.Ссылка.Дата КАК Дата,
+		"Заключение договора аренды" КАК ВидДокумента,
+		АР_ЗаключениеДоговораАрендыПостояннаяЧастьАренднойПлаты.Услуга КАК Услуга
+	ИЗ
+		Документ.АР_ЗаключениеДоговораАренды.ПостояннаяЧастьАренднойПлаты КАК АР_ЗаключениеДоговораАрендыПостояннаяЧастьАренднойПлаты
+	ГДЕ
+		АР_ЗаключениеДоговораАрендыПостояннаяЧастьАренднойПлаты.Ссылка.Проведен
+		И АР_ЗаключениеДоговораАрендыПостояннаяЧастьАренднойПлаты.СтавкаНДС = ЗНАЧЕНИЕ(Перечисление.СтавкиНДС.ПустаяСсылка)
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ РАЗЛИЧНЫЕ
+		АР_ЗаключениеДоговораАрендыПеременнаяЧастьАренднойПлаты.Ссылка,
+		АР_ЗаключениеДоговораАрендыПеременнаяЧастьАренднойПлаты.Ссылка.Организация,
+		АР_ЗаключениеДоговораАрендыПеременнаяЧастьАренднойПлаты.Ссылка.Контрагент,
+		АР_ЗаключениеДоговораАрендыПеременнаяЧастьАренднойПлаты.Ссылка.ДоговорКонтрагента,
+		АР_ЗаключениеДоговораАрендыПеременнаяЧастьАренднойПлаты.Ссылка.Дата,
+		"Заключение договора аренды",
+		АР_ЗаключениеДоговораАрендыПеременнаяЧастьАренднойПлаты.Услуга
+	ИЗ
+		Документ.АР_ЗаключениеДоговораАренды.ПеременнаяЧастьАренднойПлаты КАК АР_ЗаключениеДоговораАрендыПеременнаяЧастьАренднойПлаты
+	ГДЕ
+		АР_ЗаключениеДоговораАрендыПеременнаяЧастьАренднойПлаты.Ссылка.Проведен
+		И АР_ЗаключениеДоговораАрендыПеременнаяЧастьАренднойПлаты.СтавкаНДС = ЗНАЧЕНИЕ(Перечисление.СтавкиНДС.ПустаяСсылка)
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ РАЗЛИЧНЫЕ
+		АР_РасторжениеДоговораАрендыПостояннаяЧастьАренднойПлаты.Ссылка,
+		АР_РасторжениеДоговораАрендыПостояннаяЧастьАренднойПлаты.Ссылка.Организация,
+		АР_РасторжениеДоговораАрендыПостояннаяЧастьАренднойПлаты.Ссылка.Контрагент,
+		АР_РасторжениеДоговораАрендыПостояннаяЧастьАренднойПлаты.Ссылка.ДоговорКонтрагента,
+		АР_РасторжениеДоговораАрендыПостояннаяЧастьАренднойПлаты.Ссылка.Дата,
+		"Расторжение договора аренды",
+		АР_РасторжениеДоговораАрендыПостояннаяЧастьАренднойПлаты.Услуга
+	ИЗ
+		Документ.АР_РасторжениеДоговораАренды.ПостояннаяЧастьАренднойПлаты КАК АР_РасторжениеДоговораАрендыПостояннаяЧастьАренднойПлаты
+	ГДЕ
+		АР_РасторжениеДоговораАрендыПостояннаяЧастьАренднойПлаты.Ссылка.Проведен
+		И АР_РасторжениеДоговораАрендыПостояннаяЧастьАренднойПлаты.СтавкаНДС = ЗНАЧЕНИЕ(Перечисление.СтавкиНДС.ПустаяСсылка)
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ РАЗЛИЧНЫЕ
+		АР_РасторжениеДоговораАрендыПеременнаяЧастьАренднойПлаты.Ссылка,
+		АР_РасторжениеДоговораАрендыПеременнаяЧастьАренднойПлаты.Ссылка.Организация,
+		АР_РасторжениеДоговораАрендыПеременнаяЧастьАренднойПлаты.Ссылка.Контрагент,
+		АР_РасторжениеДоговораАрендыПеременнаяЧастьАренднойПлаты.Ссылка.ДоговорКонтрагента,
+		АР_РасторжениеДоговораАрендыПеременнаяЧастьАренднойПлаты.Ссылка.Дата,
+		"Расторжение договора аренды",
+		АР_РасторжениеДоговораАрендыПеременнаяЧастьАренднойПлаты.Услуга
+	ИЗ
+		Документ.АР_РасторжениеДоговораАренды.ПеременнаяЧастьАренднойПлаты КАК АР_РасторжениеДоговораАрендыПеременнаяЧастьАренднойПлаты
+	ГДЕ
+		АР_РасторжениеДоговораАрендыПеременнаяЧастьАренднойПлаты.Ссылка.Проведен
+		И АР_РасторжениеДоговораАрендыПеременнаяЧастьАренднойПлаты.СтавкаНДС = ЗНАЧЕНИЕ(Перечисление.СтавкиНДС.ПустаяСсылка)
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ РАЗЛИЧНЫЕ
+		АР_ДополнительноеСоглашениеПостояннаяЧастьАренднойПлаты.Ссылка,
+		АР_ДополнительноеСоглашениеПостояннаяЧастьАренднойПлаты.Ссылка.Организация,
+		АР_ДополнительноеСоглашениеПостояннаяЧастьАренднойПлаты.Ссылка.Контрагент,
+		АР_ДополнительноеСоглашениеПостояннаяЧастьАренднойПлаты.Ссылка.ДоговорКонтрагента,
+		АР_ДополнительноеСоглашениеПостояннаяЧастьАренднойПлаты.Ссылка.Дата,
+		"Дополнительное соглашение",
+		АР_ДополнительноеСоглашениеПостояннаяЧастьАренднойПлаты.Услуга
+	ИЗ
+		Документ.АР_ДополнительноеСоглашение.ПостояннаяЧастьАренднойПлаты КАК АР_ДополнительноеСоглашениеПостояннаяЧастьАренднойПлаты
+	ГДЕ
+		АР_ДополнительноеСоглашениеПостояннаяЧастьАренднойПлаты.Ссылка.Проведен
+		И АР_ДополнительноеСоглашениеПостояннаяЧастьАренднойПлаты.СтавкаНДС = ЗНАЧЕНИЕ(Перечисление.СтавкиНДС.ПустаяСсылка)
+	
+	ОБЪЕДИНИТЬ ВСЕ
+	
+	ВЫБРАТЬ РАЗЛИЧНЫЕ
+		АР_ДополнительноеСоглашениеПеременнаяЧастьАренднойПлаты.Ссылка,
+		АР_ДополнительноеСоглашениеПеременнаяЧастьАренднойПлаты.Ссылка.Организация,
+		АР_ДополнительноеСоглашениеПеременнаяЧастьАренднойПлаты.Ссылка.Контрагент,
+		АР_ДополнительноеСоглашениеПеременнаяЧастьАренднойПлаты.Ссылка.ДоговорКонтрагента,
+		АР_ДополнительноеСоглашениеПеременнаяЧастьАренднойПлаты.Ссылка.Дата,
+		"Дополнительное соглашение",
+		АР_ДополнительноеСоглашениеПеременнаяЧастьАренднойПлаты.Услуга
+	ИЗ
+		Документ.АР_ДополнительноеСоглашение.ПеременнаяЧастьАренднойПлаты КАК АР_ДополнительноеСоглашениеПеременнаяЧастьАренднойПлаты
+	ГДЕ
+		АР_ДополнительноеСоглашениеПеременнаяЧастьАренднойПлаты.Ссылка.Проведен
+		И АР_ДополнительноеСоглашениеПеременнаяЧастьАренднойПлаты.СтавкаНДС = ЗНАЧЕНИЕ(Перечисление.СтавкиНДС.ПустаяСсылка)) КАК ВложенныйЗапрос</query>
+	</dataSet>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Документ</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Организация</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Контрагент</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ДоговорКонтрагента</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Организация</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Дата</dcsset:left>
+					<dcsset:comparisonType>GreaterOrEqual</dcsset:comparisonType>
+					<dcsset:right xsi:type="v8:StandardBeginningDate">
+						<v8:variant xsi:type="v8:StandardBeginningDateVariant">Custom</v8:variant>
+						<v8:date>0001-01-01T00:00:00</v8:date>
+					</dcsset:right>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Услуга</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ВидДокумента</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Документ</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ДоговорКонтрагента</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Контрагент</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Организация</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

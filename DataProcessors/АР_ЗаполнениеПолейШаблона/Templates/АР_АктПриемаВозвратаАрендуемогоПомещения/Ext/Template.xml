@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>АктПриемаВозвратаАрендуемогоПомещения</dataPath>
+			<field>АктПриемаВозвратаАрендуемогоПомещения</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДополнительныеПоля.СписокОбъектовАрендыЧерезЗапятую</dataPath>
+			<field>СписокОбъектовАрендыЧерезЗапятую</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДополнительныеПоля.РуководительОрганизации</dataPath>
+			<field>РуководительОрганизации</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДополнительныеПоля.ТелефоныКонтрагента</dataPath>
+			<field>ТелефоныКонтрагента</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДополнительныеПоля.ТелефоныОрганизации</dataPath>
+			<field>ТелефоныОрганизации</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДополнительныеПоля.ФактическийАдресОрганизации</dataPath>
+			<field>ФактическийАдресОрганизации</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДополнительныеПоля.ЮридическийАдресКонтрагента</dataPath>
+			<field>ЮридическийАдресКонтрагента</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДополнительныеПоля.ЮридическийАдресОрганизации</dataPath>
+			<field>ЮридическийАдресОрганизации</field>
+		</field>
+		<field xsi:type="DataSetFieldFolder">
+			<dataPath>ДополнительныеПоля</dataPath>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дополнительные поля</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДополнительныеПоля.ОбщаяПлощадь</dataPath>
+			<field>ОбщаяПлощадь</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДополнительныеПоля.ФактическийАдресКонтрагента</dataPath>
+			<field>ФактическийАдресКонтрагента</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дополнительные поля.Фактический адрес контрагента</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	ЗНАЧЕНИЕ(Документ.АР_АктПриемаВозвратаАрендуемогоПомещения.ПустаяСсылка) КАК АктПриемаВозвратаАрендуемогоПомещения,
+	"" КАК СписокОбъектовАрендыЧерезЗапятую,
+	"" КАК ЮридическийАдресОрганизации,
+	"" КАК ФактическийАдресОрганизации,
+	"" КАК ТелефоныОрганизации,
+	"" КАК ТелефоныКонтрагента,
+	"" КАК ЮридическийАдресКонтрагента,
+	"" КАК ФактическийАдресКонтрагента,
+	"" КАК РуководительОрганизации,
+	"" КАК ОбщаяПлощадь
+ИЗ
+	Документ.АР_АктПриемаВозвратаАрендуемогоПомещения КАК АктПриемаВозвратаАрендуемогоПомещения
+</query>
+	</dataSet>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows"/>
+	</settingsVariant>
+</DataCompositionSchema>

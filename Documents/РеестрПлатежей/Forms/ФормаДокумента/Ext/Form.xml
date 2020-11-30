@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<InputField name="Номер" id="1">
+			<DataPath>Объект.Number</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="НомерКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="3"/>
+		</InputField>
+		<InputField name="Дата" id="4">
+			<DataPath>Объект.Date</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="6"/>
+		</InputField>
+		<InputField name="Организация" id="40">
+			<DataPath>Объект.Организация</DataPath>
+			<ContextMenu name="ОрганизацияКонтекстноеМеню" id="41"/>
+			<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="42"/>
+		</InputField>
+		<InputField name="ДатаОплаты" id="7">
+			<DataPath>Объект.ДатаОплаты</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Утвержденная дата оплаты</v8:content>
+				</v8:item>
+			</Title>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ДатаОплатыКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="ДатаОплатыРасширеннаяПодсказка" id="9"/>
+		</InputField>
+		<Table name="Заявки" id="10">
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Объект.Заявки</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ЗаявкиКонтекстноеМеню" id="11"/>
+			<AutoCommandBar name="ЗаявкиКоманднаяПанель" id="12">
+				<ChildItems>
+					<Button name="Заполнить1" id="38">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ЗаполнитьЗаявки</CommandName>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Заполнить</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="Заполнить1РасширеннаяПодсказка" id="39"/>
+					</Button>
+					<Button name="ЗаполнитьПлатежками" id="32">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ЗаполнитьПлатежками</CommandName>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Заполнить платежками</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ЗаполнитьПлатежкамиРасширеннаяПодсказка" id="33"/>
+					</Button>
+					<Button name="ЗаявкиСоздатьПлатежки" id="36">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.СоздатьПлатежки</CommandName>
+						<ExtendedTooltip name="ЗаявкиСоздатьПлатежкиРасширеннаяПодсказка" id="37"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ЗаявкиРасширеннаяПодсказка" id="13"/>
+			<SearchStringAddition name="ЗаявкиСтрокаПоиска" id="14">
+				<AdditionSource>
+					<Item>Заявки</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ЗаявкиСтрокаПоискаКонтекстноеМеню" id="15"/>
+				<ExtendedTooltip name="ЗаявкиСтрокаПоискаРасширеннаяПодсказка" id="16"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ЗаявкиСостояниеПросмотра" id="17">
+				<AdditionSource>
+					<Item>Заявки</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ЗаявкиСостояниеПросмотраКонтекстноеМеню" id="18"/>
+				<ExtendedTooltip name="ЗаявкиСостояниеПросмотраРасширеннаяПодсказка" id="19"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ЗаявкиУправлениеПоиском" id="20">
+				<AdditionSource>
+					<Item>Заявки</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ЗаявкиУправлениеПоискомКонтекстноеМеню" id="21"/>
+				<ExtendedTooltip name="ЗаявкиУправлениеПоискомРасширеннаяПодсказка" id="22"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="ЗаявкиНомерСтроки" id="23">
+					<DataPath>Объект.Заявки.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ЗаявкиНомерСтрокиКонтекстноеМеню" id="24"/>
+					<ExtendedTooltip name="ЗаявкиНомерСтрокиРасширеннаяПодсказка" id="25"/>
+				</LabelField>
+				<CheckBoxField name="ЗаявкиВыбран" id="26">
+					<DataPath>Объект.Заявки.Выбран</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ЗаявкиВыбранКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="ЗаявкиВыбранРасширеннаяПодсказка" id="28"/>
+				</CheckBoxField>
+				<InputField name="ЗаявкиЗаявка" id="29">
+					<DataPath>Объект.Заявки.Заявка</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ЗаявкиЗаявкаКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="ЗаявкиЗаявкаРасширеннаяПодсказка" id="31"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.РеестрПлатежей</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ЗаполнитьЗаявки" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить заявки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить заявки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаполнитьЗаявки</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СоздатьПлатежки" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать платежки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать платежки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СоздатьПлатежки</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ЗаполнитьПлатежками" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить платежками</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить платежками</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаполнитьПлатежками</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

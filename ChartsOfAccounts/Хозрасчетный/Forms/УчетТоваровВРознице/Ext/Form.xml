@@ -1,0 +1,314 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<CommandBarLocation>None</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="BeforeClose">ПередЗакрытием</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<CommandBar name="КоманднаяПанель" id="97">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Командная панель</v8:content>
+				</v8:item>
+			</Title>
+			<ExtendedTooltip name="КоманднаяПанельРасширеннаяПодсказка" id="98"/>
+			<ChildItems>
+				<Button name="ЗаписатьИЗакрыть" id="77">
+					<Type>CommandBarButton</Type>
+					<DefaultButton>true</DefaultButton>
+					<CommandName>Form.Command.ЗаписатьИЗакрыть</CommandName>
+					<ExtendedTooltip name="ЗаписатьИЗакрытьРасширеннаяПодсказка" id="78"/>
+				</Button>
+			</ChildItems>
+		</CommandBar>
+		<UsualGroup name="ГруппаРозничнаяТорговля" id="102">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Учет товаров в рознице ведется:</v8:content>
+				</v8:item>
+			</Title>
+			<TitleTextColor>style:FormTextColor</TitleTextColor>
+			<TitleFont ref="style:NormalTextFont" kind="StyleItem"/>
+			<Group>Vertical</Group>
+			<Representation>NormalSeparation</Representation>
+			<ExtendedTooltip name="ГруппаРозничнаяТорговляРасширеннаяПодсказка" id="103"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаПоСкладам" id="107">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>По складам</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаПоСкладамExtendedTooltip" id="108"/>
+					<ChildItems>
+						<PictureDecoration name="ДекорацияПоСкладамКартинка" id="109">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>По складам (картинка)</v8:content>
+								</v8:item>
+							</Title>
+							<Picture>
+								<xr:Ref>CommonPicture.ФлажокУзкий</xr:Ref>
+								<xr:LoadTransparent>false</xr:LoadTransparent>
+							</Picture>
+							<FileDragMode>AsFile</FileDragMode>
+							<ContextMenu name="ДекорацияПоСкладамКартинкаКонтекстноеМеню" id="110"/>
+							<ExtendedTooltip name="ДекорацияПоСкладамКартинкаExtendedTooltip" id="111"/>
+						</PictureDecoration>
+						<LabelDecoration name="ДекорацияПоСкладам" id="112">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>По складам</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияПоСкладамКонтекстноеМеню" id="113"/>
+							<ExtendedTooltip name="ДекорацияПоСкладамExtendedTooltip" id="114"/>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаИспользоватьОборотнуюНоменклатуру" id="115">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Использовать оборотную номенклатуру (группа)</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаИспользоватьОборотнуюНоменклатуруExtendedTooltip" id="116"/>
+					<ChildItems>
+						<CheckBoxField name="ИспользоватьОборотнуюНоменклатуру" id="117">
+							<DataPath>ИспользоватьОборотнуюНоменклатуру</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ИспользоватьОборотнуюНоменклатуруКонтекстноеМеню" id="118"/>
+							<ExtendedTooltip name="ИспользоватьОборотнуюНоменклатуруExtendedTooltip" id="119"/>
+							<Events>
+								<Event name="OnChange">ИспользоватьОборотнуюНоменклатуруПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<UsualGroup name="ГруппаИспользоватьОборотнуюНоменклатуруПредупреждениеАктивно" id="122">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Вести партионный учет (предупреждение активно)</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаИспользоватьОборотнуюНоменклатуруПредупреждениеАктивноExtendedTooltip" id="123"/>
+							<ChildItems>
+								<PictureDecoration name="ДекорацияВосклицательныйЗнакНоменклатура" id="124">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Восклицательный знак</v8:content>
+										</v8:item>
+									</Title>
+									<Picture>
+										<xr:Ref>CommonPicture.ВниманиеКрасный</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<FileDragMode>AsFile</FileDragMode>
+									<ContextMenu name="ДекорацияВосклицательныйЗнакНоменклатураКонтекстноеМеню" id="125"/>
+									<ExtendedTooltip name="ДекорацияВосклицательныйЗнакНоменклатураРасширеннаяПодсказка" id="126"/>
+								</PictureDecoration>
+								<LabelDecoration name="ДекорацияПредупреждениеНоменклатура" id="127">
+									<TextColor>style:ЗапрещенноеПравоДоступа</TextColor>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Изменение этой настройки может привести к потере данных</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Рекомендуется сделать резервную копию перед их изменением.</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ContextMenu name="ДекорацияПредупреждениеНоменклатураКонтекстноеМеню" id="128"/>
+									<ExtendedTooltip name="ДекорацияПредупреждениеНоменклатураРасширеннаяПодсказка" id="129"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаРазделятьПоСтавкамНДС" id="135">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Разделять по ставкам НДС (группа)</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаРазделятьПоСтавкамНДСExtendedTooltip" id="136"/>
+					<ChildItems>
+						<CheckBoxField name="РазделятьПоСтавкамНДС" id="137">
+							<DataPath>РазделятьПоСтавкамНДС</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="РазделятьПоСтавкамНДСКонтекстноеМеню" id="138"/>
+							<ExtendedTooltip name="РазделятьПоСтавкамНДСExtendedTooltip" id="139"/>
+							<Events>
+								<Event name="OnChange">РазделятьПоСтавкамНДСПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<UsualGroup name="ГруппаРазделятьПоСтавкамНДСПредупреждениеАктивно" id="142">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Вести партионный учет (предупреждение активно)</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаРазделятьПоСтавкамНДСПредупреждениеАктивноExtendedTooltip" id="143"/>
+							<ChildItems>
+								<PictureDecoration name="ДекорацияВосклицательныйЗнакНДС" id="144">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Восклицательный знак</v8:content>
+										</v8:item>
+									</Title>
+									<Picture>
+										<xr:Ref>CommonPicture.ВниманиеКрасный</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<FileDragMode>AsFile</FileDragMode>
+									<ContextMenu name="ДекорацияВосклицательныйЗнакНДСКонтекстноеМеню" id="145"/>
+									<ExtendedTooltip name="ДекорацияВосклицательныйЗнакНДСРасширеннаяПодсказка" id="146"/>
+								</PictureDecoration>
+								<LabelDecoration name="ДекорацияПредупреждениеНДС" id="147">
+									<TextColor>style:ЗапрещенноеПравоДоступа</TextColor>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Изменение этой настройки может привести к потере данных</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Рекомендуется сделать резервную копию перед их изменением.</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ContextMenu name="ДекорацияПредупреждениеНДСКонтекстноеМеню" id="148"/>
+									<ExtendedTooltip name="ДекорацияПредупреждениеНДСРасширеннаяПодсказка" id="149"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<LabelDecoration name="Примечание" id="99">
+			<TextColor>style:ПоясняющийТекст</TextColor>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройка управляет субконто на следующих счетах:
+41.12 "Товары в розничной торговле (в НТТ по продажной стоимости)";
+42.02 "Торговая наценка в неавтоматизированных торговых точках".</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ПримечаниеКонтекстноеМеню" id="100"/>
+			<ExtendedTooltip name="ПримечаниеРасширеннаяПодсказка" id="101"/>
+		</LabelDecoration>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ПараметрыУчета" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры учета</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="РазделятьПоСтавкамНДС" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>По ставкам НДС</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="РазделятьПоСтавкамНДСИсходноеЗначение" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>По ставкам НДС (исходное значение)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ИспользоватьОборотнуюНоменклатуру" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>По номенклатуре (обороты)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ИспользоватьОборотнуюНоменклатуруИсходноеЗначение" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>По номенклатуре (обороты) (исходное значение)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ЗаписатьИЗакрыть" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать и закрыть</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать и закрыть</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаписатьИЗакрыть</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

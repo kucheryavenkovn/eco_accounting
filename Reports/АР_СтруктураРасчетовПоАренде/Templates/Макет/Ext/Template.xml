@@ -1,0 +1,4016 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetUnion">
+		<name>НаборДанных</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Депозит</dataPath>
+			<field>Депозит</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Депозит</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+				<dcscom:required>true</dcscom:required>
+			</role>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">БЛ='Депозит: Нет'; БИ='Депозит: Да'</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДоговорКонтрагента</dataPath>
+			<field>ДоговорКонтрагента</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Договор контрагента</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбъектАренды</dataPath>
+			<field>ОбъектАренды</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Объект аренды</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+				<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
+			</role>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.АР_ОбъектыАренды</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПериодОплаты</dataPath>
+			<field>ПериодОплаты</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период оплаты</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+				<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
+			</role>
+			<presentationExpression>АР_ОбщиеПроцедуры.ПолучитьПредставлениеПериода(ПериодОплаты, ДоговорКонтрагента)</presentationExpression>
+			<valueType>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СчетНаАренду</dataPath>
+			<field>СчетНаАренду</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Счет на аренду</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+				<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
+			</role>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:DocumentRef.АР_СчетНаАренду</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Контрагент</dataPath>
+			<field>Контрагент</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контрагент</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Валюта</dataPath>
+			<field>Валюта</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Валюта</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДокументРасчетов</dataPath>
+			<field>ДокументРасчетов</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документ расчетов</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Организация</dataPath>
+			<field>Организация</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Организация</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Пени</dataPath>
+			<field>Пени</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пени</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+				<dcscom:required>true</dcscom:required>
+			</role>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">БЛ='Пени: Нет'; БИ='Пени: Да'</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Период</dataPath>
+			<field>Период</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПериодАренды</dataPath>
+			<field>ПериодАренды</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>УслугаАренды</dataPath>
+			<field>УслугаАренды</field>
+			<role>
+				<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
+			</role>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.Номенклатура</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидЗадолженности</dataPath>
+			<field>ВидЗадолженности</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид задолженности</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+			<orderExpression>
+				<dcscom:expression>ВЫБОР КОГДА ВидЗадолженности = "Основная сумма" ТОГДА 0 КОГДА ВидЗадолженности = "Пени" ТОГДА 1 ИНАЧЕ 2 КОНЕЦ</dcscom:expression>
+				<dcscom:orderType>Asc</dcscom:orderType>
+				<dcscom:autoOrder>false</dcscom:autoOrder>
+			</orderExpression>
+			<valueType>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>15</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</valueType>
+			<availableValue>
+				<value xsi:type="xs:string">Основная сумма</value>
+				<presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Основная сумма</v8:content>
+					</v8:item>
+				</presentation>
+			</availableValue>
+			<availableValue>
+				<value xsi:type="xs:string">Пени</value>
+				<presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Пени</v8:content>
+					</v8:item>
+				</presentation>
+			</availableValue>
+			<availableValue>
+				<value xsi:type="xs:string">Депозит</value>
+				<presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Депозит</v8:content>
+					</v8:item>
+				</presentation>
+			</availableValue>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОсновнойДолг.ОсновнойДолгОплачено</dataPath>
+			<field>ОсновнойДолг.ОсновнойДолгОплачено</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основная сумма (Оплачено)</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОсновнойДолг.ОсновнойДолгНачислено</dataPath>
+			<field>ОсновнойДолг.ОсновнойДолгНачислено</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основная сумма (Начислено)</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОсновнойДолг.ОсновнойДолгНачальныйОстаток</dataPath>
+			<field>ОсновнойДолг.ОсновнойДолгНачальныйОстаток</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основная сумма (Долг на начало периода)</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОсновнойДолг.ОсновнойДолгКонечныйОстаток</dataPath>
+			<field>ОсновнойДолг.ОсновнойДолгКонечныйОстаток</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основная сумма (Долг на конец периода)</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОсновнойДолгВал.ОсновнойДолгВалНачальныйОстаток</dataPath>
+			<field>ОсновнойДолгВал.ОсновнойДолгВалНачальныйОстаток</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основная сумма в валюте договора (Долг на начало периода)</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОсновнойДолгВал.ОсновнойДолгВалНачислено</dataPath>
+			<field>ОсновнойДолгВал.ОсновнойДолгВалНачислено</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основная сумма в валюте договора (Начислено)</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОсновнойДолгВал.ОсновнойДолгВалОплачено</dataPath>
+			<field>ОсновнойДолгВал.ОсновнойДолгВалОплачено</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основная сумма в валюте договора (Оплачено)</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОсновнойДолгВал.ОсновнойДолгВалКонечныйОстаток</dataPath>
+			<field>ОсновнойДолгВал.ОсновнойДолгВалКонечныйОстаток</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основная сумма в валюте договора (Долг на конец периода)</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldFolder">
+			<dataPath>ОсновнойДолг</dataPath>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основная сумма</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldFolder">
+			<dataPath>ОсновнойДолгВал</dataPath>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основная сумма в валюте договора</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПениВал.ПениВалОплачено</dataPath>
+			<field>ПениВал.ПениВалОплачено</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пени в валюте договора (Оплачено)</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаПени.ПениНачислено</dataPath>
+			<field>ГруппаПени.ПениНачислено</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пени (Начислено)</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаПени.ПениНачальныйОстаток</dataPath>
+			<field>ГруппаПени.ПениНачальныйОстаток</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пени (Долг на начало периода)</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаПени.ПениОплачено</dataPath>
+			<field>ГруппаПени.ПениОплачено</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пени (Оплачено)</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаПени.ПениКонечныйОстаток</dataPath>
+			<field>ГруппаПени.ПениКонечныйОстаток</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пени (Долг на конец периода)</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПениВал.ПениВалНачальныйОстаток</dataPath>
+			<field>ПениВал.ПениВалНачальныйОстаток</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пени в валюте договора (Долг на начало периода)</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПениВал.ПениВалНачислено</dataPath>
+			<field>ПениВал.ПениВалНачислено</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пени в валюте договора (Начислено)</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПениВал.ПениВалКонечныйОстаток</dataPath>
+			<field>ПениВал.ПениВалКонечныйОстаток</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пени в валюте договора (Долг на конец периода)</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldFolder">
+			<dataPath>ГруппаПени</dataPath>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пени</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldFolder">
+			<dataPath>ПениВал</dataPath>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пени в валюте договора</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаДепозит.ДепозитКонечныйОстаток</dataPath>
+			<field>ДепозитКонечныйОстаток</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Депозит (Остаток на конец периода)</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаДепозит.ДепозитНачальныйОстаток</dataPath>
+			<field>ДепозитНачальныйОстаток</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Депозит (Остаток на начало периода)</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДепозитВал.ДепозитВалКонечныйОстаток</dataPath>
+			<field>ДепозитВалКонечныйОстаток</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Депозит в валюте договора (Остаток на конец периода)</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДепозитВал.ДепозитВалОплачено</dataPath>
+			<field>ДепозитВалОплачено</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Депозит в валюте договора (Оплачено)</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаДепозит.ДепозитОплачено</dataPath>
+			<field>ДепозитОплачено</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Депозит (Оплачено)</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДепозитВал.ДепозитВалНачальныйОстаток</dataPath>
+			<field>ДепозитВалНачальныйОстаток</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Депозит в валюте договора (Остаток на начало периода)</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаДепозит.ДепозитЗачтено</dataPath>
+			<field>ДепозитЗачтено</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Депозит (Зачтено)</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДепозитВал.ДепозитВалЗачтено</dataPath>
+			<field>ДепозитВалЗачтено</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Депозит в валюте договора (Зачтено)</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldFolder">
+			<dataPath>ГруппаДепозит</dataPath>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Депозит</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldFolder">
+			<dataPath>ДепозитВал</dataPath>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Депозит в валюте договора</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбщаяСумма.ОбщаяСуммаНачислено</dataPath>
+			<field>ОбщаяСуммаНачислено</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Общая сумма (Начислено)</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбщаяСумма.ОбщаяСуммаНачальныйОстаток</dataPath>
+			<field>ОбщаяСуммаНачальныйОстаток</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Общая сумма (Долг на начало периода)</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбщаяСумма.ОбщаяСуммаОплачено</dataPath>
+			<field>ОбщаяСуммаОплачено</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Общая сумма (Оплачено)</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбщаяСумма.ОбщаяСуммаКонечныйОстаток</dataPath>
+			<field>ОбщаяСуммаКонечныйОстаток</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Общая сумма (Долг на конец периода)</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбщаяСуммаВал.ОбщаяСуммаВалНачальныйОстаток</dataPath>
+			<field>ОбщаяСуммаВалНачальныйОстаток</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Общая сумма в валюте договора (Долг на начало периода)</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбщаяСуммаВал.ОбщаяСуммаВалНачислено</dataPath>
+			<field>ОбщаяСуммаВалНачислено</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Общая сумма в валюте договора (Начислено)</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбщаяСуммаВал.ОбщаяСуммаВалОплачено</dataPath>
+			<field>ОбщаяСуммаВалОплачено</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Общая сумма в валюте договора (Оплачено)</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбщаяСуммаВал.ОбщаяСуммаВалКонечныйОстаток</dataPath>
+			<field>ОбщаяСуммаВалКонечныйОстаток</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Общая сумма в валюте договора (Долг на конец периода)</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldFolder">
+			<dataPath>ОбщаяСумма</dataPath>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Общая сумма (основная сумма + пени)</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldFolder">
+			<dataPath>ОбщаяСуммаВал</dataPath>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Общая сумма в валюте договора (основная сумма + пени)</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ГруппаДепозит.ДепозитПоДоговору</dataPath>
+			<field>ДепозитПоДоговору</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Депозит по договору</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">15</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">15</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДепозитВал.ДепозитПоДоговоруВал</dataPath>
+			<field>ДепозитПоДоговоруВал</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Депозит по договору в валюте договора</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">15</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">15</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Регистратор</dataPath>
+			<field>Регистратор</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Площадь</dataPath>
+			<field>Площадь</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Площадь</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<item xsi:type="DataSetQuery">
+			<name>ОсновныеДанные</name>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Депозит</dataPath>
+				<field>Депозит</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Депозит</v8:content>
+					</v8:item>
+				</title>
+				<useRestriction>
+					<condition>true</condition>
+				</useRestriction>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+				<appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Формат</dcscor:parameter>
+						<dcscor:value xsi:type="xs:string">БЛ='Депозит: Нет'; БИ='Депозит: Да'</dcscor:value>
+					</dcscor:item>
+				</appearance>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ДоговорКонтрагента</dataPath>
+				<field>ДоговорКонтрагента</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Договор контрагента</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ОбъектАренды</dataPath>
+				<field>ОбъектАренды</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Объект аренды</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПериодОплаты</dataPath>
+				<field>ПериодОплаты</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Период оплаты</v8:content>
+					</v8:item>
+				</title>
+				<presentationExpression>АР_ОбщиеПроцедуры.ПолучитьПредставлениеПериода(ПериодОплаты, ДоговорКонтрагента)</presentationExpression>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>СчетНаАренду</dataPath>
+				<field>СчетНаАренду</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Счет на аренду</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Контрагент</dataPath>
+				<field>Контрагент</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Контрагент</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Валюта</dataPath>
+				<field>Валюта</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Валюта</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ДокументРасчетов</dataPath>
+				<field>ДокументРасчетов</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Документ расчетов</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Организация</dataPath>
+				<field>Организация</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Организация</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Пени</dataPath>
+				<field>Пени</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Пени</v8:content>
+					</v8:item>
+				</title>
+				<useRestriction>
+					<condition>true</condition>
+				</useRestriction>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+				<appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Формат</dcscor:parameter>
+						<dcscor:value xsi:type="xs:string">БЛ='Пени: Нет'; БИ='Пени: Да'</dcscor:value>
+					</dcscor:item>
+				</appearance>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПериодАренды</dataPath>
+				<field>ПериодАренды</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>УслугаАренды</dataPath>
+				<field>УслугаАренды</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ВидЗадолженности</dataPath>
+				<field>ВидЗадолженности</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Вид задолженности</v8:content>
+					</v8:item>
+				</title>
+				<orderExpression>
+					<dcscom:expression>ВЫБОР КОГДА ВидЗадолженности = "Основной долг" ТОГДА 0 КОГДА ВидЗадолженности = "Пени" ТОГДА 1 ИНАЧЕ 2 КОНЕЦ</dcscom:expression>
+					<dcscom:orderType>Asc</dcscom:orderType>
+					<dcscom:autoOrder>false</dcscom:autoOrder>
+				</orderExpression>
+				<valueType>
+					<v8:Type>xs:string</v8:Type>
+					<v8:StringQualifiers>
+						<v8:Length>15</v8:Length>
+						<v8:AllowedLength>Variable</v8:AllowedLength>
+					</v8:StringQualifiers>
+				</valueType>
+				<availableValue>
+					<value xsi:type="xs:string">Основной долг</value>
+				</availableValue>
+				<availableValue>
+					<value xsi:type="xs:string">Пени</value>
+				</availableValue>
+				<availableValue>
+					<value xsi:type="xs:string">Депозит</value>
+				</availableValue>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ОсновнойДолг.ОсновнойДолгОплачено</dataPath>
+				<field>ОсновнойДолгОплачено</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Основной долг (Оплачено)</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ОсновнойДолг.ОсновнойДолгНачислено</dataPath>
+				<field>ОсновнойДолгНачислено</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Основной долг (Начислено)</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ОсновнойДолг.ОсновнойДолгНачальныйОстаток</dataPath>
+				<field>ОсновнойДолгНачальныйОстаток</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Основной долг (Начальный остаток)</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ОсновнойДолг.ОсновнойДолгКонечныйОстаток</dataPath>
+				<field>ОсновнойДолгКонечныйОстаток</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Основной долг (Конечный остаток)</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ОсновнойДолгВал.ОсновнойДолгВалНачальныйОстаток</dataPath>
+				<field>ОсновнойДолгВалНачальныйОстаток</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Основной долг в валюте договора (Начальный остаток)</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ОсновнойДолгВал.ОсновнойДолгВалНачислено</dataPath>
+				<field>ОсновнойДолгВалНачислено</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Основной долг в валюте договора (Начислено)</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ОсновнойДолгВал.ОсновнойДолгВалОплачено</dataPath>
+				<field>ОсновнойДолгВалОплачено</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Основной долг в валюте договора (Оплачено)</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ОсновнойДолгВал.ОсновнойДолгВалКонечныйОстаток</dataPath>
+				<field>ОсновнойДолгВалКонечныйОстаток</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Основной долг в валюте договора (Конечный остаток)</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldFolder">
+				<dataPath>ОсновнойДолг</dataPath>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Основной долг</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldFolder">
+				<dataPath>ОсновнойДолгВал</dataPath>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Основной долг в валюте договора</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПениВал.ПениВалОплачено</dataPath>
+				<field>ПениВалОплачено</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Пени в валюте договора (Оплачено)</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ГруппаПени.ПениНачислено</dataPath>
+				<field>ПениНачислено</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Пени (Начислено)</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ГруппаПени.ПениНачальныйОстаток</dataPath>
+				<field>ПениНачальныйОстаток</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Пени (Начальный остаток)</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ГруппаПени.ПениОплачено</dataPath>
+				<field>ПениОплачено</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Пени (Оплачено)</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ГруппаПени.ПениКонечныйОстаток</dataPath>
+				<field>ПениКонечныйОстаток</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Пени (Конечный остаток)</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПениВал.ПениВалНачальныйОстаток</dataPath>
+				<field>ПениВалНачальныйОстаток</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Пени в валюте договора (Начальный остаток)</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПениВал.ПениВалНачислено</dataPath>
+				<field>ПениВалНачислено</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Пени в валюте договора (Начислено)</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПениВал.ПениВалКонечныйОстаток</dataPath>
+				<field>ПениВалКонечныйОстаток</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Пени в валюте договора (Конечный остаток)</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldFolder">
+				<dataPath>ГруппаПени</dataPath>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Пени</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldFolder">
+				<dataPath>ПениВал</dataPath>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Пени в валюте договора</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ДепозитКонечныйОстаток</dataPath>
+				<field>ДепозитКонечныйОстаток</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Депозит конечный остаток</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ДепозитНачальныйОстаток</dataPath>
+				<field>ДепозитНачальныйОстаток</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Депозит начальный остаток</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ДепозитВалКонечныйОстаток</dataPath>
+				<field>ДепозитВалКонечныйОстаток</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Депозит вал конечный остаток</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ДепозитВалНачальныйОстаток</dataPath>
+				<field>ДепозитВалНачальныйОстаток</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Депозит вал начальный остаток</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ОбщаяСуммаНачислено</dataPath>
+				<field>ОбщаяСуммаНачислено</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Общая сумма начислено</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ОбщаяСуммаНачальныйОстаток</dataPath>
+				<field>ОбщаяСуммаНачальныйОстаток</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Общая сумма начальный остаток</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ОбщаяСуммаОплачено</dataPath>
+				<field>ОбщаяСуммаОплачено</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Общая сумма оплачено</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ОбщаяСуммаКонечныйОстаток</dataPath>
+				<field>ОбщаяСуммаКонечныйОстаток</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Общая сумма конечный остаток</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ОбщаяСуммаВалНачальныйОстаток</dataPath>
+				<field>ОбщаяСуммаВалНачальныйОстаток</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Общая сумма вал начальный остаток</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ОбщаяСуммаВалНачислено</dataPath>
+				<field>ОбщаяСуммаВалНачислено</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Общая сумма вал начислено</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ОбщаяСуммаВалОплачено</dataPath>
+				<field>ОбщаяСуммаВалОплачено</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Общая сумма вал оплачено</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ОбщаяСуммаВалКонечныйОстаток</dataPath>
+				<field>ОбщаяСуммаВалКонечныйОстаток</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Общая сумма вал конечный остаток</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Площадь</dataPath>
+				<field>Площадь</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Площадь</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Период</dataPath>
+				<field>Период</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Период</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:periodNumber>2</dcscom:periodNumber>
+					<dcscom:periodType>Main</dcscom:periodType>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Регистратор</dataPath>
+				<field>Регистратор</field>
+				<role>
+					<dcscom:periodNumber>1</dcscom:periodNumber>
+					<dcscom:periodType>Main</dcscom:periodType>
+				</role>
+			</field>
+			<dataSource>ИсточникДанных1</dataSource>
+			<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВзаиморасчетыПоАренде.ДоговорКонтрагента КАК ДоговорКонтрагента,
+	ВЫБОР
+		КОГДА ВзаиморасчетыПоАренде.Депозит
+			ТОГДА NULL
+		ИНАЧЕ ВзаиморасчетыПоАренде.УслугаАренды
+	КОНЕЦ КАК УслугаАренды,
+	ВЫБОР
+		КОГДА ВзаиморасчетыПоАренде.Депозит
+			ТОГДА NULL
+		ИНАЧЕ ВзаиморасчетыПоАренде.ОбъектАренды
+	КОНЕЦ КАК ОбъектАренды,
+	ВЫБОР
+		КОГДА ВзаиморасчетыПоАренде.Депозит
+			ТОГДА NULL
+		ИНАЧЕ ВзаиморасчетыПоАренде.ОбъектАренды.ЗначениеХарактеристики
+	КОНЕЦ КАК Площадь,
+	ВЫБОР
+		КОГДА ВзаиморасчетыПоАренде.Депозит
+			ТОГДА NULL
+		ИНАЧЕ ВзаиморасчетыПоАренде.СчетНаАренду
+	КОНЕЦ КАК СчетНаАренду,
+	ВЫБОР
+		КОГДА ВзаиморасчетыПоАренде.Депозит
+			ТОГДА NULL
+		ИНАЧЕ ВзаиморасчетыПоАренде.ПериодАренды
+	КОНЕЦ КАК ПериодОплаты,
+	ВЫБОР
+		КОГДА НЕ ВзаиморасчетыПоАренде.Депозит
+			ТОГДА ВзаиморасчетыПоАренде.СуммаНачальныйОстаток
+		ИНАЧЕ 0
+	КОНЕЦ КАК ОбщаяСуммаНачальныйОстаток,
+	ВЫБОР
+		КОГДА НЕ ВзаиморасчетыПоАренде.Депозит
+			ТОГДА ВзаиморасчетыПоАренде.СуммаПриход
+		ИНАЧЕ 0
+	КОНЕЦ КАК ОбщаяСуммаНачислено,
+	ВЫБОР
+		КОГДА НЕ ВзаиморасчетыПоАренде.Депозит
+			ТОГДА ВзаиморасчетыПоАренде.СуммаРасход
+		ИНАЧЕ 0
+	КОНЕЦ КАК ОбщаяСуммаОплачено,
+	ВЫБОР
+		КОГДА НЕ ВзаиморасчетыПоАренде.Депозит
+			ТОГДА ВзаиморасчетыПоАренде.СуммаКонечныйОстаток
+		ИНАЧЕ 0
+	КОНЕЦ КАК ОбщаяСуммаКонечныйОстаток,
+	ВЫБОР
+		КОГДА НЕ ВзаиморасчетыПоАренде.Депозит
+			ТОГДА ВзаиморасчетыПоАренде.СуммаВзаиморасчетовНачальныйОстаток
+		ИНАЧЕ 0
+	КОНЕЦ КАК ОбщаяСуммаВалНачальныйОстаток,
+	ВЫБОР
+		КОГДА НЕ ВзаиморасчетыПоАренде.Депозит
+			ТОГДА ВзаиморасчетыПоАренде.СуммаВзаиморасчетовПриход
+		ИНАЧЕ 0
+	КОНЕЦ КАК ОбщаяСуммаВалНачислено,
+	ВЫБОР
+		КОГДА НЕ ВзаиморасчетыПоАренде.Депозит
+			ТОГДА ВзаиморасчетыПоАренде.СуммаВзаиморасчетовРасход
+		ИНАЧЕ 0
+	КОНЕЦ КАК ОбщаяСуммаВалОплачено,
+	ВЫБОР
+		КОГДА НЕ ВзаиморасчетыПоАренде.Депозит
+			ТОГДА ВзаиморасчетыПоАренде.СуммаВзаиморасчетовКонечныйОстаток
+		ИНАЧЕ 0
+	КОНЕЦ КАК ОбщаяСуммаВалКонечныйОстаток,
+	ВЫБОР
+		КОГДА НЕ ВзаиморасчетыПоАренде.Пени
+				И НЕ ВзаиморасчетыПоАренде.Депозит
+			ТОГДА ВзаиморасчетыПоАренде.СуммаНачальныйОстаток
+		ИНАЧЕ 0
+	КОНЕЦ КАК ОсновнойДолгНачальныйОстаток,
+	ВЫБОР
+		КОГДА НЕ ВзаиморасчетыПоАренде.Пени
+				И НЕ ВзаиморасчетыПоАренде.Депозит
+			ТОГДА ВзаиморасчетыПоАренде.СуммаПриход
+		ИНАЧЕ 0
+	КОНЕЦ КАК ОсновнойДолгНачислено,
+	ВЫБОР
+		КОГДА НЕ ВзаиморасчетыПоАренде.Пени
+				И НЕ ВзаиморасчетыПоАренде.Депозит
+			ТОГДА ВзаиморасчетыПоАренде.СуммаРасход
+		ИНАЧЕ 0
+	КОНЕЦ КАК ОсновнойДолгОплачено,
+	ВЫБОР
+		КОГДА НЕ ВзаиморасчетыПоАренде.Пени
+				И НЕ ВзаиморасчетыПоАренде.Депозит
+			ТОГДА ВзаиморасчетыПоАренде.СуммаКонечныйОстаток
+		ИНАЧЕ 0
+	КОНЕЦ КАК ОсновнойДолгКонечныйОстаток,
+	ВЫБОР
+		КОГДА НЕ ВзаиморасчетыПоАренде.Пени
+				И НЕ ВзаиморасчетыПоАренде.Депозит
+			ТОГДА ВзаиморасчетыПоАренде.СуммаВзаиморасчетовНачальныйОстаток
+		ИНАЧЕ 0
+	КОНЕЦ КАК ОсновнойДолгВалНачальныйОстаток,
+	ВЫБОР
+		КОГДА НЕ ВзаиморасчетыПоАренде.Пени
+				И НЕ ВзаиморасчетыПоАренде.Депозит
+			ТОГДА ВзаиморасчетыПоАренде.СуммаВзаиморасчетовПриход
+		ИНАЧЕ 0
+	КОНЕЦ КАК ОсновнойДолгВалНачислено,
+	ВЫБОР
+		КОГДА НЕ ВзаиморасчетыПоАренде.Пени
+				И НЕ ВзаиморасчетыПоАренде.Депозит
+			ТОГДА ВзаиморасчетыПоАренде.СуммаВзаиморасчетовРасход
+		ИНАЧЕ 0
+	КОНЕЦ КАК ОсновнойДолгВалОплачено,
+	ВЫБОР
+		КОГДА НЕ ВзаиморасчетыПоАренде.Пени
+				И НЕ ВзаиморасчетыПоАренде.Депозит
+			ТОГДА ВзаиморасчетыПоАренде.СуммаВзаиморасчетовКонечныйОстаток
+		ИНАЧЕ 0
+	КОНЕЦ КАК ОсновнойДолгВалКонечныйОстаток,
+	ВЫБОР
+		КОГДА ВзаиморасчетыПоАренде.Пени
+			ТОГДА ВзаиморасчетыПоАренде.СуммаНачальныйОстаток
+		ИНАЧЕ 0
+	КОНЕЦ КАК ПениНачальныйОстаток,
+	ВЫБОР
+		КОГДА ВзаиморасчетыПоАренде.Пени
+			ТОГДА ВзаиморасчетыПоАренде.СуммаПриход
+		ИНАЧЕ 0
+	КОНЕЦ КАК ПениНачислено,
+	ВЫБОР
+		КОГДА ВзаиморасчетыПоАренде.Пени
+			ТОГДА ВзаиморасчетыПоАренде.СуммаРасход
+		ИНАЧЕ 0
+	КОНЕЦ КАК ПениОплачено,
+	ВЫБОР
+		КОГДА ВзаиморасчетыПоАренде.Пени
+			ТОГДА ВзаиморасчетыПоАренде.СуммаКонечныйОстаток
+		ИНАЧЕ 0
+	КОНЕЦ КАК ПениКонечныйОстаток,
+	ВЫБОР
+		КОГДА ВзаиморасчетыПоАренде.Пени
+			ТОГДА ВзаиморасчетыПоАренде.СуммаВзаиморасчетовНачальныйОстаток
+		ИНАЧЕ 0
+	КОНЕЦ КАК ПениВалНачальныйОстаток,
+	ВЫБОР
+		КОГДА ВзаиморасчетыПоАренде.Пени
+			ТОГДА ВзаиморасчетыПоАренде.СуммаВзаиморасчетовПриход
+		ИНАЧЕ 0
+	КОНЕЦ КАК ПениВалНачислено,
+	ВЫБОР
+		КОГДА ВзаиморасчетыПоАренде.Пени
+			ТОГДА ВзаиморасчетыПоАренде.СуммаВзаиморасчетовРасход
+		ИНАЧЕ 0
+	КОНЕЦ КАК ПениВалОплачено,
+	ВЫБОР
+		КОГДА ВзаиморасчетыПоАренде.Пени
+			ТОГДА ВзаиморасчетыПоАренде.СуммаВзаиморасчетовКонечныйОстаток
+		ИНАЧЕ 0
+	КОНЕЦ КАК ПениВалКонечныйОстаток,
+	ВЫБОР
+		КОГДА НЕ ВзаиморасчетыПоАренде.Пени
+				И ВзаиморасчетыПоАренде.Депозит
+			ТОГДА -ВзаиморасчетыПоАренде.СуммаНачальныйОстаток
+		ИНАЧЕ 0
+	КОНЕЦ КАК ДепозитНачальныйОстаток,
+	ВЫБОР
+		КОГДА НЕ ВзаиморасчетыПоАренде.Пени
+				И ВзаиморасчетыПоАренде.Депозит
+			ТОГДА -ВзаиморасчетыПоАренде.СуммаКонечныйОстаток
+		ИНАЧЕ 0
+	КОНЕЦ КАК ДепозитКонечныйОстаток,
+	ВЫБОР
+		КОГДА НЕ ВзаиморасчетыПоАренде.Пени
+				И ВзаиморасчетыПоАренде.Депозит
+			ТОГДА -ВзаиморасчетыПоАренде.СуммаВзаиморасчетовНачальныйОстаток
+		ИНАЧЕ 0
+	КОНЕЦ КАК ДепозитВалНачальныйОстаток,
+	ВЫБОР
+		КОГДА НЕ ВзаиморасчетыПоАренде.Пени
+				И ВзаиморасчетыПоАренде.Депозит
+			ТОГДА -ВзаиморасчетыПоАренде.СуммаВзаиморасчетовКонечныйОстаток
+		ИНАЧЕ 0
+	КОНЕЦ КАК ДепозитВалКонечныйОстаток,
+	ВзаиморасчетыПоАренде.Регистратор КАК Регистратор,
+	ВзаиморасчетыПоАренде.Контрагент КАК Контрагент,
+	ВзаиморасчетыПоАренде.Организация КАК Организация,
+	ВзаиморасчетыПоАренде.ПериодСекунда КАК Период,
+	ВзаиморасчетыПоАренде.ДокументРасчетов КАК ДокументРасчетов,
+	ВЫБОР
+		КОГДА НЕ ВзаиморасчетыПоАренде.Пени
+				И НЕ ВзаиморасчетыПоАренде.Депозит
+			ТОГДА "Основная сумма"
+		КОГДА ВзаиморасчетыПоАренде.Пени
+			ТОГДА "Пени"
+		КОГДА НЕ ВзаиморасчетыПоАренде.Пени
+				И ВзаиморасчетыПоАренде.Депозит
+			ТОГДА "Депозит"
+		ИНАЧЕ ""
+	КОНЕЦ КАК ВидЗадолженности,
+	ВзаиморасчетыПоАренде.Депозит КАК Депозит,
+	ВзаиморасчетыПоАренде.Пени КАК Пени
+ИЗ
+	РегистрНакопления.АР_ВзаиморасчетыПоАренде.ОстаткиИОбороты(, , Авто, Движения, ) КАК ВзаиморасчетыПоАренде</query>
+		</item>
+		<item xsi:type="DataSetQuery">
+			<name>ДанныеВзаиморасчетыПоДепозиту</name>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ДоговорКонтрагента</dataPath>
+				<field>ДоговорКонтрагента</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ДепозитВалОплачено</dataPath>
+				<field>ДепозитВалОплачено</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Депозит вал оплачено</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ДепозитОплачено</dataPath>
+				<field>ДепозитОплачено</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Депозит оплачено</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ВидЗадолженности</dataPath>
+				<field>ВидЗадолженности</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Вид задолженности</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Период</dataPath>
+				<field>Период</field>
+				<role>
+					<dcscom:periodNumber>2</dcscom:periodNumber>
+					<dcscom:periodType>Main</dcscom:periodType>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Контрагент</dataPath>
+				<field>Контрагент</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Организация</dataPath>
+				<field>Организация</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ДокументРасчетов</dataPath>
+				<field>ДокументРасчетов</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ДепозитЗачтено</dataPath>
+				<field>ДепозитЗачтено</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Депозит зачтено</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ДепозитВалЗачтено</dataPath>
+				<field>ДепозитВалЗачтено</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Депозит вал зачтено</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПериодОплаты</dataPath>
+				<field>ПериодОплаты</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Период оплаты</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Пени</dataPath>
+				<field>Пени</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Депозит</dataPath>
+				<field>Депозит</field>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Регистратор</dataPath>
+				<field>Регистратор</field>
+				<role>
+					<dcscom:periodNumber>1</dcscom:periodNumber>
+					<dcscom:periodType>Main</dcscom:periodType>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>УслугаАренды</dataPath>
+				<field>УслугаАренды</field>
+				<valueType>
+					<v8:Type xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d6p1:CatalogRef.Номенклатура</v8:Type>
+				</valueType>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ОбъектАренды</dataPath>
+				<field>ОбъектАренды</field>
+				<valueType>
+					<v8:Type xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d6p1:CatalogRef.АР_ОбъектыАренды</v8:Type>
+				</valueType>
+			</field>
+			<dataSource>ИсточникДанных1</dataSource>
+			<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВзаиморасчетыПоАренде.ДоговорКонтрагента КАК ДоговорКонтрагента,
+	ВзаиморасчетыПоАренде.Контрагент КАК Контрагент,
+	ВзаиморасчетыПоАренде.Организация КАК Организация,
+	ВзаиморасчетыПоАренде.ДокументРасчетов КАК ДокументРасчетов,
+	NULL КАК ПериодОплаты,
+	ВЫБОР
+		КОГДА НЕ ВзаиморасчетыПоАренде.Пени
+				И ВзаиморасчетыПоАренде.Депозит
+				И ВзаиморасчетыПоАренде.Сумма &gt; 0
+			ТОГДА ВзаиморасчетыПоАренде.Сумма
+		ИНАЧЕ 0
+	КОНЕЦ КАК ДепозитОплачено,
+	ВЫБОР
+		КОГДА НЕ ВзаиморасчетыПоАренде.Пени
+				И ВзаиморасчетыПоАренде.Депозит
+				И ВзаиморасчетыПоАренде.Сумма &lt; 0
+			ТОГДА -ВзаиморасчетыПоАренде.Сумма
+		ИНАЧЕ 0
+	КОНЕЦ КАК ДепозитЗачтено,
+	ВЫБОР
+		КОГДА НЕ ВзаиморасчетыПоАренде.Пени
+				И ВзаиморасчетыПоАренде.Депозит
+				И ВзаиморасчетыПоАренде.СуммаВзаиморасчетов &gt; 0
+			ТОГДА ВзаиморасчетыПоАренде.СуммаВзаиморасчетов
+		ИНАЧЕ 0
+	КОНЕЦ КАК ДепозитВалОплачено,
+	ВЫБОР
+		КОГДА НЕ ВзаиморасчетыПоАренде.Пени
+				И ВзаиморасчетыПоАренде.Депозит
+				И ВзаиморасчетыПоАренде.СуммаВзаиморасчетов &lt; 0
+			ТОГДА -ВзаиморасчетыПоАренде.СуммаВзаиморасчетов
+		ИНАЧЕ 0
+	КОНЕЦ КАК ДепозитВалЗачтено,
+	ВзаиморасчетыПоАренде.Регистратор КАК Регистратор,
+	ВзаиморасчетыПоАренде.Период КАК Период,
+	"Депозит" КАК ВидЗадолженности,
+	ВзаиморасчетыПоАренде.Депозит КАК Депозит,
+	ВзаиморасчетыПоАренде.Пени КАК Пени,
+	NULL КАК УслугаАренды,
+	NULL КАК ОбъектАренды
+ИЗ
+	РегистрНакопления.АР_ВзаиморасчетыПоАренде КАК ВзаиморасчетыПоАренде
+ГДЕ
+	НЕ ВзаиморасчетыПоАренде.Пени
+	И ВзаиморасчетыПоАренде.Депозит
+	И ВзаиморасчетыПоАренде.Период &gt;= &amp;НачалоПериода
+	И (ВзаиморасчетыПоАренде.Период &lt;= &amp;КонецПериода
+			ИЛИ &amp;КонецПериода = ДАТАВРЕМЯ(1, 1, 1))</query>
+		</item>
+		<item xsi:type="DataSetObject">
+			<name>ДанныеПоУсловиямДоговора</name>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Организация</dataPath>
+				<field>Организация</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Организация</v8:content>
+					</v8:item>
+				</title>
+				<valueType>
+					<v8:Type xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d6p1:CatalogRef.Организации</v8:Type>
+				</valueType>
+				<appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Размещение</dcscor:parameter>
+						<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Wrap</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:use>false</dcscor:use>
+						<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+						<dcscor:value xsi:type="xs:decimal">12</dcscor:value>
+					</dcscor:item>
+				</appearance>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Контрагент</dataPath>
+				<field>Контрагент</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Контрагент</v8:content>
+					</v8:item>
+				</title>
+				<valueType>
+					<v8:Type xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d6p1:CatalogRef.Контрагенты</v8:Type>
+				</valueType>
+				<appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Размещение</dcscor:parameter>
+						<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Wrap</dcscor:value>
+					</dcscor:item>
+				</appearance>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ДоговорКонтрагента</dataPath>
+				<field>ДоговорКонтрагента</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Договор контрагента</v8:content>
+					</v8:item>
+				</title>
+				<valueType>
+					<v8:Type xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d6p1:CatalogRef.ДоговорыКонтрагентов</v8:Type>
+				</valueType>
+				<appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Размещение</dcscor:parameter>
+						<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Wrap</dcscor:value>
+					</dcscor:item>
+				</appearance>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ДепозитПоДоговору</dataPath>
+				<field>ДепозитПоДоговору</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Депозит по договору</v8:content>
+					</v8:item>
+				</title>
+				<valueType>
+					<v8:Type>xs:decimal</v8:Type>
+					<v8:NumberQualifiers>
+						<v8:Digits>15</v8:Digits>
+						<v8:FractionDigits>2</v8:FractionDigits>
+						<v8:AllowedSign>Any</v8:AllowedSign>
+					</v8:NumberQualifiers>
+				</valueType>
+				<appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+						<dcscor:value xsi:type="xs:decimal">15</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+						<dcscor:value xsi:type="xs:decimal">15</dcscor:value>
+					</dcscor:item>
+				</appearance>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ДепозитПоДоговоруВал</dataPath>
+				<field>ДепозитПоДоговоруВал</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Депозит по договору вал</v8:content>
+					</v8:item>
+				</title>
+				<valueType>
+					<v8:Type>xs:decimal</v8:Type>
+					<v8:NumberQualifiers>
+						<v8:Digits>15</v8:Digits>
+						<v8:FractionDigits>2</v8:FractionDigits>
+						<v8:AllowedSign>Any</v8:AllowedSign>
+					</v8:NumberQualifiers>
+				</valueType>
+				<appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+						<dcscor:value xsi:type="xs:decimal">15</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+						<dcscor:value xsi:type="xs:decimal">15</dcscor:value>
+					</dcscor:item>
+				</appearance>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ВидЗадолженности</dataPath>
+				<field>ВидЗадолженности</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Вид задолженности</v8:content>
+					</v8:item>
+				</title>
+				<valueType>
+					<v8:Type>xs:string</v8:Type>
+					<v8:StringQualifiers>
+						<v8:Length>0</v8:Length>
+						<v8:AllowedLength>Variable</v8:AllowedLength>
+					</v8:StringQualifiers>
+				</valueType>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Депозит</dataPath>
+				<field>Депозит</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Депозит</v8:content>
+					</v8:item>
+				</title>
+				<valueType>
+					<v8:Type>xs:boolean</v8:Type>
+				</valueType>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Пени</dataPath>
+				<field>Пени</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Пени</v8:content>
+					</v8:item>
+				</title>
+				<valueType>
+					<v8:Type>xs:boolean</v8:Type>
+				</valueType>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Регистратор</dataPath>
+				<field>Регистратор</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Регистратор</v8:content>
+					</v8:item>
+				</title>
+				<valueType>
+					<v8:Type xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d6p1:DocumentRef.АР_ДополнительноеСоглашение</v8:Type>
+					<v8:Type xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d6p1:DocumentRef.АР_ЗаключениеДоговораАренды</v8:Type>
+				</valueType>
+			</field>
+			<dataSource>ИсточникДанных1</dataSource>
+			<objectName>ТаблицаДанных</objectName>
+		</item>
+	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>ОсновныеДанныеОстатки</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Депозит</dataPath>
+			<field>Депозит</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Депозит</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">БЛ='Депозит: Нет'; БИ='Депозит: Да'</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДоговорКонтрагента</dataPath>
+			<field>ДоговорКонтрагента</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Договор контрагента</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбъектАренды</dataPath>
+			<field>ОбъектАренды</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Объект аренды</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПериодОплаты</dataPath>
+			<field>ПериодОплаты</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период оплаты</v8:content>
+				</v8:item>
+			</title>
+			<presentationExpression>АР_ОбщиеПроцедуры.ПолучитьПредставлениеПериода(ПериодОплаты, ДоговорКонтрагента)</presentationExpression>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СчетНаАренду</dataPath>
+			<field>СчетНаАренду</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Счет на аренду</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Контрагент</dataPath>
+			<field>Контрагент</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контрагент</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Валюта</dataPath>
+			<field>Валюта</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Валюта</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДокументРасчетов</dataPath>
+			<field>ДокументРасчетов</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документ расчетов</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Организация</dataPath>
+			<field>Организация</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Организация</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Пени</dataPath>
+			<field>Пени</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пени</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+			</role>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">БЛ='Пени: Нет'; БИ='Пени: Да'</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПериодАренды</dataPath>
+			<field>ПериодАренды</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>УслугаАренды</dataPath>
+			<field>УслугаАренды</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОсновнойДолгВалКонечныйОстатокИтог</dataPath>
+			<field>ОсновнойДолгВалКонечныйОстатокИтог</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основной долг вал конечный остаток итог</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбщаяСуммаНачальныйОстатокИтог</dataPath>
+			<field>ОбщаяСуммаНачальныйОстатокИтог</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Общая сумма начальный остаток итог</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДепозитНачальныйОстатокИтог</dataPath>
+			<field>ДепозитНачальныйОстатокИтог</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Депозит начальный остаток итог</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПениКонечныйОстатокИтог</dataPath>
+			<field>ПениКонечныйОстатокИтог</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пени конечный остаток итог</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбщаяСуммаКонечныйОстатокИтог</dataPath>
+			<field>ОбщаяСуммаКонечныйОстатокИтог</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Общая сумма конечный остаток итог</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбщаяСуммаВалНачальныйОстатокИтог</dataPath>
+			<field>ОбщаяСуммаВалНачальныйОстатокИтог</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Общая сумма вал начальный остаток итог</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбщаяСуммаВалКонечныйОстатокИтог</dataPath>
+			<field>ОбщаяСуммаВалКонечныйОстатокИтог</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Общая сумма вал конечный остаток итог</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОсновнойДолгНачальныйОстатокИтог</dataPath>
+			<field>ОсновнойДолгНачальныйОстатокИтог</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основной долг начальный остаток итог</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОсновнойДолгКонечныйОстатокИтог</dataPath>
+			<field>ОсновнойДолгКонечныйОстатокИтог</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основной долг конечный остаток итог</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДепозитКонечныйОстатокИтог</dataPath>
+			<field>ДепозитКонечныйОстатокИтог</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Депозит конечный остаток итог</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОсновнойДолгВалНачальныйОстатокИтог</dataPath>
+			<field>ОсновнойДолгВалНачальныйОстатокИтог</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основной долг вал начальный остаток итог</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПениНачальныйОстатокИтог</dataPath>
+			<field>ПениНачальныйОстатокИтог</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пени начальный остаток итог</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДепозитВалКонечныйОстатокИтог</dataPath>
+			<field>ДепозитВалКонечныйОстатокИтог</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Депозит вал конечный остаток итог</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПениВалНачальныйОстатокИтог</dataPath>
+			<field>ПениВалНачальныйОстатокИтог</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пени вал начальный остаток итог</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПениВалКонечныйОстатокИтог</dataPath>
+			<field>ПениВалКонечныйОстатокИтог</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пени вал конечный остаток итог</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДепозитВалНачальныйОстатокИтог</dataPath>
+			<field>ДепозитВалНачальныйОстатокИтог</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Депозит вал начальный остаток итог</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВзаиморасчетыПоАренде.ДоговорКонтрагента КАК ДоговорКонтрагента,
+	ВЫБОР
+		КОГДА ВзаиморасчетыПоАренде.Депозит
+			ТОГДА NULL
+		ИНАЧЕ ВзаиморасчетыПоАренде.УслугаАренды
+	КОНЕЦ КАК УслугаАренды,
+	ВЫБОР
+		КОГДА ВзаиморасчетыПоАренде.Депозит
+			ТОГДА NULL
+		ИНАЧЕ ВзаиморасчетыПоАренде.ОбъектАренды
+	КОНЕЦ КАК ОбъектАренды,
+	ВЫБОР
+		КОГДА ВзаиморасчетыПоАренде.Депозит
+			ТОГДА NULL
+		ИНАЧЕ ВзаиморасчетыПоАренде.СчетНаАренду
+	КОНЕЦ КАК СчетНаАренду,
+	ВЫБОР
+		КОГДА ВзаиморасчетыПоАренде.Депозит
+			ТОГДА NULL
+		ИНАЧЕ ВзаиморасчетыПоАренде.ПериодАренды
+	КОНЕЦ КАК ПериодОплаты,
+	ВЫБОР
+		КОГДА НЕ ВзаиморасчетыПоАренде.Депозит
+			ТОГДА ВзаиморасчетыПоАренде.СуммаНачальныйОстаток
+		ИНАЧЕ 0
+	КОНЕЦ КАК ОбщаяСуммаНачальныйОстатокИтог,
+	ВЫБОР
+		КОГДА НЕ ВзаиморасчетыПоАренде.Депозит
+			ТОГДА ВзаиморасчетыПоАренде.СуммаКонечныйОстаток
+		ИНАЧЕ 0
+	КОНЕЦ КАК ОбщаяСуммаКонечныйОстатокИтог,
+	ВЫБОР
+		КОГДА НЕ ВзаиморасчетыПоАренде.Депозит
+			ТОГДА ВзаиморасчетыПоАренде.СуммаВзаиморасчетовНачальныйОстаток
+		ИНАЧЕ 0
+	КОНЕЦ КАК ОбщаяСуммаВалНачальныйОстатокИтог,
+	ВЫБОР
+		КОГДА НЕ ВзаиморасчетыПоАренде.Депозит
+			ТОГДА ВзаиморасчетыПоАренде.СуммаВзаиморасчетовКонечныйОстаток
+		ИНАЧЕ 0
+	КОНЕЦ КАК ОбщаяСуммаВалКонечныйОстатокИтог,
+	ВЫБОР
+		КОГДА НЕ ВзаиморасчетыПоАренде.Пени
+				И НЕ ВзаиморасчетыПоАренде.Депозит
+			ТОГДА ВзаиморасчетыПоАренде.СуммаНачальныйОстаток
+		ИНАЧЕ 0
+	КОНЕЦ КАК ОсновнойДолгНачальныйОстатокИтог,
+	ВЫБОР
+		КОГДА НЕ ВзаиморасчетыПоАренде.Пени
+				И НЕ ВзаиморасчетыПоАренде.Депозит
+			ТОГДА ВзаиморасчетыПоАренде.СуммаКонечныйОстаток
+		ИНАЧЕ 0
+	КОНЕЦ КАК ОсновнойДолгКонечныйОстатокИтог,
+	ВЫБОР
+		КОГДА НЕ ВзаиморасчетыПоАренде.Пени
+				И НЕ ВзаиморасчетыПоАренде.Депозит
+			ТОГДА ВзаиморасчетыПоАренде.СуммаВзаиморасчетовНачальныйОстаток
+		ИНАЧЕ 0
+	КОНЕЦ КАК ОсновнойДолгВалНачальныйОстатокИтог,
+	ВЫБОР
+		КОГДА НЕ ВзаиморасчетыПоАренде.Пени
+				И НЕ ВзаиморасчетыПоАренде.Депозит
+			ТОГДА ВзаиморасчетыПоАренде.СуммаВзаиморасчетовКонечныйОстаток
+		ИНАЧЕ 0
+	КОНЕЦ КАК ОсновнойДолгВалКонечныйОстатокИтог,
+	ВЫБОР
+		КОГДА ВзаиморасчетыПоАренде.Пени
+			ТОГДА ВзаиморасчетыПоАренде.СуммаНачальныйОстаток
+		ИНАЧЕ 0
+	КОНЕЦ КАК ПениНачальныйОстатокИтог,
+	ВЫБОР
+		КОГДА ВзаиморасчетыПоАренде.Пени
+			ТОГДА ВзаиморасчетыПоАренде.СуммаКонечныйОстаток
+		ИНАЧЕ 0
+	КОНЕЦ КАК ПениКонечныйОстатокИтог,
+	ВЫБОР
+		КОГДА ВзаиморасчетыПоАренде.Пени
+			ТОГДА ВзаиморасчетыПоАренде.СуммаВзаиморасчетовНачальныйОстаток
+		ИНАЧЕ 0
+	КОНЕЦ КАК ПениВалНачальныйОстатокИтог,
+	ВЫБОР
+		КОГДА ВзаиморасчетыПоАренде.Пени
+			ТОГДА ВзаиморасчетыПоАренде.СуммаВзаиморасчетовКонечныйОстаток
+		ИНАЧЕ 0
+	КОНЕЦ КАК ПениВалКонечныйОстатокИтог,
+	ВЫБОР
+		КОГДА НЕ ВзаиморасчетыПоАренде.Пени
+				И ВзаиморасчетыПоАренде.Депозит
+			ТОГДА -ВзаиморасчетыПоАренде.СуммаНачальныйОстаток
+		ИНАЧЕ 0
+	КОНЕЦ КАК ДепозитНачальныйОстатокИтог,
+	ВЫБОР
+		КОГДА НЕ ВзаиморасчетыПоАренде.Пени
+				И ВзаиморасчетыПоАренде.Депозит
+			ТОГДА -ВзаиморасчетыПоАренде.СуммаКонечныйОстаток
+		ИНАЧЕ 0
+	КОНЕЦ КАК ДепозитКонечныйОстатокИтог,
+	ВЫБОР
+		КОГДА НЕ ВзаиморасчетыПоАренде.Пени
+				И ВзаиморасчетыПоАренде.Депозит
+			ТОГДА -ВзаиморасчетыПоАренде.СуммаВзаиморасчетовНачальныйОстаток
+		ИНАЧЕ 0
+	КОНЕЦ КАК ДепозитВалНачальныйОстатокИтог,
+	ВЫБОР
+		КОГДА НЕ ВзаиморасчетыПоАренде.Пени
+				И ВзаиморасчетыПоАренде.Депозит
+			ТОГДА -ВзаиморасчетыПоАренде.СуммаВзаиморасчетовКонечныйОстаток
+		ИНАЧЕ 0
+	КОНЕЦ КАК ДепозитВалКонечныйОстатокИтог,
+	ВзаиморасчетыПоАренде.Контрагент КАК Контрагент,
+	ВзаиморасчетыПоАренде.Организация КАК Организация,
+	ВзаиморасчетыПоАренде.ДокументРасчетов КАК ДокументРасчетов,
+	ВзаиморасчетыПоАренде.Депозит КАК Депозит,
+	ВзаиморасчетыПоАренде.Пени КАК Пени
+ИЗ
+	РегистрНакопления.АР_ВзаиморасчетыПоАренде.ОстаткиИОбороты(, , , , ) КАК ВзаиморасчетыПоАренде</query>
+	</dataSet>
+	<dataSetLink>
+		<sourceDataSet>НаборДанных</sourceDataSet>
+		<destinationDataSet>ОсновныеДанныеОстатки</destinationDataSet>
+		<sourceExpression>ДоговорКонтрагента</sourceExpression>
+		<destinationExpression>ДоговорКонтрагента</destinationExpression>
+	</dataSetLink>
+	<dataSetLink>
+		<sourceDataSet>НаборДанных</sourceDataSet>
+		<destinationDataSet>ОсновныеДанныеОстатки</destinationDataSet>
+		<sourceExpression>ОбъектАренды</sourceExpression>
+		<destinationExpression>ОбъектАренды</destinationExpression>
+	</dataSetLink>
+	<dataSetLink>
+		<sourceDataSet>НаборДанных</sourceDataSet>
+		<destinationDataSet>ОсновныеДанныеОстатки</destinationDataSet>
+		<sourceExpression>УслугаАренды</sourceExpression>
+		<destinationExpression>УслугаАренды</destinationExpression>
+	</dataSetLink>
+	<dataSetLink>
+		<sourceDataSet>НаборДанных</sourceDataSet>
+		<destinationDataSet>ОсновныеДанныеОстатки</destinationDataSet>
+		<sourceExpression>ПериодОплаты</sourceExpression>
+		<destinationExpression>ПериодОплаты</destinationExpression>
+	</dataSetLink>
+	<dataSetLink>
+		<sourceDataSet>НаборДанных</sourceDataSet>
+		<destinationDataSet>ОсновныеДанныеОстатки</destinationDataSet>
+		<sourceExpression>СчетНаАренду</sourceExpression>
+		<destinationExpression>СчетНаАренду</destinationExpression>
+	</dataSetLink>
+	<dataSetLink>
+		<sourceDataSet>НаборДанных</sourceDataSet>
+		<destinationDataSet>ОсновныеДанныеОстатки</destinationDataSet>
+		<sourceExpression>Депозит</sourceExpression>
+		<destinationExpression>Депозит</destinationExpression>
+	</dataSetLink>
+	<dataSetLink>
+		<sourceDataSet>НаборДанных</sourceDataSet>
+		<destinationDataSet>ОсновныеДанныеОстатки</destinationDataSet>
+		<sourceExpression>Пени</sourceExpression>
+		<destinationExpression>Пени</destinationExpression>
+	</dataSetLink>
+	<dataSetLink>
+		<sourceDataSet>НаборДанных</sourceDataSet>
+		<destinationDataSet>ОсновныеДанныеОстатки</destinationDataSet>
+		<sourceExpression>ДокументРасчетов</sourceExpression>
+		<destinationExpression>ДокументРасчетов</destinationExpression>
+	</dataSetLink>
+	<calculatedField>
+		<dataPath>ГруппаДепозит.ДепозитКОплате</dataPath>
+		<expression>ЕСТЬNULL(ГруппаДепозит.ДепозитПоДоговору, 0) - ЕСТЬNULL(ГруппаДепозит.ДепозитКонечныйОстаток, 0)</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Депозит к оплате</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>15</v8:Digits>
+				<v8:FractionDigits>2</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ДепозитВал.ДепозитКОплатеВал</dataPath>
+		<expression>ЕСТЬNULL(ДепозитВал.ДепозитПоДоговоруВал, 0) - ЕСТЬNULL(ДепозитВал.ДепозитВалКонечныйОстаток, 0)</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Депозит к оплате в валюте договора</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>15</v8:Digits>
+				<v8:FractionDigits>2</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ГруппаДепозит.ОбщийДолгСУчетомОстаткаДепозита</dataPath>
+		<expression>ЕСТЬNULL(ОбщаяСумма.ОбщаяСуммаКонечныйОстаток, 0) - ЕСТЬNULL(ГруппаДепозит.ДепозитКонечныйОстаток, 0)</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Общий долг с учетом остатка депозита</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>15</v8:Digits>
+				<v8:FractionDigits>2</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ДепозитВал.ОбщийДолгСУчетомОстаткаДепозитаВал</dataPath>
+		<expression>ЕСТЬNULL(ОбщаяСуммаВал.ОбщаяСуммаВалКонечныйОстаток, 0) - ЕСТЬNULL(ДепозитВал.ДепозитВалКонечныйОстаток, 0)</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Общий долг с учетом остатка депозита в валюте договора</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>15</v8:Digits>
+				<v8:FractionDigits>2</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ГруппаДепозит.ОбщийДолгСУчетомДепозитаКОплате</dataPath>
+		<expression>ЕСТЬNULL(ОбщаяСумма.ОбщаяСуммаКонечныйОстаток, 0) + ЕСТЬNULL(ГруппаДепозит.ДепозитПоДоговору, 0) - ЕСТЬNULL(ГруппаДепозит.ДепозитКонечныйОстаток, 0)</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Общий долг с учетом депозита к оплате</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>15</v8:Digits>
+				<v8:FractionDigits>2</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ДепозитВал.ОбщийДолгСУчетомДепозитаКОплатеВал</dataPath>
+		<expression>ЕСТЬNULL(ОбщаяСуммаВал.ОбщаяСуммаВалКонечныйОстаток, 0) + ЕСТЬNULL(ДепозитВал.ДепозитПоДоговоруВал, 0) - ЕСТЬNULL(ДепозитВал.ДепозитВалКонечныйОстаток, 0)</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Общий долг с учетом депозита к оплате в валюте договора</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>15</v8:Digits>
+				<v8:FractionDigits>2</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ГруппаДепозит.ОбщийДолгСУчетомОстаткаДепозитаИДепозитаКОплате</dataPath>
+		<expression>ЕСТЬNULL(ОбщаяСумма.ОбщаяСуммаКонечныйОстаток, 0) + ЕСТЬNULL(ГруппаДепозит.ДепозитПоДоговору, 0) - ЕСТЬNULL(2*ГруппаДепозит.ДепозитКонечныйОстаток, 0)</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Общий долг с учетом остатка депозита и депозита к оплате</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>15</v8:Digits>
+				<v8:FractionDigits>2</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+	</calculatedField>
+	<calculatedField>
+		<dataPath>ДепозитВал.ОбщийДолгСУчетомОстаткаДепозитаИДепозитаКОплатеВал</dataPath>
+		<expression>ЕСТЬNULL(ОбщаяСуммаВал.ОбщаяСуммаВалКонечныйОстаток, 0) + ЕСТЬNULL(ДепозитВал.ДепозитПоДоговоруВал, 0) - ЕСТЬNULL(2*ДепозитВал.ДепозитВалКонечныйОстаток, 0)</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Общий долг с учетом остатка депозита и депозита к оплате в валюте договора</v8:content>
+			</v8:item>
+		</title>
+		<appearance>
+			<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+				<dcscor:parameter>Формат</dcscor:parameter>
+				<dcscor:value xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ЧДЦ=2</v8:content>
+					</v8:item>
+				</dcscor:value>
+			</dcscor:item>
+		</appearance>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>15</v8:Digits>
+				<v8:FractionDigits>2</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+	</calculatedField>
+	<totalField>
+		<dataPath>ГруппаДепозит.ДепозитЗачтено</dataPath>
+		<expression>Сумма(ГруппаДепозит.ДепозитЗачтено)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ГруппаДепозит.ДепозитКонечныйОстаток</dataPath>
+		<expression>Сумма(ГруппаДепозит.ДепозитКонечныйОстаток)</expression>
+		<group>Регистратор</group>
+	</totalField>
+	<totalField>
+		<dataPath>ГруппаДепозит.ДепозитНачальныйОстаток</dataPath>
+		<expression>Сумма(ГруппаДепозит.ДепозитНачальныйОстаток)</expression>
+		<group>Регистратор</group>
+	</totalField>
+	<totalField>
+		<dataPath>ГруппаДепозит.ДепозитОплачено</dataPath>
+		<expression>Сумма(ГруппаДепозит.ДепозитОплачено)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ГруппаПени.ПениКонечныйОстаток</dataPath>
+		<expression>Сумма(ГруппаПени.ПениКонечныйОстаток)</expression>
+		<group>Регистратор</group>
+	</totalField>
+	<totalField>
+		<dataPath>ГруппаПени.ПениНачальныйОстаток</dataPath>
+		<expression>Сумма(ГруппаПени.ПениНачальныйОстаток)</expression>
+		<group>Регистратор</group>
+	</totalField>
+	<totalField>
+		<dataPath>ГруппаПени.ПениНачислено</dataPath>
+		<expression>Сумма(ГруппаПени.ПениНачислено)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ГруппаПени.ПениОплачено</dataPath>
+		<expression>Сумма(ГруппаПени.ПениОплачено)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ДепозитВал.ДепозитВалЗачтено</dataPath>
+		<expression>Сумма(ДепозитВал.ДепозитВалЗачтено)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ДепозитВал.ДепозитВалКонечныйОстаток</dataPath>
+		<expression>Сумма(ДепозитВал.ДепозитВалКонечныйОстаток)</expression>
+		<group>Регистратор</group>
+	</totalField>
+	<totalField>
+		<dataPath>ДепозитВал.ДепозитВалНачальныйОстаток</dataPath>
+		<expression>Сумма(ДепозитВал.ДепозитВалНачальныйОстаток)</expression>
+		<group>Регистратор</group>
+	</totalField>
+	<totalField>
+		<dataPath>ДепозитВал.ДепозитВалОплачено</dataPath>
+		<expression>Сумма(ДепозитВал.ДепозитВалОплачено)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ОбщаяСумма.ОбщаяСуммаКонечныйОстаток</dataPath>
+		<expression>Сумма(ОбщаяСумма.ОбщаяСуммаКонечныйОстаток)</expression>
+		<group>Регистратор</group>
+	</totalField>
+	<totalField>
+		<dataPath>ОбщаяСумма.ОбщаяСуммаНачальныйОстаток</dataPath>
+		<expression>Сумма(ОбщаяСумма.ОбщаяСуммаНачальныйОстаток)</expression>
+		<group>Регистратор</group>
+	</totalField>
+	<totalField>
+		<dataPath>ОбщаяСумма.ОбщаяСуммаНачислено</dataPath>
+		<expression>Сумма(ОбщаяСумма.ОбщаяСуммаНачислено)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ОбщаяСумма.ОбщаяСуммаОплачено</dataPath>
+		<expression>Сумма(ОбщаяСумма.ОбщаяСуммаОплачено)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ОбщаяСуммаВал.ОбщаяСуммаВалКонечныйОстаток</dataPath>
+		<expression>Сумма(ОбщаяСуммаВал.ОбщаяСуммаВалКонечныйОстаток)</expression>
+		<group>Регистратор</group>
+	</totalField>
+	<totalField>
+		<dataPath>ОбщаяСуммаВал.ОбщаяСуммаВалНачальныйОстаток</dataPath>
+		<expression>Сумма(ОбщаяСуммаВал.ОбщаяСуммаВалНачальныйОстаток)</expression>
+		<group>Регистратор</group>
+	</totalField>
+	<totalField>
+		<dataPath>ОбщаяСуммаВал.ОбщаяСуммаВалНачислено</dataPath>
+		<expression>Сумма(ОбщаяСуммаВал.ОбщаяСуммаВалНачислено)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ОбщаяСуммаВал.ОбщаяСуммаВалОплачено</dataPath>
+		<expression>Сумма(ОбщаяСуммаВал.ОбщаяСуммаВалОплачено)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ОсновнойДолг.ОсновнойДолгКонечныйОстаток</dataPath>
+		<expression>Сумма(ОсновнойДолг.ОсновнойДолгКонечныйОстаток)</expression>
+		<group>Регистратор</group>
+	</totalField>
+	<totalField>
+		<dataPath>ОсновнойДолг.ОсновнойДолгНачальныйОстаток</dataPath>
+		<expression>Сумма(ОсновнойДолг.ОсновнойДолгНачальныйОстаток)</expression>
+		<group>Регистратор</group>
+	</totalField>
+	<totalField>
+		<dataPath>ОсновнойДолг.ОсновнойДолгНачислено</dataPath>
+		<expression>Сумма(ОсновнойДолг.ОсновнойДолгНачислено)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ОсновнойДолг.ОсновнойДолгОплачено</dataPath>
+		<expression>Сумма(ОсновнойДолг.ОсновнойДолгОплачено)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ОсновнойДолгВал.ОсновнойДолгВалКонечныйОстаток</dataPath>
+		<expression>Сумма(ОсновнойДолгВал.ОсновнойДолгВалКонечныйОстаток)</expression>
+		<group>Регистратор</group>
+	</totalField>
+	<totalField>
+		<dataPath>ОсновнойДолгВал.ОсновнойДолгВалНачальныйОстаток</dataPath>
+		<expression>Сумма(ОсновнойДолгВал.ОсновнойДолгВалНачальныйОстаток)</expression>
+		<group>Регистратор</group>
+	</totalField>
+	<totalField>
+		<dataPath>ОсновнойДолгВал.ОсновнойДолгВалНачислено</dataPath>
+		<expression>Сумма(ОсновнойДолгВал.ОсновнойДолгВалНачислено)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ОсновнойДолгВал.ОсновнойДолгВалОплачено</dataPath>
+		<expression>Сумма(ОсновнойДолгВал.ОсновнойДолгВалОплачено)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПениВал.ПениВалКонечныйОстаток</dataPath>
+		<expression>Сумма(ПениВал.ПениВалКонечныйОстаток)</expression>
+		<group>Регистратор</group>
+	</totalField>
+	<totalField>
+		<dataPath>ПениВал.ПениВалНачальныйОстаток</dataPath>
+		<expression>Сумма(ПениВал.ПениВалНачальныйОстаток)</expression>
+		<group>Регистратор</group>
+	</totalField>
+	<totalField>
+		<dataPath>ПениВал.ПениВалНачислено</dataPath>
+		<expression>Сумма(ПениВал.ПениВалНачислено)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПениВал.ПениВалОплачено</dataPath>
+		<expression>Сумма(ПениВал.ПениВалОплачено)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ГруппаДепозит.ДепозитПоДоговору</dataPath>
+		<expression>Сумма(ГруппаДепозит.ДепозитПоДоговору)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ДепозитВал.ДепозитПоДоговоруВал</dataPath>
+		<expression>Сумма(ДепозитВал.ДепозитПоДоговоруВал)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ГруппаДепозит.ОбщийДолгСУчетомДепозитаКОплате</dataPath>
+		<expression>Сумма(ГруппаДепозит.ОбщийДолгСУчетомДепозитаКОплате)</expression>
+		<group>Регистратор</group>
+	</totalField>
+	<totalField>
+		<dataPath>ГруппаДепозит.ОбщийДолгСУчетомОстаткаДепозита</dataPath>
+		<expression>Сумма(ГруппаДепозит.ОбщийДолгСУчетомОстаткаДепозита)</expression>
+		<group>Регистратор</group>
+	</totalField>
+	<totalField>
+		<dataPath>ГруппаДепозит.ОбщийДолгСУчетомОстаткаДепозитаИДепозитаКОплате</dataPath>
+		<expression>Сумма(ГруппаДепозит.ОбщийДолгСУчетомОстаткаДепозитаИДепозитаКОплате)</expression>
+		<group>Регистратор</group>
+	</totalField>
+	<totalField>
+		<dataPath>ДепозитВал.ОбщийДолгСУчетомДепозитаКОплатеВал</dataPath>
+		<expression>Сумма(ДепозитВал.ОбщийДолгСУчетомДепозитаКОплатеВал)</expression>
+		<group>Регистратор</group>
+	</totalField>
+	<totalField>
+		<dataPath>ДепозитВал.ОбщийДолгСУчетомОстаткаДепозитаВал</dataPath>
+		<expression>Сумма(ДепозитВал.ОбщийДолгСУчетомОстаткаДепозитаВал)</expression>
+		<group>Регистратор</group>
+	</totalField>
+	<totalField>
+		<dataPath>ДепозитВал.ОбщийДолгСУчетомОстаткаДепозитаИДепозитаКОплатеВал</dataPath>
+		<expression>Сумма(ДепозитВал.ОбщийДолгСУчетомОстаткаДепозитаИДепозитаКОплатеВал)</expression>
+		<group>Регистратор</group>
+	</totalField>
+	<totalField>
+		<dataPath>ГруппаДепозит.ДепозитКОплате</dataPath>
+		<expression>Сумма(ГруппаДепозит.ДепозитКОплате)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ДепозитВал.ДепозитКОплатеВал</dataPath>
+		<expression>Сумма(ДепозитВал.ДепозитКОплатеВал)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ОсновнойДолг.ОсновнойДолгНачальныйОстаток</dataPath>
+		<expression>Сумма(ОсновнойДолгНачальныйОстатокИтог)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ОсновнойДолг.ОсновнойДолгКонечныйОстаток</dataPath>
+		<expression>Сумма(ОсновнойДолгКонечныйОстатокИтог)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ОсновнойДолгВал.ОсновнойДолгВалНачальныйОстаток</dataPath>
+		<expression>Сумма(ОсновнойДолгВалНачальныйОстатокИтог)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ОсновнойДолгВал.ОсновнойДолгВалКонечныйОстаток</dataPath>
+		<expression>Сумма(ОсновнойДолгВалКонечныйОстатокИтог)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ОбщаяСумма.ОбщаяСуммаНачальныйОстаток</dataPath>
+		<expression>Сумма(ОбщаяСуммаНачальныйОстатокИтог)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ОбщаяСумма.ОбщаяСуммаКонечныйОстаток</dataPath>
+		<expression>Сумма(ОбщаяСуммаКонечныйОстатокИтог)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ОбщаяСуммаВал.ОбщаяСуммаВалНачальныйОстаток</dataPath>
+		<expression>Сумма(ОбщаяСуммаВалНачальныйОстатокИтог)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ОбщаяСуммаВал.ОбщаяСуммаВалКонечныйОстаток</dataPath>
+		<expression>Сумма(ОбщаяСуммаВалКонечныйОстатокИтог)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ГруппаПени.ПениНачальныйОстаток</dataPath>
+		<expression>Сумма(ПениНачальныйОстатокИтог)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ГруппаПени.ПениКонечныйОстаток</dataPath>
+		<expression>Сумма(ПениКонечныйОстатокИтог)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПениВал.ПениВалНачальныйОстаток</dataPath>
+		<expression>Сумма(ПениВалНачальныйОстатокИтог)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПениВал.ПениВалКонечныйОстаток</dataPath>
+		<expression>Сумма(ПениВалКонечныйОстатокИтог)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ГруппаДепозит.ДепозитНачальныйОстаток</dataPath>
+		<expression>Сумма(ДепозитНачальныйОстатокИтог)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ГруппаДепозит.ДепозитКонечныйОстаток</dataPath>
+		<expression>Сумма(ДепозитКонечныйОстатокИтог)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ДепозитВал.ДепозитВалНачальныйОстаток</dataPath>
+		<expression>Сумма(ДепозитВалНачальныйОстатокИтог)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ДепозитВал.ДепозитВалКонечныйОстаток</dataPath>
+		<expression>Сумма(ДепозитВалКонечныйОстатокИтог)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ГруппаДепозит.ОбщийДолгСУчетомДепозитаКОплате</dataPath>
+		<expression>Сумма(ЕстьNULL(ОбщаяСуммаКонечныйОстатокИтог, 0)) - Сумма(ЕстьNULL(ДепозитКонечныйОстатокИтог, 0)) + Сумма(ЕстьNULL(ГруппаДепозит.ДепозитПоДоговору, 0))</expression>
+		<group>ДоговорКонтрагента</group>
+		<group>Контрагент</group>
+		<group>Организация</group>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<totalField>
+		<dataPath>ГруппаДепозит.ОбщийДолгСУчетомОстаткаДепозита</dataPath>
+		<expression>Сумма(ЕстьNULL(ОбщаяСуммаКонечныйОстатокИтог, 0)) - Сумма(ЕстьNULL(ДепозитКонечныйОстатокИтог, 0))</expression>
+		<group>ДоговорКонтрагента</group>
+		<group>Контрагент</group>
+		<group>Организация</group>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<totalField>
+		<dataPath>ГруппаДепозит.ОбщийДолгСУчетомОстаткаДепозитаИДепозитаКОплате</dataPath>
+		<expression>Сумма(ЕстьNULL(ОбщаяСуммаКонечныйОстатокИтог, 0)) - 2*Сумма(ЕстьNULL(ДепозитКонечныйОстатокИтог, 0)) + Сумма(ЕстьNULL(ГруппаДепозит.ДепозитПоДоговору, 0))</expression>
+		<group>ДоговорКонтрагента</group>
+		<group>Контрагент</group>
+		<group>Организация</group>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<totalField>
+		<dataPath>ДепозитВал.ОбщийДолгСУчетомДепозитаКОплатеВал</dataPath>
+		<expression>Сумма(ЕстьNULL(ОбщаяСуммаВалКонечныйОстатокИтог, 0)) - Сумма(ЕстьNULL(ДепозитВалКонечныйОстатокИтог, 0)) + Сумма(ЕстьNULL(ДепозитВал.ДепозитПоДоговоруВал, 0))</expression>
+		<group>ДоговорКонтрагента</group>
+		<group>Контрагент</group>
+		<group>Организация</group>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<totalField>
+		<dataPath>ДепозитВал.ОбщийДолгСУчетомОстаткаДепозитаВал</dataPath>
+		<expression>Сумма(ЕстьNULL(ОбщаяСуммаВалКонечныйОстатокИтог, 0)) - Сумма(ЕстьNULL(ДепозитВалКонечныйОстатокИтог, 0))</expression>
+		<group>ДоговорКонтрагента</group>
+		<group>Контрагент</group>
+		<group>Организация</group>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<totalField>
+		<dataPath>ДепозитВал.ОбщийДолгСУчетомОстаткаДепозитаИДепозитаКОплатеВал</dataPath>
+		<expression>Сумма(ЕстьNULL(ОбщаяСуммаВалКонечныйОстатокИтог, 0)) - 2*Сумма(ЕстьNULL(ДепозитВалКонечныйОстатокИтог, 0)) + Сумма(ЕстьNULL(ДепозитВал.ДепозитПоДоговоруВал, 0))</expression>
+		<group>ДоговорКонтрагента</group>
+		<group>Контрагент</group>
+		<group>Организация</group>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<totalField>
+		<dataPath>ГруппаДепозит.ОбщийДолгСУчетомДепозитаКОплате</dataPath>
+		<expression>0</expression>
+		<group>ВидЗадолженности</group>
+		<group>ДокументРасчетов</group>
+		<group>ОбъектАренды</group>
+		<group>ПериодОплаты</group>
+		<group>УслугаАренды</group>
+	</totalField>
+	<totalField>
+		<dataPath>ГруппаДепозит.ОбщийДолгСУчетомОстаткаДепозита</dataPath>
+		<expression>0</expression>
+		<group>ВидЗадолженности</group>
+		<group>ДокументРасчетов</group>
+		<group>ОбъектАренды</group>
+		<group>ПериодОплаты</group>
+		<group>УслугаАренды</group>
+	</totalField>
+	<totalField>
+		<dataPath>ГруппаДепозит.ОбщийДолгСУчетомОстаткаДепозитаИДепозитаКОплате</dataPath>
+		<expression>0</expression>
+		<group>ВидЗадолженности</group>
+		<group>ДокументРасчетов</group>
+		<group>ОбъектАренды</group>
+		<group>ПериодОплаты</group>
+		<group>УслугаАренды</group>
+	</totalField>
+	<totalField>
+		<dataPath>ДепозитВал.ОбщийДолгСУчетомДепозитаКОплатеВал</dataPath>
+		<expression>0</expression>
+		<group>ВидЗадолженности</group>
+		<group>ДокументРасчетов</group>
+		<group>ОбъектАренды</group>
+		<group>ПериодОплаты</group>
+		<group>УслугаАренды</group>
+	</totalField>
+	<totalField>
+		<dataPath>ДепозитВал.ОбщийДолгСУчетомОстаткаДепозитаВал</dataPath>
+		<expression>0</expression>
+		<group>ВидЗадолженности</group>
+		<group>ДокументРасчетов</group>
+		<group>ОбъектАренды</group>
+		<group>ПериодОплаты</group>
+		<group>УслугаАренды</group>
+	</totalField>
+	<totalField>
+		<dataPath>ДепозитВал.ОбщийДолгСУчетомОстаткаДепозитаИДепозитаКОплатеВал</dataPath>
+		<expression>0</expression>
+		<group>ВидЗадолженности</group>
+		<group>ДокументРасчетов</group>
+		<group>ОбъектАренды</group>
+		<group>ПериодОплаты</group>
+		<group>УслугаАренды</group>
+	</totalField>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаНачала</expression>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;Период.ДатаОкончания</expression>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+		<use>Always</use>
+	</parameter>
+	<template>
+		<name>Макет1</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">Ресурс</dcsat:value>
+						<dcsat:appearance>
+							<dcscor:item>
+								<dcscor:parameter>Формат</dcscor:parameter>
+								<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+							</dcscor:item>
+						</dcsat:appearance>
+					</dcsat:item>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>Ресурс</dcsat:name>
+			<dcsat:expression>ГруппаДепозит.ДепозитПоДоговору</dcsat:expression>
+		</parameter>
+	</template>
+	<template>
+		<name>Макет3</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">Ресурс</dcsat:value>
+						<dcsat:appearance>
+							<dcscor:item>
+								<dcscor:parameter>Формат</dcscor:parameter>
+								<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+							</dcscor:item>
+						</dcsat:appearance>
+					</dcsat:item>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>Ресурс</dcsat:name>
+			<dcsat:expression>ГруппаДепозит.ОбщийДолгСУчетомДепозитаКОплате</dcsat:expression>
+		</parameter>
+	</template>
+	<template>
+		<name>Макет4</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">Ресурс</dcsat:value>
+						<dcsat:appearance>
+							<dcscor:item>
+								<dcscor:parameter>Формат</dcscor:parameter>
+								<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+							</dcscor:item>
+						</dcsat:appearance>
+					</dcsat:item>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>Ресурс</dcsat:name>
+			<dcsat:expression>ГруппаДепозит.ОбщийДолгСУчетомОстаткаДепозита</dcsat:expression>
+		</parameter>
+	</template>
+	<template>
+		<name>Макет5</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">Ресурс</dcsat:value>
+						<dcsat:appearance>
+							<dcscor:item>
+								<dcscor:parameter>Формат</dcscor:parameter>
+								<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+							</dcscor:item>
+						</dcsat:appearance>
+					</dcsat:item>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>Ресурс</dcsat:name>
+			<dcsat:expression>ГруппаДепозит.ОбщийДолгСУчетомОстаткаДепозитаИДепозитаКОплате</dcsat:expression>
+		</parameter>
+	</template>
+	<template>
+		<name>Макет6</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">Ресурс</dcsat:value>
+						<dcsat:appearance>
+							<dcscor:item>
+								<dcscor:parameter>Формат</dcscor:parameter>
+								<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+							</dcscor:item>
+						</dcsat:appearance>
+					</dcsat:item>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>Ресурс</dcsat:name>
+			<dcsat:expression>ГруппаДепозит.ДепозитКОплате</dcsat:expression>
+		</parameter>
+	</template>
+	<fieldTemplate>
+		<field>ГруппаДепозит.ДепозитПоДоговору</field>
+		<template>Макет1</template>
+	</fieldTemplate>
+	<fieldTemplate>
+		<field>ГруппаДепозит.ДепозитКОплате</field>
+		<template>Макет6</template>
+	</fieldTemplate>
+	<fieldTemplate>
+		<field>ГруппаДепозит.ОбщийДолгСУчетомДепозитаКОплате</field>
+		<template>Макет3</template>
+	</fieldTemplate>
+	<fieldTemplate>
+		<field>ГруппаДепозит.ОбщийДолгСУчетомОстаткаДепозита</field>
+		<template>Макет4</template>
+	</fieldTemplate>
+	<fieldTemplate>
+		<field>ГруппаДепозит.ОбщийДолгСУчетомОстаткаДепозитаИДепозитаКОплате</field>
+		<template>Макет5</template>
+	</fieldTemplate>
+	<settingsVariant>
+		<dcsset:name>ВзаиморасчетыПоУслугамАренды</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Структура расчетов по аренде</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Основная сумма</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ОсновнойДолг.ОсновнойДолгНачальныйОстаток</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Долг на начало периода</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ОсновнойДолг.ОсновнойДолгНачислено</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Начислено</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ОсновнойДолг.ОсновнойДолгОплачено</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Оплачено</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ОсновнойДолг.ОсновнойДолгКонечныйОстаток</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Долг на конец периода</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пени</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаПени.ПениНачальныйОстаток</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Долг на начало периода</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ГруппаПени.ПениНачислено</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Начислено</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаПени.ПениОплачено</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Оплачено</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ГруппаПени.ПениКонечныйОстаток</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Долг на конец периода</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Общая сумма</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ОбщаяСумма.ОбщаяСуммаНачальныйОстаток</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Долг на начало периода</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ОбщаяСумма.ОбщаяСуммаНачислено</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Начислено</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ОбщаяСумма.ОбщаяСуммаОплачено</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Оплачено</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ОбщаяСумма.ОбщаяСуммаКонечныйОстаток</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Долг на конец периода</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemFolder">
+					<dcsset:lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Депозит</v8:content>
+						</v8:item>
+					</dcsset:lwsTitle>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаДепозит.ДепозитНачальныйОстаток</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Остаток на начало периода</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаДепозит.ДепозитОплачено</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Оплачено</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаДепозит.ДепозитЗачтено</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Зачтено</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ГруппаДепозит.ДепозитКонечныйОстаток</dcsset:field>
+						<dcsset:lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Остаток на конец периода</v8:content>
+							</v8:item>
+						</dcsset:lwsTitle>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ГруппаДепозит.ДепозитПоДоговору</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ГруппаДепозит.ДепозитКОплате</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ГруппаДепозит.ОбщийДолгСУчетомДепозитаКОплате</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:use>false</dcsset:use>
+						<dcsset:field>ГруппаДепозит.ОбщийДолгСУчетомОстаткаДепозита</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ГруппаДепозит.ОбщийДолгСУчетомОстаткаДепозитаИДепозитаКОплате</dcsset:field>
+					</dcsset:item>
+					<dcsset:placement>Auto</dcsset:placement>
+				</dcsset:item>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+				<dcsset:userSettingID>2958147a-775a-4340-87df-d4f2b5c144e9</dcsset:userSettingID>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ВидЗадолженности</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="xs:string">Основная сумма</dcsset:right>
+					<dcsset:userSettingID>c7a66a05-ca4f-48e2-b333-7d8df752a4c3</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Контрагент</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.Контрагенты.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>921589d6-37dd-4c60-a271-cd9037a4729a</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ОбъектАренды</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.АР_ОбъектыАренды.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>d5137320-648b-42a9-bf5e-bcc244fe1c3c</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">УслугаАренды</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.Номенклатура.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>2246c80a-cdbc-4050-836b-eb617ea98c41</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+				<dcsset:userSettingID>3c5a55d8-f41c-4335-952d-29f532a93238</dcsset:userSettingID>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>НачалоПериода</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>23c233b8-b407-428e-88ce-e12b385c1126</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>КонецПериода</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>2a56882b-a354-40ff-a010-3469bba31a33</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">ThisMonth</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>b2b42ba1-c0ed-414c-9d8c-b79d300bc7cc</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>ОбъектАренды</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>УслугаАренды</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>ПериодОплаты</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>Контрагент</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+				<dcsset:userSettingID>75772d5b-084c-4d89-bcca-b90e74975cfd</dcsset:userSettingID>
+			</dcsset:order>
+			<dcsset:conditionalAppearance>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+				<dcsset:userSettingID>bcd2d7c2-cba0-4078-aa22-938afe5aa468</dcsset:userSettingID>
+			</dcsset:conditionalAppearance>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">Output</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Заголовок</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Структура расчетов по аренде</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьПараметрыДанных</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">Output</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Контрагент</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>ДоговорКонтрагента</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>ПериодОплаты</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+						<dcsset:item xsi:type="dcsset:StructureItemGroup">
+							<dcsset:groupItems>
+								<dcsset:item xsi:type="dcsset:GroupItemField">
+									<dcsset:field>ОбъектАренды</dcsset:field>
+									<dcsset:groupType>Items</dcsset:groupType>
+									<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+									<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+									<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:GroupItemField">
+									<dcsset:field>УслугаАренды</dcsset:field>
+									<dcsset:groupType>Items</dcsset:groupType>
+									<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+									<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+									<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+								</dcsset:item>
+							</dcsset:groupItems>
+							<dcsset:order>
+								<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+							</dcsset:order>
+							<dcsset:selection>
+								<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+							</dcsset:selection>
+						</dcsset:item>
+					</dcsset:item>
+				</dcsset:item>
+			</dcsset:item>
+			<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+			<dcsset:itemsUserSettingID>c800c794-ea6d-4fc6-9acb-18d18adc20e7</dcsset:itemsUserSettingID>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

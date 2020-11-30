@@ -1,0 +1,1251 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>СтатусыОбъектовАренды</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Договор</dataPath>
+			<field>Договор</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Договор</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбъектАренды</dataPath>
+			<field>ОбъектАренды</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Объект недвижимости</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Услуга</dataPath>
+			<field>Услуга</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Услуга</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СпособНачисления</dataPath>
+			<field>СпособНачисления</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Способ начисления</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТипОбъекта</dataPath>
+			<field>ТипОбъекта</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип объекта</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Контрагент</dataPath>
+			<field>Контрагент</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контрагент</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаОкончания</dataPath>
+			<field>ДатаОкончания</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата окончания</v8:content>
+				</v8:item>
+			</title>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">ДФ=dd.MM.yyyy</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбъектАренды.ПодлежитСдачеВАренду</dataPath>
+			<field>ПодлежитСдачеВАренду</field>
+			<role>
+				<dcscom:required>true</dcscom:required>
+			</role>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">БЛ='Не подлежит сдаче в аренду'; БИ='Подлежит сдаче в аренду'</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Площадь</dataPath>
+			<field>Площадь</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Ставка</dataPath>
+			<field>Ставка</field>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">20</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>АгентскаяСхема</dataPath>
+			<field>АгентскаяСхема</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Агентская схема</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбъектАренды.Собственник</dataPath>
+			<field>Собственник</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Объект недвижимости.Собственник</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+			<attributeUseRestriction>
+				<condition>true</condition>
+			</attributeUseRestriction>
+			<valueType>
+				<v8:Type>xs:string</v8:Type>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.Контрагенты</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</valueType>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">35</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+					<dcscor:value xsi:type="xs:decimal">35</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаключениеДоговора</dataPath>
+			<field>ЗаключениеДоговора</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбъектАренды.Собственник.ДатаЗаписиВЕГРП</dataPath>
+			<field>ДатаЗаписиВЕГРП</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Объект недвижимости.Собственник.Дата записи в ЕГРП</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбъектАренды.Собственник.НомерЗаписиВЕГРП</dataPath>
+			<field>НомерЗаписиВЕГРП</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Объект недвижимости.Собственник.Номер записи в ЕГРП</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДокументУсловийАренды</dataPath>
+			<field>ДокументУсловийАренды</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документ условий аренды</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДокументСтатуса</dataPath>
+			<field>ДокументСтатуса</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документ статуса</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ДоговорыКонтрагентов.Ссылка КАК Ссылка
+ПОМЕСТИТЬ ВТРазрешенныеДоговоры
+ИЗ
+	Справочник.ДоговорыКонтрагентов КАК ДоговорыКонтрагентов
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ЗНАЧЕНИЕ(Справочник.ДоговорыКонтрагентов.ПустаяСсылка)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ЕСТЬNULL(АР_СобственникиОбъектовАренды.Собственник, АР_СобственникиОбъектовАрендыВсе.Собственник) КАК Собственник,
+	АР_ОбъектыАренды.Ссылка КАК ОбъектАренды
+ПОМЕСТИТЬ ВТДействующиеСобственники
+ИЗ
+	Справочник.АР_ОбъектыАренды КАК АР_ОбъектыАренды
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.АР_СобственникиОбъектовАренды.СрезПоследних КАК АР_СобственникиОбъектовАренды
+		ПО АР_ОбъектыАренды.Ссылка = АР_СобственникиОбъектовАренды.ОбъектАренды
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.АР_СобственникиОбъектовАренды.СрезПоследних(, ОбъектАренды = ЗНАЧЕНИЕ(Справочник.АР_ОбъектыАренды.ПустаяСсылка)) КАК АР_СобственникиОбъектовАрендыВсе
+		ПО (ИСТИНА)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТДействующиеСобственники.ОбъектАренды КАК ОбъектАренды,
+	ВТДействующиеСобственники.Собственник КАК Собственник,
+	МАКСИМУМ(ЕСТЬNULL(АР_СобственникиОбъектовНедвижимостиСобственники.АгентскаяСхема, ЛОЖЬ)) КАК АгентскаяСхема,
+	МАКСИМУМ(ЕСТЬNULL(АР_СобственникиОбъектовНедвижимостиСобственники.НомерСтроки, 0)) КАК НомерСтроки
+ПОМЕСТИТЬ ВТДанныеСобственников
+ИЗ
+	ВТДействующиеСобственники КАК ВТДействующиеСобственники
+		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.АР_СобственникиОбъектовНедвижимости.Собственники КАК АР_СобственникиОбъектовНедвижимостиСобственники
+		ПО ВТДействующиеСобственники.Собственник = АР_СобственникиОбъектовНедвижимостиСобственники.Ссылка
+
+СГРУППИРОВАТЬ ПО
+	ВТДействующиеСобственники.ОбъектАренды,
+	ВТДействующиеСобственники.Собственник
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТДанныеСобственников.ОбъектАренды КАК ОбъектАренды,
+	ВТДанныеСобственников.Собственник КАК Собственник,
+	ВТДанныеСобственников.АгентскаяСхема КАК АгентскаяСхема,
+	"" КАК НомерЗаписиВЕГРП,
+	"" КАК ДатаЗаписиВЕГРП
+ПОМЕСТИТЬ ВТСобственникиОбъектовАренды
+ИЗ
+	ВТДанныеСобственников КАК ВТДанныеСобственников
+ГДЕ
+	НЕ ВТДанныеСобственников.НомерСтроки = 1
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ВТДанныеСобственников.ОбъектАренды,
+	ВТДанныеСобственников.Собственник,
+	ВТДанныеСобственников.АгентскаяСхема,
+	ЕСТЬNULL(АР_СобственникиОбъектовНедвижимостиСобственники.НомерЗаписиВЕГРП, ""),
+	ЕСТЬNULL(АР_СобственникиОбъектовНедвижимостиСобственники.ДатаЗаписиВЕГРП, ДАТАВРЕМЯ(1, 1, 1))
+ИЗ
+	ВТДанныеСобственников КАК ВТДанныеСобственников
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Справочник.АР_СобственникиОбъектовНедвижимости.Собственники КАК АР_СобственникиОбъектовНедвижимостиСобственники
+		ПО ВТДанныеСобственников.Собственник = АР_СобственникиОбъектовНедвижимостиСобственники.Ссылка
+			И ВТДанныеСобственников.НомерСтроки = АР_СобственникиОбъектовНедвижимостиСобственники.НомерСтроки
+ГДЕ
+	ВТДанныеСобственников.НомерСтроки = 1
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	АР_ОбъектыАренды.Ссылка КАК ОбъектАренды,
+	АР_ОбъектыАренды.ТипОбъекта КАК ТипОбъекта
+ПОМЕСТИТЬ ВТОбъектыАренды
+ИЗ
+	Справочник.АР_ОбъектыАренды КАК АР_ОбъектыАренды
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ОбъектыПодлежащиеСдачеВАренду.ОбъектАренды КАК ОбъектАренды,
+	ОбъектыПодлежащиеСдачеВАренду.ПодлежитСдачеВАренду КАК ПодлежитСдачеВАрендуРегистр
+ПОМЕСТИТЬ ВТОбъектыПодлежащиеСдачиВАренду
+ИЗ
+	РегистрСведений.АР_ОбъектыПодлежащиеСдачеВАренду.СрезПоследних КАК ОбъектыПодлежащиеСдачеВАренду
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	АР_СтавкиСрезПоследних.Услуга КАК Услуга,
+	АР_СтавкиСрезПоследних.ОбъектАренды КАК ОбъектАренды,
+	АР_СтавкиСрезПоследних.Ставка КАК Ставка,
+	АР_СтавкиСрезПоследних.СпособНачисления КАК СпособНачисления,
+	АР_СтавкиСрезПоследних.Площадь КАК Площадь,
+	АР_СтавкиСрезПоследних.Договор КАК Договор,
+	АР_СтавкиСрезПоследних.Регистратор КАК ДокументУсловийАренды
+ПОМЕСТИТЬ ВТСтавки
+ИЗ
+	РегистрСведений.АР_Ставки.СрезПоследних(
+			,
+			СрокДействия &gt;= НАЧАЛОПЕРИОДА(&amp;Период, ДЕНЬ)
+				ИЛИ СрокДействия = ДАТАВРЕМЯ(1, 1, 1)) КАК АР_СтавкиСрезПоследних
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	АР_ГрафикиИзмененияСтавокНаУслугиГрафикСтавок.Ссылка КАК Ссылка,
+	АР_ГрафикиИзмененияСтавокНаУслугиГрафикСтавок.Дата КАК Дата,
+	АР_ГрафикиИзмененияСтавокНаУслугиГрафикСтавок.Ставка КАК Ставка
+ПОМЕСТИТЬ ВТГрафики
+ИЗ
+	Справочник.АР_ГрафикиИзмененияСтавокНаУслуги.ГрафикСтавок КАК АР_ГрафикиИзмененияСтавокНаУслугиГрафикСтавок
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТГрафики.Ссылка КАК Ссылка,
+	МАКСИМУМ(ВТГрафики.Дата) КАК Дата
+ПОМЕСТИТЬ ВТГрафикиМаксимумПоПериоду
+ИЗ
+	ВТГрафики КАК ВТГрафики
+ГДЕ
+	ВТГрафики.Дата &lt;= &amp;ПериодНД
+
+СГРУППИРОВАТЬ ПО
+	ВТГрафики.Ссылка
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТГрафики.Ссылка КАК Ссылка,
+	ВТГрафики.Дата КАК Дата,
+	ВТГрафики.Ставка КАК Ставка
+ПОМЕСТИТЬ ВТГрафикиСрезПоследних
+ИЗ
+	ВТГрафики КАК ВТГрафики
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТГрафикиМаксимумПоПериоду КАК ВТГрафикиМаксимумПоПериоду
+		ПО ВТГрафики.Ссылка = ВТГрафикиМаксимумПоПериоду.Ссылка
+			И ВТГрафики.Дата = ВТГрафикиМаксимумПоПериоду.Дата
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	АР_СтатусыОбъектовАрендыСрезПоследних.Услуга КАК Услуга,
+	АР_СтатусыОбъектовАрендыСрезПоследних.ОбъектАренды КАК ОбъектАренды,
+	ЕСТЬNULL(ВТГрафикиСрезПоследних.Ставка, ВТСтавки.Ставка) КАК Ставка,
+	АР_СтатусыОбъектовАрендыСрезПоследних.Договор КАК Договор,
+	АР_СтатусыОбъектовАрендыСрезПоследних.Договор.Владелец КАК Контрагент,
+	АР_СтатусыОбъектовАрендыСрезПоследних.ДатаОкончанияАренды КАК ДатаОкончанияПоле,
+	ВТСтавки.СпособНачисления КАК СпособНачисления,
+	АР_СтатусыОбъектовАрендыСрезПоследних.Регистратор КАК ДокументСтатуса,
+	ВТСтавки.ДокументУсловийАренды КАК ДокументУсловийАренды
+ПОМЕСТИТЬ ВТСтатусыОбъектовАренды
+ИЗ
+	РегистрСведений.АР_СтатусыОбъектовАренды.СрезПоследних(, НЕ ОбъектАренды = ЗНАЧЕНИЕ(Справочник.Ар_ОбъектыАренды.ПустаяСсылка)) КАК АР_СтатусыОбъектовАрендыСрезПоследних
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТСтавки КАК ВТСтавки
+			ЛЕВОЕ СОЕДИНЕНИЕ ВТГрафикиСрезПоследних КАК ВТГрафикиСрезПоследних
+			ПО ВТСтавки.Ставка = ВТГрафикиСрезПоследних.Ссылка
+		ПО АР_СтатусыОбъектовАрендыСрезПоследних.ОбъектАренды = ВТСтавки.ОбъектАренды
+			И АР_СтатусыОбъектовАрендыСрезПоследних.Услуга = ВТСтавки.Услуга
+			И АР_СтатусыОбъектовАрендыСрезПоследних.Договор = ВТСтавки.Договор
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТРазрешенныеДоговоры КАК ВТРазрешенныеДоговоры
+		ПО АР_СтатусыОбъектовАрендыСрезПоследних.Договор = ВТРазрешенныеДоговоры.Ссылка
+ГДЕ
+	АР_СтатусыОбъектовАрендыСрезПоследних.ДатаНачалаАренды &lt;= &amp;ПериодНД
+	И (&amp;ПериодНД &lt;= АР_СтатусыОбъектовАрендыСрезПоследних.ДатаОкончанияАренды
+			ИЛИ АР_СтатусыОбъектовАрендыСрезПоследних.ДатаОкончанияАренды = ДАТАВРЕМЯ(1, 1, 1, 0, 0, 0))
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	СтатусыОбъектовАренды.ОбъектАренды КАК ОбъектАренды,
+	МИНИМУМ(ДОБАВИТЬКДАТЕ(СтатусыОбъектовАренды.ДатаНачалаАренды, ДЕНЬ, -1)) КАК ДатаОкончанияПоле
+ПОМЕСТИТЬ ВТСтатусыСрезПервых
+ИЗ
+	РегистрСведений.АР_СтатусыОбъектовАренды КАК СтатусыОбъектовАренды
+ГДЕ
+	СтатусыОбъектовАренды.Период &lt;= &amp;ПериодНД
+	И СтатусыОбъектовАренды.ДатаНачалаАренды &gt; &amp;ПериодНД
+
+СГРУППИРОВАТЬ ПО
+	СтатусыОбъектовАренды.ОбъектАренды
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВТОбъектыАренды.ОбъектАренды КАК ОбъектАренды,
+	ВТОбъектыАренды.ОбъектАренды.ЗначениеХарактеристики КАК Площадь,
+	ВТОбъектыАренды.ТипОбъекта КАК ТипОбъекта,
+	ВТСтатусыОбъектовАренды.Услуга КАК Услуга,
+	ВТСтатусыОбъектовАренды.Договор КАК Договор,
+	ВТСтатусыОбъектовАренды.Контрагент КАК Контрагент,
+	ЕСТЬNULL(ВТСтатусыОбъектовАренды.ДатаОкончанияПоле, ВТСтатусыСрезПервых.ДатаОкончанияПоле) КАК ДатаОкончания,
+	ВТСтатусыОбъектовАренды.СпособНачисления КАК СпособНачисления,
+	ЕСТЬNULL(ВТОбъектыПодлежащиеСдачиВАренду.ПодлежитСдачеВАрендуРегистр, ЛОЖЬ) КАК ПодлежитСдачеВАренду,
+	ВТСтатусыОбъектовАренды.Ставка КАК Ставка,
+	ВТСобственникиОбъектовАренды.Собственник.ПредставлениеСобственника КАК Собственник,
+	ВТСобственникиОбъектовАренды.АгентскаяСхема КАК АгентскаяСхема,
+	ВТСобственникиОбъектовАренды.НомерЗаписиВЕГРП КАК НомерЗаписиВЕГРП,
+	ВТСобственникиОбъектовАренды.ДатаЗаписиВЕГРП КАК ДатаЗаписиВЕГРП,
+	ВТСтатусыОбъектовАренды.ДокументСтатуса КАК ДокументСтатуса,
+	ВТСтатусыОбъектовАренды.ДокументУсловийАренды КАК ДокументУсловийАренды
+ИЗ
+	ВТОбъектыАренды КАК ВТОбъектыАренды
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТСтатусыОбъектовАренды КАК ВТСтатусыОбъектовАренды
+		ПО ВТОбъектыАренды.ОбъектАренды = ВТСтатусыОбъектовАренды.ОбъектАренды
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТСтатусыСрезПервых КАК ВТСтатусыСрезПервых
+		ПО ВТОбъектыАренды.ОбъектАренды = ВТСтатусыСрезПервых.ОбъектАренды
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТОбъектыПодлежащиеСдачиВАренду КАК ВТОбъектыПодлежащиеСдачиВАренду
+		ПО ВТОбъектыАренды.ОбъектАренды = ВТОбъектыПодлежащиеСдачиВАренду.ОбъектАренды
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТСобственникиОбъектовАренды КАК ВТСобственникиОбъектовАренды
+		ПО ВТОбъектыАренды.ОбъектАренды = ВТСобственникиОбъектовАренды.ОбъектАренды</query>
+	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>ПлодащиПоДоговору</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПлощадьПоДоговору</dataPath>
+			<field>ПлощадьПоДоговору</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Площадь по договору</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Договор</dataPath>
+			<field>Договор</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбъектАрендыСвязь</dataPath>
+			<field>ОбъектАрендыСвязь</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Объект недвижимости</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаключениеДоговора</dataPath>
+			<field>ЗаключениеДоговора</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Услуга</dataPath>
+			<field>Услуга</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбъектАренды</dataPath>
+			<field>ОбъектАренды</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	АР_СтавкиСрезПоследних.ОбъектАренды КАК ОбъектАрендыСвязь,
+	АР_СтавкиСрезПоследних.Площадь КАК ПлощадьПоДоговору,
+	АР_СтавкиСрезПоследних.Договор КАК Договор
+ИЗ
+	РегистрСведений.АР_СтатусыОбъектовАренды.СрезПоследних(, Услуга.АР_УслугаАренды) КАК АР_СтатусыОбъектовАрендыСрезПоследних
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрСведений.АР_Ставки.СрезПоследних(
+				,
+				Услуга.АР_УслугаАренды
+					И (СрокДействия &gt;= &amp;ПериодНД
+						ИЛИ СрокДействия = ДАТАВРЕМЯ(1, 1, 1))) КАК АР_СтавкиСрезПоследних
+		ПО АР_СтатусыОбъектовАрендыСрезПоследних.ОбъектАренды = АР_СтавкиСрезПоследних.ОбъектАренды
+			И АР_СтатусыОбъектовАрендыСрезПоследних.Договор = АР_СтавкиСрезПоследних.Договор
+			И АР_СтатусыОбъектовАрендыСрезПоследних.Услуга = АР_СтавкиСрезПоследних.Услуга
+ГДЕ
+	АР_СтатусыОбъектовАрендыСрезПоследних.ДатаНачалаАренды &lt;= &amp;ПериодНД
+	И (КОНЕЦПЕРИОДА(АР_СтатусыОбъектовАрендыСрезПоследних.ДатаОкончанияАренды, ДЕНЬ) &gt;= &amp;ПериодНД
+			ИЛИ АР_СтатусыОбъектовАрендыСрезПоследних.ДатаОкончанияАренды = ДАТАВРЕМЯ(1, 1, 1, 0, 0, 0))</query>
+	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>Площадь</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПлощадьРесурс</dataPath>
+			<field>ПлощадьРесурс</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбъектАрендыСвязь</dataPath>
+			<field>ОбъектАрендыСвязь</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Объект недвижимости</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	АР_ОбъектыАренды.Ссылка КАК ОбъектАрендыСвязь,
+	АР_ОбъектыАренды.ЗначениеХарактеристики КАК ПлощадьРесурс
+ИЗ
+	Справочник.АР_ОбъектыАренды КАК АР_ОбъектыАренды
+</query>
+	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>СтатусыОбъектов</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Статус</dataPath>
+			<field>Статус</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбъектАрендыСвязь</dataPath>
+			<field>ОбъектАрендыСвязь</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Объект недвижимости</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаключениеДоговора</dataPath>
+			<field>ЗаключениеДоговора</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Договор</dataPath>
+			<field>Договор</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Услуга</dataPath>
+			<field>Услуга</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбъектАренды</dataPath>
+			<field>ОбъектАренды</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ РАЗЛИЧНЫЕ
+	ВЫБОР
+		КОГДА ЕСТЬNULL(ОбъектыПодлежащиеСдачеВАренду.ПодлежитСдачеВАренду, ЛОЖЬ)
+			ТОГДА ЕСТЬNULL(СтатусыОбъектовАренды.Статус, ЗНАЧЕНИЕ(Перечисление.АР_СтатусыОбъектовАренды.Свободен))
+		ИНАЧЕ ЕСТЬNULL(СтатусыОбъектовАренды.Статус, ЗНАЧЕНИЕ(Перечисление.АР_СтатусыОбъектовАренды.ПустаяСсылка))
+	КОНЕЦ КАК Статус,
+	ОбъектыАренды.Ссылка КАК ОбъектАрендыСвязь
+ИЗ
+	Справочник.АР_ОбъектыАренды КАК ОбъектыАренды
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.АР_СтатусыОбъектовАренды.СрезПоследних(
+				,
+				Услуга.АР_УслугаАренды
+					ИЛИ Услуга = ЗНАЧЕНИЕ(Справочник.Номенклатура.ПустаяСсылка)) КАК СтатусыОбъектовАренды
+		ПО (СтатусыОбъектовАренды.ОбъектАренды = ОбъектыАренды.Ссылка)
+			И (СтатусыОбъектовАренды.ДатаНачалаАренды &lt;= &amp;ПериодНД)
+			И (СтатусыОбъектовАренды.ДатаОкончанияАренды &gt;= &amp;ПериодНД
+				ИЛИ СтатусыОбъектовАренды.ДатаОкончанияАренды = ДАТАВРЕМЯ(1, 1, 1))
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.АР_ОбъектыПодлежащиеСдачеВАренду.СрезПоследних КАК ОбъектыПодлежащиеСдачеВАренду
+		ПО (ОбъектыПодлежащиеСдачеВАренду.ОбъектАренды = ОбъектыАренды.Ссылка)</query>
+	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>Собственники</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбъектАренды</dataPath>
+			<field>ОбъектАренды</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбъектАрендыСвязь</dataPath>
+			<field>ОбъектАрендыСвязь</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Объект аренды связь</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбъектАренды.СобственникОтбор</dataPath>
+			<field>СобственникОтбор</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Объект недвижимости.Собственник</v8:content>
+				</v8:item>
+			</title>
+			<useRestriction>
+				<field>true</field>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.Контрагенты</v8:Type>
+			</valueType>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	АР_ОбъектыАренды.Ссылка КАК ОбъектАрендыСвязь,
+	ЕСТЬNULL(АР_СобственникиОбъектовАрендыСрезПоследних.Собственник, АР_СобственникиОбъектовАрендыСрезПоследнихПоВсемОбъектам.Собственник) КАК СобственникСсылка
+ПОМЕСТИТЬ ВР_СобственникиОбъектов
+ИЗ
+	РегистрСведений.АР_СобственникиОбъектовАренды.СрезПоследних КАК АР_СобственникиОбъектовАрендыСрезПоследнихПоВсемОбъектам
+		ПОЛНОЕ СОЕДИНЕНИЕ Справочник.АР_ОбъектыАренды КАК АР_ОбъектыАренды
+			ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.АР_СобственникиОбъектовАренды.СрезПоследних КАК АР_СобственникиОбъектовАрендыСрезПоследних
+			ПО АР_СобственникиОбъектовАрендыСрезПоследних.ОбъектАренды = АР_ОбъектыАренды.Ссылка
+		ПО (АР_СобственникиОбъектовАрендыСрезПоследнихПоВсемОбъектам.ОбъектАренды = ЗНАЧЕНИЕ(Справочник.АР_ОбъектыАренды.ПустаяСсылка))
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВР_СобственникиОбъектов.ОбъектАрендыСвязь КАК ОбъектАрендыСвязь,
+	АР_СобственникиОбъектовНедвижимостиСобственники.Собственник КАК СобственникОтбор
+ИЗ
+	ВР_СобственникиОбъектов КАК ВР_СобственникиОбъектов
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Справочник.АР_СобственникиОбъектовНедвижимости.Собственники КАК АР_СобственникиОбъектовНедвижимостиСобственники
+		ПО ВР_СобственникиОбъектов.СобственникСсылка = АР_СобственникиОбъектовНедвижимостиСобственники.Ссылка</query>
+	</dataSet>
+	<dataSet xsi:type="DataSetQuery">
+		<name>СрокиОплаты</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Договор</dataPath>
+			<field>Договор</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДоговорКонтрагента</dataPath>
+			<field>ДоговорКонтрагента</field>
+			<useRestriction>
+				<condition>true</condition>
+			</useRestriction>
+			<attributeUseRestriction>
+				<condition>true</condition>
+			</attributeUseRestriction>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Услуга</dataPath>
+			<field>Услуга</field>
+			<useRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<attributeUseRestriction>
+				<field>true</field>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</attributeUseRestriction>
+			<role>
+				<dcscom:dimension>true</dcscom:dimension>
+				<dcscom:required>true</dcscom:required>
+			</role>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗаключениеДоговора</dataPath>
+			<field>ЗаключениеДоговора</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ОбъектАренды</dataPath>
+			<field>ОбъектАренды</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НазначениеСрока</dataPath>
+			<field>НазначениеСрока</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СрокиОплаты.КоличествоДнейОтДатыСчетаАкта</dataPath>
+			<field>КоличествоДнейОтДатыСчетаАкта</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СрокиОплаты.СпособОпределенияСрокаОплаты</dataPath>
+			<field>СпособОпределенияСрокаОплаты</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СрокиОплаты.СрокОплаты</dataPath>
+			<field>СрокОплаты</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СрокиОплаты.ПериодСрокаОплаты</dataPath>
+			<field>ПериодСрокаОплаты</field>
+			<presentationExpression>ВЫБОР
+	КОГДА СрокиОплаты.СпособОпределенияСрокаОплаты &lt;&gt; &amp;ПоПериодуНачисления ТОГДА ""
+	КОГДА СрокиОплаты.ПериодСрокаОплаты = -1 ТОГДА "Предыдущий"
+	КОГДА СрокиОплаты.ПериодСрокаОплаты = 0 ТОГДА "Текущий"
+	КОГДА СрокиОплаты.ПериодСрокаОплаты = 1 ТОГДА "Следующий"
+	ИНАЧЕ ""
+КОНЕЦ		</presentationExpression>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СрокиОплаты.УчитыватьТолькоРабочиеДниПриРасчетеПени</dataPath>
+			<field>УчитыватьТолькоРабочиеДниПриРасчетеПени</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СрокиОплаты.УчитыватьТолькоРабочиеДниОтДатыСчетаАкта</dataPath>
+			<field>УчитыватьТолькоРабочиеДниОтДатыСчетаАкта</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СрокиОплаты.СпособНачисленияПени</dataPath>
+			<field>СпособНачисленияПени</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СрокиОплаты.СтавкаПени</dataPath>
+			<field>СтавкаПени</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СрокиОплаты.СпособПогашенияПени</dataPath>
+			<field>СпособПогашенияПени</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СрокиОплаты.КоличествоДнейОтсрочки</dataPath>
+			<field>КоличествоДнейОтсрочки</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СрокиОплаты.УчитыватьТолькоРабочиеДниОтсрочки</dataPath>
+			<field>УчитыватьТолькоРабочиеДниОтсрочки</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ РАЗЛИЧНЫЕ
+	СтатусыОбъектовАренды.Договор КАК Договор,
+	СтатусыОбъектовАренды.Услуга КАК Услуга
+ПОМЕСТИТЬ ВТУслугиПоДоговору
+ИЗ
+	РегистрСведений.АР_СтатусыОбъектовАренды.СрезПоследних КАК СтатусыОбъектовАренды
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	МАКСИМУМ(СрокиОплаты.Период) КАК Период,
+	СрокиОплаты.ДоговорКонтрагента КАК Договор
+ПОМЕСТИТЬ ВТПоследнийПериод
+ИЗ
+	РегистрСведений.АР_СрокиОплатыИПараметрыНачисленияПеней.СрезПоследних(
+			,
+			СрокДействия &gt;= &amp;ПериодНД
+				ИЛИ СрокДействия = ДАТАВРЕМЯ(1, 1, 1)) КАК СрокиОплаты
+
+СГРУППИРОВАТЬ ПО
+	СрокиОплаты.ДоговорКонтрагента
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВТУслугиПоДоговору.Договор КАК Договор,
+	ВТУслугиПоДоговору.Услуга КАК Услуга,
+	СрокиОплаты.НазначениеСрока КАК НазначениеСрока,
+	СрокиОплаты.СпособОпределенияСрокаОплаты КАК СпособОпределенияСрокаОплаты,
+	СрокиОплаты.СрокОплаты КАК СрокОплаты,
+	СрокиОплаты.ПериодСрокаОплаты КАК ПериодСрокаОплаты,
+	СрокиОплаты.КоличествоДнейОтДатыСчетаАкта КАК КоличествоДнейОтДатыСчетаАкта,
+	СрокиОплаты.УчитыватьТолькоРабочиеДниОтДатыСчетаАкта КАК УчитыватьТолькоРабочиеДниОтДатыСчетаАкта,
+	СрокиОплаты.СпособНачисленияПени КАК СпособНачисленияПени,
+	СрокиОплаты.СтавкаПени КАК СтавкаПени,
+	СрокиОплаты.СпособПогашенияПени КАК СпособПогашенияПени,
+	СрокиОплаты.КоличествоДнейОтсрочки КАК КоличествоДнейОтсрочки,
+	СрокиОплаты.УчитыватьТолькоРабочиеДниОтсрочки КАК УчитыватьТолькоРабочиеДниОтсрочки,
+	СрокиОплаты.УчитыватьТолькоРабочиеДниПриРасчетеПени КАК УчитыватьТолькоРабочиеДниПриРасчетеПени,
+	ВЫБОР
+		КОГДА СрокиОплаты.НазначениеСрока = ЗНАЧЕНИЕ(Перечисление.АР_ВариантыНазначенияСрокаОплаты.ДляУслуги)
+				И ВТУслугиПоДоговору.Услуга = СрокиОплаты.Услуга
+			ТОГДА 1
+		КОГДА СрокиОплаты.НазначениеСрока = ЗНАЧЕНИЕ(Перечисление.АР_ВариантыНазначенияСрокаОплаты.ПостояннаяЧасть)
+				И ВТУслугиПоДоговору.Услуга.АР_ПостояннаяЧастьОплаты
+			ТОГДА 2
+		КОГДА СрокиОплаты.НазначениеСрока = ЗНАЧЕНИЕ(Перечисление.АР_ВариантыНазначенияСрокаОплаты.ПеременнаяЧасть)
+				И НЕ ВТУслугиПоДоговору.Услуга.АР_ПостояннаяЧастьОплаты
+			ТОГДА 3
+		КОГДА СрокиОплаты.НазначениеСрока = ЗНАЧЕНИЕ(Перечисление.АР_ВариантыНазначенияСрокаОплаты.Общий)
+			ТОГДА 4
+		ИНАЧЕ 5
+	КОНЕЦ КАК Порядок
+ПОМЕСТИТЬ ВТСрокиОплатыСПорядком
+ИЗ
+	ВТУслугиПоДоговору КАК ВТУслугиПоДоговору
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.АР_СрокиОплатыИПараметрыНачисленияПеней.СрезПоследних(
+				,
+				СрокДействия &gt;= &amp;ПериодНД
+					ИЛИ СрокДействия = ДАТАВРЕМЯ(1, 1, 1)) КАК СрокиОплаты
+			ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТПоследнийПериод КАК ВТПоследнийПериод
+			ПО СрокиОплаты.Период = ВТПоследнийПериод.Период
+				И СрокиОплаты.ДоговорКонтрагента = ВТПоследнийПериод.Договор
+		ПО ВТУслугиПоДоговору.Договор = СрокиОплаты.ДоговорКонтрагента
+			И (ВТУслугиПоДоговору.Услуга = СрокиОплаты.Услуга
+				ИЛИ СрокиОплаты.Услуга = ЗНАЧЕНИЕ(Справочник.Номенклатура.ПустаяСсылка))
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВТСрокиОплатыСПорядком.Договор КАК Договор,
+	ВТСрокиОплатыСПорядком.Услуга КАК Услуга,
+	МИНИМУМ(ВТСрокиОплатыСПорядком.Порядок) КАК Порядок
+ПОМЕСТИТЬ ВТМинимальныйПорядок
+ИЗ
+	ВТСрокиОплатыСПорядком КАК ВТСрокиОплатыСПорядком
+
+СГРУППИРОВАТЬ ПО
+	ВТСрокиОплатыСПорядком.Договор,
+	ВТСрокиОплатыСПорядком.Услуга
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ВТСрокиОплатыСПорядком.Договор КАК Договор,
+	ВТСрокиОплатыСПорядком.Услуга КАК Услуга,
+	ВТСрокиОплатыСПорядком.СпособОпределенияСрокаОплаты КАК СпособОпределенияСрокаОплаты,
+	ВТСрокиОплатыСПорядком.СрокОплаты КАК СрокОплаты,
+	ВТСрокиОплатыСПорядком.ПериодСрокаОплаты КАК ПериодСрокаОплаты,
+	ВТСрокиОплатыСПорядком.КоличествоДнейОтДатыСчетаАкта КАК КоличествоДнейОтДатыСчетаАкта,
+	ВТСрокиОплатыСПорядком.УчитыватьТолькоРабочиеДниОтДатыСчетаАкта КАК УчитыватьТолькоРабочиеДниОтДатыСчетаАкта,
+	ВТСрокиОплатыСПорядком.СпособНачисленияПени КАК СпособНачисленияПени,
+	ВТСрокиОплатыСПорядком.СтавкаПени КАК СтавкаПени,
+	ВТСрокиОплатыСПорядком.СпособПогашенияПени КАК СпособПогашенияПени,
+	ВТСрокиОплатыСПорядком.КоличествоДнейОтсрочки КАК КоличествоДнейОтсрочки,
+	ВТСрокиОплатыСПорядком.УчитыватьТолькоРабочиеДниОтсрочки КАК УчитыватьТолькоРабочиеДниОтсрочки,
+	ВТСрокиОплатыСПорядком.УчитыватьТолькоРабочиеДниПриРасчетеПени КАК УчитыватьТолькоРабочиеДниПриРасчетеПени
+ИЗ
+	ВТСрокиОплатыСПорядком КАК ВТСрокиОплатыСПорядком
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ВТМинимальныйПорядок КАК ВТМинимальныйПорядок
+		ПО ВТСрокиОплатыСПорядком.Договор = ВТМинимальныйПорядок.Договор
+			И ВТСрокиОплатыСПорядком.Услуга = ВТМинимальныйПорядок.Услуга
+			И ВТСрокиОплатыСПорядком.Порядок = ВТМинимальныйПорядок.Порядок</query>
+	</dataSet>
+	<dataSetLink>
+		<sourceDataSet>СтатусыОбъектовАренды</sourceDataSet>
+		<destinationDataSet>ПлодащиПоДоговору</destinationDataSet>
+		<sourceExpression>ОбъектАренды</sourceExpression>
+		<destinationExpression>ОбъектАрендыСвязь</destinationExpression>
+	</dataSetLink>
+	<dataSetLink>
+		<sourceDataSet>СтатусыОбъектовАренды</sourceDataSet>
+		<destinationDataSet>Площадь</destinationDataSet>
+		<sourceExpression>ОбъектАренды</sourceExpression>
+		<destinationExpression>ОбъектАрендыСвязь</destinationExpression>
+	</dataSetLink>
+	<dataSetLink>
+		<sourceDataSet>СтатусыОбъектовАренды</sourceDataSet>
+		<destinationDataSet>СтатусыОбъектов</destinationDataSet>
+		<sourceExpression>ОбъектАренды</sourceExpression>
+		<destinationExpression>ОбъектАрендыСвязь</destinationExpression>
+	</dataSetLink>
+	<dataSetLink>
+		<sourceDataSet>СтатусыОбъектовАренды</sourceDataSet>
+		<destinationDataSet>ПлодащиПоДоговору</destinationDataSet>
+		<sourceExpression>Договор</sourceExpression>
+		<destinationExpression>Договор</destinationExpression>
+	</dataSetLink>
+	<dataSetLink>
+		<sourceDataSet>СтатусыОбъектовАренды</sourceDataSet>
+		<destinationDataSet>Собственники</destinationDataSet>
+		<sourceExpression>ОбъектАренды</sourceExpression>
+		<destinationExpression>ОбъектАрендыСвязь</destinationExpression>
+	</dataSetLink>
+	<dataSetLink>
+		<sourceDataSet>СтатусыОбъектовАренды</sourceDataSet>
+		<destinationDataSet>СрокиОплаты</destinationDataSet>
+		<sourceExpression>Договор</sourceExpression>
+		<destinationExpression>Договор</destinationExpression>
+	</dataSetLink>
+	<dataSetLink>
+		<sourceDataSet>СтатусыОбъектовАренды</sourceDataSet>
+		<destinationDataSet>СрокиОплаты</destinationDataSet>
+		<sourceExpression>Услуга</sourceExpression>
+		<destinationExpression>Услуга</destinationExpression>
+	</dataSetLink>
+	<totalField>
+		<dataPath>Площадь</dataPath>
+		<expression>Сумма(ПлощадьРесурс)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПлощадьПоДоговору</dataPath>
+		<expression>Сумма(ЕстьNULL(ПлощадьПоДоговору, 0))</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Статус</dataPath>
+		<expression>Максимум(Статус)</expression>
+		<group>ОбъектАренды</group>
+	</totalField>
+	<totalField>
+		<dataPath>Статус</dataPath>
+		<expression>""</expression>
+		<group>ОбщийИтог</group>
+	</totalField>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>Date</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+		<inputParameters>
+			<dcscor:item>
+				<dcscor:parameter>ФорматРедактирования</dcscor:parameter>
+				<dcscor:value xsi:type="xs:string">ДФ=dd.MM.yyyy</dcscor:value>
+			</dcscor:item>
+		</inputParameters>
+		<use>Always</use>
+	</parameter>
+	<parameter>
+		<name>ПериодНД</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период НД</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+		<availableAsField>false</availableAsField>
+	</parameter>
+	<parameter>
+		<name>ПоПериодуНачисления</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>По периоду начисления</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:EnumRef.АР_СпособыРасчетаПросрочки</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">Перечисление.АР_СпособыРасчетаПросрочки.ПоПериодуНачисления</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>РеестрОбъектов</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Реестр объектов недвижимости</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Площадь</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПлощадьПоДоговору</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Услуга</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Ставка</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Статус</dcsset:field>
+				</dcsset:item>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+				<dcsset:userSettingID>a5cdd70c-ed57-49f9-8d2c-89954084012b</dcsset:userSettingID>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ОбъектАренды</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.АР_ОбъектыАренды.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>ef3f1475-1359-4d4e-b5c6-f15ea6d40d33</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Услуга</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.Номенклатура.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>5260b5ff-fae8-460c-9469-ac985f54e929</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Статус</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.АР_СтатусыОбъектовАренды.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>637e27e6-16ca-4031-84fa-d63f633777aa</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+				<dcsset:userSettingID>2f972e4a-8ec7-4eca-96e5-01eae182dafd</dcsset:userSettingID>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardBeginningDate">
+						<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfThisDay</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>d0ca4efd-2324-4868-b218-ef5c1906c620</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>ОбъектАренды</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>Услуга</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>Статус</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+				<dcsset:userSettingID>6b502fef-bcd6-422e-b3ad-0ad578ddff26</dcsset:userSettingID>
+			</dcsset:order>
+			<dcsset:conditionalAppearance>
+				<dcsset:viewMode>Normal</dcsset:viewMode>
+				<dcsset:userSettingID>55e3f2b6-1b77-4b85-baf1-09fff30acd7e</dcsset:userSettingID>
+			</dcsset:conditionalAppearance>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>МакетОформления</dcscor:parameter>
+					<dcscor:value xsi:type="xs:string">Основной</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">Output</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Заголовок</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Реестр объектов недвижимости</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ВыводитьПараметрыДанных</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ОбъектАренды</dcsset:field>
+						<dcsset:groupType>Hierarchy</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:item>
+			</dcsset:item>
+			<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+			<dcsset:itemsUserSettingID>10be2bab-9be8-4b61-938d-2308509a8a0e</dcsset:itemsUserSettingID>
+		</dcsset:settings>
+	</settingsVariant>
+	<settingsVariant>
+		<dcsset:name>РеестрДоговоров</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Реестр договоров аренды</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ОбъектАренды</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Услуга</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Ставка</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Площадь</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ПлощадьПоДоговору</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Статус</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:filter>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">ОбъектАренды</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.АР_ОбъектыАренды.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>04875629-a062-4893-8aca-136957bf9c42</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:left xsi:type="dcscor:Field">Услуга</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Справочник.Номенклатура.ПустаяСсылка</dcsset:right>
+					<dcsset:userSettingID>5a12c6f2-d9a4-49a8-af57-6fc58c55bb93</dcsset:userSettingID>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:FilterItemComparison">
+					<dcsset:left xsi:type="dcscor:Field">Статус</dcsset:left>
+					<dcsset:comparisonType>Equal</dcsset:comparisonType>
+					<dcsset:right xsi:type="dcscor:DesignTimeValue">Перечисление.АР_СтатусыОбъектовАренды.ВАренде</dcsset:right>
+					<dcsset:userSettingID>4d872fd3-6e5a-438a-8fc7-4b3177f63b72</dcsset:userSettingID>
+				</dcsset:item>
+			</dcsset:filter>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardBeginningDate">
+						<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfThisDay</v8:variant>
+					</dcscor:value>
+					<dcsset:userSettingID>ecfe3ecb-67fa-4fef-a622-49f3436be9d1</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>Контрагент</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Договор</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+					</dcsset:item>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

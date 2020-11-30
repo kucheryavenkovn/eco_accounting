@@ -1,0 +1,653 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Начисленные налоги и взносы</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаИнформацияОСпискеЗадач" id="271">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Информация о списке задач</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Horizontal</Group>
+			<Representation>NormalSeparation</Representation>
+			<ShowTitle>false</ShowTitle>
+			<BackColor>style:БыстрыеОтборыФонГруппы</BackColor>
+			<ExtendedTooltip name="ГруппаИнформацияОСпискеЗадачРасширеннаяПодсказка" id="272"/>
+			<ChildItems>
+				<PictureDecoration name="ДекорацияКартинкаИнформация" id="273">
+					<Picture>
+						<xr:Ref>CommonPicture.Информация</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<FileDragMode>AsFile</FileDragMode>
+					<ContextMenu name="ДекорацияКартинкаИнформацияКонтекстноеМеню" id="274"/>
+					<ExtendedTooltip name="ДекорацияКартинкаИнформацияРасширеннаяПодсказка" id="275"/>
+				</PictureDecoration>
+				<LabelDecoration name="ДекорацияТекстИнформацииОСпискеЗадач" id="276">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<Title formatted="true">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>В списке приведены только начисленные налоги и взносы. Для оплаты других налогов и взносов перейдите в &lt;link ОткрытьСписокЗадач&gt;список задач&lt;/&gt;.</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДекорацияТекстИнформацииОСпискеЗадачКонтекстноеМеню" id="277"/>
+					<ExtendedTooltip name="ДекорацияТекстИнформацииОСпискеЗадачРасширеннаяПодсказка" id="278"/>
+					<Events>
+						<Event name="URLProcessing">ДекорацияТекстИнформацииОСпискеЗадачОбработкаНавигационнойСсылки</Event>
+					</Events>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаШапка" id="221">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шапка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шапка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаШапкаРасширеннаяПодсказка" id="222"/>
+			<ChildItems>
+				<InputField name="ДатаОстатков" id="5">
+					<DataPath>Объект.ДатаОстатков</DataPath>
+					<ContextMenu name="ДатаОстатковКонтекстноеМеню" id="6"/>
+					<ExtendedTooltip name="ДатаОстатковExtendedTooltip" id="143"/>
+					<Events>
+						<Event name="OnChange">ДатаОстатковПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="Организация" id="1">
+					<DataPath>Объект.Организация</DataPath>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="ОрганизацияExtendedTooltip" id="139"/>
+					<Events>
+						<Event name="OnChange">ОрганизацияПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="СчетОрганизации" id="3">
+					<DataPath>Объект.СчетОрганизации</DataPath>
+					<ChoiceParameterLinks>
+						<xr:Link>
+							<xr:Name>Отбор.ВалютаДенежныхСредств</xr:Name>
+							<xr:DataPath xsi:type="xs:string">ВалютаРегламентированногоУчета</xr:DataPath>
+							<xr:ValueChange>Clear</xr:ValueChange>
+						</xr:Link>
+					</ChoiceParameterLinks>
+					<InputHint>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выберите счет, с которого будет производиться оплата</v8:content>
+						</v8:item>
+					</InputHint>
+					<ContextMenu name="СчетОрганизацииКонтекстноеМеню" id="4"/>
+					<ExtendedTooltip name="СчетОрганизацииExtendedTooltip" id="140"/>
+					<Events>
+						<Event name="OnChange">СчетОрганизацииПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ВыбранныйСпособОплаты" id="226">
+					<DataPath>ВыбранныйСпособОплаты</DataPath>
+					<Visible>false</Visible>
+					<ListChoiceMode>true</ListChoiceMode>
+					<ContextMenu name="ВыбранныйСпособОплатыКонтекстноеМеню" id="227"/>
+					<ExtendedTooltip name="ВыбранныйСпособОплатыРасширеннаяПодсказка" id="228"/>
+					<Events>
+						<Event name="OnChange">ВыбранныйСпособОплатыПриИзменении</Event>
+						<Event name="Clearing">ВыбранныйСпособОплатыОчистка</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<CommandBar name="ГруппаКоманднаяПанель" id="247">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа командная панель</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа командная панель</v8:content>
+				</v8:item>
+			</ToolTip>
+			<CommandSource>Form</CommandSource>
+			<ExtendedTooltip name="ГруппаКоманднаяПанельРасширеннаяПодсказка" id="248"/>
+			<ChildItems>
+				<Button name="СоздатьПлатежныеДокументы" id="43">
+					<Type>CommandBarButton</Type>
+					<Representation>Text</Representation>
+					<DefaultButton>true</DefaultButton>
+					<CommandName>Form.Command.СоздатьПлатежныеДокументы</CommandName>
+					<ExtendedTooltip name="СоздатьПлатежныеДокументыРасширеннаяПодсказка" id="137"/>
+				</Button>
+				<ButtonGroup name="ГруппаФлажки" id="42">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа флажки</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Флажки</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ГруппаФлажкиExtendedTooltip" id="149"/>
+					<ChildItems>
+						<Button name="БухОстаткиБухОстаткиОтметитьВсе" id="40">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Command.БухОстаткиОтметитьВсе</CommandName>
+							<ExtendedTooltip name="БухОстаткиБухОстаткиОтметитьВсеExtendedTooltip" id="150"/>
+						</Button>
+						<Button name="БухОстаткиБухОстаткиСнятьВсе" id="41">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Command.БухОстаткиСнятьВсе</CommandName>
+							<ExtendedTooltip name="БухОстаткиБухОстаткиСнятьВсеExtendedTooltip" id="151"/>
+						</Button>
+					</ChildItems>
+				</ButtonGroup>
+				<Button name="БухОстаткиБухОстаткиЗаполнить" id="239">
+					<Type>CommandBarButton</Type>
+					<CommandName>Form.Command.БухОстаткиЗаполнить</CommandName>
+					<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+					<ExtendedTooltip name="БухОстаткиБухОстаткиЗаполнитьРасширеннаяПодсказка" id="240"/>
+				</Button>
+			</ChildItems>
+		</CommandBar>
+		<Table name="БухОстатки" id="10">
+			<ChangeRowSet>false</ChangeRowSet>
+			<ChangeRowOrder>false</ChangeRowOrder>
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Объект.БухОстатки</DataPath>
+			<CommandSet>
+				<ExcludedCommand>Add</ExcludedCommand>
+				<ExcludedCommand>Change</ExcludedCommand>
+				<ExcludedCommand>Copy</ExcludedCommand>
+				<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+				<ExcludedCommand>Delete</ExcludedCommand>
+				<ExcludedCommand>EndEdit</ExcludedCommand>
+				<ExcludedCommand>MoveDown</ExcludedCommand>
+				<ExcludedCommand>MoveUp</ExcludedCommand>
+				<ExcludedCommand>OutputList</ExcludedCommand>
+				<ExcludedCommand>SelectAll</ExcludedCommand>
+				<ExcludedCommand>SortListAsc</ExcludedCommand>
+				<ExcludedCommand>SortListDesc</ExcludedCommand>
+			</CommandSet>
+			<SearchStringLocation>None</SearchStringLocation>
+			<ViewStatusLocation>None</ViewStatusLocation>
+			<SearchControlLocation>None</SearchControlLocation>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="БухОстаткиКонтекстноеМеню" id="11"/>
+			<AutoCommandBar name="БухОстаткиКоманднаяПанель" id="12">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="БухОстаткиExtendedTooltip" id="152"/>
+			<SearchStringAddition name="БухОстаткиСтрокаПоиска" id="203">
+				<AdditionSource>
+					<Item>БухОстатки</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="БухОстаткиСтрокаПоискаКонтекстноеМеню" id="204"/>
+				<ExtendedTooltip name="БухОстаткиСтрокаПоискаРасширеннаяПодсказка" id="205"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="БухОстаткиСостояниеПросмотра" id="206">
+				<AdditionSource>
+					<Item>БухОстатки</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="БухОстаткиСостояниеПросмотраКонтекстноеМеню" id="207"/>
+				<ExtendedTooltip name="БухОстаткиСостояниеПросмотраРасширеннаяПодсказка" id="208"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="БухОстаткиУправлениеПоиском" id="209">
+				<AdditionSource>
+					<Item>БухОстатки</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="БухОстаткиУправлениеПоискомКонтекстноеМеню" id="210"/>
+				<ExtendedTooltip name="БухОстаткиУправлениеПоискомРасширеннаяПодсказка" id="211"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<CheckBoxField name="БухОстаткиОплатить" id="15">
+					<DataPath>Объект.БухОстатки.Оплатить</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="БухОстаткиОплатитьКонтекстноеМеню" id="16">
+						<Autofill>false</Autofill>
+					</ContextMenu>
+					<ExtendedTooltip name="БухОстаткиОплатитьExtendedTooltip" id="154"/>
+					<Events>
+						<Event name="OnChange">БухОстаткиОплатитьПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<InputField name="БухОстаткиСчетУчета" id="17">
+					<DataPath>Объект.БухОстатки.СчетУчета</DataPath>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Счет</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>8</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+					<ContextMenu name="БухОстаткиСчетУчетаКонтекстноеМеню" id="18"/>
+					<ExtendedTooltip name="БухОстаткиСчетУчетаExtendedTooltip" id="156"/>
+				</InputField>
+				<ColumnGroup name="БухОстаткиГруппаСубконто" id="258">
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<EnableContentChange>true</EnableContentChange>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Субконто</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Субконто</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ShowInHeader>true</ShowInHeader>
+					<ExtendedTooltip name="БухОстаткиГруппаСубконтоРасширеннаяПодсказка" id="259"/>
+					<ChildItems>
+						<InputField name="БухОстаткиСубконто1" id="260">
+							<DataPath>Объект.БухОстатки.Субконто1</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ShowInHeader>false</ShowInHeader>
+							<Width>30</Width>
+							<ContextMenu name="БухОстаткиСубконто1КонтекстноеМеню" id="261"/>
+							<ExtendedTooltip name="БухОстаткиСубконто1РасширеннаяПодсказка" id="262"/>
+						</InputField>
+						<InputField name="БухОстаткиСубконто2" id="263">
+							<DataPath>Объект.БухОстатки.Субконто2</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ShowInHeader>false</ShowInHeader>
+							<Width>30</Width>
+							<ContextMenu name="БухОстаткиСубконто2КонтекстноеМеню" id="264"/>
+							<ExtendedTooltip name="БухОстаткиСубконто2РасширеннаяПодсказка" id="265"/>
+						</InputField>
+						<InputField name="БухОстаткиСубконто3" id="266">
+							<DataPath>Объект.БухОстатки.Субконто3</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ShowInHeader>false</ShowInHeader>
+							<Width>30</Width>
+							<ContextMenu name="БухОстаткиСубконто3КонтекстноеМеню" id="267"/>
+							<ExtendedTooltip name="БухОстаткиСубконто3РасширеннаяПодсказка" id="268"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+				<ColumnGroup name="БухОстаткиГруппаНалог" id="269">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Налог</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Налог</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ShowInHeader>true</ShowInHeader>
+					<ExtendedTooltip name="БухОстаткиГруппаНалогРасширеннаяПодсказка" id="270"/>
+					<ChildItems>
+						<InputField name="БухОстаткиНалог" id="249">
+							<DataPath>Объект.БухОстатки.Налог</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ShowInHeader>false</ShowInHeader>
+							<Width>30</Width>
+							<ContextMenu name="БухОстаткиНалогКонтекстноеМеню" id="250"/>
+							<ExtendedTooltip name="БухОстаткиНалогРасширеннаяПодсказка" id="251"/>
+						</InputField>
+						<InputField name="БухОстаткиРегистрацияВНалоговомОргане" id="255">
+							<DataPath>Объект.БухОстатки.РегистрацияВНалоговомОргане</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ShowInHeader>false</ShowInHeader>
+							<Width>30</Width>
+							<ContextMenu name="БухОстаткиРегистрацияВНалоговомОрганеКонтекстноеМеню" id="256"/>
+							<ExtendedTooltip name="БухОстаткиРегистрацияВНалоговомОрганеРасширеннаяПодсказка" id="257"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+				<InputField name="БухОстаткиВидНалоговогоОбязательства" id="252">
+					<DataPath>Объект.БухОстатки.ВидНалоговогоОбязательства</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>18</Width>
+					<ContextMenu name="БухОстаткиВидНалоговогоОбязательстваКонтекстноеМеню" id="253"/>
+					<ExtendedTooltip name="БухОстаткиВидНалоговогоОбязательстваРасширеннаяПодсказка" id="254"/>
+				</InputField>
+				<InputField name="БухОстаткиСумма" id="27">
+					<DataPath>Объект.БухОстатки.Сумма</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="БухОстаткиСуммаКонтекстноеМеню" id="28"/>
+					<ExtendedTooltip name="БухОстаткиСуммаExtendedTooltip" id="162"/>
+					<Events>
+						<Event name="OnChange">БухОстаткиСуммаПриИзменении</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<UsualGroup name="ГруппаИтогиОстатки" id="114">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Итоги (остатки)</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Итоги (остатки)</v8:content>
+				</v8:item>
+			</ToolTip>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>Horizontal</Group>
+			<HorizontalAlign>Right</HorizontalAlign>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаИтогиОстаткиExtendedTooltip" id="163"/>
+			<ChildItems>
+				<UsualGroup name="ИтогоКОплате" id="111">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Итого к оплате</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Итого к оплате</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<BackColor>style:ИтогиФонГруппы</BackColor>
+					<ExtendedTooltip name="ИтогоКОплатеExtendedTooltip" id="165"/>
+					<ChildItems>
+						<InputField name="БухОстаткиИтогСуммаКОплате" id="100">
+							<DataPath>СуммаКОплате</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Итого оплатить</v8:content>
+								</v8:item>
+							</Title>
+							<HorizontalAlign>Right</HorizontalAlign>
+							<Width>12</Width>
+							<Format>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧДЦ=2; ЧН=</v8:content>
+								</v8:item>
+							</Format>
+							<ContextMenu name="БухОстаткиИтогСуммаКОплатеКонтекстноеМеню" id="101"/>
+							<ExtendedTooltip name="БухОстаткиИтогСуммаКОплатеExtendedTooltip" id="166"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ФормированиеПлатежныхПорученийНаУплатуНалогов</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Columns>
+				<AdditionalColumns table="Объект.БухОстатки">
+					<Column name="ВидНалоговогоОбязательстваПредставление" id="6">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Представление вида обязательства</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>0</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+				</AdditionalColumns>
+			</Columns>
+		</Attribute>
+		<Attribute name="СуммаКОплате" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма к оплате</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПолеОрганизацияПустое" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Организация</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<FunctionalOptions>
+				<Item>FunctionalOption.НеИспользоватьНесколькоОрганизацийБухгалтерскийУчет</Item>
+			</FunctionalOptions>
+		</Attribute>
+		<Attribute name="ВыбранныйСпособОплаты" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Способ оплаты</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="ЭтоЮрЛицо" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Это юр. лицо</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СписокПлатежныхДокументов" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список платежных документов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ВалютаРегламентированногоУчета" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Валюта регламентированного учета</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Валюты</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="БухОстаткиЗаполнить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Shortcut>F5</Shortcut>
+			<Picture>
+				<xr:Ref>StdPicture.Refresh</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>БухОстаткиЗаполнить</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="БухОстаткиОтметитьВсе" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отметить все</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отметить все</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>БухОстаткиОтметитьВсе</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="БухОстаткиСнятьВсе" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять все</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять все</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>БухОстаткиСнятьВсе</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СоздатьПлатежныеДокументы" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать платежные документы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать платежные документы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.GenerateReport</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СоздатьПлатежныеДокументы</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="Организация">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+			</Type>
+			<KeyParameter>true</KeyParameter>
+		</Parameter>
+		<Parameter name="ДатаОстатков">
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Parameter>
+		<Parameter name="Платежи">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+		<Parameter name="СчетОрганизации">
+			<Type>
+				<v8:Type>cfg:CatalogRef.БанковскиеСчета</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="СпособОплаты">
+			<Type>
+				<v8:Type>cfg:EnumRef.СпособыУплатыНалогов</v8:Type>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

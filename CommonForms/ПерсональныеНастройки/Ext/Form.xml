@@ -1,0 +1,468 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<CommandBarLocation>Top</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаЗаписатьИЗакрыть" id="14">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ЗаписатьИЗакрыть</CommandName>
+				<ExtendedTooltip name="ФормаЗаписатьИЗакрытьExtendedTooltip" id="38"/>
+			</Button>
+			<Button name="ФормаЗаписать" id="15">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.Записать</CommandName>
+				<ExtendedTooltip name="ФормаЗаписатьExtendedTooltip" id="39"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="BeforeClose">ПередЗакрытием</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="FillCheckProcessingAtServer">ОбработкаПроверкиЗаполненияНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<LabelField name="АвторизованныйПользователь" id="85">
+			<DataPath>АвторизованныйПользователь</DataPath>
+			<Hiperlink>true</Hiperlink>
+			<ContextMenu name="АвторизованныйПользовательКонтекстноеМеню" id="86"/>
+			<ExtendedTooltip name="АвторизованныйПользовательРасширеннаяПодсказка" id="87"/>
+			<Events>
+				<Event name="Click">АвторизованныйПользовательНажатие</Event>
+			</Events>
+		</LabelField>
+		<InputField name="ОсновнаяОрганизация" id="10">
+			<DataPath>ОсновнаяОрганизация</DataPath>
+			<ClearButton>true</ClearButton>
+			<ContextMenu name="ОсновнаяОрганизацияКонтекстноеМеню" id="11"/>
+			<ExtendedTooltip name="ОсновнаяОрганизацияExtendedTooltip" id="42"/>
+		</InputField>
+		<InputField name="ОсновноеПодразделение" id="6">
+			<DataPath>ОсновноеПодразделение</DataPath>
+			<ClearButton>true</ClearButton>
+			<ChoiceParameterLinks>
+				<xr:Link>
+					<xr:Name>Отбор.Владелец</xr:Name>
+					<xr:DataPath xsi:type="xs:string">ОсновнаяОрганизация</xr:DataPath>
+					<xr:ValueChange>Clear</xr:ValueChange>
+				</xr:Link>
+			</ChoiceParameterLinks>
+			<ContextMenu name="ОсновноеПодразделениеКонтекстноеМеню" id="7"/>
+			<ExtendedTooltip name="ОсновноеПодразделениеExtendedTooltip" id="43"/>
+			<Events>
+				<Event name="OnChange">ОсновноеПодразделениеПриИзменении</Event>
+			</Events>
+		</InputField>
+		<InputField name="ОсновнойСклад" id="8">
+			<DataPath>ОсновнойСклад</DataPath>
+			<ClearButton>true</ClearButton>
+			<ContextMenu name="ОсновнойСкладКонтекстноеМеню" id="9"/>
+			<ExtendedTooltip name="ОсновнойСкладExtendedTooltip" id="44"/>
+		</InputField>
+		<RadioButtonField name="ИспользоватьТекущуюДатуКомпьютера" id="27">
+			<DataPath>ИспользоватьТекущуюДатуКомпьютера</DataPath>
+			<RadioButtonType>Auto</RadioButtonType>
+			<ChoiceList>
+				<xr:Item>
+					<xr:Presentation/>
+					<xr:CheckState>0</xr:CheckState>
+					<xr:Value xsi:type="FormChoiceListDesTimeValue">
+						<Presentation>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Текущая дата компьютера</v8:content>
+							</v8:item>
+						</Presentation>
+						<Value xsi:type="xs:decimal">0</Value>
+					</xr:Value>
+				</xr:Item>
+			</ChoiceList>
+			<ContextMenu name="ИспользоватьТекущуюДатуКомпьютераКонтекстноеМеню" id="28"/>
+			<ExtendedTooltip name="ИспользоватьТекущуюДатуКомпьютераРасширеннаяПодсказка" id="49"/>
+			<Events>
+				<Event name="OnChange">ИспользоватьТекущуюДатуКомпьютераПриИзменении</Event>
+			</Events>
+		</RadioButtonField>
+		<UsualGroup name="ГруппаДругаяДата" id="29">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Другая дата</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаДругаяДатаРасширеннаяПодсказка" id="50"/>
+			<ChildItems>
+				<RadioButtonField name="ИспользоватьЗначение" id="20">
+					<DataPath>ИспользоватьТекущуюДатуКомпьютера</DataPath>
+					<TitleTextColor>style:FormBackColor</TitleTextColor>
+					<RadioButtonType>Auto</RadioButtonType>
+					<ChoiceList>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Другая дата:</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xs:decimal">1</Value>
+							</xr:Value>
+						</xr:Item>
+					</ChoiceList>
+					<ContextMenu name="ИспользоватьЗначениеКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="ИспользоватьЗначениеExtendedTooltip" id="52"/>
+					<Events>
+						<Event name="OnChange">ИспользоватьТекущуюДатуКомпьютераПриИзменении</Event>
+					</Events>
+				</RadioButtonField>
+				<InputField name="ЗначениеРабочейДаты" id="22">
+					<DataPath>ЗначениеРабочейДаты</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<ContextMenu name="ЗначениеРабочейДатыКонтекстноеМеню" id="23"/>
+					<ExtendedTooltip name="ЗначениеРабочейДатыExtendedTooltip" id="53"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<CheckBoxField name="ПоказыватьСчетаУчетаВДокументах" id="70">
+			<DataPath>ПоказыватьСчетаУчетаВДокументах</DataPath>
+			<TitleLocation>Right</TitleLocation>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="ПоказыватьСчетаУчетаВДокументахКонтекстноеМеню" id="71"/>
+			<ExtendedTooltip name="ПоказыватьСчетаУчетаВДокументахРасширеннаяПодсказка" id="72"/>
+		</CheckBoxField>
+		<CheckBoxField name="ЗапрашиватьПодтверждениеПриЗавершенииПрограммы" id="12">
+			<DataPath>ЗапрашиватьПодтверждениеПриЗавершенииПрограммы</DataPath>
+			<TitleLocation>Right</TitleLocation>
+			<TitleHeight>1</TitleHeight>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="ЗапрашиватьПодтверждениеПриЗавершенииПрограммыКонтекстноеМеню" id="13"/>
+			<ExtendedTooltip name="ЗапрашиватьПодтверждениеПриЗавершенииПрограммыExtendedTooltip" id="54"/>
+		</CheckBoxField>
+		<Button name="НастройкиЭлектроннойПочты" id="83">
+			<Type>Hyperlink</Type>
+			<CommandName>CommonCommand.НастройкиЭлектроннойПочты</CommandName>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки электронной почты</v8:content>
+				</v8:item>
+			</Title>
+			<ExtendedTooltip name="НастройкиЭлектроннойПочтыРасширеннаяПодсказка" id="84"/>
+		</Button>
+		<Button name="НастройкаСинхронизацииСКалендаремGoogle" id="88">
+			<Type>Hyperlink</Type>
+			<CommandName>Form.Command.НастройкаСинхронизацииСКалендаремGoogle</CommandName>
+			<ExtendedTooltip name="НастройкаСинхронизацииСКалендаремGoogleРасширеннаяПодсказка" id="89"/>
+		</Button>
+		<Button name="ПараметрыПроксиСервера" id="55">
+			<Type>Hyperlink</Type>
+			<CommandName>CommonCommand.ПерсональнаяНастройкаПроксиСервера</CommandName>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры прокси-сервера</v8:content>
+				</v8:item>
+			</Title>
+			<ExtendedTooltip name="ПараметрыПроксиСервераРасширеннаяПодсказка" id="56"/>
+		</Button>
+		<Button name="НастройкаКоннект" id="92">
+			<Type>Hyperlink</Type>
+			<CommandName>Form.Command.НастройкаКоннект</CommandName>
+			<ExtendedTooltip name="НастройкаКоннектРасширеннаяПодсказка" id="93"/>
+		</Button>
+		<Button name="НастройкаСканирования" id="90">
+			<Type>Hyperlink</Type>
+			<SkipOnInput>false</SkipOnInput>
+			<CommandName>Form.Command.НастройкаСканирования</CommandName>
+			<ExtendedTooltip name="НастройкаСканированияExtendedTooltip" id="91"/>
+		</Button>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ОсновнаяОрганизация" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основная организация</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+			<FunctionalOptions>
+				<Item>FunctionalOption.ИспользоватьНесколькоОрганизацийБухгалтерскийУчет</Item>
+			</FunctionalOptions>
+		</Attribute>
+		<Attribute name="ОсновноеПодразделение" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основное подразделение</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ПодразделенияОрганизаций</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ОсновнойСклад" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основной склад</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Склады</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+			<FunctionalOptions>
+				<Item>FunctionalOption.ИспользоватьНесколькоСкладовБухгалтерскийУчет</Item>
+			</FunctionalOptions>
+		</Attribute>
+		<Attribute name="ТекущаяОрганизация" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текущая организация</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗапрашиватьПодтверждениеПриЗавершенииПрограммы" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Запрашивать подтверждение при завершении программы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ТекущееПодразделение" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текущее подразделение</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ПодразделенияОрганизаций</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТекущийСклад" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текущий склад</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Склады</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗначениеРабочейДаты" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Использовать значение</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ИспользоватьТекущуюДатуКомпьютера" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Рабочая дата</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>0</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="АвторизованныйПользователь" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Учетная запись</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ВнешниеПользователи</v8:Type>
+				<v8:Type>cfg:CatalogRef.Пользователи</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПоказыватьСчетаУчетаВДокументах" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показывать счета учета в документах</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ПараметрыОткрытия" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры открытия</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="ТекущееЗначениеПоказыватьСчетаУчетаВДокументах" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текущее значение "Показывать счета учета в документах"</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>АдресПолучателяСкрытойКопии</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemGroup">
+						<dcsset:groupType>AndGroup</dcsset:groupType>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">ОтправлятьСкрытыеКопии</dcsset:left>
+							<dcsset:comparisonType>Equal</dcsset:comparisonType>
+							<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">АдресПолучателяСкрытойКопии</dcsset:left>
+							<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+						</dcsset:item>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ОтметкаНезаполненного</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="ЗаписатьИЗакрыть" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать и закрыть</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать и закрыть</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаписатьИЗакрыть</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Записать" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Write</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Записать</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="НастройкаСинхронизацииСКалендаремGoogle" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройка синхронизации с календарем Google</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройка синхронизации с календарем google</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>НастройкаСинхронизацииСКалендаремGoogle</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="НастройкаСканирования" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройка сканирования</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройка сканирования</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>НастройкаСканирования</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="НастройкаКоннект" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройка 1С-Коннект</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройка коннект</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>НастройкаКоннект</Action>
+		</Command>
+	</Commands>
+</Form>

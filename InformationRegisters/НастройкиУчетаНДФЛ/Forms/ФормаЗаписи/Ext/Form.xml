@@ -1,0 +1,667 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<VerticalSpacing>Double</VerticalSpacing>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="AfterWrite">ПослеЗаписи</Event>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Шапка" id="87">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шапка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шапка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<VerticalSpacing>Single</VerticalSpacing>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ШапкаРасширеннаяПодсказка" id="88"/>
+			<ChildItems>
+				<InputField name="Организация" id="4">
+					<DataPath>НастройкиУчетаНДФЛ.Организация</DataPath>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="6"/>
+					<Events>
+						<Event name="OnChange">ОрганизацияПриИзменении</Event>
+					</Events>
+				</InputField>
+				<UsualGroup name="ГруппаПрименяетсяС" id="96">
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаПрименяетсяСРасширеннаяПодсказка" id="97"/>
+					<ChildItems>
+						<InputField name="ПрименяетсяС" id="25">
+							<DataPath>ПрименяетсяС</DataPath>
+							<SpinButton>true</SpinButton>
+							<EditFormat>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧГ=</v8:content>
+								</v8:item>
+							</EditFormat>
+							<ContextMenu name="ПрименяетсяСКонтекстноеМеню" id="26"/>
+							<ExtendedTooltip name="ПрименяетсяСРасширеннаяПодсказка" id="27"/>
+							<Events>
+								<Event name="OnChange">ПрименяетсяСПриИзменении</Event>
+							</Events>
+						</InputField>
+						<LabelDecoration name="ПроверьтеНастройкиСистемыНалогообложения" id="93">
+							<HorizontalStretch>true</HorizontalStretch>
+							<Title formatted="true">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>&lt;colorstyle 0:1d75bfa4-5698-4cbc-98cb-591509fcfde8&gt;Проверьте настройки&lt;/&gt; &lt;link СистемаНалогообложения&gt;системы налогообложения&lt;/&gt;.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ПроверьтеНастройкиСистемыНалогообложенияКонтекстноеМеню" id="94"/>
+							<ExtendedTooltip name="ПроверьтеНастройкиСистемыНалогообложенияРасширеннаяПодсказка" id="95"/>
+							<Events>
+								<Event name="URLProcessing">СообщениеОбОшибкеОбработкаНавигационнойСсылки</Event>
+							</Events>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ВидыДеятельностиНДФЛ" id="66">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Виды деятельности НДФЛ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Виды деятельности НДФЛ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<VerticalSpacing>Single</VerticalSpacing>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ВидыДеятельностиНДФЛРасширеннаяПодсказка" id="67"/>
+			<ChildItems>
+				<InputField name="ОсновнойВидДеятельности" id="7">
+					<DataPath>НастройкиУчетаНДФЛ.ОсновнойВидДеятельности</DataPath>
+					<ContextMenu name="ОсновнойВидДеятельностиКонтекстноеМеню" id="8"/>
+					<ExtendedTooltip name="ОсновнойВидДеятельностиРасширеннаяПодсказка" id="9"/>
+				</InputField>
+				<CheckBoxField name="ВестиУчетПоВидамДеятельности" id="10">
+					<DataPath>НастройкиУчетаНДФЛ.ВестиУчетПоВидамДеятельности</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ВестиУчетПоВидамДеятельностиКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="ВестиУчетПоВидамДеятельностиРасширеннаяПодсказка" id="12"/>
+					<Events>
+						<Event name="OnChange">ВестиУчетПоВидамДеятельностиПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<Button name="ВсеВидыДеятельности" id="32">
+					<Type>Hyperlink</Type>
+					<CommandName>Form.Command.ВсеВидыДеятельности</CommandName>
+					<ExtendedTooltip name="ВсеВидыДеятельностиExtendedTooltip" id="33"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="УчетДоходовНДФЛ" id="28">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Учет доходов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Учет доходов НДФЛ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Width>100</Width>
+			<Group>Vertical</Group>
+			<VerticalSpacing>Single</VerticalSpacing>
+			<Behavior>Collapsible</Behavior>
+			<Collapsed>true</Collapsed>
+			<ControlRepresentation>Picture</ControlRepresentation>
+			<Representation>None</Representation>
+			<ShowLeftMargin>false</ShowLeftMargin>
+			<ExtendedTooltip name="УчетДоходовНДФЛРасширеннаяПодсказка" id="29"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаАвансыВключаютсяВДоходыВПериодеПолучения" id="85">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Авансы включаются в доходы в периоде получения</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа авансы включаются в доходы в периоде получения</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаАвансыВключаютсяВДоходыВПериодеПолученияРасширеннаяПодсказка" id="86"/>
+					<ChildItems>
+						<RadioButtonField name="АвансыВключаютсяВМоментРеализации" id="77">
+							<DataPath>АвансыВключаютсяВДоходыВПериодеПолучения</DataPath>
+							<TitleLocation>Top</TitleLocation>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Согласно пп. 1 п. 1 ст. 223 НК РФ дата фактического получения дохода определяется как день выплаты дохода</v8:content>
+								</v8:item>
+							</ToolTip>
+							<RadioButtonType>Auto</RadioButtonType>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>В момент реализации, независимо от периода получения</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:decimal">0</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="АвансыВключаютсяВМоментРеализацииКонтекстноеМеню" id="78"/>
+							<ExtendedTooltip name="АвансыВключаютсяВМоментРеализацииРасширеннаяПодсказка" id="79"/>
+							<Events>
+								<Event name="OnChange">АвансыВключаютсяВДоходыВПериодеПолученияПриИзменении</Event>
+							</Events>
+						</RadioButtonField>
+						<RadioButtonField name="АвансыВключаютсяВДоходыВПериодеПолучения" id="82">
+							<DataPath>АвансыВключаютсяВДоходыВПериодеПолучения</DataPath>
+							<Visible>false</Visible>
+							<TitleLocation>None</TitleLocation>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Согласно пп. 1 п. 1 ст. 223 НК РФ дата фактического получения дохода определяется как день выплаты дохода</v8:content>
+								</v8:item>
+							</ToolTip>
+							<RadioButtonType>Auto</RadioButtonType>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Всегда в периоде получения</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:decimal">1</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="АвансыВключаютсяВДоходыВПериодеПолученияКонтекстноеМеню" id="83"/>
+							<ExtendedTooltip name="АвансыВключаютсяВДоходыВПериодеПолученияРасширеннаяПодсказка" id="84"/>
+							<Events>
+								<Event name="OnChange">АвансыВключаютсяВДоходыВПериодеПолученияПриИзменении</Event>
+							</Events>
+						</RadioButtonField>
+						<UsualGroup name="ГруппаАвансыВключаютсяВДоходыВПериодеПолученияПоВидуДеятельности" id="80">
+							<EnableContentChange>true</EnableContentChange>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Авансы включаются в доходы в периоде получения</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Авансы включаются в доходы в периоде получения</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаАвансыВключаютсяВДоходыВПериодеПолученияПоВидуДеятельностиРасширеннаяПодсказка" id="81"/>
+							<ChildItems>
+								<RadioButtonField name="АвансыВключаютсяВДоходыВПериодеПолученияПоВидуДеятельности" id="34">
+									<DataPath>АвансыВключаютсяВДоходыВПериодеПолучения</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Согласно пп. 1 п. 1 ст. 223 НК РФ дата фактического получения дохода определяется как день выплаты дохода</v8:content>
+										</v8:item>
+									</ToolTip>
+									<RadioButtonType>Auto</RadioButtonType>
+									<ChoiceList>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Всегда в периоде получения по виду деятельности:</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:decimal">1</Value>
+											</xr:Value>
+										</xr:Item>
+									</ChoiceList>
+									<ContextMenu name="АвансыВключаютсяВДоходыВПериодеПолученияПоВидуДеятельностиКонтекстноеМеню" id="35"/>
+									<ExtendedTooltip name="АвансыВключаютсяВДоходыВПериодеПолученияПоВидуДеятельностиРасширеннаяПодсказка" id="36"/>
+									<Events>
+										<Event name="OnChange">АвансыВключаютсяВДоходыВПериодеПолученияПриИзменении</Event>
+									</Events>
+								</RadioButtonField>
+								<InputField name="ВидДеятельностиДоходовПоАвансам" id="16">
+									<DataPath>НастройкиУчетаНДФЛ.ВидДеятельностиДоходовПоАвансам</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<ContextMenu name="ВидДеятельностиДоходовПоАвансамКонтекстноеМеню" id="17"/>
+									<ExtendedTooltip name="ВидДеятельностиДоходовПоАвансамРасширеннаяПодсказка" id="18"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="УчетРасходовНДФЛ" id="30">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Учет расходов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Учет расходов НДФЛ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Width>100</Width>
+			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<Collapsed>true</Collapsed>
+			<ControlRepresentation>Picture</ControlRepresentation>
+			<Representation>None</Representation>
+			<ShowLeftMargin>false</ShowLeftMargin>
+			<ExtendedTooltip name="УчетРасходовНДФЛРасширеннаяПодсказка" id="31"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаМатериальныеРасходыПризнаютсяПриНаступленииСобытий" id="37">
+					<EnableContentChange>true</EnableContentChange>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Материальные расходы признаются при наступлении событий:</v8:content>
+						</v8:item>
+					</Title>
+					<TitleTextColor>style:ButtonTextColor</TitleTextColor>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Материальные расходы признаются при наступлении событий</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<VerticalSpacing>Single</VerticalSpacing>
+					<Representation>None</Representation>
+					<ExtendedTooltip name="ГруппаМатериальныеРасходыПризнаютсяПриНаступленииСобытийРасширеннаяПодсказка" id="38"/>
+					<ChildItems>
+						<UsualGroup name="ПоступлениеТоваровМатериалов" id="39">
+							<EnableContentChange>true</EnableContentChange>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Поступление товаров и материалов</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Поступление товаров материалов</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ПоступлениеТоваровМатериаловРасширеннаяПодсказка" id="40"/>
+							<ChildItems>
+								<PictureDecoration name="ДекорацияПоступлениеТоваровИМатериаловКартинка" id="41">
+									<Width>2</Width>
+									<Height>1</Height>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Поступление товаров и материалов (картинка)</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Поступление товаров и материалов</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Picture>
+										<xr:Ref>CommonPicture.ФлажокУзкий</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<FileDragMode>AsFile</FileDragMode>
+									<ContextMenu name="ДекорацияПоступлениеТоваровИМатериаловКартинкаКонтекстноеМеню" id="42"/>
+									<ExtendedTooltip name="ДекорацияПоступлениеТоваровИМатериаловКартинкаExtendedTooltip" id="43"/>
+								</PictureDecoration>
+								<LabelDecoration name="ДекорацияПоступлениеТоваровМатериалов" id="44">
+									<TextColor>style:ButtonTextColor</TextColor>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Поступление товаров и материалов</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияПоступлениеТоваровМатериаловКонтекстноеМеню" id="45"/>
+									<ExtendedTooltip name="ДекорацияПоступлениеТоваровМатериаловРасширеннаяПодсказка" id="46"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ОплатаТоваровМатериалов" id="47">
+							<EnableContentChange>true</EnableContentChange>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Оплата товаров и материалов поставщику</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Оплата товаров материалов</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ОплатаТоваровМатериаловРасширеннаяПодсказка" id="48"/>
+							<ChildItems>
+								<PictureDecoration name="ДекорацияОплатаТоваровМатериаловКартинка" id="49">
+									<Width>2</Width>
+									<Height>1</Height>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Оплата товаров и материалов поставщику (картинка)</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Оплата товаров и материалов поставщику</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Picture>
+										<xr:Ref>CommonPicture.ФлажокУзкий</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<FileDragMode>AsFile</FileDragMode>
+									<ContextMenu name="ДекорацияОплатаТоваровМатериаловКартинкаКонтекстноеМеню" id="50"/>
+									<ExtendedTooltip name="ДекорацияОплатаТоваровМатериаловКартинкаExtendedTooltip" id="51"/>
+								</PictureDecoration>
+								<LabelDecoration name="ДекорацияОплатаТоваровМатериалов" id="52">
+									<TextColor>style:ButtonTextColor</TextColor>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Оплата товаров и материалов поставщику</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияОплатаТоваровМатериаловКонтекстноеМеню" id="53"/>
+									<ExtendedTooltip name="ДекорацияОплатаТоваровМатериаловExtendedTooltip" id="54"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ПередачаМатериаловВПроизводство" id="55">
+							<EnableContentChange>true</EnableContentChange>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Передача материалов в производство</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Передача материалов в производство</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ПередачаМатериаловВПроизводствоРасширеннаяПодсказка" id="56"/>
+							<ChildItems>
+								<PictureDecoration name="ДекорацияПередачаМатериаловВПроизводствоКартинка" id="57">
+									<Width>2</Width>
+									<Height>1</Height>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Передача материалов в производство (картинка)</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Передача материалов в производство</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Picture>
+										<xr:Ref>CommonPicture.ФлажокУзкий</xr:Ref>
+										<xr:LoadTransparent>false</xr:LoadTransparent>
+									</Picture>
+									<FileDragMode>AsFile</FileDragMode>
+									<ContextMenu name="ДекорацияПередачаМатериаловВПроизводствоКартинкаКонтекстноеМеню" id="58"/>
+									<ExtendedTooltip name="ДекорацияПередачаМатериаловВПроизводствоКартинкаExtendedTooltip" id="59"/>
+								</PictureDecoration>
+								<LabelDecoration name="ДекорацияПередачаМатериаловВПроизводство" id="60">
+									<TextColor>style:ButtonTextColor</TextColor>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Передача материалов в производство</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДекорацияПередачаМатериаловВПроизводствоКонтекстноеМеню" id="61"/>
+									<ExtendedTooltip name="ДекорацияПередачаМатериаловВПроизводствоExtendedTooltip" id="62"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<CheckBoxField name="ДляПризнанияРасходовТребуетсяПолучениеДохода" id="63">
+							<DataPath>НастройкиУчетаНДФЛ.ДляПризнанияРасходовТребуетсяПолучениеДохода</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Получение дохода от реализации (оплаты покупателя)</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Right</TitleLocation>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ДляПризнанияРасходовТребуетсяПолучениеДоходаКонтекстноеМеню" id="64"/>
+							<ExtendedTooltip name="ДляПризнанияРасходовТребуетсяПолучениеДоходаРасширеннаяПодсказка" id="65"/>
+							<Events>
+								<Event name="OnChange">ДляПризнанияРасходовТребуетсяПолучениеДоходаПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаПризнаватьРасходыПоОперациямПрошлогоГода" id="89">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Расходы по операциям прошлого года признаются</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Расходы по операциям прошлого года признаются</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<VerticalSpacing>Single</VerticalSpacing>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаПризнаватьРасходыПоОперациямПрошлогоГодаРасширеннаяПодсказка" id="90"/>
+					<ChildItems>
+						<RadioButtonField name="ПризнаватьРасходыПоОперациямПрошлогоГода" id="68">
+							<DataPath>ПризнаватьРасходыПоОперациямПрошлогоГода</DataPath>
+							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+							<RadioButtonType>Auto</RadioButtonType>
+							<ColumnsCount>1</ColumnsCount>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Независимо от периода получения дохода</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:decimal">1</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Только в том же периоде, в котором был получен доход</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:decimal">0</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="ПризнаватьРасходыПоОперациямПрошлогоГодаКонтекстноеМеню" id="69"/>
+							<ExtendedTooltip name="ПризнаватьРасходыПоОперациямПрошлогоГодаРасширеннаяПодсказка" id="70">
+								<AutoMaxWidth>false</AutoMaxWidth>
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>В текущем налоговом периоде не отражаются расходы, связанные с:
+- реализацией товаров и продукции в счет авансов, полученных в прошлом периоде
+- приобретением товаров, отгруженных и оплаченных покупателями в прошлом периоде</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+							<Events>
+								<Event name="OnChange">ПризнаватьРасходыПоОперациямПрошлогоГодаПриИзменении</Event>
+							</Events>
+						</RadioButtonField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="НастройкиУчетаНДФЛ" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки учета НДФЛ</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:InformationRegisterRecordManager.НастройкиУчетаНДФЛ</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ПрименяетсяС" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Применяется с</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>4</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="АвансыВключаютсяВДоходыВПериодеПолучения" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Авансы включаются в доходы в периоде получения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>1</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ПризнаватьРасходыПоОперациямПрошлогоГода" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расходы по операциям прошлого года признаются</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>1</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ВсеВидыДеятельности" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Все виды деятельности</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Все виды деятельности</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ВсеВидыДеятельности</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

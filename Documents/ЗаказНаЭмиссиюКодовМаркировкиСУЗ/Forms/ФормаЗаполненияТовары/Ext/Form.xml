@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Параметры остатков</v8:content>
+		</v8:item>
+	</Title>
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаЗаполнить" id="34">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.Заполнить</CommandName>
+				<ExtendedTooltip name="ФормаЗаполнитьРасширеннаяПодсказка" id="35"/>
+			</Button>
+			<Button name="ФормаСправка" id="1">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Help</CommandName>
+				<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+				<ExtendedTooltip name="ФормаСправкаРасширеннаяПодсказка" id="2"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаОсновная" id="50">
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка3" id="51"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаЦелевойПол" id="24">
+					<Group>AlwaysHorizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаВидОбувиРасширеннаяПодсказка" id="25"/>
+					<ChildItems>
+						<CheckBoxField name="ЗаполнятьЦелевойПол" id="3">
+							<DataPath>ЗаполнятьЦелевойПол</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ЗаполнятьВидОбувиКонтекстноеМеню" id="4"/>
+							<ExtendedTooltip name="ЗаполнятьВидОбувиРасширеннаяПодсказка" id="5"/>
+							<Events>
+								<Event name="OnChange">ЗаполнятьЦелевойПолПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<InputField name="ЦелевойПол" id="21">
+							<DataPath>ЦелевойПол</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<TitleLocation>Left</TitleLocation>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ContextMenu name="ВидОбувиКонтекстноеМеню" id="22"/>
+							<ExtendedTooltip name="ВидОбувиРасширеннаяПодсказка" id="23"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаВозрастнаяКатегория" id="42">
+					<Group>AlwaysHorizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Группа1РасширеннаяПодсказка2" id="43"/>
+					<ChildItems>
+						<CheckBoxField name="ЗаполнятьВозрастнуюКатегорию" id="44">
+							<DataPath>ЗаполнятьВозрастнуюКатегорию</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="КонтекстноеМеню" id="45"/>
+							<ExtendedTooltip name="РасширеннаяПодсказка" id="46"/>
+							<Events>
+								<Event name="OnChange">ЗаполнятьВозрастнуюКатегориюПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<InputField name="ВозрастнаяКатегория" id="47">
+							<DataPath>ВозрастнаяКатегория</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<ContextMenu name="ПолеКонтекстноеМеню" id="48"/>
+							<ExtendedTooltip name="ПолеРасширеннаяПодсказка" id="49"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаСпособВводаВОборот" id="26">
+					<Group>AlwaysHorizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаСпособВводаВОборотРасширеннаяПодсказка" id="27"/>
+					<ChildItems>
+						<CheckBoxField name="ЗаполнятьСпосовВводаВОборот" id="9">
+							<DataPath>ЗаполнятьСпособВводаВОборот</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ЗаполнятьСпосовВводаВОборотКонтекстноеМеню" id="10"/>
+							<ExtendedTooltip name="ЗаполнятьСпосовВводаВОборотРасширеннаяПодсказка" id="11"/>
+							<Events>
+								<Event name="OnChange">ЗаполнятьСпосовВводаВОборотПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<InputField name="СпособВводаВОборот" id="15">
+							<DataPath>СпособВводаВОборот</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<Shortcut>Ctrl+S</Shortcut>
+							<ListChoiceMode>true</ListChoiceMode>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation/>
+										<Value xsi:type="xr:DesignTimeRef">Enum.СпособыВводаВОборотСУЗ.EnumValue.Импорт</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation/>
+										<Value xsi:type="xr:DesignTimeRef">Enum.СпособыВводаВОборотСУЗ.EnumValue.Производство</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<DropListWidth>39</DropListWidth>
+							<ContextMenu name="СпособВводаВОборотКонтекстноеМеню" id="16"/>
+							<ExtendedTooltip name="СпособВводаВОборотРасширеннаяПодсказка" id="17"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаМодель" id="64">
+					<Group>AlwaysHorizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="66"/>
+					<ChildItems>
+						<CheckBoxField name="ЗаполнятьМодель" id="52">
+							<DataPath>ЗаполнятьМодель</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ПолеКонтекстноеМеню1" id="53"/>
+							<ExtendedTooltip name="ПолеРасширеннаяПодсказка1" id="54"/>
+							<Events>
+								<Event name="OnChange">ЗаполнятьМодельПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<InputField name="Модель" id="55">
+							<DataPath>Модель</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<ContextMenu name="ПолеКонтекстноеМеню2" id="56"/>
+							<ExtendedTooltip name="ПолеРасширеннаяПодсказка2" id="57"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаТоварныйЗнак" id="65">
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Группа1РасширеннаяПодсказка1" id="39"/>
+					<ChildItems>
+						<CheckBoxField name="ЗаполнятьТоварныйЗнак" id="58">
+							<DataPath>ЗаполнятьТоварныйЗнак</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ПолеКонтекстноеМеню3" id="59"/>
+							<ExtendedTooltip name="ПолеРасширеннаяПодсказка3" id="60"/>
+							<Events>
+								<Event name="OnChange">ЗаполнятьТоварныйЗнакПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<InputField name="ТоварныйЗнак" id="61">
+							<DataPath>ТоварныйЗнак</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<ContextMenu name="ПолеКонтекстноеМеню4" id="62"/>
+							<ExtendedTooltip name="ПолеРасширеннаяПодсказка4" id="63"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="ПолноеОписаниеОстатков" id="36">
+			<DataPath>ПолноеОписаниеОстатков</DataPath>
+			<ListChoiceMode>true</ListChoiceMode>
+			<ChoiceList>
+				<xr:Item>
+					<xr:Presentation/>
+					<xr:CheckState>0</xr:CheckState>
+					<xr:Value xsi:type="FormChoiceListDesTimeValue">
+						<Presentation>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Упрощенное</v8:content>
+							</v8:item>
+						</Presentation>
+						<Value xsi:type="xs:boolean">false</Value>
+					</xr:Value>
+				</xr:Item>
+				<xr:Item>
+					<xr:Presentation/>
+					<xr:CheckState>0</xr:CheckState>
+					<xr:Value xsi:type="FormChoiceListDesTimeValue">
+						<Presentation>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Полное</v8:content>
+							</v8:item>
+						</Presentation>
+						<Value xsi:type="xs:boolean">true</Value>
+					</xr:Value>
+				</xr:Item>
+			</ChoiceList>
+			<ContextMenu name="ПолноеОписаниеОстатковКонтекстноеМеню" id="37"/>
+			<ExtendedTooltip name="ПолноеОписаниеОстатковРасширеннаяПодсказка" id="38"/>
+			<Events>
+				<Event name="OnChange">ПолноеОписаниеОстатковПриИзменении</Event>
+			</Events>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ЗаполнятьЦелевойПол" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Целевой пол</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗаполнятьСпособВводаВОборот" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Способ ввода в оборот</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЦелевойПол" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Целевой пол</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.ЦелевойПолИСМП</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СпособВводаВОборот" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Способ ввода в оборот</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.СпособыВводаВОборотСУЗ</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Модель" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Модель</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>50</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТоварныйЗнак" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Товарный знак</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ВозрастнаяКатегория" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Возрастная категория</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.ВозрастныеКатегорииИСМП</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗаполнятьВозрастнуюКатегорию" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнять возрастную категорию</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗаполнятьМодель" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнять модель</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗаполнятьТоварныйЗнак" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнять товарный знак</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ВидПродукции" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид продукции</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.ВидыПродукцииИС</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПолноеОписаниеОстатков" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Описание остатков</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Заполнить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить</v8:content>
+				</v8:item>
+			</Title>
+			<Action>Заполнить</Action>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="ВидПродукции">
+			<Type>
+				<v8:Type>cfg:EnumRef.ВидыПродукцииИС</v8:Type>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

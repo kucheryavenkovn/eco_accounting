@@ -1,0 +1,408 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoTitle>false</AutoTitle>
+	<CommandBarLocation>None</CommandBarLocation>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="AfterWrite">ПослеЗаписи</Event>
+		<Event name="ChoiceProcessing">ОбработкаВыбора</Event>
+		<Event name="AfterWriteAtServer">ПослеЗаписиНаСервере</Event>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<CommandBar name="ГруппаКоманднаяПанель" id="92">
+			<CommandSource>Form</CommandSource>
+			<ExtendedTooltip name="ГруппаКоманднаяПанельРасширеннаяПодсказка" id="93"/>
+		</CommandBar>
+		<InputField name="Наименование" id="53">
+			<DataPath>Объект.Description</DataPath>
+			<Visible>false</Visible>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="НаименованиеКонтекстноеМеню" id="54"/>
+			<ExtendedTooltip name="НаименованиеExtendedTooltip" id="55"/>
+		</InputField>
+		<InputField name="Владелец" id="89">
+			<DataPath>Объект.Owner</DataPath>
+			<Visible>false</Visible>
+			<ContextMenu name="ВладелецКонтекстноеМеню" id="90"/>
+			<ExtendedTooltip name="ВладелецРасширеннаяПодсказка" id="91"/>
+		</InputField>
+		<InputField name="Родитель" id="94">
+			<DataPath>Объект.Parent</DataPath>
+			<UserVisible>
+				<xr:Common>false</xr:Common>
+			</UserVisible>
+			<ContextMenu name="РодительКонтекстноеМеню" id="95"/>
+			<ExtendedTooltip name="РодительРасширеннаяПодсказка" id="96"/>
+		</InputField>
+		<UsualGroup name="РасходМатериалов" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Материалы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расход материалов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="РасходМатериаловExtendedTooltip" id="2"/>
+			<ChildItems>
+				<UsualGroup name="Выход" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выход</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выход</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ВыходExtendedTooltip" id="4"/>
+					<ChildItems>
+						<LabelDecoration name="НормаРасходаНадпись" id="5">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Норма расхода на</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="НормаРасходаНадписьКонтекстноеМеню" id="6"/>
+							<ExtendedTooltip name="НормаРасходаНадписьРасширеннаяПодсказка" id="7"/>
+						</LabelDecoration>
+						<InputField name="Количество" id="8">
+							<DataPath>Объект.Количество</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Норма расхода на</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>None</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>5</MaxWidth>
+							<DropListButton>false</DropListButton>
+							<ChoiceButton>false</ChoiceButton>
+							<ContextMenu name="КоличествоКонтекстноеМеню" id="9"/>
+							<ExtendedTooltip name="КоличествоExtendedTooltip" id="10"/>
+						</InputField>
+						<LabelField name="ЕдиницаИзмерения" id="11">
+							<DataPath>Объект.Owner.ЕдиницаИзмерения</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<MaxWidth>2</MaxWidth>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ContextMenu name="ЕдиницаИзмеренияКонтекстноеМеню" id="12"/>
+							<ExtendedTooltip name="ЕдиницаИзмеренияExtendedTooltip" id="13"/>
+						</LabelField>
+					</ChildItems>
+				</UsualGroup>
+				<Table name="ИсходныеКомплектующие" id="56">
+					<Representation>List</Representation>
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<FileDragMode>AsFile</FileDragMode>
+					<DataPath>Объект.ИсходныеКомплектующие</DataPath>
+					<SearchStringLocation>None</SearchStringLocation>
+					<ViewStatusLocation>None</ViewStatusLocation>
+					<SearchControlLocation>None</SearchControlLocation>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="ИсходныеКомплектующиеКонтекстноеМеню" id="57">
+						<ChildItems>
+							<Button name="ИсходныеКомплектующиеКонтекстноеМенюСкопироватьСтроки" id="103">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.СкопироватьСтроки</CommandName>
+								<ExtendedTooltip name="ИсходныеКомплектующиеКонтекстноеМенюСкопироватьСтрокиРасширеннаяПодсказка" id="104"/>
+							</Button>
+							<Button name="ИсходныеКомплектующиеКонтекстноеМенюВставитьСтроки" id="105">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ВставитьСтроки</CommandName>
+								<ExtendedTooltip name="ИсходныеКомплектующиеКонтекстноеМенюВставитьСтрокиРасширеннаяПодсказка" id="106"/>
+							</Button>
+						</ChildItems>
+					</ContextMenu>
+					<AutoCommandBar name="ИсходныеКомплектующиеКоманднаяПанель" id="58">
+						<Autofill>false</Autofill>
+						<ChildItems>
+							<Button name="ИсходныеКомплектующиеДобавить" id="81">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.ИсходныеКомплектующие.StandardCommand.Add</CommandName>
+								<ExtendedTooltip name="ИсходныеКомплектующиеДобавитьРасширеннаяПодсказка" id="82"/>
+							</Button>
+							<ButtonGroup name="ИсходныеКомплектующиеДействия" id="83">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Исходные комплектующие - Действия</v8:content>
+									</v8:item>
+								</Title>
+								<ToolTip>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Исходные комплектующие действия</v8:content>
+									</v8:item>
+								</ToolTip>
+								<ExtendedTooltip name="ИсходныеКомплектующиеДействияРасширеннаяПодсказка" id="84"/>
+								<ChildItems>
+									<Button name="ИсходныеКомплектующиеПодобратьМатериалы" id="85">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ПодобратьМатериалы</CommandName>
+										<ExtendedTooltip name="ИсходныеКомплектующиеПодобратьМатериалыExtendedTooltip" id="86"/>
+									</Button>
+								</ChildItems>
+							</ButtonGroup>
+							<ButtonGroup name="ИсходныеКомплектующиеКнопкиКоманднойПанели" id="87">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Исходные комплектующие кнопки командной панели</v8:content>
+									</v8:item>
+								</Title>
+								<ToolTip>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Исходные комплектующие кнопки командной панели</v8:content>
+									</v8:item>
+								</ToolTip>
+								<CommandSource>Item.ИсходныеКомплектующие</CommandSource>
+								<ExtendedTooltip name="ИсходныеКомплектующиеКнопкиКоманднойПанелиРасширеннаяПодсказка" id="88"/>
+							</ButtonGroup>
+							<Button name="ИсходныеКомплектующиеИзменитьФорму" id="97">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
+								<ExtendedTooltip name="ИсходныеКомплектующиеИзменитьФормуРасширеннаяПодсказка" id="98"/>
+							</Button>
+							<Button name="ИсходныеКомплектующиеСкопироватьСтроки" id="99">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.СкопироватьСтроки</CommandName>
+								<ExtendedTooltip name="ИсходныеКомплектующиеСкопироватьСтрокиРасширеннаяПодсказка" id="100"/>
+							</Button>
+							<Button name="ИсходныеКомплектующиеВставитьСтроки" id="101">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ВставитьСтроки</CommandName>
+								<ExtendedTooltip name="ИсходныеКомплектующиеВставитьСтрокиРасширеннаяПодсказка" id="102"/>
+							</Button>
+							<Popup name="ПодменюПечать" id="107">
+								<Title>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Печать</v8:content>
+									</v8:item>
+								</Title>
+								<Picture>
+									<xr:Ref>StdPicture.Print</xr:Ref>
+									<xr:LoadTransparent>true</xr:LoadTransparent>
+								</Picture>
+								<Representation>Picture</Representation>
+								<ExtendedTooltip name="ПодменюПечатьРасширеннаяПодсказка" id="108"/>
+							</Popup>
+						</ChildItems>
+					</AutoCommandBar>
+					<ExtendedTooltip name="ИсходныеКомплектующиеРасширеннаяПодсказка" id="59"/>
+					<SearchStringAddition name="ИсходныеКомплектующиеСтрокаПоиска" id="60">
+						<AdditionSource>
+							<Item>ИсходныеКомплектующие</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ИсходныеКомплектующиеСтрокаПоискаКонтекстноеМеню" id="61"/>
+						<ExtendedTooltip name="ИсходныеКомплектующиеСтрокаПоискаРасширеннаяПодсказка" id="62"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="ИсходныеКомплектующиеСостояниеПросмотра" id="63">
+						<AdditionSource>
+							<Item>ИсходныеКомплектующие</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ИсходныеКомплектующиеСостояниеПросмотраКонтекстноеМеню" id="64"/>
+						<ExtendedTooltip name="ИсходныеКомплектующиеСостояниеПросмотраРасширеннаяПодсказка" id="65"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="ИсходныеКомплектующиеУправлениеПоиском" id="66">
+						<AdditionSource>
+							<Item>ИсходныеКомплектующие</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="ИсходныеКомплектующиеУправлениеПоискомКонтекстноеМеню" id="67"/>
+						<ExtendedTooltip name="ИсходныеКомплектующиеУправлениеПоискомРасширеннаяПодсказка" id="68"/>
+					</SearchControlAddition>
+					<ChildItems>
+						<LabelField name="ИсходныеКомплектующиеНомерСтроки" id="69">
+							<DataPath>Объект.ИсходныеКомплектующие.LineNumber</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ИсходныеКомплектующиеНомерСтрокиКонтекстноеМеню" id="70"/>
+							<ExtendedTooltip name="ИсходныеКомплектующиеНомерСтрокиExtendedTooltip" id="71"/>
+						</LabelField>
+						<InputField name="ИсходныеКомплектующиеНоменклатура" id="72">
+							<DataPath>Объект.ИсходныеКомплектующие.Номенклатура</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ИсходныеКомплектующиеНоменклатураКонтекстноеМеню" id="73"/>
+							<ExtendedTooltip name="ИсходныеКомплектующиеНоменклатураExtendedTooltip" id="74"/>
+						</InputField>
+						<InputField name="ИсходныеКомплектующиеКоличество" id="75">
+							<DataPath>Объект.ИсходныеКомплектующие.Количество</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<HeaderHorizontalAlign>Right</HeaderHorizontalAlign>
+							<FooterDataPath>Объект.ИсходныеКомплектующие.TotalКоличество</FooterDataPath>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>10</MaxWidth>
+							<ContextMenu name="ИсходныеКомплектующиеКоличествоКонтекстноеМеню" id="76"/>
+							<ExtendedTooltip name="ИсходныеКомплектующиеКоличествоExtendedTooltip" id="77"/>
+						</InputField>
+						<LabelField name="ИсходныеКомплектующиеНоменклатураЕдиницаИзмерения" id="78">
+							<DataPath>Объект.ИсходныеКомплектующие.Номенклатура.ЕдиницаИзмерения</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Единица</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Единица измерения</v8:content>
+								</v8:item>
+							</ToolTip>
+							<EditMode>EnterOnInput</EditMode>
+							<FooterDataPath>Объект.ИсходныеКомплектующие.Номенклатура.ЕдиницаИзмерения</FooterDataPath>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ContextMenu name="ИсходныеКомплектующиеНоменклатураЕдиницаИзмеренияКонтекстноеМеню" id="79"/>
+							<ExtendedTooltip name="ИсходныеКомплектующиеНоменклатураЕдиницаИзмеренияExtendedTooltip" id="80"/>
+						</LabelField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаДействияФормы" id="47">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа действия формы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа действия формы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаДействияФормыРасширеннаяПодсказка" id="48"/>
+			<ChildItems>
+				<Button name="Ок" id="49">
+					<Type>UsualButton</Type>
+					<CommandName>Form.StandardCommand.WriteAndClose</CommandName>
+					<BackColor>#FFE100</BackColor>
+					<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ОК</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ОкРасширеннаяПодсказка" id="50"/>
+				</Button>
+				<Button name="Отмена" id="51">
+					<Type>UsualButton</Type>
+					<CommandName>Form.StandardCommand.Cancel</CommandName>
+					<ExtendedTooltip name="ОтменаРасширеннаяПодсказка" id="52"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.СпецификацииНоменклатуры</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ПодобратьМатериалы" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подбор</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подобрать материалы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПодобратьМатериалы</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ВставитьСтроки" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вставить строки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вставить строки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Shortcut>Ctrl+Shift+V</Shortcut>
+			<Picture>
+				<xr:Ref>CommonPicture.ВставитьИзБуфераОбмена</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ВставитьСтроки</Action>
+			<ModifiesSavedData>true</ModifiesSavedData>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СкопироватьСтроки" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Скопировать строки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Скопировать строки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Shortcut>Ctrl+Shift+C</Shortcut>
+			<Picture>
+				<xr:Ref>CommonPicture.СкопироватьВБуферОбмена</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СкопироватьСтроки</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="ОткрытоИзКарточкиНоменклатуры">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

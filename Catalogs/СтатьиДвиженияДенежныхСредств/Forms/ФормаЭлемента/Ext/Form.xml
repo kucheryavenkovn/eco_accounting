@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="AfterWrite">ПослеЗаписи</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаШапка" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шапка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шапка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаШапкаExtendedTooltip" id="10"/>
+			<ChildItems>
+				<InputField name="Наименование" id="3">
+					<DataPath>Объект.Description</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НаименованиеКонтекстноеМеню" id="4"/>
+					<ExtendedTooltip name="НаименованиеExtendedTooltip" id="11"/>
+				</InputField>
+				<InputField name="Код" id="1">
+					<DataPath>Объект.Code</DataPath>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="КодExtendedTooltip" id="12"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Родитель" id="5">
+			<DataPath>Объект.Parent</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<CreateButton>false</CreateButton>
+			<ContextMenu name="РодительКонтекстноеМеню" id="6"/>
+			<ExtendedTooltip name="РодительExtendedTooltip" id="14"/>
+		</InputField>
+		<InputField name="ИспользованиеПоУмолчанию" id="26">
+			<DataPath>ИспользованиеПоУмолчанию</DataPath>
+			<TitleLocation>Left</TitleLocation>
+			<TitleHeight>2</TitleHeight>
+			<ToolTipRepresentation>Button</ToolTipRepresentation>
+			<DropListButton>true</DropListButton>
+			<ClearButton>true</ClearButton>
+			<ListChoiceMode>true</ListChoiceMode>
+			<ChoiceListHeight>10</ChoiceListHeight>
+			<InputHint>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Не используется</v8:content>
+				</v8:item>
+			</InputHint>
+			<ContextMenu name="ИспользованиеПоУмолчаниюКонтекстноеМеню" id="27"/>
+			<ExtendedTooltip name="ИспользованиеПоУмолчаниюРасширеннаяПодсказка" id="28">
+				<Title formatted="false">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Вид операции поступления или расхода денежных средств, для которого статья будет заполнена по умолчанию. </v8:content>
+					</v8:item>
+				</Title>
+			</ExtendedTooltip>
+			<Events>
+				<Event name="OnChange">ИспользованиеПоУмолчаниюПриИзменении</Event>
+			</Events>
+		</InputField>
+		<InputField name="ВидДвиженияДенежныхСредств" id="7">
+			<DataPath>Объект.ВидДвиженияДенежныхСредств</DataPath>
+			<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ВидДвиженияДенежныхСредствКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="ВидДвиженияДенежныхСредствExtendedTooltip" id="13">
+				<Title formatted="false">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Наименование показателя формы "Отчет о движении денежных средств" бухгалтерской отчетности</v8:content>
+					</v8:item>
+				</Title>
+			</ExtendedTooltip>
+		</InputField>
+		<UsualGroup name="ГруппаВидОперацииНФО" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид операции НФО</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид операции некредитной финансовой организации (НФО)</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаВидОперацииНФОРасширеннаяПодсказка" id="19"/>
+			<ChildItems>
+				<InputField name="КодВидаОперацииНФО" id="15">
+					<DataPath>Объект.КодВидаОперацииНФО</DataPath>
+					<Width>10</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ChoiceButton>true</ChoiceButton>
+					<TextEdit>false</TextEdit>
+					<ContextMenu name="КодВидаОперацииНФОКонтекстноеМеню" id="16"/>
+					<ExtendedTooltip name="КодВидаОперацииНФОРасширеннаяПодсказка" id="17"/>
+					<Events>
+						<Event name="StartChoice">КодВидаОперацииНФОНачалоВыбора</Event>
+						<Event name="Clearing">КодВидаОперацииНФООчистка</Event>
+					</Events>
+				</InputField>
+				<LabelField name="НаименованиеОперацииНФО" id="20">
+					<DataPath>Объект.НаименованиеВидаОперацииНФО</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<VerticalAlign>Top</VerticalAlign>
+					<VerticalStretch>true</VerticalStretch>
+					<ContextMenu name="НаименованиеОперацииНФОКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="НаименованиеОперацииНФОРасширеннаяПодсказка" id="22"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ПараметрыКонтроляДДС" id="29">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры контроля ДДС</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры контроля ДДС</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ExtendedTooltip name="ПараметрыКонтроляДДСРасширеннаяПодсказка" id="30"/>
+			<ChildItems>
+				<InputField name="КодОтчета" id="31">
+					<DataPath>Объект.КодОтчета</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Код отчета ДДС</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="КодОтчетаКонтекстноеМеню" id="32"/>
+					<ExtendedTooltip name="КодОтчетаРасширеннаяПодсказка" id="33"/>
+				</InputField>
+				<Table name="ОтветственныеЗаПланирование" id="34">
+					<TitleLocation>Auto</TitleLocation>
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<FileDragMode>AsFile</FileDragMode>
+					<DataPath>Объект.ОтветственныеЗаПланирование</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ответственные за планирование</v8:content>
+						</v8:item>
+					</Title>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="ОтветственныеЗаПланированиеКонтекстноеМеню" id="35"/>
+					<AutoCommandBar name="ОтветственныеЗаПланированиеКоманднаяПанель" id="36"/>
+					<ExtendedTooltip name="ОтветственныеЗаПланированиеРасширеннаяПодсказка" id="37"/>
+					<SearchStringAddition name="ОтветственныеЗаПланированиеСтрокаПоиска" id="38">
+						<AdditionSource>
+							<Item>ОтветственныеЗаПланирование</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ОтветственныеЗаПланированиеСтрокаПоискаКонтекстноеМеню" id="39"/>
+						<ExtendedTooltip name="ОтветственныеЗаПланированиеСтрокаПоискаРасширеннаяПодсказка" id="40"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="ОтветственныеЗаПланированиеСостояниеПросмотра" id="41">
+						<AdditionSource>
+							<Item>ОтветственныеЗаПланирование</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ОтветственныеЗаПланированиеСостояниеПросмотраКонтекстноеМеню" id="42"/>
+						<ExtendedTooltip name="ОтветственныеЗаПланированиеСостояниеПросмотраРасширеннаяПодсказка" id="43"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="ОтветственныеЗаПланированиеУправлениеПоиском" id="44">
+						<AdditionSource>
+							<Item>ОтветственныеЗаПланирование</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="ОтветственныеЗаПланированиеУправлениеПоискомКонтекстноеМеню" id="45"/>
+						<ExtendedTooltip name="ОтветственныеЗаПланированиеУправлениеПоискомРасширеннаяПодсказка" id="46"/>
+					</SearchControlAddition>
+					<ChildItems>
+						<LabelField name="Таблица1НомерСтроки" id="47">
+							<DataPath>Объект.ОтветственныеЗаПланирование.LineNumber</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="Таблица1НомерСтрокиКонтекстноеМеню" id="48"/>
+							<ExtendedTooltip name="Таблица1НомерСтрокиРасширеннаяПодсказка" id="49"/>
+						</LabelField>
+						<InputField name="Таблица1Пользователь" id="50">
+							<DataPath>Объект.ОтветственныеЗаПланирование.Пользователь</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="Таблица1ПользовательКонтекстноеМеню" id="51"/>
+							<ExtendedTooltip name="Таблица1ПользовательРасширеннаяПодсказка" id="52"/>
+						</InputField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.СтатьиДвиженияДенежныхСредств</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ИспользованиеПоУмолчанию" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Использовать по умолчанию в операциях</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ИспользованиеПоУмолчаниюТекущееЗначение" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Использование по умолчанию текущее значение</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+</Form>

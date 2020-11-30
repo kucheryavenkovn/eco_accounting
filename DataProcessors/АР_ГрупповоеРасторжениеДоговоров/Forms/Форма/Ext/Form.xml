@@ -1,0 +1,650 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="КнопкаСформироватьДокументы" id="57">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.СформироватьДокументы</CommandName>
+				<ExtendedTooltip name="КнопкаСформироватьДокументыExtendedTooltip" id="108"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="ДатаРасторжения" id="62">
+			<DataPath>Объект.ДатаРасторжения</DataPath>
+			<ContextMenu name="ДатаРасторженияКонтекстноеМеню" id="63"/>
+			<ExtendedTooltip name="ДатаРасторженияExtendedTooltip" id="109"/>
+		</InputField>
+		<Pages name="Страницы" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</Title>
+			<ExtendedTooltip name="СтраницыExtendedTooltip" id="110"/>
+			<ChildItems>
+				<Page name="ГруппаОтборДанных" id="58">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отбор данных</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа отбор данных</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ГруппаОтборДанныхExtendedTooltip" id="111"/>
+					<ChildItems>
+						<Table name="Отборы" id="83">
+							<Representation>Tree</Representation>
+							<SkipOnInput>false</SkipOnInput>
+							<InitialTreeView>ExpandAllLevels</InitialTreeView>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>КомпоновщикНастроек.Settings.Filter</DataPath>
+							<CommandSet>
+								<ExcludedCommand>Change</ExcludedCommand>
+								<ExcludedCommand>EndEdit</ExcludedCommand>
+								<ExcludedCommand>GroupFilterItems</ExcludedCommand>
+								<ExcludedCommand>HierarchicalList</ExcludedCommand>
+								<ExcludedCommand>List</ExcludedCommand>
+								<ExcludedCommand>Tree</ExcludedCommand>
+								<ExcludedCommand>Ungroup</ExcludedCommand>
+								<ExcludedCommand>UserSettingItemProperties</ExcludedCommand>
+							</CommandSet>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<ViewMode>QuickAccess</ViewMode>
+							<SettingsNamedItemDetailedRepresentation>false</SettingsNamedItemDetailedRepresentation>
+							<ContextMenu name="ОтборыКонтекстноеМеню" id="84"/>
+							<AutoCommandBar name="ОтборыКоманднаяПанель" id="85">
+								<Autofill>false</Autofill>
+								<ChildItems>
+									<ButtonGroup name="ГруппаКоманднаяПанельОтборыДобавитьУдалить" id="102">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Добавить/удалить</v8:content>
+											</v8:item>
+										</Title>
+										<ToolTip>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Добавить/удалить</v8:content>
+											</v8:item>
+										</ToolTip>
+										<ExtendedTooltip name="ГруппаКоманднаяПанельОтборыДобавитьУдалитьExtendedTooltip" id="112"/>
+										<ChildItems>
+											<Button name="ОтборыДобавитьЭлементОтбора" id="103">
+												<Type>CommandBarButton</Type>
+												<Representation>PictureAndText</Representation>
+												<SkipOnInput>false</SkipOnInput>
+												<CommandName>Form.Item.Отборы.StandardCommand.AddFilterItem</CommandName>
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Добавить</v8:content>
+													</v8:item>
+												</Title>
+												<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+												<ExtendedTooltip name="ОтборыДобавитьЭлементОтбораExtendedTooltip" id="113"/>
+											</Button>
+											<Button name="ОтборыУдалить" id="104">
+												<Type>CommandBarButton</Type>
+												<Representation>Picture</Representation>
+												<SkipOnInput>false</SkipOnInput>
+												<CommandName>Form.Item.Отборы.StandardCommand.Delete</CommandName>
+												<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+												<ExtendedTooltip name="ОтборыУдалитьExtendedTooltip" id="114"/>
+											</Button>
+										</ChildItems>
+									</ButtonGroup>
+									<ButtonGroup name="ГруппаКоманднаяПанельОтборыУстановитьСнять" id="105">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Установить/снять флажки</v8:content>
+											</v8:item>
+										</Title>
+										<ToolTip>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Установить/снять флажки</v8:content>
+											</v8:item>
+										</ToolTip>
+										<ExtendedTooltip name="ГруппаКоманднаяПанельОтборыУстановитьСнятьExtendedTooltip" id="115"/>
+										<ChildItems>
+											<Button name="ОтборыУстановитьФлажки" id="106">
+												<Type>CommandBarButton</Type>
+												<SkipOnInput>false</SkipOnInput>
+												<CommandName>Form.Item.Отборы.StandardCommand.CheckAll</CommandName>
+												<ExtendedTooltip name="ОтборыУстановитьФлажкиExtendedTooltip" id="116"/>
+											</Button>
+											<Button name="ОтборыСнятьФлажки" id="107">
+												<Type>CommandBarButton</Type>
+												<SkipOnInput>false</SkipOnInput>
+												<CommandName>Form.Item.Отборы.StandardCommand.UncheckAll</CommandName>
+												<ExtendedTooltip name="ОтборыСнятьФлажкиExtendedTooltip" id="117"/>
+											</Button>
+										</ChildItems>
+									</ButtonGroup>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ОтборыExtendedTooltip" id="118"/>
+							<SearchStringAddition name="ОтборыSearchString" id="143">
+								<AdditionSource>
+									<Item>Отборы</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ОтборыSearchStringContextMenu" id="144"/>
+								<ExtendedTooltip name="ОтборыSearchStringExtendedTooltip" id="145"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ОтборыViewStatus" id="146">
+								<AdditionSource>
+									<Item>Отборы</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ОтборыViewStatusContextMenu" id="147"/>
+								<ExtendedTooltip name="ОтборыViewStatusExtendedTooltip" id="148"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ОтборыSearchControl" id="149">
+								<AdditionSource>
+									<Item>Отборы</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ОтборыSearchControlContextMenu" id="150"/>
+								<ExtendedTooltip name="ОтборыSearchControlExtendedTooltip" id="151"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<CheckBoxField name="ОтборыИспользование" id="86">
+									<DataPath>КомпоновщикНастроек.Settings.Filter.Use</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<EditMode>Directly</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ОтборыИспользованиеКонтекстноеМеню" id="87"/>
+									<ExtendedTooltip name="ОтборыИспользованиеExtendedTooltip" id="119"/>
+								</CheckBoxField>
+								<ColumnGroup name="ОтборыГруппаКолонок" id="88">
+									<ExtendedTooltip name="ОтборыГруппаКолонокExtendedTooltip" id="120"/>
+									<ChildItems>
+										<ColumnGroup name="ОтборыГруппаКолонок2" id="89">
+											<Group>Horizontal</Group>
+											<ExtendedTooltip name="ОтборыГруппаКолонок2ExtendedTooltip" id="121"/>
+											<ChildItems>
+												<InputField name="ОтборыЛевоеЗначение" id="90">
+													<DataPath>КомпоновщикНастроек.Settings.Filter.LeftValue</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>10</Width>
+													<HorizontalStretch>true</HorizontalStretch>
+													<ContextMenu name="ОтборыЛевоеЗначениеКонтекстноеМеню" id="91"/>
+													<ExtendedTooltip name="ОтборыЛевоеЗначениеExtendedTooltip" id="122"/>
+												</InputField>
+												<InputField name="ОтборыВидСравнения" id="92">
+													<DataPath>КомпоновщикНастроек.Settings.Filter.ComparisonType</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>5</Width>
+													<HorizontalStretch>true</HorizontalStretch>
+													<ContextMenu name="ОтборыВидСравненияКонтекстноеМеню" id="93"/>
+													<ExtendedTooltip name="ОтборыВидСравненияExtendedTooltip" id="123"/>
+												</InputField>
+												<InputField name="ОтборыПравоеЗначение" id="94">
+													<DataPath>КомпоновщикНастроек.Settings.Filter.RightValue</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>10</Width>
+													<HorizontalStretch>true</HorizontalStretch>
+													<ChoiceFoldersAndItems>FoldersAndItems</ChoiceFoldersAndItems>
+													<ContextMenu name="ОтборыПравоеЗначениеКонтекстноеМеню" id="95"/>
+													<ExtendedTooltip name="ОтборыПравоеЗначениеExtendedTooltip" id="124"/>
+													<Events>
+														<Event name="StartChoice">ОтборыПравоеЗначениеНачалоВыбора</Event>
+													</Events>
+												</InputField>
+												<InputField name="ОтборыДата" id="96">
+													<DataPath>КомпоновщикНастроек.Settings.Filter.Date</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>10</Width>
+													<HorizontalStretch>true</HorizontalStretch>
+													<ContextMenu name="ОтборыДатаКонтекстноеМеню" id="97"/>
+													<ExtendedTooltip name="ОтборыДатаExtendedTooltip" id="125"/>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+										<InputField name="ОтборыТипГруппы" id="98">
+											<DataPath>КомпоновщикНастроек.Settings.Filter.GroupType</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ОтборыТипГруппыКонтекстноеМеню" id="99"/>
+											<ExtendedTooltip name="ОтборыТипГруппыExtendedTooltip" id="126"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<InputField name="ОтборыПредставление" id="100">
+									<DataPath>КомпоновщикНастроек.Settings.Filter.Presentation</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ОтборыПредставлениеКонтекстноеМеню" id="101"/>
+									<ExtendedTooltip name="ОтборыПредставлениеExtendedTooltip" id="127"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаСформированныеДокументы" id="26">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сформированные документы</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="ГруппаСформированныеДокументыExtendedTooltip" id="128"/>
+					<ChildItems>
+						<Table name="СформированныеДокументы" id="27">
+							<Representation>List</Representation>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Объект.СформированныеДокументы</DataPath>
+							<RowPictureDataPath>Объект.СформированныеДокументы.СостояниеДокумента</RowPictureDataPath>
+							<RowsPicture>
+								<xr:Ref>CommonPicture.СостоянияДокумента</xr:Ref>
+								<xr:LoadTransparent>false</xr:LoadTransparent>
+							</RowsPicture>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="СформированныеДокументыКонтекстноеМеню" id="28"/>
+							<AutoCommandBar name="СформированныеДокументыКоманднаяПанель" id="29">
+								<ChildItems>
+									<ButtonGroup name="ГруппаКнопокПометки" id="74">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Группа кнопок пометки</v8:content>
+											</v8:item>
+										</Title>
+										<ToolTip>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Группа кнопок пометки</v8:content>
+											</v8:item>
+										</ToolTip>
+										<ExtendedTooltip name="ГруппаКнопокПометкиExtendedTooltip" id="129"/>
+										<ChildItems>
+											<Button name="КнопкаУстановитьПометки" id="75">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.УстановитьПометки</CommandName>
+												<ExtendedTooltip name="КнопкаУстановитьПометкиExtendedTooltip" id="130"/>
+											</Button>
+											<Button name="КнопкаСнятьПометки" id="76">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.СнятьПометки</CommandName>
+												<ExtendedTooltip name="КнопкаСнятьПометкиExtendedTooltip" id="131"/>
+											</Button>
+										</ChildItems>
+									</ButtonGroup>
+									<ButtonGroup name="ГруппаКнопокДействия" id="77">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Группа кнопок действия</v8:content>
+											</v8:item>
+										</Title>
+										<ToolTip>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Группа кнопок действия</v8:content>
+											</v8:item>
+										</ToolTip>
+										<ExtendedTooltip name="ГруппаКнопокДействияExtendedTooltip" id="132"/>
+										<ChildItems>
+											<Button name="КнопкаПровести" id="78">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.Провести</CommandName>
+												<Picture>
+													<xr:Ref>StdPicture.Post</xr:Ref>
+													<xr:LoadTransparent>true</xr:LoadTransparent>
+												</Picture>
+												<ExtendedTooltip name="КнопкаПровестиExtendedTooltip" id="133"/>
+											</Button>
+											<Button name="КнопкаПометитьНаУдаление" id="79">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ПометитьНаУдаление</CommandName>
+												<ExtendedTooltip name="КнопкаПометитьНаУдалениеExtendedTooltip" id="134"/>
+											</Button>
+										</ChildItems>
+									</ButtonGroup>
+									<Popup name="ПодменюПечать" id="80">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Печать</v8:content>
+											</v8:item>
+										</Title>
+										<ToolTip>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Подменю печать</v8:content>
+											</v8:item>
+										</ToolTip>
+										<Picture>
+											<xr:Ref>StdPicture.Print</xr:Ref>
+											<xr:LoadTransparent>true</xr:LoadTransparent>
+										</Picture>
+										<ExtendedTooltip name="ПодменюПечатьExtendedTooltip" id="135"/>
+										<ChildItems>
+											<Button name="КнопкаПечатьПросмотр" id="81">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ПечатьПросмотр</CommandName>
+												<ExtendedTooltip name="КнопкаПечатьПросмотрExtendedTooltip" id="136"/>
+											</Button>
+											<Button name="КнопкаПечатьНаПринтер" id="82">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ПечатьНаПринтер</CommandName>
+												<ExtendedTooltip name="КнопкаПечатьНаПринтерExtendedTooltip" id="137"/>
+											</Button>
+										</ChildItems>
+									</Popup>
+									<Button name="СформированныеДокументыОтправитьПоЭлектроннойПочте" id="163">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ОтправитьПоЭлектроннойПочте</CommandName>
+										<ExtendedTooltip name="СформированныеДокументыОтправитьПоЭлектроннойПочтеРасширеннаяПодсказка" id="164"/>
+									</Button>
+									<Button name="СформированныеДокументыОткрытьНастройкуГрупповыхОбработок" id="161">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ОткрытьНастройкуГрупповыхОбработок</CommandName>
+										<ExtendedTooltip name="СформированныеДокументыОткрытьНастройкуГрупповыхОбработокРасширеннаяПодсказка" id="162"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="СформированныеДокументыExtendedTooltip" id="138"/>
+							<SearchStringAddition name="СформированныеДокументыSearchString" id="152">
+								<AdditionSource>
+									<Item>СформированныеДокументы</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СформированныеДокументыSearchStringContextMenu" id="153"/>
+								<ExtendedTooltip name="СформированныеДокументыSearchStringExtendedTooltip" id="154"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="СформированныеДокументыViewStatus" id="155">
+								<AdditionSource>
+									<Item>СформированныеДокументы</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СформированныеДокументыViewStatusContextMenu" id="156"/>
+								<ExtendedTooltip name="СформированныеДокументыViewStatusExtendedTooltip" id="157"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="СформированныеДокументыSearchControl" id="158">
+								<AdditionSource>
+									<Item>СформированныеДокументы</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="СформированныеДокументыSearchControlContextMenu" id="159"/>
+								<ExtendedTooltip name="СформированныеДокументыSearchControlExtendedTooltip" id="160"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">СформированныеДокументыВыбор</Event>
+							</Events>
+							<ChildItems>
+								<CheckBoxField name="СформированныеДокументыПометка" id="68">
+									<DataPath>Объект.СформированныеДокументы.Пометка</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="СформированныеДокументыПометкаКонтекстноеМеню" id="69"/>
+									<ExtendedTooltip name="СформированныеДокументыПометкаExtendedTooltip" id="139"/>
+								</CheckBoxField>
+								<LabelField name="СформированныеДокументыДокумент" id="66">
+									<DataPath>Объект.СформированныеДокументы.Документ</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СформированныеДокументыДокументКонтекстноеМеню" id="67"/>
+									<ExtendedTooltip name="СформированныеДокументыДокументExtendedTooltip" id="140"/>
+								</LabelField>
+								<InputField name="СформированныеДокументыКонтрагент" id="70">
+									<DataPath>Объект.СформированныеДокументы.Документ.Контрагент</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СформированныеДокументыКонтрагентКонтекстноеМеню" id="71"/>
+									<ExtendedTooltip name="СформированныеДокументыКонтрагентExtendedTooltip" id="141"/>
+								</InputField>
+								<InputField name="СформированныеДокументыДоговор" id="72">
+									<DataPath>Объект.СформированныеДокументы.Документ.ДоговорКонтрагента</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СформированныеДокументыДоговорКонтекстноеМеню" id="73"/>
+									<ExtendedTooltip name="СформированныеДокументыДоговорExtendedTooltip" id="142"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.АР_ГрупповоеРасторжениеДоговоров</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Columns>
+				<AdditionalColumns table="Объект.СформированныеДокументы">
+					<Column name="СостояниеДокумента" id="1">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Состояние документа</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:decimal</v8:Type>
+							<v8:NumberQualifiers>
+								<v8:Digits>1</v8:Digits>
+								<v8:FractionDigits>0</v8:FractionDigits>
+								<v8:AllowedSign>Any</v8:AllowedSign>
+							</v8:NumberQualifiers>
+						</Type>
+					</Column>
+				</AdditionalColumns>
+			</Columns>
+		</Attribute>
+		<Attribute name="КомпоновщикНастроек" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Компоновщик настроек</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>dcsset:SettingsComposer</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="УчетнаяЗаписьЭлектроннойПочты" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Учетная запись электронной почты</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.УчетныеЗаписиЭлектроннойПочты</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="СформироватьДокументы" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать документы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать документы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СформироватьДокументы</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПометитьНаУдаление" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пометить на удаление</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пометить на удаление</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.MarkToDelete</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ПометитьНаУдаление</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Провести" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Провести</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Провести</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Провести</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СнятьПометки" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять пометки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять пометки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СнятьПометки</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="УстановитьПометки" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить пометки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить пометки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>УстановитьПометки</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПечатьНаПринтер" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сразу на принтер</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Печать на принтер</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПечатьНаПринтер</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПечатьПросмотр" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>С предварительным просмотром</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Печать просмотр</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПечатьПросмотр</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОткрытьНастройкуГрупповыхОбработок" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть настройку групповых обработок</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройка групповых обработок</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.Администрирование</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОткрытьНастройкуГрупповыхОбработок</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОтправитьПоЭлектроннойПочте" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отправить по электронной почте</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отправить по электронной почте</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ЭлектронноеПисьмо</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОтправитьПоЭлектроннойПочте</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

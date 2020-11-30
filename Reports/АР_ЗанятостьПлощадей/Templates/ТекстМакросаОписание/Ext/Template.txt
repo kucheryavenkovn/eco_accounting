@@ -1,0 +1,123 @@
+﻿Public currentObject As String
+
+Public Function getDescription(obj, col, SheetName) As String
+    If (obj.Type = 13) Then
+        getDescription = ""
+        Exit Function
+    End If
+    For Each Sheet In Sheets
+        If Sheet.Name = "Описание" Then
+            For i = 1 To Sheet.Cells.SpecialCells(xlCellTypeLastCell).Row
+                If Sheet.Cells(i, 1).Text = obj.Name And Sheet.Cells(i, 6).Text = SheetName Then
+                    getDescription = Sheet.Cells(i, col).Text
+                    Exit Function
+                End If
+            Next i
+            getDescription = ""
+            Exit Function
+        End If
+    Next Sheet
+    getDescription = "Отсутствует лист описания"
+End Function
+
+
+Sub object_Click()
+    On Error GoTo ErrorHandler
+    
+    Set clickedObj = ActiveSheet.Shapes(Application.Caller)
+    Set obj = ActiveSheet.Shapes(getDescription(clickedObj, 2, ActiveSheet.Name))
+    textWidth = 150
+    textHeight = 50
+    textOffset = 30
+    
+	If (getDescription(obj, 3, ActiveSheet.Name) = "") And (getDescription(obj, 4, ActiveSheet.Name) <> "") Then    
+	    If (InStr(getDescription(obj, 4, ActiveSheet.Name), "e1cib") > 0) Then
+	        ans = MsgBox("Открыть карточку объекта в 1С?", vbYesNo, "Вопрос")
+	        If (ans = 6) Then
+	        	appId = Shell(getDescription(obj, 4, ActiveSheet.Name))
+	        	AppActivate(getDescription(obj, 5, ActiveSheet.Name))
+	        End If
+	    End If
+        Exit Sub
+    End If
+	
+    shapeFound = False
+    For Each shape In ActiveSheet.Shapes 
+    	If (shape.Name = "CommentBox") Then
+    		Set textObj = shape
+    		shapeFound = True
+    		Exit For
+    	End If
+    Next Shape 
+    
+    If (Not shapeFound) Then
+	    Set textObj = ActiveSheet.Shapes.AddShape(1, 1, 1, textWidth, 0)
+	    textObj.Line.Visible = False
+	    textObj.Fill.Visible = False
+	    textObj.Name = "CommentBox"
+	    textObj.Fill.Visible = msoFalse
+	    textObj.TextFrame2.TextRange.Font.Size = 12
+	    textObj.TextFrame2.TextRange.Font.Bold = msoTrue
+	    textObj.TextFrame2.TextRange.Font.Fill.ForeColor.SchemeColor = 8
+		textObj.Fill.ForeColor.RGB = 16777164 ' B * 256 * 256 + G * 256 + R
+    End If
+    
+    textObj.TextEffect.Text = ""
+
+    If (currentObject = obj.Name) And (textObj.Line.Visible) Then
+	    textObj.Line.Visible = False
+	    textObj.Fill.Visible = False
+	    textObj.Delete
+	    If (InStr(getDescription(obj, 4, ActiveSheet.Name), "e1cib") > 0) Then
+	        ans = MsgBox("Открыть карточку объекта в 1С?", vbYesNo, "Вопрос")
+	        If (ans = 6) Then
+	        	appId = Shell(getDescription(obj, 4, ActiveSheet.Name))
+	        	AppActivate(getDescription(obj, 5, ActiveSheet.Name))
+	        End If
+	        Exit Sub
+	    End If
+	    Exit Sub
+    ElseIf (getDescription(obj, 3, ActiveSheet.Name) <> "") Then
+        textObj.Line.Visible = True
+        textObj.Fill.Visible = True
+        textObj.TextEffect.Text = getDescription(obj, 3, ActiveSheet.Name)
+        textHeight = textObj.TextFrame2.TextRange.BoundHeight + 8
+        textObj.Height = textHeight
+        textObj.Top = obj.Top - (textHeight + 2 * textOffset) / 2
+    ElseIf (getDescription(obj, 3, ActiveSheet.Name) = "")  And (textObj.Line.Visible) Then
+	    textObj.Line.Visible = False
+	    textObj.Fill.Visible = False
+	    textObj.Delete
+	    Exit Sub
+    End If
+
+    textObj.Left = obj.Left + (obj.Width - textWidth) / 2
+    textObj.Top = obj.Top - (textHeight + 2 * textOffset) / 2
+    
+    currentObject = obj.Name
+
+    Exit Sub
+ErrorHandler:
+End Sub
+
+Sub ClosePopup()
+    For Each shape In ActiveSheet.Shapes 
+    	If (shape.Name = "CommentBox") Then
+		    shape.TextEffect.Text = ""
+		    shape.Line.Visible = False
+		    shape.Fill.Visible = False
+		    shape.Delete
+    		Exit For
+    	End If
+    Next Shape 
+End Sub
+
+Sub ИнициализоватьОбработчик()
+    For Each Sheet In Application.Sheets
+	    For Each Shape In Sheet.Shapes
+	        If Shape.Type = 5 Or Shape.Type = 17 Or (Shape.Type = 1 And Shape.AutoShapeType < 105) Or Shape.AutoShapeType > 108  Or Shape.Type = 13 Then
+	            Shape.OnAction = "object_Click"
+	        End If
+	    Next Shape
+	Next Sheet
+End Sub

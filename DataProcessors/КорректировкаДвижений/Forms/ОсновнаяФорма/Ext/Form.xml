@@ -1,0 +1,2943 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="КнопкаЗаписатьИЗакрыть" id="3">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<SkipOnInput>false</SkipOnInput>
+				<CommandName>Form.Command.ЗаписатьИЗакрыть</CommandName>
+				<ExtendedTooltip name="КнопкаЗаписатьИЗакрытьExtendedTooltip" id="187"/>
+			</Button>
+			<Button name="ХозрасчетныйОбновить" id="172">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ОбновитьДвижения</CommandName>
+				<ExtendedTooltip name="ХозрасчетныйОбновитьExtendedTooltip" id="193"/>
+			</Button>
+			<Button name="КнопкаОткрытьНастройку" id="5">
+				<Type>CommandBarButton</Type>
+				<SkipOnInput>false</SkipOnInput>
+				<CommandName>Form.Command.НастроитьСоставРегистров</CommandName>
+				<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+				<ExtendedTooltip name="КнопкаОткрытьНастройкуExtendedTooltip" id="188"/>
+			</Button>
+			<Button name="СформироватьОтчетПоДвижениям" id="93">
+				<Type>CommandBarButton</Type>
+				<SkipOnInput>false</SkipOnInput>
+				<CommandName>0</CommandName>
+				<ExtendedTooltip name="СформироватьОтчетПоДвижениямExtendedTooltip" id="189"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="BeforeClose">ПередЗакрытием</Event>
+		<Event name="OnReopen">ПриПовторномОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<CheckBoxField name="РучнаяКорректировка" id="1">
+			<DataPath>РучнаяКорректировка</DataPath>
+			<SkipOnInput>true</SkipOnInput>
+			<TitleLocation>Right</TitleLocation>
+			<EditMode>EnterOnInput</EditMode>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="РучнаяКорректировкаКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="РучнаяКорректировкаExtendedTooltip" id="190"/>
+			<Events>
+				<Event name="OnChange">РучнаяКорректировкаПриИзменении</Event>
+			</Events>
+		</CheckBoxField>
+		<UsualGroup name="ТребуетсяАктуализация" id="693">
+			<Visible>false</Visible>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Требуется актуализация</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Требуется актуализация</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<BackColor>style:ЦветФонаНекорректногоКонтрагента</BackColor>
+			<ExtendedTooltip name="ТребуетсяАктуализацияРасширеннаяПодсказка" id="694"/>
+			<ChildItems>
+				<LabelDecoration name="ТекстПриНеобходимостиАктуализации" id="695">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<Title formatted="true">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Проводки неактуальны с &lt;b&gt;ДД.ММ.ГГГГ&lt;/&gt;.</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ТекстПриНеобходимостиАктуализацииКонтекстноеМеню" id="696"/>
+					<ExtendedTooltip name="ТекстПриНеобходимостиАктуализацииРасширеннаяПодсказка" id="697"/>
+				</LabelDecoration>
+				<Button name="Актуализировать" id="698">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.Актуализировать</CommandName>
+					<ExtendedTooltip name="АктуализироватьРасширеннаяПодсказка" id="699"/>
+				</Button>
+				<UsualGroup name="ГруппаТребуетсяАктуализацияСкрыть" id="724">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа требуется актуализация скрыть</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа требуется актуализация скрыть</v8:content>
+						</v8:item>
+					</ToolTip>
+					<HorizontalStretch>true</HorizontalStretch>
+					<HorizontalAlign>Right</HorizontalAlign>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаТребуетсяАктуализацияСкрытьРасширеннаяПодсказка" id="725"/>
+					<ChildItems>
+						<LabelDecoration name="СкрытьПриНеобходимостиАктуализации" id="700">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Скрыть</v8:content>
+								</v8:item>
+							</Title>
+							<Hyperlink>true</Hyperlink>
+							<HorizontalAlign>Right</HorizontalAlign>
+							<ContextMenu name="СкрытьПриНеобходимостиАктуализацииКонтекстноеМеню" id="701"/>
+							<ExtendedTooltip name="СкрытьПриНеобходимостиАктуализацииРасширеннаяПодсказка" id="702"/>
+							<Events>
+								<Event name="Click">СкрытьПриНеобходимостиАктуализацииНажатие</Event>
+							</Events>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ИдетАктуализация" id="703">
+			<Visible>false</Visible>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Идет актуализация</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Идет актуализация</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ИдетАктуализацияРасширеннаяПодсказка" id="704"/>
+			<ChildItems>
+				<PictureDecoration name="РисПриАктуализации" id="705">
+					<Width>2</Width>
+					<Height>1</Height>
+					<HorizontalStretch>false</HorizontalStretch>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Идет актуализация проводок</v8:content>
+						</v8:item>
+					</Title>
+					<GroupVerticalAlign>Center</GroupVerticalAlign>
+					<Picture>
+						<xr:Ref>CommonPicture.НезавершившаясяПроверка</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<FileDragMode>AsFile</FileDragMode>
+					<ContextMenu name="РисПриАктуализацииКонтекстноеМеню" id="706"/>
+					<ExtendedTooltip name="РисПриАктуализацииРасширеннаяПодсказка" id="707"/>
+				</PictureDecoration>
+				<LabelDecoration name="ТекстПриАктуализации" id="708">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Идет актуализация проводок. Пожалуйста, подождите...</v8:content>
+						</v8:item>
+					</Title>
+					<VerticalAlign>Center</VerticalAlign>
+					<ContextMenu name="ТекстПриАктуализацииКонтекстноеМеню" id="709"/>
+					<ExtendedTooltip name="ТекстПриАктуализацииРасширеннаяПодсказка" id="710"/>
+				</LabelDecoration>
+				<Button name="ОтменитьАктуализацию" id="711">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.ОтменитьАктуализацию</CommandName>
+					<ExtendedTooltip name="ОтменитьАктуализациюРасширеннаяПодсказка" id="712"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<LabelField name="ИнформацияОПроведении" id="631">
+			<DataPath>ИнформацияОПроведении</DataPath>
+			<Visible>false</Visible>
+			<TitleLocation>None</TitleLocation>
+			<Height>2</Height>
+			<ContextMenu name="ИнформацияОПроведенииКонтекстноеМеню" id="632"/>
+			<ExtendedTooltip name="ИнформацияОПроведенииРасширеннаяПодсказка" id="633"/>
+		</LabelField>
+		<Pages name="ПанельРегистров" id="78">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Движения регистров</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Движения регистров</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Height>15</Height>
+			<ExtendedTooltip name="ПанельРегистровРасширеннаяПодсказка" id="191"/>
+			<ChildItems>
+				<Page name="ГруппаХозрасчетный" id="79">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Бухгалтерский и налоговый учет</v8:content>
+						</v8:item>
+					</Title>
+					<Picture>
+						<xr:Ref>CommonPicture.ЖурналПроводок</xr:Ref>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
+					</Picture>
+					<TitleDataPath>ХозрасчетныйНаборЗаписей.RowsCount</TitleDataPath>
+					<ExtendedTooltip name="ГруппаХозрасчетныйExtendedTooltip" id="192"/>
+					<ChildItems>
+						<Table name="Хозрасчетный" id="9">
+							<SkipOnInput>false</SkipOnInput>
+							<DefaultItem>true</DefaultItem>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>ХозрасчетныйНаборЗаписей</DataPath>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ХозрасчетныйКонтекстноеМеню" id="10"/>
+							<AutoCommandBar name="ХозрасчетныйКоманднаяПанель" id="11">
+								<ChildItems>
+									<Button name="ХозрасчетныйПерейтиВСписок" id="180">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ХозрасчетныйПерейтиВСписок</CommandName>
+										<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="ХозрасчетныйПерейтиВСписокРасширеннаяПодсказка" id="195"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ХозрасчетныйExtendedTooltip" id="196"/>
+							<SearchStringAddition name="ХозрасчетныйСтрокаПоиска" id="308">
+								<AdditionSource>
+									<Item>Хозрасчетный</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ХозрасчетныйСтрокаПоискаКонтекстноеМеню" id="309"/>
+								<ExtendedTooltip name="ХозрасчетныйСтрокаПоискаРасширеннаяПодсказка" id="310"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ХозрасчетныйСостояниеПросмотра" id="311">
+								<AdditionSource>
+									<Item>Хозрасчетный</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ХозрасчетныйСостояниеПросмотраКонтекстноеМеню" id="312"/>
+								<ExtendedTooltip name="ХозрасчетныйСостояниеПросмотраРасширеннаяПодсказка" id="313"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ХозрасчетныйУправлениеПоиском" id="314">
+								<AdditionSource>
+									<Item>Хозрасчетный</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ХозрасчетныйУправлениеПоискомКонтекстноеМеню" id="315"/>
+								<ExtendedTooltip name="ХозрасчетныйУправлениеПоискомРасширеннаяПодсказка" id="316"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="OnStartEdit">ХозрасчетныйПриНачалеРедактирования</Event>
+							</Events>
+							<ChildItems>
+								<ColumnGroup name="ХозрасчетныйГруппаДатаНомерСтроки" id="273">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Дата, номер строки</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Дата, номер строки</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="ХозрасчетныйГруппаДатаНомерСтрокиРасширеннаяПодсказка" id="274"/>
+									<ChildItems>
+										<InputField name="ХозрасчетныйПериод" id="169">
+											<DataPath>ХозрасчетныйНаборЗаписей.Period</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>9</Width>
+											<HorizontalStretch>false</HorizontalStretch>
+											<Format>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>ДЛФ=D</v8:content>
+												</v8:item>
+											</Format>
+											<EditFormat>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>ДЛФ=D</v8:content>
+												</v8:item>
+											</EditFormat>
+											<ContextMenu name="ХозрасчетныйПериодКонтекстноеМеню" id="170"/>
+											<ExtendedTooltip name="ХозрасчетныйПериодExtendedTooltip" id="198"/>
+										</InputField>
+										<LabelField name="ХозрасчетныйНомерСтроки" id="12">
+											<DataPath>ХозрасчетныйНаборЗаписей.LineNumber</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ShowInHeader>false</ShowInHeader>
+											<Width>3</Width>
+											<ContextMenu name="ХозрасчетныйНомерСтрокиКонтекстноеМеню" id="13"/>
+											<ExtendedTooltip name="ХозрасчетныйНомерСтрокиExtendedTooltip" id="197"/>
+										</LabelField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="ХозрасчетныйГруппаДебет" id="275">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Дебет</v8:content>
+										</v8:item>
+									</Title>
+									<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Счет и аналитика дебета</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ShowInHeader>true</ShowInHeader>
+									<ExtendedTooltip name="ХозрасчетныйГруппаДебетРасширеннаяПодсказка" id="276"/>
+									<ChildItems>
+										<ColumnGroup name="ХозрасчетныйГруппаСчетКоличествоВалютаДт" id="84">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Счет, количество, валюта Дт</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Счет, количество, валюта Дт</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>Horizontal</Group>
+											<ExtendedTooltip name="ХозрасчетныйГруппаСчетКоличествоВалютаДтРасширеннаяПодсказка" id="199"/>
+											<ChildItems>
+												<InputField name="ХозрасчетныйСчетДт" id="18">
+													<DataPath>ХозрасчетныйНаборЗаписей.AccountDr</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ShowInHeader>false</ShowInHeader>
+													<Width>9</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ChoiceParameters>
+														<app:item name="Отбор.ЗапретитьИспользоватьВПроводках">
+															<app:value xsi:type="FormChoiceListDesTimeValue">
+																<Presentation/>
+																<Value xsi:type="xs:boolean">false</Value>
+															</app:value>
+														</app:item>
+													</ChoiceParameters>
+													<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+													<InputHint>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Дт</v8:content>
+														</v8:item>
+													</InputHint>
+													<ContextMenu name="ХозрасчетныйСчетДтКонтекстноеМеню" id="19"/>
+													<ExtendedTooltip name="ХозрасчетныйСчетДтExtendedTooltip" id="200"/>
+													<Events>
+														<Event name="OnChange">ХозрасчетныйСчетДтПриИзменении</Event>
+													</Events>
+												</InputField>
+												<ColumnGroup name="ХозрасчетныйГруппаКоличествоВалютаДт" id="86">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Количество и валюта Дт</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Количество и валюта Дт</v8:content>
+														</v8:item>
+													</ToolTip>
+													<ExtendedTooltip name="ХозрасчетныйГруппаКоличествоВалютаДтРасширеннаяПодсказка" id="206"/>
+													<ChildItems>
+														<ColumnGroup name="ХозрасчетныйГруппаКоличествоДт" id="277">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Количество Дт</v8:content>
+																</v8:item>
+															</Title>
+															<ToolTip>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Количество Дт</v8:content>
+																</v8:item>
+															</ToolTip>
+															<Group>Horizontal</Group>
+															<ExtendedTooltip name="ХозрасчетныйГруппаКоличествоДтРасширеннаяПодсказка" id="278"/>
+															<ChildItems>
+																<InputField name="ХозрасчетныйНадписьКоличествоДт" id="293">
+																	<DataPath>ХозрасчетныйНаборЗаписей.НадписьКоличествоДт</DataPath>
+																	<Enabled>false</Enabled>
+																	<EditMode>EnterOnInput</EditMode>
+																	<ShowInHeader>false</ShowInHeader>
+																	<Width>6</Width>
+																	<HorizontalStretch>false</HorizontalStretch>
+																	<TextColor>style:ЗаголовкиСтрокЦветТекста</TextColor>
+																	<Font ref="style:ЗаголовкиСтрокШрифт" kind="StyleItem"/>
+																	<ContextMenu name="ХозрасчетныйНадписьКоличествоДтКонтекстноеМеню" id="294"/>
+																	<ExtendedTooltip name="ХозрасчетныйНадписьКоличествоДтРасширеннаяПодсказка" id="295"/>
+																</InputField>
+																<InputField name="ХозрасчетныйКоличествоДт" id="32">
+																	<DataPath>ХозрасчетныйНаборЗаписей.КоличествоDr</DataPath>
+																	<EditMode>EnterOnInput</EditMode>
+																	<ShowInHeader>false</ShowInHeader>
+																	<Width>11</Width>
+																	<ContextMenu name="ХозрасчетныйКоличествоДтКонтекстноеМеню" id="33"/>
+																	<ExtendedTooltip name="ХозрасчетныйКоличествоДтExtendedTooltip" id="207"/>
+																</InputField>
+															</ChildItems>
+														</ColumnGroup>
+														<ColumnGroup name="ХозрасчетныйГруппаВалютаДт" id="279">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Валюта Дт</v8:content>
+																</v8:item>
+															</Title>
+															<ToolTip>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Валюта Дт</v8:content>
+																</v8:item>
+															</ToolTip>
+															<Group>Horizontal</Group>
+															<ExtendedTooltip name="ХозрасчетныйГруппаВалютаДтРасширеннаяПодсказка" id="280"/>
+															<ChildItems>
+																<InputField name="ХозрасчетныйВалютаДт" id="26">
+																	<DataPath>ХозрасчетныйНаборЗаписей.ВалютаDr</DataPath>
+																	<EditMode>EnterOnInput</EditMode>
+																	<ShowInHeader>false</ShowInHeader>
+																	<Width>7</Width>
+																	<HorizontalStretch>false</HorizontalStretch>
+																	<ContextMenu name="ХозрасчетныйВалютаДтКонтекстноеМеню" id="27"/>
+																	<ExtendedTooltip name="ХозрасчетныйВалютаДтExtendedTooltip" id="208"/>
+																</InputField>
+																<InputField name="ХозрасчетныйВалютнаяСуммаДт" id="30">
+																	<DataPath>ХозрасчетныйНаборЗаписей.ВалютнаяСуммаDr</DataPath>
+																	<EditMode>EnterOnInput</EditMode>
+																	<ShowInHeader>false</ShowInHeader>
+																	<Width>12</Width>
+																	<ContextMenu name="ХозрасчетныйВалютнаяСуммаДтКонтекстноеМеню" id="31"/>
+																	<ExtendedTooltip name="ХозрасчетныйВалютнаяСуммаДтExtendedTooltip" id="209"/>
+																</InputField>
+															</ChildItems>
+														</ColumnGroup>
+													</ChildItems>
+												</ColumnGroup>
+											</ChildItems>
+										</ColumnGroup>
+										<InputField name="ХозрасчетныйПодразделениеДт" id="28">
+											<DataPath>ХозрасчетныйНаборЗаписей.ПодразделениеDr</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ShowInHeader>false</ShowInHeader>
+											<Width>15</Width>
+											<ChoiceParameterLinks>
+												<xr:Link>
+													<xr:Name>Отбор.Владелец</xr:Name>
+													<xr:DataPath xsi:type="xs:string">Items.Хозрасчетный.CurrentData.Организация</xr:DataPath>
+													<xr:ValueChange>Clear</xr:ValueChange>
+												</xr:Link>
+											</ChoiceParameterLinks>
+											<InputHint>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Подразделение</v8:content>
+												</v8:item>
+											</InputHint>
+											<ContextMenu name="ХозрасчетныйПодразделениеДтКонтекстноеМеню" id="29"/>
+											<ExtendedTooltip name="ХозрасчетныйПодразделениеДтExtendedTooltip" id="201"/>
+										</InputField>
+										<InputField name="ХозрасчетныйСубконтоДт1" id="20">
+											<DataPath>ХозрасчетныйНаборЗаписей.ExtDimensionDr1</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ShowInHeader>false</ShowInHeader>
+											<Width>15</Width>
+											<ContextMenu name="ХозрасчетныйСубконтоДт1КонтекстноеМеню" id="21"/>
+											<ExtendedTooltip name="ХозрасчетныйСубконтоДт1ExtendedTooltip" id="203"/>
+											<Events>
+												<Event name="OnChange">ХозрасчетныйСубконтоДт1ПриИзменении</Event>
+												<Event name="StartChoice">ХозрасчетныйСубконтоДт1НачалоВыбора</Event>
+											</Events>
+										</InputField>
+										<InputField name="ХозрасчетныйСубконтоДт2" id="22">
+											<DataPath>ХозрасчетныйНаборЗаписей.ExtDimensionDr2</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ShowInHeader>false</ShowInHeader>
+											<Width>15</Width>
+											<ContextMenu name="ХозрасчетныйСубконтоДт2КонтекстноеМеню" id="23"/>
+											<ExtendedTooltip name="ХозрасчетныйСубконтоДт2ExtendedTooltip" id="204"/>
+											<Events>
+												<Event name="OnChange">ХозрасчетныйСубконтоДт2ПриИзменении</Event>
+												<Event name="StartChoice">ХозрасчетныйСубконтоДт2НачалоВыбора</Event>
+											</Events>
+										</InputField>
+										<InputField name="ХозрасчетныйСубконтоДт3" id="24">
+											<DataPath>ХозрасчетныйНаборЗаписей.ExtDimensionDr3</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ShowInHeader>false</ShowInHeader>
+											<Width>15</Width>
+											<ContextMenu name="ХозрасчетныйСубконтоДт3КонтекстноеМеню" id="25"/>
+											<ExtendedTooltip name="ХозрасчетныйСубконтоДт3ExtendedTooltip" id="205"/>
+											<Events>
+												<Event name="StartChoice">ХозрасчетныйСубконтоДт3НачалоВыбора</Event>
+											</Events>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="ХозрасчетныйГруппаКредит" id="87">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Кредит</v8:content>
+										</v8:item>
+									</Title>
+									<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Счет и аналитика кредита</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ShowInHeader>true</ShowInHeader>
+									<ExtendedTooltip name="ХозрасчетныйГруппаКредитРасширеннаяПодсказка" id="210"/>
+									<ChildItems>
+										<ColumnGroup name="ХозрасчетныйГруппаСчетКоличествоВалютаКт" id="281">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Счет, количество и валюта Кт</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Счет, количество и валюта Кт</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>Horizontal</Group>
+											<ExtendedTooltip name="ХозрасчетныйГруппаСчетКоличествоВалютаКтРасширеннаяПодсказка" id="282"/>
+											<ChildItems>
+												<InputField name="ХозрасчетныйСчетКт" id="40">
+													<DataPath>ХозрасчетныйНаборЗаписей.AccountCr</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ShowInHeader>false</ShowInHeader>
+													<Width>9</Width>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ChoiceParameters>
+														<app:item name="Отбор.ЗапретитьИспользоватьВПроводках">
+															<app:value xsi:type="FormChoiceListDesTimeValue">
+																<Presentation/>
+																<Value xsi:type="xs:boolean">false</Value>
+															</app:value>
+														</app:item>
+													</ChoiceParameters>
+													<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+													<InputHint>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Кт</v8:content>
+														</v8:item>
+													</InputHint>
+													<ContextMenu name="ХозрасчетныйСчетКтКонтекстноеМеню" id="41"/>
+													<ExtendedTooltip name="ХозрасчетныйСчетКтExtendedTooltip" id="211"/>
+													<Events>
+														<Event name="OnChange">ХозрасчетныйСчетКтПриИзменении</Event>
+													</Events>
+												</InputField>
+												<ColumnGroup name="ХозрасчетныйГруппаКоличествоВалютаКт" id="283">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Количество и валюта Кт</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Количество и валюта Кт</v8:content>
+														</v8:item>
+													</ToolTip>
+													<ExtendedTooltip name="ХозрасчетныйГруппаКоличествоВалютаКтРасширеннаяПодсказка" id="284"/>
+													<ChildItems>
+														<ColumnGroup name="ХозрасчетныйГруппаКоличествоКт" id="285">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Количество Кт</v8:content>
+																</v8:item>
+															</Title>
+															<ToolTip>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Количество Кт</v8:content>
+																</v8:item>
+															</ToolTip>
+															<Group>Horizontal</Group>
+															<ExtendedTooltip name="ХозрасчетныйГруппаКоличествоКтРасширеннаяПодсказка" id="286"/>
+															<ChildItems>
+																<InputField name="ХозрасчетныйНадписьКоличествоКт" id="296">
+																	<DataPath>ХозрасчетныйНаборЗаписей.НадписьКоличествоКт</DataPath>
+																	<Enabled>false</Enabled>
+																	<EditMode>EnterOnInput</EditMode>
+																	<ShowInHeader>false</ShowInHeader>
+																	<Width>6</Width>
+																	<HorizontalStretch>false</HorizontalStretch>
+																	<TextColor>style:ЗаголовкиСтрокЦветТекста</TextColor>
+																	<Font ref="style:ЗаголовкиСтрокШрифт" kind="StyleItem"/>
+																	<ContextMenu name="ХозрасчетныйНадписьКоличествоКтКонтекстноеМеню" id="297"/>
+																	<ExtendedTooltip name="ХозрасчетныйНадписьКоличествоКтРасширеннаяПодсказка" id="298"/>
+																</InputField>
+																<InputField name="ХозрасчетныйКоличествоКт" id="54">
+																	<DataPath>ХозрасчетныйНаборЗаписей.КоличествоCr</DataPath>
+																	<EditMode>EnterOnInput</EditMode>
+																	<ShowInHeader>false</ShowInHeader>
+																	<Width>11</Width>
+																	<ContextMenu name="ХозрасчетныйКоличествоКтКонтекстноеМеню" id="55"/>
+																	<ExtendedTooltip name="ХозрасчетныйКоличествоКтExtendedTooltip" id="218"/>
+																</InputField>
+															</ChildItems>
+														</ColumnGroup>
+														<ColumnGroup name="ХозрасчетныйГруппаВалютаКт" id="287">
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Валюта Кт</v8:content>
+																</v8:item>
+															</Title>
+															<ToolTip>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Валюта Кт</v8:content>
+																</v8:item>
+															</ToolTip>
+															<Group>Horizontal</Group>
+															<ExtendedTooltip name="ХозрасчетныйГруппаВалютаКтРасширеннаяПодсказка" id="288"/>
+															<ChildItems>
+																<InputField name="ХозрасчетныйВалютаКт" id="48">
+																	<DataPath>ХозрасчетныйНаборЗаписей.ВалютаCr</DataPath>
+																	<EditMode>EnterOnInput</EditMode>
+																	<ShowInHeader>false</ShowInHeader>
+																	<Width>7</Width>
+																	<HorizontalStretch>false</HorizontalStretch>
+																	<ContextMenu name="ХозрасчетныйВалютаКтКонтекстноеМеню" id="49"/>
+																	<ExtendedTooltip name="ХозрасчетныйВалютаКтExtendedTooltip" id="219"/>
+																</InputField>
+																<InputField name="ХозрасчетныйВалютнаяСуммаКт" id="52">
+																	<DataPath>ХозрасчетныйНаборЗаписей.ВалютнаяСуммаCr</DataPath>
+																	<EditMode>EnterOnInput</EditMode>
+																	<ShowInHeader>false</ShowInHeader>
+																	<Width>12</Width>
+																	<ContextMenu name="ХозрасчетныйВалютнаяСуммаКтКонтекстноеМеню" id="53"/>
+																	<ExtendedTooltip name="ХозрасчетныйВалютнаяСуммаКтExtendedTooltip" id="220"/>
+																</InputField>
+															</ChildItems>
+														</ColumnGroup>
+													</ChildItems>
+												</ColumnGroup>
+											</ChildItems>
+										</ColumnGroup>
+										<InputField name="ХозрасчетныйПодразделениеКт" id="50">
+											<DataPath>ХозрасчетныйНаборЗаписей.ПодразделениеCr</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ShowInHeader>false</ShowInHeader>
+											<Width>15</Width>
+											<ChoiceParameterLinks>
+												<xr:Link>
+													<xr:Name>Отбор.Владелец</xr:Name>
+													<xr:DataPath xsi:type="xs:string">Items.Хозрасчетный.CurrentData.Организация</xr:DataPath>
+													<xr:ValueChange>Clear</xr:ValueChange>
+												</xr:Link>
+											</ChoiceParameterLinks>
+											<InputHint>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Подразделение</v8:content>
+												</v8:item>
+											</InputHint>
+											<ContextMenu name="ХозрасчетныйПодразделениеКтКонтекстноеМеню" id="51"/>
+											<ExtendedTooltip name="ХозрасчетныйПодразделениеКтExtendedTooltip" id="212"/>
+										</InputField>
+										<InputField name="ХозрасчетныйСубконтоКт1" id="42">
+											<DataPath>ХозрасчетныйНаборЗаписей.ExtDimensionCr1</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Субконто Кт</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<ShowInHeader>false</ShowInHeader>
+											<Width>15</Width>
+											<ContextMenu name="ХозрасчетныйСубконтоКт1КонтекстноеМеню" id="43"/>
+											<ExtendedTooltip name="ХозрасчетныйСубконтоКт1ExtendedTooltip" id="214"/>
+											<Events>
+												<Event name="OnChange">ХозрасчетныйСубконтоКт1ПриИзменении</Event>
+												<Event name="StartChoice">ХозрасчетныйСубконтоКт1НачалоВыбора</Event>
+											</Events>
+										</InputField>
+										<InputField name="ХозрасчетныйСубконтоКт2" id="44">
+											<DataPath>ХозрасчетныйНаборЗаписей.ExtDimensionCr2</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<EditMode>EnterOnInput</EditMode>
+											<ShowInHeader>false</ShowInHeader>
+											<Width>15</Width>
+											<ContextMenu name="ХозрасчетныйСубконтоКт2КонтекстноеМеню" id="45"/>
+											<ExtendedTooltip name="ХозрасчетныйСубконтоКт2ExtendedTooltip" id="215"/>
+											<Events>
+												<Event name="OnChange">ХозрасчетныйСубконтоКт2ПриИзменении</Event>
+												<Event name="StartChoice">ХозрасчетныйСубконтоКт2НачалоВыбора</Event>
+											</Events>
+										</InputField>
+										<InputField name="ХозрасчетныйСубконтоКт3" id="46">
+											<DataPath>ХозрасчетныйНаборЗаписей.ExtDimensionCr3</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<EditMode>EnterOnInput</EditMode>
+											<ShowInHeader>false</ShowInHeader>
+											<Width>15</Width>
+											<ContextMenu name="ХозрасчетныйСубконтоКт3КонтекстноеМеню" id="47"/>
+											<ExtendedTooltip name="ХозрасчетныйСубконтоКт3ExtendedTooltip" id="216"/>
+											<Events>
+												<Event name="StartChoice">ХозрасчетныйСубконтоКт3НачалоВыбора</Event>
+											</Events>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="ХозрасчетныйГруппаСуммаСодержание" id="90">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сумма</v8:content>
+										</v8:item>
+									</Title>
+									<TitleFont ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сумма бухгалтерского учета
+и содержание проводки</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Width>1</Width>
+									<ShowInHeader>true</ShowInHeader>
+									<ExtendedTooltip name="ХозрасчетныйГруппаСуммаСодержаниеРасширеннаяПодсказка" id="221"/>
+									<ChildItems>
+										<InputField name="ХозрасчетныйСумма" id="62">
+											<DataPath>ХозрасчетныйНаборЗаписей.Сумма</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ShowInHeader>false</ShowInHeader>
+											<Width>13</Width>
+											<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+											<ContextMenu name="ХозрасчетныйСуммаКонтекстноеМеню" id="63"/>
+											<ExtendedTooltip name="ХозрасчетныйСуммаExtendedTooltip" id="222"/>
+										</InputField>
+										<InputField name="ХозрасчетныйСодержание" id="64">
+											<DataPath>ХозрасчетныйНаборЗаписей.Содержание</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ShowInHeader>false</ShowInHeader>
+											<Width>13</Width>
+											<Font ref="style:СодержаниеУслугиШрифт" kind="StyleItem"/>
+											<InputHint>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Содержание</v8:content>
+												</v8:item>
+											</InputHint>
+											<ContextMenu name="ХозрасчетныйСодержаниеКонтекстноеМеню" id="65"/>
+											<ExtendedTooltip name="ХозрасчетныйСодержаниеExtendedTooltip" id="224"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="ХозрасчетныйГруппаНалоговыйУчет" id="289">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Налоговый учет</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Налоговый учет</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Horizontal</Group>
+									<ExtendedTooltip name="ХозрасчетныйГруппаНалоговыйУчетРасширеннаяПодсказка" id="290"/>
+									<ChildItems>
+										<ColumnGroup name="ХозрасчетныйГруппаНалоговыйУчетПоказатели" id="291">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Показатели налогового учета</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Показатели налогового учета</v8:content>
+												</v8:item>
+											</ToolTip>
+											<ShowTitle>false</ShowTitle>
+											<ShowInHeader>true</ShowInHeader>
+											<ExtendedTooltip name="ХозрасчетныйГруппаНалоговыйУчетПоказателиРасширеннаяПодсказка" id="292"/>
+											<ChildItems>
+												<InputField name="ХозрасчетныйНадписьНУ" id="299">
+													<DataPath>ХозрасчетныйНаборЗаписей.НадписьНУ</DataPath>
+													<Enabled>false</Enabled>
+													<EditMode>EnterOnInput</EditMode>
+													<ShowInHeader>false</ShowInHeader>
+													<Width>5</Width>
+													<TextColor>style:ЗаголовкиСтрокЦветТекста</TextColor>
+													<Font ref="style:ЗаголовкиСтрокШрифт" kind="StyleItem"/>
+													<ContextMenu name="ХозрасчетныйНадписьНУКонтекстноеМеню" id="300"/>
+													<ExtendedTooltip name="ХозрасчетныйНадписьНУРасширеннаяПодсказка" id="301"/>
+												</InputField>
+												<InputField name="ХозрасчетныйНадписьПР" id="302">
+													<DataPath>ХозрасчетныйНаборЗаписей.НадписьПР</DataPath>
+													<Enabled>false</Enabled>
+													<EditMode>EnterOnInput</EditMode>
+													<ShowInHeader>false</ShowInHeader>
+													<Width>5</Width>
+													<TextColor>style:ЗаголовкиСтрокЦветТекста</TextColor>
+													<Font ref="style:ЗаголовкиСтрокШрифт" kind="StyleItem"/>
+													<ContextMenu name="ХозрасчетныйНадписьПРКонтекстноеМеню" id="303"/>
+													<ExtendedTooltip name="ХозрасчетныйНадписьПРРасширеннаяПодсказка" id="304"/>
+												</InputField>
+												<InputField name="ХозрасчетныйНадписьВР" id="305">
+													<DataPath>ХозрасчетныйНаборЗаписей.НадписьВР</DataPath>
+													<Enabled>false</Enabled>
+													<EditMode>EnterOnInput</EditMode>
+													<ShowInHeader>false</ShowInHeader>
+													<Width>5</Width>
+													<TextColor>style:ЗаголовкиСтрокЦветТекста</TextColor>
+													<Font ref="style:ЗаголовкиСтрокШрифт" kind="StyleItem"/>
+													<ContextMenu name="ХозрасчетныйНадписьВРКонтекстноеМеню" id="306"/>
+													<ExtendedTooltip name="ХозрасчетныйНадписьВРРасширеннаяПодсказка" id="307"/>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+										<ColumnGroup name="ХозрасчетныйГруппаНалоговыйУчетДт" id="91">
+											<EnableContentChange>true</EnableContentChange>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Сумма Дт</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Суммы налогового учета
+по налогу на прибыль</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Width>1</Width>
+											<ShowInHeader>true</ShowInHeader>
+											<ExtendedTooltip name="ХозрасчетныйГруппаНалоговыйУчетДтРасширеннаяПодсказка" id="225"/>
+											<ChildItems>
+												<InputField name="ХозрасчетныйСуммаНУДт" id="34">
+													<DataPath>ХозрасчетныйНаборЗаписей.СуммаНУDr</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ShowInHeader>false</ShowInHeader>
+													<Width>11</Width>
+													<ContextMenu name="ХозрасчетныйСуммаНУДтКонтекстноеМеню" id="35"/>
+													<ExtendedTooltip name="ХозрасчетныйСуммаНУДтExtendedTooltip" id="226"/>
+												</InputField>
+												<InputField name="ХозрасчетныйСуммаПРДт" id="36">
+													<DataPath>ХозрасчетныйНаборЗаписей.СуммаПРDr</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ShowInHeader>false</ShowInHeader>
+													<Width>11</Width>
+													<ContextMenu name="ХозрасчетныйСуммаПРДтКонтекстноеМеню" id="37"/>
+													<ExtendedTooltip name="ХозрасчетныйСуммаПРДтExtendedTooltip" id="227"/>
+												</InputField>
+												<InputField name="ХозрасчетныйСуммаВРДт" id="38">
+													<DataPath>ХозрасчетныйНаборЗаписей.СуммаВРDr</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ShowInHeader>false</ShowInHeader>
+													<Width>11</Width>
+													<ContextMenu name="ХозрасчетныйСуммаВРДтКонтекстноеМеню" id="39"/>
+													<ExtendedTooltip name="ХозрасчетныйСуммаВРДтExtendedTooltip" id="228"/>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+										<ColumnGroup name="ХозрасчетныйГруппаНалоговыйУчетКт" id="92">
+											<EnableContentChange>true</EnableContentChange>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Сумма Кт</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Суммы налогового учета
+по налогу на прибыль</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Width>1</Width>
+											<ShowInHeader>true</ShowInHeader>
+											<ExtendedTooltip name="ХозрасчетныйГруппаНалоговыйУчетКтРасширеннаяПодсказка" id="229"/>
+											<ChildItems>
+												<InputField name="ХозрасчетныйСуммаНУКт" id="56">
+													<DataPath>ХозрасчетныйНаборЗаписей.СуммаНУCr</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ShowInHeader>false</ShowInHeader>
+													<Width>11</Width>
+													<ContextMenu name="ХозрасчетныйСуммаНУКтКонтекстноеМеню" id="57"/>
+													<ExtendedTooltip name="ХозрасчетныйСуммаНУКтExtendedTooltip" id="230"/>
+												</InputField>
+												<InputField name="ХозрасчетныйСуммаПРКт" id="58">
+													<DataPath>ХозрасчетныйНаборЗаписей.СуммаПРCr</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ShowInHeader>false</ShowInHeader>
+													<Width>11</Width>
+													<ContextMenu name="ХозрасчетныйСуммаПРКтКонтекстноеМеню" id="59"/>
+													<ExtendedTooltip name="ХозрасчетныйСуммаПРКтExtendedTooltip" id="231"/>
+												</InputField>
+												<InputField name="ХозрасчетныйСуммаВРКт" id="60">
+													<DataPath>ХозрасчетныйНаборЗаписей.СуммаВРCr</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ShowInHeader>false</ShowInHeader>
+													<Width>11</Width>
+													<ContextMenu name="ХозрасчетныйСуммаВРКтКонтекстноеМеню" id="61"/>
+													<ExtendedTooltip name="ХозрасчетныйСуммаВРКтExtendedTooltip" id="232"/>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+									</ChildItems>
+								</ColumnGroup>
+								<CheckBoxField name="ХозрасчетныйНеКорректироватьСтоимостьАвтоматически" id="173">
+									<DataPath>ХозрасчетныйНаборЗаписей.НеКорректироватьСтоимостьАвтоматически</DataPath>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+									</UserVisible>
+									<SkipOnInput>true</SkipOnInput>
+									<TitleLocation>None</TitleLocation>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Не корректировать стоимость автоматически</v8:content>
+										</v8:item>
+									</ToolTip>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ХозрасчетныйНеКорректироватьСтоимостьАвтоматическиКонтекстноеМеню" id="174"/>
+									<ExtendedTooltip name="ХозрасчетныйНеКорректироватьСтоимостьАвтоматическиExtendedTooltip" id="223"/>
+								</CheckBoxField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаКнигаУчетаДоходовИРасходов" id="94">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Книга учета доходов и расходов (раздел I)</v8:content>
+						</v8:item>
+					</Title>
+					<TitleDataPath>КнигаУчетаДоходовИРасходовНаборЗаписей.RowsCount</TitleDataPath>
+					<ExtendedTooltip name="ГруппаКнигаУчетаДоходовИРасходовExtendedTooltip" id="233"/>
+					<ChildItems>
+						<Table name="КнигаУчетаДоходовИРасходов" id="95">
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>КнигаУчетаДоходовИРасходовНаборЗаписей</DataPath>
+							<RowPictureDataPath>КнигаУчетаДоходовИРасходовНаборЗаписей.Active</RowPictureDataPath>
+							<RowsPicture>
+								<xr:Ref>CommonPicture.АктивностьПоРН</xr:Ref>
+								<xr:LoadTransparent>false</xr:LoadTransparent>
+							</RowsPicture>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="КнигаУчетаДоходовИРасходовКонтекстноеМеню" id="96"/>
+							<AutoCommandBar name="КнигаУчетаДоходовИРасходовКоманднаяПанель" id="97">
+								<ChildItems>
+									<Button name="КнигаУчетаДоходовИРасходовПерейтиВСписок" id="183">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.КнигаУчетаДоходовИРасходовПерейтиВСписок</CommandName>
+										<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="КнигаУчетаДоходовИРасходовПерейтиВСписокРасширеннаяПодсказка" id="235"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="КнигаУчетаДоходовИРасходовExtendedTooltip" id="236"/>
+							<SearchStringAddition name="КнигаУчетаДоходовИРасходовСтрокаПоиска" id="317">
+								<AdditionSource>
+									<Item>КнигаУчетаДоходовИРасходов</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="КнигаУчетаДоходовИРасходовСтрокаПоискаКонтекстноеМеню" id="318"/>
+								<ExtendedTooltip name="КнигаУчетаДоходовИРасходовСтрокаПоискаРасширеннаяПодсказка" id="319"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="КнигаУчетаДоходовИРасходовСостояниеПросмотра" id="320">
+								<AdditionSource>
+									<Item>КнигаУчетаДоходовИРасходов</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="КнигаУчетаДоходовИРасходовСостояниеПросмотраКонтекстноеМеню" id="321"/>
+								<ExtendedTooltip name="КнигаУчетаДоходовИРасходовСостояниеПросмотраРасширеннаяПодсказка" id="322"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="КнигаУчетаДоходовИРасходовУправлениеПоиском" id="323">
+								<AdditionSource>
+									<Item>КнигаУчетаДоходовИРасходов</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="КнигаУчетаДоходовИРасходовУправлениеПоискомКонтекстноеМеню" id="324"/>
+								<ExtendedTooltip name="КнигаУчетаДоходовИРасходовУправлениеПоискомРасширеннаяПодсказка" id="325"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="OnStartEdit">Подключаемый_ТаблицаРегистраПриНачалеРедактирования</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="КнигаУчетаДоходовИРасходовНомерСтроки" id="98">
+									<DataPath>КнигаУчетаДоходовИРасходовНаборЗаписей.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>2</Width>
+									<ContextMenu name="КнигаУчетаДоходовИРасходовНомерСтрокиКонтекстноеМеню" id="99"/>
+									<ExtendedTooltip name="КнигаУчетаДоходовИРасходовНомерСтрокиExtendedTooltip" id="238"/>
+								</LabelField>
+								<InputField name="КнигаУчетаДоходовИРасходовСодержание" id="116">
+									<DataPath>КнигаУчетаДоходовИРасходовНаборЗаписей.Содержание</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoCellHeight>true</AutoCellHeight>
+									<Width>40</Width>
+									<Height>5</Height>
+									<ContextMenu name="КнигаУчетаДоходовИРасходовСодержаниеКонтекстноеМеню" id="117"/>
+									<ExtendedTooltip name="КнигаУчетаДоходовИРасходовСодержаниеExtendedTooltip" id="242"/>
+								</InputField>
+								<ColumnGroup name="КнигаУчетаДоходовИРасходовГруппаДоходы" id="637">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Книга учета доходов и расходов группа доходы</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Книга учета доходов и расходов группа доходы</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="КнигаУчетаДоходовИРасходовГруппаДоходыРасширеннаяПодсказка" id="638"/>
+									<ChildItems>
+										<InputField name="КнигаУчетаДоходовИРасходовГрафа5" id="106">
+											<DataPath>КнигаУчетаДоходовИРасходовНаборЗаписей.Графа5</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Доходы</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="КнигаУчетаДоходовИРасходовГрафа5КонтекстноеМеню" id="107"/>
+											<ExtendedTooltip name="КнигаУчетаДоходовИРасходовГрафа5ExtendedTooltip" id="244"/>
+										</InputField>
+										<InputField name="КнигаУчетаДоходовИРасходовДоходТорговыйСбор" id="634">
+											<DataPath>КнигаУчетаДоходовИРасходовНаборЗаписей.ДоходТорговыйСбор</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>в т.ч. на торговом сборе</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Доходы по деятельности, облагаемой торговым сбором</v8:content>
+												</v8:item>
+											</ToolTip>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="КнигаУчетаДоходовИРасходовДоходТорговыйСборКонтекстноеМеню" id="635"/>
+											<ExtendedTooltip name="КнигаУчетаДоходовИРасходовДоходТорговыйСборРасширеннаяПодсказка" id="636"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="КнигаУчетаДоходовИРасходовГруппаРасходы" id="639">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Книга учета доходов и расходов группа расходы</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Книга учета доходов и расходов группа расходы</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="КнигаУчетаДоходовИРасходовГруппаРасходыРасширеннаяПодсказка" id="640"/>
+									<ChildItems>
+										<InputField name="КнигаУчетаДоходовИРасходовГрафа7" id="110">
+											<DataPath>КнигаУчетаДоходовИРасходовНаборЗаписей.Графа7</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Расходы</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="КнигаУчетаДоходовИРасходовГрафа7КонтекстноеМеню" id="111"/>
+											<ExtendedTooltip name="КнигаУчетаДоходовИРасходовГрафа7ExtendedTooltip" id="247"/>
+										</InputField>
+										<InputField name="КнигаУчетаДоходовИРасходовНДС" id="112">
+											<DataPath>КнигаУчетаДоходовИРасходовНаборЗаписей.НДС</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>в т.ч. входящий НДС</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>11</Width>
+											<ContextMenu name="КнигаУчетаДоходовИРасходовНДСКонтекстноеМеню" id="113"/>
+											<ExtendedTooltip name="КнигаУчетаДоходовИРасходовНДСExtendedTooltip" id="248"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<InputField name="КнигаУчетаДоходовИРасходовДоходЕНВД" id="114">
+									<DataPath>КнигаУчетаДоходовИРасходовНаборЗаписей.ДоходЕНВД</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>11</Width>
+									<ContextMenu name="КнигаУчетаДоходовИРасходовДоходЕНВДКонтекстноеМеню" id="115"/>
+									<ExtendedTooltip name="КнигаУчетаДоходовИРасходовДоходЕНВДExtendedTooltip" id="249"/>
+								</InputField>
+								<ColumnGroup name="КнигаУчетаДоходовИРасходовГруппаДоходыРасходыВсего" id="641">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Книга учета доходов и расходов - группа доходы и расходы (всего)</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Книга учета доходов и расходов группа доходы расходы всего</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="КнигаУчетаДоходовИРасходовГруппаДоходыРасходыВсегоРасширеннаяПодсказка" id="642"/>
+									<ChildItems>
+										<InputField name="КнигаУчетаДоходовИРасходовГрафа4" id="104">
+											<DataPath>КнигаУчетаДоходовИРасходовНаборЗаписей.Графа4</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Доходы всего</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>12</Width>
+											<ContextMenu name="КнигаУчетаДоходовИРасходовГрафа4КонтекстноеМеню" id="105"/>
+											<ExtendedTooltip name="КнигаУчетаДоходовИРасходовГрафа4ExtendedTooltip" id="243"/>
+										</InputField>
+										<InputField name="КнигаУчетаДоходовИРасходовГрафа6" id="108">
+											<DataPath>КнигаУчетаДоходовИРасходовНаборЗаписей.Графа6</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Расходы всего</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>12</Width>
+											<ContextMenu name="КнигаУчетаДоходовИРасходовГрафа6КонтекстноеМеню" id="109"/>
+											<ExtendedTooltip name="КнигаУчетаДоходовИРасходовГрафа6ExtendedTooltip" id="245"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<InputField name="КнигаУчетаДоходовИРасходовОрганизация" id="102">
+									<DataPath>КнигаУчетаДоходовИРасходовНаборЗаписей.Организация</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>20</Width>
+									<ContextMenu name="КнигаУчетаДоходовИРасходовОрганизацияКонтекстноеМеню" id="103"/>
+									<ExtendedTooltip name="КнигаУчетаДоходовИРасходовОрганизацияExtendedTooltip" id="240"/>
+								</InputField>
+								<ColumnGroup name="КнигаУчетаДоходовИРасходовГруппаДокументВидРасхода" id="643">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Книга учета доходов и расходов - группа документ и вид расхода</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Книга учета доходов и расходов группа документ вид расхода</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="КнигаУчетаДоходовИРасходовГруппаДокументВидРасходаРасширеннаяПодсказка" id="644"/>
+									<ChildItems>
+										<InputField name="КнигаУчетаДоходовИРасходовВидРасхода" id="126">
+											<DataPath>КнигаУчетаДоходовИРасходовНаборЗаписей.ВидРасхода</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>16</Width>
+											<ContextMenu name="КнигаУчетаДоходовИРасходовВидРасходаКонтекстноеМеню" id="127"/>
+											<ExtendedTooltip name="КнигаУчетаДоходовИРасходовВидРасходаExtendedTooltip" id="250"/>
+										</InputField>
+										<InputField name="КнигаУчетаДоходовИРасходовРеквизитыПервичногоДокумента" id="118">
+											<DataPath>КнигаУчетаДоходовИРасходовНаборЗаписей.РеквизитыПервичногоДокумента</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Первичный документ</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Реквизиты первичного документа</v8:content>
+												</v8:item>
+											</ToolTip>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>22</Width>
+											<ContextMenu name="КнигаУчетаДоходовИРасходовРеквизитыПервичногоДокументаКонтекстноеМеню" id="119"/>
+											<ExtendedTooltip name="КнигаУчетаДоходовИРасходовРеквизитыПервичногоДокументаExtendedTooltip" id="241"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="КнигаУчетаДоходовИРасходовГруппаДанныеДокумента" id="645">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Книга учета доходов и расходов - группа данные документа</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Книга учета доходов и расходов группа данные документа</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="КнигаУчетаДоходовИРасходовГруппаДанныеДокументаРасширеннаяПодсказка" id="646"/>
+									<ChildItems>
+										<ColumnGroup name="КнигаУчетаДоходовИРасходовГруппаСтрокаЭтап" id="647">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Книга учета доходов и расходов - группа строка документа и этап проведения</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Книга учета доходов и расходов группа строка этап</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>Horizontal</Group>
+											<ExtendedTooltip name="КнигаУчетаДоходовИРасходовГруппаСтрокаЭтапРасширеннаяПодсказка" id="648"/>
+											<ChildItems>
+												<InputField name="КнигаУчетаДоходовИРасходовСтрокаДокумента" id="120">
+													<DataPath>КнигаУчетаДоходовИРасходовНаборЗаписей.СтрокаДокумента</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>17</Width>
+													<ContextMenu name="КнигаУчетаДоходовИРасходовСтрокаДокументаКонтекстноеМеню" id="121"/>
+													<ExtendedTooltip name="КнигаУчетаДоходовИРасходовСтрокаДокументаExtendedTooltip" id="253"/>
+												</InputField>
+												<InputField name="КнигаУчетаДоходовИРасходовЭтапПроведения" id="124">
+													<DataPath>КнигаУчетаДоходовИРасходовНаборЗаписей.ЭтапПроведения</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>16</Width>
+													<ContextMenu name="КнигаУчетаДоходовИРасходовЭтапПроведенияКонтекстноеМеню" id="125"/>
+													<ExtendedTooltip name="КнигаУчетаДоходовИРасходовЭтапПроведенияExtendedTooltip" id="254"/>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+										<InputField name="КнигаУчетаДоходовИРасходовТабличнаяЧасть" id="122">
+											<DataPath>КнигаУчетаДоходовИРасходовНаборЗаписей.ТабличнаяЧасть</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>16</Width>
+											<ContextMenu name="КнигаУчетаДоходовИРасходовТабличнаяЧастьКонтекстноеМеню" id="123"/>
+											<ExtendedTooltip name="КнигаУчетаДоходовИРасходовТабличнаяЧастьExtendedTooltip" id="252"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="КнигаУчетаДоходовИРасходовГруппаКонтрагентДоговор" id="713">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Книга учета доходов и расходов группа контрагент договор</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Книга учета доходов и расходов группа контрагент договор</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="КнигаУчетаДоходовИРасходовГруппаКонтрагентДоговорРасширеннаяПодсказка" id="714"/>
+									<ChildItems>
+										<InputField name="КнигаУчетаДоходовИРасходовКонтрагент" id="715">
+											<DataPath>КнигаУчетаДоходовИРасходовНаборЗаписей.Контрагент</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="КнигаУчетаДоходовИРасходовКонтрагентКонтекстноеМеню" id="716"/>
+											<ExtendedTooltip name="КнигаУчетаДоходовИРасходовКонтрагентРасширеннаяПодсказка" id="717"/>
+										</InputField>
+										<InputField name="КнигаУчетаДоходовИРасходовДоговорКонтрагента" id="718">
+											<DataPath>КнигаУчетаДоходовИРасходовНаборЗаписей.ДоговорКонтрагента</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="КнигаУчетаДоходовИРасходовДоговорКонтрагентаКонтекстноеМеню" id="719"/>
+											<ExtendedTooltip name="КнигаУчетаДоходовИРасходовДоговорКонтрагентаРасширеннаяПодсказка" id="720"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<InputField name="КнигаУчетаДоходовИРасходовТипОплаты" id="721">
+									<DataPath>КнигаУчетаДоходовИРасходовНаборЗаписей.ТипОплаты</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="КнигаУчетаДоходовИРасходовТипОплатыКонтекстноеМеню" id="722"/>
+									<ExtendedTooltip name="КнигаУчетаДоходовИРасходовТипОплатыРасширеннаяПодсказка" id="723"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаРасшифровкаКУДиР" id="135">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Расшифровка КУДиР</v8:content>
+						</v8:item>
+					</Title>
+					<TitleDataPath>РасшифровкаКУДиРНаборЗаписей.RowsCount</TitleDataPath>
+					<ExtendedTooltip name="ГруппаРасшифровкаКУДиРExtendedTooltip" id="255"/>
+					<ChildItems>
+						<Table name="РасшифровкаКУДиР" id="136">
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>РасшифровкаКУДиРНаборЗаписей</DataPath>
+							<RowPictureDataPath>РасшифровкаКУДиРНаборЗаписей.Active</RowPictureDataPath>
+							<RowsPicture>
+								<xr:Ref>CommonPicture.АктивностьПоРН</xr:Ref>
+								<xr:LoadTransparent>false</xr:LoadTransparent>
+							</RowsPicture>
+							<SearchStringLocation>None</SearchStringLocation>
+							<ViewStatusLocation>None</ViewStatusLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="РасшифровкаКУДиРКонтекстноеМеню" id="137"/>
+							<AutoCommandBar name="РасшифровкаКУДиРКоманднаяПанель" id="138">
+								<ChildItems>
+									<Button name="РасшифровкаКУДиРПерейтиВСписок" id="186">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.РасшифровкаКУДиРПерейтиВСписок</CommandName>
+										<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="РасшифровкаКУДиРПерейтиВСписокРасширеннаяПодсказка" id="257"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="РасшифровкаКУДиРExtendedTooltip" id="258"/>
+							<SearchStringAddition name="РасшифровкаКУДиРСтрокаПоиска" id="326">
+								<AdditionSource>
+									<Item>РасшифровкаКУДиР</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="РасшифровкаКУДиРСтрокаПоискаКонтекстноеМеню" id="327"/>
+								<ExtendedTooltip name="РасшифровкаКУДиРСтрокаПоискаРасширеннаяПодсказка" id="328"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="РасшифровкаКУДиРСостояниеПросмотра" id="329">
+								<AdditionSource>
+									<Item>РасшифровкаКУДиР</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="РасшифровкаКУДиРСостояниеПросмотраКонтекстноеМеню" id="330"/>
+								<ExtendedTooltip name="РасшифровкаКУДиРСостояниеПросмотраРасширеннаяПодсказка" id="331"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="РасшифровкаКУДиРУправлениеПоиском" id="332">
+								<AdditionSource>
+									<Item>РасшифровкаКУДиР</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="РасшифровкаКУДиРУправлениеПоискомКонтекстноеМеню" id="333"/>
+								<ExtendedTooltip name="РасшифровкаКУДиРУправлениеПоискомРасширеннаяПодсказка" id="334"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="OnStartEdit">Подключаемый_ТаблицаРегистраПриНачалеРедактирования</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="РасшифровкаКУДиРНомерСтроки" id="139">
+									<DataPath>РасшифровкаКУДиРНаборЗаписей.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>2</Width>
+									<ContextMenu name="РасшифровкаКУДиРНомерСтрокиКонтекстноеМеню" id="140"/>
+									<ExtendedTooltip name="РасшифровкаКУДиРНомерСтрокиExtendedTooltip" id="260"/>
+								</LabelField>
+								<InputField name="РасшифровкаКУДиРВидРасхода" id="147">
+									<DataPath>РасшифровкаКУДиРНаборЗаписей.ВидРасхода</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>16</Width>
+									<ContextMenu name="РасшифровкаКУДиРВидРасходаКонтекстноеМеню" id="148"/>
+									<ExtendedTooltip name="РасшифровкаКУДиРВидРасходаExtendedTooltip" id="263"/>
+								</InputField>
+								<InputField name="РасшифровкаКУДиРСодержание" id="161">
+									<DataPath>РасшифровкаКУДиРНаборЗаписей.Содержание</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoCellHeight>true</AutoCellHeight>
+									<Width>40</Width>
+									<Height>3</Height>
+									<ContextMenu name="РасшифровкаКУДиРСодержаниеКонтекстноеМеню" id="162"/>
+									<ExtendedTooltip name="РасшифровкаКУДиРСодержаниеExtendedTooltip" id="264"/>
+								</InputField>
+								<InputField name="РасшифровкаКУДиРГрафа7" id="155">
+									<DataPath>РасшифровкаКУДиРНаборЗаписей.Графа7</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>12</Width>
+									<ContextMenu name="РасшифровкаКУДиРГрафа7КонтекстноеМеню" id="156"/>
+									<ExtendedTooltip name="РасшифровкаКУДиРГрафа7ExtendedTooltip" id="265"/>
+								</InputField>
+								<InputField name="РасшифровкаКУДиРОрганизация" id="145">
+									<DataPath>РасшифровкаКУДиРНаборЗаписей.Организация</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>20</Width>
+									<ContextMenu name="РасшифровкаКУДиРОрганизацияКонтекстноеМеню" id="146"/>
+									<ExtendedTooltip name="РасшифровкаКУДиРОрганизацияExtendedTooltip" id="262"/>
+								</InputField>
+								<InputField name="РасшифровкаКУДиРСтрокаДокумента" id="149">
+									<DataPath>РасшифровкаКУДиРНаборЗаписей.СтрокаДокумента</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>13</Width>
+									<ContextMenu name="РасшифровкаКУДиРСтрокаДокументаКонтекстноеМеню" id="150"/>
+									<ExtendedTooltip name="РасшифровкаКУДиРСтрокаДокументаExtendedTooltip" id="267"/>
+								</InputField>
+								<InputField name="РасшифровкаКУДиРСтрокаРасхода" id="153">
+									<DataPath>РасшифровкаКУДиРНаборЗаписей.СтрокаРасхода</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="РасшифровкаКУДиРСтрокаРасходаКонтекстноеМеню" id="154"/>
+									<ExtendedTooltip name="РасшифровкаКУДиРСтрокаРасходаExtendedTooltip" id="268"/>
+								</InputField>
+								<InputField name="РасшифровкаКУДиРРеквизитыПервичногоДокумента" id="157">
+									<DataPath>РасшифровкаКУДиРНаборЗаписей.РеквизитыПервичногоДокумента</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Первичный документ</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Реквизиты первичного документа</v8:content>
+										</v8:item>
+									</ToolTip>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>22</Width>
+									<ContextMenu name="РасшифровкаКУДиРРеквизитыПервичногоДокументаКонтекстноеМеню" id="158"/>
+									<ExtendedTooltip name="РасшифровкаКУДиРРеквизитыПервичногоДокументаExtendedTooltip" id="270"/>
+								</InputField>
+								<InputField name="РасшифровкаКУДиРРеквизитыДокументаОплаты" id="159">
+									<DataPath>РасшифровкаКУДиРНаборЗаписей.РеквизитыДокументаОплаты</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Документ оплаты</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Реквизиты документа оплаты</v8:content>
+										</v8:item>
+									</ToolTip>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>22</Width>
+									<ContextMenu name="РасшифровкаКУДиРРеквизитыДокументаОплатыКонтекстноеМеню" id="160"/>
+									<ExtendedTooltip name="РасшифровкаКУДиРРеквизитыДокументаОплатыExtendedTooltip" id="271"/>
+								</InputField>
+								<InputField name="РасшифровкаКУДиРЭтапПроведения" id="151">
+									<DataPath>РасшифровкаКУДиРНаборЗаписей.ЭтапПроведения</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>13</Width>
+									<ContextMenu name="РасшифровкаКУДиРЭтапПроведенияКонтекстноеМеню" id="152"/>
+									<ExtendedTooltip name="РасшифровкаКУДиРЭтапПроведенияExtendedTooltip" id="272"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="ГруппаЖурналУчетаСчетовФактур" id="335">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Журнал учета счетов-фактур</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа журнал учета счетов фактур</v8:content>
+						</v8:item>
+					</ToolTip>
+					<TitleDataPath>ЖурналУчетаСчетовФактурНаборЗаписей.RowsCount</TitleDataPath>
+					<ExtendedTooltip name="ГруппаЖурналУчетаСчетовФактурРасширеннаяПодсказка" id="336"/>
+					<ChildItems>
+						<Table name="ЖурналУчетаСчетовФактур" id="337">
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ЖурналУчетаСчетовФактурКонтекстноеМеню" id="338"/>
+							<AutoCommandBar name="ЖурналУчетаСчетовФактурКоманднаяПанель" id="339"/>
+							<ExtendedTooltip name="ЖурналУчетаСчетовФактурРасширеннаяПодсказка" id="340"/>
+							<SearchStringAddition name="ЖурналУчетаСчетовФактурСтрокаПоиска" id="341">
+								<AdditionSource>
+									<Item>ЖурналУчетаСчетовФактур</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ЖурналУчетаСчетовФактурСтрокаПоискаКонтекстноеМеню" id="344"/>
+								<ExtendedTooltip name="ЖурналУчетаСчетовФактурСтрокаПоискаРасширеннаяПодсказка" id="345"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ЖурналУчетаСчетовФактурСостояниеПросмотра" id="346">
+								<AdditionSource>
+									<Item>ЖурналУчетаСчетовФактур</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ЖурналУчетаСчетовФактурСостояниеПросмотраКонтекстноеМеню" id="349"/>
+								<ExtendedTooltip name="ЖурналУчетаСчетовФактурСостояниеПросмотраРасширеннаяПодсказка" id="350"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ЖурналУчетаСчетовФактурУправлениеПоиском" id="351">
+								<AdditionSource>
+									<Item>ЖурналУчетаСчетовФактур</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ЖурналУчетаСчетовФактурУправлениеПоискомКонтекстноеМеню" id="354"/>
+								<ExtendedTooltip name="ЖурналУчетаСчетовФактурУправлениеПоискомРасширеннаяПодсказка" id="355"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="OnStartEdit">Подключаемый_ТаблицаРегистраПриНачалеРедактирования</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="ЖурналУчетаСчетовФактурНомерСтроки" id="356">
+									<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>3</Width>
+									<ContextMenu name="ЖурналУчетаСчетовФактурНомерСтрокиКонтекстноеМеню" id="357"/>
+									<ExtendedTooltip name="ЖурналУчетаСчетовФактурНомерСтрокиРасширеннаяПодсказка" id="358"/>
+								</LabelField>
+								<ColumnGroup name="СчетФактура" id="485">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Счет-фактура</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Счет-фактура</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="СчетФактураРасширеннаяПодсказка" id="486"/>
+									<ChildItems>
+										<InputField name="ЖурналУчетаСчетовФактурДатаВыставленияПолучения" id="491">
+											<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.ДатаВыставленияПолучения</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>20</Width>
+											<ContextMenu name="ЖурналУчетаСчетовФактурДатаВыставленияПолученияКонтекстноеМеню" id="492"/>
+											<ExtendedTooltip name="ЖурналУчетаСчетовФактурДатаВыставленияПолученияРасширеннаяПодсказка" id="493"/>
+										</InputField>
+										<InputField name="ЖурналУчетаСчетовФактурНомерСчетаФактуры" id="494">
+											<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.НомерСчетаФактуры</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>20</Width>
+											<ContextMenu name="ЖурналУчетаСчетовФактурНомерСчетаФактурыКонтекстноеМеню" id="495"/>
+											<ExtendedTooltip name="ЖурналУчетаСчетовФактурНомерСчетаФактурыРасширеннаяПодсказка" id="496"/>
+										</InputField>
+										<InputField name="ЖурналУчетаСчетовФактурДатаСчетаФактуры" id="497">
+											<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.ДатаСчетаФактуры</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>20</Width>
+											<ContextMenu name="ЖурналУчетаСчетовФактурДатаСчетаФактурыКонтекстноеМеню" id="498"/>
+											<ExtendedTooltip name="ЖурналУчетаСчетовФактурДатаСчетаФактурыРасширеннаяПодсказка" id="499"/>
+										</InputField>
+										<InputField name="ЖурналУчетаСчетовФактурКодВидаОперации" id="500">
+											<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.КодВидаОперации</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>20</Width>
+											<ContextMenu name="ЖурналУчетаСчетовФактурКодВидаОперацииКонтекстноеМеню" id="501"/>
+											<ExtendedTooltip name="ЖурналУчетаСчетовФактурКодВидаОперацииРасширеннаяПодсказка" id="502"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="СуммаСчетаФактуры" id="503">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сумма счета-фактуры</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Сумма счета фактуры</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="СуммаСчетаФактурыРасширеннаяПодсказка" id="504"/>
+									<ChildItems>
+										<InputField name="ЖурналУчетаСчетовФактурСуммаПоСчетуФактуре" id="505">
+											<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.СуммаПоСчетуФактуре</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>20</Width>
+											<ContextMenu name="ЖурналУчетаСчетовФактурСуммаПоСчетуФактуреКонтекстноеМеню" id="506"/>
+											<ExtendedTooltip name="ЖурналУчетаСчетовФактурСуммаПоСчетуФактуреРасширеннаяПодсказка" id="507"/>
+										</InputField>
+										<InputField name="ЖурналУчетаСчетовФактурСуммаНДС" id="508">
+											<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.СуммаНДС</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>20</Width>
+											<ContextMenu name="ЖурналУчетаСчетовФактурСуммаНДСКонтекстноеМеню" id="509"/>
+											<ExtendedTooltip name="ЖурналУчетаСчетовФактурСуммаНДСРасширеннаяПодсказка" id="510"/>
+										</InputField>
+										<InputField name="ЖурналУчетаСчетовФактурСуммаПоСчетуФактуреКомиссия" id="511">
+											<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.СуммаПоСчетуФактуреКомиссия</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>20</Width>
+											<ContextMenu name="ЖурналУчетаСчетовФактурСуммаПоСчетуФактуреКомиссияКонтекстноеМеню" id="512"/>
+											<ExtendedTooltip name="ЖурналУчетаСчетовФактурСуммаПоСчетуФактуреКомиссияРасширеннаяПодсказка" id="513"/>
+										</InputField>
+										<InputField name="ЖурналУчетаСчетовФактурСуммаНДСКомиссия" id="514">
+											<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.СуммаНДСКомиссия</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>20</Width>
+											<ContextMenu name="ЖурналУчетаСчетовФактурСуммаНДСКомиссияКонтекстноеМеню" id="515"/>
+											<ExtendedTooltip name="ЖурналУчетаСчетовФактурСуммаНДСКомиссияРасширеннаяПодсказка" id="516"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="ПеревыставлениеСчетаФактуры" id="517">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Перевыставление счета-фактуры</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Перевыставление счета фактуры</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="ПеревыставлениеСчетаФактурыРасширеннаяПодсказка" id="518"/>
+									<ChildItems>
+										<InputField name="ЖурналУчетаСчетовФактурДатаСчетаФактурыПродавца" id="519">
+											<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.ДатаСчетаФактурыПродавца</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>20</Width>
+											<ContextMenu name="ЖурналУчетаСчетовФактурДатаСчетаФактурыПродавцаКонтекстноеМеню" id="520"/>
+											<ExtendedTooltip name="ЖурналУчетаСчетовФактурДатаСчетаФактурыПродавцаРасширеннаяПодсказка" id="521"/>
+										</InputField>
+										<InputField name="ЖурналУчетаСчетовФактурНомерСчетаФактурыПродавца" id="522">
+											<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.НомерСчетаФактурыПродавца</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>20</Width>
+											<ContextMenu name="ЖурналУчетаСчетовФактурНомерСчетаФактурыПродавцаКонтекстноеМеню" id="523"/>
+											<ExtendedTooltip name="ЖурналУчетаСчетовФактурНомерСчетаФактурыПродавцаРасширеннаяПодсказка" id="524"/>
+										</InputField>
+										<InputField name="ЖурналУчетаСчетовФактурСчетФактураПолученныйОтПродавца" id="687">
+											<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.СчетФактураПолученныйОтПродавца</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ЖурналУчетаСчетовФактурСчетФактураПолученныйОтПродавцаКонтекстноеМеню" id="688"/>
+											<ExtendedTooltip name="ЖурналУчетаСчетовФактурСчетФактураПолученныйОтПродавцаРасширеннаяПодсказка" id="689"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="УчетУКомитента" id="525">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Учет у комитента</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Учет у комитента</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="УчетУКомитентаРасширеннаяПодсказка" id="526"/>
+									<ChildItems>
+										<InputField name="ЖурналУчетаСчетовФактурПосредник" id="527">
+											<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.Посредник</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>20</Width>
+											<ContextMenu name="ЖурналУчетаСчетовФактурПосредникКонтекстноеМеню" id="528"/>
+											<ExtendedTooltip name="ЖурналУчетаСчетовФактурПосредникРасширеннаяПодсказка" id="529"/>
+										</InputField>
+										<InputField name="ЖурналУчетаСчетовФактурПродавец" id="530">
+											<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.Продавец</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>20</Width>
+											<ContextMenu name="ЖурналУчетаСчетовФактурПродавецКонтекстноеМеню" id="531"/>
+											<ExtendedTooltip name="ЖурналУчетаСчетовФактурПродавецРасширеннаяПодсказка" id="532"/>
+										</InputField>
+										<ColumnGroup name="ИНН_КПП_Продаца" id="663">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>ИНН КПП продаца</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>ИНН КПП продаца</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>Horizontal</Group>
+											<ExtendedTooltip name="ИНН_КПП_ПродацаРасширеннаяПодсказка" id="664"/>
+											<ChildItems>
+												<InputField name="ЖурналУчетаСчетовФактурИННПродавца" id="665">
+													<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.ИННПродавца</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>13</Width>
+													<ContextMenu name="ЖурналУчетаСчетовФактурИННПродавцаКонтекстноеМеню" id="666"/>
+													<ExtendedTooltip name="ЖурналУчетаСчетовФактурИННПродавцаРасширеннаяПодсказка" id="667"/>
+												</InputField>
+												<InputField name="ЖурналУчетаСчетовФактурКПППродавца" id="668">
+													<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.КПППродавца</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>13</Width>
+													<ContextMenu name="ЖурналУчетаСчетовФактурКПППродавцаКонтекстноеМеню" id="669"/>
+													<ExtendedTooltip name="ЖурналУчетаСчетовФактурКПППродавцаРасширеннаяПодсказка" id="670"/>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="УчетУКомиссионера" id="533">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Учет у комиссионера</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Учет у комиссионера</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="УчетУКомиссионераРасширеннаяПодсказка" id="534"/>
+									<ChildItems>
+										<InputField name="ЖурналУчетаСчетовФактурСубкомиссионер" id="535">
+											<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.Субкомиссионер</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>20</Width>
+											<ContextMenu name="ЖурналУчетаСчетовФактурСубкомиссионерКонтекстноеМеню" id="536"/>
+											<ExtendedTooltip name="ЖурналУчетаСчетовФактурСубкомиссионерРасширеннаяПодсказка" id="537"/>
+										</InputField>
+										<ColumnGroup name="ИНН_КПП_Субкомиссионера" id="671">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>ИНН КПП субкомиссионера</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>ИНН КПП субкомиссионера</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>Horizontal</Group>
+											<ExtendedTooltip name="ИНН_КПП_СубкомиссионераРасширеннаяПодсказка" id="672"/>
+											<ChildItems>
+												<InputField name="ЖурналУчетаСчетовФактурИННСубкомиссионера" id="673">
+													<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.ИННСубкомиссионера</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>17</Width>
+													<ContextMenu name="ЖурналУчетаСчетовФактурИННСубкомиссионераКонтекстноеМеню" id="674"/>
+													<ExtendedTooltip name="ЖурналУчетаСчетовФактурИННСубкомиссионераРасширеннаяПодсказка" id="675"/>
+												</InputField>
+												<InputField name="ЖурналУчетаСчетовФактурКППСубкомиссионера" id="676">
+													<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.КППСубкомиссионера</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>17</Width>
+													<ContextMenu name="ЖурналУчетаСчетовФактурКППСубкомиссионераКонтекстноеМеню" id="677"/>
+													<ExtendedTooltip name="ЖурналУчетаСчетовФактурКППСубкомиссионераРасширеннаяПодсказка" id="678"/>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+										<InputField name="ЖурналУчетаСчетовФактурСчетФактураВыданныйПокупателю" id="538">
+											<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.СчетФактураВыданныйПокупателю</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>20</Width>
+											<ContextMenu name="ЖурналУчетаСчетовФактурСчетФактураВыданныйПокупателюКонтекстноеМеню" id="539"/>
+											<ExtendedTooltip name="ЖурналУчетаСчетовФактурСчетФактураВыданныйПокупателюРасширеннаяПодсказка" id="540"/>
+										</InputField>
+										<InputField name="ЖурналУчетаСчетовФактурКодВидаОперацииКомиссия" id="541">
+											<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.КодВидаОперацииКомиссия</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>20</Width>
+											<ContextMenu name="ЖурналУчетаСчетовФактурКодВидаОперацииКомиссияКонтекстноеМеню" id="542"/>
+											<ExtendedTooltip name="ЖурналУчетаСчетовФактурКодВидаОперацииКомиссияРасширеннаяПодсказка" id="543"/>
+										</InputField>
+										<InputField name="ЖурналУчетаСчетовФактурКодВидаСделки" id="544">
+											<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.КодВидаСделки</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>20</Width>
+											<ContextMenu name="ЖурналУчетаСчетовФактурКодВидаСделкиКонтекстноеМеню" id="545"/>
+											<ExtendedTooltip name="ЖурналУчетаСчетовФактурКодВидаСделкиРасширеннаяПодсказка" id="546"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="Исправление" id="547">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Исправление</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Исправление</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="ИсправлениеРасширеннаяПодсказка" id="548"/>
+									<ChildItems>
+										<InputField name="ЖурналУчетаСчетовФактурНомерИсправления" id="549">
+											<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.НомерИсправления</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>20</Width>
+											<ContextMenu name="ЖурналУчетаСчетовФактурНомерИсправленияКонтекстноеМеню" id="550"/>
+											<ExtendedTooltip name="ЖурналУчетаСчетовФактурНомерИсправленияРасширеннаяПодсказка" id="551"/>
+										</InputField>
+										<InputField name="ЖурналУчетаСчетовФактурДатаИсправления" id="552">
+											<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.ДатаИсправления</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>20</Width>
+											<ContextMenu name="ЖурналУчетаСчетовФактурДатаИсправленияКонтекстноеМеню" id="553"/>
+											<ExtendedTooltip name="ЖурналУчетаСчетовФактурДатаИсправленияРасширеннаяПодсказка" id="554"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="Корректировка" id="555">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Корректировка</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Корректировка</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="КорректировкаРасширеннаяПодсказка" id="556"/>
+									<ChildItems>
+										<InputField name="ЖурналУчетаСчетовФактурНомерКорректировочногоСчетаФактуры" id="557">
+											<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.НомерКорректировочногоСчетаФактуры</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>20</Width>
+											<ContextMenu name="ЖурналУчетаСчетовФактурНомерКорректировочногоСчетаФактурыКонтекстноеМеню" id="558"/>
+											<ExtendedTooltip name="ЖурналУчетаСчетовФактурНомерКорректировочногоСчетаФактурыРасширеннаяПодсказка" id="559"/>
+										</InputField>
+										<InputField name="ЖурналУчетаСчетовФактурДатаКорректировочногоСчетаФактуры" id="560">
+											<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.ДатаКорректировочногоСчетаФактуры</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>20</Width>
+											<ContextMenu name="ЖурналУчетаСчетовФактурДатаКорректировочногоСчетаФактурыКонтекстноеМеню" id="561"/>
+											<ExtendedTooltip name="ЖурналУчетаСчетовФактурДатаКорректировочногоСчетаФактурыРасширеннаяПодсказка" id="562"/>
+										</InputField>
+										<InputField name="ЖурналУчетаСчетовФактурНомерИсправленияКорректировочногоСчетаФактуры" id="563">
+											<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.НомерИсправленияКорректировочногоСчетаФактуры</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>20</Width>
+											<ContextMenu name="ЖурналУчетаСчетовФактурНомерИсправленияКорректировочногоСчетаФактурыКонтекстноеМеню" id="564"/>
+											<ExtendedTooltip name="ЖурналУчетаСчетовФактурНомерИсправленияКорректировочногоСчетаФактурыРасширеннаяПодсказка" id="565"/>
+										</InputField>
+										<InputField name="ЖурналУчетаСчетовФактурДатаИсправленияКорректировочногоСчетаФактуры" id="566">
+											<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.ДатаИсправленияКорректировочногоСчетаФактуры</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>20</Width>
+											<ContextMenu name="ЖурналУчетаСчетовФактурДатаИсправленияКорректировочногоСчетаФактурыКонтекстноеМеню" id="567"/>
+											<ExtendedTooltip name="ЖурналУчетаСчетовФактурДатаИсправленияКорректировочногоСчетаФактурыРасширеннаяПодсказка" id="568"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="СуммыКорректировки" id="569">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Суммы корректировки</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Суммы корректировки</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="СуммыКорректировкиРасширеннаяПодсказка" id="570"/>
+									<ChildItems>
+										<InputField name="ЖурналУчетаСчетовФактурСуммаПоСчетуФактуреРазницаУменьшение" id="571">
+											<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.СуммаПоСчетуФактуреРазницаУменьшение</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>20</Width>
+											<ContextMenu name="ЖурналУчетаСчетовФактурСуммаПоСчетуФактуреРазницаУменьшениеКонтекстноеМеню" id="572"/>
+											<ExtendedTooltip name="ЖурналУчетаСчетовФактурСуммаПоСчетуФактуреРазницаУменьшениеРасширеннаяПодсказка" id="573"/>
+										</InputField>
+										<InputField name="ЖурналУчетаСчетовФактурСуммаПоСчетуФактуреРазницаУвеличение" id="574">
+											<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.СуммаПоСчетуФактуреРазницаУвеличение</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>20</Width>
+											<ContextMenu name="ЖурналУчетаСчетовФактурСуммаПоСчетуФактуреРазницаУвеличениеКонтекстноеМеню" id="575"/>
+											<ExtendedTooltip name="ЖурналУчетаСчетовФактурСуммаПоСчетуФактуреРазницаУвеличениеРасширеннаяПодсказка" id="576"/>
+										</InputField>
+										<InputField name="ЖурналУчетаСчетовФактурСуммаНДСРазницаУменьшение" id="577">
+											<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.СуммаНДСРазницаУменьшение</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>20</Width>
+											<ContextMenu name="ЖурналУчетаСчетовФактурСуммаНДСРазницаУменьшениеКонтекстноеМеню" id="578"/>
+											<ExtendedTooltip name="ЖурналУчетаСчетовФактурСуммаНДСРазницаУменьшениеРасширеннаяПодсказка" id="579"/>
+										</InputField>
+										<InputField name="ЖурналУчетаСчетовФактурСуммаНДСРазницаУвеличение" id="580">
+											<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.СуммаНДСРазницаУвеличение</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>20</Width>
+											<ContextMenu name="ЖурналУчетаСчетовФактурСуммаНДСРазницаУвеличениеКонтекстноеМеню" id="581"/>
+											<ExtendedTooltip name="ЖурналУчетаСчетовФактурСуммаНДСРазницаУвеличениеРасширеннаяПодсказка" id="582"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="СуммыКорректировкиКомиссия" id="583">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Суммы корректировки комиссия</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Суммы корректировки комиссия</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="СуммыКорректировкиКомиссияРасширеннаяПодсказка" id="584"/>
+									<ChildItems>
+										<InputField name="ЖурналУчетаСчетовФактурСуммаПоСчетуФактуреРазницаУменьшениеКомиссия" id="585">
+											<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.СуммаПоСчетуФактуреРазницаУменьшениеКомиссия</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>20</Width>
+											<ContextMenu name="ЖурналУчетаСчетовФактурСуммаПоСчетуФактуреРазницаУменьшениеКомиссияКонтекстноеМеню" id="586"/>
+											<ExtendedTooltip name="ЖурналУчетаСчетовФактурСуммаПоСчетуФактуреРазницаУменьшениеКомиссияРасширеннаяПодсказка" id="587"/>
+										</InputField>
+										<InputField name="ЖурналУчетаСчетовФактурСуммаПоСчетуФактуреРазницаУвеличениеКомиссия" id="588">
+											<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.СуммаПоСчетуФактуреРазницаУвеличениеКомиссия</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>20</Width>
+											<ContextMenu name="ЖурналУчетаСчетовФактурСуммаПоСчетуФактуреРазницаУвеличениеКомиссияКонтекстноеМеню" id="589"/>
+											<ExtendedTooltip name="ЖурналУчетаСчетовФактурСуммаПоСчетуФактуреРазницаУвеличениеКомиссияРасширеннаяПодсказка" id="590"/>
+										</InputField>
+										<InputField name="ЖурналУчетаСчетовФактурСуммаНДСРазницаУменьшениеКомиссия" id="591">
+											<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.СуммаНДСРазницаУменьшениеКомиссия</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>20</Width>
+											<ContextMenu name="ЖурналУчетаСчетовФактурСуммаНДСРазницаУменьшениеКомиссияКонтекстноеМеню" id="592"/>
+											<ExtendedTooltip name="ЖурналУчетаСчетовФактурСуммаНДСРазницаУменьшениеКомиссияРасширеннаяПодсказка" id="593"/>
+										</InputField>
+										<InputField name="ЖурналУчетаСчетовФактурСуммаНДСРазницаУвеличениеКомиссия" id="594">
+											<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.СуммаНДСРазницаУвеличениеКомиссия</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>20</Width>
+											<ContextMenu name="ЖурналУчетаСчетовФактурСуммаНДСРазницаУвеличениеКомиссияКонтекстноеМеню" id="595"/>
+											<ExtendedTooltip name="ЖурналУчетаСчетовФактурСуммаНДСРазницаУвеличениеКомиссияРасширеннаяПодсказка" id="596"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="Общие" id="597">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Общие</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Общие</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="ОбщиеРасширеннаяПодсказка" id="598"/>
+									<ChildItems>
+										<InputField name="ЖурналУчетаСчетовФактурСчетФактура" id="599">
+											<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.СчетФактура</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>20</Width>
+											<ContextMenu name="ЖурналУчетаСчетовФактурСчетФактураКонтекстноеМеню" id="600"/>
+											<ExtendedTooltip name="ЖурналУчетаСчетовФактурСчетФактураРасширеннаяПодсказка" id="601"/>
+										</InputField>
+										<InputField name="ЖурналУчетаСчетовФактурКонтрагент" id="602">
+											<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.Контрагент</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>20</Width>
+											<ContextMenu name="ЖурналУчетаСчетовФактурКонтрагентКонтекстноеМеню" id="603"/>
+											<ExtendedTooltip name="ЖурналУчетаСчетовФактурКонтрагентРасширеннаяПодсказка" id="604"/>
+										</InputField>
+										<ColumnGroup name="ГруппаИНН_КПП" id="661">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>ИНН/КПП</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Группа ИНН КПП</v8:content>
+												</v8:item>
+											</ToolTip>
+											<Group>Horizontal</Group>
+											<ExtendedTooltip name="ГруппаИНН_КППРасширеннаяПодсказка" id="662"/>
+											<ChildItems>
+												<InputField name="ЖурналУчетаСчетовФактурИННКонтрагента" id="658">
+													<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.ИННКонтрагента</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>13</Width>
+													<ContextMenu name="ЖурналУчетаСчетовФактурИННКонтрагентаКонтекстноеМеню" id="659"/>
+													<ExtendedTooltip name="ЖурналУчетаСчетовФактурИННКонтрагентаРасширеннаяПодсказка" id="660"/>
+												</InputField>
+												<InputField name="ЖурналУчетаСчетовФактурКППКонтрагента" id="605">
+													<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.КППКонтрагента</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<Width>13</Width>
+													<ContextMenu name="ЖурналУчетаСчетовФактурКППКонтрагентаКонтекстноеМеню" id="606"/>
+													<ExtendedTooltip name="ЖурналУчетаСчетовФактурКППКонтрагентаРасширеннаяПодсказка" id="607"/>
+												</InputField>
+											</ChildItems>
+										</ColumnGroup>
+										<InputField name="ЖурналУчетаСчетовФактурВалюта" id="608">
+											<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.Валюта</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>20</Width>
+											<ContextMenu name="ЖурналУчетаСчетовФактурВалютаКонтекстноеМеню" id="609"/>
+											<ExtendedTooltip name="ЖурналУчетаСчетовФактурВалютаРасширеннаяПодсказка" id="610"/>
+										</InputField>
+										<CheckBoxField name="ЖурналУчетаСчетовФактурПоСтавкеБезНДС" id="611">
+											<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.ПоСтавкеБезНДС</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ЖурналУчетаСчетовФактурПоСтавкеБезНДСКонтекстноеМеню" id="612"/>
+											<ExtendedTooltip name="ЖурналУчетаСчетовФактурПоСтавкеБезНДСРасширеннаяПодсказка" id="613"/>
+										</CheckBoxField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="Служебные" id="614">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Служебные</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Служебные</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="СлужебныеРасширеннаяПодсказка" id="615"/>
+									<ChildItems>
+										<InputField name="ЖурналУчетаСчетовФактурЧастьЖурнала" id="616">
+											<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.ЧастьЖурнала</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>20</Width>
+											<ContextMenu name="ЖурналУчетаСчетовФактурЧастьЖурналаКонтекстноеМеню" id="617"/>
+											<ExtendedTooltip name="ЖурналУчетаСчетовФактурЧастьЖурналаРасширеннаяПодсказка" id="618"/>
+										</InputField>
+										<CheckBoxField name="ЖурналУчетаСчетовФактурСчетФактураНеВыставляется" id="619">
+											<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.СчетФактураНеВыставляется</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ЖурналУчетаСчетовФактурСчетФактураНеВыставляетсяКонтекстноеМеню" id="620"/>
+											<ExtendedTooltip name="ЖурналУчетаСчетовФактурСчетФактураНеВыставляетсяРасширеннаяПодсказка" id="621"/>
+										</CheckBoxField>
+										<InputField name="ЖурналУчетаСчетовФактурКодСпособаВыставленияПолучения" id="622">
+											<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.КодСпособаВыставленияПолучения</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>20</Width>
+											<ContextMenu name="ЖурналУчетаСчетовФактурКодСпособаВыставленияПолученияКонтекстноеМеню" id="623"/>
+											<ExtendedTooltip name="ЖурналУчетаСчетовФактурКодСпособаВыставленияПолученияРасширеннаяПодсказка" id="624"/>
+										</InputField>
+										<InputField name="ЖурналУчетаСчетовФактурИндексСтроки" id="625">
+											<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.ИндексСтроки</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<Width>20</Width>
+											<ContextMenu name="ЖурналУчетаСчетовФактурИндексСтрокиКонтекстноеМеню" id="626"/>
+											<ExtendedTooltip name="ЖурналУчетаСчетовФактурИндексСтрокиРасширеннаяПодсказка" id="627"/>
+										</InputField>
+										<InputField name="ЖурналУчетаСчетовФактурИсправленныйСчетФактура" id="690">
+											<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.ИсправленныйСчетФактура</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ЖурналУчетаСчетовФактурИсправленныйСчетФактураКонтекстноеМеню" id="691"/>
+											<ExtendedTooltip name="ЖурналУчетаСчетовФактурИсправленныйСчетФактураРасширеннаяПодсказка" id="692"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="ИсправлениеСчетаФактуры" id="679">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Исправление счета фактуры</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Исправление счета фактуры</v8:content>
+										</v8:item>
+									</ToolTip>
+									<ExtendedTooltip name="ИсправлениеСчетаФактурыРасширеннаяПодсказка" id="680"/>
+									<ChildItems>
+										<CheckBoxField name="ЖурналУчетаСчетовФактурСторно" id="681">
+											<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.Сторно</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ЖурналУчетаСчетовФактурСторноКонтекстноеМеню" id="682"/>
+											<ExtendedTooltip name="ЖурналУчетаСчетовФактурСторноРасширеннаяПодсказка" id="683"/>
+										</CheckBoxField>
+										<CheckBoxField name="ЖурналУчетаСчетовФактурИсправлениеСобственнойОшибки" id="684">
+											<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.ИсправлениеСобственнойОшибки</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ЖурналУчетаСчетовФактурИсправлениеСобственнойОшибкиКонтекстноеМеню" id="685"/>
+											<ExtendedTooltip name="ЖурналУчетаСчетовФактурИсправлениеСобственнойОшибкиРасширеннаяПодсказка" id="686"/>
+										</CheckBoxField>
+									</ChildItems>
+								</ColumnGroup>
+								<InputField name="ЖурналУчетаСчетовФактурОтступ" id="628">
+									<DataPath>ЖурналУчетаСчетовФактурНаборЗаписей.Отступ</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<EditMode>EnterOnInput</EditMode>
+									<HorizontalStretch>true</HorizontalStretch>
+									<ContextMenu name="ЖурналУчетаСчетовФактурОтступКонтекстноеМеню" id="629"/>
+									<ExtendedTooltip name="ЖурналУчетаСчетовФактурОтступРасширеннаяПодсказка" id="630"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.КорректировкаДвижений</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ХозрасчетныйНаборЗаписей" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Хозрасчетный</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:AccountingRegisterRecordSet.Хозрасчетный</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+			<Columns>
+				<AdditionalColumns table="ХозрасчетныйНаборЗаписей">
+					<Column name="СубконтоДт1Доступность" id="1">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Субконто дт1 доступность</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="СубконтоДт2Доступность" id="2">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Субконто дт2 доступность</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="СубконтоДт3Доступность" id="3">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Субконто дт3 доступность</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="СубконтоКт1Доступность" id="4">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Субконто кт1 доступность</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="СубконтоКт2Доступность" id="5">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Субконто кт2 доступность</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="СубконтоКт3Доступность" id="6">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Субконто кт3 доступность</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="ПодразделениеДтДоступность" id="7">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Подразделение Дт доступность</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="ПодразделениеКтДоступность" id="8">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Подразделение Кт доступность</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="КоличественныйДтДоступность" id="9">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Количественный Дт доступность</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="КоличественныйКтДоступность" id="10">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Количественный Кт доступность</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="ВалютныйДтДоступность" id="11">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Валютный Дт доступность</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="ВалютныйКтДоступность" id="12">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Валютный Кт доступность</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+					<Column name="НадписьКоличествоДт" id="13">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Кол.</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>0</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+					<Column name="НадписьКоличествоКт" id="14">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Кол.</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>0</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+					<Column name="НадписьНУ" id="15">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>НУ</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>0</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+						<FunctionalOptions>
+							<Item>FunctionalOption.ПоддержкаПБУ18</Item>
+						</FunctionalOptions>
+					</Column>
+					<Column name="НадписьПР" id="16">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>ПР</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>0</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+						<FunctionalOptions>
+							<Item>FunctionalOption.ПоддержкаПБУ18</Item>
+						</FunctionalOptions>
+					</Column>
+					<Column name="НадписьВР" id="17">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>В
+Р</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>0</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+						<FunctionalOptions>
+							<Item>FunctionalOption.ПоддержкаПБУ18</Item>
+						</FunctionalOptions>
+					</Column>
+				</AdditionalColumns>
+			</Columns>
+		</Attribute>
+		<Attribute name="ДокументДвижений" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документ движений</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:TypeSet>cfg:DocumentRef</v8:TypeSet>
+			</Type>
+		</Attribute>
+		<Attribute name="КнигаУчетаДоходовИРасходовНаборЗаписей" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Книга учета доходов и расходов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:AccumulationRegisterRecordSet.КнигаУчетаДоходовИРасходов</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="РасшифровкаКУДиРНаборЗаписей" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расшифровка КУДиР</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:InformationRegisterRecordSet.РасшифровкаКУДиР</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="Регистры" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Регистры</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ТипРегистра" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Тип регистра</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>20</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Имя" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Синоним" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Синоним</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЕстьДвижения" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Есть движения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Отображение" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отображение</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Отрисован" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отрисован</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="РегистрОстатков" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Регистр остатков</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ЕстьРеквизит" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Есть реквизит</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Записывать" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Записывать</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ПравоНаПросмотр" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Право на просмотр</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ПравоНаИзменение" id="11">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Право на изменение</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ИПОсновнаяНоменклатурнаяГруппа" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основная номенклатурная группа</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.НоменклатурныеГруппы</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ИПОсновнойХарактерДеятельности" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основной характер деятельности</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.ХарактерДеятельности</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="РучнаяКорректировка" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ручная корректировка (разрешает редактирование движений документа)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+			<FunctionalOptions>
+				<Item>FunctionalOption.ИспользоватьРучнуюКорректировкуДвижений</Item>
+			</FunctionalOptions>
+		</Attribute>
+		<Attribute name="ЖурналУчетаСчетовФактурНаборЗаписей" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Журнал учета счетов фактур набор записей</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:InformationRegisterRecordSet.ЖурналУчетаСчетовФактур</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+			<Columns>
+				<AdditionalColumns table="ЖурналУчетаСчетовФактурНаборЗаписей">
+					<Column name="Отступ" id="1">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Отступ</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>0</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+				</AdditionalColumns>
+			</Columns>
+		</Attribute>
+		<Attribute name="ИнформацияОПроведении" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Информация о проведении</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="РаздельныйУчетУСНТорговыйСбор" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Раздельный учет УСН и доходов на торговом сборе</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="АктивностьДвижений" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Активность движений</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЕстьПравоНаРедактирование" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Есть право на редактирование</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ИспользуетсяОтложенноеПроведение" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Используется отложенное проведение</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ИдентификаторЗаданияОтложенныеРасчеты" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Идентификатор задания отложенные расчеты</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:UUID</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресХранилищаОтложенныеРасчеты" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес хранилища отложенные расчеты</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресХранилищаСОшибками" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес хранилища с ошибками</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="МоментАктуальностиОтложенныхРасчетов" id="19">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Момент актуальности отложенных расчетов</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="ДокументПоддерживаетВосстановлениеОтложенныхРасчетов" id="20">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документ поддерживает восстановление отложенных расчетов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ВалютаРегламентированногоУчета" id="21">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Валюта регламентированного учета</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Валюты</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ЗаписатьИЗакрыть" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать и закрыть</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать движения и закрыть форму</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаписатьИЗакрыть</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="НастроитьСоставРегистров" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбор регистров...</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбор регистров, по которым нужно сделать движения</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.СписокРегистров</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>НастроитьСоставРегистров</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОбновитьДвижения" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить движения</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Refresh</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОбновитьДвижения</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КнигаУчетаДоходовИРасходовПерейтиВСписок" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перейти в список движений</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перейти в список движений регистра</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.FindInList</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Подключаемый_ПерейтиВСписокРегистра</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="РасшифровкаКУДиРПерейтиВСписок" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перейти в список движений</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перейти в список движений регистра</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.FindInList</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Подключаемый_ПерейтиВСписокРегистра</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ХозрасчетныйПерейтиВСписок" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перейти в журнал проводок</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перейти в журнал проводок</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.FindInList</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Подключаемый_ПерейтиВСписокРегистра</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Актуализировать" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Актуализировать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Актуализировать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Актуализировать</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОтменитьАктуализацию" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отменить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отменить актуализацию</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОтменитьАктуализацию</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

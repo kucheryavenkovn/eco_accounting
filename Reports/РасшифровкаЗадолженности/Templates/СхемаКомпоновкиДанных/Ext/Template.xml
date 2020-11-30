@@ -1,0 +1,3356 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetUnion">
+		<name>ДанныеОтчета</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидЗадолженности</dataPath>
+			<field>ВидЗадолженности</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид задолженности</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
+			</role>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:EnumRef.ВидыЗадолженности</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СчетРасчетов</dataPath>
+			<field>СчетРасчетов</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Счет расчетов</v8:content>
+				</v8:item>
+			</title>
+			<orderExpression>
+				<dcscom:expression>СчетРасчетов.Код</dcscom:expression>
+				<dcscom:orderType>Asc</dcscom:orderType>
+				<dcscom:autoOrder>false</dcscom:autoOrder>
+			</orderExpression>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:ChartOfAccountsRef.Хозрасчетный</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаПогашения</dataPath>
+			<field>ДатаПогашения</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата погашения</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
+			</role>
+			<valueType>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаВозникновения</dataPath>
+			<field>ДатаВозникновения</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата возникновения</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
+			</role>
+			<valueType>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Подтверждено</dataPath>
+			<field>Подтверждено</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Задолженность, подтверждено</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПодтвержденоПоАктам</dataPath>
+			<field>ПодтвержденоПоАктам</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Задолженность, по актам инвентаризации</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
+			</role>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПодтвержденоПоДаннымУчета</dataPath>
+			<field>ПодтвержденоПоДаннымУчета</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Задолженность, по данным учета</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НеПодтверждено</dataPath>
+			<field>НеПодтверждено</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Задолженность, не подтверждено</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
+			</role>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИстекСрокДавности</dataPath>
+			<field>ИстекСрокДавности</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Задолженность, истек срок давности</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
+			</role>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Комментарий</dataPath>
+			<field>Комментарий</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Комментарий</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
+			</role>
+			<valueType>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Просрочено</dataPath>
+			<field>Просрочено</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Задолженность, просрочено</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
+			</role>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Ссылка</dataPath>
+			<field>Ссылка</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Акт инвентаризации расчетов</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
+			</role>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:DocumentRef.ИнвентаризацияРасчетовСКонтрагентами</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДебиторКредитор</dataPath>
+			<field>ДебиторКредитор</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дебитор/кредитор</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:TypeSet xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:Characteristic.ВидыСубконтоХозрасчетные</v8:TypeSet>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Договор</dataPath>
+			<field>Договор</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Договор</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
+			</role>
+			<valueType>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.ДоговорыКонтрагентов</v8:Type>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Документ</dataPath>
+			<field>Документ</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документ</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
+			</role>
+			<valueType>
+				<v8:TypeSet xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:DocumentRef</v8:TypeSet>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СрокЗадолженности</dataPath>
+			<field>СрокЗадолженности</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Срок задолженности</v8:content>
+				</v8:item>
+			</title>
+			<role>
+				<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
+			</role>
+			<valueType>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>5</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</valueType>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СтрокаБаланса</dataPath>
+			<field>СтрокаБаланса</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Строка баланса</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</valueType>
+			<availableValue>
+				<value xsi:type="xs:string">1170</value>
+				<presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>1170 "Финансовые вложения" (Внеоборотные активы)</v8:content>
+					</v8:item>
+				</presentation>
+			</availableValue>
+			<availableValue>
+				<value xsi:type="xs:string">1230</value>
+				<presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>1230 "Дебиторская задолженность" (Оборотные активы)</v8:content>
+					</v8:item>
+				</presentation>
+			</availableValue>
+			<availableValue>
+				<value xsi:type="xs:string">1240</value>
+				<presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>1240 "Финансовые вложения" (Оборотные активы)</v8:content>
+					</v8:item>
+				</presentation>
+			</availableValue>
+			<availableValue>
+				<value xsi:type="xs:string">1260</value>
+				<presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>1260 "Прочие оборотные активы" (Оборотные активы)</v8:content>
+					</v8:item>
+				</presentation>
+			</availableValue>
+			<availableValue>
+				<value xsi:type="xs:string">1410</value>
+				<presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>1410 "Заемные средства" (Долгосрочные обязательства)</v8:content>
+					</v8:item>
+				</presentation>
+			</availableValue>
+			<availableValue>
+				<value xsi:type="xs:string">1450</value>
+				<presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>1450 "Прочие обязательства" (Долгосрочные обязательства)</v8:content>
+					</v8:item>
+				</presentation>
+			</availableValue>
+			<availableValue>
+				<value xsi:type="xs:string">1510</value>
+				<presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>1510 "Заемные средства" (Краткосрочные обязательства)</v8:content>
+					</v8:item>
+				</presentation>
+			</availableValue>
+			<availableValue>
+				<value xsi:type="xs:string">1520</value>
+				<presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>1520 "Кредиторская задолженность" (Краткосрочные обязательства)</v8:content>
+					</v8:item>
+				</presentation>
+			</availableValue>
+			<availableValue>
+				<value xsi:type="xs:string">1540</value>
+				<presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>1540 "Оценочные обязательства" (Краткосрочные обязательства)</v8:content>
+					</v8:item>
+				</presentation>
+			</availableValue>
+			<availableValue>
+				<value xsi:type="xs:string">1550</value>
+				<presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>1550 "Прочие обязательства" (Краткосрочные обязательства)</v8:content>
+					</v8:item>
+				</presentation>
+			</availableValue>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДебиторКредиторГруппировка</dataPath>
+			<field>ДебиторКредиторГруппировка</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дебитор/кредитор</v8:content>
+				</v8:item>
+			</title>
+			<valueType>
+				<v8:Type>xs:string</v8:Type>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.Контрагенты</v8:Type>
+				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d5p1:CatalogRef.ФизическиеЛица</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</valueType>
+		</field>
+		<item xsi:type="DataSetObject">
+			<name>ОсновныеСчета</name>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ВидЗадолженности</dataPath>
+				<field>ВидЗадолженности</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Вид задолженности</v8:content>
+					</v8:item>
+				</title>
+				<valueType>
+					<v8:Type xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d6p1:EnumRef.ВидыЗадолженности</v8:Type>
+				</valueType>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>СчетРасчетов</dataPath>
+				<field>СчетРасчетов</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Счет расчетов</v8:content>
+					</v8:item>
+				</title>
+				<orderExpression>
+					<dcscom:expression>СчетРасчетов.Код</dcscom:expression>
+					<dcscom:orderType>Asc</dcscom:orderType>
+					<dcscom:autoOrder>false</dcscom:autoOrder>
+				</orderExpression>
+				<valueType>
+					<v8:Type xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d6p1:ChartOfAccountsRef.Хозрасчетный</v8:Type>
+				</valueType>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ДатаПогашения</dataPath>
+				<field>ДатаПогашения</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Дата погашения</v8:content>
+					</v8:item>
+				</title>
+				<valueType>
+					<v8:Type>xs:dateTime</v8:Type>
+					<v8:DateQualifiers>
+						<v8:DateFractions>Date</v8:DateFractions>
+					</v8:DateQualifiers>
+				</valueType>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ДатаВозникновения</dataPath>
+				<field>ДатаВозникновения</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Дата возникновения</v8:content>
+					</v8:item>
+				</title>
+				<valueType>
+					<v8:Type>xs:dateTime</v8:Type>
+					<v8:DateQualifiers>
+						<v8:DateFractions>Date</v8:DateFractions>
+					</v8:DateQualifiers>
+				</valueType>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Подтверждено</dataPath>
+				<field>Подтверждено</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Задолженность, подтверждено</v8:content>
+					</v8:item>
+				</title>
+				<valueType>
+					<v8:Type>xs:decimal</v8:Type>
+					<v8:NumberQualifiers>
+						<v8:Digits>15</v8:Digits>
+						<v8:FractionDigits>2</v8:FractionDigits>
+						<v8:AllowedSign>Any</v8:AllowedSign>
+					</v8:NumberQualifiers>
+				</valueType>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПодтвержденоПоАктам</dataPath>
+				<field>ПодтвержденоПоАктам</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Задолженность, по актам инвентаризации</v8:content>
+					</v8:item>
+				</title>
+				<valueType>
+					<v8:Type>xs:decimal</v8:Type>
+					<v8:NumberQualifiers>
+						<v8:Digits>15</v8:Digits>
+						<v8:FractionDigits>2</v8:FractionDigits>
+						<v8:AllowedSign>Any</v8:AllowedSign>
+					</v8:NumberQualifiers>
+				</valueType>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПодтвержденоПоДаннымУчета</dataPath>
+				<field>ПодтвержденоПоДаннымУчета</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Задолженность, по данным учета</v8:content>
+					</v8:item>
+				</title>
+				<valueType>
+					<v8:Type>xs:decimal</v8:Type>
+					<v8:NumberQualifiers>
+						<v8:Digits>15</v8:Digits>
+						<v8:FractionDigits>2</v8:FractionDigits>
+						<v8:AllowedSign>Any</v8:AllowedSign>
+					</v8:NumberQualifiers>
+				</valueType>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>НеПодтверждено</dataPath>
+				<field>НеПодтверждено</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Задолженность, не подтверждено</v8:content>
+					</v8:item>
+				</title>
+				<valueType>
+					<v8:Type>xs:decimal</v8:Type>
+					<v8:NumberQualifiers>
+						<v8:Digits>15</v8:Digits>
+						<v8:FractionDigits>2</v8:FractionDigits>
+						<v8:AllowedSign>Any</v8:AllowedSign>
+					</v8:NumberQualifiers>
+				</valueType>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ИстекСрокДавности</dataPath>
+				<field>ИстекСрокДавности</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Задолженность, истек срок давности</v8:content>
+					</v8:item>
+				</title>
+				<valueType>
+					<v8:Type>xs:decimal</v8:Type>
+					<v8:NumberQualifiers>
+						<v8:Digits>15</v8:Digits>
+						<v8:FractionDigits>2</v8:FractionDigits>
+						<v8:AllowedSign>Any</v8:AllowedSign>
+					</v8:NumberQualifiers>
+				</valueType>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Комментарий</dataPath>
+				<field>Комментарий</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Комментарий</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
+				</role>
+				<valueType>
+					<v8:Type>xs:string</v8:Type>
+					<v8:StringQualifiers>
+						<v8:Length>0</v8:Length>
+						<v8:AllowedLength>Variable</v8:AllowedLength>
+					</v8:StringQualifiers>
+				</valueType>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Просрочено</dataPath>
+				<field>Просрочено</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Задолженность, просрочено</v8:content>
+					</v8:item>
+				</title>
+				<valueType>
+					<v8:Type>xs:decimal</v8:Type>
+					<v8:NumberQualifiers>
+						<v8:Digits>15</v8:Digits>
+						<v8:FractionDigits>2</v8:FractionDigits>
+						<v8:AllowedSign>Any</v8:AllowedSign>
+					</v8:NumberQualifiers>
+				</valueType>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Ссылка</dataPath>
+				<field>Ссылка</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Акт инвентаризации расчетов</v8:content>
+					</v8:item>
+				</title>
+				<valueType>
+					<v8:Type xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d6p1:DocumentRef.ИнвентаризацияРасчетовСКонтрагентами</v8:Type>
+				</valueType>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ДебиторКредитор</dataPath>
+				<field>ДебиторКредитор</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Дебитор/кредитор</v8:content>
+					</v8:item>
+				</title>
+				<valueType>
+					<v8:TypeSet xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d6p1:Characteristic.ВидыСубконтоХозрасчетные</v8:TypeSet>
+				</valueType>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Договор</dataPath>
+				<field>Договор</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Договор</v8:content>
+					</v8:item>
+				</title>
+				<valueType>
+					<v8:Type xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d6p1:CatalogRef.ДоговорыКонтрагентов</v8:Type>
+				</valueType>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Документ</dataPath>
+				<field>Документ</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Документ</v8:content>
+					</v8:item>
+				</title>
+				<valueType>
+					<v8:TypeSet xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d6p1:DocumentRef</v8:TypeSet>
+				</valueType>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>СрокЗадолженности</dataPath>
+				<field>СрокЗадолженности</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Срок задолженности</v8:content>
+					</v8:item>
+				</title>
+				<valueType>
+					<v8:Type>xs:decimal</v8:Type>
+					<v8:NumberQualifiers>
+						<v8:Digits>5</v8:Digits>
+						<v8:FractionDigits>0</v8:FractionDigits>
+						<v8:AllowedSign>Any</v8:AllowedSign>
+					</v8:NumberQualifiers>
+				</valueType>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>СтрокаБаланса</dataPath>
+				<field>СтрокаБаланса</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Строка баланса</v8:content>
+					</v8:item>
+				</title>
+				<valueType>
+					<v8:Type>xs:string</v8:Type>
+					<v8:StringQualifiers>
+						<v8:Length>0</v8:Length>
+						<v8:AllowedLength>Variable</v8:AllowedLength>
+					</v8:StringQualifiers>
+				</valueType>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ДебиторКредиторГруппировка</dataPath>
+				<field>ДебиторКредиторГруппировка</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Дебитор кредитор группировка</v8:content>
+					</v8:item>
+				</title>
+				<useRestriction>
+					<condition>true</condition>
+					<order>true</order>
+				</useRestriction>
+				<attributeUseRestriction>
+					<condition>true</condition>
+					<order>true</order>
+				</attributeUseRestriction>
+				<valueType>
+					<v8:Type>xs:string</v8:Type>
+					<v8:Type xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d6p1:CatalogRef.Контрагенты</v8:Type>
+					<v8:Type xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d6p1:CatalogRef.ФизическиеЛица</v8:Type>
+					<v8:StringQualifiers>
+						<v8:Length>120</v8:Length>
+						<v8:AllowedLength>Variable</v8:AllowedLength>
+					</v8:StringQualifiers>
+				</valueType>
+			</field>
+			<dataSource>ИсточникДанных1</dataSource>
+			<objectName>ДанныеОтчета</objectName>
+		</item>
+		<item xsi:type="DataSetQuery">
+			<name>НДСсАвансов</name>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ДатаВозникновения</dataPath>
+				<field>ДатаВозникновения</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Дата возникновения</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>СчетРасчетов</dataPath>
+				<field>СчетРасчетов</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Счет расчетов</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+					<dcscom:account>true</dcscom:account>
+					<dcscom:accountTypeExpression>СчетРасчетов.Вид</dcscom:accountTypeExpression>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Подтверждено</dataPath>
+				<field>Подтверждено</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Подтверждено</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ДебиторКредитор</dataPath>
+				<field>ДебиторКредитор</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Дебитор кредитор</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+					<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Документ</dataPath>
+				<field>Документ</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Документ</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+					<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>СрокЗадолженности</dataPath>
+				<field>СрокЗадолженности</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Срок задолженности</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПодтвержденоПоДаннымУчета</dataPath>
+				<field>ПодтвержденоПоДаннымУчета</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Подтверждено по данным учета</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:balance>true</dcscom:balance>
+					<dcscom:balanceGroupName>Подтверждено2</dcscom:balanceGroupName>
+					<dcscom:balanceType>None</dcscom:balanceType>
+					<dcscom:accountingBalanceType>Credit</dcscom:accountingBalanceType>
+					<dcscom:accountField>СчетРасчетов</dcscom:accountField>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>СтрокаБаланса</dataPath>
+				<field>СтрокаБаланса</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Строка баланса</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Договор</dataPath>
+				<field>Договор</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Договор</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+					<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Ссылка</dataPath>
+				<field>Ссылка</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Ссылка</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ДебиторКредиторГруппировка</dataPath>
+				<field>ДебиторКредиторГруппировка</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Дебитор кредитор группировка</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<dataSource>ИсточникДанных1</dataSource>
+			<query>ВЫБРАТЬ
+	ХозрасчетныйОстатки.Счет КАК СчетРасчетов,
+	ХозрасчетныйОстатки.Субконто1 КАК ДебиторКредитор,
+	ХозрасчетныйОстатки.Субконто2 КАК Документ,
+	ВЫРАЗИТЬ(ХозрасчетныйОстатки.Субконто2 КАК Документ.СчетФактураВыданный).ДоговорКонтрагента КАК Договор,
+	ХозрасчетныйОстатки.СуммаОстатокКт - ХозрасчетныйОстатки.СуммаОстатокДт КАК Подтверждено,
+	ХозрасчетныйОстатки.СуммаОстатокКт - ХозрасчетныйОстатки.СуммаОстатокДт КАК ПодтвержденоПоДаннымУчета,
+	ЕСТЬNULL(ДанныеПервичныхДокументов.ДатаРегистратора, ДАТАВРЕМЯ(1, 1, 1, 0, 0, 0)) КАК ДатаВозникновения,
+	ВЫБОР
+		КОГДА ЕСТЬNULL(ДанныеПервичныхДокументов.ДатаРегистратора, ДАТАВРЕМЯ(1, 1, 1, 0, 0, 0)) = ДАТАВРЕМЯ(1, 1, 1, 0, 0, 0)
+			ТОГДА 0
+		ИНАЧЕ РАЗНОСТЬДАТ(ДанныеПервичныхДокументов.ДатаРегистратора, &amp;ДатаОтчета, ДЕНЬ)
+	КОНЕЦ КАК СрокЗадолженности,
+	"1520" КАК СтрокаБаланса,
+	ЗНАЧЕНИЕ(Документ.ИнвентаризацияРасчетовСКонтрагентами.ПустаяСсылка) КАК Ссылка,
+	ХозрасчетныйОстатки.Субконто1 КАК Субконто1,
+	ХозрасчетныйОстатки.Субконто2 КАК Субконто2,
+	ХозрасчетныйОстатки.Счет.Наименование КАК ДебиторКредиторГруппировка
+{ВЫБРАТЬ
+	СчетРасчетов.*,
+	ДебиторКредитор,
+	Подтверждено,
+	ПодтвержденоПоДаннымУчета,
+	ДатаВозникновения,
+	Документ.*,
+	СрокЗадолженности,
+	СтрокаБаланса,
+	Договор.*,
+	Ссылка,
+	ДебиторКредиторГруппировка}
+ИЗ
+	РегистрБухгалтерии.Хозрасчетный.Остатки(
+			&amp;Период {(&amp;Период)},
+			Счет = &amp;Счет76АВ
+				И Счет В (&amp;СчетаРасчетов),
+			&amp;СубконтоКонтрагентыСФВыданные,
+			Организация В (&amp;Организация)
+				И &amp;ДополнитьПрочимиСчетами
+				И &amp;ВыводитьСтроку1520) КАК ХозрасчетныйОстатки
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ДанныеПервичныхДокументов КАК ДанныеПервичныхДокументов
+		ПО ХозрасчетныйОстатки.Организация = ДанныеПервичныхДокументов.Организация
+			И ХозрасчетныйОстатки.Субконто2 = ДанныеПервичныхДокументов.Документ
+ГДЕ
+	ХозрасчетныйОстатки.СуммаОстатокКт - ХозрасчетныйОстатки.СуммаОстатокДт &lt;&gt; 0
+{ГДЕ
+	ХозрасчетныйОстатки.Счет.* КАК СчетРасчетов,
+	ХозрасчетныйОстатки.Субконто1.* КАК ДебиторКредитор,
+	ХозрасчетныйОстатки.Субконто2.* КАК Документ,
+	(ВЫРАЗИТЬ(ХозрасчетныйОстатки.Субконто2 КАК Документ.СчетФактураВыданный).ДоговорКонтрагента) КАК Договор,
+	(ХозрасчетныйОстатки.СуммаОстатокКт - ХозрасчетныйОстатки.СуммаОстатокДт) КАК Подтверждено,
+	(ХозрасчетныйОстатки.СуммаОстатокКт - ХозрасчетныйОстатки.СуммаОстатокДт) КАК ПодтвержденоПоДаннымУчета,
+	(ЕСТЬNULL(ДанныеПервичныхДокументов.ДатаРегистратора, ДАТАВРЕМЯ(1, 1, 1, 0, 0, 0))) КАК ДатаВозникновения,
+	(ВЫБОР
+			КОГДА ЕСТЬNULL(ДанныеПервичныхДокументов.ДатаРегистратора, ДАТАВРЕМЯ(1, 1, 1, 0, 0, 0)) = ДАТАВРЕМЯ(1, 1, 1, 0, 0, 0)
+				ТОГДА 0
+			ИНАЧЕ РАЗНОСТЬДАТ(ДанныеПервичныхДокументов.ДатаРегистратора, &amp;ДатаОтчета, ДЕНЬ)
+		КОНЕЦ) КАК СрокЗадолженности,
+	("1520") КАК СтрокаБаланса,
+	(ЗНАЧЕНИЕ(Документ.ИнвентаризацияРасчетовСКонтрагентами.ПустаяСсылка)) КАК Ссылка}
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ХозрасчетныйОстатки.Счет,
+	ХозрасчетныйОстатки.Субконто1,
+	ХозрасчетныйОстатки.Субконто2,
+	ВЫРАЗИТЬ(ХозрасчетныйОстатки.Субконто2 КАК Документ.СчетФактураПолученный).ДоговорКонтрагента,
+	ХозрасчетныйОстатки.СуммаОстатокДт - ХозрасчетныйОстатки.СуммаОстатокКт,
+	ХозрасчетныйОстатки.СуммаОстатокДт - ХозрасчетныйОстатки.СуммаОстатокКт,
+	ЕСТЬNULL(ДанныеПервичныхДокументов.ДатаРегистратора, ДАТАВРЕМЯ(1, 1, 1, 0, 0, 0)),
+	ВЫБОР
+		КОГДА ЕСТЬNULL(ДанныеПервичныхДокументов.ДатаРегистратора, ДАТАВРЕМЯ(1, 1, 1, 0, 0, 0)) = ДАТАВРЕМЯ(1, 1, 1, 0, 0, 0)
+			ТОГДА 0
+		ИНАЧЕ РАЗНОСТЬДАТ(ДанныеПервичныхДокументов.ДатаРегистратора, &amp;ДатаОтчета, ДЕНЬ)
+	КОНЕЦ,
+	"1230",
+	ЗНАЧЕНИЕ(Документ.ИнвентаризацияРасчетовСКонтрагентами.ПустаяСсылка),
+	ХозрасчетныйОстатки.Субконто1,
+	ХозрасчетныйОстатки.Субконто2,
+	ХозрасчетныйОстатки.Счет.Наименование
+ИЗ
+	РегистрБухгалтерии.Хозрасчетный.Остатки(
+			&amp;Период {(&amp;Период)},
+			Счет = &amp;Счет76ВА
+				И Счет В (&amp;СчетаРасчетов),
+			&amp;СубконтоКонтрагентыСФПолученные,
+			Организация В (&amp;Организация)
+				И &amp;ДополнитьПрочимиСчетами
+				И &amp;ВыводитьСтроку1230) КАК ХозрасчетныйОстатки
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ДанныеПервичныхДокументов КАК ДанныеПервичныхДокументов
+		ПО ХозрасчетныйОстатки.Организация = ДанныеПервичныхДокументов.Организация
+			И ХозрасчетныйОстатки.Субконто2 = ДанныеПервичныхДокументов.Документ
+ГДЕ
+	ХозрасчетныйОстатки.СуммаОстатокДт - ХозрасчетныйОстатки.СуммаОстатокКт &lt;&gt; 0
+{ГДЕ
+	ХозрасчетныйОстатки.Счет.* КАК СчетРасчетов,
+	ХозрасчетныйОстатки.Субконто1.* КАК ДебиторКредитор,
+	ХозрасчетныйОстатки.Субконто2.* КАК Документ,
+	(ВЫРАЗИТЬ(ХозрасчетныйОстатки.Субконто2 КАК Документ.СчетФактураПолученный).ДоговорКонтрагента) КАК Договор,
+	(ХозрасчетныйОстатки.СуммаОстатокДт - ХозрасчетныйОстатки.СуммаОстатокКт) КАК Подтверждено,
+	(ХозрасчетныйОстатки.СуммаОстатокДт - ХозрасчетныйОстатки.СуммаОстатокКт) КАК ПодтвержденоПоДаннымУчета,
+	(ЕСТЬNULL(ДанныеПервичныхДокументов.ДатаРегистратора, ДАТАВРЕМЯ(1, 1, 1, 0, 0, 0))) КАК ДатаВозникновения,
+	(ВЫБОР
+			КОГДА ЕСТЬNULL(ДанныеПервичныхДокументов.ДатаРегистратора, ДАТАВРЕМЯ(1, 1, 1, 0, 0, 0)) = ДАТАВРЕМЯ(1, 1, 1, 0, 0, 0)
+				ТОГДА 0
+			ИНАЧЕ РАЗНОСТЬДАТ(ДанныеПервичныхДокументов.ДатаРегистратора, &amp;ДатаОтчета, ДЕНЬ)
+		КОНЕЦ) КАК СрокЗадолженности,
+	("1230") КАК СтрокаБаланса,
+	(ЗНАЧЕНИЕ(Документ.ИнвентаризацияРасчетовСКонтрагентами.ПустаяСсылка)) КАК Ссылка}</query>
+			<autoFillFields>false</autoFillFields>
+		</item>
+		<item xsi:type="DataSetQuery">
+			<name>РБП</name>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>СчетРасчетов</dataPath>
+				<field>СчетРасчетов</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Счет расчетов</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+					<dcscom:account>true</dcscom:account>
+					<dcscom:accountTypeExpression>СчетРасчетов.Вид</dcscom:accountTypeExpression>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ДебиторКредитор</dataPath>
+				<field>ДебиторКредитор</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Дебитор кредитор</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+					<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Подтверждено</dataPath>
+				<field>Подтверждено</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Подтверждено</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПодтвержденоПоДаннымУчета</dataPath>
+				<field>ПодтвержденоПоДаннымУчета</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Подтверждено по данным учета</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>СтрокаБаланса</dataPath>
+				<field>СтрокаБаланса</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Строка баланса</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Ссылка</dataPath>
+				<field>Ссылка</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Ссылка</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Документ</dataPath>
+				<field>Документ</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Документ</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Договор</dataPath>
+				<field>Договор</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Договор</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ДебиторКредиторГруппировка</dataPath>
+				<field>ДебиторКредиторГруппировка</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Дебитор кредитор группировка</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<dataSource>ИсточникДанных1</dataSource>
+			<query>ВЫБРАТЬ
+	ХозрасчетныйОстатки.Счет КАК СчетРасчетов,
+	ХозрасчетныйОстатки.Субконто1 КАК ДебиторКредитор,
+	ХозрасчетныйОстатки.Субконто2 КАК РБП,
+	ХозрасчетныйОстатки.СуммаОстатокДт КАК Подтверждено,
+	ХозрасчетныйОстатки.СуммаОстатокДт КАК ПодтвержденоПоДаннымУчета,
+	"1230" КАК СтрокаБаланса,
+	ЗНАЧЕНИЕ(Справочник.ДоговорыКонтрагентов.ПустаяСсылка) КАК Договор,
+	НЕОПРЕДЕЛЕНО КАК Документ,
+	ЗНАЧЕНИЕ(Документ.ИнвентаризацияРасчетовСКонтрагентами.ПустаяСсылка) КАК Ссылка,
+	ХозрасчетныйОстатки.Субконто2 КАК Субконто2,
+	ХозрасчетныйОстатки.Счет.Наименование КАК ДебиторКредиторГруппировка
+{ВЫБРАТЬ
+	СчетРасчетов.*,
+	ДебиторКредитор,
+	Подтверждено,
+	ПодтвержденоПоДаннымУчета,
+	СтрокаБаланса,
+	Договор,
+	Документ,
+	Ссылка,
+	ДебиторКредиторГруппировка КАК ДебиторКредиторГруппировка}
+ИЗ
+	РегистрБухгалтерии.Хозрасчетный.Остатки(
+			&amp;Период {(&amp;Период)},
+			Счет В (&amp;СчетаРБП76)
+				И Счет В (&amp;СчетаРасчетов),
+			&amp;ВидСубконтоКонтрагентыРБП,
+			Организация В (&amp;Организация)
+				И &amp;ДополнитьПрочимиСчетами
+				И &amp;ВыводитьСтроку1230
+				И ВЫРАЗИТЬ(Субконто2 КАК Справочник.РасходыБудущихПериодов).ВидАктива = ЗНАЧЕНИЕ(Перечисление.ВидыАктивовДляРБП.ДебиторскаяЗадолженность)) КАК ХозрасчетныйОстатки
+{ГДЕ
+	ХозрасчетныйОстатки.Счет.* КАК СчетРасчетов,
+	ХозрасчетныйОстатки.Субконто1.* КАК ДебиторКредитор,
+	ХозрасчетныйОстатки.СуммаОстатокДт КАК Подтверждено,
+	ХозрасчетныйОстатки.СуммаОстатокДт КАК ПодтвержденоПоДаннымУчета,
+	("1230") КАК СтрокаБаланса,
+	(ЗНАЧЕНИЕ(Справочник.ДоговорыКонтрагентов.ПустаяСсылка)) КАК Договор,
+	(НЕОПРЕДЕЛЕНО) КАК Документ,
+	(ЗНАЧЕНИЕ(Документ.ИнвентаризацияРасчетовСКонтрагентами.ПустаяСсылка)) КАК Ссылка}
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ХозрасчетныйОстатки.Счет,
+	ХозрасчетныйОстатки.Субконто1,
+	ХозрасчетныйОстатки.Субконто1,
+	ХозрасчетныйОстатки.СуммаОстатокДт,
+	ХозрасчетныйОстатки.СуммаОстатокДт,
+	"1230",
+	ЗНАЧЕНИЕ(Справочник.ДоговорыКонтрагентов.ПустаяСсылка),
+	НЕОПРЕДЕЛЕНО,
+	ЗНАЧЕНИЕ(Документ.ИнвентаризацияРасчетовСКонтрагентами.ПустаяСсылка),
+	NULL,
+	ХозрасчетныйОстатки.Счет.Наименование
+ИЗ
+	РегистрБухгалтерии.Хозрасчетный.Остатки(
+			&amp;Период {(&amp;Период)},
+			Счет В (&amp;Счет97)
+				И Счет В (&amp;СчетаРасчетов),
+			&amp;ВидСубконтоРБП,
+			Организация В (&amp;Организация)
+				И &amp;ДополнитьПрочимиСчетами
+				И &amp;ВыводитьСтроку1230
+				И ВЫРАЗИТЬ(Субконто1 КАК Справочник.РасходыБудущихПериодов).ВидАктива = ЗНАЧЕНИЕ(Перечисление.ВидыАктивовДляРБП.ДебиторскаяЗадолженность)) КАК ХозрасчетныйОстатки
+{ГДЕ
+	ХозрасчетныйОстатки.Счет.* КАК СчетРасчетов,
+	ХозрасчетныйОстатки.Субконто1.* КАК ДебиторКредитор,
+	ХозрасчетныйОстатки.СуммаОстатокДт КАК Подтверждено,
+	ХозрасчетныйОстатки.СуммаОстатокДт КАК ПодтвержденоПоДаннымУчета,
+	("1230") КАК СтрокаБаланса,
+	(ЗНАЧЕНИЕ(Справочник.ДоговорыКонтрагентов.ПустаяСсылка)) КАК Договор,
+	(НЕОПРЕДЕЛЕНО) КАК Документ,
+	(ЗНАЧЕНИЕ(Документ.ИнвентаризацияРасчетовСКонтрагентами.ПустаяСсылка)) КАК Ссылка}</query>
+			<autoFillFields>false</autoFillFields>
+		</item>
+		<item xsi:type="DataSetQuery">
+			<name>ПрочиеРезервы</name>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>СчетРасчетов</dataPath>
+				<field>СчетРасчетов</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Счет расчетов</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+					<dcscom:account>true</dcscom:account>
+					<dcscom:accountTypeExpression>СчетРасчетов.Вид</dcscom:accountTypeExpression>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Подтверждено</dataPath>
+				<field>Подтверждено</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Подтверждено</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ДебиторКредитор</dataPath>
+				<field>ДебиторКредитор</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Дебитор кредитор</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+					<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПодтвержденоПоДаннымУчета</dataPath>
+				<field>ПодтвержденоПоДаннымУчета</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Подтверждено по данным учета</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>СтрокаБаланса</dataPath>
+				<field>СтрокаБаланса</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Строка баланса</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Документ</dataPath>
+				<field>Документ</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Документ</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Договор</dataPath>
+				<field>Договор</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Договор</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Ссылка</dataPath>
+				<field>Ссылка</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Ссылка</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ДебиторКредиторГруппировка</dataPath>
+				<field>ДебиторКредиторГруппировка</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Дебитор кредитор группировка</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<dataSource>ИсточникДанных1</dataSource>
+			<query>ВЫБРАТЬ
+	ХозрасчетныйОстатки.Счет КАК СчетРасчетов,
+	ХозрасчетныйОстатки.Субконто1 КАК ДебиторКредитор,
+	ХозрасчетныйОстатки.Субконто1 КАК Субконто1,
+	ХозрасчетныйОстатки.СуммаОстатокДт КАК Подтверждено,
+	ХозрасчетныйОстатки.СуммаОстатокДт КАК ПодтвержденоПоДаннымУчета,
+	"1230" КАК СтрокаБаланса,
+	ЗНАЧЕНИЕ(Справочник.ДоговорыКонтрагентов.ПустаяСсылка) КАК Договор,
+	НЕОПРЕДЕЛЕНО КАК Документ,
+	ЗНАЧЕНИЕ(Документ.ИнвентаризацияРасчетовСКонтрагентами.ПустаяСсылка) КАК Ссылка,
+	ХозрасчетныйОстатки.Счет.Наименование КАК ДебиторКредиторГруппировка
+{ВЫБРАТЬ
+	СчетРасчетов.*,
+	ДебиторКредитор,
+	Подтверждено,
+	ПодтвержденоПоДаннымУчета,
+	СтрокаБаланса,
+	Договор,
+	Документ,
+	Ссылка,
+	ДебиторКредиторГруппировка}
+ИЗ
+	РегистрБухгалтерии.Хозрасчетный.Остатки(
+			&amp;Период {(&amp;Период)},
+			Счет В (&amp;Счет9609)
+				И Счет В (&amp;СчетаРасчетов),
+			ЗНАЧЕНИЕ(ПланВидовХарактеристик.ВидыСубконтоХозрасчетные.Резервы),
+			Организация В (&amp;Организация)
+				И &amp;ДополнитьПрочимиСчетами
+				И &amp;ВыводитьСтроку1230) КАК ХозрасчетныйОстатки
+ГДЕ
+	ХозрасчетныйОстатки.СуммаРазвернутыйОстатокДт &gt; 0
+{ГДЕ
+	ХозрасчетныйОстатки.Счет.* КАК СчетРасчетов,
+	ХозрасчетныйОстатки.Субконто1 КАК ДебиторКредитор,
+	ХозрасчетныйОстатки.СуммаОстатокДт КАК Подтверждено,
+	ХозрасчетныйОстатки.СуммаОстатокДт КАК ПодтвержденоПоДаннымУчета,
+	("1230") КАК СтрокаБаланса,
+	(ЗНАЧЕНИЕ(Справочник.ДоговорыКонтрагентов.ПустаяСсылка)) КАК Договор,
+	(НЕОПРЕДЕЛЕНО) КАК Документ,
+	(ЗНАЧЕНИЕ(Документ.ИнвентаризацияРасчетовСКонтрагентами.ПустаяСсылка)) КАК Ссылка}
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ХозрасчетныйОстатки.Счет,
+	ХозрасчетныйОстатки.Субконто1,
+	ХозрасчетныйОстатки.Субконто1,
+	ХозрасчетныйОстатки.СуммаОстатокКт,
+	ХозрасчетныйОстатки.СуммаОстатокКт,
+	"1540",
+	ЗНАЧЕНИЕ(Справочник.ДоговорыКонтрагентов.ПустаяСсылка),
+	НЕОПРЕДЕЛЕНО,
+	ЗНАЧЕНИЕ(Документ.ИнвентаризацияРасчетовСКонтрагентами.ПустаяСсылка),
+	ХозрасчетныйОстатки.Счет.Наименование
+ИЗ
+	РегистрБухгалтерии.Хозрасчетный.Остатки(
+			&amp;Период {(&amp;Период)},
+			Счет В (&amp;Счет9609)
+				И Счет В (&amp;СчетаРасчетов),
+			ЗНАЧЕНИЕ(ПланВидовХарактеристик.ВидыСубконтоХозрасчетные.Резервы),
+			Организация В (&amp;Организация)
+				И &amp;ДополнитьПрочимиСчетами
+				И &amp;ВыводитьСтроку1540) КАК ХозрасчетныйОстатки
+ГДЕ
+	ХозрасчетныйОстатки.СуммаРазвернутыйОстатокКт &gt; 0
+{ГДЕ
+	ХозрасчетныйОстатки.Счет.* КАК СчетРасчетов,
+	ХозрасчетныйОстатки.Субконто1 КАК ДебиторКредитор,
+	ХозрасчетныйОстатки.СуммаОстатокКт КАК Подтверждено,
+	ХозрасчетныйОстатки.СуммаОстатокКт КАК ПодтвержденоПоДаннымУчета,
+	("1540") КАК СтрокаБаланса,
+	(ЗНАЧЕНИЕ(Справочник.ДоговорыКонтрагентов.ПустаяСсылка)) КАК Договор,
+	(НЕОПРЕДЕЛЕНО) КАК Документ,
+	(ЗНАЧЕНИЕ(Документ.ИнвентаризацияРасчетовСКонтрагентами.ПустаяСсылка)) КАК Ссылка}
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ХозрасчетныйОстатки.Счет,
+	ХозрасчетныйОстатки.Субконто1,
+	НЕОПРЕДЕЛЕНО,
+	ХозрасчетныйОстатки.СуммаОстатокКт,
+	ХозрасчетныйОстатки.СуммаОстатокКт,
+	"1540",
+	ЗНАЧЕНИЕ(Справочник.ДоговорыКонтрагентов.ПустаяСсылка),
+	НЕОПРЕДЕЛЕНО,
+	ЗНАЧЕНИЕ(Документ.ИнвентаризацияРасчетовСКонтрагентами.ПустаяСсылка),
+	ХозрасчетныйОстатки.Счет.Наименование
+ИЗ
+	РегистрБухгалтерии.Хозрасчетный.Остатки(
+			&amp;Период {(&amp;Период)},
+			Счет В (&amp;Счет9601)
+				И Счет В (&amp;СчетаРасчетов),
+			,
+			Организация В (&amp;Организация)
+				И &amp;ДополнитьПрочимиСчетами
+				И &amp;ВыводитьСтроку1540) КАК ХозрасчетныйОстатки
+ГДЕ
+	ХозрасчетныйОстатки.СуммаРазвернутыйОстатокКт &gt; 0
+{ГДЕ
+	ХозрасчетныйОстатки.Счет.* КАК СчетРасчетов,
+	ХозрасчетныйОстатки.Субконто1 КАК ДебиторКредитор,
+	ХозрасчетныйОстатки.СуммаОстатокКт КАК Подтверждено,
+	ХозрасчетныйОстатки.СуммаОстатокКт КАК ПодтвержденоПоДаннымУчета,
+	("1540") КАК СтрокаБаланса,
+	(ЗНАЧЕНИЕ(Справочник.ДоговорыКонтрагентов.ПустаяСсылка)) КАК Договор,
+	(НЕОПРЕДЕЛЕНО) КАК Документ,
+	(ЗНАЧЕНИЕ(Документ.ИнвентаризацияРасчетовСКонтрагентами.ПустаяСсылка)) КАК Ссылка}</query>
+			<autoFillFields>false</autoFillFields>
+		</item>
+		<item xsi:type="DataSetQuery">
+			<name>РезервыПоСомнительнымДолгам</name>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>СчетРасчетов</dataPath>
+				<field>СчетРасчетов</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Счет расчетов</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ДебиторКредитор</dataPath>
+				<field>ДебиторКредитор</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Дебитор кредитор</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+					<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Подтверждено</dataPath>
+				<field>Подтверждено</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Подтверждено</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПодтвержденоПоДаннымУчета</dataPath>
+				<field>ПодтвержденоПоДаннымУчета</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Подтверждено по данным учета</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>СтрокаБаланса</dataPath>
+				<field>СтрокаБаланса</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Строка баланса</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Документ</dataPath>
+				<field>Документ</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Документ</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+					<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Договор</dataPath>
+				<field>Договор</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Договор</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+					<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Ссылка</dataPath>
+				<field>Ссылка</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Ссылка</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ДебиторКредиторГруппировка</dataPath>
+				<field>ДебиторКредиторГруппировка</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Дебитор кредитор группировка</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<dataSource>ИсточникДанных1</dataSource>
+			<query>ВЫБРАТЬ
+	ХозрасчетныйОстатки.Счет КАК СчетРасчетов,
+	ХозрасчетныйОстатки.Субконто1 КАК ДебиторКредитор,
+	ХозрасчетныйОстатки.Субконто2 КАК Договор,
+	ХозрасчетныйОстатки.Субконто3 КАК Документ,
+	-ХозрасчетныйОстатки.СуммаОстатокКт КАК Подтверждено,
+	-ХозрасчетныйОстатки.СуммаОстатокКт КАК ПодтвержденоПоДаннымУчета,
+	"1230" КАК СтрокаБаланса,
+	ЗНАЧЕНИЕ(Документ.ИнвентаризацияРасчетовСКонтрагентами.ПустаяСсылка) КАК Ссылка,
+	ХозрасчетныйОстатки.Субконто1 КАК Субконто1,
+	ХозрасчетныйОстатки.Субконто2 КАК Субконто2,
+	ХозрасчетныйОстатки.Субконто3 КАК Субконто3,
+	ХозрасчетныйОстатки.Счет.Наименование КАК ДебиторКредиторГруппировка
+{ВЫБРАТЬ
+	СчетРасчетов.*,
+	ДебиторКредитор,
+	Подтверждено,
+	ПодтвержденоПоДаннымУчета,
+	СтрокаБаланса,
+	Договор.*,
+	Документ.*,
+	Ссылка,
+	ДебиторКредиторГруппировка}
+ИЗ
+	РегистрБухгалтерии.Хозрасчетный.Остатки(
+			&amp;Период {(&amp;Период)},
+			Счет В (&amp;Счет63)
+				И Счет В (&amp;СчетаРасчетов),
+			&amp;ВидыСубконтоСДокументами,
+			Организация В (&amp;Организация)
+				И &amp;ДополнитьПрочимиСчетами
+				И &amp;ВыводитьСтроку1230) КАК ХозрасчетныйОстатки
+{ГДЕ
+	ХозрасчетныйОстатки.Счет.* КАК СчетРасчетов,
+	ХозрасчетныйОстатки.Субконто1.* КАК ДебиторКредитор,
+	ХозрасчетныйОстатки.Субконто2.* КАК Договор,
+	ХозрасчетныйОстатки.Субконто3.* КАК Документ,
+	ХозрасчетныйОстатки.СуммаОстатокКт КАК Подтверждено,
+	ХозрасчетныйОстатки.СуммаОстатокКт КАК ПодтвержденоПоДаннымУчета,
+	("1230") КАК СтрокаБаланса,
+	(ЗНАЧЕНИЕ(Документ.ИнвентаризацияРасчетовСКонтрагентами.ПустаяСсылка)) КАК Ссылка}</query>
+			<autoFillFields>false</autoFillFields>
+		</item>
+		<item xsi:type="DataSetQuery">
+			<name>ПрочиеОбязательства</name>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>СчетРасчетов</dataPath>
+				<field>СчетРасчетов</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Счет расчетов</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+					<dcscom:account>true</dcscom:account>
+					<dcscom:accountTypeExpression>СчетРасчетов.Вид</dcscom:accountTypeExpression>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ДебиторКредитор</dataPath>
+				<field>ДебиторКредитор</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Дебитор кредитор</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+					<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Подтверждено</dataPath>
+				<field>Подтверждено</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Подтверждено</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПодтвержденоПоДаннымУчета</dataPath>
+				<field>ПодтвержденоПоДаннымУчета</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Подтверждено по данным учета</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>СтрокаБаланса</dataPath>
+				<field>СтрокаБаланса</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Строка баланса</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Документ</dataPath>
+				<field>Документ</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Документ</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Договор</dataPath>
+				<field>Договор</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Договор</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+					<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Ссылка</dataPath>
+				<field>Ссылка</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Ссылка</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ДебиторКредиторГруппировка</dataPath>
+				<field>ДебиторКредиторГруппировка</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Дебитор кредитор группировка</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<dataSource>ИсточникДанных1</dataSource>
+			<query>ВЫБРАТЬ
+	ХозрасчетныйОстатки.Счет КАК СчетРасчетов,
+	ХозрасчетныйОстатки.Субконто1 КАК ДебиторКредитор,
+	ХозрасчетныйОстатки.Субконто1 КАК Субконто1,
+	ЗНАЧЕНИЕ(Справочник.ДоговорыКонтрагентов.ПустаяСсылка) КАК Договор,
+	ХозрасчетныйОстатки.СуммаОстатокДт КАК Подтверждено,
+	ХозрасчетныйОстатки.СуммаОстатокДт КАК ПодтвержденоПоДаннымУчета,
+	"1260" КАК СтрокаБаланса,
+	НЕОПРЕДЕЛЕНО КАК Документ,
+	ЗНАЧЕНИЕ(Документ.ИнвентаризацияРасчетовСКонтрагентами.ПустаяСсылка) КАК Ссылка,
+	NULL КАК Субконто2,
+	ХозрасчетныйОстатки.Счет.Наименование КАК ДебиторКредиторГруппировка
+{ВЫБРАТЬ
+	СчетРасчетов.*,
+	ДебиторКредитор,
+	Подтверждено,
+	ПодтвержденоПоДаннымУчета,
+	СтрокаБаланса,
+	Договор,
+	Документ,
+	Ссылка,
+	ДебиторКредиторГруппировка}
+ИЗ
+	РегистрБухгалтерии.Хозрасчетный.Остатки(
+			&amp;Период {(&amp;Период)},
+			Счет В (&amp;Счет97)
+				И Счет В (&amp;СчетаРасчетов),
+			&amp;ВидСубконтоРБП,
+			Организация В (&amp;Организация)
+				И &amp;ДополнитьПрочимиСчетами
+				И &amp;ВыводитьСтроку1260
+				И ВЫРАЗИТЬ(Субконто1 КАК Справочник.РасходыБудущихПериодов).ВидАктива = ЗНАЧЕНИЕ(Перечисление.ВидыАктивовДляРБП.ПрочиеОборотныеАктивы)) КАК ХозрасчетныйОстатки
+{ГДЕ
+	ХозрасчетныйОстатки.Счет.* КАК СчетРасчетов,
+	ХозрасчетныйОстатки.Субконто1 КАК ДебиторКредитор,
+	ХозрасчетныйОстатки.СуммаОстатокДт КАК Подтверждено,
+	ХозрасчетныйОстатки.СуммаОстатокДт КАК ПодтвержденоПоДаннымУчета,
+	("1260") КАК СтрокаБаланса,
+	(НЕОПРЕДЕЛЕНО) КАК Документ,
+	(ЗНАЧЕНИЕ(Справочник.ДоговорыКонтрагентов.ПустаяСсылка)) КАК Договор,
+	(ЗНАЧЕНИЕ(Документ.ИнвентаризацияРасчетовСКонтрагентами.ПустаяСсылка)) КАК Ссылка}
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ХозрасчетныйОстатки.Счет,
+	ХозрасчетныйОстатки.Субконто1,
+	ХозрасчетныйОстатки.Субконто1,
+	ЗНАЧЕНИЕ(Справочник.ДоговорыКонтрагентов.ПустаяСсылка),
+	ХозрасчетныйОстатки.СуммаОстатокДт,
+	ХозрасчетныйОстатки.СуммаОстатокДт,
+	"1260",
+	НЕОПРЕДЕЛЕНО,
+	ЗНАЧЕНИЕ(Документ.ИнвентаризацияРасчетовСКонтрагентами.ПустаяСсылка),
+	NULL,
+	ХозрасчетныйОстатки.Счет.Наименование
+ИЗ
+	РегистрБухгалтерии.Хозрасчетный.Остатки(
+			&amp;Период {(&amp;Период)},
+			Счет В (&amp;Счет97)
+				И Счет В (&amp;СчетаРасчетов),
+			&amp;ВидСубконтоРБП,
+			Организация В (&amp;Организация)
+				И &amp;ДополнитьПрочимиСчетами
+				И &amp;ВыводитьСтроку1260
+				И (ВЫРАЗИТЬ(Субконто1 КАК Справочник.РасходыБудущихПериодов)) = ЗНАЧЕНИЕ(Справочник.РасходыБудущихПериодов.ПустаяСсылка)) КАК ХозрасчетныйОстатки
+{ГДЕ
+	ХозрасчетныйОстатки.Счет.* КАК СчетРасчетов,
+	ХозрасчетныйОстатки.Субконто1 КАК ДебиторКредитор,
+	ХозрасчетныйОстатки.СуммаОстатокДт КАК Подтверждено,
+	ХозрасчетныйОстатки.СуммаОстатокДт КАК ПодтвержденоПоДаннымУчета,
+	("1260") КАК СтрокаБаланса,
+	(НЕОПРЕДЕЛЕНО) КАК Документ,
+	(ЗНАЧЕНИЕ(Справочник.ДоговорыКонтрагентов.ПустаяСсылка)) КАК Договор,
+	(ЗНАЧЕНИЕ(Документ.ИнвентаризацияРасчетовСКонтрагентами.ПустаяСсылка)) КАК Ссылка}
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ХозрасчетныйОстатки.Счет,
+	ХозрасчетныйОстатки.Субконто1,
+	ХозрасчетныйОстатки.Субконто1,
+	ЗНАЧЕНИЕ(Справочник.ДоговорыКонтрагентов.ПустаяСсылка),
+	ХозрасчетныйОстатки.СуммаОстатокДт,
+	ХозрасчетныйОстатки.СуммаОстатокДт,
+	"1260",
+	НЕОПРЕДЕЛЕНО,
+	ЗНАЧЕНИЕ(Документ.ИнвентаризацияРасчетовСКонтрагентами.ПустаяСсылка),
+	ХозрасчетныйОстатки.Субконто2,
+	ХозрасчетныйОстатки.Счет.Наименование
+ИЗ
+	РегистрБухгалтерии.Хозрасчетный.Остатки(
+			&amp;Период {(&amp;Период)},
+			Счет В (&amp;СчетаРБП76)
+				И Счет В (&amp;СчетаРасчетов),
+			&amp;ВидСубконтоКонтрагентыРБП,
+			Организация В (&amp;Организация)
+				И &amp;ДополнитьПрочимиСчетами
+				И &amp;ВыводитьСтроку1260
+				И ВЫРАЗИТЬ(Субконто2 КАК Справочник.РасходыБудущихПериодов).ВидАктива = ЗНАЧЕНИЕ(Перечисление.ВидыАктивовДляРБП.ПрочиеОборотныеАктивы)) КАК ХозрасчетныйОстатки
+{ГДЕ
+	ХозрасчетныйОстатки.Счет.* КАК СчетРасчетов,
+	ХозрасчетныйОстатки.Субконто1 КАК ДебиторКредитор,
+	ХозрасчетныйОстатки.СуммаОстатокДт КАК Подтверждено,
+	ХозрасчетныйОстатки.СуммаОстатокДт КАК ПодтвержденоПоДаннымУчета,
+	("1260") КАК СтрокаБаланса,
+	(НЕОПРЕДЕЛЕНО) КАК Документ,
+	(ЗНАЧЕНИЕ(Справочник.ДоговорыКонтрагентов.ПустаяСсылка)) КАК Договор,
+	(ЗНАЧЕНИЕ(Документ.ИнвентаризацияРасчетовСКонтрагентами.ПустаяСсылка)) КАК Ссылка}
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ХозрасчетныйОстатки.Счет,
+	ХозрасчетныйОстатки.Субконто1,
+	ХозрасчетныйОстатки.Субконто1,
+	ЗНАЧЕНИЕ(Справочник.ДоговорыКонтрагентов.ПустаяСсылка),
+	ХозрасчетныйОстатки.СуммаОстатокДт,
+	ХозрасчетныйОстатки.СуммаОстатокДт,
+	"1260",
+	НЕОПРЕДЕЛЕНО,
+	ЗНАЧЕНИЕ(Документ.ИнвентаризацияРасчетовСКонтрагентами.ПустаяСсылка),
+	ХозрасчетныйОстатки.Субконто2,
+	ХозрасчетныйОстатки.Счет.Наименование
+ИЗ
+	РегистрБухгалтерии.Хозрасчетный.Остатки(
+			&amp;Период {(&amp;Период)},
+			Счет В (&amp;СчетаРБП76)
+				И Счет В (&amp;СчетаРасчетов),
+			&amp;ВидСубконтоКонтрагентыРБП,
+			Организация В (&amp;Организация)
+				И &amp;ДополнитьПрочимиСчетами
+				И &amp;ВыводитьСтроку1260
+				И (ВЫРАЗИТЬ(Субконто2 КАК Справочник.РасходыБудущихПериодов)) = ЗНАЧЕНИЕ(Справочник.РасходыБудущихПериодов.ПустаяСсылка)) КАК ХозрасчетныйОстатки
+{ГДЕ
+	ХозрасчетныйОстатки.Счет.* КАК СчетРасчетов,
+	ХозрасчетныйОстатки.Субконто1 КАК ДебиторКредитор,
+	ХозрасчетныйОстатки.СуммаОстатокДт КАК Подтверждено,
+	ХозрасчетныйОстатки.СуммаОстатокДт КАК ПодтвержденоПоДаннымУчета,
+	("1260") КАК СтрокаБаланса,
+	(НЕОПРЕДЕЛЕНО) КАК Документ,
+	(ЗНАЧЕНИЕ(Справочник.ДоговорыКонтрагентов.ПустаяСсылка)) КАК Договор,
+	(ЗНАЧЕНИЕ(Документ.ИнвентаризацияРасчетовСКонтрагентами.ПустаяСсылка)) КАК Ссылка}
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ХозрасчетныйОстатки.Счет,
+	ХозрасчетныйОстатки.Субконто1,
+	НЕОПРЕДЕЛЕНО,
+	ЗНАЧЕНИЕ(Справочник.ДоговорыКонтрагентов.ПустаяСсылка),
+	ХозрасчетныйОстатки.СуммаОстатокДт,
+	ХозрасчетныйОстатки.СуммаОстатокДт,
+	"1260",
+	НЕОПРЕДЕЛЕНО,
+	ЗНАЧЕНИЕ(Документ.ИнвентаризацияРасчетовСКонтрагентами.ПустаяСсылка),
+	NULL,
+	ХозрасчетныйОстатки.Счет.Наименование
+ИЗ
+	РегистрБухгалтерии.Хозрасчетный.Остатки(
+			&amp;Период {(&amp;Период)},
+			Счет В (&amp;СчетаСтроки1260)
+				И Счет В (&amp;СчетаРасчетов),
+			,
+			Организация В (&amp;Организация)
+				И &amp;ДополнитьПрочимиСчетами
+				И &amp;ВыводитьСтроку1260) КАК ХозрасчетныйОстатки
+{ГДЕ
+	ХозрасчетныйОстатки.Счет.* КАК СчетРасчетов,
+	ХозрасчетныйОстатки.Субконто1 КАК ДебиторКредитор,
+	ХозрасчетныйОстатки.СуммаОстатокДт КАК Подтверждено,
+	ХозрасчетныйОстатки.СуммаОстатокДт КАК ПодтвержденоПоДаннымУчета,
+	("1260") КАК СтрокаБаланса,
+	(НЕОПРЕДЕЛЕНО) КАК Документ,
+	(ЗНАЧЕНИЕ(Справочник.ДоговорыКонтрагентов.ПустаяСсылка)) КАК Договор,
+	(ЗНАЧЕНИЕ(Документ.ИнвентаризацияРасчетовСКонтрагентами.ПустаяСсылка)) КАК Ссылка}
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ХозрасчетныйОстатки.Счет,
+	ХозрасчетныйОстатки.Субконто1,
+	ХозрасчетныйОстатки.Субконто1,
+	ХозрасчетныйОстатки.Субконто2,
+	ХозрасчетныйОстатки.СуммаОстатокДт,
+	ХозрасчетныйОстатки.СуммаОстатокДт,
+	"1260",
+	НЕОПРЕДЕЛЕНО,
+	ЗНАЧЕНИЕ(Документ.ИнвентаризацияРасчетовСКонтрагентами.ПустаяСсылка),
+	ХозрасчетныйОстатки.Субконто2,
+	ХозрасчетныйОстатки.Счет.Наименование
+ИЗ
+	РегистрБухгалтерии.Хозрасчетный.Остатки(
+			&amp;Период {(&amp;Период)},
+			Счет В (&amp;Счет76НА)
+				И Счет В (&amp;СчетаРасчетов),
+			&amp;ВидыСубконтоКонтрагентыДоговоры,
+			Организация В (&amp;Организация)
+				И &amp;ДополнитьПрочимиСчетами
+				И &amp;ВыводитьСтроку1260) КАК ХозрасчетныйОстатки
+{ГДЕ
+	ХозрасчетныйОстатки.Счет.* КАК СчетРасчетов,
+	ХозрасчетныйОстатки.Субконто1.* КАК ДебиторКредитор,
+	ХозрасчетныйОстатки.Субконто2.* КАК Договор,
+	ХозрасчетныйОстатки.СуммаОстатокДт КАК Подтверждено,
+	ХозрасчетныйОстатки.СуммаОстатокДт КАК ПодтвержденоПоДаннымУчета,
+	("1260") КАК СтрокаБаланса,
+	(НЕОПРЕДЕЛЕНО) КАК Документ,
+	(ЗНАЧЕНИЕ(Документ.ИнвентаризацияРасчетовСКонтрагентами.ПустаяСсылка)) КАК Ссылка}
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ХозрасчетныйОстатки.Счет,
+	ХозрасчетныйОстатки.Субконто1,
+	ХозрасчетныйОстатки.Субконто1,
+	ХозрасчетныйОстатки.Субконто2,
+	ХозрасчетныйОстатки.СуммаОстатокКт,
+	ХозрасчетныйОстатки.СуммаОстатокКт,
+	"1550",
+	НЕОПРЕДЕЛЕНО,
+	ЗНАЧЕНИЕ(Документ.ИнвентаризацияРасчетовСКонтрагентами.ПустаяСсылка),
+	ХозрасчетныйОстатки.Субконто2,
+	ХозрасчетныйОстатки.Счет.Наименование
+ИЗ
+	РегистрБухгалтерии.Хозрасчетный.Остатки(
+			&amp;Период {(&amp;Период)},
+			Счет В (&amp;Счет76НА)
+				И Счет В (&amp;СчетаРасчетов),
+			&amp;ВидыСубконтоКонтрагентыДоговоры,
+			Организация В (&amp;Организация)
+				И &amp;ДополнитьПрочимиСчетами
+				И &amp;ВыводитьСтроку1550) КАК ХозрасчетныйОстатки
+{ГДЕ
+	ХозрасчетныйОстатки.Счет.* КАК СчетРасчетов,
+	ХозрасчетныйОстатки.Субконто1.* КАК ДебиторКредитор,
+	ХозрасчетныйОстатки.Субконто2.* КАК Договор,
+	ХозрасчетныйОстатки.СуммаОстатокКт КАК Подтверждено,
+	ХозрасчетныйОстатки.СуммаОстатокКт КАК ПодтвержденоПоДаннымУчета,
+	("1550") КАК СтрокаБаланса,
+	(НЕОПРЕДЕЛЕНО) КАК Документ,
+	(ЗНАЧЕНИЕ(Документ.ИнвентаризацияРасчетовСКонтрагентами.ПустаяСсылка)) КАК Ссылка}</query>
+			<autoFillFields>false</autoFillFields>
+		</item>
+		<item xsi:type="DataSetQuery">
+			<name>ПереносЗадолженности</name>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>СчетРасчетов</dataPath>
+				<field>СчетРасчетов</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Счет расчетов</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ДебиторКредитор</dataPath>
+				<field>ДебиторКредитор</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Дебитор кредитор</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+					<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Документ</dataPath>
+				<field>Документ</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Документ</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Договор</dataPath>
+				<field>Договор</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Договор</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+					<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Подтверждено</dataPath>
+				<field>Подтверждено</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Подтверждено</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПодтвержденоПоДаннымУчета</dataPath>
+				<field>ПодтвержденоПоДаннымУчета</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Подтверждено по данным учета</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>СтрокаБаланса</dataPath>
+				<field>СтрокаБаланса</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Строка баланса</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Ссылка</dataPath>
+				<field>Ссылка</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Ссылка</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ДебиторКредиторГруппировка</dataPath>
+				<field>ДебиторКредиторГруппировка</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Дебитор кредитор группировка</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<dataSource>ИсточникДанных1</dataSource>
+			<query>ВЫБРАТЬ
+	ХозрасчетныйОстатки.Счет КАК СчетРасчетов,
+	ХозрасчетныйОстатки.Субконто1 КАК ДебиторКредитор,
+	ХозрасчетныйОстатки.Субконто2 КАК Договор,
+	ВЫБОР
+		КОГДА ХозрасчетныйОстатки.Счет.Вид = ЗНАЧЕНИЕ(ВидСчета.Активный)
+			ТОГДА -ХозрасчетныйОстатки.СуммаОстатокДт
+		ИНАЧЕ -ХозрасчетныйОстатки.СуммаОстатокКт
+	КОНЕЦ КАК Подтверждено,
+	ВЫБОР
+		КОГДА ХозрасчетныйОстатки.Счет.Вид = ЗНАЧЕНИЕ(ВидСчета.Активный)
+			ТОГДА -ХозрасчетныйОстатки.СуммаОстатокДт
+		ИНАЧЕ -ХозрасчетныйОстатки.СуммаОстатокКт
+	КОНЕЦ КАК ПодтвержденоПоДаннымУчета,
+	ВЫБОР
+		КОГДА ХозрасчетныйОстатки.Счет.Вид = ЗНАЧЕНИЕ(ВидСчета.Активный)
+			ТОГДА "1520"
+		ИНАЧЕ "1230"
+	КОНЕЦ КАК СтрокаБаланса,
+	НЕОПРЕДЕЛЕНО КАК Документ,
+	ЗНАЧЕНИЕ(Документ.ИнвентаризацияРасчетовСКонтрагентами.ПустаяСсылка) КАК Ссылка,
+	ХозрасчетныйОстатки.Субконто1 КАК Субконто1,
+	ХозрасчетныйОстатки.Субконто2 КАК Субконто2,
+	ХозрасчетныйОстатки.Счет.Наименование КАК ДебиторКредиторГруппировка
+{ВЫБРАТЬ
+	СчетРасчетов.*,
+	ДебиторКредитор.*,
+	Договор.*,
+	Подтверждено,
+	ПодтвержденоПоДаннымУчета,
+	СтрокаБаланса,
+	Документ,
+	Ссылка.*,
+	ДебиторКредиторГруппировка}
+ИЗ
+	РегистрБухгалтерии.Хозрасчетный.Остатки(
+			&amp;Период {(&amp;Период)},
+			Счет В (&amp;СчетаРасчетовПереносСальдо)
+				И Счет В (&amp;СчетаРасчетов)
+				И ВЫБОР
+					КОГДА Счет.Вид = ЗНАЧЕНИЕ(ВидСчета.Активный)
+						ТОГДА &amp;ВыводитьСтроку1520
+					ИНАЧЕ &amp;ВыводитьСтроку1230
+				КОНЕЦ,
+			&amp;ВидыСубконтоКонтрагентыДоговоры,
+			Организация В (&amp;Организация)) КАК ХозрасчетныйОстатки
+ГДЕ
+	ВЫБОР
+			КОГДА ХозрасчетныйОстатки.Счет.Вид = ЗНАЧЕНИЕ(ВидСчета.Активный)
+				ТОГДА ХозрасчетныйОстатки.СуммаОстатокДт
+			ИНАЧЕ ХозрасчетныйОстатки.СуммаОстатокКт
+		КОНЕЦ &lt; 0
+{ГДЕ
+	ХозрасчетныйОстатки.Счет.* КАК СчетРасчетов,
+	ХозрасчетныйОстатки.Субконто1.* КАК ДебиторКредитор,
+	ХозрасчетныйОстатки.Субконто2.* КАК Договор,
+	ХозрасчетныйОстатки.СуммаОстатокДт КАК Подтверждено,
+	ХозрасчетныйОстатки.СуммаОстатокДт КАК ПодтвержденоПоДаннымУчета,
+	(ВЫБОР
+			КОГДА ХозрасчетныйОстатки.Счет.Вид = ЗНАЧЕНИЕ(ВидСчета.Активный)
+				ТОГДА "1520"
+			ИНАЧЕ "1230"
+		КОНЕЦ) КАК СтрокаБаланса,
+	(НЕОПРЕДЕЛЕНО) КАК Документ,
+	(ЗНАЧЕНИЕ(Документ.ИнвентаризацияРасчетовСКонтрагентами.ПустаяСсылка)) КАК Ссылка}</query>
+			<autoFillFields>false</autoFillFields>
+		</item>
+		<item xsi:type="DataSetQuery">
+			<name>ФинансовыеФложения</name>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>СчетРасчетов</dataPath>
+				<field>СчетРасчетов</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Счет расчетов</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ДебиторКредитор</dataPath>
+				<field>ДебиторКредитор</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Дебитор кредитор</v8:content>
+					</v8:item>
+				</title>
+				<role>
+					<dcscom:dimension>true</dcscom:dimension>
+					<dcscom:ignoreNullValues>true</dcscom:ignoreNullValues>
+				</role>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Подтверждено</dataPath>
+				<field>Подтверждено</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Подтверждено</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ПодтвержденоПоДаннымУчета</dataPath>
+				<field>ПодтвержденоПоДаннымУчета</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Подтверждено по данным учета</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>СтрокаБаланса</dataPath>
+				<field>СтрокаБаланса</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Строка баланса</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ДебиторКредиторГруппировка</dataPath>
+				<field>ДебиторКредиторГруппировка</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Дебитор кредитор группировка</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Документ</dataPath>
+				<field>Документ</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Документ</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Договор</dataPath>
+				<field>Договор</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Договор</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Ссылка</dataPath>
+				<field>Ссылка</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Ссылка</v8:content>
+					</v8:item>
+				</title>
+			</field>
+			<dataSource>ИсточникДанных1</dataSource>
+			<query>ВЫБРАТЬ
+	ХозрасчетныйОстатки.Счет КАК СчетРасчетов,
+	ХозрасчетныйОстатки.Субконто1 КАК ДебиторКредитор,
+	ХозрасчетныйОстатки.Субконто1 КАК Субконто1,
+	-ХозрасчетныйОстатки.СуммаОстатокКт КАК Подтверждено,
+	-ХозрасчетныйОстатки.СуммаОстатокКт КАК ПодтвержденоПоДаннымУчета,
+	"1240" КАК СтрокаБаланса,
+	ЗНАЧЕНИЕ(Справочник.ДоговорыКонтрагентов.ПустаяСсылка) КАК Договор,
+	НЕОПРЕДЕЛЕНО КАК Документ,
+	ЗНАЧЕНИЕ(Документ.ИнвентаризацияРасчетовСКонтрагентами.ПустаяСсылка) КАК Ссылка,
+	ХозрасчетныйОстатки.Счет.Наименование КАК ДебиторКредиторГруппировка,
+	ХозрасчетныйОстатки.Субконто2 КАК Субконто2
+{ВЫБРАТЬ
+	СчетРасчетов.*,
+	ДебиторКредитор,
+	Подтверждено,
+	ПодтвержденоПоДаннымУчета,
+	СтрокаБаланса,
+	Договор,
+	Документ,
+	Ссылка,
+	ДебиторКредиторГруппировка}
+ИЗ
+	РегистрБухгалтерии.Хозрасчетный.Остатки(
+			&amp;Период {(&amp;Период)},
+			Счет В (&amp;Счет59)
+				И Счет В (&amp;СчетаРасчетов),
+			,
+			Организация В (&amp;Организация)
+				И &amp;ДополнитьПрочимиСчетами
+				И &amp;ВыводитьСтроку1240) КАК ХозрасчетныйОстатки
+{ГДЕ
+	ХозрасчетныйОстатки.Счет.* КАК СчетРасчетов,
+	ХозрасчетныйОстатки.Субконто1 КАК ДебиторКредитор,
+	ХозрасчетныйОстатки.СуммаОстатокКт КАК Подтверждено,
+	ХозрасчетныйОстатки.СуммаОстатокКт КАК ПодтвержденоПоДаннымУчета,
+	("1240") КАК СтрокаБаланса,
+	(ЗНАЧЕНИЕ(Справочник.ДоговорыКонтрагентов.ПустаяСсылка)) КАК Договор,
+	(НЕОПРЕДЕЛЕНО) КАК Документ,
+	(ЗНАЧЕНИЕ(Документ.ИнвентаризацияРасчетовСКонтрагентами.ПустаяСсылка)) КАК Ссылка}
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	ХозрасчетныйОстатки.Счет,
+	ХозрасчетныйОстатки.Субконто1,
+	ХозрасчетныйОстатки.Субконто1,
+	ХозрасчетныйОстатки.СуммаОстатокДт,
+	ХозрасчетныйОстатки.СуммаОстатокДт,
+	"1240",
+	ЗНАЧЕНИЕ(Справочник.ДоговорыКонтрагентов.ПустаяСсылка),
+	НЕОПРЕДЕЛЕНО,
+	ЗНАЧЕНИЕ(Документ.ИнвентаризацияРасчетовСКонтрагентами.ПустаяСсылка),
+	ХозрасчетныйОстатки.Счет.Наименование,
+	ХозрасчетныйОстатки.Субконто2
+ИЗ
+	РегистрБухгалтерии.Хозрасчетный.Остатки(
+			&amp;Период {(&amp;Период)},
+			Счет В (&amp;Счета55)
+				И Счет В (&amp;СчетаРасчетов),
+			,
+			Организация В (&amp;Организация)
+				И &amp;ДополнитьПрочимиСчетами
+				И &amp;ВыводитьСтроку1240) КАК ХозрасчетныйОстатки
+{ГДЕ
+	ХозрасчетныйОстатки.Счет.* КАК СчетРасчетов,
+	ХозрасчетныйОстатки.Субконто1 КАК ДебиторКредитор,
+	ХозрасчетныйОстатки.СуммаОстатокДт КАК Подтверждено,
+	ХозрасчетныйОстатки.СуммаОстатокДт КАК ПодтвержденоПоДаннымУчета,
+	("1240") КАК СтрокаБаланса,
+	(ЗНАЧЕНИЕ(Справочник.ДоговорыКонтрагентов.ПустаяСсылка)) КАК Договор,
+	(НЕОПРЕДЕЛЕНО) КАК Документ,
+	(ЗНАЧЕНИЕ(Документ.ИнвентаризацияРасчетовСКонтрагентами.ПустаяСсылка)) КАК Ссылка}</query>
+			<autoFillFields>false</autoFillFields>
+			<useQueryGroupIfPossible>false</useQueryGroupIfPossible>
+		</item>
+	</dataSet>
+	<calculatedField>
+		<dataPath>Расхождение</dataPath>
+		<expression>ПодтвержденоПоДаннымУчета - ПодтвержденоПоАктам</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Расхождение</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:decimal</v8:Type>
+			<v8:NumberQualifiers>
+				<v8:Digits>15</v8:Digits>
+				<v8:FractionDigits>2</v8:FractionDigits>
+				<v8:AllowedSign>Any</v8:AllowedSign>
+			</v8:NumberQualifiers>
+		</valueType>
+	</calculatedField>
+	<totalField>
+		<dataPath>ДатаВозникновения</dataPath>
+		<expression>Минимум(ДатаВозникновения)</expression>
+		<group>ДебиторКредитор</group>
+		<group>ДебиторКредитор Иерархия</group>
+		<group>ДебиторКредиторГруппировка</group>
+		<group>ДебиторКредиторГруппировка Иерархия</group>
+		<group>Договор</group>
+		<group>Договор Иерархия</group>
+		<group>Документ</group>
+	</totalField>
+	<totalField>
+		<dataPath>ДатаПогашения</dataPath>
+		<expression>Максимум(ДатаПогашения)</expression>
+		<group>ДебиторКредитор</group>
+		<group>ДебиторКредитор Иерархия</group>
+		<group>ДебиторКредиторГруппировка</group>
+		<group>ДебиторКредиторГруппировка Иерархия</group>
+		<group>Договор</group>
+		<group>Договор Иерархия</group>
+		<group>Документ</group>
+	</totalField>
+	<totalField>
+		<dataPath>Подтверждено</dataPath>
+		<expression>Сумма(Подтверждено)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Просрочено</dataPath>
+		<expression>Сумма(Просрочено)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПодтвержденоПоАктам</dataPath>
+		<expression>Сумма(ПодтвержденоПоАктам)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ПодтвержденоПоДаннымУчета</dataPath>
+		<expression>Сумма(ПодтвержденоПоДаннымУчета)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Расхождение</dataPath>
+		<expression>Сумма(Расхождение)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>ИстекСрокДавности</dataPath>
+		<expression>Сумма(ИстекСрокДавности)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>НеПодтверждено</dataPath>
+		<expression>Сумма(НеПодтверждено)</expression>
+	</totalField>
+	<totalField>
+		<dataPath>СрокЗадолженности</dataPath>
+		<expression>Документы.ИнвентаризацияРасчетовСКонтрагентами.ПредставлениеСрокаЗадолженности(Минимум(СрокЗадолженности), Максимум(СрокЗадолженности))</expression>
+	</totalField>
+	<totalField>
+		<dataPath>Комментарий</dataPath>
+		<expression>СоединитьСтроки(ВЫБОР
+КОГДА Комментарий = "" 
+     ТОГДА NULL 
+Иначе Комментарий
+КОНЕЦ, "
+")</expression>
+		<group>ДебиторКредитор</group>
+		<group>ДебиторКредитор Иерархия</group>
+		<group>ДебиторКредиторГруппировка</group>
+		<group>ДебиторКредиторГруппировка Иерархия</group>
+		<group>Договор</group>
+		<group>Договор Иерархия</group>
+		<group>Документ</group>
+	</totalField>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ДатаОтчета</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дата отчета</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Организация</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Организация</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.Организации</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+	</parameter>
+	<parameter>
+		<name>ДебиторскаяЗадолженность</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дебиторская задолженность</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:EnumRef.ВидыЗадолженности</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">Перечисление.ВидыЗадолженности.Дебиторская</value>
+		<useRestriction>true</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+	</parameter>
+	<parameter>
+		<name>СубконтоКонтрагентыСФВыданные</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Субконто контрагенты СФВыданные</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfCharacteristicTypesRef.ВидыСубконтоХозрасчетные</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">ПланВидовХарактеристик.ВидыСубконтоХозрасчетные.Контрагенты</value>
+		<value xsi:type="dcscor:DesignTimeValue">ПланВидовХарактеристик.ВидыСубконтоХозрасчетные.СФВыданные</value>
+		<useRestriction>true</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+	</parameter>
+	<parameter>
+		<name>СубконтоКонтрагентыСФПолученные</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Субконто контрагенты СФПолученные</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfCharacteristicTypesRef.ВидыСубконтоХозрасчетные</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">ПланВидовХарактеристик.ВидыСубконтоХозрасчетные.Контрагенты</value>
+		<value xsi:type="dcscor:DesignTimeValue">ПланВидовХарактеристик.ВидыСубконтоХозрасчетные.СФПолученные</value>
+		<useRestriction>true</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+	</parameter>
+	<parameter>
+		<name>Счет76АВ</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Счет76 АВ</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfAccountsRef.Хозрасчетный</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.НДСпоАвансамИПредоплатам</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Счет76ВА</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Счет76 ВА</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfAccountsRef.Хозрасчетный</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.НДСпоАвансамИПредоплатамВыданным</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>СчетаРасчетов</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Счета расчетов</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfAccountsRef.Хозрасчетный</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+	</parameter>
+	<parameter>
+		<name>ВидСубконтоКонтрагентыРБП</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Вид субконто контрагенты РБП</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfCharacteristicTypesRef.ВидыСубконтоХозрасчетные</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">ПланВидовХарактеристик.ВидыСубконтоХозрасчетные.Контрагенты</value>
+		<value xsi:type="dcscor:DesignTimeValue">ПланВидовХарактеристик.ВидыСубконтоХозрасчетные.РасходыБудущихПериодов</value>
+		<useRestriction>true</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+	</parameter>
+	<parameter>
+		<name>ДополнитьПрочимиСчетами</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Дополнить прочими счетами</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>СчетаРБП76</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Счета РБП76</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfAccountsRef.Хозрасчетный</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.ПлатежиПоДобровольномуСтрахованиюРаботников</value>
+		<value xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.ПлатежиПоПрочимВидамСтрахования</value>
+		<useRestriction>true</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+	</parameter>
+	<parameter>
+		<name>ВидыСубконтоСДокументами</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Виды субконто с документами</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfCharacteristicTypesRef.ВидыСубконтоХозрасчетные</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">ПланВидовХарактеристик.ВидыСубконтоХозрасчетные.Контрагенты</value>
+		<value xsi:type="dcscor:DesignTimeValue">ПланВидовХарактеристик.ВидыСубконтоХозрасчетные.Договоры</value>
+		<value xsi:type="dcscor:DesignTimeValue">ПланВидовХарактеристик.ВидыСубконтоХозрасчетные.ДокументыРасчетовСКонтрагентами</value>
+		<useRestriction>true</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+	</parameter>
+	<parameter>
+		<name>ВидСубконтоРБП</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Вид субконто РБП</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfCharacteristicTypesRef.ВидыСубконтоХозрасчетные</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">ПланВидовХарактеристик.ВидыСубконтоХозрасчетные.РасходыБудущихПериодов</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ВидыСубконтоКонтрагентыДоговоры</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Виды субконто контрагенты договоры</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfCharacteristicTypesRef.ВидыСубконтоХозрасчетные</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">ПланВидовХарактеристик.ВидыСубконтоХозрасчетные.Контрагенты</value>
+		<value xsi:type="dcscor:DesignTimeValue">ПланВидовХарактеристик.ВидыСубконтоХозрасчетные.Договоры</value>
+		<useRestriction>true</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+	</parameter>
+	<parameter>
+		<name>СчетаСтроки1260</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Счета строки1260</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfAccountsRef.Хозрасчетный</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.АкцизыПоОплаченнымМатериальнымЦенностям</value>
+		<value xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.ДенежныеДокументы</value>
+		<value xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.ДенежныеДокументыВал</value>
+		<value xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.НДСпоЭкспортуКВозмещению</value>
+		<value xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.НДСНачисленныйПоОтгрузке</value>
+		<value xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.НедостачиИПотериОтПорчиЦенностей</value>
+		<useRestriction>true</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+	</parameter>
+	<parameter>
+		<name>Счет59</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Счет59</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfAccountsRef.Хозрасчетный</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+	</parameter>
+	<parameter>
+		<name>Счет9601</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Счет9601</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfAccountsRef.Хозрасчетный</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+	</parameter>
+	<parameter>
+		<name>Счет9609</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Счет9609</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfAccountsRef.Хозрасчетный</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+	</parameter>
+	<parameter>
+		<name>Счет63</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Счет63</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfAccountsRef.Хозрасчетный</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+	</parameter>
+	<parameter>
+		<name>Счет76НА</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Счет76 НА</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfAccountsRef.Хозрасчетный</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+	</parameter>
+	<parameter>
+		<name>Счет97</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Счет97</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfAccountsRef.Хозрасчетный</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+	</parameter>
+	<parameter>
+		<name>СчетаРасчетовПереносСальдо</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Счета расчетов перенос сальдо</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfAccountsRef.Хозрасчетный</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+	</parameter>
+	<parameter>
+		<name>СчетаИсключения</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Счета исключения</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfAccountsRef.Хозрасчетный</v8:Type>
+		</valueType>
+		<useRestriction>true</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+	</parameter>
+	<parameter>
+		<name>Счета55</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Счета55</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfAccountsRef.Хозрасчетный</v8:Type>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<valueListAllowed>true</valueListAllowed>
+	</parameter>
+	<parameter>
+		<name>ВыводитьСтроку1230</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Выводить строку1230</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ВыводитьСтроку1520</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Выводить строку1520</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ВыводитьСтроку1540</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Выводить строку1540</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ВыводитьСтроку1260</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Выводить строку1260</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ВыводитьСтроку1550</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Выводить строку1550</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ВыводитьСтроку1240</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Выводить строку1240</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+		<value xsi:type="xs:boolean">false</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<template>
+		<name>Макет1</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">ВидЗадолженности</dcsat:value>
+					</dcsat:item>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content> задолженность</v8:content>
+							</v8:item>
+						</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Arial" height="10" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Left</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Размещение</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Wrap</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">31.125</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">31.125</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Расшифровка</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:Parameter">ВидЗадолженностиРасшифровка</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ОбъединятьПоГоризонтали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">31.125</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">31.125</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ОбъединятьПоВертикали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ОбъединятьПоГоризонтали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ОбъединятьПоВертикали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>ВидЗадолженности</dcsat:name>
+			<dcsat:expression>Представление(ВидЗадолженности)</dcsat:expression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:DetailsAreaTemplateParameter">
+			<dcsat:name>ВидЗадолженностиРасшифровка</dcsat:name>
+			<dcsat:fieldExpression>
+				<dcsat:field>ВидЗадолженности</dcsat:field>
+				<dcsat:expression>ВидЗадолженности</dcsat:expression>
+			</dcsat:fieldExpression>
+			<dcsat:mainAction>OpenValue</dcsat:mainAction>
+		</parameter>
+	</template>
+	<template>
+		<name>Макет2</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">СтрокаБаланса</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" faceName="Arial" height="10" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Left</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ВертикальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:VerticalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>Размещение</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:DataCompositionTextPlacementType">Wrap</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">60.625</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">60.625</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ОбъединятьПоГоризонтали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">60.625</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">60.625</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ОбъединятьПоВертикали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ОбъединятьПоГоризонтали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>ОбъединятьПоВертикали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>СтрокаБаланса</dcsat:name>
+			<dcsat:expression>Представление(СтрокаБаланса)</dcsat:expression>
+		</parameter>
+	</template>
+	<groupTemplate>
+		<groupName>ВидЗадолженности</groupName>
+		<templateType>Header</templateType>
+		<template>Макет1</template>
+	</groupTemplate>
+	<groupTemplate>
+		<groupName>СтрокаБаланса</groupName>
+		<templateType>Header</templateType>
+		<template>Макет2</template>
+	</groupTemplate>
+	<settingsVariant>
+		<dcsset:name>РасшифровкаЗадолженности</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Расшифровка задолженности</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Подтверждено</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Организация</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>СчетаРасчетов</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>ВидЗадолженности</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>СчетРасчетов</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Подтверждено</dcsset:field>
+					<dcsset:orderType>Desc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>СрокЗадолженности</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>ДатаПогашения</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>ДатаВозникновения</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>Комментарий</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Текст</dcscor:parameter>
+							<dcscor:value xsi:type="xs:string"/>
+						</dcscor:item>
+					</dcsset:appearance>
+					<dcsset:useInGroup>DontUse</dcsset:useInGroup>
+					<dcsset:useInHierarchicalGroup>DontUse</dcsset:useInHierarchicalGroup>
+					<dcsset:useInFieldsHeader>DontUse</dcsset:useInFieldsHeader>
+					<dcsset:useInHeader>DontUse</dcsset:useInHeader>
+					<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+					<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection/>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ЦветФона</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">web:MediumGreen</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" ref="style:TextFont" faceName="Arial" height="10" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+						</dcscor:item>
+					</dcsset:appearance>
+					<dcsset:useInGroup>DontUse</dcsset:useInGroup>
+					<dcsset:useInHierarchicalGroup>DontUse</dcsset:useInHierarchicalGroup>
+					<dcsset:useInFieldsHeader>DontUse</dcsset:useInFieldsHeader>
+					<dcsset:useInHeader>DontUse</dcsset:useInHeader>
+					<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+					<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection/>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ЦветФона</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">web:MediumGreen</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" ref="style:TextFont" faceName="Arial" height="10" kind="StyleItem"/>
+						</dcscor:item>
+					</dcsset:appearance>
+					<dcsset:useInGroup>DontUse</dcsset:useInGroup>
+					<dcsset:useInHierarchicalGroup>DontUse</dcsset:useInHierarchicalGroup>
+					<dcsset:useInOverall>DontUse</dcsset:useInOverall>
+					<dcsset:useInHeader>DontUse</dcsset:useInHeader>
+					<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+					<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+				</dcsset:item>
+			</dcsset:conditionalAppearance>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьПараметрыДанных</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:name>ВидЗадолженности</dcsset:name>
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>ВидЗадолженности</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:outputParameters>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>МакетОформления</dcscor:parameter>
+						<dcscor:value xsi:type="xs:string">БезОформления</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>РасположениеИтогов</dcscor:parameter>
+						<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+					</dcscor:item>
+				</dcsset:outputParameters>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:name>Группировка</dcsset:name>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>СчетРасчетов</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>ДебиторКредиторГруппировка</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+					</dcsset:item>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+	<settingsVariant>
+		<dcsset:name>РасшифровкаЗадолженностиПоСтрокамБаланса</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Расшифровка задолженности по строкам баланса</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Подтверждено</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Организация</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>СчетаРасчетов</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>СтрокаБаланса</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>СчетРасчетов</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Подтверждено</dcsset:field>
+					<dcsset:orderType>Desc</dcsset:orderType>
+				</dcsset:item>
+			</dcsset:order>
+			<dcsset:conditionalAppearance>
+				<dcsset:item>
+					<dcsset:selection>
+						<dcsset:item>
+							<dcsset:field>СрокЗадолженности</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>ДатаПогашения</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>ДатаВозникновения</dcsset:field>
+						</dcsset:item>
+						<dcsset:item>
+							<dcsset:field>Комментарий</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Текст</dcscor:parameter>
+							<dcscor:value xsi:type="xs:string"/>
+						</dcscor:item>
+					</dcsset:appearance>
+					<dcsset:useInGroup>DontUse</dcsset:useInGroup>
+					<dcsset:useInHierarchicalGroup>DontUse</dcsset:useInHierarchicalGroup>
+					<dcsset:useInFieldsHeader>DontUse</dcsset:useInFieldsHeader>
+					<dcsset:useInHeader>DontUse</dcsset:useInHeader>
+					<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+					<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection/>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ЦветФона</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">web:MediumGreen</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" ref="style:TextFont" faceName="Arial" height="10" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+						</dcscor:item>
+					</dcsset:appearance>
+					<dcsset:useInGroup>DontUse</dcsset:useInGroup>
+					<dcsset:useInHierarchicalGroup>DontUse</dcsset:useInHierarchicalGroup>
+					<dcsset:useInFieldsHeader>DontUse</dcsset:useInFieldsHeader>
+					<dcsset:useInHeader>DontUse</dcsset:useInHeader>
+					<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+					<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+				</dcsset:item>
+				<dcsset:item>
+					<dcsset:selection/>
+					<dcsset:filter/>
+					<dcsset:appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ЦветФона</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Color">web:MediumGreen</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Шрифт</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:Font" ref="style:TextFont" faceName="Arial" height="10" kind="StyleItem"/>
+						</dcscor:item>
+					</dcsset:appearance>
+					<dcsset:useInGroup>DontUse</dcsset:useInGroup>
+					<dcsset:useInHierarchicalGroup>DontUse</dcsset:useInHierarchicalGroup>
+					<dcsset:useInOverall>DontUse</dcsset:useInOverall>
+					<dcsset:useInHeader>DontUse</dcsset:useInHeader>
+					<dcsset:useInParameters>DontUse</dcsset:useInParameters>
+					<dcsset:useInFilter>DontUse</dcsset:useInFilter>
+				</dcsset:item>
+			</dcsset:conditionalAppearance>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьПараметрыДанных</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+					<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:name>СтрокаБаланса</dcsset:name>
+				<dcsset:groupItems>
+					<dcsset:item xsi:type="dcsset:GroupItemField">
+						<dcsset:field>СтрокаБаланса</dcsset:field>
+						<dcsset:groupType>Items</dcsset:groupType>
+						<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+						<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+						<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+					</dcsset:item>
+				</dcsset:groupItems>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+				<dcsset:outputParameters>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>МакетОформления</dcscor:parameter>
+						<dcscor:value xsi:type="xs:string">БезОформления</dcscor:value>
+					</dcscor:item>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>РасположениеИтогов</dcscor:parameter>
+						<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+					</dcscor:item>
+				</dcsset:outputParameters>
+				<dcsset:item xsi:type="dcsset:StructureItemGroup">
+					<dcsset:name>Группировка</dcsset:name>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>СчетРасчетов</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>ДебиторКредиторГруппировка</dcsset:field>
+								<dcsset:groupType>Items</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+					</dcsset:item>
+				</dcsset:item>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

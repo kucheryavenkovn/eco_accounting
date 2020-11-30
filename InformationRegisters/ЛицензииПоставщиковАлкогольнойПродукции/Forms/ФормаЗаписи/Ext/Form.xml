@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="FillCheckProcessingAtServer">ОбработкаПроверкиЗаполненияНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаПериод" id="27">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа период</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа период</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПериодРасширеннаяПодсказка" id="28"/>
+			<ChildItems>
+				<InputField name="Период" id="1">
+					<DataPath>Запись.Period</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Срок действия</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ПериодКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="ПериодРасширеннаяПодсказка" id="13"/>
+				</InputField>
+				<LabelDecoration name="ДекорацияПериод" id="29">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>	-	</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДекорацияПериодКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="ДекорацияПериодРасширеннаяПодсказка" id="31"/>
+				</LabelDecoration>
+				<InputField name="ДатаОкончания" id="7">
+					<DataPath>Запись.ДатаОкончания</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<ContextMenu name="ДатаОкончанияКонтекстноеМеню" id="8"/>
+					<ExtendedTooltip name="ДатаОкончанияРасширеннаяПодсказка" id="16"/>
+				</InputField>
+				<Button name="ВыбратьПроизвольныйПериод" id="32">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.ВыбратьПроизвольныйПериод</CommandName>
+					<ExtendedTooltip name="ВыбратьПроизвольныйПериодРасширеннаяПодсказка" id="33"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Поставщик" id="3">
+			<DataPath>Запись.Поставщик</DataPath>
+			<ContextMenu name="ПоставщикКонтекстноеМеню" id="4"/>
+			<ExtendedTooltip name="ПоставщикРасширеннаяПодсказка" id="14"/>
+		</InputField>
+		<InputField name="СерияНомер" id="9">
+			<DataPath>Запись.СерияНомер</DataPath>
+			<ContextMenu name="СерияНомерКонтекстноеМеню" id="10"/>
+			<ExtendedTooltip name="СерияНомерРасширеннаяПодсказка" id="17"/>
+		</InputField>
+		<InputField name="КемВыдана" id="11">
+			<DataPath>Запись.КемВыдана</DataPath>
+			<ContextMenu name="КемВыданаКонтекстноеМеню" id="12"/>
+			<ExtendedTooltip name="КемВыданаРасширеннаяПодсказка" id="18"/>
+		</InputField>
+		<UsualGroup name="ГруппаЛицензияПроизводителя" id="19">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Лицензия производителя</v8:content>
+				</v8:item>
+			</Title>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаЛицензияПроизводителяРасширеннаяПодсказка" id="20"/>
+			<ChildItems>
+				<RadioButtonField name="ВидДеятельности" id="39">
+					<DataPath>ВидДеятельности</DataPath>
+					<RadioButtonType>Tumbler</RadioButtonType>
+					<ChoiceList>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Закупка и поставка</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xs:decimal">0</Value>
+							</xr:Value>
+						</xr:Item>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Производство и поставка</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xs:decimal">1</Value>
+							</xr:Value>
+						</xr:Item>
+					</ChoiceList>
+					<ContextMenu name="ВидДеятельностиКонтекстноеМеню" id="40"/>
+					<ExtendedTooltip name="ВидДеятельностиРасширеннаяПодсказка" id="41"/>
+					<Events>
+						<Event name="OnChange">ВидДеятельностиПриИзменении</Event>
+					</Events>
+				</RadioButtonField>
+				<UsualGroup name="ГруппаВидПродукции" id="37">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа вид продукции</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа вид продукции</v8:content>
+						</v8:item>
+					</ToolTip>
+					<HorizontalStretch>true</HorizontalStretch>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаВидПродукцииРасширеннаяПодсказка" id="38"/>
+					<ChildItems>
+						<InputField name="КодВидаПродукции" id="21">
+							<DataPath>Запись.КодВидаПродукции</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Вид продукции</v8:content>
+								</v8:item>
+							</Title>
+							<DropListButton>true</DropListButton>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
+							<TextEdit>false</TextEdit>
+							<ContextMenu name="КодВидаПродукцииКонтекстноеМеню" id="22"/>
+							<ExtendedTooltip name="КодВидаПродукцииРасширеннаяПодсказка" id="23"/>
+							<Events>
+								<Event name="OnChange">КодВидаПродукцииПриИзменении</Event>
+							</Events>
+						</InputField>
+						<LabelField name="НаименованиеВидаПродукции" id="24">
+							<DataPath>НаименованиеВидаПродукции</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<Width>68</Width>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ContextMenu name="НаименованиеВидаПродукцииКонтекстноеМеню" id="25"/>
+							<ExtendedTooltip name="НаименованиеВидаПродукцииРасширеннаяПодсказка" id="26"/>
+						</LabelField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="ВидЛицензии" id="5">
+			<DataPath>Запись.ВидЛицензии</DataPath>
+			<ContextMenu name="ВидЛицензииКонтекстноеМеню" id="6"/>
+			<ExtendedTooltip name="ВидЛицензииРасширеннаяПодсказка" id="15"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Запись" id="1">
+			<Type>
+				<v8:Type>cfg:InformationRegisterRecordManager.ЛицензииПоставщиковАлкогольнойПродукции</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="НаименованиеВидаПродукции" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Наименование вида продукции</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>150</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ВидДеятельности" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид деятельности</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>1</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ВыбратьПроизвольныйПериод" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбрать произвольный период</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбрать период</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.InputFieldSelect</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ВыбратьПроизвольныйПериод</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

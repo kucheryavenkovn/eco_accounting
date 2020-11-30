@@ -1,0 +1,938 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<Customizable>false</Customizable>
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="КнопкаОК" id="98">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<SkipOnInput>false</SkipOnInput>
+				<CommandName>Form.Command.ОК</CommandName>
+				<ExtendedTooltip name="КнопкаОКExtendedTooltip" id="133"/>
+			</Button>
+			<Button name="КнопкаОтмена" id="122">
+				<Type>CommandBarButton</Type>
+				<SkipOnInput>false</SkipOnInput>
+				<CommandName>Form.Command.Отмена</CommandName>
+				<ExtendedTooltip name="КнопкаОтменаРасширеннаяПодсказка" id="134"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="BeforeClose">ПередЗакрытием</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<CheckBoxField name="ПеречислениеВБюджет" id="256">
+			<DataPath>ПеречислениеВБюджет</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Требуется указывать реквизиты платежа в бюджет</v8:content>
+				</v8:item>
+			</Title>
+			<TitleLocation>Right</TitleLocation>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="ПеречислениеВБюджетКонтекстноеМеню" id="257"/>
+			<ExtendedTooltip name="ПеречислениеВБюджетРасширеннаяПодсказка" id="258"/>
+			<Events>
+				<Event name="OnChange">ПеречислениеВБюджетПриИзменении</Event>
+			</Events>
+		</CheckBoxField>
+		<UsualGroup name="ГруппаРеквизитыПлатежаВБюджет" id="259">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Реквизиты платежа в бюджет</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаРеквизитыПлатежаВБюджетРасширеннаяПодсказка" id="260"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаКБК" id="126">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>КБК</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаКБКРасширеннаяПодсказка" id="148"/>
+					<ChildItems>
+						<InputField name="КБК" id="200">
+							<DataPath>КБК</DataPath>
+							<ToolTipRepresentation>None</ToolTipRepresentation>
+							<HorizontalStretch>false</HorizontalStretch>
+							<Mask>99999999999999999999</Mask>
+							<ContextMenu name="КБККонтекстноеМеню" id="201"/>
+							<ExtendedTooltip name="КБКРасширеннаяПодсказка" id="202"/>
+							<Events>
+								<Event name="OnChange">КБКПриИзменении</Event>
+							</Events>
+						</InputField>
+						<Button name="КонструкторКБК" id="127">
+							<Type>Hyperlink</Type>
+							<CommandName>Form.Command.КонструкторКБК</CommandName>
+							<ExtendedTooltip name="КонструкторКБКРасширеннаяПодсказка" id="150"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+				<LabelField name="КБК_Администратор" id="228">
+					<DataPath>КБК_Администратор</DataPath>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Правила заполнения платежного поручения зависят от того, кто администрирует платеж</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<TextColor>style:ТекстПредопределенногоЗначения</TextColor>
+					<ContextMenu name="КБК_АдминистраторКонтекстноеМеню" id="229"/>
+					<ExtendedTooltip name="КБК_АдминистраторРасширеннаяПодсказка" id="230"/>
+				</LabelField>
+				<LabelField name="КБК_Наименование" id="222">
+					<DataPath>КБК_Наименование</DataPath>
+					<TitleLocation>Left</TitleLocation>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MaxWidth>95</MaxWidth>
+					<Height>4</Height>
+					<VerticalStretch>false</VerticalStretch>
+					<TextColor>style:ТекстПредопределенногоЗначения</TextColor>
+					<ContextMenu name="КБК_НаименованиеКонтекстноеМеню" id="223"/>
+					<ExtendedTooltip name="КБК_НаименованиеРасширеннаяПодсказка" id="224"/>
+				</LabelField>
+				<InputField name="КодТерритории" id="16">
+					<DataPath>КодТерритории</DataPath>
+					<Width>15</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<Mask>99999999999</Mask>
+					<ContextMenu name="КодТерриторииКонтекстноеМеню" id="17"/>
+					<ExtendedTooltip name="КодТерриторииРасширеннаяПодсказка" id="154"/>
+				</InputField>
+				<InputField name="КодТерритории8" id="261">
+					<DataPath>КодТерритории8</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Код ОКТМО</v8:content>
+						</v8:item>
+					</Title>
+					<Width>15</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<Mask>99999999</Mask>
+					<ContextMenu name="КодТерритории8КонтекстноеМеню" id="262"/>
+					<ExtendedTooltip name="КодТерритории8РасширеннаяПодсказка" id="263"/>
+					<Events>
+						<Event name="OnChange">КодТерритории8ПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="СтатусПлательщика" id="3">
+					<DataPath>СтатусПлательщика</DataPath>
+					<Width>50</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ListChoiceMode>true</ListChoiceMode>
+					<ContextMenu name="СтатусПлательщикаКонтекстноеМеню" id="4"/>
+					<ExtendedTooltip name="СтатусПлательщикаРасширеннаяПодсказка" id="139"/>
+					<Events>
+						<Event name="OnChange">СтатусПлательщикаПриИзменении</Event>
+						<Event name="Clearing">СтатусПлательщикаОчистка</Event>
+					</Events>
+				</InputField>
+				<UsualGroup name="ГруппаИдентификаторПлатежа" id="234">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Идентификатор платежа</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаИдентификаторПлатежаРасширеннаяПодсказка" id="235"/>
+					<ChildItems>
+						<InputField name="ИдентификаторПлатежа" id="206">
+							<DataPath>ИдентификаторПлатежа</DataPath>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Указывается, если предоставлен получателем (администратором) платежа</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<HorizontalStretch>false</HorizontalStretch>
+							<Mask>NNNNNNNNNNNNNNNNNNN999999</Mask>
+							<ContextMenu name="ИдентификаторПлатежаКонтекстноеМеню" id="207"/>
+							<ExtendedTooltip name="ИдентификаторПлатежаРасширеннаяПодсказка" id="208"/>
+							<Events>
+								<Event name="OnChange">ИдентификаторПлатежаПриИзменении</Event>
+								<Event name="Clearing">ИдентификаторПлатежаОчистка</Event>
+							</Events>
+						</InputField>
+						<LabelDecoration name="НадписьУИНВведенНекорректно" id="242">
+							<Visible>false</Visible>
+							<TextColor>style:ПоясняющийОшибкуТекст</TextColor>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>УИН введен некорректно</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="НадписьУИНВведенНекорректноКонтекстноеМеню" id="243"/>
+							<ExtendedTooltip name="НадписьУИНВведенНекорректноРасширеннаяПодсказка" id="244"/>
+						</LabelDecoration>
+						<LabelDecoration name="НадписьУИНСодержитБуквы" id="245">
+							<Visible>false</Visible>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>УИН содержит буквы</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="НадписьУИНСодержитБуквыКонтекстноеМеню" id="246"/>
+							<ExtendedTooltip name="НадписьУИНСодержитБуквыРасширеннаяПодсказка" id="247"/>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
+				<InputField name="ОснованиеПлатежа" id="18">
+					<DataPath>ОснованиеПлатежа</DataPath>
+					<Width>50</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ListChoiceMode>true</ListChoiceMode>
+					<ContextMenu name="ОснованиеПлатежаКонтекстноеМеню" id="19"/>
+					<ExtendedTooltip name="ОснованиеПлатежаРасширеннаяПодсказка" id="159"/>
+					<Events>
+						<Event name="OnChange">ОснованиеПлатежаПриИзменении</Event>
+					</Events>
+				</InputField>
+				<UsualGroup name="НалоговыйПериод" id="24">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Налоговый период</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="НалоговыйПериодРасширеннаяПодсказка" id="160"/>
+					<ChildItems>
+						<InputField name="ПериодичностьУплаты" id="25">
+							<DataPath>НалоговыйПериод_Периодичность</DataPath>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<Width>18</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ListChoiceMode>true</ListChoiceMode>
+							<ContextMenu name="ПериодичностьУплатыКонтекстноеМеню" id="26"/>
+							<ExtendedTooltip name="ПериодичностьУплатыExtendedTooltip" id="161">
+								<Height>3</Height>
+								<TitleHeight>3</TitleHeight>
+							</ExtendedTooltip>
+							<Events>
+								<Event name="OnChange">ПериодичностьУплатыПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="ГодПлатежа" id="33">
+							<DataPath>НалоговыйПериод_Год</DataPath>
+							<Visible>false</Visible>
+							<SpinButton>true</SpinButton>
+							<EditFormat>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>ЧГ=</v8:content>
+								</v8:item>
+							</EditFormat>
+							<MinValue xsi:type="xs:decimal">1980</MinValue>
+							<ContextMenu name="ГодПлатежаКонтекстноеМеню" id="34"/>
+							<ExtendedTooltip name="ГодПлатежаExtendedTooltip" id="164"/>
+							<Events>
+								<Event name="OnChange">ГодПлатежаПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="ПериодПлатежаПолугодие" id="37">
+							<DataPath>НалоговыйПериод_НомерПериода</DataPath>
+							<Visible>false</Visible>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Полугодие</v8:content>
+								</v8:item>
+							</Title>
+							<SpinButton>true</SpinButton>
+							<MinValue xsi:type="xs:decimal">1</MinValue>
+							<MaxValue xsi:type="xs:decimal">2</MaxValue>
+							<ContextMenu name="ПериодПлатежаПолугодиеКонтекстноеМеню" id="38"/>
+							<ExtendedTooltip name="ПериодПлатежаПолугодиеExtendedTooltip" id="167"/>
+						</InputField>
+						<InputField name="ПериодПлатежаКвартал" id="41">
+							<DataPath>НалоговыйПериод_НомерПериода</DataPath>
+							<Visible>false</Visible>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Квартал</v8:content>
+								</v8:item>
+							</Title>
+							<SpinButton>true</SpinButton>
+							<MinValue xsi:type="xs:decimal">1</MinValue>
+							<MaxValue xsi:type="xs:decimal">4</MaxValue>
+							<ContextMenu name="ПериодПлатежаКварталКонтекстноеМеню" id="42"/>
+							<ExtendedTooltip name="ПериодПлатежаКварталExtendedTooltip" id="170"/>
+						</InputField>
+						<InputField name="ПериодПлатежаМесяц" id="45">
+							<DataPath>НалоговыйПериод_НомерПериода</DataPath>
+							<Visible>false</Visible>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Месяц</v8:content>
+								</v8:item>
+							</Title>
+							<SpinButton>true</SpinButton>
+							<MinValue xsi:type="xs:decimal">1</MinValue>
+							<MaxValue xsi:type="xs:decimal">12</MaxValue>
+							<ContextMenu name="ПериодПлатежаМесяцКонтекстноеМеню" id="46"/>
+							<ExtendedTooltip name="ПериодПлатежаМесяцExtendedTooltip" id="173"/>
+						</InputField>
+						<InputField name="ДатаПлатежа" id="47">
+							<DataPath>НалоговыйПериод_Дата</DataPath>
+							<Visible>false</Visible>
+							<ContextMenu name="ДатаПлатежаКонтекстноеМеню" id="48"/>
+							<ExtendedTooltip name="ДатаПлатежаExtendedTooltip" id="175"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<InputField name="КодТаможенногоОргана" id="216">
+					<DataPath>НалоговыйПериод</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Код таможенного органа</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="КодТаможенногоОрганаКонтекстноеМеню" id="217"/>
+					<ExtendedTooltip name="КодТаможенногоОрганаРасширеннаяПодсказка" id="218"/>
+				</InputField>
+				<InputField name="НалоговыйПериодНеИспользуется" id="231">
+					<DataPath>НалоговыйПериод</DataPath>
+					<ContextMenu name="НалоговыйПериодНеИспользуетсяКонтекстноеМеню" id="232"/>
+					<ExtendedTooltip name="НалоговыйПериодНеИспользуетсяРасширеннаяПодсказка" id="233"/>
+				</InputField>
+				<InputField name="НомерДокумента" id="51">
+					<DataPath>НомерДокумента</DataPath>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<Width>18</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="НомерДокументаКонтекстноеМеню" id="52"/>
+					<ExtendedTooltip name="НомерДокументаРасширеннаяПодсказка" id="178"/>
+					<Events>
+						<Event name="OnChange">НомерДокументаПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ДатаДокумента" id="55">
+					<DataPath>ДатаДокумента_Детально</DataPath>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<Width>24</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ChoiceButtonRepresentation>ShowInInputField</ChoiceButtonRepresentation>
+					<ClearButton>true</ClearButton>
+					<ListChoiceMode>true</ListChoiceMode>
+					<ChooseType>false</ChooseType>
+					<TextEdit>false</TextEdit>
+					<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+					<ContextMenu name="ДатаДокументаКонтекстноеМеню" id="56"/>
+					<ExtendedTooltip name="ДатаДокументаРасширеннаяПодсказка" id="180"/>
+					<Events>
+						<Event name="OnChange">ДатаДокументаПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ТипПлатежа" id="5">
+					<DataPath>ТипПлатежа</DataPath>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<Width>24</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ListChoiceMode>true</ListChoiceMode>
+					<ContextMenu name="ТипПлатежаКонтекстноеМеню" id="6"/>
+					<ExtendedTooltip name="ТипПлатежаРасширеннаяПодсказка" id="140"/>
+					<Events>
+						<Event name="OnChange">ТипПлатежаПриИзменении</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ВидПеречисления" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Администратор платежа</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.ВидыПеречисленийВБюджет</v8:Type>
+			</Type>
+			<Edit>
+				<xr:Common>true</xr:Common>
+				<xr:Value name="Role.ДобавлениеИзменениеДанныхБухгалтерии">true</xr:Value>
+				<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+			</Edit>
+			<SavedData>true</SavedData>
+			<FillCheck>ShowError</FillCheck>
+		</Attribute>
+		<Attribute name="НалоговыйПериод_Год" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Год</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>4</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+			<Edit>
+				<xr:Common>true</xr:Common>
+				<xr:Value name="Role.ДобавлениеИзменениеДанныхБухгалтерии">true</xr:Value>
+				<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+			</Edit>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="НалоговыйПериод_Дата" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+			<Edit>
+				<xr:Common>true</xr:Common>
+				<xr:Value name="Role.ДобавлениеИзменениеДанныхБухгалтерии">true</xr:Value>
+				<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+			</Edit>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="КБК" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>КБК</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>20</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Edit>
+				<xr:Common>true</xr:Common>
+				<xr:Value name="Role.ДобавлениеИзменениеДанныхБухгалтерии">true</xr:Value>
+				<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+			</Edit>
+			<SavedData>true</SavedData>
+			<FillCheck>ShowError</FillCheck>
+		</Attribute>
+		<Attribute name="КодТерритории" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Код ОКТМО</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>11</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Edit>
+				<xr:Common>true</xr:Common>
+				<xr:Value name="Role.ДобавлениеИзменениеДанныхБухгалтерии">true</xr:Value>
+				<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+			</Edit>
+			<SavedData>true</SavedData>
+			<FillCheck>ShowError</FillCheck>
+		</Attribute>
+		<Attribute name="НалоговыйПериод_Периодичность" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Налоговый период</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="НалоговыйПериод_НомерПериода" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер периода</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>2</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+			<Edit>
+				<xr:Common>true</xr:Common>
+				<xr:Value name="Role.ДобавлениеИзменениеДанныхБухгалтерии">true</xr:Value>
+				<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+			</Edit>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ДатаДокумента_Детально" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата документа</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>30</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+			<Edit>
+				<xr:Common>true</xr:Common>
+				<xr:Value name="Role.ДобавлениеИзменениеДанныхБухгалтерии">true</xr:Value>
+				<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+			</Edit>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="НомерДокумента" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер документа</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>18</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Edit>
+				<xr:Common>true</xr:Common>
+				<xr:Value name="Role.ДобавлениеИзменениеДанныхБухгалтерии">true</xr:Value>
+				<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+			</Edit>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ОснованиеПлатежа" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основание платежа</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>2</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Edit>
+				<xr:Common>true</xr:Common>
+				<xr:Value name="Role.ДобавлениеИзменениеДанныхБухгалтерии">true</xr:Value>
+				<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+			</Edit>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="НалоговыйПериод" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Налоговый период</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>10</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ТипПлатежа" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип платежа</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>2</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Edit>
+				<xr:Common>true</xr:Common>
+				<xr:Value name="Role.ДобавлениеИзменениеДанныхБухгалтерии">true</xr:Value>
+				<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+			</Edit>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="СтатусПлательщика" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Статус плательщика</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>2</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Edit>
+				<xr:Common>true</xr:Common>
+				<xr:Value name="Role.ДобавлениеИзменениеДанныхБухгалтерии">true</xr:Value>
+				<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+			</Edit>
+			<SavedData>true</SavedData>
+			<FillCheck>ShowError</FillCheck>
+		</Attribute>
+		<Attribute name="Контекст" id="21">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контекст</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="ИдентификаторПлатежа" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>УИН</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>25</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ДатаДокумента" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата документа</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>10</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="КБК_Наименование" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Описание платежа</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КБК_Администратор" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Администратор платежа</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Ссылка" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ссылка</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:TypeSet>cfg:DocumentRef</v8:TypeSet>
+			</Type>
+		</Attribute>
+		<Attribute name="СтатусПредупреждения" id="25">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Статус предупреждения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>1</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПеречислениеВБюджет" id="26">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перечисление в бюджет</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="УплатаНалога" id="27">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перечисление в бюджет</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СчетПоГосконтракту" id="28">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Счет по гос.контракту</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ИдентификаторКонтракта" id="29">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Идентификатор контракта</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>25</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="УИНСостоитИз25Знаков" id="31">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПериодДокумента" id="32">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период документа</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КодТерритории8" id="33">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Код территории8</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>8</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+			<FillCheck>ShowError</FillCheck>
+		</Attribute>
+		<Attribute name="ПрименяетсяОКТМО8Символов" id="34">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Применяется ОКТМО8 символов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ОК" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Use>
+				<xr:Common>false</xr:Common>
+				<xr:Value name="Role.ДобавлениеИзменениеДанныхБухгалтерии">true</xr:Value>
+				<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+			</Use>
+			<Action>ОК</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="КонструкторКБК" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Конструктор КБК</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Конструктор КБК</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Use>
+				<xr:Common>false</xr:Common>
+				<xr:Value name="Role.ДобавлениеИзменениеДанныхБухгалтерии">true</xr:Value>
+				<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+			</Use>
+			<Action>КонструкторКБК</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Отмена" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отмена</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отмена</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Отмена</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="Реквизиты">
+			<Type/>
+		</Parameter>
+		<Parameter name="СвойстваКонтекста">
+			<Type/>
+		</Parameter>
+		<Parameter name="ИсправитьОшибки">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="АдресИнформацииОбОшибках">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+		<Parameter name="Ссылка">
+			<Type>
+				<v8:TypeSet>cfg:DocumentRef</v8:TypeSet>
+			</Type>
+			<KeyParameter>true</KeyParameter>
+		</Parameter>
+		<Parameter name="УплатаНалога">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+		<Parameter name="ПеречислениеВБюджет">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

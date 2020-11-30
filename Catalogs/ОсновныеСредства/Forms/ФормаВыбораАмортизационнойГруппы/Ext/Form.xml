@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ПеренестиВСправочник" id="1">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ПеренестиОКОФиАмортизационнуюГруппу</CommandName>
+				<ExtendedTooltip name="ПеренестиВСправочникExtendedTooltip" id="27"/>
+			</Button>
+			<SearchStringAddition name="ДополнениеСтрокаПоиска" id="68">
+				<AdditionSource>
+					<Item>ИерархияОКОФ</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Дополнение строка поиска</v8:content>
+					</v8:item>
+				</Title>
+				<ContextMenu name="ДополнениеСтрокаПоискаКонтекстноеМеню" id="69"/>
+				<ExtendedTooltip name="ДополнениеСтрокаПоискаРасширеннаяПодсказка" id="70"/>
+			</SearchStringAddition>
+			<SearchControlAddition name="ДополнениеУправлениеПоиском" id="71">
+				<AdditionSource>
+					<Item>ИерархияОКОФ</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Дополнение управление поиском</v8:content>
+					</v8:item>
+				</Title>
+				<ContextMenu name="ДополнениеУправлениеПоискомКонтекстноеМеню" id="72"/>
+				<ExtendedTooltip name="ДополнениеУправлениеПоискомРасширеннаяПодсказка" id="73"/>
+			</SearchControlAddition>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ОбластьПодбора" id="2">
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Область подбора</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ОбластьПодбораExtendedTooltip" id="28"/>
+			<ChildItems>
+				<Table name="ИерархияОКОФ" id="5">
+					<Representation>Tree</Representation>
+					<SelectionMode>SingleRow</SelectionMode>
+					<UseAlternationRowColor>true</UseAlternationRowColor>
+					<EnableStartDrag>true</EnableStartDrag>
+					<FileDragMode>AsFile</FileDragMode>
+					<DataPath>ИерархияОКОФ</DataPath>
+					<RowPictureDataPath>ИерархияОКОФ.DefaultPicture</RowPictureDataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Иерархия ОКОФ</v8:content>
+						</v8:item>
+					</Title>
+					<AutoRefresh>false</AutoRefresh>
+					<AutoRefreshPeriod>60</AutoRefreshPeriod>
+					<Period>
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+					</Period>
+					<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+					<RestoreCurrentRow>false</RestoreCurrentRow>
+					<TopLevelParent xsi:nil="true"/>
+					<ShowRoot>false</ShowRoot>
+					<AllowRootChoice>false</AllowRootChoice>
+					<UpdateOnDataChange>Auto</UpdateOnDataChange>
+					<ContextMenu name="ИерархияОКОФКонтекстноеМеню" id="6"/>
+					<AutoCommandBar name="ИерархияОКОФКоманднаяПанель" id="7">
+						<Autofill>false</Autofill>
+					</AutoCommandBar>
+					<ExtendedTooltip name="ИерархияОКОФExtendedTooltip" id="30"/>
+					<SearchStringAddition name="ИерархияОКОФСтрокаПоиска" id="50">
+						<AdditionSource>
+							<Item>ИерархияОКОФ</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ИерархияОКОФСтрокаПоискаКонтекстноеМеню" id="51"/>
+						<ExtendedTooltip name="ИерархияОКОФСтрокаПоискаРасширеннаяПодсказка" id="52"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="ИерархияОКОФСостояниеПросмотра" id="53">
+						<AdditionSource>
+							<Item>ИерархияОКОФ</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ИерархияОКОФСостояниеПросмотраКонтекстноеМеню" id="54"/>
+						<ExtendedTooltip name="ИерархияОКОФСостояниеПросмотраРасширеннаяПодсказка" id="55"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="ИерархияОКОФУправлениеПоиском" id="56">
+						<AdditionSource>
+							<Item>ИерархияОКОФ</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="ИерархияОКОФУправлениеПоискомКонтекстноеМеню" id="57"/>
+						<ExtendedTooltip name="ИерархияОКОФУправлениеПоискомРасширеннаяПодсказка" id="58"/>
+					</SearchControlAddition>
+					<Events>
+						<Event name="Selection">ИерархияОКОФВыбор</Event>
+						<Event name="OnActivateRow">ИерархияОКОФПриАктивизацииСтроки</Event>
+					</Events>
+					<ChildItems>
+						<LabelField name="ИерархияОКОФКод" id="37">
+							<DataPath>ИерархияОКОФ.Code</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Код по ОКОФ</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ИерархияОКОФКодКонтекстноеМеню" id="38"/>
+							<ExtendedTooltip name="ИерархияОКОФКодРасширеннаяПодсказка" id="39"/>
+						</LabelField>
+						<LabelField name="ИерархияОКОФНаименованиеГруппировки" id="74">
+							<DataPath>ИерархияОКОФ.НаименованиеГруппировки</DataPath>
+							<ContextMenu name="ИерархияОКОФНаименованиеГруппировкиКонтекстноеМеню" id="75"/>
+							<ExtendedTooltip name="ИерархияОКОФНаименованиеГруппировкиРасширеннаяПодсказка" id="76"/>
+						</LabelField>
+						<LabelField name="ИерархияОКОФСсылка" id="96">
+							<DataPath>ИерархияОКОФ.Ref</DataPath>
+							<UserVisible>
+								<xr:Common>false</xr:Common>
+							</UserVisible>
+							<ContextMenu name="ИерархияОКОФСсылкаКонтекстноеМеню" id="97"/>
+							<ExtendedTooltip name="ИерархияОКОФСсылкаРасширеннаяПодсказка" id="98"/>
+						</LabelField>
+					</ChildItems>
+				</Table>
+				<Table name="АмортизационныеГруппы" id="77">
+					<Representation>List</Representation>
+					<CommandBarLocation>None</CommandBarLocation>
+					<ReadOnly>true</ReadOnly>
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<FileDragMode>AsFile</FileDragMode>
+					<DataPath>АмортизационныеГруппы</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Амортизационные группы</v8:content>
+						</v8:item>
+					</Title>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="АмортизационныеГруппыКонтекстноеМеню" id="78"/>
+					<AutoCommandBar name="АмортизационныеГруппыКоманднаяПанель" id="79"/>
+					<ExtendedTooltip name="АмортизационныеГруппыРасширеннаяПодсказка" id="80"/>
+					<SearchStringAddition name="АмортизационныеГруппыСтрокаПоиска" id="81">
+						<AdditionSource>
+							<Item>АмортизационныеГруппы</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="АмортизационныеГруппыСтрокаПоискаКонтекстноеМеню" id="82"/>
+						<ExtendedTooltip name="АмортизационныеГруппыСтрокаПоискаРасширеннаяПодсказка" id="83"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="АмортизационныеГруппыСостояниеПросмотра" id="84">
+						<AdditionSource>
+							<Item>АмортизационныеГруппы</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="АмортизационныеГруппыСостояниеПросмотраКонтекстноеМеню" id="85"/>
+						<ExtendedTooltip name="АмортизационныеГруппыСостояниеПросмотраРасширеннаяПодсказка" id="86"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="АмортизационныеГруппыУправлениеПоиском" id="87">
+						<AdditionSource>
+							<Item>АмортизационныеГруппы</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="АмортизационныеГруппыУправлениеПоискомКонтекстноеМеню" id="88"/>
+						<ExtendedTooltip name="АмортизационныеГруппыУправлениеПоискомРасширеннаяПодсказка" id="89"/>
+					</SearchControlAddition>
+					<Events>
+						<Event name="Selection">АмортизационныеГруппыВыбор</Event>
+					</Events>
+					<ChildItems>
+						<InputField name="АмортизационныеГруппы2АмортизационнаяГруппа" id="90">
+							<DataPath>АмортизационныеГруппы.АмортизационнаяГруппа</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="АмортизационныеГруппы2АмортизационнаяГруппаКонтекстноеМеню" id="91"/>
+							<ExtendedTooltip name="АмортизационныеГруппы2АмортизационнаяГруппаРасширеннаяПодсказка" id="92"/>
+						</InputField>
+						<InputField name="АмортизационныеГруппы2Комментарий" id="93">
+							<DataPath>АмортизационныеГруппы.Комментарий</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="АмортизационныеГруппы2КомментарийКонтекстноеМеню" id="94"/>
+							<ExtendedTooltip name="АмортизационныеГруппы2КомментарийРасширеннаяПодсказка" id="95"/>
+						</InputField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ИерархияОКОФ" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Иерархия ОКОФ</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>~ИерархияОКОФ.IsFolder</Field>
+				<Field>ИерархияОКОФ.Ref</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>false</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<MainTable>Catalog.ОбщероссийскийКлассификаторОсновныхФондов</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="АмортизационныеГруппы" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Амортизационные группы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="АмортизационнаяГруппа" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Амортизационная группа</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:EnumRef.АмортизационныеГруппы</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Комментарий" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Комментарий</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>255</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="Новости" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Новости</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ПеренестиОКОФиАмортизационнуюГруппу" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перенести ОКОФ и амортизационную группу</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перенести ОКОФ и амортизационную группу</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПеренестиОКОФиАмортизационнуюГруппу</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПоказатьКонтекстныеНовости" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Новости</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список контекстных новостей</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Use>
+				<xr:Common>false</xr:Common>
+				<xr:Value name="Role.АдминистраторСистемы">true</xr:Value>
+				<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+				<xr:Value name="Role.ЧтениеНовостей">true</xr:Value>
+			</Use>
+			<Action>ПоказатьКонтекстныеНовости</Action>
+			<FunctionalOptions>
+				<Item>FunctionalOption.РазрешенаРаботаСНовостями</Item>
+			</FunctionalOptions>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="КодПоОКОФ">
+			<Type>
+				<v8:Type>cfg:CatalogRef.ОбщероссийскийКлассификаторОсновныхФондов</v8:Type>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Возможность проведения документов отключена</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаКартинкаОписание" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Картинка и описание</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Horizontal</Group>
+			<VerticalAlign>Center</VerticalAlign>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКартинкаОписаниеРасширеннаяПодсказка" id="2"/>
+			<ChildItems>
+				<PictureDecoration name="Картинка" id="3">
+					<Width>16</Width>
+					<Height>5</Height>
+					<HorizontalStretch>false</HorizontalStretch>
+					<VerticalStretch>false</VerticalStretch>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Картинка</v8:content>
+						</v8:item>
+					</Title>
+					<PictureSize>Proportionally</PictureSize>
+					<Picture>
+						<xr:Ref>CommonPicture.КотОгорчение</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<FileDragMode>AsFile</FileDragMode>
+					<ContextMenu name="КартинкаКонтекстноеМеню" id="4"/>
+					<ExtendedTooltip name="КартинкаРасширеннаяПодсказка" id="5"/>
+				</PictureDecoration>
+				<UsualGroup name="ГруппаОписание" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Описание</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаОписаниеРасширеннаяПодсказка" id="10"/>
+					<ChildItems>
+						<LabelDecoration name="ОписаниеЗаголовок" id="6">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>60</MaxWidth>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>В программе используется функциональность, не входящая в ваш тариф.
+Возможность проведения документов заблокирована.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ОписаниеЗаголовокКонтекстноеМеню" id="7"/>
+							<ExtendedTooltip name="ОписаниеЗаголовокРасширеннаяПодсказка" id="8"/>
+						</LabelDecoration>
+						<LabelDecoration name="ОписаниеФункциональность" id="11">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>55</MaxWidth>
+							<Title formatted="true">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Снимите флажки с пометкой "ТАРИФ" в настройках Функциональности, что бы проводить документы.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ОписаниеФункциональностьКонтекстноеМеню" id="12"/>
+							<ExtendedTooltip name="ОписаниеФункциональностьРасширеннаяПодсказка" id="13"/>
+							<Events>
+								<Event name="URLProcessing">ОписаниеЧтоСделатьОбработкаНавигационнойСсылки</Event>
+							</Events>
+						</LabelDecoration>
+						<LabelDecoration name="ОписаниеТариф" id="14">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>55</MaxWidth>
+							<Title formatted="true">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Если функциональность, не входящая в тариф, нужна, перейдите на тариф КОРП (для изменения тарифа обратитесь к обслуживающей организации).</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ОписаниеТарифКонтекстноеМеню" id="15"/>
+							<ExtendedTooltip name="ОписаниеТарифРасширеннаяПодсказка" id="16"/>
+							<Events>
+								<Event name="URLProcessing">ОписаниеЧтоСделатьОбработкаНавигационнойСсылки</Event>
+							</Events>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes/>
+</Form>

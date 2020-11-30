@@ -1,0 +1,576 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Выбор места хранения сертификата</v8:content>
+		</v8:item>
+	</Title>
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoTitle>false</AutoTitle>
+	<AutoURL>false</AutoURL>
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаПродолжитьВыборСертификата" id="146">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ПродолжитьВыборСертификата</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>ОК</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаПродолжитьВыборСертификатаРасширеннаяПодсказка" id="147"/>
+			</Button>
+			<Button name="Закрыть" id="144">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Close</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Отмена</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ЗакрытьРасширеннаяПодсказка" id="145"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<LabelDecoration name="Заголовок" id="104">
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выберите, где хранится сертификат, на использование которого хотите перейти:</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ЗаголовокКонтекстноеМеню" id="105"/>
+			<ExtendedTooltip name="ЗаголовокРасширеннаяПодсказка" id="106"/>
+		</LabelDecoration>
+		<UsualGroup name="ГруппаРаботыСКлючамиЛокально" id="148">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа работы с ключами локально</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа работы с ключами локально</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаРаботыСКлючамиЛокальноРасширеннаяПодсказка" id="149"/>
+			<ChildItems>
+				<RadioButtonField name="РежимРаботыСКлючамиЛокально" id="128">
+					<DataPath>РежимРаботыСКлючами</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<VerticalAlign>Center</VerticalAlign>
+					<GroupVerticalAlign>Center</GroupVerticalAlign>
+					<RadioButtonType>Auto</RadioButtonType>
+					<ColumnsCount>1</ColumnsCount>
+					<ChoiceList>
+						<xr:Item>
+							<xr:Presentation/>
+							<xr:CheckState>0</xr:CheckState>
+							<xr:Value xsi:type="FormChoiceListDesTimeValue">
+								<Presentation>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>на локальном компьютере</v8:content>
+									</v8:item>
+								</Presentation>
+								<Value xsi:type="xs:decimal">2</Value>
+							</xr:Value>
+						</xr:Item>
+					</ChoiceList>
+					<ContextMenu name="РежимРаботыСКлючамиЛокальноКонтекстноеМеню" id="129"/>
+					<ExtendedTooltip name="РежимРаботыСКлючамиЛокальноExtendedTooltip" id="130">
+						<AutoMaxWidth>false</AutoMaxWidth>
+					</ExtendedTooltip>
+					<Events>
+						<Event name="OnChange">РежимРаботыСКлючамиПриИзменении</Event>
+					</Events>
+				</RadioButtonField>
+				<LabelDecoration name="ОшибкаВключенияСертификата" id="150">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<ContextMenu name="ОшибкаВключенияСертификатаКонтекстноеМеню" id="151"/>
+					<ExtendedTooltip name="ОшибкаВключенияСертификатаРасширеннаяПодсказка" id="152"/>
+					<Events>
+						<Event name="URLProcessing">ОшибкаВключенияСертификатаОбработкаНавигационнойСсылки</Event>
+					</Events>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<RadioButtonField name="РежимРаботыСКлючамиВМоделиСервиса" id="122">
+			<DataPath>РежимРаботыСКлючами</DataPath>
+			<TitleLocation>None</TitleLocation>
+			<ToolTipRepresentation>Button</ToolTipRepresentation>
+			<VerticalAlign>Center</VerticalAlign>
+			<GroupVerticalAlign>Center</GroupVerticalAlign>
+			<RadioButtonType>Auto</RadioButtonType>
+			<ChoiceList>
+				<xr:Item>
+					<xr:Presentation/>
+					<xr:CheckState>0</xr:CheckState>
+					<xr:Value xsi:type="FormChoiceListDesTimeValue">
+						<Presentation>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>в "облаке"</v8:content>
+							</v8:item>
+						</Presentation>
+						<Value xsi:type="xs:decimal">1</Value>
+					</xr:Value>
+				</xr:Item>
+			</ChoiceList>
+			<Font ref="style:NormalTextFont" kind="StyleItem"/>
+			<ContextMenu name="РежимРаботыСКлючамиВМоделиСервисаКонтекстноеМеню" id="123"/>
+			<ExtendedTooltip name="РежимРаботыСКлючамиВМоделиСервисаExtendedTooltip" id="124"/>
+			<Events>
+				<Event name="OnChange">РежимРаботыСКлючамиПриИзменении</Event>
+			</Events>
+		</RadioButtonField>
+		<UsualGroup name="ГруппаВОблаке" id="140">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа в облаке</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа в облаке</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаВОблакеРасширеннаяПодсказка" id="141"/>
+			<ChildItems>
+				<LabelDecoration name="Отступ" id="101">
+					<Width>1</Width>
+					<ContextMenu name="ОтступКонтекстноеМеню" id="102"/>
+					<ExtendedTooltip name="ОтступРасширеннаяПодсказка" id="103"/>
+				</LabelDecoration>
+				<UsualGroup name="ГруппаВОблакеВертикальная" id="142">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа в облаке вертикальная</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаВОблакеВертикальнаяРасширеннаяПодсказка" id="143"/>
+					<ChildItems>
+						<LabelDecoration name="ПодсказкаКОблаку" id="98">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<TextColor>style:ЗаголовкиСтрокЦветТекстаБРО</TextColor>
+							<Title formatted="true">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Для авторизации и получения доступа к списку сертификатов введите
+номер телефона, к которому привязан ключ в "облаке":</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ПодсказкаКОблакуКонтекстноеМеню" id="99"/>
+							<ExtendedTooltip name="ПодсказкаКОблакуРасширеннаяПодсказка" id="100"/>
+						</LabelDecoration>
+						<UsualGroup name="ГруппаНовыйТелефон" id="18">
+							<HorizontalStretch>false</HorizontalStretch>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаНовыйТелефонРасширеннаяПодсказка" id="19"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаНомерТелефонаДляПроверки" id="118">
+									<HorizontalStretch>false</HorizontalStretch>
+									<Group>Horizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаНомерТелефонаДляПроверкиExtendedTooltip" id="119"/>
+									<ChildItems>
+										<InputField name="ТелефонДляПаролей" id="7">
+											<DataPath>ТелефонДляПаролей</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Телефон</v8:content>
+												</v8:item>
+											</Title>
+											<Width>17</Width>
+											<HorizontalStretch>false</HorizontalStretch>
+											<AutoMarkIncomplete>true</AutoMarkIncomplete>
+											<EditTextUpdate>DontUse</EditTextUpdate>
+											<ContextMenu name="ТелефонДляПаролейКонтекстноеМеню" id="8"/>
+											<ExtendedTooltip name="ТелефонДляПаролейРасширеннаяПодсказка" id="9"/>
+											<Events>
+												<Event name="OnChange">ТелефонДляПаролейПриИзменении</Event>
+												<Event name="EditTextChange">ТелефонДляПаролейИзменениеТекстаРедактирования</Event>
+											</Events>
+										</InputField>
+										<PictureDecoration name="КартинкаТелефонПроверен" id="115">
+											<Width>1</Width>
+											<Height>1</Height>
+											<HorizontalStretch>false</HorizontalStretch>
+											<VerticalStretch>false</VerticalStretch>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Картинка телефон проверен</v8:content>
+												</v8:item>
+											</Title>
+											<GroupVerticalAlign>Center</GroupVerticalAlign>
+											<Picture>
+												<xr:Abs>Picture.png</xr:Abs>
+												<xr:LoadTransparent>false</xr:LoadTransparent>
+											</Picture>
+											<FileDragMode>AsFile</FileDragMode>
+											<ContextMenu name="КартинкаТелефонПроверенКонтекстноеМеню" id="116"/>
+											<ExtendedTooltip name="КартинкаТелефонПроверенРасширеннаяПодсказка" id="117"/>
+										</PictureDecoration>
+										<Button name="ПроверитьНомер" id="66">
+											<Type>UsualButton</Type>
+											<CommandName>Form.Command.ПроверитьНомер</CommandName>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Проверить</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ПроверитьНомерРасширеннаяПодсказка" id="67"/>
+										</Button>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаКодПодтверждения" id="90">
+									<Group>Vertical</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="ГруппаКодПодтвержденияРасширеннаяПодсказка" id="91"/>
+									<ChildItems>
+										<UsualGroup name="ГруппаКодИОтменаВводаНовогоТелефона" id="107">
+											<Group>Horizontal</Group>
+											<VerticalAlign>Center</VerticalAlign>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаКодИОтменаВводаНовогоТелефонаРасширеннаяПодсказка" id="108"/>
+											<ChildItems>
+												<InputField name="КодПодтверждения" id="80">
+													<DataPath>КодПодтверждения</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<HorizontalStretch>false</HorizontalStretch>
+													<EditTextUpdate>DontUse</EditTextUpdate>
+													<InputHint>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Введите код из SMS</v8:content>
+														</v8:item>
+													</InputHint>
+													<ContextMenu name="КодПодтвержденияКонтекстноеМеню" id="81"/>
+													<ExtendedTooltip name="КодПодтвержденияРасширеннаяПодсказка" id="82"/>
+													<Events>
+														<Event name="OnChange">КодПодтвержденияПриИзменении</Event>
+														<Event name="EditTextChange">КодПодтвержденияИзменениеТекстаРедактирования</Event>
+													</Events>
+												</InputField>
+												<PictureDecoration name="ОтменитьПроверкуТелефона" id="112">
+													<Width>1</Width>
+													<Height>1</Height>
+													<Title formatted="false">
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Отменить проверку телефона</v8:content>
+														</v8:item>
+													</Title>
+													<Hyperlink>true</Hyperlink>
+													<NonselectedPictureText>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Отменить изменение</v8:content>
+														</v8:item>
+													</NonselectedPictureText>
+													<Picture>
+														<xr:Abs>Picture.png</xr:Abs>
+														<xr:LoadTransparent>false</xr:LoadTransparent>
+													</Picture>
+													<FileDragMode>AsFile</FileDragMode>
+													<ContextMenu name="ОтменитьПроверкуТелефонаКонтекстноеМеню" id="113"/>
+													<ExtendedTooltip name="ОтменитьПроверкуТелефонаРасширеннаяПодсказка" id="114"/>
+													<Events>
+														<Event name="Click">ОтменитьПроверкуТелефонаНажатие</Event>
+													</Events>
+												</PictureDecoration>
+											</ChildItems>
+										</UsualGroup>
+										<Button name="ОтправитьКодПовторно" id="88">
+											<Type>Hyperlink</Type>
+											<CommandName>Form.Command.ОтправитьКодПовторно</CommandName>
+											<TextColor>#807A76</TextColor>
+											<ExtendedTooltip name="ОтправитьКодПовторноРасширеннаяПодсказка" id="89"/>
+										</Button>
+										<LabelField name="НадписьОбратногоОтсчета" id="95">
+											<DataPath>НадписьОбратногоОтсчета</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<Width>40</Width>
+											<TextColor>#807A76</TextColor>
+											<ContextMenu name="НадписьОбратногоОтсчетаКонтекстноеМеню" id="96"/>
+											<ExtendedTooltip name="НадписьОбратногоОтсчетаРасширеннаяПодсказка" id="97"/>
+										</LabelField>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ТелефонДляПаролей" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Телефон для паролей</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КодПодтверждения" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Код подтверждения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="НадписьОбратногоОтсчета" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Надпись обратного отсчета</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Таймер" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таймер</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПроверкаТелефонДляПаролей" id="19">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверка телефон для паролей</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="РежимРаботыСКлючами" id="20">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Режим работы с ключами</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>1</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="CryptoProCSPУстановлен" id="22">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>CryptoPro CSP установлен</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ViPNetCSPУстановлен" id="23">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ViPNet CSP установлен</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ИгнорироватьКонфликт" id="24">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Игнорировать конфликт</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="КомпонентаДляРаботыСКриптографиейПодключена" id="25">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Компонента для работы с криптографией подключена</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="КрасныйЦвет" id="27">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Красный цвет</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8ui:Color</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПараметрыФормы" id="28">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры формы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ИНН" id="29">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ИНН</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>12</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОблачныеСертификатыКалуги" id="30">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сертификаты организации</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ПроверитьНомер" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверить номер</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверить номер</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПроверитьНомер</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОтправитьКодПовторно" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отправить код повторно</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отправить код повторно</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОтправитьКодПовторно</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПродолжитьВыборСертификата" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Продолжить выбор сертификата</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Продолжить выбор сертификата</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПродолжитьВыборСертификата</Action>
+		</Command>
+	</Commands>
+</Form>

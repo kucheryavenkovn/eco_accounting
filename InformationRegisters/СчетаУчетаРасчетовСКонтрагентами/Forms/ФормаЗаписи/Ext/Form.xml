@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="Организация" id="1">
+			<DataPath>Запись.Организация</DataPath>
+			<ContextMenu name="ОрганизацияКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="ОрганизацияExtendedTooltip" id="30"/>
+			<Events>
+				<Event name="OnChange">ВидРасчетовПоДоговоруПриИзменении</Event>
+			</Events>
+		</InputField>
+		<InputField name="Контрагент" id="3">
+			<DataPath>Запись.Контрагент</DataPath>
+			<ContextMenu name="КонтрагентКонтекстноеМеню" id="4"/>
+			<ExtendedTooltip name="КонтрагентExtendedTooltip" id="31"/>
+			<Events>
+				<Event name="OnChange">ВидРасчетовПоДоговоруПриИзменении</Event>
+			</Events>
+		</InputField>
+		<InputField name="Договор" id="5">
+			<DataPath>Запись.Договор</DataPath>
+			<ContextMenu name="ДоговорКонтекстноеМеню" id="6"/>
+			<ExtendedTooltip name="ДоговорExtendedTooltip" id="32"/>
+			<Events>
+				<Event name="ChoiceProcessing">ДоговорОбработкаВыбора</Event>
+			</Events>
+		</InputField>
+		<InputField name="ВидРасчетовПоДоговору" id="7">
+			<DataPath>Запись.ВидРасчетовПоДоговору</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид расчетов</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ВидРасчетовПоДоговоруКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="ВидРасчетовПоДоговоруExtendedTooltip" id="33"/>
+			<Events>
+				<Event name="OnChange">ВидРасчетовПоДоговоруПриИзменении</Event>
+			</Events>
+		</InputField>
+		<UsualGroup name="ГруппаСчетаУчета" id="29">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Счета учета</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Счета учета</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<ExtendedTooltip name="ГруппаСчетаУчетаExtendedTooltip" id="34"/>
+			<ChildItems>
+				<InputField name="СчетУчетаРасчетовСПоставщиком" id="9">
+					<DataPath>Запись.СчетУчетаРасчетовСПоставщиком</DataPath>
+					<ContextMenu name="СчетУчетаРасчетовСПоставщикомКонтекстноеМеню" id="10"/>
+					<ExtendedTooltip name="СчетУчетаРасчетовСПоставщикомExtendedTooltip" id="35"/>
+				</InputField>
+				<InputField name="СчетУчетаАвансовВыданных" id="11">
+					<DataPath>Запись.СчетУчетаАвансовВыданных</DataPath>
+					<ContextMenu name="СчетУчетаАвансовВыданныхКонтекстноеМеню" id="12"/>
+					<ExtendedTooltip name="СчетУчетаАвансовВыданныхExtendedTooltip" id="36"/>
+				</InputField>
+				<InputField name="СчетУчетаРасчетовСПокупателем" id="13">
+					<DataPath>Запись.СчетУчетаРасчетовСПокупателем</DataPath>
+					<ContextMenu name="СчетУчетаРасчетовСПокупателемКонтекстноеМеню" id="14"/>
+					<ExtendedTooltip name="СчетУчетаРасчетовСПокупателемExtendedTooltip" id="37"/>
+				</InputField>
+				<InputField name="СчетУчетаАвансовПолученных" id="15">
+					<DataPath>Запись.СчетУчетаАвансовПолученных</DataPath>
+					<ContextMenu name="СчетУчетаАвансовПолученныхКонтекстноеМеню" id="16"/>
+					<ExtendedTooltip name="СчетУчетаАвансовПолученныхExtendedTooltip" id="38"/>
+				</InputField>
+				<InputField name="СчетУчетаРасчетовСКомитентом" id="17">
+					<DataPath>Запись.СчетУчетаРасчетовСКомитентом</DataPath>
+					<ContextMenu name="СчетУчетаРасчетовСКомитентомКонтекстноеМеню" id="18"/>
+					<ExtendedTooltip name="СчетУчетаРасчетовСКомитентомExtendedTooltip" id="39"/>
+				</InputField>
+				<InputField name="СчетУчетаРасчетовПоТареСПоставщиком" id="19">
+					<DataPath>Запись.СчетУчетаРасчетовПоТареСПоставщиком</DataPath>
+					<ContextMenu name="СчетУчетаРасчетовПоТареСПоставщикомКонтекстноеМеню" id="20"/>
+					<ExtendedTooltip name="СчетУчетаРасчетовПоТареСПоставщикомExtendedTooltip" id="40"/>
+				</InputField>
+				<InputField name="СчетУчетаРасчетовПоТареСПокупателем" id="21">
+					<DataPath>Запись.СчетУчетаРасчетовПоТареСПокупателем</DataPath>
+					<ContextMenu name="СчетУчетаРасчетовПоТареСПокупателемКонтекстноеМеню" id="22"/>
+					<ExtendedTooltip name="СчетУчетаРасчетовПоТареСПокупателемExtendedTooltip" id="41"/>
+				</InputField>
+				<InputField name="СчетРасчетовПоПретензиям" id="27">
+					<DataPath>Запись.СчетРасчетовПоПретензиям</DataPath>
+					<ContextMenu name="СчетРасчетовПоПретензиямКонтекстноеМеню" id="28"/>
+					<ExtendedTooltip name="СчетРасчетовПоПретензиямExtendedTooltip" id="44"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Запись" id="1">
+			<Type>
+				<v8:Type>cfg:InformationRegisterRecordManager.СчетаУчетаРасчетовСКонтрагентами</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Запись.УдалитьСчетУчетаДоходовПоТаре</Field>
+				<Field>Запись.УдалитьСчетУчетаРасходовПоТаре</Field>
+			</UseAlways>
+		</Attribute>
+		<Attribute name="ПустойДоговор" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пустой договор</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+	</Attributes>
+</Form>

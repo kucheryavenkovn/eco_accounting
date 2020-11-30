@@ -1,0 +1,482 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="КнопкаСформироватьОбъекты" id="119">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.СформироватьОбъекты</CommandName>
+				<ExtendedTooltip name="КнопкаСформироватьОбъектыExtendedTooltip" id="124"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="390d5e4b-e732-4c88-8748-9e211a416984">ПриЧтенииНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="bf0ac0e1-bcbb-4dfe-8fc4-0b1923b461a6">ПередЗаписьюНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Шапка" id="23">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шапка</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шапка</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ШапкаExtendedTooltip" id="125"/>
+			<ChildItems>
+				<UsualGroup name="НаименованиеКод" id="24">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наименование код</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наименование код</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="НаименованиеКодExtendedTooltip" id="126"/>
+					<ChildItems>
+						<InputField name="Наименование" id="3">
+							<DataPath>Объект.Description</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<Width>15</Width>
+							<ContextMenu name="НаименованиеКонтекстноеМеню" id="4"/>
+							<ExtendedTooltip name="НаименованиеExtendedTooltip" id="127"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<InputField name="Родитель" id="5">
+					<DataPath>Объект.Parent</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="РодительКонтекстноеМеню" id="6"/>
+					<ExtendedTooltip name="РодительExtendedTooltip" id="128"/>
+				</InputField>
+				<InputField name="ТипОбъекта" id="7">
+					<DataPath>Объект.ТипОбъекта</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТипОбъектаКонтекстноеМеню" id="8"/>
+					<ExtendedTooltip name="ТипОбъектаExtendedTooltip" id="129"/>
+					<Events>
+						<Event name="OnChange">ТипОбъектаПриИзменении</Event>
+					</Events>
+				</InputField>
+				<UsualGroup name="ГруппаКонтактнаяИнформация" id="55">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Адреса, телефоны</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Контактная информация</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаКонтактнаяИнформацияExtendedTooltip" id="130"/>
+				</UsualGroup>
+				<UsualGroup name="ПлощадьЕдИзм" id="25">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Площадь ед изм</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Площадь ед изм</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ПлощадьЕдИзмExtendedTooltip" id="131"/>
+					<ChildItems>
+						<InputField name="ЗначениеХарактеристики" id="26">
+							<DataPath>Объект.ЗначениеХарактеристики</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Общая плошадь</v8:content>
+								</v8:item>
+							</Title>
+							<Width>15</Width>
+							<ContextMenu name="ЗначениеХарактеристикиКонтекстноеМеню" id="27"/>
+							<ExtendedTooltip name="ЗначениеХарактеристикиExtendedTooltip" id="132"/>
+						</InputField>
+						<InputField name="ЕдиницаИзмерения" id="19">
+							<DataPath>Объект.ЕдиницаИзмерения</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<Width>10</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ContextMenu name="ЕдиницаИзмеренияКонтекстноеМеню" id="20"/>
+							<ExtendedTooltip name="ЕдиницаИзмеренияExtendedTooltip" id="133"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<InputField name="ОбъектЗданиеИЭтаж" id="157">
+					<DataPath>Объект.ЗданиеИЭтаж</DataPath>
+					<ContextMenu name="ОбъектЗданиеИЭтажКонтекстноеМеню" id="158"/>
+					<ExtendedTooltip name="ОбъектЗданиеИЭтажРасширеннаяПодсказка" id="159"/>
+				</InputField>
+				<InputField name="КоличествоОбъектов" id="122">
+					<DataPath>Обработка.КоличествоОбъектов</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>15</Width>
+					<SpinButton>true</SpinButton>
+					<ContextMenu name="КоличествоОбъектовКонтекстноеМеню" id="123"/>
+					<ExtendedTooltip name="КоличествоОбъектовExtendedTooltip" id="134"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<Pages name="Страницы" id="28">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ExtendedTooltip name="СтраницыExtendedTooltip" id="135"/>
+			<ChildItems>
+				<Page name="Аренда" id="58">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Аренда</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Аренда</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="АрендаExtendedTooltip" id="136"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаПризнакСдачиВАренду" id="115">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа признак сдачи в аренду</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа признак сдачи в аренду</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаПризнакСдачиВАрендуExtendedTooltip" id="137"/>
+							<ChildItems>
+								<CheckBoxField name="ПодлежитСдачеВАренду" id="113">
+									<DataPath>ПодлежитСдачеВАренду</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ПодлежитСдачеВАрендуКонтекстноеМеню" id="114"/>
+									<ExtendedTooltip name="ПодлежитСдачеВАрендуExtendedTooltip" id="138"/>
+								</CheckBoxField>
+								<InputField name="ДатаНачалаСдачиВАренду" id="120">
+									<DataPath>ДатаНачалаСдачиВАренду</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>с</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ДатаНачалаСдачиВАрендуКонтекстноеМеню" id="121"/>
+									<ExtendedTooltip name="ДатаНачалаСдачиВАрендуExtendedTooltip" id="139"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<LabelDecoration name="ПодсказкаПризнакСдачиВАренду" id="117">
+							<SkipOnInput>false</SkipOnInput>
+							<TextColor>style:ТекстИнформационнойНадписи</TextColor>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Признак того, что объект может сдаваться в аренду. Необходимо устанавливать только для тех объектов, которые могут быть указаны в договоре аренды.</v8:content>
+								</v8:item>
+							</Title>
+							<TitleHeight>2</TitleHeight>
+							<ContextMenu name="ПодсказкаПризнакСдачиВАрендуКонтекстноеМеню" id="118"/>
+							<ExtendedTooltip name="ПодсказкаПризнакСдачиВАрендуExtendedTooltip" id="140"/>
+						</LabelDecoration>
+						<InputField name="КатегорияЦен" id="21">
+							<DataPath>Объект.КатегорияЦен</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="КатегорияЦенКонтекстноеМеню" id="22"/>
+							<ExtendedTooltip name="КатегорияЦенExtendedTooltip" id="141"/>
+						</InputField>
+						<UsualGroup name="КонтрольДоговоров" id="32">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Контроль договоров</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Контроль договоров</v8:content>
+								</v8:item>
+							</ToolTip>
+							<HorizontalStretch>true</HorizontalStretch>
+							<Group>Horizontal</Group>
+							<ExtendedTooltip name="КонтрольДоговоровExtendedTooltip" id="142"/>
+							<ChildItems>
+								<CheckBoxField name="НеКонтролироватьЗанятость" id="33">
+									<DataPath>Объект.НеКонтролироватьЗанятость</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="НеКонтролироватьЗанятостьКонтекстноеМеню" id="34"/>
+									<ExtendedTooltip name="НеКонтролироватьЗанятостьExtendedTooltip" id="143"/>
+								</CheckBoxField>
+								<CheckBoxField name="НеКонтролироватьПлощадь" id="35">
+									<DataPath>Объект.НеКонтролироватьПлощадь</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="НеКонтролироватьПлощадьКонтекстноеМеню" id="36"/>
+									<ExtendedTooltip name="НеКонтролироватьПлощадьExtendedTooltip" id="144"/>
+								</CheckBoxField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="Характеристики" id="57">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Характеристики</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Характеристики</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ХарактеристикиExtendedTooltip" id="145"/>
+					<ChildItems>
+						<InputField name="КатегорияЗемель" id="60">
+							<DataPath>Объект.КатегорияЗемель</DataPath>
+							<ContextMenu name="КатегорияЗемельКонтекстноеМеню" id="61"/>
+							<ExtendedTooltip name="КатегорияЗемельExtendedTooltip" id="146"/>
+						</InputField>
+						<InputField name="НазначениеОбъекта" id="62">
+							<DataPath>Объект.НазначениеОбъекта</DataPath>
+							<ContextMenu name="НазначениеОбъектаКонтекстноеМеню" id="63"/>
+							<ExtendedTooltip name="НазначениеОбъектаExtendedTooltip" id="147"/>
+						</InputField>
+						<UsualGroup name="ГруппаЭтажи" id="110">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа этажи</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа этажи</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаЭтажиExtendedTooltip" id="148"/>
+							<ChildItems>
+								<InputField name="ЧислоЭтажей" id="64">
+									<DataPath>Объект.ЧислоЭтажей</DataPath>
+									<Width>7</Width>
+									<SpinButton>true</SpinButton>
+									<ContextMenu name="ЧислоЭтажейКонтекстноеМеню" id="65"/>
+									<ExtendedTooltip name="ЧислоЭтажейExtendedTooltip" id="149"/>
+								</InputField>
+								<InputField name="ЧислоПодземныхЭтажей" id="66">
+									<DataPath>Объект.ЧислоПодземныхЭтажей</DataPath>
+									<Width>7</Width>
+									<SpinButton>true</SpinButton>
+									<ContextMenu name="ЧислоПодземныхЭтажейКонтекстноеМеню" id="67"/>
+									<ExtendedTooltip name="ЧислоПодземныхЭтажейExtendedTooltip" id="150"/>
+								</InputField>
+								<InputField name="Этаж" id="68">
+									<DataPath>Объект.Этаж</DataPath>
+									<Width>7</Width>
+									<SpinButton>true</SpinButton>
+									<ContextMenu name="ЭтажКонтекстноеМеню" id="69"/>
+									<ExtendedTooltip name="ЭтажExtendedTooltip" id="151"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<InputField name="ГодПостройки" id="70">
+							<DataPath>Объект.ГодПостройки</DataPath>
+							<ContextMenu name="ГодПостройкиКонтекстноеМеню" id="71"/>
+							<ExtendedTooltip name="ГодПостройкиExtendedTooltip" id="152"/>
+						</InputField>
+						<CheckBoxField name="ПамятникИсторииИКультуры" id="72">
+							<DataPath>Объект.ПамятникИсторииИКультуры</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ПамятникИсторииИКультурыКонтекстноеМеню" id="73"/>
+							<ExtendedTooltip name="ПамятникИсторииИКультурыExtendedTooltip" id="153"/>
+						</CheckBoxField>
+					</ChildItems>
+				</Page>
+				<Page name="УчетИПрава" id="59">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Учет и права</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Учет и права</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="УчетИПраваExtendedTooltip" id="154"/>
+					<ChildItems>
+						<UsualGroup name="УчетныеДанные" id="79">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Учетные данные</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Учетные данные</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<ExtendedTooltip name="УчетныеДанныеExtendedTooltip" id="155"/>
+							<ChildItems>
+								<InputField name="Подразделение" id="86">
+									<DataPath>Объект.Подразделение</DataPath>
+									<ContextMenu name="ПодразделениеКонтекстноеМеню" id="87"/>
+									<ExtendedTooltip name="ПодразделениеExtendedTooltip" id="156"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.АР_ОбъектыАренды</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="мСтруктураРедактированияКИ" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>М структура редактирования КИ</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="ПодлежитСдачеВАренду" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Объект подлежит сдаче в аренду</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Обработка" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обработка</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.АР_ВводОднотипныхОбъектовАренды</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ДатаНачалаСдачиВАренду" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата начала сдачи в аренду</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="СформироватьОбъекты" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать объекты</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сформировать объекты</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СформироватьОбъекты</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+	<CommandInterface>
+		<NavigationPanel>
+			<Item>
+				<Command>InformationRegister.АР_СобственникиОбъектовАренды.StandardCommand.OpenByValue.ОбъектАренды</Command>
+				<Type>Auto</Type>
+				<DefaultVisible>false</DefaultVisible>
+				<Visible>
+					<xr:Common>false</xr:Common>
+				</Visible>
+			</Item>
+		</NavigationPanel>
+	</CommandInterface>
+</Form>

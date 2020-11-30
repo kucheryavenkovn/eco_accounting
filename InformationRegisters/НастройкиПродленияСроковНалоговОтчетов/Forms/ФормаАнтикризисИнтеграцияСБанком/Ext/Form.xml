@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<VerticalSpacing>Double</VerticalSpacing>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ОсвобождениеОтУплатыНалогов" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Федеральный закон № 172-ФЗ от 08.06.2020</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<VerticalSpacing>Single</VerticalSpacing>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="ОсвобождениеОтУплатыНалоговРасширеннаяПодсказка" id="4"/>
+			<ChildItems>
+				<LabelDecoration name="ДекорацияОсвобождениеОтУплатыНалогов" id="5">
+					<Width>58</Width>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Индивидуальные предприниматели, занятые в сферах деятельности, наиболее пострадавших от коронавирусной инфекции, освобождены от уплаты налога за 2 квартал 2020 года.
+Страховой взнос в ПФР в фиксированном размере за 2020 год снижен для них до 20 318 руб.</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДекорацияОсвобождениеОтУплатыНалоговКонтекстноеМеню" id="6"/>
+					<ExtendedTooltip name="ДекорацияОсвобождениеОтУплатыНалоговРасширеннаяПодсказка" id="7"/>
+				</LabelDecoration>
+				<CheckBoxField name="ДеятельностьОтнесенаКПострадавшимОтКоронавируса" id="8">
+					<DataPath>ДеятельностьОтнесенаКПострадавшимОтКоронавируса</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ДеятельностьОтнесенаКПострадавшимОтКоронавирусаКонтекстноеМеню" id="9"/>
+					<ExtendedTooltip name="ДеятельностьОтнесенаКПострадавшимОтКоронавирусаРасширеннаяПодсказка" id="10"/>
+					<Events>
+						<Event name="OnChange">ДеятельностьОтнесенаКПострадавшимОтКоронавирусаПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<Button name="ПроверьтеДеятельностьОтнесенаКПострадавшимОтКоронавируса" id="11">
+					<Type>Hyperlink</Type>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<CommandName>Form.Command.ПроверьтеДеятельностьОтнесенаКПострадавшимОтКоронавируса</CommandName>
+					<ExtendedTooltip name="ПроверьтеДеятельностьОтнесенаКПострадавшимОтКоронавирусаРасширеннаяПодсказка" id="12"/>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаМерыУстойчивогоРазвития" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Постановление Правительства № 409 от 02.04.2020</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="ГруппаМерыУстойчивогоРазвитияРасширеннаяПодсказка" id="14"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаПродлитьСрокиНастройка" id="15">
+					<Group>Vertical</Group>
+					<VerticalSpacing>Single</VerticalSpacing>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаПродлитьСрокиНастройкаРасширеннаяПодсказка" id="16"/>
+					<ChildItems>
+						<CheckBoxField name="МерыУстойчивогоРазвития" id="17">
+							<DataPath>МерыУстойчивогоРазвития</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="МерыУстойчивогоРазвитияКонтекстноеМеню" id="18"/>
+							<ExtendedTooltip name="МерыУстойчивогоРазвитияРасширеннаяПодсказка" id="19">
+								<Title formatted="true">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Если индивидуальный предприниматель включен в реестр субъектов малого и среднего предпринимательства и ведет деятельность в отраслях, 
+наиболее пострадавших в результате распространения новой коронавирусной инфекции COVID-19, то он имеет право 
+на продление сроков уплаты налогов и страховых взносов</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+							<Events>
+								<Event name="OnChange">МерыУстойчивогоРазвитияПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<LabelDecoration name="ПродлитьСрокиГиперссылка" id="20">
+							<Title formatted="true">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>&lt;link https://buh.ru/sroki&gt;Можно ли продлить сроки?&lt;/&gt;</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ПродлитьСрокиГиперссылкаКонтекстноеМеню" id="21"/>
+							<ExtendedTooltip name="ПродлитьСрокиГиперссылкаРасширеннаяПодсказка" id="22"/>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаОсобыйПроизводственныйКалендарь" id="23">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Указы Президента о нерабочих днях</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<VerticalSpacing>Single</VerticalSpacing>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="ГруппаОсобыйПроизводственныйКалендарьРасширеннаяПодсказка" id="24"/>
+			<ChildItems>
+				<CheckBoxField name="НеРаботаетВНерабочиеДни" id="25">
+					<DataPath>НеРаботаетВНерабочиеДни</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<ToolTipRepresentation>None</ToolTipRepresentation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="НеРаботаетВНерабочиеДниКонтекстноеМеню" id="26"/>
+					<ExtendedTooltip name="НеРаботаетВНерабочиеДниРасширеннаяПодсказка" id="27">
+						<AutoMaxWidth>false</AutoMaxWidth>
+						<MaxWidth>66</MaxWidth>
+						<Title formatted="true"/>
+					</ExtendedTooltip>
+					<Events>
+						<Event name="OnChange">НеРаботаетВНерабочиеДниПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаАнтикризис_Подвал" id="31">
+			<Group>Vertical</Group>
+			<VerticalSpacing>Single</VerticalSpacing>
+			<Representation>NormalSeparation</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаАнтикризис_ПодвалРасширеннаяПодсказка" id="32"/>
+			<ChildItems>
+				<UsualGroup name="СсылкиИТС" id="33">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Полезные статьи на 1С:ИТС</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<VerticalSpacing>Single</VerticalSpacing>
+					<Representation>None</Representation>
+					<ExtendedTooltip name="СсылкиИТСРасширеннаяПодсказка" id="34"/>
+					<ChildItems>
+						<LabelDecoration name="СсылкаИТС1" id="35">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="true">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>&lt;link https://its.1c.ru/anticrisis/repdate&gt;Когда сдавать отчетность?&lt;/&gt;</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="СсылкаИТС1КонтекстноеМеню" id="36"/>
+							<ExtendedTooltip name="СсылкаИТС1РасширеннаяПодсказка" id="37"/>
+						</LabelDecoration>
+						<LabelDecoration name="СсылкаИТС2" id="38">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="true">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>&lt;link https://its.1c.ru/anticrisis/taxdate&gt;Когда платить налоги?&lt;/&gt;</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="СсылкаИТС2КонтекстноеМеню" id="39"/>
+							<ExtendedTooltip name="СсылкаИТС2РасширеннаяПодсказка" id="40"/>
+						</LabelDecoration>
+						<LabelDecoration name="СсылкаИТС3" id="41">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="true">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>&lt;link https://its.1c.ru/anticrisis/taxrate&gt;Часто задаваемые вопросы&lt;/&gt;</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="СсылкаИТС3КонтекстноеМеню" id="42"/>
+							<ExtendedTooltip name="СсылкаИТС3РасширеннаяПодсказка" id="43"/>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<LabelDecoration name="АнтикризисПодвалГиперссылка" id="47">
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<Title formatted="true">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>&lt;link https://v8.1c.ru/anticrisis/poleznye-materialy/&gt;1С:Антикризис - решения 1С для удаленной работы и эффективного бизнеса в период коронавируса&lt;/&gt;</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="АнтикризисПодвалГиперссылкаКонтекстноеМеню" id="48"/>
+			<ExtendedTooltip name="АнтикризисПодвалГиперссылкаРасширеннаяПодсказка" id="49"/>
+		</LabelDecoration>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ДеятельностьОтнесенаКПострадавшимОтКоронавируса" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Деятельность отнесена к пострадавшим от коронавируса</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="МерыУстойчивогоРазвития" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Продлить сроки уплаты УСН и страховых взносов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="НеРаботаетВНерабочиеДни" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перенести сроки сдачи отчетности и уплаты УСН</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Организация" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Организация</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ЗаписатьИЗакрыть" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать и закрыть</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать и закрыть</v8:content>
+				</v8:item>
+			</ToolTip>
+		</Command>
+		<Command name="ПроверьтеДеятельностьОтнесенаКПострадавшимОтКоронавируса" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверьте, относится ли ваша деятельность к пострадавшим от коронавируса</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ПроверьтеДеятельностьОтнесенаКПострадавшимОтКоронавируса</Action>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="Организация">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

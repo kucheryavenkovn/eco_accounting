@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Параметры заполнения</v8:content>
+		</v8:item>
+	</Title>
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<SaveDataInSettings>UseList</SaveDataInSettings>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаВыбрать" id="1">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.Выбрать</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Заполнить</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаВыбратьРасширеннаяПодсказка" id="2"/>
+			</Button>
+			<Button name="ФормаСохранитьЗначения" id="16">
+				<Type>CommandBarButton</Type>
+				<Representation>Picture</Representation>
+				<CommandName>Form.StandardCommand.SaveValues</CommandName>
+				<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+				<ExtendedTooltip name="ФормаСохранитьЗначенияРасширеннаяПодсказка" id="17"/>
+			</Button>
+			<Button name="ФормаВосстановитьЗначения" id="18">
+				<Type>CommandBarButton</Type>
+				<Representation>Picture</Representation>
+				<CommandName>Form.StandardCommand.RestoreValues</CommandName>
+				<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+				<ExtendedTooltip name="ФормаВосстановитьЗначенияРасширеннаяПодсказка" id="19"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnSaveDataInSettingsAtServer">ПриСохраненииДанныхВНастройкахНаСервере</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnLoadDataFromSettingsAtServer">ПриЗагрузкеДанныхИзНастроекНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаПотребительская" id="20">
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПотребительскаяРасширеннаяПодсказка" id="21"/>
+			<ChildItems>
+				<CheckBoxField name="ЗаполнятьШаблонПотребительскойУпаковки" id="25">
+					<DataPath>ЗаполнятьШаблонПотребительскойУпаковки</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ЗаполнятьШаблонПотребительскойУпаковкиКонтекстноеМеню" id="26"/>
+					<ExtendedTooltip name="ЗаполнятьШаблонПотребительскойУпаковкиРасширеннаяПодсказка" id="27"/>
+					<Events>
+						<Event name="OnChange">ЗаполнятьШаблонПотребительскойУпаковкиПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<InputField name="ШаблонПотребительскойЭтикетки" id="8">
+					<DataPath>ШаблонПотребительскойЭтикетки</DataPath>
+					<ContextMenu name="ШаблонПотребительскойЭтикеткиКонтекстноеМеню" id="9"/>
+					<ExtendedTooltip name="ШаблонПотребительскойЭтикеткиРасширеннаяПодсказка" id="10"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаЛогистическаяЭтикетка" id="14">
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаЛогистическаяЭтикеткаРасширеннаяПодсказка" id="15"/>
+			<ChildItems>
+				<CheckBoxField name="ЗаполнятьШаблонЛогистическойУпаковки" id="22">
+					<DataPath>ЗаполнятьШаблонЛогистическойУпаковки</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ЗаполнятьШаблонЛогистическойУпаковкиКонтекстноеМеню" id="23"/>
+					<ExtendedTooltip name="ЗаполнятьШаблонЛогистическойУпаковкиРасширеннаяПодсказка" id="24"/>
+					<Events>
+						<Event name="OnChange">ЗаполнятьШаблонЛогистическойУпаковкиПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<InputField name="ШаблонЛогистическойЭтикетки" id="5">
+					<DataPath>ШаблонЛогистическойЭтикетки</DataPath>
+					<ContextMenu name="ШаблонЛогистическойЭтикеткиКонтекстноеМеню" id="6"/>
+					<ExtendedTooltip name="ШаблонЛогистическойЭтикеткиРасширеннаяПодсказка" id="7"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="Группа1" id="43">
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка1" id="44"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаЗаполнятьКоличество" id="33">
+					<Group>AlwaysHorizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="34"/>
+					<ChildItems>
+						<CheckBoxField name="ЗаполнятьКоличествоПечать" id="35">
+							<DataPath>ЗаполнятьКоличествоПечать</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="КонтекстноеМеню" id="36"/>
+							<ExtendedTooltip name="РасширеннаяПодсказка" id="37"/>
+							<Events>
+								<Event name="OnChange">ЗаполнятьКоличествоПечатьПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<InputField name="КоличествоПечать" id="38">
+							<DataPath>КоличествоПечать</DataPath>
+							<ContextMenu name="ПолеКонтекстноеМеню" id="39"/>
+							<ExtendedTooltip name="ПолеРасширеннаяПодсказка" id="40"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаКоличествоЭкземпляров" id="28">
+					<Group>AlwaysHorizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаКоличествоЭкземпляровРасширеннаяПодсказка" id="29"/>
+					<ChildItems>
+						<CheckBoxField name="ЗаполнятьКоличествоЭкземпляров" id="30">
+							<DataPath>ЗаполнятьКоличествоЭкземпляров</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ЗаполнятьКоличествоЭкземпляровКонтекстноеМеню" id="31"/>
+							<ExtendedTooltip name="ЗаполнятьКоличествоЭкземпляровРасширеннаяПодсказка" id="32"/>
+							<Events>
+								<Event name="OnChange">ЗаполнятьКоличествоЭкземпляровПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<InputField name="КоличествоЭкземпляровЛогистическойЭтикетки" id="11">
+							<DataPath>КоличествоЭкземпляровЛогистическойЭтикетки</DataPath>
+							<ContextMenu name="КоличествоЭкземпляровЛогистическойЭтикеткиКонтекстноеМеню" id="12"/>
+							<ExtendedTooltip name="КоличествоЭкземпляровЛогистическойЭтикеткиРасширеннаяПодсказка" id="13"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ШаблонЛогистическойЭтикетки" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шаблон логистической этикетки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:TypeSet>cfg:DefinedType.ШаблонЭтикеткиИС</v8:TypeSet>
+			</Type>
+		</Attribute>
+		<Attribute name="ШаблонПотребительскойЭтикетки" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шаблон потребительской этикетки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:TypeSet>cfg:DefinedType.ШаблонЭтикеткиИС</v8:TypeSet>
+			</Type>
+		</Attribute>
+		<Attribute name="КоличествоЭкземпляровЛогистическойЭтикетки" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Экземпляров</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>2</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтображатьЛогистическуюЭтикетку" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отображать логистическую этикетку</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗаполнятьШаблонЛогистическойУпаковки" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнять шаблон логистической упаковки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Save>
+				<Field>ЗаполнятьШаблонЛогистическойУпаковки</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ЗаполнятьШаблонПотребительскойУпаковки" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнять шаблон потребительской упаковки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Save>
+				<Field>ЗаполнятьШаблонПотребительскойУпаковки</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ЗаполнятьКоличествоЭкземпляров" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнять количество экземпляров</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Save>
+				<Field>ЗаполнятьКоличествоЭкземпляров</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ЗаполнятьКоличествоПечать" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Save>
+				<Field>ЗаполнятьКоличествоПечать</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="КоличествоПечать" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>5</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Выбрать" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить</v8:content>
+				</v8:item>
+			</Title>
+			<Action>Выбрать</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="ОтображатьЛогистическуюЭтикетку">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

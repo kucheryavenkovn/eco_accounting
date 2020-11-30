@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаЗаполнитьСтатьиПриходами" id="127">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ЗаполнитьСтатьямиПрихода</CommandName>
+				<ExtendedTooltip name="ФормаЗаполнитьСтатьиПриходамиРасширеннаяПодсказка" id="128"/>
+			</Button>
+			<Button name="ФормаЗаполнитьСтатьямиРасхода" id="129">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ЗаполнитьСтатьямиРасхода</CommandName>
+				<ExtendedTooltip name="ФормаЗаполнитьСтатьямиРасходаРасширеннаяПодсказка" id="130"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Группа1" id="125">
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="126"/>
+			<ChildItems>
+				<InputField name="Номер" id="1">
+					<DataPath>Объект.Number</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НомерКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="3"/>
+				</InputField>
+				<InputField name="Дата" id="4">
+					<DataPath>Объект.Date</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="6"/>
+					<Events>
+						<Event name="OnChange">ДатаПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="Ответственный" id="7">
+					<DataPath>Объект.Ответственный</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ОтветственныйКонтекстноеМеню" id="8"/>
+					<ExtendedTooltip name="ОтветственныйРасширеннаяПодсказка" id="9"/>
+				</InputField>
+				<CheckBoxField name="ВсеСтатьи" id="10">
+					<DataPath>Объект.ВсеСтатьи</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ВсеСтатьиКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="ВсеСтатьиРасширеннаяПодсказка" id="12"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="Календарь" id="13">
+			<Representation>List</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Объект.Календарь</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="КалендарьКонтекстноеМеню" id="14"/>
+			<AutoCommandBar name="КалендарьКоманднаяПанель" id="15"/>
+			<ExtendedTooltip name="КалендарьРасширеннаяПодсказка" id="16"/>
+			<SearchStringAddition name="КалендарьСтрокаПоиска" id="17">
+				<AdditionSource>
+					<Item>Календарь</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="КалендарьСтрокаПоискаКонтекстноеМеню" id="18"/>
+				<ExtendedTooltip name="КалендарьСтрокаПоискаРасширеннаяПодсказка" id="19"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="КалендарьСостояниеПросмотра" id="20">
+				<AdditionSource>
+					<Item>Календарь</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="КалендарьСостояниеПросмотраКонтекстноеМеню" id="21"/>
+				<ExtendedTooltip name="КалендарьСостояниеПросмотраРасширеннаяПодсказка" id="22"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="КалендарьУправлениеПоиском" id="23">
+				<AdditionSource>
+					<Item>Календарь</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="КалендарьУправлениеПоискомКонтекстноеМеню" id="24"/>
+				<ExtendedTooltip name="КалендарьУправлениеПоискомРасширеннаяПодсказка" id="25"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="КалендарьНомерСтроки" id="26">
+					<DataPath>Объект.Календарь.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КалендарьНомерСтрокиКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="КалендарьНомерСтрокиРасширеннаяПодсказка" id="28"/>
+				</LabelField>
+				<InputField name="КалендарьСтатьяДС" id="29">
+					<DataPath>Объект.Календарь.СтатьяДС</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КалендарьСтатьяДСКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="КалендарьСтатьяДСРасширеннаяПодсказка" id="31"/>
+				</InputField>
+				<InputField name="КалендарьД1" id="32">
+					<DataPath>Объект.Календарь.Д1</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КалендарьД1КонтекстноеМеню" id="33"/>
+					<ExtendedTooltip name="КалендарьД1РасширеннаяПодсказка" id="34"/>
+				</InputField>
+				<InputField name="КалендарьД2" id="35">
+					<DataPath>Объект.Календарь.Д2</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КалендарьД2КонтекстноеМеню" id="36"/>
+					<ExtendedTooltip name="КалендарьД2РасширеннаяПодсказка" id="37"/>
+				</InputField>
+				<InputField name="КалендарьД3" id="38">
+					<DataPath>Объект.Календарь.Д3</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КалендарьД3КонтекстноеМеню" id="39"/>
+					<ExtendedTooltip name="КалендарьД3РасширеннаяПодсказка" id="40"/>
+				</InputField>
+				<InputField name="КалендарьД4" id="41">
+					<DataPath>Объект.Календарь.Д4</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КалендарьД4КонтекстноеМеню" id="42"/>
+					<ExtendedTooltip name="КалендарьД4РасширеннаяПодсказка" id="43"/>
+				</InputField>
+				<InputField name="КалендарьД5" id="44">
+					<DataPath>Объект.Календарь.Д5</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КалендарьД5КонтекстноеМеню" id="45"/>
+					<ExtendedTooltip name="КалендарьД5РасширеннаяПодсказка" id="46"/>
+				</InputField>
+				<InputField name="КалендарьД6" id="47">
+					<DataPath>Объект.Календарь.Д6</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КалендарьД6КонтекстноеМеню" id="48"/>
+					<ExtendedTooltip name="КалендарьД6РасширеннаяПодсказка" id="49"/>
+				</InputField>
+				<InputField name="КалендарьД7" id="50">
+					<DataPath>Объект.Календарь.Д7</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КалендарьД7КонтекстноеМеню" id="51"/>
+					<ExtendedTooltip name="КалендарьД7РасширеннаяПодсказка" id="52"/>
+				</InputField>
+				<InputField name="КалендарьД8" id="53">
+					<DataPath>Объект.Календарь.Д8</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КалендарьД8КонтекстноеМеню" id="54"/>
+					<ExtendedTooltip name="КалендарьД8РасширеннаяПодсказка" id="55"/>
+				</InputField>
+				<InputField name="КалендарьД9" id="56">
+					<DataPath>Объект.Календарь.Д9</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КалендарьД9КонтекстноеМеню" id="57"/>
+					<ExtendedTooltip name="КалендарьД9РасширеннаяПодсказка" id="58"/>
+				</InputField>
+				<InputField name="КалендарьД10" id="59">
+					<DataPath>Объект.Календарь.Д10</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КалендарьД10КонтекстноеМеню" id="60"/>
+					<ExtendedTooltip name="КалендарьД10РасширеннаяПодсказка" id="61"/>
+				</InputField>
+				<InputField name="КалендарьД11" id="62">
+					<DataPath>Объект.Календарь.Д11</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КалендарьД11КонтекстноеМеню" id="63"/>
+					<ExtendedTooltip name="КалендарьД11РасширеннаяПодсказка" id="64"/>
+				</InputField>
+				<InputField name="КалендарьД12" id="65">
+					<DataPath>Объект.Календарь.Д12</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КалендарьД12КонтекстноеМеню" id="66"/>
+					<ExtendedTooltip name="КалендарьД12РасширеннаяПодсказка" id="67"/>
+				</InputField>
+				<InputField name="КалендарьД13" id="68">
+					<DataPath>Объект.Календарь.Д13</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КалендарьД13КонтекстноеМеню" id="69"/>
+					<ExtendedTooltip name="КалендарьД13РасширеннаяПодсказка" id="70"/>
+				</InputField>
+				<InputField name="КалендарьД14" id="71">
+					<DataPath>Объект.Календарь.Д14</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КалендарьД14КонтекстноеМеню" id="72"/>
+					<ExtendedTooltip name="КалендарьД14РасширеннаяПодсказка" id="73"/>
+				</InputField>
+				<InputField name="КалендарьД15" id="74">
+					<DataPath>Объект.Календарь.Д15</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КалендарьД15КонтекстноеМеню" id="75"/>
+					<ExtendedTooltip name="КалендарьД15РасширеннаяПодсказка" id="76"/>
+				</InputField>
+				<InputField name="КалендарьД16" id="77">
+					<DataPath>Объект.Календарь.Д16</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КалендарьД16КонтекстноеМеню" id="78"/>
+					<ExtendedTooltip name="КалендарьД16РасширеннаяПодсказка" id="79"/>
+				</InputField>
+				<InputField name="КалендарьД17" id="80">
+					<DataPath>Объект.Календарь.Д17</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КалендарьД17КонтекстноеМеню" id="81"/>
+					<ExtendedTooltip name="КалендарьД17РасширеннаяПодсказка" id="82"/>
+				</InputField>
+				<InputField name="КалендарьД18" id="83">
+					<DataPath>Объект.Календарь.Д18</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КалендарьД18КонтекстноеМеню" id="84"/>
+					<ExtendedTooltip name="КалендарьД18РасширеннаяПодсказка" id="85"/>
+				</InputField>
+				<InputField name="КалендарьД19" id="86">
+					<DataPath>Объект.Календарь.Д19</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КалендарьД19КонтекстноеМеню" id="87"/>
+					<ExtendedTooltip name="КалендарьД19РасширеннаяПодсказка" id="88"/>
+				</InputField>
+				<InputField name="КалендарьД20" id="89">
+					<DataPath>Объект.Календарь.Д20</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КалендарьД20КонтекстноеМеню" id="90"/>
+					<ExtendedTooltip name="КалендарьД20РасширеннаяПодсказка" id="91"/>
+				</InputField>
+				<InputField name="КалендарьД21" id="92">
+					<DataPath>Объект.Календарь.Д21</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КалендарьД21КонтекстноеМеню" id="93"/>
+					<ExtendedTooltip name="КалендарьД21РасширеннаяПодсказка" id="94"/>
+				</InputField>
+				<InputField name="КалендарьД22" id="95">
+					<DataPath>Объект.Календарь.Д22</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КалендарьД22КонтекстноеМеню" id="96"/>
+					<ExtendedTooltip name="КалендарьД22РасширеннаяПодсказка" id="97"/>
+				</InputField>
+				<InputField name="КалендарьД23" id="98">
+					<DataPath>Объект.Календарь.Д23</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КалендарьД23КонтекстноеМеню" id="99"/>
+					<ExtendedTooltip name="КалендарьД23РасширеннаяПодсказка" id="100"/>
+				</InputField>
+				<InputField name="КалендарьД24" id="101">
+					<DataPath>Объект.Календарь.Д24</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КалендарьД24КонтекстноеМеню" id="102"/>
+					<ExtendedTooltip name="КалендарьД24РасширеннаяПодсказка" id="103"/>
+				</InputField>
+				<InputField name="КалендарьД25" id="104">
+					<DataPath>Объект.Календарь.Д25</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КалендарьД25КонтекстноеМеню" id="105"/>
+					<ExtendedTooltip name="КалендарьД25РасширеннаяПодсказка" id="106"/>
+				</InputField>
+				<InputField name="КалендарьД26" id="107">
+					<DataPath>Объект.Календарь.Д26</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КалендарьД26КонтекстноеМеню" id="108"/>
+					<ExtendedTooltip name="КалендарьД26РасширеннаяПодсказка" id="109"/>
+				</InputField>
+				<InputField name="КалендарьД27" id="110">
+					<DataPath>Объект.Календарь.Д27</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КалендарьД27КонтекстноеМеню" id="111"/>
+					<ExtendedTooltip name="КалендарьД27РасширеннаяПодсказка" id="112"/>
+				</InputField>
+				<InputField name="КалендарьД28" id="113">
+					<DataPath>Объект.Календарь.Д28</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КалендарьД28КонтекстноеМеню" id="114"/>
+					<ExtendedTooltip name="КалендарьД28РасширеннаяПодсказка" id="115"/>
+				</InputField>
+				<InputField name="КалендарьД29" id="116">
+					<DataPath>Объект.Календарь.Д29</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КалендарьД29КонтекстноеМеню" id="117"/>
+					<ExtendedTooltip name="КалендарьД29РасширеннаяПодсказка" id="118"/>
+				</InputField>
+				<InputField name="КалендарьД30" id="119">
+					<DataPath>Объект.Календарь.Д30</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КалендарьД30КонтекстноеМеню" id="120"/>
+					<ExtendedTooltip name="КалендарьД30РасширеннаяПодсказка" id="121"/>
+				</InputField>
+				<InputField name="КалендарьД31" id="122">
+					<DataPath>Объект.Календарь.Д31</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КалендарьД31КонтекстноеМеню" id="123"/>
+					<ExtendedTooltip name="КалендарьД31РасширеннаяПодсказка" id="124"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.ПланированиеДС</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ЗаполнитьСтатьямиПрихода" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить статьями прихода</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить статьями прихода</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаполнитьСтатьиПриходами</Action>
+		</Command>
+		<Command name="ЗаполнитьСтатьямиРасхода" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить статьями расхода</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить статьями расхода</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаполнитьСтатьямиРасхода</Action>
+		</Command>
+	</Commands>
+</Form>

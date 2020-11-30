@@ -1,0 +1,739 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<LabelField name="Владелец" id="83">
+			<DataPath>Объект.Owner</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Налог, отчет</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ВладелецКонтекстноеМеню" id="84"/>
+			<ExtendedTooltip name="ВладелецРасширеннаяПодсказка" id="92"/>
+		</LabelField>
+		<InputField name="Код" id="1">
+			<DataPath>Объект.Code</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="КодРасширеннаяПодсказка" id="94"/>
+		</InputField>
+		<UsualGroup name="Контекст" id="42">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контекст</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контекст</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="КонтекстРасширеннаяПодсказка" id="93"/>
+			<ChildItems>
+				<InputField name="ДатаИзменения" id="9">
+					<DataPath>Объект.ДатаИзменения</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ДатаИзмененияКонтекстноеМеню" id="10"/>
+					<ExtendedTooltip name="ДатаИзмененияРасширеннаяПодсказка" id="95"/>
+				</InputField>
+				<CheckBoxField name="ЕстьИнформацияНаИТС" id="88">
+					<DataPath>Объект.ЕстьИнформацияНаИТС</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Есть на ИТС</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ЕстьИнформацияНаИТСКонтекстноеМеню" id="89"/>
+					<ExtendedTooltip name="ЕстьИнформацияНаИТСРасширеннаяПодсказка" id="96"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Наименование" id="85">
+			<DataPath>Объект.Description</DataPath>
+			<ContextMenu name="НаименованиеКонтекстноеМеню" id="86"/>
+			<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="97"/>
+		</InputField>
+		<InputField name="Действие" id="15">
+			<DataPath>Объект.Действие</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Требование</v8:content>
+				</v8:item>
+			</Title>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ДействиеКонтекстноеМеню" id="16"/>
+			<ExtendedTooltip name="ДействиеРасширеннаяПодсказка" id="100"/>
+			<Events>
+				<Event name="OnChange">ДействиеПриИзменении</Event>
+			</Events>
+		</InputField>
+		<CheckBoxField name="ОтправкаОтчетаОграничена" id="163">
+			<DataPath>Объект.ОтправкаОтчетаОграничена</DataPath>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="ОтправкаОтчетаОграниченаКонтекстноеМеню" id="164"/>
+			<ExtendedTooltip name="ОтправкаОтчетаОграниченаРасширеннаяПодсказка" id="165"/>
+		</CheckBoxField>
+		<InputField name="Описание" id="11">
+			<DataPath>Объект.Описание</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Краткое описание</v8:content>
+				</v8:item>
+			</Title>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ОписаниеКонтекстноеМеню" id="12"/>
+			<ExtendedTooltip name="ОписаниеРасширеннаяПодсказка" id="101"/>
+		</InputField>
+		<UsualGroup name="ГруппаФинансовыйПериод" id="158">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа финансовый период</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа финансовый период</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаФинансовыйПериодРасширеннаяПодсказка" id="159"/>
+			<ChildItems>
+				<InputField name="ФинансовыйПериод" id="13">
+					<DataPath>Объект.ФинансовыйПериод</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Налоговый период</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>для отчетов, не связанных с налогами - отчетный период</v8:content>
+						</v8:item>
+					</ToolTip>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MaxWidth>9</MaxWidth>
+					<ContextMenu name="ФинансовыйПериодКонтекстноеМеню" id="14"/>
+					<ExtendedTooltip name="ФинансовыйПериодРасширеннаяПодсказка" id="103"/>
+					<Events>
+						<Event name="OnChange">ФинансовыйПериодПриИзменении</Event>
+					</Events>
+				</InputField>
+				<CheckBoxField name="ПредусмотренРасширенныйПервыйНалоговыйПериод" id="160">
+					<DataPath>Объект.РасширенныйПервыйНалоговыйПериод</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Расширенный первый налоговый период (ст. 55 НК)</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Top</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ПредусмотренРасширенныйПервыйНалоговыйПериодКонтекстноеМеню" id="161"/>
+					<ExtendedTooltip name="ПредусмотренРасширенныйПервыйНалоговыйПериодРасширеннаяПодсказка" id="162"/>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаПовтор" id="149">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа повтор</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа повтор</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>NormalSeparation</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПовторРасширеннаяПодсказка" id="150"/>
+			<ChildItems>
+				<CheckBoxField name="ПовторятьНесколькоРаз" id="55">
+					<DataPath>ПовторятьНесколькоРаз</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>В рамках одного периода действие выполняется несколько раз</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ПовторятьНесколькоРазКонтекстноеМеню" id="56"/>
+					<ExtendedTooltip name="ПовторятьНесколькоРазРасширеннаяПодсказка" id="104"/>
+					<Events>
+						<Event name="OnChange">ПовторятьНесколькоРазПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<UsualGroup name="ПериодичностьГруппа" id="57">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Периодичность группа</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Периодичность группа</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ПериодичностьГруппаРасширеннаяПодсказка" id="105"/>
+					<ChildItems>
+						<InputField name="Периодичность" id="17">
+							<DataPath>Объект.Периодичность</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Каждый</v8:content>
+								</v8:item>
+							</Title>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>9</MaxWidth>
+							<ContextMenu name="ПериодичностьКонтекстноеМеню" id="18"/>
+							<ExtendedTooltip name="ПериодичностьРасширеннаяПодсказка" id="107"/>
+						</InputField>
+						<CheckBoxField name="ЗаданоОграничениеПериода" id="53">
+							<DataPath>ЗаданоОграничениеПериода</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Кроме</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ЗаданоОграничениеПериодаКонтекстноеМеню" id="54"/>
+							<ExtendedTooltip name="ЗаданоОграничениеПериодаРасширеннаяПодсказка" id="108"/>
+							<Events>
+								<Event name="OnChange">ЗаданоОграничениеПериодаПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<InputField name="ОграничениеПериода" id="19">
+							<DataPath>Объект.ОграничениеПериода</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>28</MaxWidth>
+							<ContextMenu name="ОграничениеПериодаКонтекстноеМеню" id="20"/>
+							<ExtendedTooltip name="ОграничениеПериодаРасширеннаяПодсказка" id="109"/>
+							<Events>
+								<Event name="OnChange">ОграничениеПериодаПриИзменении</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="Срок" id="52">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Срок исполнения требования</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Срок</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<VerticalSpacing>OneAndHalf</VerticalSpacing>
+			<ExtendedTooltip name="СрокРасширеннаяПодсказка" id="110"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаПериод" id="154">
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаПериодРасширеннаяПодсказка" id="155"/>
+					<ChildItems>
+						<InputField name="СрокМесяцев" id="21">
+							<DataPath>Объект.СрокМесяцев</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Срок исполнения требования</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>None</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="СрокМесяцевКонтекстноеМеню" id="22"/>
+							<ExtendedTooltip name="СрокМесяцевРасширеннаяПодсказка" id="112"/>
+						</InputField>
+						<LabelDecoration name="НадписьМесяцы" id="146">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>мес.</v8:content>
+								</v8:item>
+							</Title>
+							<VerticalAlign>Center</VerticalAlign>
+							<ContextMenu name="НадписьМесяцыКонтекстноеМеню" id="147"/>
+							<ExtendedTooltip name="НадписьМесяцыРасширеннаяПодсказка" id="148"/>
+						</LabelDecoration>
+						<InputField name="СрокДней" id="23">
+							<DataPath>Объект.СрокДней</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>дн.</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Right</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="СрокДнейКонтекстноеМеню" id="24"/>
+							<ExtendedTooltip name="СрокДнейРасширеннаяПодсказка" id="113"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаПостановлениеОПереносе" id="169">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа постановление о переносе</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа постановление о переносе</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<VerticalSpacing>Half</VerticalSpacing>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаПостановлениеОПереносеРасширеннаяПодсказка" id="170"/>
+					<ChildItems>
+						<InputField name="ОснованиеПереносаСроковОтчетовНалогов" id="171">
+							<DataPath>Объект.ОснованиеПродленияСроковНалоговОтчетов</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Перенос сроков в связи с коронавирусом</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Top</TitleLocation>
+							<ClearButton>true</ClearButton>
+							<QuickChoice>false</QuickChoice>
+							<ContextMenu name="ОснованиеПереносаСроковОтчетовНалоговКонтекстноеМеню" id="172"/>
+							<ExtendedTooltip name="ОснованиеПереносаСроковОтчетовНалоговРасширеннаяПодсказка" id="173"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаПорядокПереноса" id="156">
+					<Group>Vertical</Group>
+					<VerticalSpacing>Half</VerticalSpacing>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаПорядокПереносаРасширеннаяПодсказка" id="157"/>
+					<ChildItems>
+						<RadioButtonField name="ПеренестиНаРабочийДень" id="151">
+							<DataPath>Объект.ПеренестиНаРабочийДень</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Порядок переноса срока</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Top</TitleLocation>
+							<RadioButtonType>Auto</RadioButtonType>
+							<ColumnsCount>1</ColumnsCount>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Может закончиться в выходной день</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:decimal">0</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Переносится на следующий рабочий день</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:decimal">1</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Переносится на день, предшествующий выходному</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:decimal">-1</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="ПеренестиНаРабочийДеньКонтекстноеМеню" id="152"/>
+							<ExtendedTooltip name="ПеренестиНаРабочийДеньРасширеннаяПодсказка" id="153"/>
+						</RadioButtonField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ПериодДекларации" id="47">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период, по данным которого определяется сумма к уплате</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период декларации</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Width>43</Width>
+			<Group>Vertical</Group>
+			<ExtendedTooltip name="ПериодДекларацииРасширеннаяПодсказка" id="115"/>
+			<ChildItems>
+				<UsualGroup name="НастройкаБазовогоПериода" id="68">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройка базового периода</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройка базового периода</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<United>false</United>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="НастройкаБазовогоПериодаРасширеннаяПодсказка" id="116"/>
+					<ChildItems>
+						<RadioButtonField name="СтандартныйБазовыйПериод" id="61">
+							<DataPath>СтандартныйБазовыйПериод</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<RadioButtonType>Auto</RadioButtonType>
+							<ColumnsCount>1</ColumnsCount>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Предыдущий</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:decimal">1</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="СтандартныйБазовыйПериодКонтекстноеМеню" id="62"/>
+							<ExtendedTooltip name="СтандартныйБазовыйПериодРасширеннаяПодсказка" id="118"/>
+							<Events>
+								<Event name="OnChange">СтандартныйБазовыйПериодПриИзменении</Event>
+							</Events>
+						</RadioButtonField>
+						<InputField name="БазовыйПериод" id="69">
+							<DataPath>Объект.БазовыйПериод</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>9</MaxWidth>
+							<ContextMenu name="БазовыйПериодКонтекстноеМеню" id="70"/>
+							<ExtendedTooltip name="БазовыйПериодРасширеннаяПодсказка" id="119"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="НастройкаБазовогоПериодаРанее" id="63">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройка базового периода ранее</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройка базового периода ранее</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<United>false</United>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="НастройкаБазовогоПериодаРанееРасширеннаяПодсказка" id="120"/>
+					<ChildItems>
+						<RadioButtonField name="НестандартныйБазовыйПериодРанее" id="64">
+							<DataPath>СтандартныйБазовыйПериод</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<RadioButtonType>Auto</RadioButtonType>
+							<ColumnsCount>1</ColumnsCount>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Еще раньше - пропустить</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:decimal">0</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="НестандартныйБазовыйПериодРанееКонтекстноеМеню" id="65"/>
+							<ExtendedTooltip name="НестандартныйБазовыйПериодРанееРасширеннаяПодсказка" id="122"/>
+							<Events>
+								<Event name="OnChange">НестандартныйБазовыйПериодРанееПриИзменении</Event>
+							</Events>
+						</RadioButtonField>
+						<UsualGroup name="ГруппаНестандартныйБазовыйПропустить" id="144">
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Пропустить</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаНестандартныйБазовыйПропуститьРасширеннаяПодсказка" id="145"/>
+							<ChildItems>
+								<InputField name="ОтставаниеБазовогоПериода" id="29">
+									<DataPath>Объект.ОтставаниеБазовогоПериода</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ОтставаниеБазовогоПериодаКонтекстноеМеню" id="30"/>
+									<ExtendedTooltip name="ОтставаниеБазовогоПериодаРасширеннаяПодсказка" id="123"/>
+								</InputField>
+								<InputField name="БазовыйПериодРанее" id="27">
+									<DataPath>Объект.БазовыйПериод</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<EditMode>EnterOnInput</EditMode>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>9</MaxWidth>
+									<ContextMenu name="БазовыйПериодРанееКонтекстноеМеню" id="28"/>
+									<ExtendedTooltip name="БазовыйПериодРанееРасширеннаяПодсказка" id="124"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="УсловияПрименения" id="43">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Условия, при которых применяется требование</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Условия применения</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<United>false</United>
+			<ExtendedTooltip name="УсловияПримененияРасширеннаяПодсказка" id="125"/>
+			<ChildItems>
+				<UsualGroup name="ПериодПрименения" id="44">
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ThroughAlign>DontUse</ThroughAlign>
+					<ExtendedTooltip name="ПериодПримененияРасширеннаяПодсказка" id="126"/>
+					<ChildItems>
+						<InputField name="НачалоДействия" id="5">
+							<DataPath>Объект.НачалоДействия</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Период</v8:content>
+								</v8:item>
+							</Title>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="НачалоДействияКонтекстноеМеню" id="6"/>
+							<ExtendedTooltip name="НачалоДействияРасширеннаяПодсказка" id="127"/>
+						</InputField>
+						<LabelDecoration name="Отступ5" id="90">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>-</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="Отступ5КонтекстноеМеню" id="91"/>
+							<ExtendedTooltip name="Отступ5РасширеннаяПодсказка" id="128"/>
+						</LabelDecoration>
+						<InputField name="КонецДействия" id="7">
+							<DataPath>Объект.КонецДействия</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>по</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>None</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="КонецДействияКонтекстноеМеню" id="8"/>
+							<ExtendedTooltip name="КонецДействияРасширеннаяПодсказка" id="129"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<Table name="Условия" id="35">
+					<Representation>List</Representation>
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<FileDragMode>AsFile</FileDragMode>
+					<DataPath>Объект.Условия</DataPath>
+					<SearchStringLocation>None</SearchStringLocation>
+					<ViewStatusLocation>None</ViewStatusLocation>
+					<SearchControlLocation>None</SearchControlLocation>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="УсловияКонтекстноеМеню" id="36"/>
+					<AutoCommandBar name="УсловияКоманднаяПанель" id="37"/>
+					<ExtendedTooltip name="УсловияРасширеннаяПодсказка" id="130"/>
+					<SearchStringAddition name="УсловияСтрокаПоиска" id="131">
+						<AdditionSource>
+							<Item>Условия</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="УсловияСтрокаПоискаКонтекстноеМеню" id="132"/>
+						<ExtendedTooltip name="УсловияСтрокаПоискаРасширеннаяПодсказка" id="133"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="УсловияСостояниеПросмотра" id="134">
+						<AdditionSource>
+							<Item>Условия</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="УсловияСостояниеПросмотраКонтекстноеМеню" id="135"/>
+						<ExtendedTooltip name="УсловияСостояниеПросмотраРасширеннаяПодсказка" id="136"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="УсловияУправлениеПоиском" id="137">
+						<AdditionSource>
+							<Item>Условия</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="УсловияУправлениеПоискомКонтекстноеМеню" id="138"/>
+						<ExtendedTooltip name="УсловияУправлениеПоискомРасширеннаяПодсказка" id="139"/>
+					</SearchControlAddition>
+					<ChildItems>
+						<LabelField name="УсловияНомерСтроки" id="38">
+							<DataPath>Объект.Условия.LineNumber</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="УсловияНомерСтрокиКонтекстноеМеню" id="39"/>
+							<ExtendedTooltip name="УсловияНомерСтрокиРасширеннаяПодсказка" id="140"/>
+						</LabelField>
+						<InputField name="УсловияУсловие" id="40">
+							<DataPath>Объект.Условия.Условие</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="УсловияУсловиеКонтекстноеМеню" id="41"/>
+							<ExtendedTooltip name="УсловияУсловиеРасширеннаяПодсказка" id="141"/>
+						</InputField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.ПравилаПредставленияОтчетовУплатыНалогов</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ЗаданоОграничениеПериода" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Задано ограничение периода</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ПовторятьНесколькоРаз" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Повторять несколько раз</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="СтандартныйБазовыйПериод" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Стандартный базовый период</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>1</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>

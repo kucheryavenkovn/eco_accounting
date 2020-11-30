@@ -1,0 +1,723 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<AutoTitle>false</AutoTitle>
+	<CommandSet>
+		<ExcludedCommand>Abort</ExcludedCommand>
+		<ExcludedCommand>Cancel</ExcludedCommand>
+		<ExcludedCommand>Close</ExcludedCommand>
+		<ExcludedCommand>DynamicListStandardSettings</ExcludedCommand>
+		<ExcludedCommand>Ignore</ExcludedCommand>
+		<ExcludedCommand>ListSettings</ExcludedCommand>
+		<ExcludedCommand>LoadDynamicListSettings</ExcludedCommand>
+		<ExcludedCommand>No</ExcludedCommand>
+		<ExcludedCommand>OK</ExcludedCommand>
+		<ExcludedCommand>RestoreValues</ExcludedCommand>
+		<ExcludedCommand>Retry</ExcludedCommand>
+		<ExcludedCommand>SaveDynamicListSettings</ExcludedCommand>
+		<ExcludedCommand>SaveValues</ExcludedCommand>
+		<ExcludedCommand>Yes</ExcludedCommand>
+	</CommandSet>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="OnClose">ПриЗакрытии</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="БыстрыеОтборы" id="70">
+			<Visible>false</Visible>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Быстрые отборы</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="БыстрыеОтборыРасширеннаяПодсказка" id="71"/>
+		</UsualGroup>
+		<CommandBar name="КоманднаяПанель" id="72">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Командная панель</v8:content>
+				</v8:item>
+			</Title>
+			<ExtendedTooltip name="КоманднаяПанельРасширеннаяПодсказка" id="73"/>
+			<ChildItems>
+				<Popup name="СоздатьОперацию" id="194">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Создать</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СоздатьОперациюРасширеннаяПодсказка" id="195"/>
+					<ChildItems>
+						<Button name="СоздатьОплатуЧерезБанк" id="196">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Command.СоздатьОплатуЧерезБанк</CommandName>
+							<ExtendedTooltip name="СоздатьОплатуЧерезБанкРасширеннаяПодсказка" id="197"/>
+						</Button>
+						<Button name="СоздатьОплатуНаличными" id="198">
+							<Type>CommandBarButton</Type>
+							<CommandName>Form.Command.СоздатьОплатуНаличными</CommandName>
+							<ExtendedTooltip name="СоздатьОплатуНаличнымиРасширеннаяПодсказка" id="199"/>
+						</Button>
+					</ChildItems>
+				</Popup>
+				<Button name="ИзменитьОперацию" id="177">
+					<Type>CommandBarButton</Type>
+					<CommandName>Form.Command.ИзменитьОперацию</CommandName>
+					<ExtendedTooltip name="ИзменитьОперациюРасширеннаяПодсказка" id="178"/>
+				</Button>
+				<Button name="УдалитьОперацию" id="179">
+					<Type>CommandBarButton</Type>
+					<CommandName>Form.Command.УдалитьОперацию</CommandName>
+					<ExtendedTooltip name="УдалитьОперациюРасширеннаяПодсказка" id="180"/>
+				</Button>
+				<ButtonGroup name="СтандартныеКомандыФормы" id="159">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Стандартные команды формы</v8:content>
+						</v8:item>
+					</Title>
+					<CommandSource>Form</CommandSource>
+					<ExtendedTooltip name="СтандартныеКомандыФормыРасширеннаяПодсказка" id="160"/>
+				</ButtonGroup>
+				<SearchStringAddition name="ДополнениеСтрокаПоиска" id="163">
+					<AdditionSource>
+						<Item>Список</Item>
+						<Type>SearchStringRepresentation</Type>
+					</AdditionSource>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дополнение строка поиска</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДополнениеСтрокаПоискаКонтекстноеМеню" id="164"/>
+					<ExtendedTooltip name="ДополнениеСтрокаПоискаРасширеннаяПодсказка" id="165"/>
+				</SearchStringAddition>
+				<SearchControlAddition name="ДополнениеУправлениеПоиском" id="166">
+					<AdditionSource>
+						<Item>Список</Item>
+						<Type>SearchControl</Type>
+					</AdditionSource>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Управление поиском</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДополнениеУправлениеПоискомКонтекстноеМеню" id="167"/>
+					<ExtendedTooltip name="ДополнениеУправлениеПоискомРасширеннаяПодсказка" id="168"/>
+				</SearchControlAddition>
+				<Button name="Справка" id="181">
+					<Type>CommandBarButton</Type>
+					<CommandName>Form.StandardCommand.Help</CommandName>
+					<ExtendedTooltip name="СправкаРасширеннаяПодсказка" id="182"/>
+				</Button>
+			</ChildItems>
+		</CommandBar>
+		<Table name="Список" id="125">
+			<Representation>List</Representation>
+			<Footer>true</Footer>
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<EnableStartDrag>true</EnableStartDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>Список</DataPath>
+			<RowPictureDataPath>Список.СтатусДохода</RowPictureDataPath>
+			<RowsPicture>
+				<xr:Ref>CommonPicture.ДокументЗагруженИзБанка</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</RowsPicture>
+			<CommandSet>
+				<ExcludedCommand>DynamicListStandardSettings</ExcludedCommand>
+				<ExcludedCommand>ListSettings</ExcludedCommand>
+				<ExcludedCommand>LoadDynamicListSettings</ExcludedCommand>
+				<ExcludedCommand>SaveDynamicListSettings</ExcludedCommand>
+			</CommandSet>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<UserSettingsGroup>БыстрыеОтборы</UserSettingsGroup>
+			<ContextMenu name="СписокКонтекстноеМеню" id="126">
+				<Autofill>false</Autofill>
+				<ChildItems>
+					<Button name="СписокКонтекстноеМенюСоздатьОплатуЧерезБанк" id="200">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.СоздатьОплатуЧерезБанк</CommandName>
+						<Picture>
+							<xr:Ref>StdPicture.CreateListItem</xr:Ref>
+							<xr:LoadTransparent>true</xr:LoadTransparent>
+						</Picture>
+						<ExtendedTooltip name="СписокКонтекстноеМенюСоздатьОплатуЧерезБанкРасширеннаяПодсказка" id="201"/>
+					</Button>
+					<Button name="СписокКонтекстноеМенюСоздатьОплатуНаличными" id="202">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.СоздатьОплатуНаличными</CommandName>
+						<Picture>
+							<xr:Ref>StdPicture.CreateListItem</xr:Ref>
+							<xr:LoadTransparent>true</xr:LoadTransparent>
+						</Picture>
+						<ExtendedTooltip name="СписокКонтекстноеМенюСоздатьОплатуНаличнымиРасширеннаяПодсказка" id="203"/>
+					</Button>
+					<Button name="СписокКонтекстноеМенюИзменитьОперацию" id="185">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ИзменитьОперацию</CommandName>
+						<ExtendedTooltip name="СписокКонтекстноеМенюИзменитьОперациюРасширеннаяПодсказка" id="186"/>
+					</Button>
+					<Button name="СписокКонтекстноеМенюУдалитьОперацию" id="187">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.УдалитьОперацию</CommandName>
+						<ExtendedTooltip name="СписокКонтекстноеМенюУдалитьОперациюРасширеннаяПодсказка" id="188"/>
+					</Button>
+					<ButtonGroup name="СтандартныеКомандыСписка" id="189">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Стандартные команды списка</v8:content>
+							</v8:item>
+						</Title>
+						<CommandSource>Item.Список</CommandSource>
+						<ExtendedTooltip name="СтандартныеКомандыСпискаРасширеннаяПодсказка" id="190"/>
+					</ButtonGroup>
+				</ChildItems>
+			</ContextMenu>
+			<AutoCommandBar name="СписокКоманднаяПанель" id="127">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="СписокРасширеннаяПодсказка" id="128"/>
+			<SearchStringAddition name="СписокСтрокаПоиска" id="129">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСтрокаПоискаКонтекстноеМеню" id="130"/>
+				<ExtendedTooltip name="СписокСтрокаПоискаРасширеннаяПодсказка" id="131"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СписокСостояниеПросмотра" id="132">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСостояниеПросмотраКонтекстноеМеню" id="133"/>
+				<ExtendedTooltip name="СписокСостояниеПросмотраРасширеннаяПодсказка" id="134"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СписокУправлениеПоиском" id="135">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокУправлениеПоискомКонтекстноеМеню" id="136"/>
+				<ExtendedTooltip name="СписокУправлениеПоискомРасширеннаяПодсказка" id="137"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="Selection">СписокВыбор</Event>
+				<Event name="OnActivateRow">СписокПриАктивизацииСтроки</Event>
+			</Events>
+			<ChildItems>
+				<LabelField name="Дата" id="150">
+					<DataPath>Список.Дата</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дата</v8:content>
+						</v8:item>
+					</Title>
+					<AutoCellHeight>true</AutoCellHeight>
+					<ShowInFooter>false</ShowInFooter>
+					<Width>6</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<Format>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ДЛФ=D</v8:content>
+						</v8:item>
+					</Format>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="151"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="152"/>
+				</LabelField>
+				<LabelField name="Номер" id="141">
+					<DataPath>Список.Номер</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номер</v8:content>
+						</v8:item>
+					</Title>
+					<AutoCellHeight>true</AutoCellHeight>
+					<ShowInFooter>false</ShowInFooter>
+					<Width>6</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="НомерКонтекстноеМеню" id="142"/>
+					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="143"/>
+				</LabelField>
+				<LabelField name="Сумма" id="138">
+					<DataPath>Список.Сумма</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма</v8:content>
+						</v8:item>
+					</Title>
+					<AutoCellHeight>true</AutoCellHeight>
+					<FooterDataPath>ИтогиСумма</FooterDataPath>
+					<FooterHorizontalAlign>Right</FooterHorizontalAlign>
+					<Width>16</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<Format>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2; ЧН=0,00</v8:content>
+						</v8:item>
+					</Format>
+					<ContextMenu name="СуммаКонтекстноеМеню" id="139"/>
+					<ExtendedTooltip name="СуммаРасширеннаяПодсказка" id="140"/>
+				</LabelField>
+				<LabelField name="УменьшаетНалог" id="169">
+					<DataPath>Список.УменьшаетНалог</DataPath>
+					<FooterDataPath>ИтогиУменьшаетНалог</FooterDataPath>
+					<FooterHorizontalAlign>Right</FooterHorizontalAlign>
+					<Width>16</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<Format>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧДЦ=2; ЧН=0,00</v8:content>
+						</v8:item>
+					</Format>
+					<ContextMenu name="УменьшаетНалогКонтекстноеМеню" id="170"/>
+					<ExtendedTooltip name="УменьшаетНалогРасширеннаяПодсказка" id="171"/>
+				</LabelField>
+				<LabelField name="Содержание" id="191">
+					<DataPath>Список.Содержание</DataPath>
+					<ContextMenu name="СодержаниеКонтекстноеМеню" id="192"/>
+					<ExtendedTooltip name="СодержаниеРасширеннаяПодсказка" id="193"/>
+				</LabelField>
+			</ChildItems>
+		</Table>
+		<UsualGroup name="ГруппаСтатусФоновогоЗадания" id="204">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Статус фонового задания</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Horizontal</Group>
+			<VerticalAlign>Center</VerticalAlign>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаСтатусФоновогоЗаданияРасширеннаяПодсказка" id="205"/>
+			<ChildItems>
+				<PictureDecoration name="КартинкаСтатусФоновогоЗадания" id="206">
+					<Picture>
+						<xr:Ref>CommonPicture.ДлительнаяОперация48</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<FileDragMode>AsFile</FileDragMode>
+					<ContextMenu name="КартинкаСтатусФоновогоЗаданияКонтекстноеМеню" id="207"/>
+					<ExtendedTooltip name="КартинкаСтатусФоновогоЗаданияРасширеннаяПодсказка" id="208"/>
+				</PictureDecoration>
+				<LabelField name="СтатусФоновогоЗадания" id="209">
+					<DataPath>СтатусФоновогоЗадания</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<ContextMenu name="СтатусФоновогоЗаданияКонтекстноеМеню" id="210"/>
+					<ExtendedTooltip name="СтатусФоновогоЗаданияРасширеннаяПодсказка" id="211"/>
+				</LabelField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Список" id="1">
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<UseAlways>
+				<Field>~Список.Recorder</Field>
+				<Field>~Список.Организация</Field>
+				<Field>~Список.Период</Field>
+				<Field>~Список.Регистратор</Field>
+				<Field>Список.Ссылка</Field>
+				<Field>Список.СтатусДохода</Field>
+			</UseAlways>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>false</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	ВЫБОР
+		КОГДА КнигаУчетаДоходовИРасходовРаздел4Обороты.ДокументРасхода &lt;&gt; НЕОПРЕДЕЛЕНО
+			ТОГДА КнигаУчетаДоходовИРасходовРаздел4Обороты.ДокументРасхода
+		ИНАЧЕ КнигаУчетаДоходовИРасходовРаздел4Обороты.Регистратор
+	КОНЕЦ КАК ДокументРасхода,
+	КнигаУчетаДоходовИРасходовРаздел4Обороты.ПФРОборот + КнигаУчетаДоходовИРасходовРаздел4Обороты.ФОМСОборот КАК Сумма
+ПОМЕСТИТЬ ВТ_КнигаУчетаДоходовИРасходов
+ИЗ
+	РегистрНакопления.КнигаУчетаДоходовИРасходовРаздел4.Обороты(&amp;НачалоПериода, &amp;КонецПериода, Регистратор, Организация = &amp;Организация) КАК КнигаУчетаДоходовИРасходовРаздел4Обороты
+
+ИНДЕКСИРОВАТЬ ПО
+	ДокументРасхода
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВЫБОР
+		КОГДА СписаниеСРасчетногоСчета.СчетОрганизации В(&amp;БанковскиеСчетаВРежимеИнтеграции)
+			ТОГДА &amp;СтатусОперацииПоСчетуВРежимеИнтеграции
+		ИНАЧЕ &amp;СтатусОперацииПоДругомуСчетуИлиНаличными
+	КОНЕЦ КАК СтатусДохода,
+	СписаниеСРасчетногоСчета.Ссылка КАК Ссылка,
+	СписаниеСРасчетногоСчета.НомерВходящегоДокумента КАК Номер,
+	СписаниеСРасчетногоСчета.Дата КАК Дата,
+	ВидыНалоговИПлатежейВБюджет.ВидНалога КАК Содержание,
+	СписаниеСРасчетногоСчета.СуммаДокумента КАК Сумма,
+	ЕСТЬNULL(КнигаУчетаДоходовИРасходов.Сумма, 0) КАК УменьшаетНалог
+ИЗ
+	Документ.СписаниеСРасчетногоСчета КАК СписаниеСРасчетногоСчета
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Справочник.ВидыНалоговИПлатежейВБюджет КАК ВидыНалоговИПлатежейВБюджет
+		ПО СписаниеСРасчетногоСчета.Налог = ВидыНалоговИПлатежейВБюджет.Ссылка
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_КнигаУчетаДоходовИРасходов КАК КнигаУчетаДоходовИРасходов
+		ПО СписаниеСРасчетногоСчета.Ссылка = КнигаУчетаДоходовИРасходов.ДокументРасхода
+ГДЕ
+	СписаниеСРасчетногоСчета.Организация = &amp;Организация
+	И СписаниеСРасчетногоСчета.Дата МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+	И НЕ СписаниеСРасчетногоСчета.ПометкаУдаления
+	И СписаниеСРасчетногоСчета.ВидОперации = ЗНАЧЕНИЕ(Перечисление.ВидыОперацийСписаниеДенежныхСредств.ПеречислениеНалога)
+	И ВидыНалоговИПлатежейВБюджет.ВидНалога В(&amp;ВидыНалогов)
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	&amp;СтатусОперацииПоДругомуСчетуИлиНаличными,
+	РасходныйКассовыйОрдер.Ссылка,
+	РасходныйКассовыйОрдер.НомерВходящегоДокумента,
+	РасходныйКассовыйОрдер.Дата,
+	ВидыНалоговИПлатежейВБюджет.ВидНалога,
+	РасходныйКассовыйОрдер.СуммаДокумента,
+	ЕСТЬNULL(КнигаУчетаДоходовИРасходов.Сумма, 0)
+ИЗ
+	Документ.РасходныйКассовыйОрдер КАК РасходныйКассовыйОрдер
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ Справочник.ВидыНалоговИПлатежейВБюджет КАК ВидыНалоговИПлатежейВБюджет
+		ПО РасходныйКассовыйОрдер.Налог = ВидыНалоговИПлатежейВБюджет.Ссылка
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ_КнигаУчетаДоходовИРасходов КАК КнигаУчетаДоходовИРасходов
+		ПО РасходныйКассовыйОрдер.Ссылка = КнигаУчетаДоходовИРасходов.ДокументРасхода
+ГДЕ
+	РасходныйКассовыйОрдер.Организация = &amp;Организация
+	И РасходныйКассовыйОрдер.Дата МЕЖДУ &amp;НачалоПериода И &amp;КонецПериода
+	И НЕ РасходныйКассовыйОрдер.ПометкаУдаления
+	И РасходныйКассовыйОрдер.ВидОперации = ЗНАЧЕНИЕ(Перечисление.ВидыОперацийРКО.УплатаНалога)
+	И ВидыНалоговИПлатежейВБюджет.ВидНалога В(&amp;ВидыНалогов)</QueryText>
+				<AutoSaveUserSettings>false</AutoSaveUserSettings>
+				<GetInvisibleFieldPresentations>false</GetInvisibleFieldPresentations>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>Дата</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>Номер</dcsset:field>
+							<dcsset:orderType>Asc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="Организация" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Организация</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="НачалоПериода" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Начало периода</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КонецПериода" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Конец периода</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ИтогиСумма" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сумма</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ИтогиУменьшаетНалог" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Уменьшает налог</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ДанныеУчетаАктуальны" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Данные учета актуальны</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ИдентификаторЗаданияПроверкиАктуализации" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Идентификатор задания проверки актуализации</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:UUID</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗаданиеЗапущеноВДругойФорме" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Задание запущено в другой форме</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ИдентификаторЗаданияАктуализации" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Идентификатор задания актуализации</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:UUID</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресХранилищаАктуализации" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Адрес хранилища актуализации</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СтатусФоновогоЗадания" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Статус фонового задания</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="АктуализацияДляРасчетаНалога" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Актуализация для расчета налога</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПланируетсяФоновоеЗадание" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Планируется фоновое задание</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СтатусыОпераций" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Статусы операций</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ИзменитьОперацию" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Изменить</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.Change</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ИзменитьОперацию</Action>
+			<Representation>Text</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="УдалитьОперацию" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.MarkToDelete</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>УдалитьОперацию</Action>
+			<Representation>Text</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СоздатьОплатуЧерезБанк" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Оплата через банк</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать оплату через банк</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СоздатьОплатуЧерезБанк</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СоздатьОплатуНаличными" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Оплата наличными</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать оплату наличными</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СоздатьОплатуНаличными</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="Организация">
+			<Type>
+				<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+			</Type>
+			<KeyParameter>true</KeyParameter>
+		</Parameter>
+		<Parameter name="НачалоПериода">
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+			<KeyParameter>true</KeyParameter>
+		</Parameter>
+		<Parameter name="КонецПериода">
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+			<KeyParameter>true</KeyParameter>
+		</Parameter>
+		<Parameter name="ДанныеУчетаАктуальны">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>

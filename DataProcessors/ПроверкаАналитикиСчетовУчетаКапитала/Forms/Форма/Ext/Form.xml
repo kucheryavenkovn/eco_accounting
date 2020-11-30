@@ -1,0 +1,840 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="OnClose">ПриЗакрытии</Event>
+	</Events>
+	<ChildItems>
+		<LabelDecoration name="ДекорацияОбщая" id="125">
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Внимание!
+Обнаружены проводки по счетам учета уставного капитала (80.01, 80.02, 81.01, 81.02) с незаполненной аналитикой «Ценные бумаги».</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ДекорацияОбщаяКонтекстноеМеню" id="126"/>
+			<ExtendedTooltip name="ДекорацияОбщаяРасширеннаяПодсказка" id="127"/>
+		</LabelDecoration>
+		<LabelDecoration name="ДекорацияИсправление" id="142">
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Для заполнения аналитики, установите курсор на документ и в таблице "Сведения о капитале" укажите сведения о ценных бумагах. По кнопке «Записать» изменения будут сохранены.</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ДекорацияИсправлениеКонтекстноеМеню" id="143"/>
+			<ExtendedTooltip name="ДекорацияИсправлениеРасширеннаяПодсказка" id="144"/>
+		</LabelDecoration>
+		<LabelDecoration name="ДекорацияНетПрав" id="148">
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Для исправления данных обратитесь к пользователю с правами "Администратор" или "Главный бухгалтер".</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ДекорацияНетПравКонтекстноеМеню" id="149"/>
+			<ExtendedTooltip name="ДекорацияНетПравРасширеннаяПодсказка" id="150"/>
+		</LabelDecoration>
+		<LabelDecoration name="ДекорацияРасположение" id="145">
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть обработку можно в разделе "Администрирование".</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ДекорацияРасположениеКонтекстноеМеню" id="146"/>
+			<ExtendedTooltip name="ДекорацияРасположениеРасширеннаяПодсказка" id="147"/>
+		</LabelDecoration>
+		<Button name="Обновить" id="123">
+			<Type>UsualButton</Type>
+			<CommandName>Form.Command.Обновить</CommandName>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить список документов</v8:content>
+				</v8:item>
+			</Title>
+			<ExtendedTooltip name="ОбновитьРасширеннаяПодсказка" id="124"/>
+		</Button>
+		<Table name="ТаблицаДокументов" id="1">
+			<Representation>List</Representation>
+			<ChangeRowSet>false</ChangeRowSet>
+			<ChangeRowOrder>false</ChangeRowOrder>
+			<HeightInTableRows>4</HeightInTableRows>
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>ТаблицаДокументов</DataPath>
+			<CommandSet>
+				<ExcludedCommand>Add</ExcludedCommand>
+				<ExcludedCommand>CancelSearch</ExcludedCommand>
+				<ExcludedCommand>Change</ExcludedCommand>
+				<ExcludedCommand>Copy</ExcludedCommand>
+				<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+				<ExcludedCommand>Delete</ExcludedCommand>
+				<ExcludedCommand>EndEdit</ExcludedCommand>
+				<ExcludedCommand>Find</ExcludedCommand>
+				<ExcludedCommand>MoveDown</ExcludedCommand>
+				<ExcludedCommand>MoveUp</ExcludedCommand>
+				<ExcludedCommand>OutputList</ExcludedCommand>
+				<ExcludedCommand>SelectAll</ExcludedCommand>
+				<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
+				<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+				<ExcludedCommand>SortListAsc</ExcludedCommand>
+				<ExcludedCommand>SortListDesc</ExcludedCommand>
+			</CommandSet>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ТаблицаДокументовКонтекстноеМеню" id="2"/>
+			<AutoCommandBar name="ТаблицаДокументовКоманднаяПанель" id="3">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ТаблицаДокументовРасширеннаяПодсказка" id="4"/>
+			<SearchStringAddition name="ТаблицаДокументовСтрокаПоиска" id="5">
+				<AdditionSource>
+					<Item>ТаблицаДокументов</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТаблицаДокументовСтрокаПоискаКонтекстноеМеню" id="6"/>
+				<ExtendedTooltip name="ТаблицаДокументовСтрокаПоискаРасширеннаяПодсказка" id="7"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ТаблицаДокументовСостояниеПросмотра" id="8">
+				<AdditionSource>
+					<Item>ТаблицаДокументов</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТаблицаДокументовСостояниеПросмотраКонтекстноеМеню" id="9"/>
+				<ExtendedTooltip name="ТаблицаДокументовСостояниеПросмотраРасширеннаяПодсказка" id="10"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ТаблицаДокументовУправлениеПоиском" id="11">
+				<AdditionSource>
+					<Item>ТаблицаДокументов</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ТаблицаДокументовУправлениеПоискомКонтекстноеМеню" id="12"/>
+				<ExtendedTooltip name="ТаблицаДокументовУправлениеПоискомРасширеннаяПодсказка" id="13"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="Selection">ТаблицаДокументовВыбор</Event>
+				<Event name="OnActivateRow">ТаблицаДокументовПриАктивизацииСтроки</Event>
+			</Events>
+			<ChildItems>
+				<InputField name="Организация" id="151">
+					<DataPath>ТаблицаДокументов.Организация</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>30</Width>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<HorizontalStretch>false</HorizontalStretch>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="152"/>
+					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="153"/>
+				</InputField>
+				<InputField name="Документ" id="14">
+					<DataPath>ТаблицаДокументов.Документ</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<ContextMenu name="ДокументКонтекстноеМеню" id="15"/>
+					<ExtendedTooltip name="ДокументРасширеннаяПодсказка" id="16"/>
+				</InputField>
+				<InputField name="Отступ" id="154">
+					<DataPath>ТаблицаДокументов.Отступ</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<TitleLocation>None</TitleLocation>
+					<EditMode>EnterOnInput</EditMode>
+					<Width>1</Width>
+					<HorizontalStretch>true</HorizontalStretch>
+					<ContextMenu name="ОтступКонтекстноеМеню" id="155"/>
+					<ExtendedTooltip name="ОтступРасширеннаяПодсказка" id="156"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<UsualGroup name="ГруппаНаборЗаписей" id="119">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сведения о капитале</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="ГруппаНаборЗаписейРасширеннаяПодсказка" id="120"/>
+			<ChildItems>
+				<Table name="НаборЗаписейХозрасчетный" id="17">
+					<ChangeRowSet>false</ChangeRowSet>
+					<ChangeRowOrder>false</ChangeRowOrder>
+					<UseAlternationRowColor>true</UseAlternationRowColor>
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<FileDragMode>AsFile</FileDragMode>
+					<DataPath>НаборЗаписейХозрасчетный</DataPath>
+					<CommandSet>
+						<ExcludedCommand>Add</ExcludedCommand>
+						<ExcludedCommand>CancelSearch</ExcludedCommand>
+						<ExcludedCommand>Change</ExcludedCommand>
+						<ExcludedCommand>Copy</ExcludedCommand>
+						<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+						<ExcludedCommand>Delete</ExcludedCommand>
+						<ExcludedCommand>EndEdit</ExcludedCommand>
+						<ExcludedCommand>Find</ExcludedCommand>
+						<ExcludedCommand>MoveDown</ExcludedCommand>
+						<ExcludedCommand>MoveUp</ExcludedCommand>
+						<ExcludedCommand>OutputList</ExcludedCommand>
+						<ExcludedCommand>SelectAll</ExcludedCommand>
+						<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
+						<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+						<ExcludedCommand>SortListAsc</ExcludedCommand>
+						<ExcludedCommand>SortListDesc</ExcludedCommand>
+					</CommandSet>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="НаборЗаписейХозрасчетныйКонтекстноеМеню" id="18"/>
+					<AutoCommandBar name="НаборЗаписейХозрасчетныйКоманднаяПанель" id="19">
+						<Autofill>false</Autofill>
+					</AutoCommandBar>
+					<ExtendedTooltip name="НаборЗаписейХозрасчетныйРасширеннаяПодсказка" id="20"/>
+					<SearchStringAddition name="НаборЗаписейХозрасчетныйСтрокаПоиска" id="21">
+						<AdditionSource>
+							<Item>НаборЗаписейХозрасчетный</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="НаборЗаписейХозрасчетныйСтрокаПоискаКонтекстноеМеню" id="22"/>
+						<ExtendedTooltip name="НаборЗаписейХозрасчетныйСтрокаПоискаРасширеннаяПодсказка" id="23"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="НаборЗаписейХозрасчетныйСостояниеПросмотра" id="24">
+						<AdditionSource>
+							<Item>НаборЗаписейХозрасчетный</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="НаборЗаписейХозрасчетныйСостояниеПросмотраКонтекстноеМеню" id="25"/>
+						<ExtendedTooltip name="НаборЗаписейХозрасчетныйСостояниеПросмотраРасширеннаяПодсказка" id="26"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="НаборЗаписейХозрасчетныйУправлениеПоиском" id="27">
+						<AdditionSource>
+							<Item>НаборЗаписейХозрасчетный</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="НаборЗаписейХозрасчетныйУправлениеПоискомКонтекстноеМеню" id="28"/>
+						<ExtendedTooltip name="НаборЗаписейХозрасчетныйУправлениеПоискомРасширеннаяПодсказка" id="29"/>
+					</SearchControlAddition>
+					<Events>
+						<Event name="OnChange">НаборЗаписейХозрасчетныйПриИзменении</Event>
+					</Events>
+					<ChildItems>
+						<ColumnGroup name="НаборЗаписейХозрасчетныйГруппаСчета" id="168">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Счета учета</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Horizontal</Group>
+							<ShowInHeader>true</ShowInHeader>
+							<ExtendedTooltip name="НаборЗаписейХозрасчетныйГруппаСчетаРасширеннаяПодсказка" id="169"/>
+							<ChildItems>
+								<ColumnGroup name="НаборЗаписейХозрасчетныйГруппаПодпись" id="163">
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>ДК</v8:content>
+										</v8:item>
+									</Title>
+									<Width>2</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ExtendedTooltip name="НаборЗаписейХозрасчетныйГруппаПодписьРасширеннаяПодсказка" id="164"/>
+									<ChildItems>
+										<InputField name="ПодписьДт" id="157">
+											<DataPath>НаборЗаписейХозрасчетный.ПодписьДт</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ShowInHeader>false</ShowInHeader>
+											<ShowInFooter>false</ShowInFooter>
+											<Width>2</Width>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<MaxWidth>2</MaxWidth>
+											<HorizontalStretch>false</HorizontalStretch>
+											<ContextMenu name="ПодписьДтКонтекстноеМеню" id="158"/>
+											<ExtendedTooltip name="ПодписьДтРасширеннаяПодсказка" id="159"/>
+										</InputField>
+										<InputField name="ПодписьКт" id="160">
+											<DataPath>НаборЗаписейХозрасчетный.ПодписьКт</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ShowInHeader>false</ShowInHeader>
+											<ShowInFooter>false</ShowInFooter>
+											<Width>2</Width>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<MaxWidth>2</MaxWidth>
+											<HorizontalStretch>false</HorizontalStretch>
+											<ContextMenu name="ПодписьКтКонтекстноеМеню" id="161"/>
+											<ExtendedTooltip name="ПодписьКтРасширеннаяПодсказка" id="162"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<ColumnGroup name="НаборЗаписейХозрасчетныйГруппаСчет" id="111">
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Счет учета</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="НаборЗаписейХозрасчетныйГруппаСчетРасширеннаяПодсказка" id="112"/>
+									<ChildItems>
+										<InputField name="СчетДт" id="39">
+											<DataPath>НаборЗаписейХозрасчетный.AccountDr</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ShowInHeader>false</ShowInHeader>
+											<Width>8</Width>
+											<HorizontalStretch>false</HorizontalStretch>
+											<ContextMenu name="СчетДтКонтекстноеМеню" id="40"/>
+											<ExtendedTooltip name="СчетДтРасширеннаяПодсказка" id="41"/>
+										</InputField>
+										<InputField name="СчетКт" id="72">
+											<DataPath>НаборЗаписейХозрасчетный.AccountCr</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ShowInHeader>false</ShowInHeader>
+											<Width>8</Width>
+											<HorizontalStretch>false</HorizontalStretch>
+											<ContextMenu name="СчетКтКонтекстноеМеню" id="73"/>
+											<ExtendedTooltip name="СчетКтРасширеннаяПодсказка" id="74"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+							</ChildItems>
+						</ColumnGroup>
+						<ColumnGroup name="НаборЗаписейХозрасчетныйГруппаУчредитель" id="113">
+							<ReadOnly>true</ReadOnly>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Учредитель</v8:content>
+								</v8:item>
+							</Title>
+							<ShowInHeader>true</ShowInHeader>
+							<ExtendedTooltip name="НаборЗаписейХозрасчетныйГруппаУчредительРасширеннаяПодсказка" id="114"/>
+							<ChildItems>
+								<InputField name="СубконтоДт1" id="42">
+									<DataPath>НаборЗаписейХозрасчетный.ExtDimensionDr1</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ShowInHeader>false</ShowInHeader>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="СубконтоДт1КонтекстноеМеню" id="43"/>
+									<ExtendedTooltip name="СубконтоДт1РасширеннаяПодсказка" id="44"/>
+								</InputField>
+								<InputField name="СубконтоКт1" id="75">
+									<DataPath>НаборЗаписейХозрасчетный.ExtDimensionCr1</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ShowInHeader>false</ShowInHeader>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="СубконтоКт1КонтекстноеМеню" id="76"/>
+									<ExtendedTooltip name="СубконтоКт1РасширеннаяПодсказка" id="77"/>
+								</InputField>
+							</ChildItems>
+						</ColumnGroup>
+						<ColumnGroup name="НаборЗаписейХозрасчетныйГруппаЦенныеБумаги" id="115">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ценные бумаги</v8:content>
+								</v8:item>
+							</Title>
+							<ShowInHeader>true</ShowInHeader>
+							<ExtendedTooltip name="НаборЗаписейХозрасчетныйГруппаЦенныеБумагиРасширеннаяПодсказка" id="116"/>
+							<ChildItems>
+								<InputField name="СубконтоДт2" id="45">
+									<DataPath>НаборЗаписейХозрасчетный.ExtDimensionDr2</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ShowInHeader>false</ShowInHeader>
+									<Width>12</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<AutoMarkIncomplete>true</AutoMarkIncomplete>
+									<ContextMenu name="СубконтоДт2КонтекстноеМеню" id="46"/>
+									<ExtendedTooltip name="СубконтоДт2РасширеннаяПодсказка" id="47"/>
+									<Events>
+										<Event name="OnChange">СубконтоПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="СубконтоКт2" id="78">
+									<DataPath>НаборЗаписейХозрасчетный.ExtDimensionCr2</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ShowInHeader>false</ShowInHeader>
+									<HorizontalStretch>false</HorizontalStretch>
+									<AutoMarkIncomplete>true</AutoMarkIncomplete>
+									<ContextMenu name="СубконтоКт2КонтекстноеМеню" id="79"/>
+									<ExtendedTooltip name="СубконтоКт2РасширеннаяПодсказка" id="80"/>
+									<Events>
+										<Event name="OnChange">СубконтоПриИзменении</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</ColumnGroup>
+						<ColumnGroup name="НаборЗаписейХозрасчетныйГруппаКоличество" id="117">
+							<ReadOnly>true</ReadOnly>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Количество</v8:content>
+								</v8:item>
+							</Title>
+							<ShowInHeader>true</ShowInHeader>
+							<ExtendedTooltip name="НаборЗаписейХозрасчетныйГруппаКоличествоРасширеннаяПодсказка" id="118"/>
+							<ChildItems>
+								<InputField name="КоличествоДт" id="108">
+									<DataPath>НаборЗаписейХозрасчетный.КоличествоDr</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ShowInHeader>false</ShowInHeader>
+									<Width>10</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="КоличествоДтКонтекстноеМеню" id="109"/>
+									<ExtendedTooltip name="КоличествоДтРасширеннаяПодсказка" id="110"/>
+								</InputField>
+								<InputField name="КоличествоКт" id="93">
+									<DataPath>НаборЗаписейХозрасчетный.КоличествоCr</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ShowInHeader>false</ShowInHeader>
+									<Width>10</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="КоличествоКтКонтекстноеМеню" id="94"/>
+									<ExtendedTooltip name="КоличествоКтРасширеннаяПодсказка" id="95"/>
+								</InputField>
+							</ChildItems>
+						</ColumnGroup>
+						<ColumnGroup name="НаборЗаписейХозрасчетныйГруппаСумма" id="132">
+							<ReadOnly>true</ReadOnly>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Сумма</v8:content>
+								</v8:item>
+							</Title>
+							<ShowInHeader>true</ShowInHeader>
+							<ExtendedTooltip name="НаборЗаписейХозрасчетныйГруппаСуммаРасширеннаяПодсказка" id="133"/>
+							<ChildItems>
+								<InputField name="СуммаДт" id="105">
+									<DataPath>НаборЗаписейХозрасчетный.Сумма</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ShowInHeader>false</ShowInHeader>
+									<Width>10</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="СуммаДтКонтекстноеМеню" id="106"/>
+									<ExtendedTooltip name="СуммаДтРасширеннаяПодсказка" id="107"/>
+								</InputField>
+								<InputField name="СуммаКт" id="134">
+									<DataPath>НаборЗаписейХозрасчетный.Сумма</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ShowInHeader>false</ShowInHeader>
+									<Width>10</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="СуммаКтКонтекстноеМеню" id="135"/>
+									<ExtendedTooltip name="СуммаКтРасширеннаяПодсказка" id="136"/>
+								</InputField>
+							</ChildItems>
+						</ColumnGroup>
+						<InputField name="НаборЗаписейХозрасчетныйОтступ" id="165">
+							<DataPath>НаборЗаписейХозрасчетный.Отступ</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<ShowInHeader>false</ShowInHeader>
+							<ShowInFooter>false</ShowInFooter>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ContextMenu name="НаборЗаписейХозрасчетныйОтступКонтекстноеМеню" id="166"/>
+							<ExtendedTooltip name="НаборЗаписейХозрасчетныйОтступРасширеннаяПодсказка" id="167"/>
+						</InputField>
+					</ChildItems>
+				</Table>
+				<UsualGroup name="ГруппаПодвал" id="140">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа подвал</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа подвал</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаПодвалРасширеннаяПодсказка" id="141"/>
+					<ChildItems>
+						<CheckBoxField name="НеПроверятьПриНачалеРаботы" id="137">
+							<DataPath>НеПроверятьПриНачалеРаботы</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="НеПроверятьПриНачалеРаботыКонтекстноеМеню" id="138"/>
+							<ExtendedTooltip name="НеПроверятьПриНачалеРаботыРасширеннаяПодсказка" id="139"/>
+						</CheckBoxField>
+						<CommandBar name="ГруппаКоманды" id="128">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа команды</v8:content>
+								</v8:item>
+							</Title>
+							<HorizontalLocation>Right</HorizontalLocation>
+							<ExtendedTooltip name="ГруппаКомандыРасширеннаяПодсказка" id="129"/>
+							<ChildItems>
+								<Button name="Записать" id="121">
+									<Type>CommandBarButton</Type>
+									<DefaultButton>true</DefaultButton>
+									<CommandName>Form.Command.Записать</CommandName>
+									<ExtendedTooltip name="ЗаписатьРасширеннаяПодсказка" id="122"/>
+								</Button>
+								<Button name="Отменить" id="130">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.Command.Отменить</CommandName>
+									<ExtendedTooltip name="ОтменитьРасширеннаяПодсказка" id="131"/>
+								</Button>
+							</ChildItems>
+						</CommandBar>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ПроверкаАналитикиСчетовУчетаКапитала</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ТаблицаДокументов" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблица документов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Документ" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Документ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:TypeSet>cfg:DocumentRef</v8:TypeSet>
+					</Type>
+				</Column>
+				<Column name="Организация" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Организация</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+					</Type>
+					<FunctionalOptions>
+						<Item>FunctionalOption.ИспользоватьНесколькоОрганизацийБухгалтерскийУчет</Item>
+					</FunctionalOptions>
+				</Column>
+				<Column name="Отступ" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отступ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="НаборЗаписейХозрасчетный" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Набор записей хозрасчетный</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:AccountingRegisterRecordSet.Хозрасчетный</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+			<Columns>
+				<AdditionalColumns table="НаборЗаписейХозрасчетный">
+					<Column name="ПодписьДт" id="1">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Дт</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>2</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+					<Column name="ПодписьКт" id="2">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Кт</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>2</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+					<Column name="Отступ" id="3">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Отступ</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>1</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+				</AdditionalColumns>
+				<AdditionalColumns table="НаборЗаписейХозрасчетный.Filter"/>
+			</Columns>
+		</Attribute>
+		<Attribute name="НеПроверятьПриНачалеРаботы" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Не проверять при начале работы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТекущийДокумент" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текущий документ</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:TypeSet>cfg:DocumentRef</v8:TypeSet>
+			</Type>
+		</Attribute>
+		<Attribute name="СписокСчетов" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список счетов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ФормаНеДоступна" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Форма не доступна</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>СуммаДт</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>СчетДт</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>СубконтоДт1</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>СубконтоДт2</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>КоличествоДт</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПодписьДт</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">НаборЗаписейХозрасчетный.СчетДт</dcsset:left>
+						<dcsset:comparisonType>NotInList</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.СобственныеАкции_ОбыкновенныеАкции</dcsset:right>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.СобственныеАкции_ПривилегированныеАкции</dcsset:right>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.УставныйКапитал_ОбыкновенныеАкции</dcsset:right>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.УставныйКапитал_ПривилегированныеАкции</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Видимость</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>СуммаКт</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>СчетКт</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>СубконтоКт1</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>СубконтоКт2</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>КоличествоКт</dcsset:field>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:field>ПодписьКт</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">НаборЗаписейХозрасчетный.СчетКт</dcsset:left>
+						<dcsset:comparisonType>NotInList</dcsset:comparisonType>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.СобственныеАкции_ОбыкновенныеАкции</dcsset:right>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.СобственныеАкции_ПривилегированныеАкции</dcsset:right>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.УставныйКапитал_ОбыкновенныеАкции</dcsset:right>
+						<dcsset:right xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.УставныйКапитал_ПривилегированныеАкции</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Видимость</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>НаборЗаписейХозрасчетный</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemGroup">
+						<dcsset:groupType>AndGroup</dcsset:groupType>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">НаборЗаписейХозрасчетный.СчетКт</dcsset:left>
+							<dcsset:comparisonType>NotInList</dcsset:comparisonType>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.СобственныеАкции_ОбыкновенныеАкции</dcsset:right>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.СобственныеАкции_ПривилегированныеАкции</dcsset:right>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.УставныйКапитал_ОбыкновенныеАкции</dcsset:right>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.УставныйКапитал_ПривилегированныеАкции</dcsset:right>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:FilterItemComparison">
+							<dcsset:left xsi:type="dcscor:Field">НаборЗаписейХозрасчетный.СчетДт</dcsset:left>
+							<dcsset:comparisonType>NotInList</dcsset:comparisonType>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.СобственныеАкции_ОбыкновенныеАкции</dcsset:right>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.СобственныеАкции_ПривилегированныеАкции</dcsset:right>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.УставныйКапитал_ОбыкновенныеАкции</dcsset:right>
+							<dcsset:right xsi:type="dcscor:DesignTimeValue">ПланСчетов.Хозрасчетный.УставныйКапитал_ПривилегированныеАкции</dcsset:right>
+						</dcsset:item>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>Видимость</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">false</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="Записать" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Записать</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Обновить" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Обновить</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Отменить" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отменить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отменить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Отменить</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

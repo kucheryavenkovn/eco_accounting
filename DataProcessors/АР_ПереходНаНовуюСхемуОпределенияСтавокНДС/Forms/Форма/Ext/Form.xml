@@ -1,0 +1,458 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Переход на схему определения ставок НДС по услугам аренды на основе договора</v8:content>
+		</v8:item>
+	</Title>
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаИзменитьДокументы" id="77">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ИзменитьДокументы</CommandName>
+				<ExtendedTooltip name="ФормаИзменитьДокументыРасширеннаяПодсказка" id="78"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnSaveDataInSettingsAtServer">ПриСохраненииДанныхВНастройкахНаСервере</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="BeforeClose">ПередЗакрытием</Event>
+		<Event name="OnLoadDataFromSettingsAtServer">ПриЗагрузкеДанныхИзНастроекНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="FillCheckProcessingAtServer">ОбработкаПроверкиЗаполненияНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаИспользоватьСхемуОпределенияСтавокНДС" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа использовать схему определения ставок НДС</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа использовать схему определения ставок НДС</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаИспользоватьСхемуОпределенияСтавокНДСРасширеннаяПодсказка" id="8">
+				<Width>85</Width>
+				<AutoMaxWidth>false</AutoMaxWidth>
+				<MaxWidth>250</MaxWidth>
+				<HorizontalStretch>true</HorizontalStretch>
+				<Title formatted="false">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>При включении схемы определения ставок НДС по услугам аренды на основе договора заполнение ставок НДС в документах «Счет на аренду» и «Начисление арендной платы» будет выполняться на основе параметров учета НДС, указанных в документах «Заключение договора аренды» и «Дополнительное соглашение».
+Заполнить параметры НДС в договорах по аренде можно автоматически с помощью этой обработки. Порядок использования обработки описан в справке.
+При необходимости возврата к ранее используемой схеме определения ставок НДС достаточно снять флаг. Ранее используемая схема будет поддерживаться ограниченное время, рекомендуется выполнить переход на новую схему.
+</v8:content>
+					</v8:item>
+				</Title>
+			</ExtendedTooltip>
+			<ChildItems>
+				<CheckBoxField name="ИспользоватьСхемуОпределенияСтавокНДСПоАрендеНаОсновеДоговора" id="1">
+					<DataPath>ИспользоватьСхемуОпределенияСтавокНДСПоАрендеНаОсновеДоговора</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ИспользоватьСхемуОпределенияСтавокНДСПоАрендеНаОсновеДоговораКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="ИспользоватьСхемуОпределенияСтавокНДСПоАрендеНаОсновеДоговораРасширеннаяПодсказка" id="3"/>
+					<Events>
+						<Event name="OnChange">ИспользоватьСхемуОпределенияСтавокНДСПоАрендеНаОсновеДоговораПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<UsualGroup name="ГруппаЗаголовокКомментария" id="84">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа заголовок комментария</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа заголовок комментария</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>AlwaysHorizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаЗаголовокКомментарияРасширеннаяПодсказка" id="85"/>
+					<ChildItems>
+						<PictureDecoration name="КартинкаВнимание" id="86">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Картинка внимание</v8:content>
+								</v8:item>
+							</Title>
+							<Picture>
+								<xr:Ref>CommonPicture.НовостиВнимание</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</Picture>
+							<ContextMenu name="КартинкаВниманиеКонтекстноеМеню" id="87"/>
+							<ExtendedTooltip name="КартинкаВниманиеРасширеннаяПодсказка" id="88"/>
+						</PictureDecoration>
+						<LabelDecoration name="НадписьЗаголовокКомментария" id="81">
+							<Width>85</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>250</MaxWidth>
+							<HorizontalStretch>true</HorizontalStretch>
+							<TextColor>style:ПоясняющийТекст</TextColor>
+							<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Для перехода на новую схему необходимо внести изменения в существующие документы.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="НадписьЗаголовокКомментарияКонтекстноеМеню" id="82"/>
+							<ExtendedTooltip name="НадписьЗаголовокКомментарияРасширеннаяПодсказка" id="83"/>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<Pages name="ГруппаСтраницы" id="39">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа страницы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа страницы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ExtendedTooltip name="ГруппаСтраницыРасширеннаяПодсказка" id="40"/>
+			<ChildItems>
+				<Page name="СписокИзменяемыхДокументов" id="41">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Список изменяемых документов</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Список изменяемых документов</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СписокИзменяемыхДокументовРасширеннаяПодсказка" id="42"/>
+					<ChildItems>
+						<InputField name="КомпоновщикНастроекНастройкиОтбор" id="43">
+							<DataPath>Объект.КомпоновщикНастроек.Settings.Filter</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Отбор для заполнения</v8:content>
+								</v8:item>
+							</Title>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ClearButton>false</ClearButton>
+							<ContextMenu name="КомпоновщикНастроекНастройкиОтборКонтекстноеМеню" id="44"/>
+							<ExtendedTooltip name="КомпоновщикНастроекНастройкиОтборРасширеннаяПодсказка" id="45"/>
+							<Events>
+								<Event name="OnChange">КомпоновщикНастроекНастройкиОтборПриИзменении</Event>
+							</Events>
+						</InputField>
+						<Table name="СписокДокументов" id="9">
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Объект.СписокДокументов</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="СписокДокументовКонтекстноеМеню" id="10"/>
+							<AutoCommandBar name="СписокДокументовКоманднаяПанель" id="11">
+								<ChildItems>
+									<Button name="СписокДокументовЗаполнить" id="51">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.Заполнить</CommandName>
+										<ExtendedTooltip name="СписокДокументовЗаполнитьРасширеннаяПодсказка" id="52"/>
+									</Button>
+									<Button name="СписокДокументовОчистить" id="79">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.Очистить</CommandName>
+										<ExtendedTooltip name="СписокДокументовОчиститьРасширеннаяПодсказка" id="80"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="СписокДокументовРасширеннаяПодсказка" id="12"/>
+							<SearchStringAddition name="СписокДокументовСтрокаПоиска" id="13">
+								<AdditionSource>
+									<Item>СписокДокументов</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокДокументовСтрокаПоискаКонтекстноеМеню" id="14"/>
+								<ExtendedTooltip name="СписокДокументовСтрокаПоискаРасширеннаяПодсказка" id="15"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="СписокДокументовСостояниеПросмотра" id="16">
+								<AdditionSource>
+									<Item>СписокДокументов</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокДокументовСостояниеПросмотраКонтекстноеМеню" id="17"/>
+								<ExtendedTooltip name="СписокДокументовСостояниеПросмотраРасширеннаяПодсказка" id="18"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="СписокДокументовУправлениеПоиском" id="19">
+								<AdditionSource>
+									<Item>СписокДокументов</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокДокументовУправлениеПоискомКонтекстноеМеню" id="20"/>
+								<ExtendedTooltip name="СписокДокументовУправлениеПоискомРасширеннаяПодсказка" id="21"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">СписокДокументовВыбор</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="СписокДокументовНомерСтроки" id="22">
+									<DataPath>Объект.СписокДокументов.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СписокДокументовНомерСтрокиКонтекстноеМеню" id="23"/>
+									<ExtendedTooltip name="СписокДокументовНомерСтрокиРасширеннаяПодсказка" id="24"/>
+								</LabelField>
+								<InputField name="СписокДокументовДокумент" id="25">
+									<DataPath>Объект.СписокДокументов.Документ</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СписокДокументовДокументКонтекстноеМеню" id="26"/>
+									<ExtendedTooltip name="СписокДокументовДокументРасширеннаяПодсказка" id="27"/>
+									<Events>
+										<Event name="OnChange">СписокДокументовДокументПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="СписокДокументовОрганизация" id="28">
+									<DataPath>Объект.СписокДокументов.Организация</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СписокДокументовОрганизацияКонтекстноеМеню" id="29"/>
+									<ExtendedTooltip name="СписокДокументовОрганизацияРасширеннаяПодсказка" id="30"/>
+								</InputField>
+								<InputField name="СписокДокументовКонтрагент" id="31">
+									<DataPath>Объект.СписокДокументов.Контрагент</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СписокДокументовКонтрагентКонтекстноеМеню" id="32"/>
+									<ExtendedTooltip name="СписокДокументовКонтрагентРасширеннаяПодсказка" id="33"/>
+								</InputField>
+								<InputField name="СписокДокументовДоговор" id="34">
+									<DataPath>Объект.СписокДокументов.ДоговорКонтрагента</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СписокДокументовДоговорКонтекстноеМеню" id="35"/>
+									<ExtendedTooltip name="СписокДокументовДоговорРасширеннаяПодсказка" id="36"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="ПараметрыНДС" id="46">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Параметры НДС</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Параметры НДС</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ПараметрыНДСРасширеннаяПодсказка" id="47"/>
+					<ChildItems>
+						<InputField name="ВариантУчетаНДС" id="89">
+							<DataPath>Объект.ВариантУчетаНДС</DataPath>
+							<ContextMenu name="ВариантУчетаНДСКонтекстноеМеню" id="90"/>
+							<ExtendedTooltip name="ВариантУчетаНДСРасширеннаяПодсказка" id="91"/>
+						</InputField>
+						<Table name="СтавкиНДСПоУслугам" id="53">
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>Объект.СтавкиНДСПоУслугам</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="СтавкиНДСПоУслугамКонтекстноеМеню" id="54"/>
+							<AutoCommandBar name="СтавкиНДСПоУслугамКоманднаяПанель" id="55">
+								<ChildItems>
+									<Button name="СтавкиНДСПоУслугамОбновитьПоСпискуДокументов" id="75">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ОбновитьПоСпискуДокументов</CommandName>
+										<ExtendedTooltip name="СтавкиНДСПоУслугамОбновитьПоСпискуДокументовРасширеннаяПодсказка" id="76"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="СтавкиНДСПоУслугамРасширеннаяПодсказка" id="56"/>
+							<SearchStringAddition name="СтавкиНДСПоУслугамСтрокаПоиска" id="57">
+								<AdditionSource>
+									<Item>СтавкиНДСПоУслугам</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СтавкиНДСПоУслугамСтрокаПоискаКонтекстноеМеню" id="58"/>
+								<ExtendedTooltip name="СтавкиНДСПоУслугамСтрокаПоискаРасширеннаяПодсказка" id="59"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="СтавкиНДСПоУслугамСостояниеПросмотра" id="60">
+								<AdditionSource>
+									<Item>СтавкиНДСПоУслугам</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СтавкиНДСПоУслугамСостояниеПросмотраКонтекстноеМеню" id="61"/>
+								<ExtendedTooltip name="СтавкиНДСПоУслугамСостояниеПросмотраРасширеннаяПодсказка" id="62"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="СтавкиНДСПоУслугамУправлениеПоиском" id="63">
+								<AdditionSource>
+									<Item>СтавкиНДСПоУслугам</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="СтавкиНДСПоУслугамУправлениеПоискомКонтекстноеМеню" id="64"/>
+								<ExtendedTooltip name="СтавкиНДСПоУслугамУправлениеПоискомРасширеннаяПодсказка" id="65"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="СтавкиНДСПоУслугамНомерСтроки" id="66">
+									<DataPath>Объект.СтавкиНДСПоУслугам.LineNumber</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СтавкиНДСПоУслугамНомерСтрокиКонтекстноеМеню" id="67"/>
+									<ExtendedTooltip name="СтавкиНДСПоУслугамНомерСтрокиРасширеннаяПодсказка" id="68"/>
+								</LabelField>
+								<InputField name="СтавкиНДСПоУслугамУслуга" id="69">
+									<DataPath>Объект.СтавкиНДСПоУслугам.Услуга</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СтавкиНДСПоУслугамУслугаКонтекстноеМеню" id="70"/>
+									<ExtendedTooltip name="СтавкиНДСПоУслугамУслугаРасширеннаяПодсказка" id="71"/>
+								</InputField>
+								<InputField name="СтавкиНДСПоУслугамСтавкаНДС" id="72">
+									<DataPath>Объект.СтавкиНДСПоУслугам.СтавкаНДС</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СтавкиНДСПоУслугамСтавкаНДСКонтекстноеМеню" id="73"/>
+									<ExtendedTooltip name="СтавкиНДСПоУслугамСтавкаНДСРасширеннаяПодсказка" id="74"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.АР_ПереходНаНовуюСхемуОпределенияСтавокНДС</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Save>
+				<Field>Объект.ВариантУчетаНДС</Field>
+				<Field>Объект.ДокументБезНДС</Field>
+				<Field>Объект.СуммаВключаетНДС</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ИспользоватьСхемуОпределенияСтавокНДСПоАрендеНаОсновеДоговора" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Включить схему определения ставок НДС по услугам аренды на основе договора</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="БылиИзменения" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Были изменения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗакрытьОкончательно" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Закрыть окончательно</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Заполнить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить с учетом отбора</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Заполнить</Action>
+		</Command>
+		<Command name="ОбновитьПоСпискуДокументов" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить по списку документов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить по списку документов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОбновитьПоСпискуДокументов</Action>
+		</Command>
+		<Command name="ИзменитьДокументы" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Изменить документы</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Изменить документы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ИзменитьДокументы</Action>
+		</Command>
+		<Command name="Очистить" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Очистить</Action>
+		</Command>
+	</Commands>
+</Form>

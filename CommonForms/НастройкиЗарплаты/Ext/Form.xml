@@ -1,0 +1,602 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<CommandBarLocation>None</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаЗаголовок" id="110">
+			<Representation>NormalSeparation</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаЗаголовокРасширеннаяПодсказка" id="111"/>
+			<ChildItems>
+				<LabelDecoration name="ОписаниеРаздела" id="26">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройки учета заработной платы и кадрового учета.</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ОписаниеРазделаКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="ОписаниеРазделаРасширеннаяПодсказка" id="28"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаОбщиеНастройки" id="29">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Общие настройки</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Horizontal</Group>
+			<Behavior>Collapsible</Behavior>
+			<ControlRepresentation>Picture</ControlRepresentation>
+			<Representation>NormalSeparation</Representation>
+			<ChildItemsWidth>Equal</ChildItemsWidth>
+			<ExtendedTooltip name="ГруппаОбщиеНастройкиРасширеннаяПодсказка" id="30"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаНастройкиУчетаЗарплаты" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройки учета зарплаты</v8:content>
+						</v8:item>
+					</Title>
+					<TitleFont ref="sys:DefaultGUIFont" height="10" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+					<Width>43</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаНастройкиУчетаЗарплатыРасширеннаяПодсказка" id="2"/>
+					<ChildItems>
+						<RadioButtonField name="УчетЗарплатыИКадровВоВнешнейПрограмме" id="3">
+							<DataPath>УчетЗарплатыИКадровВоВнешнейПрограмме</DataPath>
+							<RadioButtonType>RadioButtons</RadioButtonType>
+							<ColumnsCount>1</ColumnsCount>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>В этой программе</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:decimal">0</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Во внешней программе</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:decimal">1</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="УчетЗарплатыИКадровВоВнешнейПрограммеКонтекстноеМеню" id="4"/>
+							<ExtendedTooltip name="УчетЗарплатыИКадровВоВнешнейПрограммеExtendedTooltip" id="5"/>
+							<Events>
+								<Event name="OnChange">УчетЗарплатыИКадровВоВнешнейПрограммеПриИзменении</Event>
+							</Events>
+						</RadioButtonField>
+						<UsualGroup name="ГруппаУчетЗарплаты" id="105">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Учет зарплаты</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Representation>NormalSeparation</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаУчетЗарплатыРасширеннаяПодсказка" id="106"/>
+							<ChildItems>
+								<LabelDecoration name="ПорядокУчетаЗарплаты" id="77">
+									<Title formatted="true">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>&lt;link e1cib/list/РегистрСведений.НастройкиУчетаЗарплаты&gt;Порядок&lt;/&gt;&lt;link e1cib/list/РегистрСведений.НастройкиУчетаЗарплаты&gt; учета зарплаты&lt;/&gt;</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+									<ContextMenu name="ПорядокУчетаЗарплатыКонтекстноеМеню" id="78"/>
+									<ExtendedTooltip name="ПорядокУчетаЗарплатыРасширеннаяПодсказка" id="79">
+										<Title formatted="false">
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Параметры начисления и выплаты зарплаты, формирования резерва отпусков и начисления страховых взносов.</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
+									<Events>
+										<Event name="URLProcessing">ПорядокУчетаЗарплатыОбработкаНавигационнойСсылки</Event>
+									</Events>
+								</LabelDecoration>
+								<LabelDecoration name="ПорядокУчетаЗарплатыВоВнешнейПрограмме" id="107">
+									<Title formatted="true">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>&lt;link e1cib/list/РегистрСведений.НастройкиУчетаЗарплаты&gt;Порядок&lt;/&gt;&lt;link e1cib/list/РегистрСведений.НастройкиУчетаЗарплаты&gt; учета зарплаты&lt;/&gt;</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+									<ContextMenu name="ПорядокУчетаЗарплатыВоВнешнейПрограммеКонтекстноеМеню" id="108"/>
+									<ExtendedTooltip name="ПорядокУчетаЗарплатыВоВнешнейПрограммеРасширеннаяПодсказка" id="109">
+										<Title formatted="false">
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Параметры начисления и выплаты зарплаты, а также формирования резерва отпусков.</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
+									<Events>
+										<Event name="URLProcessing">ПорядокУчетаЗарплатыОбработкаНавигационнойСсылки</Event>
+									</Events>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаНастройкиДокументовИПечатныхФорм" id="37">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройки документов и печатных форм</v8:content>
+						</v8:item>
+					</Title>
+					<Width>43</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаНастройкиДокументовИПечатныхФормРасширеннаяПодсказка" id="38"/>
+					<ChildItems>
+						<LabelDecoration name="НастройкиДокументовИПечатныхФорм" id="74">
+							<Title formatted="true">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>&lt;link e1cib/command/РегистрСведений.НастройкиУчетаЗарплаты.Команда.НастройкиПечатныхФормЗарплатаКадры&gt;Настройки документов и печатных форм&lt;/&gt;</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+							<ContextMenu name="НастройкиДокументовИПечатныхФормКонтекстноеМеню" id="75"/>
+							<ExtendedTooltip name="НастройкиДокументовИПечатныхФормРасширеннаяПодсказка" id="76">
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Правила вывода списка сотрудников и подразделений в печатных формах.</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаРасчетЗарплаты" id="31">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расчет зарплаты</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Horizontal</Group>
+			<Behavior>Collapsible</Behavior>
+			<Collapsed>true</Collapsed>
+			<ControlRepresentation>Picture</ControlRepresentation>
+			<Representation>NormalSeparation</Representation>
+			<ExtendedTooltip name="ГруппаРасчетЗарплатыРасширеннаяПодсказка" id="32"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаНастройкиРасчетаЗарплаты" id="80">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройки расчета зарплаты</v8:content>
+						</v8:item>
+					</Title>
+					<Width>43</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаНастройкиРасчетаЗарплатыРасширеннаяПодсказка" id="81"/>
+					<ChildItems>
+						<CheckBoxField name="РасчетЗарплатыПоПодразделениямДляНебольшихОрганизаций" id="112">
+							<DataPath>РасчетЗарплатыПоПодразделениямДляНебольшихОрганизаций</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Расчет зарплаты по обособленным подразделениям</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Right</TitleLocation>
+							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="РасчетЗарплатыПоПодразделениямДляНебольшихОрганизацийКонтекстноеМеню" id="113"/>
+							<ExtendedTooltip name="РасчетЗарплатыПоПодразделениямДляНебольшихОрганизацийРасширеннаяПодсказка" id="114">
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Поддерживается отчетность по НДФЛ по разным КПП и ОКТМО.
+Доступно, если в информационной базе нет организаций с численностью работников свыше 60 человек.</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+							<Events>
+								<Event name="OnChange">РасчетЗарплатыПоПодразделениямДляНебольшихОрганизацийПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаНачисленияИУдержания" id="82">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Начисления и удержания</v8:content>
+						</v8:item>
+					</Title>
+					<Width>43</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаНачисленияИУдержанияРасширеннаяПодсказка" id="83"/>
+					<ChildItems>
+						<LabelDecoration name="Начисления" id="87">
+							<Title formatted="true">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>&lt;link e1cib/list/ПланВидовРасчета.Начисления&gt;Начисления&lt;/&gt;</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+							<ContextMenu name="НачисленияКонтекстноеМеню" id="88"/>
+							<ExtendedTooltip name="НачисленияРасширеннаяПодсказка" id="89">
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Перечень видов начислений сотрудникам, настройки учета начислений.</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+						</LabelDecoration>
+						<LabelDecoration name="Удержания" id="84">
+							<Title formatted="true">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>&lt;link e1cib/list/ПланВидовРасчета.Удержания&gt;Удержания&lt;/&gt;</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+							<ContextMenu name="УдержанияКонтекстноеМеню" id="85"/>
+							<ExtendedTooltip name="УдержанияРасширеннаяПодсказка" id="86">
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Перечень видов удержаний из заработной платы.</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаОтражениеВУчете" id="93">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отражение в учете</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Horizontal</Group>
+			<Behavior>Collapsible</Behavior>
+			<Collapsed>true</Collapsed>
+			<ControlRepresentation>Picture</ControlRepresentation>
+			<Representation>NormalSeparation</Representation>
+			<ExtendedTooltip name="ГруппаОтражениеВУчетеРасширеннаяПодсказка" id="94"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаСпособыУчетаЗарплаты" id="95">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Способы учета зарплаты</v8:content>
+						</v8:item>
+					</Title>
+					<Width>43</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаСпособыУчетаЗарплатыРасширеннаяПодсказка" id="96"/>
+					<ChildItems>
+						<LabelDecoration name="СпособыУчетаЗарплаты" id="99">
+							<Title formatted="true">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>&lt;link e1cib/list/Справочник.СпособыОтраженияЗарплатыВБухУчете&gt;Способы&lt;/&gt;&lt;link e1cib/list/Справочник.СпособыОтраженияЗарплатыВБухУчете&gt; учета зарплаты&lt;/&gt;</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+							<ContextMenu name="СпособыУчетаЗарплатыКонтекстноеМеню" id="100"/>
+							<ExtendedTooltip name="СпособыУчетаЗарплатыРасширеннаяПодсказка" id="101">
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Порядок отражения заработной платы на счетах бухгалтерского учета.</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаСтатьиЗатратПоЗарплате" id="97">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Статьи затрат по зарплате</v8:content>
+						</v8:item>
+					</Title>
+					<Width>43</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаСтатьиЗатратПоЗарплатеРасширеннаяПодсказка" id="98"/>
+					<ChildItems>
+						<LabelDecoration name="СтатьиЗатратПоЗарплате" id="122">
+							<Title formatted="true">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>&lt;link e1cib/list/РегистрСведений.СтатьиЗатратПоЗарплате&gt;Статьи затрат по зарплате&lt;/&gt;</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+							<ContextMenu name="СтатьиЗатратПоЗарплатеКонтекстноеМеню" id="123"/>
+							<ExtendedTooltip name="СтатьиЗатратПоЗарплатеРасширеннаяПодсказка" id="124">
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Порядок отражения обязательных взносов с фонда оплаты труда и больничных за счет работодателя на счетах бухгалтерского учета.</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаКлассификаторы" id="46">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Классификаторы</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Horizontal</Group>
+			<Behavior>Collapsible</Behavior>
+			<Collapsed>true</Collapsed>
+			<ControlRepresentation>Picture</ControlRepresentation>
+			<Representation>NormalSeparation</Representation>
+			<ChildItemsWidth>Equal</ChildItemsWidth>
+			<ExtendedTooltip name="ГруппаКлассификаторыРасширеннаяПодсказка" id="47"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаСтраховыеВзносыИНДФЛ" id="48">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страхоые взносы и НДФЛ</v8:content>
+						</v8:item>
+					</Title>
+					<TitleFont ref="sys:DefaultGUIFont" height="10" bold="true" italic="false" underline="false" strikeout="false" kind="WindowsFont"/>
+					<Width>43</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<Group>Vertical</Group>
+					<Representation>NormalSeparation</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаСтраховыеВзносыИНДФЛРасширеннаяПодсказка" id="49"/>
+					<ChildItems>
+						<LabelDecoration name="СтраховыеВзносы" id="68">
+							<Title formatted="true">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>&lt;link e1cib/command/РегистрСведений.НастройкиУчетаЗарплаты.Команда.ПараметрыРасчетаВзносов&gt;Страховые взносы&lt;/&gt;</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+							<ContextMenu name="СтраховыеВзносыКонтекстноеМеню" id="69"/>
+							<ExtendedTooltip name="СтраховыеВзносыРасширеннаяПодсказка" id="70">
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Параметры расчета страховых взносов, уплачиваемых в ПФР, ФСС, ФОМС.</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+						</LabelDecoration>
+						<LabelDecoration name="НДФЛ" id="71">
+							<Title formatted="true">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>&lt;link e1cib/command/РегистрСведений.НастройкиУчетаЗарплаты.Команда.ПараметрыРасчетаНДФЛ&gt;НДФЛ&lt;/&gt;</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+							<ContextMenu name="НДФЛКонтекстноеМеню" id="72"/>
+							<ExtendedTooltip name="НДФЛРасширеннаяПодсказка" id="73">
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Виды доходов и вычетов, используемые при начислении НДФЛ.</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+						</LabelDecoration>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаВосстановлениеСтандартныхНастроек" id="53">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Восстановление стандартных настроек</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+					<Width>43</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаВосстановлениеСтандартныхНастроекРасширеннаяПодсказка" id="54">
+						<Title formatted="false">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Коды доходов по НДФЛ, размеры и виды вычетов по НДФЛ, перечень статусов физических лиц, размеры ставок страховых взносов, минимальный размер оплаты труда и т.п. являются классификаторами, редактирование которых в программе не предусмотрено.
+
+Данные в этих классификаторах изменяются в соответствии с изменениями законодательства и только автоматически при обновлении конфигурации.
+
+В случае необходимости, можно принудительно восстановить стандартные настройки классификаторов.</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
+					<ChildItems>
+						<Button name="ВосстановитьСтандартныеНастройки" id="58">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.ВосстановитьСтандартныеНастройки</CommandName>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<ExtendedTooltip name="ВосстановитьСтандартныеНастройкиРасширеннаяПодсказка" id="59">
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Восстанавливаются данные в следующих справочниках и регистрах сведений:
+
+Сведения для расчета пособий:
+- Минимальная оплата труда
+- Максимальный размер ежемесячной страховой выплаты
+
+Учет НДФЛ:
+- Виды вычетов НДФЛ
+- Виды доходов НДФЛ
+- Вычеты к доходам по НДФЛ
+- Статусы налогоплательщиков (НДФЛ)
+- Размер вычетов НДФЛ
+
+Учет страховых взносов:
+- Виды доходов (взносы)
+- Виды тарифов страховых взносов
+- Предельная величина базы страховых взносов
+- Скидки к доходам при исчислении страховых взносов
+- Тарифы взносов за занятых на работах с досрочной пенсией
+- Тарифы взносов по результатам специальной оценки условий труда
+- Тарифы страховых взносов
+
+Персонифицированный учет:
+- Виды деятельности (СЗВ-К)
+- Доп. сведения для исчисления стажа
+- Допустимые сочетания кодов групп стажа
+- Основания для досрочной пенсии
+- Основания для досрочной пенсии (СЗВ-К)
+- Территориальные условия
+
+Кадровый учет:
+ - Основания увольнения</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="НаборКонстант" id="1">
+			<Type>
+				<v8:Type>cfg:ConstantsSet</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<UseAlways>
+				<Field>НаборКонстант.ИспользоватьКадровыйУчет</Field>
+				<Field>НаборКонстант.РасчетЗарплатыДляНебольшихОрганизаций</Field>
+				<Field>НаборКонстант.УчетЗарплатыИКадровСредствамиБухгалтерии</Field>
+			</UseAlways>
+		</Attribute>
+		<Attribute name="УчетЗарплатыИКадровВоВнешнейПрограмме" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Учет расчетов по заработной плате и кадровый учет ведутся</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>1</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="НесколькоОрганизаций" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Несколько организаций</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="РасчетЗарплатыПоПодразделениямДляНебольшихОрганизаций" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Расчет зарплаты по подразделениям для небольших организаций</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ДоступенУчетВоВнешнейПрограмме" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Доступен учет во внешней программе</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ВосстановитьСтандартныеНастройки" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Восстановить стандартные настройки</v8:content>
+				</v8:item>
+			</Title>
+			<Use>
+				<xr:Common>false</xr:Common>
+				<xr:Value name="Role.АдминистраторСистемы">true</xr:Value>
+			</Use>
+			<Action>ВосстановитьСтандартныеНастройки</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

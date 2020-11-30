@@ -1,0 +1,2328 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<AutoTitle>false</AutoTitle>
+	<Customizable>false</Customizable>
+	<CommandSet>
+		<ExcludedCommand>Abort</ExcludedCommand>
+		<ExcludedCommand>Cancel</ExcludedCommand>
+		<ExcludedCommand>Ignore</ExcludedCommand>
+		<ExcludedCommand>No</ExcludedCommand>
+		<ExcludedCommand>OK</ExcludedCommand>
+		<ExcludedCommand>RestoreValues</ExcludedCommand>
+		<ExcludedCommand>Retry</ExcludedCommand>
+		<ExcludedCommand>SaveValues</ExcludedCommand>
+		<ExcludedCommand>Yes</ExcludedCommand>
+	</CommandSet>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<ButtonGroup name="ГруппаЗаписать" id="200">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Группа записать</v8:content>
+					</v8:item>
+				</Title>
+				<ToolTip>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Группа записать</v8:content>
+					</v8:item>
+				</ToolTip>
+				<ExtendedTooltip name="ГруппаЗаписатьExtendedTooltip" id="262"/>
+				<ChildItems>
+					<Button name="ОбособленныеПодразделенияЗаписатьИЗакрыть" id="184">
+						<Type>CommandBarButton</Type>
+						<DefaultButton>true</DefaultButton>
+						<DefaultItem>true</DefaultItem>
+						<CommandName>Form.Command.ЗаписатьИЗакрыть</CommandName>
+						<ExtendedTooltip name="ОбособленныеПодразделенияЗаписатьИЗакрытьExtendedTooltip" id="263"/>
+					</Button>
+					<Button name="ОбособленныеПодразделенияЗаписать" id="185">
+						<Type>CommandBarButton</Type>
+						<Representation>Text</Representation>
+						<CommandName>Form.Command.Записать</CommandName>
+						<ExtendedTooltip name="ОбособленныеПодразделенияЗаписатьExtendedTooltip" id="264"/>
+					</Button>
+				</ChildItems>
+			</ButtonGroup>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="BeforeClose">ПередЗакрытием</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаДолжности" id="208">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Должности</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаДолжностиExtendedTooltip" id="334"/>
+			<ChildItems>
+				<Pages name="ГруппаПараметрыДолжности" id="209">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа параметры должности</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа параметры должности</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ГруппаПараметрыДолжностиExtendedTooltip" id="335"/>
+					<ChildItems>
+						<Page name="ГруппаФармацевты" id="210">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Фармацевтические должности</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа фармацевты</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="ГруппаФармацевтыExtendedTooltip" id="336"/>
+							<ChildItems>
+								<Table name="Фармацевты" id="213">
+									<Representation>List</Representation>
+									<AutoAddIncomplete>false</AutoAddIncomplete>
+									<AutoMarkIncomplete>false</AutoMarkIncomplete>
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>Фармацевты</DataPath>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="ФармацевтыКонтекстноеМеню" id="214"/>
+									<AutoCommandBar name="ФармацевтыКоманднаяПанель" id="215"/>
+									<ExtendedTooltip name="ФармацевтыExtendedTooltip" id="337"/>
+									<SearchStringAddition name="ФармацевтыСтрокаПоиска" id="438">
+										<AdditionSource>
+											<Item>Фармацевты</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ФармацевтыСтрокаПоискаКонтекстноеМеню" id="439"/>
+										<ExtendedTooltip name="ФармацевтыСтрокаПоискаРасширеннаяПодсказка" id="440"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ФармацевтыСостояниеПросмотра" id="441">
+										<AdditionSource>
+											<Item>Фармацевты</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ФармацевтыСостояниеПросмотраКонтекстноеМеню" id="442"/>
+										<ExtendedTooltip name="ФармацевтыСостояниеПросмотраРасширеннаяПодсказка" id="443"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ФармацевтыУправлениеПоиском" id="444">
+										<AdditionSource>
+											<Item>Фармацевты</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ФармацевтыУправлениеПоискомКонтекстноеМеню" id="445"/>
+										<ExtendedTooltip name="ФармацевтыУправлениеПоискомРасширеннаяПодсказка" id="446"/>
+									</SearchControlAddition>
+									<ChildItems>
+										<InputField name="ФармацевтыСсылкаКод" id="234">
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ФармацевтыСсылкаКодКонтекстноеМеню" id="235"/>
+											<ExtendedTooltip name="ФармацевтыСсылкаКодExtendedTooltip" id="338"/>
+										</InputField>
+										<InputField name="ФармацевтыСсылка" id="216">
+											<DataPath>Фармацевты.Ссылка</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<AutoChoiceIncomplete>true</AutoChoiceIncomplete>
+											<AutoMarkIncomplete>true</AutoMarkIncomplete>
+											<ContextMenu name="ФармацевтыСсылкаКонтекстноеМеню" id="217"/>
+											<ExtendedTooltip name="ФармацевтыСсылкаExtendedTooltip" id="339"/>
+										</InputField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</Page>
+						<Page name="ГруппаЛетныеЭкипажи" id="211">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Должности летных экипажей</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа летные экипажи</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="ГруппаЛетныеЭкипажиExtendedTooltip" id="340"/>
+							<ChildItems>
+								<Table name="ЛетныеЭкипажи" id="220">
+									<Representation>List</Representation>
+									<AutoAddIncomplete>false</AutoAddIncomplete>
+									<AutoMarkIncomplete>false</AutoMarkIncomplete>
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>ЛетныеЭкипажи</DataPath>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="ЛетныеЭкипажиКонтекстноеМеню" id="221"/>
+									<AutoCommandBar name="ЛетныеЭкипажиКоманднаяПанель" id="222"/>
+									<ExtendedTooltip name="ЛетныеЭкипажиExtendedTooltip" id="341"/>
+									<SearchStringAddition name="ЛетныеЭкипажиСтрокаПоиска" id="447">
+										<AdditionSource>
+											<Item>ЛетныеЭкипажи</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ЛетныеЭкипажиСтрокаПоискаКонтекстноеМеню" id="448"/>
+										<ExtendedTooltip name="ЛетныеЭкипажиСтрокаПоискаРасширеннаяПодсказка" id="449"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ЛетныеЭкипажиСостояниеПросмотра" id="450">
+										<AdditionSource>
+											<Item>ЛетныеЭкипажи</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ЛетныеЭкипажиСостояниеПросмотраКонтекстноеМеню" id="451"/>
+										<ExtendedTooltip name="ЛетныеЭкипажиСостояниеПросмотраРасширеннаяПодсказка" id="452"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ЛетныеЭкипажиУправлениеПоиском" id="453">
+										<AdditionSource>
+											<Item>ЛетныеЭкипажи</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ЛетныеЭкипажиУправлениеПоискомКонтекстноеМеню" id="454"/>
+										<ExtendedTooltip name="ЛетныеЭкипажиУправлениеПоискомРасширеннаяПодсказка" id="455"/>
+									</SearchControlAddition>
+									<ChildItems>
+										<InputField name="ЛетныеЭкипажиСсылкаКод" id="236">
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ЛетныеЭкипажиСсылкаКодКонтекстноеМеню" id="237"/>
+											<ExtendedTooltip name="ЛетныеЭкипажиСсылкаКодExtendedTooltip" id="342"/>
+										</InputField>
+										<InputField name="ЛетныеЭкипажиСсылка" id="223">
+											<DataPath>ЛетныеЭкипажи.Ссылка</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<AutoChoiceIncomplete>true</AutoChoiceIncomplete>
+											<AutoMarkIncomplete>true</AutoMarkIncomplete>
+											<ContextMenu name="ЛетныеЭкипажиСсылкаКонтекстноеМеню" id="224"/>
+											<ExtendedTooltip name="ЛетныеЭкипажиСсылкаExtendedTooltip" id="343"/>
+										</InputField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</Page>
+						<Page name="ГруппаШахтеры" id="212">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Шахтерские должности</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа шахтеры</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="ГруппаШахтерыExtendedTooltip" id="344"/>
+							<ChildItems>
+								<Table name="Шахтеры" id="227">
+									<Representation>List</Representation>
+									<AutoAddIncomplete>false</AutoAddIncomplete>
+									<AutoMarkIncomplete>false</AutoMarkIncomplete>
+									<EnableStartDrag>true</EnableStartDrag>
+									<EnableDrag>true</EnableDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>Шахтеры</DataPath>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="ШахтерыКонтекстноеМеню" id="228"/>
+									<AutoCommandBar name="ШахтерыКоманднаяПанель" id="229"/>
+									<ExtendedTooltip name="ШахтерыExtendedTooltip" id="345"/>
+									<SearchStringAddition name="ШахтерыСтрокаПоиска" id="456">
+										<AdditionSource>
+											<Item>Шахтеры</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ШахтерыСтрокаПоискаКонтекстноеМеню" id="457"/>
+										<ExtendedTooltip name="ШахтерыСтрокаПоискаРасширеннаяПодсказка" id="458"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ШахтерыСостояниеПросмотра" id="459">
+										<AdditionSource>
+											<Item>Шахтеры</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ШахтерыСостояниеПросмотраКонтекстноеМеню" id="460"/>
+										<ExtendedTooltip name="ШахтерыСостояниеПросмотраРасширеннаяПодсказка" id="461"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ШахтерыУправлениеПоиском" id="462">
+										<AdditionSource>
+											<Item>Шахтеры</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ШахтерыУправлениеПоискомКонтекстноеМеню" id="463"/>
+										<ExtendedTooltip name="ШахтерыУправлениеПоискомРасширеннаяПодсказка" id="464"/>
+									</SearchControlAddition>
+									<ChildItems>
+										<InputField name="ШахтерыСсылкаКод" id="238">
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ШахтерыСсылкаКодКонтекстноеМеню" id="239"/>
+											<ExtendedTooltip name="ШахтерыСсылкаКодExtendedTooltip" id="346"/>
+										</InputField>
+										<InputField name="ШахтерыСсылка" id="230">
+											<DataPath>Шахтеры.Ссылка</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<AutoChoiceIncomplete>true</AutoChoiceIncomplete>
+											<AutoMarkIncomplete>true</AutoMarkIncomplete>
+											<ContextMenu name="ШахтерыСсылкаКонтекстноеМеню" id="231"/>
+											<ExtendedTooltip name="ШахтерыСсылкаExtendedTooltip" id="347"/>
+										</InputField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</Page>
+					</ChildItems>
+				</Pages>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаНДФЛ" id="13">
+			<Visible>false</Visible>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа НДФЛ</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаНДФЛExtendedTooltip" id="266"/>
+			<ChildItems>
+				<Pages name="ГруппаНДФЛСтраницы" id="14">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа НДФЛ страницы</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа НДФЛСтраницы</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ГруппаНДФЛСтраницыExtendedTooltip" id="267"/>
+					<ChildItems>
+						<Page name="ГруппаРазмерВычетовНДФЛ" id="15">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Размер вычетов НДФЛ</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа размер вычетов НДФЛ</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="ГруппаРазмерВычетовНДФЛExtendedTooltip" id="268"/>
+							<ChildItems>
+								<Table name="РазмерВычетовНДФЛ" id="39">
+									<UseAlternationRowColor>true</UseAlternationRowColor>
+									<EnableStartDrag>true</EnableStartDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>РазмерВычетовНДФЛ</DataPath>
+									<RowPictureDataPath>РазмерВычетовНДФЛ.DefaultPicture</RowPictureDataPath>
+									<CommandSet>
+										<ExcludedCommand>Change</ExcludedCommand>
+										<ExcludedCommand>Copy</ExcludedCommand>
+										<ExcludedCommand>Create</ExcludedCommand>
+										<ExcludedCommand>Delete</ExcludedCommand>
+									</CommandSet>
+									<AutoRefresh>false</AutoRefresh>
+									<AutoRefreshPeriod>60</AutoRefreshPeriod>
+									<Period>
+										<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+										<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+										<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+									</Period>
+									<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+									<RestoreCurrentRow>false</RestoreCurrentRow>
+									<TopLevelParent xsi:nil="true"/>
+									<ShowRoot>true</ShowRoot>
+									<AllowRootChoice>false</AllowRootChoice>
+									<UpdateOnDataChange>Auto</UpdateOnDataChange>
+									<ContextMenu name="РазмерВычетовНДФЛКонтекстноеМеню" id="40"/>
+									<AutoCommandBar name="РазмерВычетовНДФЛКоманднаяПанель" id="41"/>
+									<ExtendedTooltip name="РазмерВычетовНДФЛExtendedTooltip" id="269"/>
+									<SearchStringAddition name="РазмерВычетовНДФЛСтрокаПоиска" id="348">
+										<AdditionSource>
+											<Item>РазмерВычетовНДФЛ</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="РазмерВычетовНДФЛСтрокаПоискаКонтекстноеМеню" id="349"/>
+										<ExtendedTooltip name="РазмерВычетовНДФЛСтрокаПоискаРасширеннаяПодсказка" id="350"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="РазмерВычетовНДФЛСостояниеПросмотра" id="351">
+										<AdditionSource>
+											<Item>РазмерВычетовНДФЛ</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="РазмерВычетовНДФЛСостояниеПросмотраКонтекстноеМеню" id="352"/>
+										<ExtendedTooltip name="РазмерВычетовНДФЛСостояниеПросмотраРасширеннаяПодсказка" id="353"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="РазмерВычетовНДФЛУправлениеПоиском" id="354">
+										<AdditionSource>
+											<Item>РазмерВычетовНДФЛ</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="РазмерВычетовНДФЛУправлениеПоискомКонтекстноеМеню" id="355"/>
+										<ExtendedTooltip name="РазмерВычетовНДФЛУправлениеПоискомРасширеннаяПодсказка" id="356"/>
+									</SearchControlAddition>
+									<ChildItems>
+										<LabelField name="РазмерВычетовНДФЛПериод" id="42">
+											<DataPath>РазмерВычетовНДФЛ.Period</DataPath>
+											<ContextMenu name="РазмерВычетовНДФЛПериодКонтекстноеМеню" id="43"/>
+											<ExtendedTooltip name="РазмерВычетовНДФЛПериодExtendedTooltip" id="270"/>
+										</LabelField>
+										<LabelField name="РазмерВычетовНДФЛКодВычета" id="44">
+											<DataPath>РазмерВычетовНДФЛ.КодВычета</DataPath>
+											<ContextMenu name="РазмерВычетовНДФЛКодВычетаКонтекстноеМеню" id="45"/>
+											<ExtendedTooltip name="РазмерВычетовНДФЛКодВычетаExtendedTooltip" id="271"/>
+										</LabelField>
+										<LabelField name="РазмерВычетовНДФЛРазмер" id="46">
+											<DataPath>РазмерВычетовНДФЛ.Размер</DataPath>
+											<ContextMenu name="РазмерВычетовНДФЛРазмерКонтекстноеМеню" id="47"/>
+											<ExtendedTooltip name="РазмерВычетовНДФЛРазмерExtendedTooltip" id="272"/>
+										</LabelField>
+										<LabelField name="РазмерВычетовНДФЛОграничениеПоДоходам" id="48">
+											<DataPath>РазмерВычетовНДФЛ.ОграничениеПоДоходам</DataPath>
+											<ContextMenu name="РазмерВычетовНДФЛОграничениеПоДоходамКонтекстноеМеню" id="49"/>
+											<ExtendedTooltip name="РазмерВычетовНДФЛОграничениеПоДоходамExtendedTooltip" id="273"/>
+										</LabelField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</Page>
+						<Page name="ГруппаВидыВычетовНДФЛ" id="16">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Виды вычетов НДФЛ</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа виды вычетов НДФЛ</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="ГруппаВидыВычетовНДФЛExtendedTooltip" id="274"/>
+							<ChildItems>
+								<Table name="ВидыВычетовНДФЛ" id="50">
+									<UseAlternationRowColor>true</UseAlternationRowColor>
+									<EnableStartDrag>true</EnableStartDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>ВидыВычетовНДФЛ</DataPath>
+									<RowPictureDataPath>ВидыВычетовНДФЛ.DefaultPicture</RowPictureDataPath>
+									<CommandSet>
+										<ExcludedCommand>Change</ExcludedCommand>
+										<ExcludedCommand>Copy</ExcludedCommand>
+										<ExcludedCommand>Create</ExcludedCommand>
+										<ExcludedCommand>Delete</ExcludedCommand>
+										<ExcludedCommand>SetDeletionMark</ExcludedCommand>
+									</CommandSet>
+									<AutoRefresh>false</AutoRefresh>
+									<AutoRefreshPeriod>60</AutoRefreshPeriod>
+									<Period>
+										<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+										<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+										<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+									</Period>
+									<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+									<RestoreCurrentRow>false</RestoreCurrentRow>
+									<TopLevelParent xsi:nil="true"/>
+									<ShowRoot>true</ShowRoot>
+									<AllowRootChoice>false</AllowRootChoice>
+									<UpdateOnDataChange>Auto</UpdateOnDataChange>
+									<ContextMenu name="ВидыВычетовНДФЛКонтекстноеМеню" id="51"/>
+									<AutoCommandBar name="ВидыВычетовНДФЛКоманднаяПанель" id="52"/>
+									<ExtendedTooltip name="ВидыВычетовНДФЛExtendedTooltip" id="275"/>
+									<SearchStringAddition name="ВидыВычетовНДФЛСтрокаПоиска" id="357">
+										<AdditionSource>
+											<Item>ВидыВычетовНДФЛ</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ВидыВычетовНДФЛСтрокаПоискаКонтекстноеМеню" id="358"/>
+										<ExtendedTooltip name="ВидыВычетовНДФЛСтрокаПоискаРасширеннаяПодсказка" id="359"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ВидыВычетовНДФЛСостояниеПросмотра" id="360">
+										<AdditionSource>
+											<Item>ВидыВычетовНДФЛ</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ВидыВычетовНДФЛСостояниеПросмотраКонтекстноеМеню" id="361"/>
+										<ExtendedTooltip name="ВидыВычетовНДФЛСостояниеПросмотраРасширеннаяПодсказка" id="362"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ВидыВычетовНДФЛУправлениеПоиском" id="363">
+										<AdditionSource>
+											<Item>ВидыВычетовНДФЛ</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ВидыВычетовНДФЛУправлениеПоискомКонтекстноеМеню" id="364"/>
+										<ExtendedTooltip name="ВидыВычетовНДФЛУправлениеПоискомРасширеннаяПодсказка" id="365"/>
+									</SearchControlAddition>
+									<ChildItems>
+										<LabelField name="ВидыВычетовНДФЛКод" id="55">
+											<DataPath>ВидыВычетовНДФЛ.Code</DataPath>
+											<ContextMenu name="ВидыВычетовНДФЛКодКонтекстноеМеню" id="56"/>
+											<ExtendedTooltip name="ВидыВычетовНДФЛКодExtendedTooltip" id="276"/>
+										</LabelField>
+										<LabelField name="ВидыВычетовНДФЛНаименование" id="53">
+											<DataPath>ВидыВычетовНДФЛ.Description</DataPath>
+											<ContextMenu name="ВидыВычетовНДФЛНаименованиеКонтекстноеМеню" id="54"/>
+											<ExtendedTooltip name="ВидыВычетовНДФЛНаименованиеExtendedTooltip" id="277"/>
+										</LabelField>
+										<ColumnGroup name="ВидыВычетовНДФЛГруппаКодВычета" id="191">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Виды вычетов НДФЛГруппа код вычета</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Виды вычетов НДФЛГруппа код вычета</v8:content>
+												</v8:item>
+											</ToolTip>
+											<ExtendedTooltip name="ВидыВычетовНДФЛГруппаКодВычетаExtendedTooltip" id="278"/>
+											<ChildItems>
+												<LabelField name="ВидыВычетовНДФЛКодПрименяемыйВНалоговойОтчетностиС2011Года" id="57">
+													<DataPath>ВидыВычетовНДФЛ.КодПрименяемыйВНалоговойОтчетностиС2011Года</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Код в отчетности
+с 2011 года</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="ВидыВычетовНДФЛКодПрименяемыйВНалоговойОтчетностиС2011ГодаКонтекстноеМеню" id="58"/>
+													<ExtendedTooltip name="ВидыВычетовНДФЛКодПрименяемыйВНалоговойОтчетностиС2011ГодаExtendedTooltip" id="279"/>
+												</LabelField>
+												<LabelField name="ВидыВычетовНДФЛКодПрименяемыйВНалоговойОтчетностиС2010Года" id="59">
+													<DataPath>ВидыВычетовНДФЛ.КодПрименяемыйВНалоговойОтчетностиС2010Года</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Код в отчетности
+за 2010 год</v8:content>
+														</v8:item>
+													</Title>
+													<ContextMenu name="ВидыВычетовНДФЛКодПрименяемыйВНалоговойОтчетностиС2010ГодаКонтекстноеМеню" id="60"/>
+													<ExtendedTooltip name="ВидыВычетовНДФЛКодПрименяемыйВНалоговойОтчетностиС2010ГодаExtendedTooltip" id="280"/>
+												</LabelField>
+											</ChildItems>
+										</ColumnGroup>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</Page>
+						<Page name="ГруппаВидыДоходовНДФЛ" id="17">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Виды доходов НДФЛ</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа виды доходов НДФЛ</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="ГруппаВидыДоходовНДФЛExtendedTooltip" id="281"/>
+							<ChildItems>
+								<Table name="ВидыДоходовНДФЛ" id="67">
+									<UseAlternationRowColor>true</UseAlternationRowColor>
+									<EnableStartDrag>true</EnableStartDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>ВидыДоходовНДФЛ</DataPath>
+									<RowPictureDataPath>ВидыДоходовНДФЛ.DefaultPicture</RowPictureDataPath>
+									<CommandSet>
+										<ExcludedCommand>Change</ExcludedCommand>
+										<ExcludedCommand>Copy</ExcludedCommand>
+										<ExcludedCommand>Create</ExcludedCommand>
+										<ExcludedCommand>Delete</ExcludedCommand>
+										<ExcludedCommand>SetDeletionMark</ExcludedCommand>
+									</CommandSet>
+									<AutoRefresh>false</AutoRefresh>
+									<AutoRefreshPeriod>60</AutoRefreshPeriod>
+									<Period>
+										<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+										<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+										<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+									</Period>
+									<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+									<RestoreCurrentRow>false</RestoreCurrentRow>
+									<TopLevelParent xsi:nil="true"/>
+									<ShowRoot>true</ShowRoot>
+									<AllowRootChoice>false</AllowRootChoice>
+									<UpdateOnDataChange>Auto</UpdateOnDataChange>
+									<ContextMenu name="ВидыДоходовНДФЛКонтекстноеМеню" id="68"/>
+									<AutoCommandBar name="ВидыДоходовНДФЛКоманднаяПанель" id="69"/>
+									<ExtendedTooltip name="ВидыДоходовНДФЛExtendedTooltip" id="282"/>
+									<SearchStringAddition name="ВидыДоходовНДФЛСтрокаПоиска" id="366">
+										<AdditionSource>
+											<Item>ВидыДоходовНДФЛ</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ВидыДоходовНДФЛСтрокаПоискаКонтекстноеМеню" id="367"/>
+										<ExtendedTooltip name="ВидыДоходовНДФЛСтрокаПоискаРасширеннаяПодсказка" id="368"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ВидыДоходовНДФЛСостояниеПросмотра" id="369">
+										<AdditionSource>
+											<Item>ВидыДоходовНДФЛ</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ВидыДоходовНДФЛСостояниеПросмотраКонтекстноеМеню" id="370"/>
+										<ExtendedTooltip name="ВидыДоходовНДФЛСостояниеПросмотраРасширеннаяПодсказка" id="371"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ВидыДоходовНДФЛУправлениеПоиском" id="372">
+										<AdditionSource>
+											<Item>ВидыДоходовНДФЛ</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ВидыДоходовНДФЛУправлениеПоискомКонтекстноеМеню" id="373"/>
+										<ExtendedTooltip name="ВидыДоходовНДФЛУправлениеПоискомРасширеннаяПодсказка" id="374"/>
+									</SearchControlAddition>
+									<ChildItems>
+										<LabelField name="ВидыДоходовНДФЛКод" id="72">
+											<DataPath>ВидыДоходовНДФЛ.Code</DataPath>
+											<ContextMenu name="ВидыДоходовНДФЛКодКонтекстноеМеню" id="73"/>
+											<ExtendedTooltip name="ВидыДоходовНДФЛКодExtendedTooltip" id="283"/>
+										</LabelField>
+										<LabelField name="ВидыДоходовНДФЛНаименование" id="70">
+											<DataPath>ВидыДоходовНДФЛ.Description</DataPath>
+											<ContextMenu name="ВидыДоходовНДФЛНаименованиеКонтекстноеМеню" id="71"/>
+											<ExtendedTooltip name="ВидыДоходовНДФЛНаименованиеExtendedTooltip" id="284"/>
+										</LabelField>
+										<LabelField name="ВидыДоходовНДФЛСтавкаНалогообложенияРезидента" id="74">
+											<DataPath>ВидыДоходовНДФЛ.СтавкаНалогообложенияРезидента</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Ставка</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="ВидыДоходовНДФЛСтавкаНалогообложенияРезидентаКонтекстноеМеню" id="75"/>
+											<ExtendedTooltip name="ВидыДоходовНДФЛСтавкаНалогообложенияРезидентаExtendedTooltip" id="285"/>
+										</LabelField>
+										<LabelField name="ВидыДоходовНДФЛКодПрименяемыйВНалоговойОтчетностиС2010Года" id="78">
+											<DataPath>ВидыДоходовНДФЛ.КодПрименяемыйВНалоговойОтчетностиС2010Года</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Код в отчетности
+с 2010 года</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="ВидыДоходовНДФЛКодПрименяемыйВНалоговойОтчетностиС2010ГодаКонтекстноеМеню" id="79"/>
+											<ExtendedTooltip name="ВидыДоходовНДФЛКодПрименяемыйВНалоговойОтчетностиС2010ГодаExtendedTooltip" id="286"/>
+										</LabelField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</Page>
+					</ChildItems>
+				</Pages>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаСтраховыеВзносы" id="12">
+			<Visible>false</Visible>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа страховые взносы</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаСтраховыеВзносыExtendedTooltip" id="291"/>
+			<ChildItems>
+				<Pages name="ГруппаСтраховыеВзносыСтраницы" id="129">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа страховые взносы страницы</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа страховые взносы страницы</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="ГруппаСтраховыеВзносыСтраницыExtendedTooltip" id="292"/>
+					<ChildItems>
+						<Page name="ГруппаСтраховыеВзносыСкидкиКДоходам" id="130">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Страховые взносы скидки к доходам</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа страховые взносы скидки к доходам</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="ГруппаСтраховыеВзносыСкидкиКДоходамExtendedTooltip" id="293"/>
+							<ChildItems>
+								<Table name="СтраховыеВзносыСкидкиКДоходам" id="118">
+									<UseAlternationRowColor>true</UseAlternationRowColor>
+									<EnableStartDrag>true</EnableStartDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>СтраховыеВзносыСкидкиКДоходам</DataPath>
+									<RowPictureDataPath>СтраховыеВзносыСкидкиКДоходам.DefaultPicture</RowPictureDataPath>
+									<CommandSet>
+										<ExcludedCommand>Change</ExcludedCommand>
+										<ExcludedCommand>Copy</ExcludedCommand>
+										<ExcludedCommand>Create</ExcludedCommand>
+										<ExcludedCommand>Delete</ExcludedCommand>
+									</CommandSet>
+									<AutoRefresh>false</AutoRefresh>
+									<AutoRefreshPeriod>60</AutoRefreshPeriod>
+									<Period>
+										<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+										<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+										<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+									</Period>
+									<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+									<RestoreCurrentRow>false</RestoreCurrentRow>
+									<TopLevelParent xsi:nil="true"/>
+									<ShowRoot>true</ShowRoot>
+									<AllowRootChoice>false</AllowRootChoice>
+									<UpdateOnDataChange>Auto</UpdateOnDataChange>
+									<ContextMenu name="СтраховыеВзносыСкидкиКДоходамКонтекстноеМеню" id="119"/>
+									<AutoCommandBar name="СтраховыеВзносыСкидкиКДоходамКоманднаяПанель" id="120"/>
+									<ExtendedTooltip name="СтраховыеВзносыСкидкиКДоходамExtendedTooltip" id="294"/>
+									<SearchStringAddition name="СтраховыеВзносыСкидкиКДоходамСтрокаПоиска" id="375">
+										<AdditionSource>
+											<Item>СтраховыеВзносыСкидкиКДоходам</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="СтраховыеВзносыСкидкиКДоходамСтрокаПоискаКонтекстноеМеню" id="376"/>
+										<ExtendedTooltip name="СтраховыеВзносыСкидкиКДоходамСтрокаПоискаРасширеннаяПодсказка" id="377"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="СтраховыеВзносыСкидкиКДоходамСостояниеПросмотра" id="378">
+										<AdditionSource>
+											<Item>СтраховыеВзносыСкидкиКДоходам</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="СтраховыеВзносыСкидкиКДоходамСостояниеПросмотраКонтекстноеМеню" id="379"/>
+										<ExtendedTooltip name="СтраховыеВзносыСкидкиКДоходамСостояниеПросмотраРасширеннаяПодсказка" id="380"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="СтраховыеВзносыСкидкиКДоходамУправлениеПоиском" id="381">
+										<AdditionSource>
+											<Item>СтраховыеВзносыСкидкиКДоходам</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="СтраховыеВзносыСкидкиКДоходамУправлениеПоискомКонтекстноеМеню" id="382"/>
+										<ExtendedTooltip name="СтраховыеВзносыСкидкиКДоходамУправлениеПоискомРасширеннаяПодсказка" id="383"/>
+									</SearchControlAddition>
+									<ChildItems>
+										<LabelField name="СтраховыеВзносыСкидкиКДоходамПериод" id="121">
+											<DataPath>СтраховыеВзносыСкидкиКДоходам.Period</DataPath>
+											<ContextMenu name="СтраховыеВзносыСкидкиКДоходамПериодКонтекстноеМеню" id="122"/>
+											<ExtendedTooltip name="СтраховыеВзносыСкидкиКДоходамПериодExtendedTooltip" id="295"/>
+										</LabelField>
+										<LabelField name="СтраховыеВзносыСкидкиКДоходамВидДохода" id="123">
+											<DataPath>СтраховыеВзносыСкидкиКДоходам.ВидДохода</DataPath>
+											<ContextMenu name="СтраховыеВзносыСкидкиКДоходамВидДоходаКонтекстноеМеню" id="124"/>
+											<ExtendedTooltip name="СтраховыеВзносыСкидкиКДоходамВидДоходаExtendedTooltip" id="296"/>
+										</LabelField>
+										<LabelField name="СтраховыеВзносыСкидкиКДоходамГодоваяСкидка" id="125">
+											<DataPath>СтраховыеВзносыСкидкиКДоходам.ГодоваяСкидка</DataPath>
+											<ContextMenu name="СтраховыеВзносыСкидкиКДоходамГодоваяСкидкаКонтекстноеМеню" id="126"/>
+											<ExtendedTooltip name="СтраховыеВзносыСкидкиКДоходамГодоваяСкидкаExtendedTooltip" id="297"/>
+										</LabelField>
+										<LabelField name="СтраховыеВзносыСкидкиКДоходамНормативЗатрат" id="127">
+											<DataPath>СтраховыеВзносыСкидкиКДоходам.НормативЗатрат</DataPath>
+											<ContextMenu name="СтраховыеВзносыСкидкиКДоходамНормативЗатратКонтекстноеМеню" id="128"/>
+											<ExtendedTooltip name="СтраховыеВзносыСкидкиКДоходамНормативЗатратExtendedTooltip" id="298"/>
+										</LabelField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</Page>
+						<Page name="ГруппаВидыДоходовПоСтраховымВзносам" id="131">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Виды доходов по страховым взносам</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа виды доходов по страховым взносам</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="ГруппаВидыДоходовПоСтраховымВзносамExtendedTooltip" id="299"/>
+							<ChildItems>
+								<Table name="ВидыДоходовПоСтраховымВзносам" id="132">
+									<UseAlternationRowColor>true</UseAlternationRowColor>
+									<EnableStartDrag>true</EnableStartDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>ВидыДоходовПоСтраховымВзносам</DataPath>
+									<RowPictureDataPath>ВидыДоходовПоСтраховымВзносам.DefaultPicture</RowPictureDataPath>
+									<CommandSet>
+										<ExcludedCommand>Change</ExcludedCommand>
+										<ExcludedCommand>Copy</ExcludedCommand>
+										<ExcludedCommand>Create</ExcludedCommand>
+										<ExcludedCommand>Delete</ExcludedCommand>
+										<ExcludedCommand>SetDeletionMark</ExcludedCommand>
+									</CommandSet>
+									<AutoRefresh>false</AutoRefresh>
+									<AutoRefreshPeriod>60</AutoRefreshPeriod>
+									<Period>
+										<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+										<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+										<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+									</Period>
+									<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+									<RestoreCurrentRow>false</RestoreCurrentRow>
+									<TopLevelParent xsi:nil="true"/>
+									<ShowRoot>true</ShowRoot>
+									<AllowRootChoice>false</AllowRootChoice>
+									<UpdateOnDataChange>Auto</UpdateOnDataChange>
+									<ContextMenu name="ВидыДоходовПоСтраховымВзносамКонтекстноеМеню" id="133"/>
+									<AutoCommandBar name="ВидыДоходовПоСтраховымВзносамКоманднаяПанель" id="134"/>
+									<ExtendedTooltip name="ВидыДоходовПоСтраховымВзносамExtendedTooltip" id="300"/>
+									<SearchStringAddition name="ВидыДоходовПоСтраховымВзносамСтрокаПоиска" id="384">
+										<AdditionSource>
+											<Item>ВидыДоходовПоСтраховымВзносам</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ВидыДоходовПоСтраховымВзносамСтрокаПоискаКонтекстноеМеню" id="385"/>
+										<ExtendedTooltip name="ВидыДоходовПоСтраховымВзносамСтрокаПоискаРасширеннаяПодсказка" id="386"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ВидыДоходовПоСтраховымВзносамСостояниеПросмотра" id="387">
+										<AdditionSource>
+											<Item>ВидыДоходовПоСтраховымВзносам</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ВидыДоходовПоСтраховымВзносамСостояниеПросмотраКонтекстноеМеню" id="388"/>
+										<ExtendedTooltip name="ВидыДоходовПоСтраховымВзносамСостояниеПросмотраРасширеннаяПодсказка" id="389"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ВидыДоходовПоСтраховымВзносамУправлениеПоиском" id="390">
+										<AdditionSource>
+											<Item>ВидыДоходовПоСтраховымВзносам</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ВидыДоходовПоСтраховымВзносамУправлениеПоискомКонтекстноеМеню" id="391"/>
+										<ExtendedTooltip name="ВидыДоходовПоСтраховымВзносамУправлениеПоискомРасширеннаяПодсказка" id="392"/>
+									</SearchControlAddition>
+									<ChildItems>
+										<LabelField name="ВидыДоходовПоСтраховымВзносамНаименование" id="135">
+											<DataPath>ВидыДоходовПоСтраховымВзносам.Description</DataPath>
+											<ContextMenu name="ВидыДоходовПоСтраховымВзносамНаименованиеКонтекстноеМеню" id="136"/>
+											<ExtendedTooltip name="ВидыДоходовПоСтраховымВзносамНаименованиеExtendedTooltip" id="301"/>
+										</LabelField>
+										<CheckBoxField name="ВидыДоходовПоСтраховымВзносамВходитВБазуПФР" id="137">
+											<DataPath>ВидыДоходовПоСтраховымВзносам.ВходитВБазуПФР</DataPath>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ВидыДоходовПоСтраховымВзносамВходитВБазуПФРКонтекстноеМеню" id="138"/>
+											<ExtendedTooltip name="ВидыДоходовПоСтраховымВзносамВходитВБазуПФРExtendedTooltip" id="302"/>
+										</CheckBoxField>
+										<CheckBoxField name="ВидыДоходовПоСтраховымВзносамВходитВБазуФСС" id="139">
+											<DataPath>ВидыДоходовПоСтраховымВзносам.ВходитВБазуФСС</DataPath>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ВидыДоходовПоСтраховымВзносамВходитВБазуФССКонтекстноеМеню" id="140"/>
+											<ExtendedTooltip name="ВидыДоходовПоСтраховымВзносамВходитВБазуФССExtendedTooltip" id="303"/>
+										</CheckBoxField>
+										<CheckBoxField name="ВидыДоходовПоСтраховымВзносамВходитВБазуФОМС" id="141">
+											<DataPath>ВидыДоходовПоСтраховымВзносам.ВходитВБазуФОМС</DataPath>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ВидыДоходовПоСтраховымВзносамВходитВБазуФОМСКонтекстноеМеню" id="142"/>
+											<ExtendedTooltip name="ВидыДоходовПоСтраховымВзносамВходитВБазуФОМСExtendedTooltip" id="304"/>
+										</CheckBoxField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</Page>
+						<Page name="ГруппаПредельнаяВеличинаБазыСтраховыхВзносов" id="143">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Предельная величина базы страховых взносов</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа предельная величина базы страховых взносов</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="ГруппаПредельнаяВеличинаБазыСтраховыхВзносовExtendedTooltip" id="305"/>
+							<ChildItems>
+								<Table name="ПредельнаяВеличинаБазыСтраховыхВзносов" id="144">
+									<UseAlternationRowColor>true</UseAlternationRowColor>
+									<EnableStartDrag>true</EnableStartDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>ПредельнаяВеличинаБазыСтраховыхВзносов</DataPath>
+									<RowPictureDataPath>ПредельнаяВеличинаБазыСтраховыхВзносов.DefaultPicture</RowPictureDataPath>
+									<CommandSet>
+										<ExcludedCommand>Change</ExcludedCommand>
+										<ExcludedCommand>Copy</ExcludedCommand>
+										<ExcludedCommand>Create</ExcludedCommand>
+										<ExcludedCommand>Delete</ExcludedCommand>
+									</CommandSet>
+									<AutoRefresh>false</AutoRefresh>
+									<AutoRefreshPeriod>60</AutoRefreshPeriod>
+									<Period>
+										<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+										<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+										<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+									</Period>
+									<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+									<RestoreCurrentRow>false</RestoreCurrentRow>
+									<TopLevelParent xsi:nil="true"/>
+									<ShowRoot>true</ShowRoot>
+									<AllowRootChoice>false</AllowRootChoice>
+									<UpdateOnDataChange>Auto</UpdateOnDataChange>
+									<ContextMenu name="ПредельнаяВеличинаБазыСтраховыхВзносовКонтекстноеМеню" id="145"/>
+									<AutoCommandBar name="ПредельнаяВеличинаБазыСтраховыхВзносовКоманднаяПанель" id="146"/>
+									<ExtendedTooltip name="ПредельнаяВеличинаБазыСтраховыхВзносовExtendedTooltip" id="306"/>
+									<SearchStringAddition name="ПредельнаяВеличинаБазыСтраховыхВзносовСтрокаПоиска" id="393">
+										<AdditionSource>
+											<Item>ПредельнаяВеличинаБазыСтраховыхВзносов</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ПредельнаяВеличинаБазыСтраховыхВзносовСтрокаПоискаКонтекстноеМеню" id="394"/>
+										<ExtendedTooltip name="ПредельнаяВеличинаБазыСтраховыхВзносовСтрокаПоискаРасширеннаяПодсказка" id="395"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ПредельнаяВеличинаБазыСтраховыхВзносовСостояниеПросмотра" id="396">
+										<AdditionSource>
+											<Item>ПредельнаяВеличинаБазыСтраховыхВзносов</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ПредельнаяВеличинаБазыСтраховыхВзносовСостояниеПросмотраКонтекстноеМеню" id="397"/>
+										<ExtendedTooltip name="ПредельнаяВеличинаБазыСтраховыхВзносовСостояниеПросмотраРасширеннаяПодсказка" id="398"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ПредельнаяВеличинаБазыСтраховыхВзносовУправлениеПоиском" id="399">
+										<AdditionSource>
+											<Item>ПредельнаяВеличинаБазыСтраховыхВзносов</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ПредельнаяВеличинаБазыСтраховыхВзносовУправлениеПоискомКонтекстноеМеню" id="400"/>
+										<ExtendedTooltip name="ПредельнаяВеличинаБазыСтраховыхВзносовУправлениеПоискомРасширеннаяПодсказка" id="401"/>
+									</SearchControlAddition>
+									<ChildItems>
+										<LabelField name="ПредельнаяВеличинаБазыСтраховыхВзносовПериод" id="147">
+											<DataPath>ПредельнаяВеличинаБазыСтраховыхВзносов.Period</DataPath>
+											<ContextMenu name="ПредельнаяВеличинаБазыСтраховыхВзносовПериодКонтекстноеМеню" id="148"/>
+											<ExtendedTooltip name="ПредельнаяВеличинаБазыСтраховыхВзносовПериодExtendedTooltip" id="307"/>
+										</LabelField>
+										<LabelField name="ПредельнаяВеличинаБазыСтраховыхВзносовРазмерПФР" id="472">
+											<DataPath>ПредельнаяВеличинаБазыСтраховыхВзносов.РазмерПФР</DataPath>
+											<ContextMenu name="ПредельнаяВеличинаБазыСтраховыхВзносовРазмерПФРКонтекстноеМеню" id="473"/>
+											<ExtendedTooltip name="ПредельнаяВеличинаБазыСтраховыхВзносовРазмерПФРРасширеннаяПодсказка" id="474"/>
+										</LabelField>
+										<LabelField name="ПредельнаяВеличинаБазыСтраховыхВзносовРазмерФСС" id="478">
+											<DataPath>ПредельнаяВеличинаБазыСтраховыхВзносов.РазмерФСС</DataPath>
+											<ContextMenu name="ПредельнаяВеличинаБазыСтраховыхВзносовРазмерФССКонтекстноеМеню" id="479"/>
+											<ExtendedTooltip name="ПредельнаяВеличинаБазыСтраховыхВзносовРазмерФССРасширеннаяПодсказка" id="480"/>
+										</LabelField>
+										<LabelField name="ПредельнаяВеличинаБазыСтраховыхВзносовРазмерФОМС" id="475">
+											<DataPath>ПредельнаяВеличинаБазыСтраховыхВзносов.РазмерФОМС</DataPath>
+											<ContextMenu name="ПредельнаяВеличинаБазыСтраховыхВзносовРазмерФОМСКонтекстноеМеню" id="476"/>
+											<ExtendedTooltip name="ПредельнаяВеличинаБазыСтраховыхВзносовРазмерФОМСРасширеннаяПодсказка" id="477"/>
+										</LabelField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</Page>
+						<Page name="ГруппаТарифыСтраховыхВзносов" id="151">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Тарифы страховых взносов</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа тарифы страховых взносов</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="ГруппаТарифыСтраховыхВзносовExtendedTooltip" id="309"/>
+							<ChildItems>
+								<Table name="ТарифыСтраховыхВзносов" id="152">
+									<UseAlternationRowColor>true</UseAlternationRowColor>
+									<EnableStartDrag>true</EnableStartDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>ТарифыСтраховыхВзносов</DataPath>
+									<RowPictureDataPath>ТарифыСтраховыхВзносов.DefaultPicture</RowPictureDataPath>
+									<CommandSet>
+										<ExcludedCommand>Change</ExcludedCommand>
+										<ExcludedCommand>Copy</ExcludedCommand>
+										<ExcludedCommand>Create</ExcludedCommand>
+										<ExcludedCommand>Delete</ExcludedCommand>
+									</CommandSet>
+									<AutoRefresh>false</AutoRefresh>
+									<AutoRefreshPeriod>60</AutoRefreshPeriod>
+									<Period>
+										<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+										<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+										<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+									</Period>
+									<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+									<RestoreCurrentRow>false</RestoreCurrentRow>
+									<TopLevelParent xsi:nil="true"/>
+									<ShowRoot>true</ShowRoot>
+									<AllowRootChoice>false</AllowRootChoice>
+									<UpdateOnDataChange>Auto</UpdateOnDataChange>
+									<ContextMenu name="ТарифыСтраховыхВзносовКонтекстноеМеню" id="153"/>
+									<AutoCommandBar name="ТарифыСтраховыхВзносовКоманднаяПанель" id="154"/>
+									<ExtendedTooltip name="ТарифыСтраховыхВзносовExtendedTooltip" id="310"/>
+									<SearchStringAddition name="ТарифыСтраховыхВзносовСтрокаПоиска" id="402">
+										<AdditionSource>
+											<Item>ТарифыСтраховыхВзносов</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ТарифыСтраховыхВзносовСтрокаПоискаКонтекстноеМеню" id="403"/>
+										<ExtendedTooltip name="ТарифыСтраховыхВзносовСтрокаПоискаРасширеннаяПодсказка" id="404"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ТарифыСтраховыхВзносовСостояниеПросмотра" id="405">
+										<AdditionSource>
+											<Item>ТарифыСтраховыхВзносов</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ТарифыСтраховыхВзносовСостояниеПросмотраКонтекстноеМеню" id="406"/>
+										<ExtendedTooltip name="ТарифыСтраховыхВзносовСостояниеПросмотраРасширеннаяПодсказка" id="407"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ТарифыСтраховыхВзносовУправлениеПоиском" id="408">
+										<AdditionSource>
+											<Item>ТарифыСтраховыхВзносов</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ТарифыСтраховыхВзносовУправлениеПоискомКонтекстноеМеню" id="409"/>
+										<ExtendedTooltip name="ТарифыСтраховыхВзносовУправлениеПоискомРасширеннаяПодсказка" id="410"/>
+									</SearchControlAddition>
+									<ChildItems>
+										<LabelField name="ТарифыСтраховыхВзносовПериод" id="155">
+											<DataPath>ТарифыСтраховыхВзносов.Period</DataPath>
+											<ContextMenu name="ТарифыСтраховыхВзносовПериодКонтекстноеМеню" id="156"/>
+											<ExtendedTooltip name="ТарифыСтраховыхВзносовПериодExtendedTooltip" id="311"/>
+										</LabelField>
+										<LabelField name="ТарифыСтраховыхВзносовВидТарифа" id="157">
+											<DataPath>ТарифыСтраховыхВзносов.ВидТарифа</DataPath>
+											<ContextMenu name="ТарифыСтраховыхВзносовВидТарифаКонтекстноеМеню" id="158"/>
+											<ExtendedTooltip name="ТарифыСтраховыхВзносовВидТарифаExtendedTooltip" id="312"/>
+										</LabelField>
+										<ColumnGroup name="ТарифыСтраховыхВзносовГруппаПФР" id="189">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Тарифы страховых взносов группа ПФР</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Тарифы страховых взносов группа ПФР</v8:content>
+												</v8:item>
+											</ToolTip>
+											<ExtendedTooltip name="ТарифыСтраховыхВзносовГруппаПФРExtendedTooltip" id="313"/>
+											<ChildItems>
+												<LabelField name="ТарифыСтраховыхВзносовПФР" id="161">
+													<DataPath>ТарифыСтраховыхВзносов.ПФР</DataPath>
+													<ContextMenu name="ТарифыСтраховыхВзносовПФРКонтекстноеМеню" id="162"/>
+													<ExtendedTooltip name="ТарифыСтраховыхВзносовПФРExtendedTooltip" id="314"/>
+												</LabelField>
+												<LabelField name="ТарифыСтраховыхВзносовПФРНакопительная" id="163">
+													<DataPath>ТарифыСтраховыхВзносов.ПФРНакопительная</DataPath>
+													<ContextMenu name="ТарифыСтраховыхВзносовПФРНакопительнаяКонтекстноеМеню" id="164"/>
+													<ExtendedTooltip name="ТарифыСтраховыхВзносовПФРНакопительнаяExtendedTooltip" id="315"/>
+												</LabelField>
+											</ChildItems>
+										</ColumnGroup>
+										<ColumnGroup name="ТарифыСтраховыхВзносовГруппаФОМС" id="190">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Тарифы страховых взносов группа ФОМС</v8:content>
+												</v8:item>
+											</Title>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Тарифы страховых взносов группа ФОМС</v8:content>
+												</v8:item>
+											</ToolTip>
+											<ExtendedTooltip name="ТарифыСтраховыхВзносовГруппаФОМСExtendedTooltip" id="316"/>
+											<ChildItems>
+												<LabelField name="ТарифыСтраховыхВзносовФФОМС" id="167">
+													<DataPath>ТарифыСтраховыхВзносов.ФФОМС</DataPath>
+													<ContextMenu name="ТарифыСтраховыхВзносовФФОМСКонтекстноеМеню" id="168"/>
+													<ExtendedTooltip name="ТарифыСтраховыхВзносовФФОМСExtendedTooltip" id="317"/>
+												</LabelField>
+												<LabelField name="ТарифыСтраховыхВзносовТФОМС" id="169">
+													<DataPath>ТарифыСтраховыхВзносов.ТФОМС</DataPath>
+													<ContextMenu name="ТарифыСтраховыхВзносовТФОМСКонтекстноеМеню" id="170"/>
+													<ExtendedTooltip name="ТарифыСтраховыхВзносовТФОМСExtendedTooltip" id="318"/>
+												</LabelField>
+											</ChildItems>
+										</ColumnGroup>
+										<LabelField name="ТарифыСтраховыхВзносовФСС" id="165">
+											<DataPath>ТарифыСтраховыхВзносов.ФСС</DataPath>
+											<ContextMenu name="ТарифыСтраховыхВзносовФССКонтекстноеМеню" id="166"/>
+											<ExtendedTooltip name="ТарифыСтраховыхВзносовФССExtendedTooltip" id="319"/>
+										</LabelField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</Page>
+						<Page name="ГруппаТарифыВзносовЗаЗанятыхНаРаботахСДосрочнойПенсией" id="244">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Тарифы взносов за занятых на работах с досрочной пенсией</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Тарифы взносов за занятых на работах с досрочной пенсией</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="ГруппаТарифыВзносовЗаЗанятыхНаРаботахСДосрочнойПенсиейExtendedTooltip" id="320"/>
+							<ChildItems>
+								<Table name="ТарифыВзносовЗаЗанятыхНаРаботахСДосрочнойПенсией" id="245">
+									<UseAlternationRowColor>true</UseAlternationRowColor>
+									<EnableStartDrag>true</EnableStartDrag>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>ТарифыВзносовЗаЗанятыхНаРаботахСДосрочнойПенсией</DataPath>
+									<RowPictureDataPath>ТарифыВзносовЗаЗанятыхНаРаботахСДосрочнойПенсией.DefaultPicture</RowPictureDataPath>
+									<CommandSet>
+										<ExcludedCommand>Change</ExcludedCommand>
+										<ExcludedCommand>Copy</ExcludedCommand>
+										<ExcludedCommand>Create</ExcludedCommand>
+										<ExcludedCommand>Delete</ExcludedCommand>
+									</CommandSet>
+									<AutoRefresh>false</AutoRefresh>
+									<AutoRefreshPeriod>60</AutoRefreshPeriod>
+									<Period>
+										<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+										<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+										<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+									</Period>
+									<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+									<RestoreCurrentRow>false</RestoreCurrentRow>
+									<TopLevelParent xsi:nil="true"/>
+									<ShowRoot>true</ShowRoot>
+									<AllowRootChoice>false</AllowRootChoice>
+									<UpdateOnDataChange>Auto</UpdateOnDataChange>
+									<ContextMenu name="ТарифыВзносовЗаЗанятыхНаРаботахСДосрочнойПенсиейКонтекстноеМеню" id="246"/>
+									<AutoCommandBar name="ТарифыВзносовЗаЗанятыхНаРаботахСДосрочнойПенсиейКоманднаяПанель" id="247"/>
+									<ExtendedTooltip name="ТарифыВзносовЗаЗанятыхНаРаботахСДосрочнойПенсиейExtendedTooltip" id="321"/>
+									<SearchStringAddition name="ТарифыВзносовЗаЗанятыхНаРаботахСДосрочнойПенсиейСтрокаПоиска" id="411">
+										<AdditionSource>
+											<Item>ТарифыВзносовЗаЗанятыхНаРаботахСДосрочнойПенсией</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ТарифыВзносовЗаЗанятыхНаРаботахСДосрочнойПенсиейСтрокаПоискаКонтекстноеМеню" id="412"/>
+										<ExtendedTooltip name="ТарифыВзносовЗаЗанятыхНаРаботахСДосрочнойПенсиейСтрокаПоискаРасширеннаяПодсказка" id="413"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ТарифыВзносовЗаЗанятыхНаРаботахСДосрочнойПенсиейСостояниеПросмотра" id="414">
+										<AdditionSource>
+											<Item>ТарифыВзносовЗаЗанятыхНаРаботахСДосрочнойПенсией</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ТарифыВзносовЗаЗанятыхНаРаботахСДосрочнойПенсиейСостояниеПросмотраКонтекстноеМеню" id="415"/>
+										<ExtendedTooltip name="ТарифыВзносовЗаЗанятыхНаРаботахСДосрочнойПенсиейСостояниеПросмотраРасширеннаяПодсказка" id="416"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ТарифыВзносовЗаЗанятыхНаРаботахСДосрочнойПенсиейУправлениеПоиском" id="417">
+										<AdditionSource>
+											<Item>ТарифыВзносовЗаЗанятыхНаРаботахСДосрочнойПенсией</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ТарифыВзносовЗаЗанятыхНаРаботахСДосрочнойПенсиейУправлениеПоискомКонтекстноеМеню" id="418"/>
+										<ExtendedTooltip name="ТарифыВзносовЗаЗанятыхНаРаботахСДосрочнойПенсиейУправлениеПоискомРасширеннаяПодсказка" id="419"/>
+									</SearchControlAddition>
+									<ChildItems>
+										<LabelField name="ТарифыВзносовЗаЗанятыхНаРаботахСДосрочнойПенсиейПериод" id="248">
+											<DataPath>ТарифыВзносовЗаЗанятыхНаРаботахСДосрочнойПенсией.Period</DataPath>
+											<ContextMenu name="ТарифыВзносовЗаЗанятыхНаРаботахСДосрочнойПенсиейПериодКонтекстноеМеню" id="249"/>
+											<ExtendedTooltip name="ТарифыВзносовЗаЗанятыхНаРаботахСДосрочнойПенсиейПериодExtendedTooltip" id="322"/>
+										</LabelField>
+										<LabelField name="ТарифыВзносовЗаЗанятыхНаРаботахСДосрочнойПенсиейЗаЗанятыхНаПодземныхИВредныхРаботах" id="250">
+											<DataPath>ТарифыВзносовЗаЗанятыхНаРаботахСДосрочнойПенсией.ЗаЗанятыхНаПодземныхИВредныхРаботах</DataPath>
+											<ContextMenu name="ТарифыВзносовЗаЗанятыхНаРаботахСДосрочнойПенсиейЗаЗанятыхНаПодземныхИВредныхРаботахКонтекстноеМеню" id="251"/>
+											<ExtendedTooltip name="ТарифыВзносовЗаЗанятыхНаРаботахСДосрочнойПенсиейЗаЗанятыхНаПодземныхИВредныхРаботахExtendedTooltip" id="323"/>
+										</LabelField>
+										<LabelField name="ТарифыВзносовЗаЗанятыхНаРаботахСДосрочнойПенсиейЗаЗанятыхНаТяжелыхИПрочихРаботах" id="252">
+											<DataPath>ТарифыВзносовЗаЗанятыхНаРаботахСДосрочнойПенсией.ЗаЗанятыхНаТяжелыхИПрочихРаботах</DataPath>
+											<ContextMenu name="ТарифыВзносовЗаЗанятыхНаРаботахСДосрочнойПенсиейЗаЗанятыхНаТяжелыхИПрочихРаботахКонтекстноеМеню" id="253"/>
+											<ExtendedTooltip name="ТарифыВзносовЗаЗанятыхНаРаботахСДосрочнойПенсиейЗаЗанятыхНаТяжелыхИПрочихРаботахExtendedTooltip" id="324"/>
+										</LabelField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</Page>
+					</ChildItems>
+				</Pages>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаПодразделения" id="4">
+			<Visible>false</Visible>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обособленные подразделения</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПодразделенияExtendedTooltip" id="325"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаПодразделенияПериод" id="495">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа подразделения период</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа подразделения период</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаПодразделенияПериодРасширеннаяПодсказка" id="496"/>
+					<ChildItems>
+						<LabelDecoration name="ДекорацияПериод" id="489">
+							<TextColor>style:ТекстПредопределенногоЗначения</TextColor>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Сведения о территориальных условиях указаны на дату: 01.01.1980 г.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияПериодКонтекстноеМеню" id="490"/>
+							<ExtendedTooltip name="ДекорацияПериодРасширеннаяПодсказка" id="491"/>
+						</LabelDecoration>
+						<CommandBar name="ГруппаПодразделенияПериодКоманднаяПанель" id="497">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа подразделения период командная панель</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа подразделения период командная панель</v8:content>
+								</v8:item>
+							</ToolTip>
+							<CommandSource>Item.ОбособленныеПодразделения</CommandSource>
+							<ExtendedTooltip name="ГруппаПодразделенияПериодКоманднаяПанельРасширеннаяПодсказка" id="498"/>
+						</CommandBar>
+					</ChildItems>
+				</UsualGroup>
+				<Table name="ОбособленныеПодразделения" id="173">
+					<Representation>List</Representation>
+					<SelectionMode>SingleRow</SelectionMode>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<FileDragMode>AsFile</FileDragMode>
+					<DataPath>ОбособленныеПодразделения</DataPath>
+					<CommandSet>
+						<ExcludedCommand>Add</ExcludedCommand>
+						<ExcludedCommand>Copy</ExcludedCommand>
+						<ExcludedCommand>Delete</ExcludedCommand>
+					</CommandSet>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="ОбособленныеПодразделенияКонтекстноеМеню" id="174"/>
+					<AutoCommandBar name="ОбособленныеПодразделенияКоманднаяПанель" id="175">
+						<Autofill>false</Autofill>
+					</AutoCommandBar>
+					<ExtendedTooltip name="ОбособленныеПодразделенияExtendedTooltip" id="326"/>
+					<SearchStringAddition name="ОбособленныеПодразделенияСтрокаПоиска" id="420">
+						<AdditionSource>
+							<Item>ОбособленныеПодразделения</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ОбособленныеПодразделенияСтрокаПоискаКонтекстноеМеню" id="421"/>
+						<ExtendedTooltip name="ОбособленныеПодразделенияСтрокаПоискаРасширеннаяПодсказка" id="422"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="ОбособленныеПодразделенияСостояниеПросмотра" id="423">
+						<AdditionSource>
+							<Item>ОбособленныеПодразделения</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ОбособленныеПодразделенияСостояниеПросмотраКонтекстноеМеню" id="424"/>
+						<ExtendedTooltip name="ОбособленныеПодразделенияСостояниеПросмотраРасширеннаяПодсказка" id="425"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="ОбособленныеПодразделенияУправлениеПоиском" id="426">
+						<AdditionSource>
+							<Item>ОбособленныеПодразделения</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="ОбособленныеПодразделенияУправлениеПоискомКонтекстноеМеню" id="427"/>
+						<ExtendedTooltip name="ОбособленныеПодразделенияУправлениеПоискомРасширеннаяПодсказка" id="428"/>
+					</SearchControlAddition>
+					<Events>
+						<Event name="BeforeAddRow">ОбособленныеПодразделенияПередНачаломДобавления</Event>
+						<Event name="BeforeDeleteRow">ОбособленныеПодразделенияПередУдалением</Event>
+					</Events>
+					<ChildItems>
+						<InputField name="ОбособленныеПодразделенияСсылкаКод" id="242">
+							<DataPath>ОбособленныеПодразделения.Ссылка.Code</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ОбособленныеПодразделенияСсылкаКодКонтекстноеМеню" id="243"/>
+							<ExtendedTooltip name="ОбособленныеПодразделенияСсылкаКодExtendedTooltip" id="327"/>
+						</InputField>
+						<InputField name="ОбособленныеПодразделенияСсылка" id="182">
+							<DataPath>ОбособленныеПодразделения.Ссылка</DataPath>
+							<SkipOnInput>true</SkipOnInput>
+							<EditMode>EnterOnInput</EditMode>
+							<HorizontalStretch>true</HorizontalStretch>
+							<ContextMenu name="ОбособленныеПодразделенияСсылкаКонтекстноеМеню" id="183"/>
+							<ExtendedTooltip name="ОбособленныеПодразделенияСсылкаExtendedTooltip" id="328"/>
+						</InputField>
+						<InputField name="ОбособленныеПодразделенияТерриториальныеУсловияПФР" id="486">
+							<DataPath>ОбособленныеПодразделения.ТерриториальныеУсловияПФР</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<Width>8</Width>
+							<QuickChoice>true</QuickChoice>
+							<ChoiceParameterLinks>
+								<xr:Link>
+									<xr:Name>ВыбиратьТерриторииСОсобымиКлиматическимиУсловиями</xr:Name>
+									<xr:DataPath xsi:type="xs:string">Items.ОбособленныеПодразделения.CurrentData.ПрименятьСевернуюНадбавкуВПодразделениях</xr:DataPath>
+									<xr:ValueChange>DontChange</xr:ValueChange>
+								</xr:Link>
+							</ChoiceParameterLinks>
+							<ContextMenu name="ОбособленныеПодразделенияТерриториальныеУсловияПФРКонтекстноеМеню" id="487"/>
+							<ExtendedTooltip name="ОбособленныеПодразделенияТерриториальныеУсловияПФРРасширеннаяПодсказка" id="488"/>
+						</InputField>
+						<ColumnGroup name="ОбособленныеПодразделенияГруппа" id="484">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Районный коэффициент</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Районный коэффициент группа</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<ShowInHeader>true</ShowInHeader>
+							<ExtendedTooltip name="ОбособленныеПодразделенияГруппаРасширеннаяПодсказка" id="485"/>
+							<ChildItems>
+								<InputField name="ОбособленныеПодразделенияРайонныйКоэффициент" id="178">
+									<DataPath>ОбособленныеПодразделения.РайонныйКоэффициент</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>местный</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>12</Width>
+									<MinValue xsi:type="xs:decimal">1</MinValue>
+									<MaxValue xsi:type="xs:decimal">2</MaxValue>
+									<ContextMenu name="ОбособленныеПодразделенияРайонныйКоэффициентКонтекстноеМеню" id="179"/>
+									<ExtendedTooltip name="ОбособленныеПодразделенияРайонныйКоэффициентExtendedTooltip" id="329"/>
+								</InputField>
+								<InputField name="ОбособленныеПодразделенияРайонныйКоэффициентРФ" id="481">
+									<DataPath>ОбособленныеПодразделения.РайонныйКоэффициентРФ</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>федеральный</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<Width>12</Width>
+									<ContextMenu name="ОбособленныеПодразделенияРайонныйКоэффициентРФКонтекстноеМеню" id="482"/>
+									<ExtendedTooltip name="ОбособленныеПодразделенияРайонныйКоэффициентРФРасширеннаяПодсказка" id="483"/>
+								</InputField>
+							</ChildItems>
+						</ColumnGroup>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаЛьготныеТарифы" id="499">
+			<Visible>false</Visible>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Льготные тарифы</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаЛьготныеТарифыРасширеннаяПодсказка" id="500"/>
+			<ChildItems>
+				<Table name="ЛьготныеТарифы" id="501">
+					<Representation>List</Representation>
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<AutoAddIncomplete>false</AutoAddIncomplete>
+					<AutoMarkIncomplete>false</AutoMarkIncomplete>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<FileDragMode>AsFile</FileDragMode>
+					<DataPath>ЛьготныеТарифы</DataPath>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="ЛьготныеТарифыКонтекстноеМеню" id="502"/>
+					<AutoCommandBar name="ЛьготныеТарифыКоманднаяПанель" id="503"/>
+					<ExtendedTooltip name="ЛьготныеТарифыРасширеннаяПодсказка" id="504"/>
+					<SearchStringAddition name="ЛьготныеТарифыСтрокаПоиска" id="505">
+						<AdditionSource>
+							<Item>ЛьготныеТарифы</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ЛьготныеТарифыСтрокаПоискаКонтекстноеМеню" id="506"/>
+						<ExtendedTooltip name="ЛьготныеТарифыСтрокаПоискаРасширеннаяПодсказка" id="507"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="ЛьготныеТарифыСостояниеПросмотра" id="508">
+						<AdditionSource>
+							<Item>ЛьготныеТарифы</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ЛьготныеТарифыСостояниеПросмотраКонтекстноеМеню" id="509"/>
+						<ExtendedTooltip name="ЛьготныеТарифыСостояниеПросмотраРасширеннаяПодсказка" id="510"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="ЛьготныеТарифыУправлениеПоиском" id="511">
+						<AdditionSource>
+							<Item>ЛьготныеТарифы</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="ЛьготныеТарифыУправлениеПоискомКонтекстноеМеню" id="512"/>
+						<ExtendedTooltip name="ЛьготныеТарифыУправлениеПоискомРасширеннаяПодсказка" id="513"/>
+					</SearchControlAddition>
+					<ChildItems>
+						<InputField name="ЛьготныеТарифыСсылкаКод" id="520">
+							<DataPath>ЛьготныеТарифы.Ссылка.Code</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ЛьготныеТарифыСсылкаКодКонтекстноеМеню" id="521"/>
+							<ExtendedTooltip name="ЛьготныеТарифыСсылкаКодРасширеннаяПодсказка" id="522"/>
+						</InputField>
+						<InputField name="ЛьготныеТарифыСсылка" id="514">
+							<DataPath>ЛьготныеТарифы.Ссылка</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<TextEdit>false</TextEdit>
+							<ChoiceParameterLinks>
+								<xr:Link>
+									<xr:Name>Отбор.Владелец</xr:Name>
+									<xr:DataPath xsi:type="xs:string">Организация</xr:DataPath>
+									<xr:ValueChange>Clear</xr:ValueChange>
+								</xr:Link>
+							</ChoiceParameterLinks>
+							<ChoiceParameters>
+								<app:item name="Отбор.ОбособленноеПодразделение">
+									<app:value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation/>
+										<Value xsi:type="xs:boolean">true</Value>
+									</app:value>
+								</app:item>
+								<app:item name="Отбор.ПрименяемыйЛьготныйТерриториальныйТариф">
+									<app:value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation/>
+										<Value xsi:type="xr:DesignTimeRef">Catalog.ВидыТарифовСтраховыхВзносов.EmptyRef</Value>
+									</app:value>
+								</app:item>
+							</ChoiceParameters>
+							<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+							<ContextMenu name="ЛьготныеТарифыСсылкаКонтекстноеМеню" id="515"/>
+							<ExtendedTooltip name="ЛьготныеТарифыСсылкаРасширеннаяПодсказка" id="516"/>
+							<Events>
+								<Event name="Clearing">ЛьготныеТарифыСсылкаОчистка</Event>
+								<Event name="ChoiceProcessing">ЛьготныеТарифыСсылкаОбработкаВыбора</Event>
+							</Events>
+						</InputField>
+						<InputField name="ЛьготныеТарифыПрименяемыйЛьготныйТерриториальныйТариф" id="517">
+							<DataPath>ЛьготныеТарифы.ПрименяемыйЛьготныйТерриториальныйТариф</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Тариф взносов</v8:content>
+								</v8:item>
+							</Title>
+							<EditMode>EnterOnInput</EditMode>
+							<ChoiceParameters>
+								<app:item name="Отбор.ЯвляетсяТерриториальнымТарифом">
+									<app:value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation/>
+										<Value xsi:type="xs:boolean">true</Value>
+									</app:value>
+								</app:item>
+							</ChoiceParameters>
+							<ContextMenu name="ЛьготныеТарифыПрименяемыйЛьготныйТерриториальныйТарифКонтекстноеМеню" id="518"/>
+							<ExtendedTooltip name="ЛьготныеТарифыПрименяемыйЛьготныйТерриториальныйТарифРасширеннаяПодсказка" id="519"/>
+						</InputField>
+					</ChildItems>
+				</Table>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаСтандартныеНастройки" id="465">
+			<Visible>false</Visible>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Стандартные настройки</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаСтандартныеНастройкиРасширеннаяПодсказка" id="466"/>
+			<ChildItems>
+				<LabelDecoration name="Декорация1" id="469">
+					<Width>60</Width>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MaxWidth>60</MaxWidth>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Коды доходов по НДФЛ, размеры и виды вычетов по НДФЛ, перечень статусов физических лиц, размеры ставок страховых взносов, минимальный размер оплаты труда и т.п. являются классификаторами, редактирование которых в программе не предусмотрено.
+
+Данные в этих классификаторах изменяются в соответствии с изменениями законодательства и только автоматически при обновлении конфигурации.
+
+В случае необходимости, можно принудительно восстановить стандартные настройки классификаторов.</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="Декорация1КонтекстноеМеню" id="470"/>
+					<ExtendedTooltip name="Декорация1РасширеннаяПодсказка" id="471"/>
+				</LabelDecoration>
+				<Button name="ВосстановитьСтандартныеНастройки" id="467">
+					<Type>UsualButton</Type>
+					<CommandName>Form.Command.ВосстановитьСтандартныеНастройки</CommandName>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<ExtendedTooltip name="ВосстановитьСтандартныеНастройкиРасширеннаяПодсказка" id="468">
+						<Title formatted="false">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Восстанавливаются данные в следующих справочниках и регистрах сведений:
+
+Сведения для расчета пособий:
+- Минимальная оплата труда
+- Максимальный размер ежемесячной страховой выплаты
+
+Учет НДФЛ:
+- Виды вычетов НДФЛ
+- Виды доходов НДФЛ
+- Статусы налогоплательщиков (НДФЛ)
+- Вычеты к доходам по НДФЛ
+- Размер вычетов НДФЛ
+
+Учет страховых взносов:
+- Виды доходов (взносы)
+- Виды тарифов страховых взносов
+- Предельная величина базы страховых взносов
+- Скидки к доходам при исчислении страховых взносов
+- Тарифы взносов за занятых на работах с досрочной пенсией
+- Тарифы взносов по результатам специальной оценки условий труда
+- Тарифы страховых взносов
+
+Персонифицированный учет:
+- Виды деятельности (СЗВ-К)
+- Основания для досрочной пенсии
+- Доп. сведения для исчисления стажа
+- Территориальные условия
+- Допустимые сочетания кодов групп стажа</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ВидыВычетовНДФЛ" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Виды вычетов НДФЛ</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>false</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<MainTable>Catalog.ВидыВычетовНДФЛ</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ВидыДоходовНДФЛ" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Виды доходов НДФЛ</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>false</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<MainTable>Catalog.ВидыДоходовНДФЛ</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="РазмерВычетовНДФЛ" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Размер вычетов НДФЛ</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>false</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<MainTable>InformationRegister.РазмерВычетовНДФЛ</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="СтраховыеВзносыСкидкиКДоходам" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страховые взносы скидки к доходам</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>false</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<MainTable>InformationRegister.СтраховыеВзносыСкидкиКДоходам</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ВидыДоходовПоСтраховымВзносам" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Виды доходов по страховым взносам</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>false</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<MainTable>Catalog.ВидыДоходовПоСтраховымВзносам</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ПредельнаяВеличинаБазыСтраховыхВзносов" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Предельная величина базы страховых взносов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>false</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<MainTable>InformationRegister.ПредельнаяВеличинаБазыСтраховыхВзносов</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ТарифыСтраховыхВзносов" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тарифы страховых взносов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>false</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<MainTable>InformationRegister.ТарифыСтраховыхВзносов</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ОбособленныеПодразделения" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обособленные подразделения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+			<Columns>
+				<Column name="РайонныйКоэффициент" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Районный коэффициент (местный)</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>4</v8:Digits>
+							<v8:FractionDigits>3</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+					<Edit>
+						<xr:Common>false</xr:Common>
+						<xr:Value name="Role.ДобавлениеИзменениеДанныхБухгалтерии">true</xr:Value>
+						<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+					</Edit>
+				</Column>
+				<Column name="Ссылка" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наименование</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ПодразделенияОрганизаций</v8:Type>
+					</Type>
+					<Edit>
+						<xr:Common>false</xr:Common>
+					</Edit>
+				</Column>
+				<Column name="РайонныйКоэффициентРФ" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Районный коэффициент (федеральный)</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>3</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+					<Edit>
+						<xr:Common>false</xr:Common>
+						<xr:Value name="Role.ДобавлениеИзменениеДанныхБухгалтерии">true</xr:Value>
+						<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+					</Edit>
+				</Column>
+				<Column name="ТерриториальныеУсловияПФР" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Территориальные условия</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ТерриториальныеУсловияПФР</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ПрименятьСевернуюНадбавкуВПодразделениях" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Применять северную надбавку в подразделениях</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="Организация" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Организация</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Суда" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Суда</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Edit>
+				<xr:Common>false</xr:Common>
+				<xr:Value name="Role.ДобавлениеИзменениеНастроекБухгалтерии">true</xr:Value>
+				<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+			</Edit>
+			<SavedData>true</SavedData>
+			<Columns>
+				<Column name="Ссылка" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наименование</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ПодразделенияОрганизаций</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="СудаПрежняя" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Суда прежняя</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Ссылка" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наименование</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ПодразделенияОрганизаций</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="Вид" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Фармацевты" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Фармацевты</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+			<Columns>
+				<Column name="Ссылка" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Должности</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Должности</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ФармацевтыПрежняя" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Фармацевты</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Ссылка" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Должности</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Должности</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ЛетныеЭкипажи" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Летные экипажи</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+			<Columns>
+				<Column name="Ссылка" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Должности</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Должности</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ЛетныеЭкипажиПрежняя" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Летные экипажи</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Ссылка" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Должности</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Должности</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="Шахтеры" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шахтеры</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+			<Columns>
+				<Column name="Ссылка" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Должности</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Должности</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ШахтерыПрежняя" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Шахтеры</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Ссылка" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Должности</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Должности</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ТарифыВзносовЗаЗанятыхНаРаботахСДосрочнойПенсией" id="19">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тарифы взносов за занятых на работах с досрочной пенсией</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>false</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<MainTable>InformationRegister.ТарифыВзносовЗаЗанятыхНаРаботахСДосрочнойПенсией</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="ИдентификаторЗадания" id="20">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Идентификатор задания</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:UUID</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПрименятьСевернуюНадбавку" id="21">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Применять северную надбавку</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Период" id="22">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЛьготныеТарифы" id="23">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Льготные тарифы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Edit>
+				<xr:Common>false</xr:Common>
+				<xr:Value name="Role.ДобавлениеИзменениеНастроекБухгалтерии">true</xr:Value>
+				<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+			</Edit>
+			<SavedData>true</SavedData>
+			<Columns>
+				<Column name="Ссылка" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наименование</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ПодразделенияОрганизаций</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ПрименяемыйЛьготныйТерриториальныйТариф" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Особая зона</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ВидыТарифовСтраховыхВзносов</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ЛьготныеТарифыПрежняя" id="24">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Льготные тарифы прежняя</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Ссылка" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наименование</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ПодразделенияОрганизаций</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ПрименяемыйЛьготныйТерриториальныйТариф" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Применяемый льготный территориальный тариф</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.ВидыТарифовСтраховыхВзносов</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>ЛьготныеТарифыПрименяемыйЛьготныйТерриториальныйТариф</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">ЛьготныеТарифы.Ссылка</dcsset:left>
+						<dcsset:comparisonType>NotFilled</dcsset:comparisonType>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>ТолькоПросмотр</dcscor:parameter>
+						<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="Записать" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Use>
+				<xr:Common>false</xr:Common>
+				<xr:Value name="Role.ДобавлениеИзменениеДанныхБухгалтерии">true</xr:Value>
+				<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+			</Use>
+			<Picture>
+				<xr:Ref>StdPicture.Write</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Записать</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ЗаписатьИЗакрыть" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать и закрыть</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать и закрыть</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Use>
+				<xr:Common>false</xr:Common>
+				<xr:Value name="Role.ДобавлениеИзменениеДанныхБухгалтерии">true</xr:Value>
+				<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+			</Use>
+			<Action>ЗаписатьИЗакрыть</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ВосстановитьСтандартныеНастройки" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Восстановить стандартные настройки</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ВосстановитьСтандартныеНастройки</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

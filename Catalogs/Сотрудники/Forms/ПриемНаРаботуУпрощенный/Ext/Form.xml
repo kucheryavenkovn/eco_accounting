@@ -1,0 +1,606 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<Width>50</Width>
+	<AutoTitle>false</AutoTitle>
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаОК" id="69">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ОК</CommandName>
+				<ExtendedTooltip name="ФормаОКРасширеннаяПодсказка" id="70"/>
+			</Button>
+			<Button name="ФормаОтмена" id="71">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.Отмена</CommandName>
+				<ExtendedTooltip name="ФормаОтменаРасширеннаяПодсказка" id="72"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="BeforeClose">ПередЗакрытием</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="ДатаПриема" id="64">
+			<DataPath>ДатаПриема</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ДатаПриемаКонтекстноеМеню" id="65"/>
+			<ExtendedTooltip name="ДатаПриемаExtendedTooltip" id="66"/>
+			<Events>
+				<Event name="OnChange">ДатаПриемаПриИзменении</Event>
+			</Events>
+		</InputField>
+		<InputField name="ТекущееПодразделение" id="61">
+			<DataPath>ТекущееПодразделение</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подразделение</v8:content>
+				</v8:item>
+			</Title>
+			<EditMode>EnterOnInput</EditMode>
+			<ChoiceParameterLinks>
+				<xr:Link>
+					<xr:Name>Отбор.Владелец</xr:Name>
+					<xr:DataPath xsi:type="xs:string">ТекущаяОрганизация</xr:DataPath>
+					<xr:ValueChange>Clear</xr:ValueChange>
+				</xr:Link>
+			</ChoiceParameterLinks>
+			<ContextMenu name="ТекущееПодразделениеКонтекстноеМеню" id="62"/>
+			<ExtendedTooltip name="ТекущееПодразделениеExtendedTooltip" id="63"/>
+		</InputField>
+		<InputField name="ТекущаяДолжность" id="58">
+			<DataPath>ТекущаяДолжность</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Должность</v8:content>
+				</v8:item>
+			</Title>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ТекущаяДолжностьКонтекстноеМеню" id="59"/>
+			<ExtendedTooltip name="ТекущаяДолжностьExtendedTooltip" id="60"/>
+		</InputField>
+		<InputField name="ТекущийВидЗанятости" id="55">
+			<DataPath>ТекущийВидЗанятости</DataPath>
+			<Width>21</Width>
+			<HorizontalStretch>false</HorizontalStretch>
+			<ContextMenu name="ТекущийВидЗанятостиКонтекстноеМеню" id="56"/>
+			<ExtendedTooltip name="ТекущийВидЗанятостиExtendedTooltip" id="57"/>
+			<Events>
+				<Event name="OnChange">ВидЗанятостиПриИзменении</Event>
+			</Events>
+		</InputField>
+		<InputField name="ТекущаяТарифнаяСтавка" id="52">
+			<DataPath>ТекущаяТарифнаяСтавка</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Оклад</v8:content>
+				</v8:item>
+			</Title>
+			<Width>10</Width>
+			<HorizontalStretch>false</HorizontalStretch>
+			<ContextMenu name="ТекущаяТарифнаяСтавкаКонтекстноеМеню" id="53"/>
+			<ExtendedTooltip name="ТекущаяТарифнаяСтавкаExtendedTooltip" id="54"/>
+		</InputField>
+		<UsualGroup name="ГруппаПроцентСевернойНадбавки" id="73">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа процент северной надбавки</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПроцентСевернойНадбавкиРасширеннаяПодсказка" id="74"/>
+			<ChildItems>
+				<InputField name="ТекущийПроцентСевернойНадбавки" id="49">
+					<DataPath>ТекущийПроцентСевернойНадбавки</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Северная надбавка</v8:content>
+						</v8:item>
+					</Title>
+					<Width>5</Width>
+					<ContextMenu name="ТекущийПроцентСевернойНадбавкиКонтекстноеМеню" id="50"/>
+					<ExtendedTooltip name="ТекущийПроцентСевернойНадбавкиExtendedTooltip" id="51"/>
+				</InputField>
+				<LabelDecoration name="ДекорацияПроцентСевернойНадбавки" id="75">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>%</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДекорацияПроцентСевернойНадбавкиКонтекстноеМеню" id="76"/>
+					<ExtendedTooltip name="ДекорацияПроцентСевернойНадбавкиРасширеннаяПодсказка" id="77"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаАвансСотрудника" id="19">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Аванс сотрудника</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Аванс сотрудника</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаАвансСотрудникаРасширеннаяПодсказка" id="20"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаАванс" id="24">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Способ выплаты и размер аванса</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаАвансРасширеннаяПодсказка" id="25"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаАвансГоризонтальная" id="26">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Аванс</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаАвансГоризонтальнаяРасширеннаяПодсказка" id="27"/>
+							<ChildItems>
+								<InputField name="СпособРасчетаАванса" id="28">
+									<DataPath>ТекущийСпособРасчетаАванса</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Аванс</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Left</TitleLocation>
+									<Width>16</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="СпособРасчетаАвансаКонтекстноеМеню" id="29"/>
+									<ExtendedTooltip name="СпособРасчетаАвансаExtendedTooltip" id="30"/>
+									<Events>
+										<Event name="OnChange">СпособРасчетаАвансаПриИзменении</Event>
+									</Events>
+								</InputField>
+								<Pages name="АвансРазмерГруппа" id="31">
+									<EnableContentChange>true</EnableContentChange>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Размер аванса</v8:content>
+										</v8:item>
+									</Title>
+									<PagesRepresentation>None</PagesRepresentation>
+									<ExtendedTooltip name="АвансРазмерГруппаExtendedTooltip" id="32"/>
+									<ChildItems>
+										<Page name="АвансРазмерГруппаСтраницаФиксированнойСуммой" id="33">
+											<EnableContentChange>true</EnableContentChange>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Аванс суммой</v8:content>
+												</v8:item>
+											</Title>
+											<Group>Horizontal</Group>
+											<ExtendedTooltip name="АвансРазмерГруппаСтраницаФиксированнойСуммойExtendedTooltip" id="34"/>
+											<ChildItems>
+												<InputField name="АвансРазмерГруппаСтраницаФиксированнойСуммойВеличина" id="35">
+													<DataPath>ТекущийАванс</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<Width>7</Width>
+													<ChoiceButton>false</ChoiceButton>
+													<EditFormat>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>ЧЦ=15; ЧДЦ=2</v8:content>
+														</v8:item>
+													</EditFormat>
+													<ChoiceListButton>false</ChoiceListButton>
+													<ContextMenu name="АвансРазмерГруппаСтраницаФиксированнойСуммойВеличинаКонтекстноеМеню" id="36"/>
+													<ExtendedTooltip name="АвансРазмерГруппаСтраницаФиксированнойСуммойВеличинаExtendedTooltip" id="37"/>
+												</InputField>
+												<LabelField name="АвансРазмерГруппаСтраницаФиксированнойСуммойРазмерность" id="38">
+													<DataPath>АвансРазмерность</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<Width>4</Width>
+													<ContextMenu name="АвансРазмерГруппаСтраницаФиксированнойСуммойРазмерностьКонтекстноеМеню" id="39"/>
+													<ExtendedTooltip name="АвансРазмерГруппаСтраницаФиксированнойСуммойРазмерностьExtendedTooltip" id="40"/>
+												</LabelField>
+											</ChildItems>
+										</Page>
+										<Page name="АвансРазмерГруппаСтраницаПроцентомОтТарифа" id="41">
+											<EnableContentChange>true</EnableContentChange>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Аванс процентом</v8:content>
+												</v8:item>
+											</Title>
+											<Group>Horizontal</Group>
+											<ExtendedTooltip name="АвансРазмерГруппаСтраницаПроцентомОтТарифаExtendedTooltip" id="42"/>
+											<ChildItems>
+												<InputField name="АвансРазмерГруппаСтраницаПроцентомОтТарифаВеличина" id="43">
+													<DataPath>ТекущийАванс</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<Width>4</Width>
+													<ChoiceButton>false</ChoiceButton>
+													<EditFormat>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>ЧЦ=4; ЧДЦ=2</v8:content>
+														</v8:item>
+													</EditFormat>
+													<ContextMenu name="АвансРазмерГруппаСтраницаПроцентомОтТарифаВеличинаКонтекстноеМеню" id="44"/>
+													<ExtendedTooltip name="АвансРазмерГруппаСтраницаПроцентомОтТарифаВеличинаExtendedTooltip" id="45"/>
+												</InputField>
+												<LabelField name="АвансРазмерГруппаСтраницаПроцентомОтТарифаРазмерность" id="46">
+													<DataPath>АвансРазмерность</DataPath>
+													<TitleLocation>None</TitleLocation>
+													<Width>2</Width>
+													<ContextMenu name="АвансРазмерГруппаСтраницаПроцентомОтТарифаРазмерностьКонтекстноеМеню" id="47"/>
+													<ExtendedTooltip name="АвансРазмерГруппаСтраницаПроцентомОтТарифаРазмерностьExtendedTooltip" id="48"/>
+												</LabelField>
+											</ChildItems>
+										</Page>
+									</ChildItems>
+								</Pages>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ДатаПриема" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата приема</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+			<FillCheck>ShowError</FillCheck>
+		</Attribute>
+		<Attribute name="ТекущееПодразделение" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текущее подразделение</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ПодразделенияОрганизаций</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+			<FunctionalOptions>
+				<Item>FunctionalOption.ВестиУчетЗатратПоПодразделениям</Item>
+				<Item>FunctionalOption.ВестиУчетПоПодразделениям</Item>
+				<Item>FunctionalOption.РасчетЗарплатыПоПодразделениямДляНебольшихОрганизаций</Item>
+				<Item>FunctionalOption.ИспользоватьНесколькоОрганизаций</Item>
+				<Item>FunctionalOption.ИспользоватьНесколькоПодразделений</Item>
+			</FunctionalOptions>
+		</Attribute>
+		<Attribute name="ТекущаяДолжность" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текущая должность</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Должности</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ТекущийВидЗанятости" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид занятости</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.ВидыЗанятости</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+			<FillCheck>ShowError</FillCheck>
+			<FunctionalOptions>
+				<Item>FunctionalOption.ПоддержкаСовместительства</Item>
+			</FunctionalOptions>
+		</Attribute>
+		<Attribute name="ТекущаяТарифнаяСтавка" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текущая тарифная ставка</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+			<FunctionalOptions>
+				<Item>FunctionalOption.ИспользоватьНачислениеЗарплаты</Item>
+			</FunctionalOptions>
+		</Attribute>
+		<Attribute name="ТекущийАванс" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текущий аванс</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+			<View>
+				<xr:Common>false</xr:Common>
+				<xr:Value name="Role.ДобавлениеИзменениеДанныхДляНачисленияЗарплаты">true</xr:Value>
+				<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+				<xr:Value name="Role.ЧтениеДанныхДляНачисленияЗарплаты">true</xr:Value>
+			</View>
+			<Edit>
+				<xr:Common>false</xr:Common>
+				<xr:Value name="Role.ДобавлениеИзменениеДанныхДляНачисленияЗарплаты">true</xr:Value>
+				<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+			</Edit>
+			<SavedData>true</SavedData>
+			<FunctionalOptions>
+				<Item>FunctionalOption.ИндивидуальныйАванс</Item>
+			</FunctionalOptions>
+		</Attribute>
+		<Attribute name="АвансРазмерность" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Аванс размерность</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>4</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+			<FunctionalOptions>
+				<Item>FunctionalOption.ИндивидуальныйАванс</Item>
+			</FunctionalOptions>
+		</Attribute>
+		<Attribute name="ТекущийСпособРасчетаАванса" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текущий способ расчета аванса</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.СпособыРасчетаАванса</v8:Type>
+			</Type>
+			<View>
+				<xr:Common>false</xr:Common>
+				<xr:Value name="Role.ДобавлениеИзменениеДанныхДляНачисленияЗарплаты">true</xr:Value>
+				<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+				<xr:Value name="Role.ЧтениеДанныхДляНачисленияЗарплаты">true</xr:Value>
+			</View>
+			<Edit>
+				<xr:Common>false</xr:Common>
+				<xr:Value name="Role.ДобавлениеИзменениеДанныхДляНачисленияЗарплаты">true</xr:Value>
+				<xr:Value name="Role.ПолныеПрава">true</xr:Value>
+			</Edit>
+			<SavedData>true</SavedData>
+			<FunctionalOptions>
+				<Item>FunctionalOption.ИндивидуальныйАванс</Item>
+			</FunctionalOptions>
+		</Attribute>
+		<Attribute name="ТекущийПроцентСевернойНадбавки" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текущий процент северной надбавки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>5</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+			<FunctionalOptions>
+				<Item>FunctionalOption.ПрименятьСевернуюНадбавку</Item>
+				<Item>FunctionalOption.ПрименятьСевернуюНадбавкуВПодразделениях</Item>
+			</FunctionalOptions>
+		</Attribute>
+		<Attribute name="ТекущаяОрганизация" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текущая организация</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Сотрудник" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сотрудник</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogObject.Сотрудники</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ФизическоеЛицо" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Физическое лицо</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogObject.ФизическиеЛица</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ИспользоватьКадровыйУчет" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Использовать кадровый учет</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОформленПоТрудовомуДоговору" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Оформлен по трудовому договору</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ДатаУвольнения" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата увольнения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ДоступенПросмотрДанныхДляНачисленияЗарплаты" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Доступен просмотр данных для начисления зарплаты</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ОК" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ОК</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗаписатьИЗакрыть</Action>
+		</Command>
+		<Command name="Отмена" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отмена</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отмена</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Отмена</Action>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="УчетЗарплатыИКадровСредствамиБухгалтерии">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<KeyParameter>true</KeyParameter>
+		</Parameter>
+		<Parameter name="РазмерАвансаВПроцентахПоУмолчанию">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+			<KeyParameter>true</KeyParameter>
+		</Parameter>
+		<Parameter name="ПрименятьСевернуюНадбавку">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<KeyParameter>true</KeyParameter>
+		</Parameter>
+		<Parameter name="АвансРедактируется">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<KeyParameter>true</KeyParameter>
+		</Parameter>
+		<Parameter name="ИспользоватьНесколькоОрганизаций">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<KeyParameter>true</KeyParameter>
+		</Parameter>
+	</Parameters>
+</Form>

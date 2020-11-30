@@ -1,0 +1,922 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.11">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Внесение изменений в ЕГР</v8:content>
+		</v8:item>
+	</Title>
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoTitle>false</AutoTitle>
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаОбновитьРеквизиты" id="6">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ОбновитьРеквизиты</CommandName>
+				<ExtendedTooltip name="ФормаОбновитьРеквизитыРасширеннаяПодсказка" id="7"/>
+			</Button>
+			<Button name="ФормаОтмена" id="4">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Cancel</CommandName>
+				<ExtendedTooltip name="ФормаОтменаРасширеннаяПодсказка" id="5"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаРеквизиты" id="23">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Реквизиты</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Representation>NormalSeparation</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ThroughAlign>Use</ThroughAlign>
+			<ExtendedTooltip name="ГруппаРеквизитыРасширеннаяПодсказка" id="24"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаНаименованиеПолное" id="103">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Полное наименование</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ThroughAlign>Use</ThroughAlign>
+					<ExtendedTooltip name="ГруппаНаименованиеПолноеРасширеннаяПодсказка" id="104"/>
+					<ChildItems>
+						<LabelDecoration name="ЗаголовокНаименованиеПолное" id="105">
+							<Width>14</Width>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Полное наименование:</v8:content>
+								</v8:item>
+							</Title>
+							<GroupVerticalAlign>Center</GroupVerticalAlign>
+							<ContextMenu name="ЗаголовокНаименованиеПолноеКонтекстноеМеню" id="106"/>
+							<ExtendedTooltip name="ЗаголовокНаименованиеПолноеРасширеннаяПодсказка" id="107"/>
+						</LabelDecoration>
+						<LabelField name="НаименованиеПолное" id="8">
+							<DataPath>НаименованиеПолное</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<Width>40</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ContextMenu name="НаименованиеПолноеКонтекстноеМеню" id="9"/>
+							<ExtendedTooltip name="НаименованиеПолноеРасширеннаяПодсказка" id="10"/>
+						</LabelField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаНаименованиеСокращенное" id="108">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сокращенное наименование</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаНаименованиеСокращенноеРасширеннаяПодсказка" id="109"/>
+					<ChildItems>
+						<LabelDecoration name="ЗаголовокНаименованиеСокращенное" id="110">
+							<Width>18</Width>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Сокращенное наименование:</v8:content>
+								</v8:item>
+							</Title>
+							<GroupVerticalAlign>Center</GroupVerticalAlign>
+							<ContextMenu name="ЗаголовокНаименованиеСокращенноеКонтекстноеМеню" id="111"/>
+							<ExtendedTooltip name="ЗаголовокНаименованиеСокращенноеРасширеннаяПодсказка" id="112"/>
+						</LabelDecoration>
+						<LabelField name="НаименованиеСокращенное" id="11">
+							<DataPath>НаименованиеСокращенное</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<Width>40</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ContextMenu name="НаименованиеСокращенноеКонтекстноеМеню" id="12"/>
+							<ExtendedTooltip name="НаименованиеСокращенноеРасширеннаяПодсказка" id="13"/>
+						</LabelField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаЮридическийАдрес" id="113">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа юридический адрес</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа юридический адрес</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаЮридическийАдресРасширеннаяПодсказка" id="114"/>
+					<ChildItems>
+						<LabelDecoration name="ЗаголовокЮридическийАдрес" id="115">
+							<Width>13</Width>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Юридический адрес:</v8:content>
+								</v8:item>
+							</Title>
+							<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+							<ContextMenu name="ЗаголовокЮридическийАдресКонтекстноеМеню" id="116"/>
+							<ExtendedTooltip name="ЗаголовокЮридическийАдресРасширеннаяПодсказка" id="117"/>
+						</LabelDecoration>
+						<LabelField name="ЮридическийАдрес" id="14">
+							<DataPath>ЮридическийАдрес</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<Width>40</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ContextMenu name="ЮридическийАдресКонтекстноеМеню" id="15"/>
+							<ExtendedTooltip name="ЮридическийАдресРасширеннаяПодсказка" id="16"/>
+						</LabelField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаРуководитель" id="118">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Руководитель</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаРуководительРасширеннаяПодсказка" id="119"/>
+					<ChildItems>
+						<LabelDecoration name="ЗаголовокРуководитель" id="122">
+							<Width>9</Width>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Руководитель:</v8:content>
+								</v8:item>
+							</Title>
+							<GroupVerticalAlign>Center</GroupVerticalAlign>
+							<ContextMenu name="ЗаголовокРуководительКонтекстноеМеню" id="123"/>
+							<ExtendedTooltip name="ЗаголовокРуководительРасширеннаяПодсказка" id="124"/>
+						</LabelDecoration>
+						<LabelField name="Руководитель" id="17">
+							<DataPath>Руководитель</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<Width>30</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ContextMenu name="РуководительКонтекстноеМеню" id="18"/>
+							<ExtendedTooltip name="РуководительРасширеннаяПодсказка" id="19"/>
+						</LabelField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаРуководительДолжность" id="120">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Должность руководителя</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаРуководительДолжностьРасширеннаяПодсказка" id="121"/>
+					<ChildItems>
+						<LabelDecoration name="ЗаголовокРуководительДолжность" id="125">
+							<Width>16</Width>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Должность руководителя:</v8:content>
+								</v8:item>
+							</Title>
+							<GroupVerticalAlign>Center</GroupVerticalAlign>
+							<ContextMenu name="ЗаголовокРуководительДолжностьКонтекстноеМеню" id="126"/>
+							<ExtendedTooltip name="ЗаголовокРуководительДолжностьРасширеннаяПодсказка" id="127"/>
+						</LabelDecoration>
+						<LabelField name="РуководительДолжность" id="25">
+							<DataPath>РуководительДолжность</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<Width>30</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ContextMenu name="РуководительДолжностьКонтекстноеМеню" id="26"/>
+							<ExtendedTooltip name="РуководительДолжностьРасширеннаяПодсказка" id="27"/>
+						</LabelField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="СписокУчредителей" id="28">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Список учредителей</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Список учредителей</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<VerticalSpacing>Half</VerticalSpacing>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ThroughAlign>Use</ThroughAlign>
+					<ExtendedTooltip name="СписокУчредителейРасширеннаяПодсказка" id="29"/>
+					<ChildItems>
+						<UsualGroup name="УчредителиПредставление" id="30">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Учредители представление</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Учредители представление</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Vertical</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="УчредителиПредставлениеРасширеннаяПодсказка" id="31"/>
+							<ChildItems>
+								<UsualGroup name="Учредитель0" id="32">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Учредитель [0]</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Учредитель</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Horizontal</Group>
+									<Representation>None</Representation>
+									<United>false</United>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="Учредитель0РасширеннаяПодсказка" id="33"/>
+									<ChildItems>
+										<LabelDecoration name="ЗаголовокУчредителя0" id="34">
+											<Width>8</Width>
+											<HorizontalStretch>false</HorizontalStretch>
+											<TextColor>style:ButtonTextColor</TextColor>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Учредители:</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="ЗаголовокУчредителя0КонтекстноеМеню" id="35"/>
+											<ExtendedTooltip name="ЗаголовокУчредителя0РасширеннаяПодсказка" id="36"/>
+										</LabelDecoration>
+										<LabelDecoration name="НаименованиеУчредителя0" id="37">
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Иванов Иван Иванович</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="НаименованиеУчредителя0КонтекстноеМеню" id="38"/>
+											<ExtendedTooltip name="НаименованиеУчредителя0РасширеннаяПодсказка" id="39"/>
+										</LabelDecoration>
+										<LabelDecoration name="ДоляУчастияУчредителя0" id="40">
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>33 %</v8:content>
+												</v8:item>
+											</Title>
+											<HorizontalAlign>Right</HorizontalAlign>
+											<ContextMenu name="ДоляУчастияУчредителя0КонтекстноеМеню" id="41"/>
+											<ExtendedTooltip name="ДоляУчастияУчредителя0РасширеннаяПодсказка" id="42"/>
+										</LabelDecoration>
+										<LabelDecoration name="СуммаВзносаУчредителя0" id="43">
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>10 000 руб.</v8:content>
+												</v8:item>
+											</Title>
+											<HorizontalAlign>Right</HorizontalAlign>
+											<ContextMenu name="СуммаВзносаУчредителя0КонтекстноеМеню" id="44"/>
+											<ExtendedTooltip name="СуммаВзносаУчредителя0РасширеннаяПодсказка" id="45"/>
+										</LabelDecoration>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="Учредитель1" id="46">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Учредитель [1]</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Учредитель</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Horizontal</Group>
+									<Representation>None</Representation>
+									<United>false</United>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="Учредитель1РасширеннаяПодсказка" id="47"/>
+									<ChildItems>
+										<LabelDecoration name="ЗаголовокУчредителя1" id="48">
+											<HorizontalStretch>false</HorizontalStretch>
+											<TextColor>style:FormBackColor</TextColor>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Учредители:</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="ЗаголовокУчредителя1КонтекстноеМеню" id="49"/>
+											<ExtendedTooltip name="ЗаголовокУчредителя1РасширеннаяПодсказка" id="50"/>
+										</LabelDecoration>
+										<LabelDecoration name="НаименованиеУчредителя1" id="51">
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Иванов Иван Иванович</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="НаименованиеУчредителя1КонтекстноеМеню" id="52"/>
+											<ExtendedTooltip name="НаименованиеУчредителя1РасширеннаяПодсказка" id="53"/>
+										</LabelDecoration>
+										<LabelDecoration name="ДоляУчастияУчредителя1" id="54">
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>33 %</v8:content>
+												</v8:item>
+											</Title>
+											<HorizontalAlign>Right</HorizontalAlign>
+											<ContextMenu name="ДоляУчастияУчредителя1КонтекстноеМеню" id="55"/>
+											<ExtendedTooltip name="ДоляУчастияУчредителя1РасширеннаяПодсказка" id="56"/>
+										</LabelDecoration>
+										<LabelDecoration name="СуммаВзносаУчредителя1" id="57">
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>10 000 руб.</v8:content>
+												</v8:item>
+											</Title>
+											<HorizontalAlign>Right</HorizontalAlign>
+											<ContextMenu name="СуммаВзносаУчредителя1КонтекстноеМеню" id="58"/>
+											<ExtendedTooltip name="СуммаВзносаУчредителя1РасширеннаяПодсказка" id="59"/>
+										</LabelDecoration>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="Учредитель2" id="60">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Учредитель [2]</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Учредитель</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Horizontal</Group>
+									<Representation>None</Representation>
+									<United>false</United>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="Учредитель2РасширеннаяПодсказка" id="61"/>
+									<ChildItems>
+										<LabelDecoration name="ЗаголовокУчредителя2" id="62">
+											<HorizontalStretch>false</HorizontalStretch>
+											<TextColor>style:FormBackColor</TextColor>
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Учредители:</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="ЗаголовокУчредителя2КонтекстноеМеню" id="63"/>
+											<ExtendedTooltip name="ЗаголовокУчредителя2РасширеннаяПодсказка" id="64"/>
+										</LabelDecoration>
+										<LabelDecoration name="НаименованиеУчредителя2" id="65">
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Иванов Иван Иванович</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="НаименованиеУчредителя2КонтекстноеМеню" id="66"/>
+											<ExtendedTooltip name="НаименованиеУчредителя2РасширеннаяПодсказка" id="67"/>
+										</LabelDecoration>
+										<LabelDecoration name="ДоляУчастияУчредителя2" id="68">
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>33 %</v8:content>
+												</v8:item>
+											</Title>
+											<HorizontalAlign>Right</HorizontalAlign>
+											<ContextMenu name="ДоляУчастияУчредителя2КонтекстноеМеню" id="69"/>
+											<ExtendedTooltip name="ДоляУчастияУчредителя2РасширеннаяПодсказка" id="70"/>
+										</LabelDecoration>
+										<LabelDecoration name="СуммаВзносаУчредителя2" id="71">
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>10 000 руб.</v8:content>
+												</v8:item>
+											</Title>
+											<HorizontalAlign>Right</HorizontalAlign>
+											<ContextMenu name="СуммаВзносаУчредителя2КонтекстноеМеню" id="72"/>
+											<ExtendedTooltip name="СуммаВзносаУчредителя2РасширеннаяПодсказка" id="73"/>
+										</LabelDecoration>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаКодОКВЭД" id="128">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Код ОКВЭД</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаКодОКВЭДРасширеннаяПодсказка" id="129"/>
+					<ChildItems>
+						<LabelDecoration name="ЗаголовокКодыОКВЭД" id="130">
+							<Width>9</Width>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Коды ОКВЭД:</v8:content>
+								</v8:item>
+							</Title>
+							<GroupVerticalAlign>Center</GroupVerticalAlign>
+							<ContextMenu name="ЗаголовокКодыОКВЭДКонтекстноеМеню" id="131"/>
+							<ExtendedTooltip name="ЗаголовокКодыОКВЭДРасширеннаяПодсказка" id="132"/>
+						</LabelDecoration>
+						<LabelField name="КодОКВЭД" id="20">
+							<DataPath>КодОКВЭД</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Коды ОКВЭД</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>None</TitleLocation>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ContextMenu name="КодОКВЭДКонтекстноеМеню" id="21"/>
+							<ExtendedTooltip name="КодОКВЭДРасширеннаяПодсказка" id="22"/>
+						</LabelField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ВидыДеятельности" id="77">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Виды деятельности</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Виды деятельности</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Vertical</Group>
+					<VerticalSpacing>Half</VerticalSpacing>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ВидыДеятельностиРасширеннаяПодсказка" id="78"/>
+					<ChildItems>
+						<UsualGroup name="ВидДеятельности0" id="79">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Вид деятельности [0]</v8:content>
+								</v8:item>
+							</Title>
+							<TitleTextColor>style:FormBackColor</TitleTextColor>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Вид деятельности</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<United>false</United>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ВидДеятельности0РасширеннаяПодсказка" id="80"/>
+							<ChildItems>
+								<LabelDecoration name="ЗаголовокВидаДеятельности0" id="81">
+									<HorizontalStretch>false</HorizontalStretch>
+									<TextColor>style:FormBackColor</TextColor>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Коды ОКВЭД:</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ЗаголовокВидаДеятельности0КонтекстноеМеню" id="82"/>
+									<ExtendedTooltip name="ЗаголовокВидаДеятельности0РасширеннаяПодсказка" id="83"/>
+								</LabelDecoration>
+								<LabelDecoration name="СтрокаКодовОКВЭД0" id="84">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>01.11; 01.11; 01.11; 01.11; 01.11; 01.11; 01.11; 01.11; 01.11; 01.11;</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="СтрокаКодовОКВЭД0КонтекстноеМеню" id="85"/>
+									<ExtendedTooltip name="СтрокаКодовОКВЭД0РасширеннаяПодсказка" id="86"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ВидДеятельности1" id="87">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Вид деятельности [1]</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Вид деятельности</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<United>false</United>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ВидДеятельности1РасширеннаяПодсказка" id="88"/>
+							<ChildItems>
+								<LabelDecoration name="ЗаголовокВидаДеятельности1" id="89">
+									<HorizontalStretch>false</HorizontalStretch>
+									<TextColor>style:FormBackColor</TextColor>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Коды ОКВЭД:</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ЗаголовокВидаДеятельности1КонтекстноеМеню" id="90"/>
+									<ExtendedTooltip name="ЗаголовокВидаДеятельности1РасширеннаяПодсказка" id="91"/>
+								</LabelDecoration>
+								<LabelDecoration name="СтрокаКодовОКВЭД1" id="92">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>01.11; 01.11; 01.11; 01.11; 01.11; 01.11; 01.11; 01.11; 01.11; 01.11;</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="СтрокаКодовОКВЭД1КонтекстноеМеню" id="93"/>
+									<ExtendedTooltip name="СтрокаКодовОКВЭД1РасширеннаяПодсказка" id="94"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ВидДеятельности2" id="95">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Вид деятельности [2]</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Вид деятельности</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<United>false</United>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ВидДеятельности2РасширеннаяПодсказка" id="96"/>
+							<ChildItems>
+								<LabelDecoration name="ЗаголовокВидаДеятельности2" id="97">
+									<HorizontalStretch>false</HorizontalStretch>
+									<TextColor>style:FormBackColor</TextColor>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Коды ОКВЭД:</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ЗаголовокВидаДеятельности2КонтекстноеМеню" id="98"/>
+									<ExtendedTooltip name="ЗаголовокВидаДеятельности2РасширеннаяПодсказка" id="99"/>
+								</LabelDecoration>
+								<LabelDecoration name="СтрокаКодовОКВЭД2" id="100">
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>01.11; 01.11; 01.11; 01.11; 01.11; 01.11; 01.11; 01.11; 01.11; 01.11;</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="СтрокаКодовОКВЭД2КонтекстноеМеню" id="101"/>
+									<ExtendedTooltip name="СтрокаКодовОКВЭД2РасширеннаяПодсказка" id="102"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="ДатаИзмененийЕГР" id="1">
+			<DataPath>ДатаИзмененийЕГР</DataPath>
+			<TitleHeight>1</TitleHeight>
+			<ContextMenu name="ДатаИзмененийЕГРКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="ДатаИзмененийЕГРРасширеннаяПодсказка" id="3"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="ДатаИзмененийЕГР" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата внесения изменений в реестр</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="КодОКВЭД" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основной код ОКВЭД</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="НаименованиеПолное" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Полное наименование</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="НаименованиеСокращенное" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сокращенное наименование</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Руководитель" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Руководитель</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЮридическийАдрес" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Юридический адрес</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="РуководительДолжность" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Должность руководителя</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Учредители" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Учредители</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Наименование" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наименование</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ДоляУчастия" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Доля участия</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>6</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="СуммаВзноса" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сумма взноса</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ВидыДеятельности" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Виды деятельности</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Код" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Код</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Наименование" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наименование</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЭтоОКВЭД2" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Это ОКВЭД2</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ОбновитьРеквизиты" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить реквизиты</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить реквизиты</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОбновитьРеквизиты</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+	<Parameters>
+		<Parameter name="Заголовок">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+		<Parameter name="АдресДанныхПомощника">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Parameter>
+	</Parameters>
+</Form>
