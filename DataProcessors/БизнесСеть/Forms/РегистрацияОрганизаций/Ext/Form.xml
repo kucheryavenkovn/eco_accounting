@@ -14,7 +14,6 @@
 	</AutoCommandBar>
 	<Events>
 		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
-		<Event name="OnOpen">ПриОткрытии</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
 	<ChildItems>
@@ -265,10 +264,11 @@
 							</SearchControlAddition>
 							<Events>
 								<Event name="Selection">СписокВыбор</Event>
+								<Event name="OnActivateRow">СписокПриАктивизацииСтроки</Event>
 							</Events>
 							<ChildItems>
-								<CheckBoxField name="Подключена" id="223">
-									<DataPath>Список.Подключена</DataPath>
+								<PictureField name="КартинкаСтрок" id="223">
+									<DataPath>Список.КартинкаСтрок</DataPath>
 									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
@@ -280,10 +280,13 @@
 										<xr:Ref>CommonPicture.БизнесСеть</xr:Ref>
 										<xr:LoadTransparent>true</xr:LoadTransparent>
 									</HeaderPicture>
-									<CheckBoxType>Auto</CheckBoxType>
-									<ContextMenu name="ПодключенаКонтекстноеМеню" id="224"/>
-									<ExtendedTooltip name="ПодключенаРасширеннаяПодсказка" id="225"/>
-								</CheckBoxField>
+									<ValuesPicture>
+										<xr:Ref>CommonPicture.ПризнакПодключенияОрганизацииБизнесСеть</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</ValuesPicture>
+									<ContextMenu name="КартинкаСтрокКонтекстноеМеню" id="224"/>
+									<ExtendedTooltip name="КартинкаСтрокРасширеннаяПодсказка" id="225"/>
+								</PictureField>
 								<LabelField name="Организация" id="226">
 									<DataPath>Список.Ссылка</DataPath>
 									<Title>
@@ -435,6 +438,53 @@
 								</UsualGroup>
 							</ChildItems>
 						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаТребуетсяПодключение" id="424">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа требуется подключение</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа требуется подключение</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>AlwaysHorizontal</Group>
+					<VerticalAlign>Center</VerticalAlign>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаТребуетсяПодключениеРасширеннаяПодсказка" id="425"/>
+					<ChildItems>
+						<PictureDecoration name="КартинкаТребуетсяПодключение" id="426">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Картинка требуется подключение</v8:content>
+								</v8:item>
+							</Title>
+							<Picture>
+								<xr:Ref>CommonPicture.ПредупреждениеБЭД</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</Picture>
+							<ContextMenu name="КартинкаТребуетсяПодключениеКонтекстноеМеню" id="427"/>
+							<ExtendedTooltip name="КартинкаТребуетсяПодключениеРасширеннаяПодсказка" id="428"/>
+						</PictureDecoration>
+						<LabelDecoration name="НадписьТребуетсяПодключение" id="429">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<TextColor>style:ПоясняющийТекст</TextColor>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Для организации ООО "Ромашка" доступ к сервису 1С:Бизнес-сеть был приостановлен. Необходимо повторное подключение организации.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="НадписьТребуетсяПодключениеКонтекстноеМеню" id="430"/>
+							<ExtendedTooltip name="НадписьТребуетсяПодключениеРасширеннаяПодсказка" id="431"/>
+						</LabelDecoration>
 					</ChildItems>
 				</UsualGroup>
 				<UsualGroup name="ГруппаНавигации" id="182">
@@ -669,6 +719,8 @@
 			</Type>
 			<UseAlways>
 				<Field>Список.ИдентификаторОрганизации</Field>
+				<Field>Список.КартинкаСтрок</Field>
+				<Field>Список.Подключена</Field>
 				<Field>Список.Ссылка</Field>
 			</UseAlways>
 			<Settings xsi:type="DynamicList">
@@ -680,7 +732,8 @@
 	NULL КАК ИНН,
 	NULL КАК КПП,
 	NULL КАК ПредставлениеСсылкиНаПрофиль,
-	NULL КАК ИдентификаторОрганизации
+	NULL КАК ИдентификаторОрганизации,
+	0 КАК КартинкаСтрок
 ИЗ
 	Справочник.ИдентификаторыОбъектовМетаданных КАК СписокПереопределяемый
 ГДЕ
@@ -747,6 +800,17 @@
 					<v8:Length>0</v8:Length>
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОрганизацияТребуетсяПовторноеПодключение" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Организация требуется повторное подключение</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
 	</Attributes>

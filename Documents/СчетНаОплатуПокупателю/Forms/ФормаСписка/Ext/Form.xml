@@ -144,6 +144,12 @@
 										<xr:Ref>0:bb5c3a09-6d63-4e1c-8fe9-2310a267e732</xr:Ref>
 										<xr:LoadTransparent>false</xr:LoadTransparent>
 									</Picture>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Загрузить из интернет-магазина</v8:content>
+										</v8:item>
+									</Title>
 									<ExtendedTooltip name="ФормаЗагрузитьИзИнтернетМагазинаРасширеннаяПодсказка" id="141"/>
 								</Button>
 							</ChildItems>
@@ -251,12 +257,6 @@
 								</Button>
 							</ChildItems>
 						</ButtonGroup>
-						<Button name="ФормаНастроитьОбменСИнтернетМагазином" id="142">
-							<Type>CommandBarButton</Type>
-							<CommandName>Form.Command.НастроитьОбменСИнтернетМагазином</CommandName>
-							<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-							<ExtendedTooltip name="ФормаНастроитьОбменСИнтернетМагазиномРасширеннаяПодсказка" id="143"/>
-						</Button>
 						<Button name="ФормаПоказатьКонтекстныеНовости" id="119">
 							<Type>CommandBarButton</Type>
 							<CommandName>Form.Command.ПоказатьКонтекстныеНовости</CommandName>
@@ -300,7 +300,7 @@
 				</Button>
 			</ChildItems>
 		</CommandBar>
-		<UsualGroup name="ГруппаСостояниеЗагрузкиИнтернетМагазина" id="144">
+		<UsualGroup name="ГруппаРезультатОбменаСИнтернетМагазином" id="144">
 			<Visible>false</Visible>
 			<Title>
 				<v8:item>
@@ -308,32 +308,29 @@
 					<v8:content>остояние загрузки интернет магазина</v8:content>
 				</v8:item>
 			</Title>
-			<ToolTip>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Группа состояние загрузки интернет магазина</v8:content>
-				</v8:item>
-			</ToolTip>
 			<HorizontalStretch>true</HorizontalStretch>
 			<Group>Horizontal</Group>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
 			<BackColor>style:БыстрыеОтборыФонГруппы</BackColor>
-			<ExtendedTooltip name="ГруппаСостояниеЗагрузкиИнтернетМагазинаРасширеннаяПодсказка" id="145"/>
+			<ExtendedTooltip name="ГруппаРезультатОбменаСИнтернетМагазиномРасширеннаяПодсказка" id="145"/>
 			<ChildItems>
-				<LabelDecoration name="ТекстСостояниеЗагрузки" id="146">
+				<LabelDecoration name="ТекстРезультатОбменаСИнтернетМагазином" id="146">
 					<AutoMaxWidth>false</AutoMaxWidth>
 					<HorizontalStretch>true</HorizontalStretch>
-					<Title formatted="false">
+					<Title formatted="true">
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Обработано 0 документов. Создано: 0  документов. Обновлено:  0 документов.</v8:content>
+							<v8:content>Загрузка выполнена успешно!</v8:content>
 						</v8:item>
 					</Title>
-					<ContextMenu name="ТекстСостояниеЗагрузкиКонтекстноеМеню" id="147"/>
-					<ExtendedTooltip name="ТекстСостояниеЗагрузкиРасширеннаяПодсказка" id="148"/>
+					<ContextMenu name="ТекстРезультатОбменаСИнтернетМагазиномКонтекстноеМеню" id="147"/>
+					<ExtendedTooltip name="ТекстРезультатОбменаСИнтернетМагазиномРасширеннаяПодсказка" id="148"/>
+					<Events>
+						<Event name="URLProcessing">ТекстРезультатОбменаСИнтернетМагазиномОбработкаНавигационнойСсылки</Event>
+					</Events>
 				</LabelDecoration>
-				<UsualGroup name="ГруппаСкрыть" id="149">
+				<UsualGroup name="ГруппаСкрытьРезультатОбменаСИнтернетМагазином" id="149">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -350,21 +347,27 @@
 					<GroupVerticalAlign>Center</GroupVerticalAlign>
 					<Representation>None</Representation>
 					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="ГруппаСкрытьРасширеннаяПодсказка" id="150"/>
+					<ExtendedTooltip name="ГруппаСкрытьРезультатОбменаСИнтернетМагазиномРасширеннаяПодсказка" id="150"/>
 					<ChildItems>
-						<PictureDecoration name="Скрыть" id="151">
+						<PictureDecoration name="СкрытьРезультатОбменаСИнтернетМагазином" id="151">
 							<Width>1</Width>
 							<Height>1</Height>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Скрыть результат обмена с интернет магазином</v8:content>
+								</v8:item>
+							</Title>
 							<Hyperlink>true</Hyperlink>
 							<Picture>
 								<xr:Ref>StdPicture.InputFieldClear</xr:Ref>
 								<xr:LoadTransparent>true</xr:LoadTransparent>
 							</Picture>
 							<FileDragMode>AsFile</FileDragMode>
-							<ContextMenu name="СкрытьКонтекстноеМеню" id="152"/>
-							<ExtendedTooltip name="СкрытьРасширеннаяПодсказка" id="153"/>
+							<ContextMenu name="СкрытьРезультатОбменаСИнтернетМагазиномКонтекстноеМеню" id="152"/>
+							<ExtendedTooltip name="СкрытьРезультатОбменаСИнтернетМагазиномРасширеннаяПодсказка" id="153"/>
 							<Events>
-								<Event name="Click">СкрытьРезультатСозданияДокументовНажатие</Event>
+								<Event name="Click">СкрытьРезультатОбменаСИнтернетМагазиномНажатие</Event>
 							</Events>
 						</PictureDecoration>
 					</ChildItems>
@@ -778,6 +781,18 @@
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
+		<Attribute name="РезультатОбменаСИнтернетМагазином" id="11">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<FunctionalOptions>
+				<Item>FunctionalOption.ИспользоватьОбменСИнтернетМагазином</Item>
+			</FunctionalOptions>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="ИзменитьВыделенные" id="1">
@@ -825,7 +840,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Загрузить</v8:content>
+					<v8:content>Загрузить из интернет-магазина</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
@@ -835,25 +850,6 @@
 				</v8:item>
 			</ToolTip>
 			<Action>ЗагрузитьИзИнтернетМагазина</Action>
-			<FunctionalOptions>
-				<Item>FunctionalOption.ИспользоватьОбменСИнтернетМагазином</Item>
-			</FunctionalOptions>
-			<CurrentRowUse>DontUse</CurrentRowUse>
-		</Command>
-		<Command name="НастроитьОбменСИнтернетМагазином" id="8">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Настроить обмен с интернет-магазином</v8:content>
-				</v8:item>
-			</Title>
-			<ToolTip>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Настроить обмен с интернет магазином</v8:content>
-				</v8:item>
-			</ToolTip>
-			<Action>НастроитьОбменСИнтернетМагазином</Action>
 			<FunctionalOptions>
 				<Item>FunctionalOption.ИспользоватьОбменСИнтернетМагазином</Item>
 			</FunctionalOptions>

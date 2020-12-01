@@ -15,11 +15,41 @@
 				<Type>CommandBarButton</Type>
 				<DefaultButton>true</DefaultButton>
 				<CommandName>Form.Command.СохранитьИЗакрыть</CommandName>
+				<LocationInCommandBar>InCommandBar</LocationInCommandBar>
 				<ExtendedTooltip name="ФормаСохранитьИЗакрытьРасширеннаяПодсказка" id="53"/>
+			</Button>
+			<Button name="ФормаЗаписатьНастройки" id="161">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ЗаписатьНастройки</CommandName>
+				<LocationInCommandBar>InCommandBar</LocationInCommandBar>
+				<ExtendedTooltip name="ФормаЗаписатьНастройкиРасширеннаяПодсказка" id="162"/>
+			</Button>
+			<Button name="ФормаВыполнитьОбмен" id="156">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.Command.ВыполнитьОбмен</CommandName>
+				<Picture>
+					<xr:Ref>CommonPicture.СинхронизацияДанныхВыполнение</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<LocationInCommandBar>InCommandBar</LocationInCommandBar>
+				<ExtendedTooltip name="ФормаВыполнитьОбменРасширеннаяПодсказка" id="157"/>
+			</Button>
+			<Button name="ФормаПоказатьЖурналОбмена" id="138">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<CommandName>Form.Command.ПоказатьЖурналОбмена</CommandName>
+				<Picture>
+					<xr:Ref>StdPicture.EventLog</xr:Ref>
+					<xr:LoadTransparent>true</xr:LoadTransparent>
+				</Picture>
+				<LocationInCommandBar>InCommandBar</LocationInCommandBar>
+				<ExtendedTooltip name="ФормаПоказатьЖурналОбменаРасширеннаяПодсказка" id="139"/>
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
 	<Events>
+		<Event name="BeforeClose">ПередЗакрытием</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 		<Event name="FillCheckProcessingAtServer">ОбработкаПроверкиЗаполненияНаСервере</Event>
 	</Events>
@@ -59,14 +89,14 @@
 					<InputHint>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>http://имя_вашего_сайта.рф</v8:content>
+							<v8:content>http://имя_вашего_сайта.рф/</v8:content>
 						</v8:item>
 					</InputHint>
 					<ContextMenu name="АдресСайтаКонтекстноеМеню" id="2"/>
 					<ExtendedTooltip name="АдресСайтаРасширеннаяПодсказка" id="3"/>
 				</InputField>
 				<InputField name="Пользователь" id="4">
-					<DataPath>Пользователь</DataPath>
+					<DataPath>Логин</DataPath>
 					<ContextMenu name="ПользовательКонтекстноеМеню" id="5"/>
 					<ExtendedTooltip name="ПользовательРасширеннаяПодсказка" id="6"/>
 				</InputField>
@@ -86,82 +116,6 @@
 				</Button>
 			</ChildItems>
 		</UsualGroup>
-		<UsualGroup name="ГруппаНастроекПоУмолчанию" id="14">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Реквизиты для подстановки по умолчанию:</v8:content>
-				</v8:item>
-			</Title>
-			<Group>Vertical</Group>
-			<Representation>NormalSeparation</Representation>
-			<United>false</United>
-			<ExtendedTooltip name="ГруппаНастроекПоУмолчаниюРасширеннаяПодсказка" id="15"/>
-			<ChildItems>
-				<InputField name="ПрефиксНовыхДокументов" id="94">
-					<DataPath>Префикс</DataPath>
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Префикс для нумерации загруженных счетов</v8:content>
-						</v8:item>
-					</Title>
-					<TitleLocation>Left</TitleLocation>
-					<TitleHeight>2</TitleHeight>
-					<ToolTipRepresentation>Button</ToolTipRepresentation>
-					<ContextMenu name="ПрефиксНовыхДокументовКонтекстноеМеню" id="95"/>
-					<ExtendedTooltip name="ПрефиксНовыхДокументовРасширеннаяПодсказка" id="96">
-						<Title formatted="false">
-							<v8:item>
-								<v8:lang>ru</v8:lang>
-								<v8:content>Префикс включается в состав номера документа "Счет покупателю". Позволяет отдельно нумеровать документы загруженные с сайта.
-Состоит из 2 символов (букв, цифр).</v8:content>
-							</v8:item>
-						</Title>
-					</ExtendedTooltip>
-				</InputField>
-				<InputField name="Организация" id="46">
-					<DataPath>Организация</DataPath>
-					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="47"/>
-					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="48"/>
-				</InputField>
-				<InputField name="Склад" id="97">
-					<DataPath>Склад</DataPath>
-					<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
-					<ContextMenu name="СкладКонтекстноеМеню" id="98"/>
-					<ExtendedTooltip name="СкладРасширеннаяПодсказка" id="99"/>
-				</InputField>
-				<InputField name="ГруппаКонтрагенты" id="19">
-					<DataPath>ГруппаКонтрагентов</DataPath>
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Группа для новых контрагентов</v8:content>
-						</v8:item>
-					</Title>
-					<ChoiceFoldersAndItems>Folders</ChoiceFoldersAndItems>
-					<ChoiceForm>Catalog.Контрагенты.Form.ФормаВыбораГруппы</ChoiceForm>
-					<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
-					<ContextMenu name="ГруппаКонтрагентыКонтекстноеМеню" id="20"/>
-					<ExtendedTooltip name="ГруппаКонтрагентыРасширеннаяПодсказка" id="21"/>
-				</InputField>
-				<LabelField name="РеквизитыНовойНоменклатуры" id="130">
-					<DataPath>РеквизитыНовойНоменклатуры</DataPath>
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Номенклатура</v8:content>
-						</v8:item>
-					</Title>
-					<Hiperlink>true</Hiperlink>
-					<ContextMenu name="РеквизитыНовойНоменклатурыКонтекстноеМеню" id="131"/>
-					<ExtendedTooltip name="РеквизитыНовойНоменклатурыРасширеннаяПодсказка" id="132"/>
-					<Events>
-						<Event name="Click">РеквизитыНовойНоменклатурыНажатие</Event>
-					</Events>
-				</LabelField>
-			</ChildItems>
-		</UsualGroup>
 		<UsualGroup name="ГруппаНастройкиЗагрузки" id="22">
 			<Title>
 				<v8:item>
@@ -170,10 +124,18 @@
 				</v8:item>
 			</Title>
 			<Group>Vertical</Group>
-			<Representation>NormalSeparation</Representation>
+			<Representation>StrongSeparation</Representation>
 			<United>false</United>
 			<ExtendedTooltip name="ГруппаНастройкиЗагрузкиРасширеннаяПодсказка" id="23"/>
 			<ChildItems>
+				<InputField name="Организация" id="46">
+					<DataPath>Организация</DataPath>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="47"/>
+					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="48"/>
+					<Events>
+						<Event name="OnChange">ОрганизацияПриИзменении</Event>
+					</Events>
+				</InputField>
 				<InputField name="ДатаНачалаОбмена" id="133">
 					<DataPath>ДатаНачалаОбмена</DataPath>
 					<Title>
@@ -238,9 +200,106 @@
 						</LabelField>
 					</ChildItems>
 				</UsualGroup>
+				<UsualGroup name="ГруппаСпособыДоставки" id="163">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Статусы заказа</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Статусы заказа</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаСпособыДоставкиРасширеннаяПодсказка" id="164"/>
+					<ChildItems>
+						<CheckBoxField name="ЗагружатьСпособыДоставки" id="171">
+							<DataPath>ЗагружатьСпособыДоставки</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ЗагружатьСпособыДоставкиКонтекстноеМеню" id="172"/>
+							<ExtendedTooltip name="ЗагружатьСпособыДоставкиРасширеннаяПодсказка" id="173"/>
+							<Events>
+								<Event name="OnChange">ЗагружатьСпособыДоставкиПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<LabelField name="СпособыДоставки" id="174">
+							<DataPath>СпособыДоставки</DataPath>
+							<Enabled>false</Enabled>
+							<TitleLocation>None</TitleLocation>
+							<Hiperlink>true</Hiperlink>
+							<ContextMenu name="СпособыДоставкиКонтекстноеМеню" id="175"/>
+							<ExtendedTooltip name="СпособыДоставкиРасширеннаяПодсказка" id="176"/>
+							<Events>
+								<Event name="Click">СпособыДоставкиНажатие</Event>
+							</Events>
+						</LabelField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаСпособыОнлайнОплаты" id="145">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа способы онлайн оплаты</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа способы онлайн оплаты</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+					<Group>AlwaysHorizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаСпособыОнлайнОплатыРасширеннаяПодсказка" id="146">
+						<Title formatted="false">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>При загрузке счета, оплаченного на сайте, будет создан документ "Оплата платежной картой"</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
+					<ChildItems>
+						<CheckBoxField name="ЗагружатьОнлайнОплаты" id="150">
+							<DataPath>ЗагружатьОнлайнОплаты</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ЗагружатьОнлайнОплатыКонтекстноеМеню" id="151"/>
+							<ExtendedTooltip name="ЗагружатьОнлайнОплатыРасширеннаяПодсказка" id="152"/>
+							<Events>
+								<Event name="OnChange">ЗагружатьОнлайнОплатыПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<LabelField name="СпособыОплаты" id="158">
+							<DataPath>СпособыОплаты</DataPath>
+							<Enabled>false</Enabled>
+							<TitleLocation>None</TitleLocation>
+							<Hiperlink>true</Hiperlink>
+							<ContextMenu name="СпособыОплатыКонтекстноеМеню" id="159"/>
+							<ExtendedTooltip name="СпособыОплатыРасширеннаяПодсказка" id="160"/>
+							<Events>
+								<Event name="Click">СпособыОплатыНажатие</Event>
+							</Events>
+						</LabelField>
+					</ChildItems>
+				</UsualGroup>
 				<CheckBoxField name="СоздаватьНовыхКонтрагентов" id="30">
 					<DataPath>СоздаватьНовыхКонтрагентов</DataPath>
 					<TitleLocation>Right</TitleLocation>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Первоначальной сопоставление контрагентов выполняется по ИНН/КПП, email и телефону. В дальнейшем - по идентификатору сайта</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
 					<CheckBoxType>Auto</CheckBoxType>
 					<ContextMenu name="СоздаватьНовыхКонтрагентовКонтекстноеМеню" id="31"/>
 					<ExtendedTooltip name="СоздаватьНовыхКонтрагентовРасширеннаяПодсказка" id="32"/>
@@ -248,10 +307,88 @@
 				<CheckBoxField name="СоздаватьНовуюНоменклатуру" id="103">
 					<DataPath>СоздаватьНовуюНоменклатуру</DataPath>
 					<TitleLocation>Right</TitleLocation>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Первоначальное сопоставление номенклатуры выполняется по полям Артикул и Полное наименование.  В дальнейшем - по идентификатору сайта</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
 					<CheckBoxType>Auto</CheckBoxType>
 					<ContextMenu name="СоздаватьНовуюНоменклатуруКонтекстноеМеню" id="104"/>
 					<ExtendedTooltip name="СоздаватьНовуюНоменклатуруРасширеннаяПодсказка" id="105"/>
 				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаНастроекПоУмолчанию" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Реквизиты для подстановки по умолчанию:</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Representation>StrongSeparation</Representation>
+			<United>false</United>
+			<ExtendedTooltip name="ГруппаНастроекПоУмолчаниюРасширеннаяПодсказка" id="15"/>
+			<ChildItems>
+				<InputField name="ПрефиксНовыхДокументов" id="94">
+					<DataPath>Префикс</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Префикс для нумерации загруженных счетов</v8:content>
+						</v8:item>
+					</Title>
+					<TitleLocation>Left</TitleLocation>
+					<TitleHeight>2</TitleHeight>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<ContextMenu name="ПрефиксНовыхДокументовКонтекстноеМеню" id="95"/>
+					<ExtendedTooltip name="ПрефиксНовыхДокументовРасширеннаяПодсказка" id="96">
+						<Title formatted="false">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Префикс включается в состав номера документа "Счет покупателю". Позволяет отдельно нумеровать документы загруженные с сайта.
+Состоит из 2 символов (букв, цифр).</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
+				</InputField>
+				<InputField name="Склад" id="97">
+					<DataPath>Склад</DataPath>
+					<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+					<ContextMenu name="СкладКонтекстноеМеню" id="98"/>
+					<ExtendedTooltip name="СкладРасширеннаяПодсказка" id="99"/>
+				</InputField>
+				<InputField name="ГруппаКонтрагенты" id="19">
+					<DataPath>ГруппаКонтрагентов</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа для новых контрагентов</v8:content>
+						</v8:item>
+					</Title>
+					<ChoiceFoldersAndItems>Folders</ChoiceFoldersAndItems>
+					<ChoiceForm>Catalog.Контрагенты.Form.ФормаВыбораГруппы</ChoiceForm>
+					<ChoiceHistoryOnInput>DontUse</ChoiceHistoryOnInput>
+					<ContextMenu name="ГруппаКонтрагентыКонтекстноеМеню" id="20"/>
+					<ExtendedTooltip name="ГруппаКонтрагентыРасширеннаяПодсказка" id="21"/>
+				</InputField>
+				<LabelField name="РеквизитыНовойНоменклатуры" id="130">
+					<DataPath>РеквизитыНовойНоменклатуры</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номенклатура</v8:content>
+						</v8:item>
+					</Title>
+					<Hiperlink>true</Hiperlink>
+					<ContextMenu name="РеквизитыНовойНоменклатурыКонтекстноеМеню" id="131"/>
+					<ExtendedTooltip name="РеквизитыНовойНоменклатурыРасширеннаяПодсказка" id="132"/>
+					<Events>
+						<Event name="Click">РеквизитыНовойНоменклатурыНажатие</Event>
+					</Events>
+				</LabelField>
 			</ChildItems>
 		</UsualGroup>
 	</ChildItems>
@@ -279,7 +416,7 @@
 			<SavedData>true</SavedData>
 			<FillCheck>ShowError</FillCheck>
 		</Attribute>
-		<Attribute name="Пользователь" id="3">
+		<Attribute name="Логин" id="3">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -377,6 +514,9 @@
 			</Type>
 			<SavedData>true</SavedData>
 			<FillCheck>ShowError</FillCheck>
+			<FunctionalOptions>
+				<Item>FunctionalOption.ИспользоватьНесколькоОрганизацийБухгалтерскийУчет</Item>
+			</FunctionalOptions>
 		</Attribute>
 		<Attribute name="ЗапрещенныеСтатусы" id="15">
 			<Title>
@@ -523,6 +663,60 @@
 				</v8:DateQualifiers>
 			</Type>
 		</Attribute>
+		<Attribute name="СпособыОплаты" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Способы оплаты</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗагружатьОнлайнОплаты" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загружать онлайн-оплаты:</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ЗагружатьСпособыДоставки" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загружать способы доставки заказа:</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="СпособыДоставки" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Способы доставки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="ПроверитьПодключение" id="1">
@@ -557,6 +751,55 @@
 			<Action>СохранитьИЗакрыть</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
+		<Command name="ПоказатьЖурналОбмена" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать журнал обмена</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать журнал обмена</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПоказатьЖурналОбмена</Action>
+		</Command>
+		<Command name="ВыполнитьОбмен" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить обмен</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить обмен</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ВыполнитьОбмен</Action>
+		</Command>
+		<Command name="ЗаписатьНастройки" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать настройки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать настройки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Write</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ЗаписатьНастройки</Action>
+		</Command>
 	</Commands>
 	<Parameters>
 		<Parameter name="НастройкаРеквизитов">
@@ -565,4 +808,28 @@
 			</Type>
 		</Parameter>
 	</Parameters>
+	<CommandInterface>
+		<NavigationPanel>
+			<Item>
+				<Command>InformationRegister.НоменклатураИнтернетМагазина.Command.СопоставлениеНоменклатурыИнтернетМагазин</Command>
+				<Type>Added</Type>
+				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
+				<DefaultVisible>false</DefaultVisible>
+			</Item>
+			<Item>
+				<Command>InformationRegister.КонтрагентыИнтернетМагазина.Command.СопоставлениеКонтрагентыИнтернетМагазина</Command>
+				<Type>Added</Type>
+				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
+				<Index>3</Index>
+				<DefaultVisible>false</DefaultVisible>
+			</Item>
+			<Item>
+				<Command>0:38b8e357-f17c-4f17-b4b6-88cddbb0dda4</Command>
+				<Type>Added</Type>
+				<CommandGroup>FormNavigationPanelGoTo</CommandGroup>
+				<Index>1</Index>
+				<DefaultVisible>false</DefaultVisible>
+			</Item>
+		</NavigationPanel>
+	</CommandInterface>
 </Form>

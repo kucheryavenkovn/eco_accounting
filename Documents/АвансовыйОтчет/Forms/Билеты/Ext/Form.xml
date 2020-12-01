@@ -341,46 +341,131 @@
 				</InputField>
 			</ChildItems>
 		</Table>
-		<UsualGroup name="ГруппаИтогиВсегоСФоном" id="20">
+		<UsualGroup name="ГруппаПодвал" id="244">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Итоги</v8:content>
+					<v8:content>Подвал</v8:content>
 				</v8:item>
 			</Title>
-			<ToolTip>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Итоги сумма</v8:content>
-				</v8:item>
-			</ToolTip>
-			<GroupHorizontalAlign>Right</GroupHorizontalAlign>
-			<Group>Horizontal</Group>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>AlwaysHorizontal</Group>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
-			<BackColor>style:ИтогиФонГруппы</BackColor>
-			<ExtendedTooltip name="ГруппаИтогиВсегоСФономРасширеннаяПодсказка" id="21"/>
+			<ExtendedTooltip name="ГруппаПодвалРасширеннаяПодсказка" id="245"/>
 			<ChildItems>
-				<InputField name="БилетыСуммаВсего" id="122">
-					<DataPath>БилетыСуммаВсего</DataPath>
-					<ReadOnly>true</ReadOnly>
-					<ContextMenu name="БилетыСуммаВсегоКонтекстноеМеню" id="123"/>
-					<ExtendedTooltip name="БилетыСуммаВсегоРасширеннаяПодсказка" id="124"/>
-				</InputField>
-				<LabelField name="ВалютаДокумента" id="25">
-					<DataPath>ВалютаДокумента</DataPath>
-					<TitleLocation>None</TitleLocation>
-					<Width>4</Width>
+				<UsualGroup name="ГруппаБаннерУчетБилетовИПнаОСНО" id="236">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Баннер: учет билетов ИП на ОСНО</v8:content>
+						</v8:item>
+					</Title>
 					<HorizontalStretch>false</HorizontalStretch>
-					<ContextMenu name="ВалютаДокументаКонтекстноеМеню" id="26"/>
-					<ExtendedTooltip name="ВалютаДокументаРасширеннаяПодсказка" id="27"/>
-				</LabelField>
-				<InputField name="БилетыСуммаНДСВсего" id="125">
-					<DataPath>БилетыСуммаНДСВсего</DataPath>
-					<ReadOnly>true</ReadOnly>
-					<ContextMenu name="БилетыСуммаНДСВсегоКонтекстноеМеню" id="126"/>
-					<ExtendedTooltip name="БилетыСуммаНДСВсегоРасширеннаяПодсказка" id="127"/>
-				</InputField>
+					<VerticalStretch>false</VerticalStretch>
+					<Group>AlwaysHorizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<BackColor>style:БыстрыеОтборыФонГруппы</BackColor>
+					<ExtendedTooltip name="ГруппаБаннерУчетБилетовИПнаОСНОРасширеннаяПодсказка" id="237"/>
+					<ChildItems>
+						<LabelDecoration name="ТекстБаннера" id="238">
+							<Title formatted="true">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Убедитесь, что билеты оплачены</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<ContextMenu name="ТекстБаннераКонтекстноеМеню" id="239"/>
+							<ExtendedTooltip name="ТекстБаннераРасширеннаяПодсказка" id="240">
+								<Width>30</Width>
+								<MaxWidth>30</MaxWidth>
+								<Title formatted="true">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>ИП может принять к вычету и отразить в КУДиР только оплаченные расходы 
+(см. Письмо Минфина России от 16.04.2012 N 03-04-05/8-512). 
+Поэтому билеты, которые на момент оформления авансового отчета не были 
+оплачены перевозчику (агенту), в расходы включать нельзя.
+
+Подробнее на ИТС:
+&lt;link https://its.1c.ru/bmk/bp30/tickets_ip_osno&gt;Как учесть расходы на билеты ИП на ОСНО?&lt;/&gt;</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+						</LabelDecoration>
+						<PictureDecoration name="КартинкаЗакрытьБаннер" id="241">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Х</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Скрыть баннер</v8:content>
+								</v8:item>
+							</ToolTip>
+							<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+							<GroupVerticalAlign>Top</GroupVerticalAlign>
+							<Hyperlink>true</Hyperlink>
+							<Picture>
+								<xr:Ref>StdPicture.InputFieldClear</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</Picture>
+							<FileDragMode>AsFile</FileDragMode>
+							<ContextMenu name="КартинкаЗакрытьБаннерКонтекстноеМеню" id="242"/>
+							<ExtendedTooltip name="КартинкаЗакрытьБаннерРасширеннаяПодсказка" id="243"/>
+							<Events>
+								<Event name="Click">КартинкаЗакрытьБаннерНажатие</Event>
+							</Events>
+						</PictureDecoration>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаИтогиВсегоСФоном" id="20">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Итоги</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Итоги сумма</v8:content>
+						</v8:item>
+					</ToolTip>
+					<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<BackColor>style:ИтогиФонГруппы</BackColor>
+					<ExtendedTooltip name="ГруппаИтогиВсегоСФономРасширеннаяПодсказка" id="21"/>
+					<ChildItems>
+						<InputField name="БилетыСуммаВсего" id="122">
+							<DataPath>БилетыСуммаВсего</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<ContextMenu name="БилетыСуммаВсегоКонтекстноеМеню" id="123"/>
+							<ExtendedTooltip name="БилетыСуммаВсегоРасширеннаяПодсказка" id="124"/>
+						</InputField>
+						<LabelField name="ВалютаДокумента" id="25">
+							<DataPath>ВалютаДокумента</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<Width>4</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ContextMenu name="ВалютаДокументаКонтекстноеМеню" id="26"/>
+							<ExtendedTooltip name="ВалютаДокументаРасширеннаяПодсказка" id="27"/>
+						</LabelField>
+						<InputField name="БилетыСуммаНДСВсего" id="125">
+							<DataPath>БилетыСуммаНДСВсего</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<ContextMenu name="БилетыСуммаНДСВсегоКонтекстноеМеню" id="126"/>
+							<ExtendedTooltip name="БилетыСуммаНДСВсегоРасширеннаяПодсказка" id="127"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
 			</ChildItems>
 		</UsualGroup>
 	</ChildItems>

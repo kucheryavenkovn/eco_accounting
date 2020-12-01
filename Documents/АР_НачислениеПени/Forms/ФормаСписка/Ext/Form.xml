@@ -486,6 +486,18 @@
 					<ContextMenu name="СчетФактураКонтекстноеМеню" id="193"/>
 					<ExtendedTooltip name="СчетФактураРасширеннаяПодсказка" id="194"/>
 				</LabelField>
+				<LabelField name="НомерСФУПД" id="197">
+					<DataPath>Список.НомерСФУПД</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>№ СФ/УПД</v8:content>
+						</v8:item>
+					</Title>
+					<Width>10</Width>
+					<ContextMenu name="НомерСФУПДКонтекстноеМеню" id="198"/>
+					<ExtendedTooltip name="НомерСФУПДРасширеннаяПодсказка" id="199"/>
+				</LabelField>
 				<CheckBoxField name="Подписан" id="189">
 					<DataPath>Список.Подписан</DataPath>
 					<CheckBoxType>Auto</CheckBoxType>
@@ -587,6 +599,7 @@
 			ТОГДА ИСТИНА
 		ИНАЧЕ ЛОЖЬ
 	КОНЕЦ КАК Подписан,
+	СтатусыДокументов.НомерСчетаФактуры КАК НомерСФУПД,
 	ЕСТЬNULL(СтатусыДокументов.СтатусСчетаФактуры, ЗНАЧЕНИЕ(Перечисление.СтатусыСчетаФактуры.ПустаяСсылка)) КАК СчетФактура,
 	ДокументАР_НачислениеПени.МоментВремени
 ИЗ

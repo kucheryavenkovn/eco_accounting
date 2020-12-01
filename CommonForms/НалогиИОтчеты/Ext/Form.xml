@@ -740,6 +740,71 @@
 														</UsualGroup>
 													</ChildItems>
 												</UsualGroup>
+												<UsualGroup name="ГруппаПредупреждениеЕНВД" id="4198">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Предупреждение ЕНВД</v8:content>
+														</v8:item>
+													</Title>
+													<Height>2</Height>
+													<Group>AlwaysHorizontal</Group>
+													<HorizontalSpacing>Half</HorizontalSpacing>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="ГруппаПредупреждениеЕНВДРасширеннаяПодсказка" id="4199"/>
+													<ChildItems>
+														<PictureDecoration name="ПредупреждениеЕНВДВнимание" id="4209">
+															<Title formatted="false">
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Внимание</v8:content>
+																</v8:item>
+															</Title>
+															<Picture>
+																<xr:Ref>CommonPicture.Внимание16</xr:Ref>
+																<xr:LoadTransparent>true</xr:LoadTransparent>
+															</Picture>
+															<ContextMenu name="ПредупреждениеЕНВДВниманиеКонтекстноеМеню" id="4210"/>
+															<ExtendedTooltip name="ПредупреждениеЕНВДВниманиеРасширеннаяПодсказка" id="4211"/>
+														</PictureDecoration>
+														<LabelDecoration name="ПредупреждениеЕНВДНеПрименяется" id="4212">
+															<AutoMaxWidth>false</AutoMaxWidth>
+															<TextColor>style:SpecialTextColor</TextColor>
+															<Title formatted="false">
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>С 01.01.2021 года ЕНВД не применяется.</v8:content>
+																</v8:item>
+															</Title>
+															<ContextMenu name="ПредупреждениеЕНВДНеПрименяетсяКонтекстноеМеню" id="4213"/>
+															<ExtendedTooltip name="ПредупреждениеЕНВДНеПрименяетсяРасширеннаяПодсказка" id="4214"/>
+														</LabelDecoration>
+														<LabelDecoration name="ПредупреждениеЕНВДУказатьДействующуюСистему" id="4215">
+															<AutoMaxWidth>false</AutoMaxWidth>
+															<TextColor>style:SpecialTextColor</TextColor>
+															<Title formatted="false">
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Укажите действующую систему налогообложения.</v8:content>
+																</v8:item>
+															</Title>
+															<ContextMenu name="ПредупреждениеЕНВДУказатьДействующуюСистемуКонтекстноеМеню" id="4216"/>
+															<ExtendedTooltip name="ПредупреждениеЕНВДУказатьДействующуюСистемуРасширеннаяПодсказка" id="4217"/>
+														</LabelDecoration>
+														<LabelDecoration name="ПредупреждениеЕНВДОбратитесьКСотруднику" id="4218">
+															<AutoMaxWidth>false</AutoMaxWidth>
+															<TextColor>style:SpecialTextColor</TextColor>
+															<Title formatted="false">
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Обратититесь к сотруднику, имеющему право настройки системы налогообложения.</v8:content>
+																</v8:item>
+															</Title>
+															<ContextMenu name="ПредупреждениеЕНВДОбратитесьКСотрудникуКонтекстноеМеню" id="4219"/>
+															<ExtendedTooltip name="ПредупреждениеЕНВДОбратитесьКСотрудникуРасширеннаяПодсказка" id="4220"/>
+														</LabelDecoration>
+													</ChildItems>
+												</UsualGroup>
 												<UsualGroup name="ГруппаНастройкиСистемыНалогообложения" id="3390">
 													<Group>Vertical</Group>
 													<VerticalSpacing>Double</VerticalSpacing>
@@ -829,7 +894,7 @@
 																				<Presentation>
 																					<v8:item>
 																						<v8:lang>ru</v8:lang>
-																						<v8:content>Только ЕНВД</v8:content>
+																						<v8:content>Только ЕНВД (до конца 2020 года)</v8:content>
 																					</v8:item>
 																				</Presentation>
 																				<Value xsi:type="xs:decimal">4</Value>
@@ -851,6 +916,33 @@
 																	</ChoiceList>
 																	<ContextMenu name="СистемаНалогообложенияПредставлениеКонтекстноеМеню" id="3395"/>
 																	<ExtendedTooltip name="СистемаНалогообложенияПредставлениеРасширеннаяПодсказка" id="3396"/>
+																	<Events>
+																		<Event name="OnChange">СистемаНалогообложенияПредставлениеПриИзменении</Event>
+																	</Events>
+																</RadioButtonField>
+																<RadioButtonField name="СистемаНалогообложенияТолькоЕНВДПредставление" id="4206">
+																	<DataPath>СистемаНалогообложенияПредставление</DataPath>
+																	<ReadOnly>true</ReadOnly>
+																	<TitleLocation>None</TitleLocation>
+																	<RadioButtonType>RadioButtons</RadioButtonType>
+																	<ColumnsCount>1</ColumnsCount>
+																	<ChoiceList>
+																		<xr:Item>
+																			<xr:Presentation/>
+																			<xr:CheckState>0</xr:CheckState>
+																			<xr:Value xsi:type="FormChoiceListDesTimeValue">
+																				<Presentation>
+																					<v8:item>
+																						<v8:lang>ru</v8:lang>
+																						<v8:content>Только ЕНВД (до конца 2020 года)</v8:content>
+																					</v8:item>
+																				</Presentation>
+																				<Value xsi:type="xs:decimal">4</Value>
+																			</xr:Value>
+																		</xr:Item>
+																	</ChoiceList>
+																	<ContextMenu name="СистемаНалогообложенияТолькоЕНВДПредставлениеКонтекстноеМеню" id="4207"/>
+																	<ExtendedTooltip name="СистемаНалогообложенияТолькоЕНВДПредставлениеРасширеннаяПодсказка" id="4208"/>
 																	<Events>
 																		<Event name="OnChange">СистемаНалогообложенияПредставлениеПриИзменении</Event>
 																	</Events>
@@ -941,7 +1033,7 @@
 																					<Title>
 																						<v8:item>
 																							<v8:lang>ru</v8:lang>
-																							<v8:content>ЕНВД</v8:content>
+																							<v8:content>ЕНВД (до конца 2020 года)</v8:content>
 																						</v8:item>
 																					</Title>
 																					<TitleLocation>Right</TitleLocation>
@@ -954,7 +1046,17 @@
 																					<ToolTipRepresentation>Button</ToolTipRepresentation>
 																					<CheckBoxType>Auto</CheckBoxType>
 																					<ContextMenu name="НастройкиСистемыНалогообложенияПлательщикЕНВДКонтекстноеМеню" id="3404"/>
-																					<ExtendedTooltip name="НастройкиСистемыНалогообложенияПлательщикЕНВДРасширеннаяПодсказка" id="3405"/>
+																					<ExtendedTooltip name="НастройкиСистемыНалогообложенияПлательщикЕНВДРасширеннаяПодсказка" id="3405">
+																						<Title formatted="true">
+																							<v8:item>
+																								<v8:lang>ru</v8:lang>
+																								<v8:content>Является плательщиком единого налога на вмененный доход (ЕНВД).
+
+С 1 января 2021 года ЕНВД не применяется согласно Федеральному закону от 29 июня 2012 г. N &lt;link https://its.1c.ru/db/content/garant/src/d02781/i0556385.htm#58&gt;97-ФЗ&lt;/&gt;
+(в редакции Федерального закона от 2 июня 2016 г. N &lt;link https://its.1c.ru/db/content/garant/src/d04721/i0944275.htm#2&gt;178-ФЗ&lt;/&gt;).</v8:content>
+																							</v8:item>
+																						</Title>
+																					</ExtendedTooltip>
 																					<Events>
 																						<Event name="OnChange">НастройкиСистемыНалогообложенияПриИзменении</Event>
 																					</Events>
@@ -4818,6 +4920,33 @@
 													<ContextMenu name="Заголовок_ЕНВДКонтекстноеМеню" id="135"/>
 													<ExtendedTooltip name="Заголовок_ЕНВДРасширеннаяПодсказка" id="136"/>
 												</LabelDecoration>
+												<UsualGroup name="ГруппаЕНВДОтменяется" id="4221">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>ЕНВД отменяется</v8:content>
+														</v8:item>
+													</Title>
+													<HorizontalStretch>true</HorizontalStretch>
+													<Group>AlwaysHorizontal</Group>
+													<Representation>NormalSeparation</Representation>
+													<ShowTitle>false</ShowTitle>
+													<BackColor>style:ЦветБаннераБежевый</BackColor>
+													<ExtendedTooltip name="ГруппаЕНВДОтменяетсяРасширеннаяПодсказка" id="4222"/>
+													<ChildItems>
+														<LabelDecoration name="ДекорацияЕНВДОтменяется" id="4223">
+															<AutoMaxWidth>false</AutoMaxWidth>
+															<Title formatted="true">
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>С 01.01.2021 года ЕНВД не применяется. &lt;link https://buh.ru/otmena_envd&gt;Подробная информация&lt;/&gt;</v8:content>
+																</v8:item>
+															</Title>
+															<ContextMenu name="ДекорацияЕНВДОтменяетсяКонтекстноеМеню" id="4224"/>
+															<ExtendedTooltip name="ДекорацияЕНВДОтменяетсяРасширеннаяПодсказка" id="4225"/>
+														</LabelDecoration>
+													</ChildItems>
+												</UsualGroup>
 												<UsualGroup name="ГруппаВидыДеятельностиЕНВД_ВспомогательныеНастройки" id="2810">
 													<Title>
 														<v8:item>
@@ -5218,6 +5347,26 @@
 																								<Event name="OnChange">ДатаИзмененияЧисломПриИзменении</Event>
 																							</Events>
 																						</InputField>
+																						<InputField name="ДатаИзменения_НастройкиУчетаСтраховыхВзносовИП" id="4226">
+																							<DataPath>ДатаИзменения</DataPath>
+																							<Title>
+																								<v8:item>
+																									<v8:lang>ru</v8:lang>
+																									<v8:content>Применяется с</v8:content>
+																								</v8:item>
+																							</Title>
+																							<EditFormat>
+																								<v8:item>
+																									<v8:lang>ru</v8:lang>
+																									<v8:content>ЧГ=</v8:content>
+																								</v8:item>
+																							</EditFormat>
+																							<ContextMenu name="ДатаИзменения_НастройкиУчетаСтраховыхВзносовИПКонтекстноеМеню" id="4227"/>
+																							<ExtendedTooltip name="ДатаИзменения_НастройкиУчетаСтраховыхВзносовИПРасширеннаяПодсказка" id="4200"/>
+																							<Events>
+																								<Event name="OnChange">ДатаИзмененияПриИзменении</Event>
+																							</Events>
+																						</InputField>
 																						<Button name="ОК_НастройкиУчетаСтраховыхВзносовИП" id="3277">
 																							<Type>UsualButton</Type>
 																							<CommandName>Form.Command._ОК</CommandName>
@@ -5270,117 +5419,22 @@
 															<Representation>None</Representation>
 															<ExtendedTooltip name="СписокСтраховыхВзносовИПРасширеннаяПодсказка" id="3602"/>
 															<ChildItems>
-																<UsualGroup name="ПФР" id="3603">
-																	<EnableContentChange>true</EnableContentChange>
+																<CheckBoxField name="УплачиватьСтраховыеВзносыПФР_ФФОМС" id="4201">
+																	<DataPath>НастройкиУчетаСтраховыхВзносовИП_ПФР_ФФОМС.ПлательщикСтраховыхВзносовПФР_ФФОМС</DataPath>
 																	<Title>
 																		<v8:item>
 																			<v8:lang>ru</v8:lang>
-																			<v8:content>ПФР</v8:content>
+																			<v8:content>ПФР и ФФОМС</v8:content>
 																		</v8:item>
 																	</Title>
-																	<ToolTip>
-																		<v8:item>
-																			<v8:lang>ru</v8:lang>
-																			<v8:content>ПФР</v8:content>
-																		</v8:item>
-																	</ToolTip>
-																	<Group>Horizontal</Group>
-																	<Representation>None</Representation>
-																	<ShowTitle>false</ShowTitle>
-																	<ExtendedTooltip name="ПФРРасширеннаяПодсказка" id="3604"/>
-																	<ChildItems>
-																		<PictureDecoration name="ФлажокПФР" id="3605">
-																			<Width>1</Width>
-																			<Height>1</Height>
-																			<Title formatted="false">
-																				<v8:item>
-																					<v8:lang>ru</v8:lang>
-																					<v8:content>Флажок ПФР</v8:content>
-																				</v8:item>
-																			</Title>
-																			<Picture>
-																				<xr:Ref>CommonPicture.ФлажокУзкий</xr:Ref>
-																				<xr:LoadTransparent>false</xr:LoadTransparent>
-																			</Picture>
-																			<FileDragMode>AsFile</FileDragMode>
-																			<ContextMenu name="ФлажокПФРКонтекстноеМеню" id="3606"/>
-																			<ExtendedTooltip name="ФлажокПФРРасширеннаяПодсказка" id="3607"/>
-																		</PictureDecoration>
-																		<LabelDecoration name="ДекорацияПФР" id="3608">
-																			<TextColor>style:ButtonTextColor</TextColor>
-																			<Title formatted="false">
-																				<v8:item>
-																					<v8:lang>ru</v8:lang>
-																					<v8:content>ПФР</v8:content>
-																				</v8:item>
-																			</Title>
-																			<ToolTip>
-																				<v8:item>
-																					<v8:lang>ru</v8:lang>
-																					<v8:content>Пенсионный фонд Российской Федерации</v8:content>
-																				</v8:item>
-																			</ToolTip>
-																			<ContextMenu name="ДекорацияПФРКонтекстноеМеню" id="3609"/>
-																			<ExtendedTooltip name="ДекорацияПФРРасширеннаяПодсказка" id="3610"/>
-																		</LabelDecoration>
-																	</ChildItems>
-																</UsualGroup>
-																<UsualGroup name="ФФОМС" id="3611">
-																	<EnableContentChange>true</EnableContentChange>
-																	<Title>
-																		<v8:item>
-																			<v8:lang>ru</v8:lang>
-																			<v8:content>ФФОМС</v8:content>
-																		</v8:item>
-																	</Title>
-																	<ToolTip>
-																		<v8:item>
-																			<v8:lang>ru</v8:lang>
-																			<v8:content>ФФОМС</v8:content>
-																		</v8:item>
-																	</ToolTip>
-																	<Group>Horizontal</Group>
-																	<Representation>None</Representation>
-																	<ShowTitle>false</ShowTitle>
-																	<ExtendedTooltip name="ФФОМСРасширеннаяПодсказка" id="3612"/>
-																	<ChildItems>
-																		<PictureDecoration name="ФлажокФФОМС" id="3613">
-																			<Width>1</Width>
-																			<Height>1</Height>
-																			<Title formatted="false">
-																				<v8:item>
-																					<v8:lang>ru</v8:lang>
-																					<v8:content>Флажок ФФОМС</v8:content>
-																				</v8:item>
-																			</Title>
-																			<Picture>
-																				<xr:Ref>CommonPicture.ФлажокУзкий</xr:Ref>
-																				<xr:LoadTransparent>false</xr:LoadTransparent>
-																			</Picture>
-																			<FileDragMode>AsFile</FileDragMode>
-																			<ContextMenu name="ФлажокФФОМСКонтекстноеМеню" id="3614"/>
-																			<ExtendedTooltip name="ФлажокФФОМСРасширеннаяПодсказка" id="3615"/>
-																		</PictureDecoration>
-																		<LabelDecoration name="ДекорацияФФОМС" id="3616">
-																			<TextColor>style:ButtonTextColor</TextColor>
-																			<Title formatted="false">
-																				<v8:item>
-																					<v8:lang>ru</v8:lang>
-																					<v8:content>ФФОМС</v8:content>
-																				</v8:item>
-																			</Title>
-																			<ToolTip>
-																				<v8:item>
-																					<v8:lang>ru</v8:lang>
-																					<v8:content>Федеральный фонд обязательного медицинского страхования
-</v8:content>
-																				</v8:item>
-																			</ToolTip>
-																			<ContextMenu name="ДекорацияФФОМСКонтекстноеМеню" id="3617"/>
-																			<ExtendedTooltip name="ДекорацияФФОМСРасширеннаяПодсказка" id="3618"/>
-																		</LabelDecoration>
-																	</ChildItems>
-																</UsualGroup>
+																	<TitleLocation>Right</TitleLocation>
+																	<CheckBoxType>Auto</CheckBoxType>
+																	<ContextMenu name="УплачиватьСтраховыеВзносыПФР_ФФОМСКонтекстноеМеню" id="4202"/>
+																	<ExtendedTooltip name="УплачиватьСтраховыеВзносыПФР_ФФОМСРасширеннаяПодсказка" id="4203"/>
+																	<Events>
+																		<Event name="OnChange">НастройкиУчетаСтраховыхВзносовИП_ПФР_ФФОМСПлательщикСтраховыхВзносовПФР_ФФОМСПриИзменении</Event>
+																	</Events>
+																</CheckBoxField>
 																<CheckBoxField name="УплачиватьДобровольныеВзносыВФСС" id="3619">
 																	<DataPath>НастройкиУчетаСтраховыхВзносовИП.УплачиватьДобровольныеВзносыВФСС</DataPath>
 																	<Title>
@@ -8657,6 +8711,51 @@
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Деятельность отнесена к пострадавшим от коронавируса</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПрименяетсяТолькоЕНВДПослеОтменыНаМоментОткрытия" id="43">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Применяется только ЕНВДПосле отмены на момент открытия</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="НастройкиУчетаСтраховыхВзносовИП_ПФР_ФФОМС" id="44">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки учета страховых взносов ИП (ПФР и ФФОМС)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:InformationRegisterRecordManager.НастройкиУчетаСтраховыхВзносовИП_ПФР_ФФОМС</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="НастройкиВзносовИП_ПФР_ФФОМСИзменены" id="49">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки ПФР ФФОМС изменены</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="НастройкиВзносовИП_ФССИзменены" id="51">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки ФСС изменены</v8:content>
 				</v8:item>
 			</Title>
 			<Type>

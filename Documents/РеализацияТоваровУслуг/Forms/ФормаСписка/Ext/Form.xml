@@ -539,18 +539,18 @@
 									<DataPath>Items.Список.CurrentData.Ссылка</DataPath>
 									<ExtendedTooltip name="ОбщаяКомандаДополнительныеСведенияКоманднаяПанельРасширеннаяПодсказка" id="136"/>
 								</Button>
+								<Button name="ФормаОбщаяКомандаФискальныеОперацииПоДокументу" id="283">
+									<Type>CommandBarButton</Type>
+									<CommandName>CommonCommand.ФискальныеОперацииПоДокументу</CommandName>
+									<DataPath>Items.Список.CurrentData.Ссылка</DataPath>
+									<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+									<ExtendedTooltip name="ФормаОбщаяКомандаФискальныеОперацииПоДокументуРасширеннаяПодсказка" id="284"/>
+								</Button>
 								<Button name="ОбщаяКомандаИсторияИзменений" id="137">
 									<Type>CommandBarButton</Type>
 									<CommandName>CommonCommand.ИсторияИзменений</CommandName>
 									<DataPath>Items.Список.CurrentData.Ссылка</DataPath>
 									<ExtendedTooltip name="ОбщаяКомандаИсторияИзмененийРасширеннаяПодсказка" id="138"/>
-								</Button>
-								<Button name="ФормаОбщаяКомандаФискальныеОперацииПоДокументу" id="280">
-									<Type>CommandBarButton</Type>
-									<CommandName>CommonCommand.ФискальныеОперацииПоДокументу</CommandName>
-									<DataPath>Items.Список.CurrentData.Ссылка</DataPath>
-									<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
-									<ExtendedTooltip name="ФормаОбщаяКомандаФискальныеОперацииПоДокументуРасширеннаяПодсказка" id="281"/>
 								</Button>
 								<Popup name="ПодменюЗаполнить" id="197">
 									<Title>
@@ -883,6 +883,18 @@
 					<ContextMenu name="СчетФактураКонтекстноеМеню" id="223"/>
 					<ExtendedTooltip name="СчетФактураРасширеннаяПодсказка" id="224"/>
 				</LabelField>
+				<LabelField name="НомерСФУПД" id="280">
+					<DataPath>Список.НомерСФУПД</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>№ СФ/УПД</v8:content>
+						</v8:item>
+					</Title>
+					<Width>10</Width>
+					<ContextMenu name="НомерСФУПДКонтекстноеМеню" id="281"/>
+					<ExtendedTooltip name="НомерСФУПДРасширеннаяПодсказка" id="282"/>
+				</LabelField>
 				<LabelField name="Склад" id="40">
 					<DataPath>Список.Склад</DataPath>
 					<Title>
@@ -955,7 +967,7 @@
 			</UseAlways>
 			<Settings xsi:type="DynamicList">
 				<ManualQuery>true</ManualQuery>
-				<DynamicDataRead>true</DynamicDataRead>
+				<DynamicDataRead>false</DynamicDataRead>
 				<QueryText>ВЫБРАТЬ
 	ВЫБОР
 		КОГДА ДокументРеализацияТоваровУслуг.РучнаяКорректировка = ИСТИНА
@@ -994,6 +1006,7 @@
 			ТОГДА ИСТИНА
 		ИНАЧЕ ЛОЖЬ
 	КОНЕЦ КАК Подписан,
+	СтатусыДокументов.НомерСчетаФактуры КАК НомерСФУПД,
 	СостоянияЭД.СостояниеВерсииЭД КАК СостояниеВерсииЭД,
 	ВЫБОР
 		КОГДА ДокументыСОшибкамиПроверкиКонтрагентов.Документ ЕСТЬ NULL
@@ -1275,7 +1288,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Товары (накладная)</v8:content>
+					<v8:content>Товары</v8:content>
 				</v8:item>
 			</Title>
 			<Action>СоздатьРеализацияТовары</Action>
@@ -1285,7 +1298,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Услуги (акт)</v8:content>
+					<v8:content>Услуги</v8:content>
 				</v8:item>
 			</Title>
 			<Action>СоздатьРеализацияУслуги</Action>

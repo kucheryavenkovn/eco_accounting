@@ -2235,7 +2235,6 @@
 							</AutoCommandBar>
 							<ExtendedTooltip name="БилетыРасширеннаяПодсказка" id="617">
 								<AutoMaxWidth>false</AutoMaxWidth>
-								<HorizontalStretch>true</HorizontalStretch>
 								<Title formatted="false">
 									<v8:item>
 										<v8:lang>ru</v8:lang>
@@ -2268,7 +2267,9 @@
 								<ExtendedTooltip name="БилетыУправлениеПоискомРасширеннаяПодсказка" id="626"/>
 							</SearchControlAddition>
 							<Events>
+								<Event name="OnEditEnd">БилетыПриОкончанииРедактирования</Event>
 								<Event name="BeforeRowChange">БилетыПередНачаломИзменения</Event>
+								<Event name="AfterDeleteRow">БилетыПослеУдаления</Event>
 							</Events>
 							<ChildItems>
 								<LabelField name="БилетыНомерСтроки" id="627">
@@ -3170,6 +3171,77 @@
 					<ShowTitle>false</ShowTitle>
 					<ExtendedTooltip name="ГруппаИтогиПоДокументуExtendedTooltip" id="465"/>
 					<ChildItems>
+						<UsualGroup name="ГруппаБаннерУчетБилетовИПнаОСНО" id="774">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Баннер: учет билетов ИП на ОСНО</v8:content>
+								</v8:item>
+							</Title>
+							<HorizontalStretch>false</HorizontalStretch>
+							<VerticalStretch>false</VerticalStretch>
+							<Group>AlwaysHorizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<BackColor>style:БыстрыеОтборыФонГруппы</BackColor>
+							<ExtendedTooltip name="ГруппаБаннерУчетБилетовИПнаОСНОРасширеннаяПодсказка" id="775"/>
+							<ChildItems>
+								<LabelDecoration name="ТекстБаннера" id="776">
+									<HorizontalStretch>false</HorizontalStretch>
+									<Title formatted="true">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Убедитесь, что билеты оплачены</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTipRepresentation>Button</ToolTipRepresentation>
+									<ContextMenu name="ТекстБаннераКонтекстноеМеню" id="777"/>
+									<ExtendedTooltip name="ТекстБаннераРасширеннаяПодсказка" id="778">
+										<Width>30</Width>
+										<MaxWidth>30</MaxWidth>
+										<Title formatted="true">
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>ИП может принять к вычету и отразить в КУДиР только оплаченные расходы 
+(см. Письмо Минфина России от 16.04.2012 N 03-04-05/8-512). 
+Поэтому билеты, которые на момент оформления авансового отчета не были 
+оплачены перевозчику (агенту), в расходы включать нельзя.
+
+Подробнее на ИТС:
+&lt;link https://its.1c.ru/bmk/bp30/tickets_ip_osno&gt;Как учесть расходы на билеты ИП на ОСНО?&lt;/&gt;</v8:content>
+											</v8:item>
+										</Title>
+									</ExtendedTooltip>
+								</LabelDecoration>
+								<PictureDecoration name="КартинкаЗакрытьБаннер" id="779">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Х</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Скрыть баннер</v8:content>
+										</v8:item>
+									</ToolTip>
+									<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+									<GroupVerticalAlign>Top</GroupVerticalAlign>
+									<Hyperlink>true</Hyperlink>
+									<Picture>
+										<xr:Ref>StdPicture.InputFieldClear</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
+									<FileDragMode>AsFile</FileDragMode>
+									<ContextMenu name="КартинкаЗакрытьБаннерКонтекстноеМеню" id="780"/>
+									<ExtendedTooltip name="КартинкаЗакрытьБаннерРасширеннаяПодсказка" id="781"/>
+									<Events>
+										<Event name="Click">КартинкаЗакрытьБаннерНажатие</Event>
+									</Events>
+								</PictureDecoration>
+							</ChildItems>
+						</UsualGroup>
 						<UsualGroup name="ГруппаИтоги" id="525">
 							<Title>
 								<v8:item>
@@ -3204,7 +3276,7 @@
 											<VerticalAlign>Top</VerticalAlign>
 											<GroupHorizontalAlign>Right</GroupHorizontalAlign>
 											<GroupVerticalAlign>Top</GroupVerticalAlign>
-											<Width>15</Width>
+											<Width>14</Width>
 											<HorizontalStretch>false</HorizontalStretch>
 											<ContextMenu name="ТипИтогаОстаткаАвансовКонтекстноеМеню" id="700"/>
 											<ExtendedTooltip name="ТипИтогаОстаткаАвансовРасширеннаяПодсказка" id="701"/>
@@ -3262,7 +3334,7 @@
 													<v8:content>Расходы</v8:content>
 												</v8:item>
 											</Title>
-											<Width>11</Width>
+											<Width>9</Width>
 											<HorizontalStretch>false</HorizontalStretch>
 											<Format>
 												<v8:item>
@@ -3307,7 +3379,7 @@
 												</v8:item>
 											</Title>
 											<TitleLocation>None</TitleLocation>
-											<Width>10</Width>
+											<Width>9</Width>
 											<HorizontalStretch>false</HorizontalStretch>
 											<Format>
 												<v8:item>

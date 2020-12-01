@@ -389,17 +389,39 @@
 									<CommandName>Form.StandardCommand.Copy</CommandName>
 									<ExtendedTooltip name="СкопироватьРасширеннаяПодсказка" id="58"/>
 								</Button>
-								<Button name="ОбщаяКомандаРаспознаваниеДокументовБП" id="153">
-									<Type>CommandBarButton</Type>
-									<CommandName>CommonCommand.РаспознаваниеДокументовБП</CommandName>
+								<Popup name="ГруппаЗагрузить" id="153">
 									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
-											<v8:content>Загрузить из скана (фото)</v8:content>
+											<v8:content>Загрузить</v8:content>
 										</v8:item>
 									</Title>
-									<ExtendedTooltip name="ОбщаяКомандаРаспознаваниеДокументовБПРасширеннаяПодсказка" id="154"/>
-								</Button>
+									<ExtendedTooltip name="ГруппаЗагрузитьРасширеннаяПодсказка" id="154"/>
+									<ChildItems>
+										<Button name="ОбщаяКомандаРаспознаваниеДокументовБП" id="155">
+											<Type>CommandBarButton</Type>
+											<CommandName>CommonCommand.РаспознаваниеДокументовБП</CommandName>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Из скана (фото)</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ОбщаяКомандаРаспознаваниеДокументовБПРасширеннаяПодсказка" id="156"/>
+										</Button>
+										<Button name="ЗагрузитьИзИнтернетМагазина" id="157">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.Command.ЗагрузитьИзИнтернетМагазина</CommandName>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Из интернет-магазина</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ЗагрузитьИзИнтернетМагазинаРасширеннаяПодсказка" id="158"/>
+										</Button>
+									</ChildItems>
+								</Popup>
 							</ChildItems>
 						</ButtonGroup>
 						<Popup name="ПодменюПечать" id="83">
@@ -596,6 +618,80 @@
 				</LabelDecoration>
 			</ChildItems>
 		</UsualGroup>
+		<UsualGroup name="ГруппаРезультатОбменаСИнтернетМагазином" id="159">
+			<Visible>false</Visible>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>остояние загрузки интернет магазина</v8:content>
+				</v8:item>
+			</Title>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>Horizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<BackColor>style:БыстрыеОтборыФонГруппы</BackColor>
+			<ExtendedTooltip name="ГруппаРезультатОбменаСИнтернетМагазиномРасширеннаяПодсказка" id="160"/>
+			<ChildItems>
+				<LabelDecoration name="ТекстРезультатОбменаСИнтернетМагазином" id="161">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<HorizontalStretch>true</HorizontalStretch>
+					<Title formatted="true">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Загрузка выполнена успешно!</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ТекстРезультатОбменаСИнтернетМагазиномКонтекстноеМеню" id="162"/>
+					<ExtendedTooltip name="ТекстРезультатОбменаСИнтернетМагазиномРасширеннаяПодсказка" id="163"/>
+					<Events>
+						<Event name="URLProcessing">ТекстРезультатОбменаСИнтернетМагазиномОбработкаНавигационнойСсылки</Event>
+					</Events>
+				</LabelDecoration>
+				<UsualGroup name="ГруппаСкрытьРезультатОбменаСИнтернетМагазином" id="164">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Скрыть</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Скрыть</v8:content>
+						</v8:item>
+					</ToolTip>
+					<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+					<GroupVerticalAlign>Center</GroupVerticalAlign>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаСкрытьРезультатОбменаСИнтернетМагазиномРасширеннаяПодсказка" id="165"/>
+					<ChildItems>
+						<PictureDecoration name="СкрытьРезультатОбменаСИнтернетМагазином" id="166">
+							<Width>1</Width>
+							<Height>1</Height>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Скрыть результат обмена с интернет магазином</v8:content>
+								</v8:item>
+							</Title>
+							<Hyperlink>true</Hyperlink>
+							<Picture>
+								<xr:Ref>StdPicture.InputFieldClear</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</Picture>
+							<FileDragMode>AsFile</FileDragMode>
+							<ContextMenu name="СкрытьРезультатОбменаСИнтернетМагазиномКонтекстноеМеню" id="167"/>
+							<ExtendedTooltip name="СкрытьРезультатОбменаСИнтернетМагазиномРасширеннаяПодсказка" id="168"/>
+							<Events>
+								<Event name="Click">СкрытьРезультатОбменаСИнтернетМагазиномНажатие</Event>
+							</Events>
+						</PictureDecoration>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
 		<Table name="Список" id="3">
 			<Representation>List</Representation>
 			<CommandBarLocation>None</CommandBarLocation>
@@ -748,6 +844,8 @@
 	ВЫБОР
 		КОГДА ЖурналДокументовДокументы.Тип = ТИП(Документ.РеализацияТоваровУслуг)
 			ТОГДА ВЫБОР
+					КОГДА ЖурналДокументовДокументы.УПД
+						ТОГДА &amp;ПредставлениеДокументаУПДРеализация
 					КОГДА ЖурналДокументовДокументы.ВидОперации = ЗНАЧЕНИЕ(Перечисление.ВидыОперацийРеализацияТоваров.Услуги)
 						ТОГДА &amp;ПредставлениеДокументаАктРеализация
 					КОГДА ЖурналДокументовДокументы.ВидОперации = ЗНАЧЕНИЕ(Перечисление.ВидыОперацийРеализацияТоваров.Товары)
@@ -756,6 +854,13 @@
 				КОНЕЦ
 		КОГДА ЖурналДокументовДокументы.Тип = ТИП(Документ.ПоступлениеТоваровУслуг)
 			ТОГДА ВЫБОР
+					КОГДА ЖурналДокументовДокументы.УПД
+						ТОГДА
+							ВЫБОР 
+								КОГДА ЖурналДокументовДокументы.ВидОперации = ЗНАЧЕНИЕ(Перечисление.ВидыОперацийПоступлениеТоваровУслуг.Топливо)
+									ТОГДА &amp;ПредставлениеДокументаУПДТопливо
+								ИНАЧЕ &amp;ПредставлениеДокументаУПДПоступление
+							КОНЕЦ
 					КОГДА ЖурналДокументовДокументы.ВидОперации = ЗНАЧЕНИЕ(Перечисление.ВидыОперацийПоступлениеТоваровУслуг.Услуги)
 						ТОГДА &amp;ПредставлениеДокументаАктПоступление
 					КОГДА ЖурналДокументовДокументы.ВидОперации = ЗНАЧЕНИЕ(Перечисление.ВидыОперацийПоступлениеТоваровУслуг.Товары)
@@ -880,6 +985,18 @@
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
+		<Attribute name="РезультатОбменаСИнтернетМагазином" id="9">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<FunctionalOptions>
+				<Item>FunctionalOption.ИспользоватьОбменСИнтернетМагазином</Item>
+			</FunctionalOptions>
+		</Attribute>
 	</Attributes>
 	<Commands>
 		<Command name="СоздатьСчетПокупателю" id="1">
@@ -899,7 +1016,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Акт (реализация)</v8:content>
+					<v8:content>Акт или УПД (реализация)</v8:content>
 				</v8:item>
 			</Title>
 			<Action>СоздатьАктРеализация</Action>
@@ -912,7 +1029,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Накладная (реализация)</v8:content>
+					<v8:content>Накладная или УПД (реализация)</v8:content>
 				</v8:item>
 			</Title>
 			<Action>СоздатьНакладнуюРеализация</Action>
@@ -925,7 +1042,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Акт (поступление)</v8:content>
+					<v8:content>Акт или УПД (поступление)</v8:content>
 				</v8:item>
 			</Title>
 			<Action>СоздатьАктПоступление</Action>
@@ -938,7 +1055,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Накладная (поступление)</v8:content>
+					<v8:content>Накладная или УПД (поступление)</v8:content>
 				</v8:item>
 			</Title>
 			<Action>СоздатьНакладнуюПоступление</Action>
@@ -1024,6 +1141,25 @@
 			<Action>ПоказатьКонтекстныеНовости</Action>
 			<FunctionalOptions>
 				<Item>FunctionalOption.РазрешенаРаботаСНовостями</Item>
+			</FunctionalOptions>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ЗагрузитьИзИнтернетМагазина" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить из интернет-магазина</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить заказы из интернет-магазина</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗагрузитьИзИнтернетМагазина</Action>
+			<FunctionalOptions>
+				<Item>FunctionalOption.ИспользоватьОбменСИнтернетМагазином</Item>
 			</FunctionalOptions>
 			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>

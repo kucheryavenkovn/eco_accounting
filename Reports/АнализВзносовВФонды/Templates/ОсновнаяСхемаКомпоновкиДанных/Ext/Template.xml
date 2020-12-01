@@ -312,34 +312,6 @@
 					</valueType>
 				</field>
 				<field xsi:type="DataSetFieldField">
-					<dataPath>НачисленоВсего</dataPath>
-					<field>НачисленоВсего</field>
-					<title xsi:type="v8:LocalStringType">
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Начислено всего</v8:content>
-						</v8:item>
-					</title>
-					<valueType>
-						<v8:Type>xs:decimal</v8:Type>
-						<v8:NumberQualifiers>
-							<v8:Digits>0</v8:Digits>
-							<v8:FractionDigits>0</v8:FractionDigits>
-							<v8:AllowedSign>Any</v8:AllowedSign>
-						</v8:NumberQualifiers>
-					</valueType>
-					<appearance>
-						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:parameter>Формат</dcscor:parameter>
-							<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
-						</dcscor:item>
-						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:parameter>ВыделятьОтрицательные</dcscor:parameter>
-							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
-						</dcscor:item>
-					</appearance>
-				</field>
-				<field xsi:type="DataSetFieldField">
 					<dataPath>НеОблагаетсяПФР</dataPath>
 					<field>НеОблагаетсяПФР</field>
 					<title xsi:type="v8:LocalStringType">
@@ -936,6 +908,34 @@
 						<v8:Type xmlns:d7p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d7p1:CatalogRef.ПодразделенияОрганизаций</v8:Type>
 					</valueType>
 				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>НачисленоВсегоПФР</dataPath>
+					<field>НачисленоВсегоПФР</field>
+					<title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Начислено всего</v8:content>
+						</v8:item>
+					</title>
+					<valueType>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>0</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</valueType>
+					<appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ВыделятьОтрицательные</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+					</appearance>
+				</field>
 				<dataSource>ДанныеПФР</dataSource>
 				<objectName>ДанныеПФР</objectName>
 			</dataSet>
@@ -1064,10 +1064,6 @@
 				</valueType>
 			</calculatedField>
 			<totalField>
-				<dataPath>НачисленоВсего</dataPath>
-				<expression>Сумма(НачисленоВсего)</expression>
-			</totalField>
-			<totalField>
 				<dataPath>НеОблагаетсяПФР</dataPath>
 				<expression>Сумма(НеОблагаетсяПФР)</expression>
 			</totalField>
@@ -1163,6 +1159,10 @@
 				<dataPath>ПФРПоДополнительномуТарифу</dataPath>
 				<expression>Сумма(ПФРПоДополнительномуТарифу)</expression>
 			</totalField>
+			<totalField>
+				<dataPath>НачисленоВсегоПФР</dataPath>
+				<expression>Сумма(НачисленоВсегоПФР)</expression>
+			</totalField>
 			<parameter>
 				<name>Период</name>
 				<title xsi:type="v8:LocalStringType">
@@ -1234,7 +1234,7 @@
 							<dcsset:field>ВидРасчета</dcsset:field>
 						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>НачисленоВсего</dcsset:field>
+							<dcsset:field>НачисленоВсегоПФР</dcsset:field>
 						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:SelectedItemField">
 							<dcsset:field>НеОблагаетсяПФР</dcsset:field>
@@ -1299,7 +1299,7 @@
 						<dcsset:item>
 							<dcsset:selection>
 								<dcsset:item>
-									<dcsset:field>НачисленоВсего</dcsset:field>
+									<dcsset:field>НачисленоВсегоПФР</dcsset:field>
 								</dcsset:item>
 								<dcsset:item>
 									<dcsset:field>НеОблагаетсяПФР</dcsset:field>
@@ -1523,34 +1523,6 @@
 					<valueType>
 						<v8:Type xmlns:d7p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d7p1:CatalogRef.ВидыТарифовСтраховыхВзносов</v8:Type>
 					</valueType>
-				</field>
-				<field xsi:type="DataSetFieldField">
-					<dataPath>НачисленоВсего</dataPath>
-					<field>НачисленоВсего</field>
-					<title xsi:type="v8:LocalStringType">
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Начислено всего</v8:content>
-						</v8:item>
-					</title>
-					<valueType>
-						<v8:Type>xs:decimal</v8:Type>
-						<v8:NumberQualifiers>
-							<v8:Digits>0</v8:Digits>
-							<v8:FractionDigits>0</v8:FractionDigits>
-							<v8:AllowedSign>Any</v8:AllowedSign>
-						</v8:NumberQualifiers>
-					</valueType>
-					<appearance>
-						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:parameter>Формат</dcscor:parameter>
-							<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
-						</dcscor:item>
-						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:parameter>ВыделятьОтрицательные</dcscor:parameter>
-							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
-						</dcscor:item>
-					</appearance>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>НеОблагаетсяФОМС</dataPath>
@@ -1823,6 +1795,34 @@
 						<v8:Type xmlns:d7p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d7p1:CatalogRef.ПодразделенияОрганизаций</v8:Type>
 					</valueType>
 				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>НачисленоВсегоФОМС</dataPath>
+					<field>НачисленоВсегоФОМС</field>
+					<title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Начислено всего</v8:content>
+						</v8:item>
+					</title>
+					<valueType>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>0</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</valueType>
+					<appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ВыделятьОтрицательные</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+					</appearance>
+				</field>
 				<dataSource>ДанныеФОМС</dataSource>
 				<objectName>ДанныеФОМС</objectName>
 			</dataSet>
@@ -1889,10 +1889,6 @@
 				</valueType>
 			</calculatedField>
 			<totalField>
-				<dataPath>НачисленоВсего</dataPath>
-				<expression>Сумма(НачисленоВсего)</expression>
-			</totalField>
-			<totalField>
 				<dataPath>НеОблагаетсяФОМС</dataPath>
 				<expression>Сумма(НеОблагаетсяФОМС)</expression>
 			</totalField>
@@ -1939,6 +1935,10 @@
 			<totalField>
 				<dataPath>НеЯвляетсяОбъектомИДоходыНезастрахованныхФОМС</dataPath>
 				<expression>Сумма(НеЯвляетсяОбъектомИДоходыНезастрахованныхФОМС)</expression>
+			</totalField>
+			<totalField>
+				<dataPath>НачисленоВсегоФОМС</dataPath>
+				<expression>Сумма(НачисленоВсегоФОМС)</expression>
 			</totalField>
 			<parameter>
 				<name>Период</name>
@@ -2011,7 +2011,7 @@
 							<dcsset:field>ВидРасчета</dcsset:field>
 						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>НачисленоВсего</dcsset:field>
+							<dcsset:field>НачисленоВсегоФОМС</dcsset:field>
 						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:SelectedItemField">
 							<dcsset:field>НеОблагаетсяФОМС</dcsset:field>
@@ -2071,7 +2071,7 @@
 						<dcsset:item>
 							<dcsset:selection>
 								<dcsset:item>
-									<dcsset:field>НачисленоВсего</dcsset:field>
+									<dcsset:field>НачисленоВсегоФОМС</dcsset:field>
 								</dcsset:item>
 								<dcsset:item>
 									<dcsset:field>НеОблагаетсяФОМС</dcsset:field>
@@ -2278,34 +2278,6 @@
 					<valueType>
 						<v8:Type xmlns:d7p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d7p1:CatalogRef.ВидыТарифовСтраховыхВзносов</v8:Type>
 					</valueType>
-				</field>
-				<field xsi:type="DataSetFieldField">
-					<dataPath>НачисленоВсего</dataPath>
-					<field>НачисленоВсего</field>
-					<title xsi:type="v8:LocalStringType">
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Начислено всего</v8:content>
-						</v8:item>
-					</title>
-					<valueType>
-						<v8:Type>xs:decimal</v8:Type>
-						<v8:NumberQualifiers>
-							<v8:Digits>0</v8:Digits>
-							<v8:FractionDigits>0</v8:FractionDigits>
-							<v8:AllowedSign>Any</v8:AllowedSign>
-						</v8:NumberQualifiers>
-					</valueType>
-					<appearance>
-						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:parameter>Формат</dcscor:parameter>
-							<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
-						</dcscor:item>
-						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-							<dcscor:parameter>ВыделятьОтрицательные</dcscor:parameter>
-							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
-						</dcscor:item>
-					</appearance>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>НеОблагаетсяФСС</dataPath>
@@ -2606,6 +2578,34 @@
 						<v8:Type xmlns:d7p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d7p1:CatalogRef.ПодразделенияОрганизаций</v8:Type>
 					</valueType>
 				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>НачисленоВсегоФСС</dataPath>
+					<field>НачисленоВсегоФСС</field>
+					<title xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Начислено всего</v8:content>
+						</v8:item>
+					</title>
+					<valueType>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>0</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</valueType>
+					<appearance>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>Формат</dcscor:parameter>
+							<dcscor:value xsi:type="xs:string">ЧДЦ=2</dcscor:value>
+						</dcscor:item>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>ВыделятьОтрицательные</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+					</appearance>
+				</field>
 				<dataSource>ДанныеФСС</dataSource>
 				<objectName>ДанныеФСС</objectName>
 			</dataSet>
@@ -2672,10 +2672,6 @@
 				</valueType>
 			</calculatedField>
 			<totalField>
-				<dataPath>НачисленоВсего</dataPath>
-				<expression>Сумма(НачисленоВсего)</expression>
-			</totalField>
-			<totalField>
 				<dataPath>НеОблагаетсяФСС</dataPath>
 				<expression>Сумма(НеОблагаетсяФСС)</expression>
 			</totalField>
@@ -2727,6 +2723,10 @@
 				<dataPath>БазаФССИностранцев</dataPath>
 				<expression>Сумма(БазаФССИностранцев)</expression>
 			</totalField>
+			<totalField>
+				<dataPath>НачисленоВсегоФСС</dataPath>
+				<expression>Сумма(НачисленоВсегоФСС)</expression>
+			</totalField>
 			<settingsVariant>
 				<dcsset:name>НачисленоФСС</dcsset:name>
 				<dcsset:presentation xsi:type="v8:LocalStringType">
@@ -2741,7 +2741,7 @@
 							<dcsset:field>ВидРасчета</dcsset:field>
 						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:SelectedItemField">
-							<dcsset:field>НачисленоВсего</dcsset:field>
+							<dcsset:field>НачисленоВсегоФСС</dcsset:field>
 						</dcsset:item>
 						<dcsset:item xsi:type="dcsset:SelectedItemField">
 							<dcsset:field>НеОблагаетсяФСС</dcsset:field>
@@ -2795,7 +2795,7 @@
 						<dcsset:item>
 							<dcsset:selection>
 								<dcsset:item>
-									<dcsset:field>НачисленоВсего</dcsset:field>
+									<dcsset:field>НачисленоВсегоФСС</dcsset:field>
 								</dcsset:item>
 								<dcsset:item>
 									<dcsset:field>НеОблагаетсяФСС</dcsset:field>
@@ -3703,7 +3703,7 @@
 								<dcsset:field>ВидРасчета</dcsset:field>
 							</dcsset:item>
 							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>НачисленоВсего</dcsset:field>
+								<dcsset:field>НачисленоВсегоПФР</dcsset:field>
 							</dcsset:item>
 							<dcsset:item xsi:type="dcsset:SelectedItemField">
 								<dcsset:field>НеЯвляетсяОбъектомИДоходыНезастрахованныхПФР</dcsset:field>
@@ -3768,7 +3768,7 @@
 							<dcsset:item>
 								<dcsset:selection>
 									<dcsset:item>
-										<dcsset:field>НачисленоВсего</dcsset:field>
+										<dcsset:field>НачисленоВсегоПФР</dcsset:field>
 									</dcsset:item>
 									<dcsset:item>
 										<dcsset:field>НеОблагаетсяПФР</dcsset:field>
@@ -3945,7 +3945,7 @@
 								<dcsset:field>ВидРасчета</dcsset:field>
 							</dcsset:item>
 							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>НачисленоВсего</dcsset:field>
+								<dcsset:field>НачисленоВсегоФОМС</dcsset:field>
 							</dcsset:item>
 							<dcsset:item xsi:type="dcsset:SelectedItemField">
 								<dcsset:field>НеЯвляетсяОбъектомИДоходыНезастрахованныхФОМС</dcsset:field>
@@ -3999,7 +3999,7 @@
 							<dcsset:item>
 								<dcsset:selection>
 									<dcsset:item>
-										<dcsset:field>НачисленоВсего</dcsset:field>
+										<dcsset:field>НачисленоВсегоФОМС</dcsset:field>
 									</dcsset:item>
 									<dcsset:item>
 										<dcsset:field>НеОблагаетсяФОМС</dcsset:field>
@@ -4151,7 +4151,7 @@
 								<dcsset:field>ВидРасчета</dcsset:field>
 							</dcsset:item>
 							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>НачисленоВсего</dcsset:field>
+								<dcsset:field>НачисленоВсегоФСС</dcsset:field>
 							</dcsset:item>
 							<dcsset:item xsi:type="dcsset:SelectedItemField">
 								<dcsset:field>НеЯвляетсяОбъектомИДоходыНезастрахованныхФСС</dcsset:field>
@@ -4212,7 +4212,7 @@
 							<dcsset:item>
 								<dcsset:selection>
 									<dcsset:item>
-										<dcsset:field>НачисленоВсего</dcsset:field>
+										<dcsset:field>НачисленоВсегоФСС</dcsset:field>
 									</dcsset:item>
 									<dcsset:item>
 										<dcsset:field>НеОблагаетсяФСС</dcsset:field>
@@ -4677,7 +4677,7 @@
 								<dcsset:field>ВидРасчета</dcsset:field>
 							</dcsset:item>
 							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>НачисленоВсего</dcsset:field>
+								<dcsset:field>НачисленоВсегоПФР</dcsset:field>
 							</dcsset:item>
 							<dcsset:item xsi:type="dcsset:SelectedItemField">
 								<dcsset:field>НеЯвляетсяОбъектомИДоходыНезастрахованныхПФР</dcsset:field>
@@ -4739,7 +4739,7 @@
 							<dcsset:item>
 								<dcsset:selection>
 									<dcsset:item>
-										<dcsset:field>НачисленоВсего</dcsset:field>
+										<dcsset:field>НачисленоВсегоПФР</dcsset:field>
 									</dcsset:item>
 									<dcsset:item>
 										<dcsset:field>НеОблагаетсяПФР</dcsset:field>
@@ -5095,7 +5095,7 @@
 								<dcsset:field>ВидРасчета</dcsset:field>
 							</dcsset:item>
 							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>НачисленоВсего</dcsset:field>
+								<dcsset:field>НачисленоВсегоПФР</dcsset:field>
 							</dcsset:item>
 							<dcsset:item xsi:type="dcsset:SelectedItemField">
 								<dcsset:field>НеЯвляетсяОбъектомИДоходыНезастрахованныхПФР</dcsset:field>
@@ -5166,7 +5166,7 @@
 							<dcsset:item>
 								<dcsset:selection>
 									<dcsset:item>
-										<dcsset:field>НачисленоВсего</dcsset:field>
+										<dcsset:field>НачисленоВсегоПФР</dcsset:field>
 									</dcsset:item>
 									<dcsset:item>
 										<dcsset:field>НеОблагаетсяПФР</dcsset:field>
@@ -5435,7 +5435,7 @@
 								<dcsset:field>ВидРасчета</dcsset:field>
 							</dcsset:item>
 							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>НачисленоВсего</dcsset:field>
+								<dcsset:field>НачисленоВсегоФОМС</dcsset:field>
 							</dcsset:item>
 							<dcsset:item xsi:type="dcsset:SelectedItemField">
 								<dcsset:field>НеЯвляетсяОбъектомИДоходыНезастрахованныхФОМС</dcsset:field>
@@ -5492,7 +5492,7 @@
 							<dcsset:item>
 								<dcsset:selection>
 									<dcsset:item>
-										<dcsset:field>НачисленоВсего</dcsset:field>
+										<dcsset:field>НачисленоВсегоФОМС</dcsset:field>
 									</dcsset:item>
 									<dcsset:item>
 										<dcsset:field>НеОблагаетсяФОМС</dcsset:field>
@@ -5693,7 +5693,7 @@
 								<dcsset:field>ВидРасчета</dcsset:field>
 							</dcsset:item>
 							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>НачисленоВсего</dcsset:field>
+								<dcsset:field>НачисленоВсегоФСС</dcsset:field>
 							</dcsset:item>
 							<dcsset:item xsi:type="dcsset:SelectedItemField">
 								<dcsset:field>НеЯвляетсяОбъектомИДоходыНезастрахованныхФСС</dcsset:field>
@@ -5757,7 +5757,7 @@
 							<dcsset:item>
 								<dcsset:selection>
 									<dcsset:item>
-										<dcsset:field>НачисленоВсего</dcsset:field>
+										<dcsset:field>НачисленоВсегоФСС</dcsset:field>
 									</dcsset:item>
 									<dcsset:item>
 										<dcsset:field>НеОблагаетсяФСС</dcsset:field>
@@ -6289,7 +6289,7 @@
 								<dcsset:field>ВидРасчета</dcsset:field>
 							</dcsset:item>
 							<dcsset:item xsi:type="dcsset:SelectedItemField">
-								<dcsset:field>НачисленоВсего</dcsset:field>
+								<dcsset:field>НачисленоВсегоПФР</dcsset:field>
 							</dcsset:item>
 							<dcsset:item xsi:type="dcsset:SelectedItemField">
 								<dcsset:field>НеЯвляетсяОбъектомИДоходыНезастрахованныхПФР</dcsset:field>
@@ -6351,7 +6351,7 @@
 							<dcsset:item>
 								<dcsset:selection>
 									<dcsset:item>
-										<dcsset:field>НачисленоВсего</dcsset:field>
+										<dcsset:field>НачисленоВсегоПФР</dcsset:field>
 									</dcsset:item>
 									<dcsset:item>
 										<dcsset:field>НеОблагаетсяПФР</dcsset:field>

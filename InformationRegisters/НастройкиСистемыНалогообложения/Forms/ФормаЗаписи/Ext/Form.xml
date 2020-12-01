@@ -74,6 +74,71 @@
 				</InputField>
 			</ChildItems>
 		</UsualGroup>
+		<UsualGroup name="ГруппаПредупреждениеЕНВД" id="119">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Предупреждение ЕНВД</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<HorizontalSpacing>Half</HorizontalSpacing>
+			<Representation>NormalSeparation</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаПредупреждениеЕНВДРасширеннаяПодсказка" id="120"/>
+			<ChildItems>
+				<PictureDecoration name="ПредупреждениеЕНВДВнимание" id="121">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Внимание</v8:content>
+						</v8:item>
+					</Title>
+					<Picture>
+						<xr:Ref>CommonPicture.Внимание16</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<ContextMenu name="ПредупреждениеЕНВДВниманиеКонтекстноеМеню" id="122"/>
+					<ExtendedTooltip name="ПредупреждениеЕНВДВниманиеРасширеннаяПодсказка" id="123"/>
+				</PictureDecoration>
+				<LabelDecoration name="ПредупреждениеЕНВДНеПрименяется" id="124">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<TextColor>style:SpecialTextColor</TextColor>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>С 01.01.2021 года ЕНВД не применяется.</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ПредупреждениеЕНВДНеПрименяетсяКонтекстноеМеню" id="125"/>
+					<ExtendedTooltip name="ПредупреждениеЕНВДНеПрименяетсяРасширеннаяПодсказка" id="126"/>
+				</LabelDecoration>
+				<LabelDecoration name="ПредупреждениеЕНВДУказатьДействующуюСистему" id="127">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<TextColor>style:SpecialTextColor</TextColor>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Укажите действующую систему налогообложения.</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ПредупреждениеЕНВДУказатьДействующуюСистемуКонтекстноеМеню" id="128"/>
+					<ExtendedTooltip name="ПредупреждениеЕНВДУказатьДействующуюСистемуРасширеннаяПодсказка" id="129"/>
+				</LabelDecoration>
+				<LabelDecoration name="ПредупреждениеЕНВДОбратитесьКСотруднику" id="130">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<TextColor>style:SpecialTextColor</TextColor>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Обратититесь к сотруднику, имеющему право настройки системы налогообложения.</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ПредупреждениеЕНВДОбратитесьКСотрудникуКонтекстноеМеню" id="131"/>
+					<ExtendedTooltip name="ПредупреждениеЕНВДОбратитесьКСотрудникуРасширеннаяПодсказка" id="132"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
 		<UsualGroup name="ГруппаНастройкиСистемыНалогообложения" id="103">
 			<Group>Vertical</Group>
 			<VerticalSpacing>Double</VerticalSpacing>
@@ -152,7 +217,7 @@
 										<Presentation>
 											<v8:item>
 												<v8:lang>ru</v8:lang>
-												<v8:content>Только ЕНВД</v8:content>
+												<v8:content>Только ЕНВД (до конца 2020 года)</v8:content>
 											</v8:item>
 										</Presentation>
 										<Value xsi:type="xs:decimal">4</Value>
@@ -174,6 +239,33 @@
 							</ChoiceList>
 							<ContextMenu name="СистемаНалогообложенияПредставлениеКонтекстноеМеню" id="72"/>
 							<ExtendedTooltip name="СистемаНалогообложенияПредставлениеРасширеннаяПодсказка" id="73"/>
+							<Events>
+								<Event name="OnChange">СистемаНалогообложенияПредставлениеПриИзменении</Event>
+							</Events>
+						</RadioButtonField>
+						<RadioButtonField name="СистемаНалогообложенияТолькоЕНВДПредставление" id="113">
+							<DataPath>СистемаНалогообложенияПредставление</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<TitleLocation>None</TitleLocation>
+							<RadioButtonType>RadioButtons</RadioButtonType>
+							<ColumnsCount>1</ColumnsCount>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Только ЕНВД (до конца 2020 года)</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:decimal">4</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="СистемаНалогообложенияТолькоЕНВДПредставлениеКонтекстноеМеню" id="114"/>
+							<ExtendedTooltip name="СистемаНалогообложенияТолькоЕНВДПредставлениеРасширеннаяПодсказка" id="115"/>
 							<Events>
 								<Event name="OnChange">СистемаНалогообложенияПредставлениеПриИзменении</Event>
 							</Events>
@@ -261,20 +353,24 @@
 											<Title>
 												<v8:item>
 													<v8:lang>ru</v8:lang>
-													<v8:content>ЕНВД</v8:content>
+													<v8:content>ЕНВД (до конца 2002 года)</v8:content>
 												</v8:item>
 											</Title>
 											<TitleLocation>Right</TitleLocation>
-											<ToolTip>
-												<v8:item>
-													<v8:lang>ru</v8:lang>
-													<v8:content>Является плательщиком единого налога на вмененный доход (ЕНВД)</v8:content>
-												</v8:item>
-											</ToolTip>
 											<ToolTipRepresentation>Button</ToolTipRepresentation>
 											<CheckBoxType>Auto</CheckBoxType>
 											<ContextMenu name="НастройкиСистемыНалогообложенияПлательщикЕНВДКонтекстноеМеню" id="83"/>
-											<ExtendedTooltip name="НастройкиСистемыНалогообложенияПлательщикЕНВДРасширеннаяПодсказка" id="84"/>
+											<ExtendedTooltip name="НастройкиСистемыНалогообложенияПлательщикЕНВДРасширеннаяПодсказка" id="84">
+												<Title formatted="true">
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Является плательщиком единого налога на вмененный доход (ЕНВД).
+
+С 1 января 2021 года ЕНВД не применяется согласно Федеральному закону от 29 июня 2012 г. N &lt;link https://its.1c.ru/db/content/garant/src/d02781/i0556385.htm#58&gt;97-ФЗ&lt;/&gt;
+(в редакции Федерального закона от 2 июня 2016 г. N &lt;link https://its.1c.ru/db/content/garant/src/d04721/i0944275.htm#2&gt;178-ФЗ&lt;/&gt;).</v8:content>
+													</v8:item>
+												</Title>
+											</ExtendedTooltip>
 										</CheckBoxField>
 									</ChildItems>
 								</UsualGroup>
@@ -445,6 +541,28 @@
 			</Type>
 			<SavedData>true</SavedData>
 			<FillCheck>ShowError</FillCheck>
+		</Attribute>
+		<Attribute name="ПрименяетсяТолькоЕНВДПослеОтменыНаМоментОткрытия" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Только ЕНВД после его отмены на момент открытия формы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПравоРедактированияНастроек" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Право редактирования настроек</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
 		</Attribute>
 	</Attributes>
 </Form>

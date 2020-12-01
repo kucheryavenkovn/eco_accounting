@@ -3766,6 +3766,24 @@
 										</LabelField>
 									</ChildItems>
 								</UsualGroup>
+								<LabelField name="ПредставлениеУПД" id="1160">
+									<DataPath>ПредставлениеУПД</DataPath>
+									<Visible>false</Visible>
+									<ReadOnly>true</ReadOnly>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>УПД</v8:content>
+										</v8:item>
+									</Title>
+									<Width>85</Width>
+									<Hiperlink>true</Hiperlink>
+									<ContextMenu name="ПредставлениеУПДКонтекстноеМеню" id="1161"/>
+									<ExtendedTooltip name="ПредставлениеУПДРасширеннаяПодсказка" id="1162"/>
+									<Events>
+										<Event name="Click">ПредставлениеУПДНажатие</Event>
+									</Events>
+								</LabelField>
 							</ChildItems>
 						</UsualGroup>
 						<UsualGroup name="ГруппаИтоги" id="925">
@@ -3885,8 +3903,46 @@
 										</UsualGroup>
 									</ChildItems>
 								</UsualGroup>
+								<UsualGroup name="ГруппаИтогиВсегоСФоном" id="1125">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Итоги</v8:content>
+										</v8:item>
+									</Title>
+									<ToolTip>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Итоги сумма</v8:content>
+										</v8:item>
+									</ToolTip>
+									<Group>Horizontal</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<BackColor>style:ИтогиФонГруппы</BackColor>
+									<ExtendedTooltip name="ГруппаИтогиВсегоСФономРасширеннаяПодсказка" id="1126"/>
+								</UsualGroup>
 							</ChildItems>
 						</UsualGroup>
+						<CheckBoxField name="УПД" id="1163">
+							<DataPath>Объект.ЭтоУниверсальныйДокумент</DataPath>
+							<TitleLocation>Right</TitleLocation>
+							<ToolTipRepresentation>None</ToolTipRepresentation>
+							<CheckBoxType>Switcher</CheckBoxType>
+							<ContextMenu name="УПДКонтекстноеМеню" id="1121"/>
+							<ExtendedTooltip name="УПДРасширеннаяПодсказка" id="1122">
+								<Title formatted="false">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Получен универсальный передаточный документ (УПД), 
+являющийся одновременно счетом-фактурой и передаточным документом (статус "1")</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+							<Events>
+								<Event name="OnChange">УПДПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
 					</ChildItems>
 				</UsualGroup>
 				<UsualGroup name="ГруппаСостояниеЭДО" id="918">
@@ -5734,6 +5790,94 @@
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Вести учет маркируемой продукции ИСМП</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Продавцы" id="46">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Продавцы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Продавец" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Продавец</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Контрагенты</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="НДСПредъявленКВычету" id="48">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>НДСПредъявлен к вычету</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="КодВидаОперации" id="49">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Код вида операции</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>10</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ПредставлениеУПД" id="51">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Представление УПД</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="РаздельныйУчетНДС" id="52">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Раздельный учет НДС</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ИспользоватьДоставкуТранспортнойКомпанией" id="53">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Использовать доставку транспортной компанией</v8:content>
 				</v8:item>
 			</Title>
 			<Type>

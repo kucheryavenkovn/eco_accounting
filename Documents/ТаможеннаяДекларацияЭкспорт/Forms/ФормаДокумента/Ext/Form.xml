@@ -143,9 +143,76 @@
 		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
 		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
 		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="BeforeWrite">ПередЗаписью</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
 	<ChildItems>
+		<UsualGroup name="ГруппаБаннерИнтеграцияСЛКФТС" id="172">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Баннер интеграция с ЛК ФТС</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа баннер интеграция СЛКФТС</v8:content>
+				</v8:item>
+			</ToolTip>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<BackColor>style:ЦветФонаБаннер</BackColor>
+			<ExtendedTooltip name="ГруппаБаннерИнтеграцияСЛКФТСРасширеннаяПодсказка" id="173"/>
+			<ChildItems>
+				<LabelDecoration name="ДекорацияИнтеграцияСЛКФТС" id="174">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<SkipOnInput>true</SkipOnInput>
+					<Font ref="style:ШрифтТекстаБаннера" kind="StyleItem"/>
+					<Title formatted="true">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номер декларации на товары можно заполнить по данным &lt;link СсылкаНаФормуПодбораДеклараций&gt;личного кабинета ФТС&lt;/&gt;</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ДекорацияИнтеграцияСЛКФТСКонтекстноеМеню" id="175"/>
+					<ExtendedTooltip name="ДекорацияИнтеграцияСЛКФТСРасширеннаяПодсказка" id="176"/>
+					<Events>
+						<Event name="URLProcessing">ДекорацияИнтеграцияСЛКФТСОбработкаНавигационнойСсылки</Event>
+					</Events>
+				</LabelDecoration>
+				<PictureDecoration name="КартинкаЗакрытьБаннер" id="177">
+					<Height>1</Height>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Х</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Скрыть баннер</v8:content>
+						</v8:item>
+					</ToolTip>
+					<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+					<GroupVerticalAlign>Top</GroupVerticalAlign>
+					<Hyperlink>true</Hyperlink>
+					<Picture>
+						<xr:Ref>StdPicture.InputFieldClear</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<FileDragMode>AsFile</FileDragMode>
+					<ContextMenu name="КартинкаЗакрытьБаннерКонтекстноеМеню" id="178"/>
+					<ExtendedTooltip name="КартинкаЗакрытьБаннерРасширеннаяПодсказка" id="179"/>
+					<Events>
+						<Event name="Click">ЗакрытьБаннерНажатие</Event>
+					</Events>
+				</PictureDecoration>
+			</ChildItems>
+		</UsualGroup>
 		<UsualGroup name="ГруппаШапка" id="75">
 			<Title>
 				<v8:item>
@@ -201,7 +268,7 @@
 							<ExtendedTooltip name="ГруппаНомерДатаРасширеннаяПодсказка" id="82"/>
 							<ChildItems>
 								<InputField name="НомерВходящегоДокумента" id="10">
-									<DataPath>Объект.НомерВходящегоДокумента</DataPath>
+									<DataPath>НомерДекларацииНаТовары</DataPath>
 									<Title>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
@@ -209,9 +276,17 @@
 										</v8:item>
 									</Title>
 									<EditMode>EnterOnInput</EditMode>
+									<Width>16</Width>
 									<HorizontalStretch>false</HorizontalStretch>
+									<ChoiceButton>true</ChoiceButton>
+									<EditTextUpdate>OnValueChange</EditTextUpdate>
 									<ContextMenu name="НомерВходящегоДокументаКонтекстноеМеню" id="11"/>
 									<ExtendedTooltip name="НомерВходящегоДокументаРасширеннаяПодсказка" id="12"/>
+									<Events>
+										<Event name="OnChange">НомерВходящегоДокументаПриИзменении</Event>
+										<Event name="EditTextChange">НомерВходящегоДокументаИзменениеТекстаРедактирования</Event>
+										<Event name="StartChoice">НомерВходящегоДокументаНачалоВыбора</Event>
+									</Events>
 								</InputField>
 								<InputField name="Дата" id="4">
 									<DataPath>Объект.Date</DataPath>
@@ -222,7 +297,7 @@
 										</v8:item>
 									</Title>
 									<EditMode>EnterOnInput</EditMode>
-									<Width>14</Width>
+									<Width>12</Width>
 									<HorizontalStretch>false</HorizontalStretch>
 									<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
 									<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="6"/>
@@ -250,9 +325,24 @@
 								</PictureField>
 							</ChildItems>
 						</UsualGroup>
+						<LabelDecoration name="ОшибочныйНомерДекларации" id="169">
+							<Width>48</Width>
+							<TextColor>style:ПоясняющийОшибкуТекст</TextColor>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Номер должен состоять из трех или четырех блоков, разделенных дробью "/"
+</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<ContextMenu name="ОшибочныйНомерДекларацииКонтекстноеМеню" id="170"/>
+							<ExtendedTooltip name="ОшибочныйНомерДекларацииРасширеннаяПодсказка" id="171"/>
+						</LabelDecoration>
 						<InputField name="КодОперации" id="13">
 							<DataPath>Объект.КодОперации</DataPath>
 							<EditMode>EnterOnInput</EditMode>
+							<Width>5</Width>
 							<ChoiceButton>true</ChoiceButton>
 							<Mask>9999999</Mask>
 							<ContextMenu name="КодОперацииКонтекстноеМеню" id="14"/>
@@ -287,8 +377,15 @@
 							<ContextMenu name="ОрганизацияКонтекстноеМеню" id="8"/>
 							<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="9"/>
 							<Events>
+								<Event name="OnChange">ОрганизацияПриИзменении</Event>
 								<Event name="ChoiceProcessing">ОрганизацияОбработкаВыбора</Event>
 							</Events>
+						</InputField>
+						<InputField name="Контрагент" id="166">
+							<DataPath>Контрагент</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<ContextMenu name="КонтрагентКонтекстноеМеню" id="167"/>
+							<ExtendedTooltip name="КонтрагентРасширеннаяПодсказка" id="168"/>
 						</InputField>
 					</ChildItems>
 				</UsualGroup>
@@ -664,6 +761,119 @@
 				</v8:item>
 			</Title>
 			<Type/>
+		</Attribute>
+		<Attribute name="НалоговаяБаза" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Налоговая база</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Контрагент" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Контрагент</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Контрагенты</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="КодОшибки" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Код ошибки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КонецКорректногоПериода" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Конец корректного периода</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="НачалоКорректногоПериода" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Начало корректного периода</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>Date</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПоказыватьБаннерЛКФТС" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Личный кабинет ФТС подключен</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="НомерДекларацииНаТовары" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер декларации на товары</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>29</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ТекущийТекстРедактированияНомерДекларацииНаТовары" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текущий текст редактирования номер декларации на товары</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>29</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
 		</Attribute>
 		<ConditionalAppearance>
 			<dcsset:item>

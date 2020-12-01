@@ -1016,6 +1016,25 @@
 			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаПодвалExtendedTooltip" id="474"/>
 			<ChildItems>
+				<CheckBoxField name="УПД" id="581">
+					<DataPath>Объект.ЭтоУниверсальныйДокумент</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<ToolTipRepresentation>None</ToolTipRepresentation>
+					<CheckBoxType>Switcher</CheckBoxType>
+					<ContextMenu name="УПДКонтекстноеМеню" id="582"/>
+					<ExtendedTooltip name="УПДРасширеннаяПодсказка" id="583">
+						<Title formatted="false">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Выставлен универсальный передаточный документ (УПД), 
+являющийся одновременно счетом-фактурой и передаточным документом (статус "1")</v8:content>
+							</v8:item>
+						</Title>
+					</ExtendedTooltip>
+					<Events>
+						<Event name="OnChange">УПДПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
 				<LabelDecoration name="РеквизитыОрганизацииКонтрагента" id="475">
 					<Title formatted="false">
 						<v8:item>
@@ -1125,97 +1144,123 @@
 				</UsualGroup>
 			</ChildItems>
 		</UsualGroup>
-		<UsualGroup name="ГруппаСчетФактура" id="265">
+		<UsualGroup name="СчетФактураПросмотр" id="562">
+			<EnableContentChange>true</EnableContentChange>
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Счет-фактура</v8:content>
 				</v8:item>
 			</Title>
-			<Group>Horizontal</Group>
+			<Group>Vertical</Group>
 			<Representation>None</Representation>
 			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="ГруппаСчетФактураExtendedTooltip" id="360"/>
+			<ExtendedTooltip name="СчетФактураПросмотрРасширеннаяПодсказка" id="563"/>
 			<ChildItems>
-				<Pages name="ГруппаСчетФактураСтраницы" id="266">
+				<UsualGroup name="СчетФактураКнопка" id="564">
+					<EnableContentChange>true</EnableContentChange>
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Счет-фактура (страницы)</v8:content>
+							<v8:content>Кнопка создания счета-фактуры</v8:content>
 						</v8:item>
 					</Title>
-					<PagesRepresentation>None</PagesRepresentation>
-					<ExtendedTooltip name="ГруппаСчетФактураСтраницыExtendedTooltip" id="361"/>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<BackColor>style:ФонУправляющегоПоля</BackColor>
+					<ExtendedTooltip name="СчетФактураКнопкаРасширеннаяПодсказка" id="565"/>
 					<ChildItems>
-						<Page name="ГруппаВыписатьСчетФактуру" id="267">
+						<UsualGroup name="СчетФактураРедактирование" id="566">
+							<EnableContentChange>true</EnableContentChange>
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Выписать счет-фактуру</v8:content>
+									<v8:content>Редактирование счета-фактуры</v8:content>
 								</v8:item>
 							</Title>
 							<Group>Horizontal</Group>
-							<ExtendedTooltip name="ГруппаВыписатьСчетФактуруExtendedTooltip" id="362"/>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="СчетФактураРедактированиеРасширеннаяПодсказка" id="567"/>
 							<ChildItems>
-								<LabelDecoration name="ДекорацияСчетФактура1" id="268">
-									<Width>9</Width>
+								<LabelDecoration name="ДекорацияСчетФактура" id="568">
 									<Title formatted="false">
 										<v8:item>
 											<v8:lang>ru</v8:lang>
 											<v8:content>Счет-фактура:</v8:content>
 										</v8:item>
 									</Title>
-									<ContextMenu name="ДекорацияСчетФактура1КонтекстноеМеню" id="269"/>
-									<ExtendedTooltip name="ДекорацияСчетФактура1ExtendedTooltip" id="363"/>
+									<ContextMenu name="ДекорацияСчетФактураКонтекстноеМеню" id="569"/>
+									<ExtendedTooltip name="ДекорацияСчетФактураРасширеннаяПодсказка" id="570"/>
 								</LabelDecoration>
-								<Button name="ВыписатьСчетФактуру" id="270">
+								<Button name="ВыписатьСчетФактуру" id="571">
 									<Type>UsualButton</Type>
 									<CommandName>Form.Command.ВыписатьСчетФактуру</CommandName>
-									<ExtendedTooltip name="ВыписатьСчетФактуруExtendedTooltip" id="364"/>
+									<ExtendedTooltip name="ВыписатьСчетФактуруExtendedTooltip" id="572"/>
 								</Button>
 							</ChildItems>
-						</Page>
-						<Page name="ГруппаСчетФактураСсылка" id="271">
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="СчетФактураСсылка" id="573">
+					<Visible>false</Visible>
+					<EnableContentChange>true</EnableContentChange>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ссылка на счет-фактуру</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Счет фактура ссылка</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="СчетФактураСсылкаРасширеннаяПодсказка" id="574"/>
+					<ChildItems>
+						<LabelField name="НадписьСчетФактура" id="575">
+							<DataPath>НадписьСчетФактура</DataPath>
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Cчет-фактура (ссылка)</v8:content>
+									<v8:content>Счет-фактура</v8:content>
 								</v8:item>
 							</Title>
-							<Group>Horizontal</Group>
-							<ExtendedTooltip name="ГруппаСчетФактураСсылкаExtendedTooltip" id="365"/>
-							<ChildItems>
-								<LabelDecoration name="ДекорацияСчетФактура2" id="272">
-									<Width>9</Width>
-									<Title formatted="false">
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Счет-фактура:</v8:content>
-										</v8:item>
-									</Title>
-									<ContextMenu name="ДекорацияСчетФактура2КонтекстноеМеню" id="273"/>
-									<ExtendedTooltip name="ДекорацияСчетФактура2ExtendedTooltip" id="366"/>
-								</LabelDecoration>
-								<LabelField name="НадписьСчетФактура" id="274">
-									<DataPath>НадписьСчетФактура</DataPath>
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Счет-фактура</v8:content>
-										</v8:item>
-									</Title>
-									<TitleLocation>None</TitleLocation>
-									<Hiperlink>true</Hiperlink>
-									<ContextMenu name="НадписьСчетФактураКонтекстноеМеню" id="275"/>
-									<ExtendedTooltip name="НадписьСчетФактураExtendedTooltip" id="367"/>
-									<Events>
-										<Event name="Click">НадписьСчетФактураНажатие</Event>
-									</Events>
-								</LabelField>
-							</ChildItems>
-						</Page>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<VerticalAlign>Bottom</VerticalAlign>
+							<Width>30</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<Hiperlink>true</Hiperlink>
+							<ContextMenu name="НадписьСчетФактураКонтекстноеМеню" id="576"/>
+							<ExtendedTooltip name="НадписьСчетФактураExtendedTooltip" id="577"/>
+							<Events>
+								<Event name="Click">НадписьСчетФактураНажатие</Event>
+							</Events>
+						</LabelField>
 					</ChildItems>
-				</Pages>
+				</UsualGroup>
+				<LabelField name="ПредставлениеУПД" id="578">
+					<DataPath>ПредставлениеУПД</DataPath>
+					<Visible>false</Visible>
+					<ReadOnly>true</ReadOnly>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>УПД</v8:content>
+						</v8:item>
+					</Title>
+					<Hiperlink>true</Hiperlink>
+					<ContextMenu name="ПредставлениеУПДКонтекстноеМеню" id="579"/>
+					<ExtendedTooltip name="ПредставлениеУПДРасширеннаяПодсказка" id="580"/>
+					<Events>
+						<Event name="Click">ПредставлениеУПДНажатие</Event>
+					</Events>
+				</LabelField>
 			</ChildItems>
 		</UsualGroup>
 		<UsualGroup name="ГруппаСостояниеЭДО" id="436">
@@ -1668,6 +1713,52 @@
 			</Title>
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="КодВидаОперации" id="26">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Код вида операции</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>10</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="НомерСчетаФактуры" id="27">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Номер счета фактуры</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>50</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПредставлениеУПД" id="28">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Представление УПД</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
 		<ConditionalAppearance>

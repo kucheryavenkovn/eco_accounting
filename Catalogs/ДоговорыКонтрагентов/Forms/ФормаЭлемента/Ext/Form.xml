@@ -840,6 +840,47 @@
 							<Width>40</Width>
 							<MaxWidth>21</MaxWidth>
 							<TextEdit>false</TextEdit>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>По умолчанию</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xr:DesignTimeRef">Enum.СпособыЗаполненияСтавкиНДС.EnumValue.Автоматически</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Из карточки номенклатуры</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xr:DesignTimeRef">Enum.СпособыЗаполненияСтавкиНДС.EnumValue.ИзКарточкиНоменклатуры</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Без НДС</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xr:DesignTimeRef">Enum.СпособыЗаполненияСтавкиНДС.EnumValue.БезНДС</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
 							<ContextMenu name="СпособЗаполненияСтавкиНДСКонтекстноеМеню" id="409"/>
 							<ExtendedTooltip name="СпособЗаполненияСтавкиНДСРасширеннаяПодсказка" id="410">
 								<Title formatted="false">
@@ -873,6 +914,61 @@
 								</Title>
 							</ExtendedTooltip>
 						</CheckBoxField>
+						<InputField name="СпособВыставленияДокументов" id="534">
+							<DataPath>Объект.СпособВыставленияДокументов</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Документ поступления</v8:content>
+								</v8:item>
+							</Title>
+							<Width>20</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ListChoiceMode>true</ListChoiceMode>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>По умолчанию</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xr:DesignTimeRef">Enum.СпособыВыставленияДокументов.EnumValue.Автоматически</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>УПД</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xr:DesignTimeRef">Enum.СпособыВыставленияДокументов.EnumValue.УниверсальныйДокумент</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Акт (накладная) и счет-фактура</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xr:DesignTimeRef">Enum.СпособыВыставленияДокументов.EnumValue.ПередаточныйДокументИСчетФактура</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="СпособВыставленияДокументовКонтекстноеМеню" id="535"/>
+							<ExtendedTooltip name="СпособВыставленияДокументовРасширеннаяПодсказка" id="536"/>
+						</InputField>
 					</ChildItems>
 				</UsualGroup>
 			</ChildItems>
@@ -2378,7 +2474,7 @@
 				</Visible>
 			</Item>
 			<Item>
-				<Command>InformationRegister.СтавкиНДСПоДоговорам.StandardCommand.OpenByValue.ДоговорКонтрагента</Command>
+				<Command>InformationRegister.ПараметрыНДСПоДоговорам.StandardCommand.OpenByValue.ДоговорКонтрагента</Command>
 				<Type>Auto</Type>
 				<DefaultVisible>false</DefaultVisible>
 				<Visible>
